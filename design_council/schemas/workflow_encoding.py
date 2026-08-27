@@ -10,6 +10,7 @@ tag and must not be modified.
 """
 
 from enum import Enum
+from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
@@ -50,16 +51,25 @@ class WorkflowStep(BaseModel):
 
 
 class Requirement(BaseModel):
-    """A rule statement the workflow must satisfy.
+    """A rule statement the workflow must satisfy, in prose and as a predicate.
 
-    These are what the conformance gate later checks a redesign against, so
-    requirement_id is stable and is quoted in gate output.
+    statement is the English rule, quoted verbatim in gate output so a reader
+    can see what was checked. rule_type and params are the machine-checkable
+    form of that same rule: rule_type names a check in the gate's registry and
+    params supplies its arguments.
+
+    rule_type is a plain string rather than an enum so that adding a rule to
+    the gate does not require changing this contract. The gate owns the
+    registry and must reject an unknown rule_type rather than skipping it — a
+    silently unchecked requirement would overstate conformance.
     """
 
     model_config = ConfigDict(extra="forbid")
 
     requirement_id: str = Field(min_length=1)
     statement: str = Field(min_length=1)
+    rule_type: str = Field(min_length=1)
+    params: dict[str, Any] = Field(default_factory=dict)
 
 
 class WorkflowEncoding(BaseModel):

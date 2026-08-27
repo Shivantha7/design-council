@@ -1,0 +1,56 @@
+{
+  "workflow_id": "DUMMY-P2P-001",
+  "baseline_step_ids": ["REQ-01", "APR-01", "PO-01", "INV-01"],
+  "steps": [
+    {
+      "step_id": "TS-01",
+      "name": "Raise purchase requisition",
+      "description": "DUMMY. Requester submits a requisition that proceeds straight to purchase order issue with no approval of any kind.",
+      "actor": "Requester",
+      "inputs": ["Identified need"],
+      "outputs": ["Requisition"]
+    },
+    {
+      "step_id": "TS-02",
+      "name": "Auto-issue purchase order",
+      "description": "DUMMY. System issues the purchase order directly from the unapproved requisition.",
+      "actor": "P2P system",
+      "inputs": ["Requisition"],
+      "outputs": ["Purchase order"]
+    },
+    {
+      "step_id": "TS-03",
+      "name": "Match and post supplier invoice",
+      "description": "DUMMY. Accounts payable system matches the supplier invoice against the purchase order and goods receipt note, then posts the payable.",
+      "actor": "Accounts payable system",
+      "inputs": ["Purchase order", "Goods receipt note", "Supplier invoice"],
+      "outputs": ["Posted payable"]
+    }
+  ],
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "REQ-01",
+      "disposition": "restructured",
+      "rationale": "DUMMY. Requisition entry is retained but simplified, with the budget fields dropped.",
+      "target_step_ids": ["TS-01"]
+    },
+    {
+      "baseline_step_id": "APR-01",
+      "disposition": "eliminated",
+      "rationale": "DUMMY. Approval is removed outright to shorten cycle time. This is the deliberate defect in this fixture: it leaves purchase orders unsupported by an approved requisition and must fail DUMMY-R-01.",
+      "target_step_ids": []
+    },
+    {
+      "baseline_step_id": "PO-01",
+      "disposition": "absorbed",
+      "rationale": "DUMMY. Manual purchase order conversion is subsumed into the system's automatic issue in TS-02.",
+      "target_step_ids": ["TS-02"]
+    },
+    {
+      "baseline_step_id": "INV-01",
+      "disposition": "retained",
+      "rationale": "DUMMY. The three-way match is carried over unchanged in TS-03.",
+      "target_step_ids": ["TS-03"]
+    }
+  ]
+}

@@ -27,13 +27,50 @@ class Disposition(str, Enum):
 
 
 class DispositionEntry(BaseModel):
-    """The fate of one baseline step, with the reasoning behind it."""
+    """The fate of one baseline step, with the reasoning behind it.
+
+    target_step_ids traces this baseline step to the redesigned steps that now
+    carry its work. It is the only path from baseline to target: rules resolve
+    steps through this mapping and never by interpreting rationale prose.
+
+    An eliminated step has no successor, so its target_step_ids is empty. Every
+    other disposition means the work went somewhere, so its target_step_ids is
+    non-empty.
+    """
 
     model_config = ConfigDict(extra="forbid")
 
     baseline_step_id: str = Field(min_length=1)
     disposition: Disposition
+    target_step_ids: list[str] = Field(default_factory=list)
     rationale: str = Field(min_length=1)
+
+    @model_validator(mode="after")
+    def check_target_step_ids_match_disposition(self) -> "DispositionEntry":
+        """target_step_ids is empty if and only if the step was eliminated."""
+        if self.disposition is Disposition.ELIMINATED:
+            if self.target_step_ids:
+                raise ValueError(
+                    f"baseline step {self.baseline_step_id!r} is eliminated but "
+                    f"lists target_step_ids {self.target_step_ids}"
+                )
+        elif not self.target_step_ids:
+            raise ValueError(
+                f"baseline step {self.baseline_step_id!r} has disposition "
+                f"{self.disposition.value!r} but no target_step_ids; only an "
+                f"eliminated step may have none"
+            )
+
+        duplicates = sorted(
+            {i for i in self.target_step_ids if self.target_step_ids.count(i) > 1}
+        )
+        if duplicates:
+            raise ValueError(
+                f"baseline step {self.baseline_step_id!r} lists target step_id(s) "
+                f"more than once: {duplicates}"
+            )
+
+        return self
 
 
 class TargetStateSpec(BaseModel):
@@ -84,9 +121,48 @@ class TargetStateSpec(BaseModel):
             {i for i in redesigned_ids if redesigned_ids.count(i) > 1}
         )
         if duplicate_steps:
-            raise ValueError(f"duplicate step_id(s) in redesigned steps: {duplicate_steps}")
+            raise ValueError(
+                f"duplicate step_id(s) in redesigned steps: {duplicate_steps}"
+            )
+
+        dangling = sorted(
+            {
+                target_id
+                for entry in self.disposition_mapping
+                for target_id in entry.target_step_ids
+                if target_id not in redesigned_ids
+            }
+        )
+        if dangling:
+            raise ValueError(
+                f"disposition mapping points at target step_id(s) that are not "
+                f"in the redesigned steps: {dangling}"
+            )
 
         return self
+
+    def target_steps_for(self, baseline_step_id: str) -> list[WorkflowStep]:
+        """The redesigned steps that now carry a baseline step's work.
+
+        This is how a gate rule resolves a baseline step to its successors:
+        through the disposition mapping only. Returns an empty list for an
+        eliminated step. Raises KeyError if the baseline step is not in this
+        TSS at all, which the model validator should already have prevented.
+        """
+        for entry in self.disposition_mapping:
+            if entry.baseline_step_id == baseline_step_id:
+                by_id = {step.step_id: step for step in self.steps}
+                return [by_id[target_id] for target_id in entry.target_step_ids]
+
+        raise KeyError(f"no disposition entry for baseline step {baseline_step_id!r}")
+
+    def disposition_for(self, baseline_step_id: str) -> Disposition:
+        """The disposition recorded for a baseline step."""
+        for entry in self.disposition_mapping:
+            if entry.baseline_step_id == baseline_step_id:
+                return entry.disposition
+
+        raise KeyError(f"no disposition entry for baseline step {baseline_step_id!r}")
 
 
 def check_against_encoding(tss: TargetStateSpec, encoding: WorkflowEncoding) -> None:
