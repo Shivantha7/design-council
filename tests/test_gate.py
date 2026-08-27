@@ -397,22 +397,12 @@ def minimal_tss_for(encoding: WorkflowEncoding) -> TargetStateSpec:
     )
 
 
-def test_encoding_with_no_requirements_raises():
-    """A gate with nothing to check must never report a pass."""
-    source = encoding_with([])
+def test_dev_encoding_p2p_vip_01_is_satisfied_by_its_own_baseline():
+    """The seven VIP requirements must be consistent with the workflow they
+    were authored against: a redesign that changes nothing scores 1.0.
 
-    with pytest.raises(GateConfigError, match="no requirements"):
-        evaluate(source, tss(CONFORMANT_PATH))
-
-
-def test_dev_encoding_p2p_vip_01_raises_until_its_requirements_are_authored():
-    """P2P-VIP-01 is encoded but its requirements are not yet written. Until
-    they are, it must not be scorable: an unconstrained gate would return 1.0
-    for any TSS at all.
-
-    DELETE THIS TEST once the requirements are authored — it asserts the list
-    is empty, so it fails by design at that point. The rule itself stays
-    covered by test_encoding_with_no_requirements_raises.
+    A failure here means a requirement contradicts the baseline encoding — an
+    authoring bug in the requirement, not a finding about any redesign.
     """
     path = (
         Path(__file__).resolve().parent.parent
@@ -422,10 +412,128 @@ def test_dev_encoding_p2p_vip_01_raises_until_its_requirements_are_authored():
         / "p2p_vendor_invoice_processing.json"
     )
     source = WorkflowEncoding.model_validate(load_json(path))
-    assert source.requirements == []
+    assert [r.requirement_id for r in source.requirements] == [
+        f"VIP-R-0{n}" for n in range(1, 8)
+    ]
 
-    with pytest.raises(GateConfigError, match="P2P-VIP-01"):
-        evaluate(source, minimal_tss_for(source))
+    result = evaluate(source, minimal_tss_for(source))
+
+    assert result.conformance_score == 1.0
+    for entry in result.results:
+        assert not entry.reason.startswith("vacuously satisfied: ")
+
+
+DEV_ENCODING_PATH = (
+    Path(__file__).resolve().parent.parent
+    / "data"
+    / "encodings"
+    / "dev"
+    / "p2p_vendor_invoice_processing.json"
+)
+VIP_CONFORMANT_PATH = DUMMY_DIR / "vip_smoke_conformant.json"
+VIP_VIOLATING_PATH = DUMMY_DIR / "vip_smoke_violating.json"
+VIP_NO_APPROVAL_PATH = DUMMY_DIR / "vip_smoke_no_approval.json"
+
+
+def dev_encoding() -> WorkflowEncoding:
+    return WorkflowEncoding.model_validate(load_json(DEV_ENCODING_PATH))
+
+
+def assert_substantive(result, requirement_ids: list[str]) -> None:
+    """These requirements passed because they were checked and held."""
+    for requirement_id in requirement_ids:
+        entry = result.result_for(requirement_id)
+        assert entry.passed is True, f"{requirement_id} failed: {entry.reason}"
+        assert not entry.reason.startswith("vacuously satisfied: "), (
+            f"{requirement_id} passed vacuously: {entry.reason}"
+        )
+
+
+def assert_vacuous(result, requirement_ids: list[str]) -> None:
+    """These requirements passed only because nothing was left to check."""
+    for requirement_id in requirement_ids:
+        entry = result.result_for(requirement_id)
+        assert entry.passed is True, f"{requirement_id} failed: {entry.reason}"
+        assert entry.reason.startswith("vacuously satisfied: "), (
+            f"{requirement_id} was expected to pass vacuously: {entry.reason}"
+        )
+
+
+ALL_VIP_REQUIREMENTS = [f"VIP-R-0{n}" for n in range(1, 8)]
+
+
+def test_conformant_smoke_fixture_scores_seven_of_seven():
+    """A plausible touchless-AP redesign that keeps every control it should.
+
+    Every pass must be substantive: a 1.0 built partly on vacuous passes would
+    mean the redesign scored well by deleting what the rules constrain.
+    """
+    result = evaluate(dev_encoding(), tss(VIP_CONFORMANT_PATH))
+
+    assert result.failed_requirement_ids() == []
+    assert result.conformance_score == 1.0
+    assert [r.requirement_id for r in result.results] == ALL_VIP_REQUIREMENTS
+
+    assert_substantive(result, ALL_VIP_REQUIREMENTS)
+
+
+def test_violating_smoke_fixture_scores_five_of_seven():
+    """Eliminating the three-way match fails both requirements that rest on it.
+
+    Unlike the no-approval fixture, nothing here passes vacuously: VIP-05
+    survives, so VIP-R-04 and VIP-R-06 are both genuinely checked. VIP-R-06 in
+    particular must be a substantive pass — the separation of approval from
+    posting is real in this redesign, not an artefact of a missing step.
+    """
+    result = evaluate(dev_encoding(), tss(VIP_VIOLATING_PATH))
+
+    assert result.failed_requirement_ids() == ["VIP-R-01", "VIP-R-02"]
+    assert result.conformance_score == pytest.approx(5 / 7)
+
+    for requirement_id in ["VIP-R-01", "VIP-R-02"]:
+        entry = result.result_for(requirement_id)
+        assert "VIP-03" in entry.reason
+        assert "eliminated" in entry.reason
+
+    assert_substantive(
+        result, ["VIP-R-03", "VIP-R-04", "VIP-R-05", "VIP-R-06", "VIP-R-07"]
+    )
+
+
+def test_no_approval_smoke_fixture_scores_six_of_seven():
+    """Eliminating approval fails one requirement and silences two others.
+
+    VIP-R-03 requires VIP-05 to survive, so removing it fails. But VIP-R-04
+    (approval before payment) and VIP-R-06 (approval separated from posting)
+    both constrain VIP-05, and with it gone they have nothing left to check, so
+    both pass vacuously. The score therefore falls only to 6/7 for a redesign
+    that removed authorisation from the process entirely.
+
+    This is the gate behaving as specified, not a defect. The test pins it so
+    that the vacuity is visible in the suite rather than only in a run.
+    """
+    result = evaluate(dev_encoding(), tss(VIP_NO_APPROVAL_PATH))
+
+    assert result.failed_requirement_ids() == ["VIP-R-03"]
+    assert result.conformance_score == pytest.approx(6 / 7)
+
+    failure = result.result_for("VIP-R-03")
+    assert "VIP-05" in failure.reason
+    assert "eliminated" in failure.reason
+
+    assert_vacuous(result, ["VIP-R-04", "VIP-R-06"])
+    for requirement_id in ["VIP-R-04", "VIP-R-06"]:
+        assert "VIP-05" in result.result_for(requirement_id).reason
+
+    assert_substantive(result, ["VIP-R-01", "VIP-R-02", "VIP-R-05", "VIP-R-07"])
+
+
+def test_encoding_with_no_requirements_raises():
+    """A gate with nothing to check must never report a pass."""
+    source = encoding_with([])
+
+    with pytest.raises(GateConfigError, match="no requirements"):
+        evaluate(source, tss(CONFORMANT_PATH))
 
 
 def test_empty_requirements_is_checked_before_the_tss():

@@ -76,6 +76,14 @@ class DispositionEntry(BaseModel):
 class TargetStateSpec(BaseModel):
     """A redesigned workflow, mapped back to the encoding it came from.
 
+    Disposition convention. 'eliminated' means the function ceases to exist in
+    the target state: nothing performs it, and target_step_ids is empty.
+    'absorbed' and 'merged' mean the function persists, carried by another step
+    identified in target_step_ids — the step boundary moved, the work did not
+    stop. 'retained' and 'restructured' likewise mean the function persists.
+    Only 'eliminated' asserts that the function is gone, which is why a
+    requirement that a control survive is failed by elimination alone.
+
     baseline_step_ids records the step ids of the source encoding as they stood
     when this TSS was produced. Carrying them here — rather than only in the
     encoding file — lets the coverage rule below be enforced by the model

@@ -12,98 +12,231 @@
       "name": "Invoice receipt and intake",
       "description": "Vendor invoices arrive through multiple channels and are logged as invoice records carrying header metadata, establishing the population of invoices entering the process.",
       "actor": "AP clerk",
-      "inputs": ["Vendor invoice (email PDF, EDI, supplier portal or paper)"],
-      "outputs": ["Invoice record with header metadata"]
+      "inputs": [
+        "Vendor invoice (email PDF, EDI, supplier portal or paper)"
+      ],
+      "outputs": [
+        "Invoice record with header metadata"
+      ]
     },
     {
       "step_id": "VIP-02",
       "name": "Data extraction and validation",
       "description": "Invoice content is extracted from the raw file and validated into a structured record covering vendor ID, invoice number, dates, amounts, currency, line items, tax and PO reference.",
       "actor": "AP clerk (with OCR/validation engine)",
-      "inputs": ["Raw invoice file"],
-      "outputs": ["Structured validated invoice record"]
+      "inputs": [
+        "Raw invoice file"
+      ],
+      "outputs": [
+        "Structured validated invoice record"
+      ]
     },
     {
       "step_id": "VIP-03",
       "name": "Purchase order matching",
       "description": "The validated invoice is matched against purchase order and goods receipt data, yielding a clean match, a match within tolerance, or an exception.",
       "actor": "AP analyst (with ERP matching engine)",
-      "inputs": ["Structured validated invoice record", "Purchase order data", "Goods receipt note data"],
-      "outputs": ["Match result (clean, tolerance or exception)"]
+      "inputs": [
+        "Structured validated invoice record",
+        "Purchase order data",
+        "Goods receipt note data"
+      ],
+      "outputs": [
+        "Match result (clean, tolerance or exception)"
+      ]
     },
     {
       "step_id": "VIP-04",
       "name": "Exception handling and resolution",
       "description": "Invoices flagged as exceptions are investigated against variance detail and source documents, and resolved as approved, rejected or held, with the resolution evidenced.",
       "actor": "AP analyst",
-      "inputs": ["Exception-flagged invoice", "Variance detail", "Purchase order data", "Goods receipt note data"],
-      "outputs": ["Resolved invoice (approved, rejected or held)", "Audit trail"]
+      "inputs": [
+        "Exception-flagged invoice",
+        "Variance detail",
+        "Purchase order data",
+        "Goods receipt note data"
+      ],
+      "outputs": [
+        "Resolved invoice (approved, rejected or held)",
+        "Audit trail"
+      ]
     },
     {
       "step_id": "VIP-05",
       "name": "Approval routing and authorisation",
       "description": "Matched invoices are routed through the approval hierarchy according to the approval matrix and authorised for posting.",
       "actor": "Approver hierarchy",
-      "inputs": ["Matched invoice", "GL coding", "Approval matrix"],
-      "outputs": ["Fully approved invoice"]
+      "inputs": [
+        "Matched invoice",
+        "GL coding",
+        "Approval matrix"
+      ],
+      "outputs": [
+        "Fully approved invoice"
+      ]
     },
     {
       "step_id": "VIP-06",
       "name": "GL coding and posting",
       "description": "The approved invoice is coded to the chart of accounts, cost centres and project codes, then posted to the general ledger and the accounts payable subledger.",
       "actor": "AP accountant",
-      "inputs": ["Fully approved invoice", "Chart of accounts", "Cost centres", "Project codes"],
-      "outputs": ["GL journal entry posted", "AP subledger updated"]
+      "inputs": [
+        "Fully approved invoice",
+        "Chart of accounts",
+        "Cost centres",
+        "Project codes"
+      ],
+      "outputs": [
+        "GL journal entry posted",
+        "AP subledger updated"
+      ]
     },
     {
       "step_id": "VIP-07",
       "name": "Payment scheduling and execution",
       "description": "Posted invoices are scheduled against payment terms, vendor bank details and the cash position; a payment file is generated, transmitted and confirmed.",
       "actor": "Treasury/AP payments officer",
-      "inputs": ["Approved posted invoice", "Payment terms", "Vendor bank details", "Cash position"],
-      "outputs": ["Payment file generated", "Payment transmitted", "Payment confirmation received"]
+      "inputs": [
+        "Approved posted invoice",
+        "Payment terms",
+        "Vendor bank details",
+        "Cash position"
+      ],
+      "outputs": [
+        "Payment file generated",
+        "Payment transmitted",
+        "Payment confirmation received"
+      ]
     },
     {
       "step_id": "VIP-08",
       "name": "Reconciliation and period close",
       "description": "Bank confirmations, the AP subledger and vendor statements are reconciled, and the period-end accounts payable balance is confirmed.",
       "actor": "AP accountant",
-      "inputs": ["Bank confirmations", "AP subledger", "Vendor statements"],
-      "outputs": ["Reconciled AP ledger", "Period-end balance confirmed"]
+      "inputs": [
+        "Bank confirmations",
+        "AP subledger",
+        "Vendor statements"
+      ],
+      "outputs": [
+        "Reconciled AP ledger",
+        "Period-end balance confirmed"
+      ]
     }
   ],
-  "requirements": [],
+  "requirements": [
+    {
+      "requirement_id": "VIP-R-01",
+      "statement": "The objective of three-way matching must survive the redesign in some form; the matching function may be retained, restructured, merged or absorbed, but not eliminated.",
+      "rule_type": "step_preserved",
+      "params": {
+        "baseline_step_id": "VIP-03"
+      }
+    },
+    {
+      "requirement_id": "VIP-R-02",
+      "statement": "Whatever carries the matching function must still consume PO data and GRN data.",
+      "rule_type": "inputs_required",
+      "params": {
+        "baseline_step_id": "VIP-03",
+        "required_inputs": [
+          "Purchase order data",
+          "Goods receipt note data"
+        ]
+      }
+    },
+    {
+      "requirement_id": "VIP-R-03",
+      "statement": "Invoice approval must survive in some form.",
+      "rule_type": "step_preserved",
+      "params": {
+        "baseline_step_id": "VIP-05"
+      }
+    },
+    {
+      "requirement_id": "VIP-R-04",
+      "statement": "Approval must occur before payment execution.",
+      "rule_type": "ordering_preserved",
+      "params": {
+        "before_step_id": "VIP-05",
+        "after_step_id": "VIP-07"
+      }
+    },
+    {
+      "requirement_id": "VIP-R-05",
+      "statement": "GL posting must survive; invoices cannot bypass the ledger.",
+      "rule_type": "step_preserved",
+      "params": {
+        "baseline_step_id": "VIP-06"
+      }
+    },
+    {
+      "requirement_id": "VIP-R-06",
+      "statement": "The approval function and the posting function must not be performed by the same actor.",
+      "rule_type": "actor_separation",
+      "params": {
+        "baseline_step_ids": [
+          "VIP-05",
+          "VIP-06"
+        ]
+      }
+    },
+    {
+      "requirement_id": "VIP-R-07",
+      "statement": "AP reconciliation must survive the redesign.",
+      "rule_type": "step_preserved",
+      "params": {
+        "baseline_step_id": "VIP-08"
+      }
+    }
+  ],
   "source_mapping": {
     "VIP-01": {
       "apqc_activity_ids": [],
       "practitioner_note": "intake precedes 9.6.1; HighRadius multi-channel"
     },
     "VIP-02": {
-      "apqc_activity_ids": [10871],
+      "apqc_activity_ids": [
+        10871
+      ],
       "practitioner_note": null
     },
     "VIP-03": {
-      "apqc_activity_ids": [10869],
+      "apqc_activity_ids": [
+        10869
+      ],
       "practitioner_note": null
     },
     "VIP-04": {
-      "apqc_activity_ids": [10875],
+      "apqc_activity_ids": [
+        10875
+      ],
       "practitioner_note": null
     },
     "VIP-05": {
-      "apqc_activity_ids": [10872],
+      "apqc_activity_ids": [
+        10872
+      ],
       "practitioner_note": null
     },
     "VIP-06": {
-      "apqc_activity_ids": [10873, 10874, 10879],
+      "apqc_activity_ids": [
+        10873,
+        10874,
+        10879
+      ],
       "practitioner_note": "weak anchor, accepted"
     },
     "VIP-07": {
-      "apqc_activity_ids": [10876],
+      "apqc_activity_ids": [
+        10876
+      ],
       "practitioner_note": null
     },
     "VIP-08": {
-      "apqc_activity_ids": [10824],
+      "apqc_activity_ids": [
+        10824
+      ],
       "practitioner_note": "cross-group anchor, 9.3.2.6"
     }
   }

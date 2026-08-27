@@ -1,0 +1,169 @@
+{
+  "workflow_id": "P2P-VIP-01",
+  "baseline_step_ids": [
+    "VIP-01",
+    "VIP-02",
+    "VIP-03",
+    "VIP-04",
+    "VIP-05",
+    "VIP-06",
+    "VIP-07",
+    "VIP-08"
+  ],
+  "steps": [
+    {
+      "step_id": "TS-01",
+      "name": "Multi-channel capture and extraction",
+      "description": "SMOKE FIXTURE. Invoices from all channels are captured and extracted into a structured validated record in one automated pass, with clerk review only on low-confidence extractions.",
+      "actor": "AP automation platform",
+      "inputs": [
+        "Vendor invoice (email PDF, EDI, supplier portal or paper)"
+      ],
+      "outputs": [
+        "Structured validated invoice record"
+      ]
+    },
+    {
+      "step_id": "TS-03",
+      "name": "Invoice query resolution",
+      "description": "SMOKE FIXTURE. Analysts resolve vendor queries and disputes raised after the fact, with no upstream match to surface them.",
+      "actor": "AP analyst",
+      "inputs": [
+        "Structured validated invoice record",
+        "Variance detail",
+        "Purchase order data",
+        "Goods receipt note data"
+      ],
+      "outputs": [
+        "Resolved invoice (approved, rejected or held)",
+        "Audit trail"
+      ]
+    },
+    {
+      "step_id": "TS-04",
+      "name": "Risk-based approval",
+      "description": "SMOKE FIXTURE. Clean matched invoices within policy are auto-approved; the rest route through the approval matrix to a human approver.",
+      "actor": "Approver hierarchy",
+      "inputs": [
+        "Matched invoice",
+        "Proposed GL coding",
+        "Approval matrix"
+      ],
+      "outputs": [
+        "Fully approved invoice"
+      ]
+    },
+    {
+      "step_id": "TS-05",
+      "name": "Automated GL coding and posting",
+      "description": "SMOKE FIXTURE. Approved invoices are coded from vendor and PO defaults and posted to the ledger and subledger, with the accountant reviewing only exceptions.",
+      "actor": "AP accountant",
+      "inputs": [
+        "Fully approved invoice",
+        "Chart of accounts",
+        "Cost centres",
+        "Project codes"
+      ],
+      "outputs": [
+        "GL journal entry posted",
+        "AP subledger updated"
+      ]
+    },
+    {
+      "step_id": "TS-06",
+      "name": "Payment run scheduling and execution",
+      "description": "SMOKE FIXTURE. Posted invoices are scheduled into payment runs against terms and cash position; the payment file is transmitted and confirmed.",
+      "actor": "Treasury/AP payments officer",
+      "inputs": [
+        "Approved posted invoice",
+        "Payment terms",
+        "Vendor bank details",
+        "Cash position"
+      ],
+      "outputs": [
+        "Payment file generated",
+        "Payment transmitted",
+        "Payment confirmation received"
+      ]
+    },
+    {
+      "step_id": "TS-07",
+      "name": "Continuous reconciliation and close",
+      "description": "SMOKE FIXTURE. Bank confirmations, subledger and vendor statements reconcile continuously through the period rather than only at close.",
+      "actor": "AP accountant",
+      "inputs": [
+        "Bank confirmations",
+        "AP subledger",
+        "Vendor statements"
+      ],
+      "outputs": [
+        "Reconciled AP ledger",
+        "Period-end balance confirmed"
+      ]
+    }
+  ],
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "VIP-01",
+      "disposition": "merged",
+      "rationale": "SMOKE FIXTURE. Intake is merged with extraction into TS-01; channel handling becomes part of one capture step.",
+      "target_step_ids": [
+        "TS-01"
+      ]
+    },
+    {
+      "baseline_step_id": "VIP-02",
+      "disposition": "merged",
+      "rationale": "SMOKE FIXTURE. Extraction and validation are merged with intake into TS-01.",
+      "target_step_ids": [
+        "TS-01"
+      ]
+    },
+    {
+      "baseline_step_id": "VIP-03",
+      "disposition": "eliminated",
+      "rationale": "SMOKE FIXTURE. This is the deliberate defect: the three-way match is removed outright to shorten cycle time, so no step in the target state performs it. VIP-R-01 and VIP-R-02 must both fail.",
+      "target_step_ids": []
+    },
+    {
+      "baseline_step_id": "VIP-04",
+      "disposition": "restructured",
+      "rationale": "SMOKE FIXTURE. Exception handling becomes after-the-fact query resolution now that nothing upstream flags exceptions.",
+      "target_step_ids": [
+        "TS-03"
+      ]
+    },
+    {
+      "baseline_step_id": "VIP-05",
+      "disposition": "restructured",
+      "rationale": "SMOKE FIXTURE. Approval is retained as a control but routed by risk, with policy-compliant invoices auto-approved.",
+      "target_step_ids": [
+        "TS-04"
+      ]
+    },
+    {
+      "baseline_step_id": "VIP-06",
+      "disposition": "restructured",
+      "rationale": "SMOKE FIXTURE. Coding is derived automatically, with the accountant retaining ownership of the posting.",
+      "target_step_ids": [
+        "TS-05"
+      ]
+    },
+    {
+      "baseline_step_id": "VIP-07",
+      "disposition": "retained",
+      "rationale": "SMOKE FIXTURE. Payment scheduling and execution carry over substantially unchanged.",
+      "target_step_ids": [
+        "TS-06"
+      ]
+    },
+    {
+      "baseline_step_id": "VIP-08",
+      "disposition": "restructured",
+      "rationale": "SMOKE FIXTURE. Reconciliation moves from a period-end exercise to a continuous one.",
+      "target_step_ids": [
+        "TS-07"
+      ]
+    }
+  ]
+}
