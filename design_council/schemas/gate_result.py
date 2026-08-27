@@ -74,9 +74,10 @@ class GateResult(BaseModel):
 def score_for(results: list[RequirementResult]) -> float:
     """Fraction of requirements passed.
 
-    An encoding with no requirements scores 1.0: nothing was checked, so
-    nothing failed. That is vacuous rather than meaningful, and the caller is
-    responsible for not reading it as evidence of conformance.
+    An empty results list scores 1.0: nothing was checked, so nothing failed.
+    That is vacuous rather than meaningful, which is why evaluate() refuses an
+    encoding with no requirements instead of producing one. The case remains
+    defined here only so that a GateResult constructed directly is total.
     """
     if not results:
         return 1.0

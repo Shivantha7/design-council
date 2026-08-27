@@ -370,6 +370,76 @@ def test_disposition_in_rejects_a_disposition_that_does_not_exist():
         evaluate(source, tss(CONFORMANT_PATH))
 
 
+# --- an encoding with nothing to check ---------------------------------------
+
+
+def minimal_tss_for(encoding: WorkflowEncoding) -> TargetStateSpec:
+    """A trivially valid TSS for an encoding: every step retained, one to one.
+
+    Used to reach the gate with a TSS that is definitely not the reason for a
+    failure, so a raised error can only have come from the encoding.
+    """
+    return TargetStateSpec.model_validate(
+        {
+            "workflow_id": encoding.workflow_id,
+            "baseline_step_ids": encoding.step_ids(),
+            "steps": [step.model_dump() for step in encoding.steps],
+            "disposition_mapping": [
+                {
+                    "baseline_step_id": step.step_id,
+                    "disposition": "retained",
+                    "rationale": "Carried over unchanged.",
+                    "target_step_ids": [step.step_id],
+                }
+                for step in encoding.steps
+            ],
+        }
+    )
+
+
+def test_encoding_with_no_requirements_raises():
+    """A gate with nothing to check must never report a pass."""
+    source = encoding_with([])
+
+    with pytest.raises(GateConfigError, match="no requirements"):
+        evaluate(source, tss(CONFORMANT_PATH))
+
+
+def test_dev_encoding_p2p_vip_01_raises_until_its_requirements_are_authored():
+    """P2P-VIP-01 is encoded but its requirements are not yet written. Until
+    they are, it must not be scorable: an unconstrained gate would return 1.0
+    for any TSS at all.
+
+    DELETE THIS TEST once the requirements are authored — it asserts the list
+    is empty, so it fails by design at that point. The rule itself stays
+    covered by test_encoding_with_no_requirements_raises.
+    """
+    path = (
+        Path(__file__).resolve().parent.parent
+        / "data"
+        / "encodings"
+        / "dev"
+        / "p2p_vendor_invoice_processing.json"
+    )
+    source = WorkflowEncoding.model_validate(load_json(path))
+    assert source.requirements == []
+
+    with pytest.raises(GateConfigError, match="P2P-VIP-01"):
+        evaluate(source, minimal_tss_for(source))
+
+
+def test_empty_requirements_is_checked_before_the_tss():
+    """The defect is in the encoding, so it is reported whatever TSS is paired
+    with it — including one from another workflow entirely."""
+    source = encoding_with([])
+    data = load_json(CONFORMANT_PATH)
+    data["workflow_id"] = "DUMMY-P2P-999"
+    mismatched = TargetStateSpec.model_validate(data)
+
+    with pytest.raises(GateConfigError, match="no requirements"):
+        evaluate(source, mismatched)
+
+
 # --- guards on the gate itself -----------------------------------------------
 
 

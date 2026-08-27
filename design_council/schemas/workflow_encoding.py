@@ -72,6 +72,25 @@ class Requirement(BaseModel):
     params: dict[str, Any] = Field(default_factory=dict)
 
 
+class SourceMappingEntry(BaseModel):
+    """Where one encoded step was anchored in the source framework.
+
+    apqc_activity_ids lists the APQC PCF activity ids the step was mapped to.
+    An empty list is a deliberate boundary decision, not a missing value: the
+    step was encoded even though no activity in the referenced process anchors
+    it. practitioner_note records why, in one line, for anchors that were
+    weak, cross-group, or outside the process boundary.
+
+    This is provenance for the encoding, not input to any rule. The gate does
+    not read it.
+    """
+
+    model_config = ConfigDict(extra="forbid")
+
+    apqc_activity_ids: list[int] = Field(default_factory=list)
+    practitioner_note: str | None = None
+
+
 class WorkflowEncoding(BaseModel):
     """A finance workflow as it is performed today, plus its rule statements."""
 
@@ -83,6 +102,7 @@ class WorkflowEncoding(BaseModel):
     source: Source
     steps: list[WorkflowStep] = Field(min_length=1)
     requirements: list[Requirement] = Field(default_factory=list)
+    source_mapping: dict[str, SourceMappingEntry] = Field(default_factory=dict)
 
     @model_validator(mode="after")
     def check_ids_are_unique(self) -> "WorkflowEncoding":
@@ -102,6 +122,33 @@ class WorkflowEncoding(BaseModel):
         )
         if duplicate_requirements:
             raise ValueError(f"duplicate requirement_id(s): {duplicate_requirements}")
+
+        return self
+
+    @model_validator(mode="after")
+    def check_source_mapping_covers_every_step(self) -> "WorkflowEncoding":
+        """source_mapping is optional, but partial coverage is not allowed.
+
+        An absent mapping means the encoding was not source-mapped. A present
+        one must account for every step, so that a step with no entry cannot be
+        confused with a step deliberately mapped to no activity (which is
+        recorded as an empty apqc_activity_ids list).
+        """
+        if not self.source_mapping:
+            return self
+
+        mapped = set(self.source_mapping)
+        known = set(self.step_ids())
+
+        missing = sorted(known - mapped)
+        if missing:
+            raise ValueError(f"source_mapping is missing step_id(s): {missing}")
+
+        unknown = sorted(mapped - known)
+        if unknown:
+            raise ValueError(
+                f"source_mapping refers to step_id(s) not in the workflow: {unknown}"
+            )
 
         return self
 

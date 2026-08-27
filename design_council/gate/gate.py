@@ -285,7 +285,19 @@ def evaluate(encoding: WorkflowEncoding, tss: TargetStateSpec) -> GateResult:
     requirement the gate cannot evaluate, and ValueError if the TSS does not
     belong to this encoding — neither is reported as a failed requirement,
     because neither is a finding about the redesign.
+
+    An encoding with no requirements is itself a configuration error. Scoring
+    it would return 1.0 for any TSS, including a worthless one, so the gate
+    refuses rather than emitting a perfect score that means nothing. This is
+    checked before anything else, because it is a defect in the encoding and
+    holds whatever TSS it is paired with.
     """
+    if not encoding.requirements:
+        raise GateConfigError(
+            f"encoding {encoding.workflow_id!r} has no requirements; there is "
+            f"nothing to check, and an unconstrained gate must not report a pass"
+        )
+
     check_against_encoding(tss, encoding)
 
     results = []

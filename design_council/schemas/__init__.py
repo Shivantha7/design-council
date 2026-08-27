@@ -15,6 +15,7 @@ from design_council.schemas.workflow_encoding import (
     Domain,
     Requirement,
     Source,
+    SourceMappingEntry,
     WorkflowEncoding,
     WorkflowStep,
 )
@@ -27,6 +28,7 @@ __all__ = [
     "Domain",
     "Requirement",
     "Source",
+    "SourceMappingEntry",
     "TargetStateSpec",
     "WorkflowEncoding",
     "WorkflowStep",
