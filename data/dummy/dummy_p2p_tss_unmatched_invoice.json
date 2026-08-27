@@ -1,38 +1,60 @@
 {
   "workflow_id": "DUMMY-P2P-001",
-  "baseline_step_ids": ["REQ-01", "APR-01", "PO-01", "INV-01"],
+  "baseline_step_ids": [
+    "REQ-01",
+    "APR-01",
+    "PO-01",
+    "INV-01"
+  ],
   "steps": [
     {
       "step_id": "TS-01",
       "name": "Raise purchase requisition",
       "description": "DUMMY. Requester submits a requisition with quantity, cost centre and estimated value.",
       "actor": "Requester",
-      "inputs": ["Identified need"],
-      "outputs": ["Draft requisition"]
+      "inputs": [
+        "Identified need"
+      ],
+      "outputs": [
+        "Draft requisition"
+      ]
     },
     {
       "step_id": "TS-02",
       "name": "Approve requisition",
       "description": "DUMMY. Cost centre manager approves the requisition against budget.",
       "actor": "Cost centre manager",
-      "inputs": ["Draft requisition", "Cost centre budget"],
-      "outputs": ["Approved requisition"]
+      "inputs": [
+        "Draft requisition",
+        "Cost centre budget"
+      ],
+      "outputs": [
+        "Approved requisition"
+      ]
     },
     {
       "step_id": "TS-03",
       "name": "Auto-issue purchase order",
       "description": "DUMMY. System issues the purchase order from the approved requisition.",
       "actor": "P2P system",
-      "inputs": ["Approved requisition"],
-      "outputs": ["Purchase order"]
+      "inputs": [
+        "Approved requisition"
+      ],
+      "outputs": [
+        "Purchase order"
+      ]
     },
     {
       "step_id": "TS-04",
       "name": "Post supplier invoice on receipt",
       "description": "DUMMY. Accounts payable system posts the supplier invoice straight to the ledger on arrival. This is the deliberate defect in this fixture: the purchase order and goods receipt note are no longer inputs, so no match is possible and DUMMY-R-02 must fail.",
       "actor": "Accounts payable system",
-      "inputs": ["Supplier invoice"],
-      "outputs": ["Posted payable"]
+      "inputs": [
+        "Supplier invoice"
+      ],
+      "outputs": [
+        "Posted payable"
+      ]
     }
   ],
   "disposition_mapping": [
@@ -40,25 +62,33 @@
       "baseline_step_id": "REQ-01",
       "disposition": "retained",
       "rationale": "DUMMY. Requisition entry is carried over unchanged.",
-      "target_step_ids": ["TS-01"]
+      "target_step_ids": [
+        "TS-01"
+      ]
     },
     {
       "baseline_step_id": "APR-01",
       "disposition": "retained",
       "rationale": "DUMMY. Manager approval is carried over unchanged, so the approval control still exists.",
-      "target_step_ids": ["TS-02"]
+      "target_step_ids": [
+        "TS-02"
+      ]
     },
     {
       "baseline_step_id": "PO-01",
       "disposition": "restructured",
       "rationale": "DUMMY. Purchase order issue is automated but remains a distinct step in the same position.",
-      "target_step_ids": ["TS-03"]
+      "target_step_ids": [
+        "TS-03"
+      ]
     },
     {
       "baseline_step_id": "INV-01",
       "disposition": "restructured",
       "rationale": "DUMMY. Invoice posting is retained as a step but the three-way match is dropped from it.",
-      "target_step_ids": ["TS-04"]
+      "target_step_ids": [
+        "TS-04"
+      ]
     }
   ]
 }

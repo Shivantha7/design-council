@@ -1,30 +1,51 @@
 {
   "workflow_id": "DUMMY-P2P-001",
-  "baseline_step_ids": ["REQ-01", "APR-01", "PO-01", "INV-01"],
+  "baseline_step_ids": [
+    "REQ-01",
+    "APR-01",
+    "PO-01",
+    "INV-01"
+  ],
   "steps": [
     {
       "step_id": "TS-01",
       "name": "Raise requisition with automated budget approval",
       "description": "Requester submits a requisition that the system validates against cost centre budget and supplier master data, approving it automatically within threshold and routing breaches to the cost centre manager.",
       "actor": "Requester",
-      "inputs": ["Identified need", "Cost centre budget", "Supplier master data"],
-      "outputs": ["Approved requisition"]
+      "inputs": [
+        "Identified need",
+        "Cost centre budget",
+        "Supplier master data"
+      ],
+      "outputs": [
+        "Approved requisition"
+      ]
     },
     {
       "step_id": "TS-02",
       "name": "Auto-issue purchase order",
       "description": "System issues the purchase order from the approved requisition and dispatches it to the supplier without manual conversion.",
       "actor": "P2P system",
-      "inputs": ["Approved requisition"],
-      "outputs": ["Purchase order"]
+      "inputs": [
+        "Approved requisition"
+      ],
+      "outputs": [
+        "Purchase order"
+      ]
     },
     {
       "step_id": "TS-03",
       "name": "Match and post supplier invoice",
       "description": "Accounts payable system matches the supplier invoice against the purchase order and goods receipt note, posting the payable when all three agree and raising an exception otherwise.",
       "actor": "Accounts payable system",
-      "inputs": ["Purchase order", "Goods receipt note", "Supplier invoice"],
-      "outputs": ["Posted payable"]
+      "inputs": [
+        "Purchase order",
+        "Goods receipt note",
+        "Supplier invoice"
+      ],
+      "outputs": [
+        "Posted payable"
+      ]
     }
   ],
   "disposition_mapping": [
@@ -32,25 +53,33 @@
       "baseline_step_id": "REQ-01",
       "disposition": "merged",
       "rationale": "DUMMY. Requisition entry is merged with approval into the single step TS-01, where validation happens at point of entry.",
-      "target_step_ids": ["TS-01"]
+      "target_step_ids": [
+        "TS-01"
+      ]
     },
     {
       "baseline_step_id": "APR-01",
       "disposition": "merged",
       "rationale": "DUMMY. Approval is merged into TS-01 as an automated budget check with exception routing. The control still exists and is still evidenced; it is no longer a separate manual step.",
-      "target_step_ids": ["TS-01"]
+      "target_step_ids": [
+        "TS-01"
+      ]
     },
     {
       "baseline_step_id": "PO-01",
       "disposition": "restructured",
       "rationale": "DUMMY. Purchase order issue remains a distinct step but is performed by the system on approval rather than by a procurement officer.",
-      "target_step_ids": ["TS-02"]
+      "target_step_ids": [
+        "TS-02"
+      ]
     },
     {
       "baseline_step_id": "INV-01",
       "disposition": "retained",
       "rationale": "DUMMY. The three-way match is carried over substantially unchanged in TS-03, with the system performing the comparison the clerk performed by hand.",
-      "target_step_ids": ["TS-03"]
+      "target_step_ids": [
+        "TS-03"
+      ]
     }
   ]
 }
