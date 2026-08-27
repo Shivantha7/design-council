@@ -15,6 +15,8 @@ Specifications for finance workflows.
   Never modify them.
 - **Every LLM call must log** model, pinned version, seed, token counts, and raw output
   to `runs/`.
+- **The KB `ref` field is TBC until manually verified against standards texts; never fill
+  in paragraph references to accounting standards yourself.**
 
 ## Style
 Prefer plain, simple code over clever abstractions. This is research code that must be

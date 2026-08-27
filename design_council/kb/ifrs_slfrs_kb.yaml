@@ -1,0 +1,152 @@
+# IFRS/SLFRS knowledge base.
+#
+# Curated by hand. Every `ref` is "TBC" until the paragraph citation has been
+# verified against the standard text; paragraph references are never written
+# from memory. See CLAUDE.md.
+#
+# `bears_on` lists the workflow step ids the principle bears on. Those ids are
+# checked against the encodings under data/encodings/ by tests/test_kb.py.
+
+entries:
+  - id: "KB-01"
+    standard: "IAS 1"
+    slfrs_equivalent: "LKAS 1"
+    ref: "TBC"
+    topic: "Accrual basis"
+    principle: "Transactions are recognised when they occur, not when cash moves. Any redesign of close must preserve the accrual mechanism: accruals, prepayment releases and provisions cannot be simplified away."
+    bears_on: ["PC-02", "VIP-06"]
+    domains: ["R2R", "P2P"]
+    relevance: "core"
+
+  - id: "KB-02"
+    standard: "IAS 1"
+    slfrs_equivalent: "LKAS 1"
+    ref: "TBC"
+    topic: "Fair presentation and faithful representation"
+    principle: "Reported figures must be supportable by evidence. Redesigns cannot remove the evidential trail linking journals and reconciliations to reported balances."
+    bears_on: ["PC-05", "PC-07", "PC-08"]
+    domains: ["R2R"]
+    relevance: "core"
+
+  - id: "KB-03"
+    standard: "IAS 1"
+    slfrs_equivalent: "LKAS 1"
+    ref: "TBC"
+    topic: "Reporting-period discipline"
+    principle: "Financial statements cover defined periods with consistent cutoff. Cutoff enforcement, such as subledger locks and period gates, must survive in some form."
+    bears_on: ["PC-01", "VIP-08", "RF-02"]
+    domains: ["R2R", "P2P", "FPA"]
+    relevance: "core"
+
+  - id: "KB-04"
+    standard: "IAS 8"
+    slfrs_equivalent: "LKAS 8"
+    ref: "TBC"
+    topic: "Accounting estimates"
+    principle: "Accounting estimates require judgment and a documented basis. A redesign may automate mechanical entries, but estimation-based entries such as provisions and impairments need an accountable human or a documented-model basis."
+    bears_on: ["PC-02"]
+    domains: ["R2R"]
+    relevance: "core"
+
+  - id: "KB-05"
+    standard: "IAS 8"
+    slfrs_equivalent: "LKAS 8"
+    ref: "TBC"
+    topic: "Error correction"
+    principle: "Errors are corrected, not suppressed. Error detection and correction paths must exist in the target state."
+    bears_on: ["PC-02", "PC-05", "VIP-04"]
+    domains: ["R2R", "P2P"]
+    relevance: "core"
+
+  - id: "KB-06"
+    standard: "IAS 8"
+    slfrs_equivalent: "LKAS 8"
+    ref: "TBC"
+    topic: "Policy consistency"
+    principle: "Accounting policies are applied consistently across periods. Redesigns that change how amounts are computed must preserve policy continuity or surface the change for disclosure."
+    bears_on: ["PC-06", "RF-05"]
+    domains: ["R2R", "FPA"]
+    relevance: "core"
+
+  - id: "KB-07"
+    standard: "IAS 21"
+    slfrs_equivalent: "LKAS 21"
+    ref: "TBC"
+    topic: "FX translation"
+    principle: "Monetary items are retranslated at the closing rate; transactions are initially recorded at the spot rate. FX translation is a mandatory computation in consolidation and cannot be eliminated where multi-currency entities exist."
+    bears_on: ["PC-06"]
+    domains: ["R2R"]
+    relevance: "core"
+
+  - id: "KB-08"
+    standard: "IAS 21"
+    slfrs_equivalent: "LKAS 21"
+    ref: "TBC"
+    topic: "Exchange differences"
+    principle: "Exchange differences must be tracked and reported, not netted invisibly."
+    bears_on: ["PC-06", "VIP-07", "RF-03"]
+    domains: ["R2R", "P2P", "FPA"]
+    relevance: "core"
+
+  - id: "KB-09"
+    standard: "IAS 2"
+    slfrs_equivalent: "LKAS 2"
+    ref: "TBC"
+    topic: "Inventory cost and evidence"
+    principle: "Inventories are measured at the lower of cost and net realisable value; cost includes the purchase price net of settlement discounts and rebates. The invoice-to-GRN-to-PO evidence chain is what establishes cost, so the matching function has an accounting-standards basis, not merely a fraud-control one."
+    bears_on: ["VIP-03", "VIP-06"]
+    domains: ["P2P"]
+    relevance: "core"
+
+  - id: "KB-10"
+    standard: "IAS 2"
+    slfrs_equivalent: "LKAS 2"
+    ref: "TBC"
+    topic: "NRV write-downs"
+    principle: "Write-downs to net realisable value are estimation entries requiring a documented basis."
+    bears_on: ["PC-02"]
+    domains: ["R2R"]
+    relevance: "core"
+
+  - id: "KB-11"
+    standard: "IFRS 9"
+    slfrs_equivalent: "SLFRS 9"
+    ref: "TBC"
+    topic: "Payables as financial instruments"
+    principle: "Trade payables and receivables are financial instruments carried at amortised cost. Recognition and derecognition timing, when an invoice becomes a liability and when payment extinguishes it, must remain determinable in any redesigned AP flow."
+    bears_on: ["VIP-06", "VIP-07"]
+    domains: ["P2P"]
+    relevance: "marginal"
+
+  - id: "KB-12"
+    standard: "IFRS 9"
+    slfrs_equivalent: "SLFRS 9"
+    ref: "TBC"
+    topic: "Expected credit losses"
+    principle: "Expected credit loss provisioning on receivables is a forward-looking estimate. Relevant to close provisioning only, as no order-to-cash workflow is in scope."
+    bears_on: ["PC-02"]
+    domains: ["R2R"]
+    relevance: "marginal"
+
+  - id: "KB-13"
+    standard: "IFRS 15"
+    slfrs_equivalent: "SLFRS 15"
+    ref: "TBC"
+    topic: "Revenue recognition timing"
+    principle: "Revenue is recognised as performance obligations are satisfied. In-scope relevance is indirect only: revenue actuals feeding forecast baselines and consolidated results carry recognition-timing assumptions the redesign must not distort. Near-idle for the MSc's three domains; retained because it belongs to the original six-standard pre-registered list, which was expanded to seven when KB-14 added IFRS 10."
+    bears_on: ["RF-02", "PC-06"]
+    domains: ["FPA", "R2R"]
+    relevance: "marginal"
+
+  # Added 27 Aug 2026 via coverage audit: seventh standard (IFRS 10 / SLFRS 10),
+  # pre-freeze expansion of the original six-standard pre-registered list.
+  # Rationale logged in the MSc KB curation artefact (Notion) and git history.
+  - id: "KB-14"
+    standard: "IFRS 10"
+    slfrs_equivalent: "SLFRS 10"
+    ref: "TBC"
+    topic: "Intercompany elimination"
+    principle: "Consolidated financial statements present the group as a single economic entity: intragroup balances, transactions and unrealised profits must be identifiable and eliminated in full. Any redesign of intercompany processing must preserve the ability to identify, match and eliminate intragroup positions completely."
+    bears_on: ["PC-04", "PC-06"]
+    domains: ["R2R"]
+    relevance: "core"
