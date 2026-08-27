@@ -20,3 +20,7 @@ Specifications for finance workflows.
 Prefer plain, simple code over clever abstractions. This is research code that must be
 auditable — a reader reconstructing a result from the repo should not have to unpick
 indirection to see what happened.
+
+## Working agreement
+- **Do not run `git commit` unless explicitly instructed.** Staging and committing are
+  the user's call. Leave finished work in the working tree and say what is ready.
