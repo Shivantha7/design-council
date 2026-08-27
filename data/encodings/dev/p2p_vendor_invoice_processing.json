@@ -188,6 +188,14 @@
       "params": {
         "baseline_step_id": "VIP-08"
       }
+    },
+    {
+      "requirement_id": "VIP-R-08",
+      "statement": "Payment execution must survive in some form.",
+      "rule_type": "step_preserved",
+      "params": {
+        "baseline_step_id": "VIP-07"
+      }
     }
   ],
   "source_mapping": {
@@ -239,5 +247,10 @@
       ],
       "practitioner_note": "cross-group anchor, 9.3.2.6"
     }
-  }
+  },
+  "unconstrained_by_design": [
+    "VIP-01",
+    "VIP-02",
+    "VIP-04"
+  ]
 }

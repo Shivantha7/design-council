@@ -413,7 +413,7 @@ def test_dev_encoding_p2p_vip_01_is_satisfied_by_its_own_baseline():
     )
     source = WorkflowEncoding.model_validate(load_json(path))
     assert [r.requirement_id for r in source.requirements] == [
-        f"VIP-R-0{n}" for n in range(1, 8)
+        f"VIP-R-0{n}" for n in range(1, 9)
     ]
 
     result = evaluate(source, minimal_tss_for(source))
@@ -433,6 +433,7 @@ DEV_ENCODING_PATH = (
 VIP_CONFORMANT_PATH = DUMMY_DIR / "vip_smoke_conformant.json"
 VIP_VIOLATING_PATH = DUMMY_DIR / "vip_smoke_violating.json"
 VIP_NO_APPROVAL_PATH = DUMMY_DIR / "vip_smoke_no_approval.json"
+VIP_SOD_VIOLATION_PATH = DUMMY_DIR / "vip_smoke_sod_violation.json"
 
 
 def dev_encoding() -> WorkflowEncoding:
@@ -459,10 +460,10 @@ def assert_vacuous(result, requirement_ids: list[str]) -> None:
         )
 
 
-ALL_VIP_REQUIREMENTS = [f"VIP-R-0{n}" for n in range(1, 8)]
+ALL_VIP_REQUIREMENTS = [f"VIP-R-0{n}" for n in range(1, 9)]
 
 
-def test_conformant_smoke_fixture_scores_seven_of_seven():
+def test_conformant_smoke_fixture_scores_eight_of_eight():
     """A plausible touchless-AP redesign that keeps every control it should.
 
     Every pass must be substantive: a 1.0 built partly on vacuous passes would
@@ -477,7 +478,7 @@ def test_conformant_smoke_fixture_scores_seven_of_seven():
     assert_substantive(result, ALL_VIP_REQUIREMENTS)
 
 
-def test_violating_smoke_fixture_scores_five_of_seven():
+def test_violating_smoke_fixture_scores_six_of_eight():
     """Eliminating the three-way match fails both requirements that rest on it.
 
     Unlike the no-approval fixture, nothing here passes vacuously: VIP-05
@@ -488,7 +489,7 @@ def test_violating_smoke_fixture_scores_five_of_seven():
     result = evaluate(dev_encoding(), tss(VIP_VIOLATING_PATH))
 
     assert result.failed_requirement_ids() == ["VIP-R-01", "VIP-R-02"]
-    assert result.conformance_score == pytest.approx(5 / 7)
+    assert result.conformance_score == pytest.approx(6 / 8)
 
     for requirement_id in ["VIP-R-01", "VIP-R-02"]:
         entry = result.result_for(requirement_id)
@@ -496,11 +497,12 @@ def test_violating_smoke_fixture_scores_five_of_seven():
         assert "eliminated" in entry.reason
 
     assert_substantive(
-        result, ["VIP-R-03", "VIP-R-04", "VIP-R-05", "VIP-R-06", "VIP-R-07"]
+        result,
+        ["VIP-R-03", "VIP-R-04", "VIP-R-05", "VIP-R-06", "VIP-R-07", "VIP-R-08"],
     )
 
 
-def test_no_approval_smoke_fixture_scores_six_of_seven():
+def test_no_approval_smoke_fixture_scores_seven_of_eight():
     """Eliminating approval fails one requirement and silences two others.
 
     VIP-R-03 requires VIP-05 to survive, so removing it fails. But VIP-R-04
@@ -515,7 +517,7 @@ def test_no_approval_smoke_fixture_scores_six_of_seven():
     result = evaluate(dev_encoding(), tss(VIP_NO_APPROVAL_PATH))
 
     assert result.failed_requirement_ids() == ["VIP-R-03"]
-    assert result.conformance_score == pytest.approx(6 / 7)
+    assert result.conformance_score == pytest.approx(7 / 8)
 
     failure = result.result_for("VIP-R-03")
     assert "VIP-05" in failure.reason
@@ -525,7 +527,168 @@ def test_no_approval_smoke_fixture_scores_six_of_seven():
     for requirement_id in ["VIP-R-04", "VIP-R-06"]:
         assert "VIP-05" in result.result_for(requirement_id).reason
 
-    assert_substantive(result, ["VIP-R-01", "VIP-R-02", "VIP-R-05", "VIP-R-07"])
+    assert_substantive(
+        result, ["VIP-R-01", "VIP-R-02", "VIP-R-05", "VIP-R-07", "VIP-R-08"]
+    )
+
+
+# --- R2R-PC-01 and FPA-RF-01 smoke fixtures ----------------------------------
+
+R2R_ENCODING_PATH = (
+    Path(__file__).resolve().parent.parent
+    / "data"
+    / "encodings"
+    / "dev"
+    / "r2r_period_close_management.json"
+)
+FPA_ENCODING_PATH = (
+    Path(__file__).resolve().parent.parent
+    / "data"
+    / "encodings"
+    / "dev"
+    / "fpa_rolling_forecast_update.json"
+)
+PC_CONFORMANT_PATH = DUMMY_DIR / "pc_smoke_conformant.json"
+PC_VIOLATING_PATH = DUMMY_DIR / "pc_smoke_violating.json"
+RF_CONFORMANT_PATH = DUMMY_DIR / "rf_smoke_conformant.json"
+RF_VIOLATING_PATH = DUMMY_DIR / "rf_smoke_violating.json"
+
+ALL_R2R_REQUIREMENTS = [f"R2R-R-0{n}" for n in range(1, 8)]
+ALL_FPA_REQUIREMENTS = [f"FPA-R-0{n}" for n in range(1, 6)]
+
+
+def r2r_encoding() -> WorkflowEncoding:
+    return WorkflowEncoding.model_validate(load_json(R2R_ENCODING_PATH))
+
+
+def fpa_encoding() -> WorkflowEncoding:
+    return WorkflowEncoding.model_validate(load_json(FPA_ENCODING_PATH))
+
+
+def test_pc_conformant_smoke_fixture_scores_seven_of_seven():
+    """A plausible continuous-close redesign that keeps every control it should."""
+    result = evaluate(r2r_encoding(), tss(PC_CONFORMANT_PATH))
+
+    assert result.failed_requirement_ids() == []
+    assert result.conformance_score == 1.0
+    assert [r.requirement_id for r in result.results] == ALL_R2R_REQUIREMENTS
+
+    assert_substantive(result, ALL_R2R_REQUIREMENTS)
+
+
+def test_pc_violating_smoke_fixture_scores_six_of_seven():
+    """Eliminating reconciliation fails R2R-R-01 and silences R2R-R-03.
+
+    R2R-R-03 requires reconciliation to precede the reporting package. With
+    PC-05 gone there is no ordering left to check, so it passes vacuously —
+    the same interaction the VIP no-approval fixture records.
+    """
+    result = evaluate(r2r_encoding(), tss(PC_VIOLATING_PATH))
+
+    assert result.failed_requirement_ids() == ["R2R-R-01"]
+    assert result.conformance_score == pytest.approx(6 / 7)
+
+    failure = result.result_for("R2R-R-01")
+    assert "PC-05" in failure.reason
+    assert "eliminated" in failure.reason
+
+    assert_vacuous(result, ["R2R-R-03"])
+    assert "PC-05" in result.result_for("R2R-R-03").reason
+
+    assert_substantive(
+        result, ["R2R-R-02", "R2R-R-04", "R2R-R-05", "R2R-R-06", "R2R-R-07"]
+    )
+
+
+def test_rf_conformant_smoke_fixture_scores_five_of_five():
+    result = evaluate(fpa_encoding(), tss(RF_CONFORMANT_PATH))
+
+    assert result.failed_requirement_ids() == []
+    assert result.conformance_score == 1.0
+    assert [r.requirement_id for r in result.results] == ALL_FPA_REQUIREMENTS
+
+    assert_substantive(result, ALL_FPA_REQUIREMENTS)
+
+
+def test_rf_violating_smoke_fixture_fails_ordering_substantively():
+    """Publishing before approval: the first fixture to fail ordering_preserved.
+
+    Both RF-07 and RF-08 survive, so nothing is silenced — the failure is a
+    genuine ordering violation rather than a step being deleted, and every
+    other requirement passes on its merits.
+    """
+    result = evaluate(fpa_encoding(), tss(RF_VIOLATING_PATH))
+
+    assert result.failed_requirement_ids() == ["FPA-R-04"]
+    assert result.conformance_score == pytest.approx(4 / 5)
+
+    failure = result.result_for("FPA-R-04")
+    assert failure.reason.startswith("ordering not preserved: ")
+    assert not failure.reason.startswith("vacuously satisfied: ")
+    assert "RF-07" in failure.reason
+    assert "RF-08" in failure.reason
+
+    assert_substantive(result, ["FPA-R-01", "FPA-R-02", "FPA-R-03", "FPA-R-05"])
+
+
+def test_every_rule_type_in_the_corpus_has_a_demonstrated_failure():
+    """Each rule type used by a real requirement must be shown failing at least
+    once, not only passing. A rule that has never failed in a fixture is a rule
+    whose failure path is untested against real data."""
+    failing_rule_types = set()
+
+    for source, path in [
+        (dev_encoding(), VIP_VIOLATING_PATH),
+        (dev_encoding(), VIP_NO_APPROVAL_PATH),
+        (dev_encoding(), VIP_SOD_VIOLATION_PATH),
+        (r2r_encoding(), PC_VIOLATING_PATH),
+        (fpa_encoding(), RF_VIOLATING_PATH),
+    ]:
+        result = evaluate(source, tss(path))
+        by_id = {r.requirement_id: r for r in source.requirements}
+        for requirement_id in result.failed_requirement_ids():
+            failing_rule_types.add(by_id[requirement_id].rule_type)
+
+    assert failing_rule_types == {
+        "step_preserved",
+        "inputs_required",
+        "ordering_preserved",
+        "actor_separation",
+    }
+
+    # disposition_in is implemented and unit-tested, but no real requirement
+    # uses it yet, so it is deliberately absent from this set.
+    rule_types_in_use = {
+        r.rule_type
+        for source in [dev_encoding(), r2r_encoding(), fpa_encoding()]
+        for r in source.requirements
+    }
+    assert failing_rule_types == rule_types_in_use
+
+
+def test_sod_violation_smoke_fixture_fails_actor_separation_substantively():
+    """Approval and posting performed by the same actor.
+
+    Both VIP-05 and VIP-06 survive, so nothing is silenced: this is a genuine
+    separation-of-duties failure rather than a step being deleted. It is the
+    first fixture to fail actor_separation.
+    """
+    result = evaluate(dev_encoding(), tss(VIP_SOD_VIOLATION_PATH))
+
+    assert result.failed_requirement_ids() == ["VIP-R-06"]
+    assert result.conformance_score == pytest.approx(7 / 8)
+
+    failure = result.result_for("VIP-R-06")
+    assert failure.reason.startswith("actors are not separated: ")
+    assert not failure.reason.startswith("vacuously satisfied: ")
+    assert "VIP-05" in failure.reason
+    assert "VIP-06" in failure.reason
+    assert "AP accountant" in failure.reason
+
+    assert_substantive(
+        result,
+        ["VIP-R-01", "VIP-R-02", "VIP-R-03", "VIP-R-04", "VIP-R-05", "VIP-R-07", "VIP-R-08"],
+    )
 
 
 def test_encoding_with_no_requirements_raises():

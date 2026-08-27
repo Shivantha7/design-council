@@ -103,6 +103,7 @@ class WorkflowEncoding(BaseModel):
     steps: list[WorkflowStep] = Field(min_length=1)
     requirements: list[Requirement] = Field(default_factory=list)
     source_mapping: dict[str, SourceMappingEntry] = Field(default_factory=dict)
+    unconstrained_by_design: list[str] = Field(default_factory=list)
 
     @model_validator(mode="after")
     def check_ids_are_unique(self) -> "WorkflowEncoding":
@@ -122,6 +123,35 @@ class WorkflowEncoding(BaseModel):
         )
         if duplicate_requirements:
             raise ValueError(f"duplicate requirement_id(s): {duplicate_requirements}")
+
+        return self
+
+    @model_validator(mode="after")
+    def check_unconstrained_by_design_refers_to_real_steps(self) -> "WorkflowEncoding":
+        """Steps deliberately left without a preservation requirement.
+
+        Recording them makes the absence of a requirement a decision rather
+        than an oversight: a step is either protected by a requirement or
+        listed here as intentionally open to elimination. Listing a step does
+        not exempt it from other requirements — a step may be unconstrained as
+        to survival while still appearing in an ordering or separation rule.
+        """
+        known = set(self.step_ids())
+
+        unknown = sorted(set(self.unconstrained_by_design) - known)
+        if unknown:
+            raise ValueError(
+                f"unconstrained_by_design refers to step_id(s) not in the "
+                f"workflow: {unknown}"
+            )
+
+        listed = self.unconstrained_by_design
+        duplicates = sorted({i for i in listed if listed.count(i) > 1})
+        if duplicates:
+            raise ValueError(
+                f"unconstrained_by_design lists step_id(s) more than once: "
+                f"{duplicates}"
+            )
 
         return self
 
