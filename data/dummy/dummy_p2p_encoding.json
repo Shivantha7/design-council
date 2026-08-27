@@ -1,0 +1,57 @@
+{
+  "workflow_id": "DUMMY-P2P-001",
+  "name": "DUMMY - Toy purchase-to-pay workflow",
+  "domain": "P2P",
+  "source": {
+    "publisher": "DUMMY - not a real publication",
+    "document_reference": "DUMMY - fixture for tests only, not dissertation data"
+  },
+  "steps": [
+    {
+      "step_id": "REQ-01",
+      "name": "Raise purchase requisition",
+      "description": "Requester records a need and submits a draft requisition with quantity, cost centre and estimated value.",
+      "actor": "Requester",
+      "inputs": ["Identified need"],
+      "outputs": ["Draft requisition"]
+    },
+    {
+      "step_id": "APR-01",
+      "name": "Approve requisition",
+      "description": "Cost centre manager reviews the draft requisition against budget and approves or rejects it.",
+      "actor": "Cost centre manager",
+      "inputs": ["Draft requisition", "Cost centre budget"],
+      "outputs": ["Approved requisition"]
+    },
+    {
+      "step_id": "PO-01",
+      "name": "Issue purchase order",
+      "description": "Procurement officer converts the approved requisition into a purchase order and sends it to the supplier.",
+      "actor": "Procurement officer",
+      "inputs": ["Approved requisition"],
+      "outputs": ["Purchase order"]
+    },
+    {
+      "step_id": "INV-01",
+      "name": "Match and post supplier invoice",
+      "description": "Accounts payable clerk matches the supplier invoice to the purchase order and goods receipt note, then posts the payable.",
+      "actor": "Accounts payable clerk",
+      "inputs": ["Supplier invoice", "Purchase order", "Goods receipt note"],
+      "outputs": ["Posted payable"]
+    }
+  ],
+  "requirements": [
+    {
+      "requirement_id": "DUMMY-R-01",
+      "statement": "Every purchase order shall be supported by an approved requisition."
+    },
+    {
+      "requirement_id": "DUMMY-R-02",
+      "statement": "No supplier invoice shall be posted without a match against the purchase order and the goods receipt note."
+    },
+    {
+      "requirement_id": "DUMMY-R-03",
+      "statement": "Requisition approval and invoice posting shall not be performed by the same actor."
+    }
+  ]
+}
