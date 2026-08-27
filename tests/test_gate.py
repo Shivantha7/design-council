@@ -679,11 +679,11 @@ def test_sod_violation_smoke_fixture_fails_actor_separation_substantively():
     assert result.conformance_score == pytest.approx(7 / 8)
 
     failure = result.result_for("VIP-R-06")
-    assert failure.reason.startswith("actors are not separated: ")
+    assert failure.reason.startswith("separation violated: ")
     assert not failure.reason.startswith("vacuously satisfied: ")
-    assert "VIP-05" in failure.reason
-    assert "VIP-06" in failure.reason
-    assert "AP accountant" in failure.reason
+    assert "VIP-05 → ['AP accountant']" in failure.reason
+    assert "VIP-06 → ['AP accountant']" in failure.reason
+    assert "shared: ['AP accountant']" in failure.reason
 
     assert_substantive(
         result,

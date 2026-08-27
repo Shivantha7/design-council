@@ -217,24 +217,19 @@ def _actor_separation(
         for step_id in step_ids
     }
 
-    shared = []
+    shared = set()
     for index, step_id in enumerate(step_ids):
         for other_id in step_ids[index + 1 :]:
-            overlap = sorted(
-                set(actors_by_step[step_id]) & set(actors_by_step[other_id])
-            )
-            if overlap:
-                shared.append(f"{step_id} and {other_id} share {overlap}")
+            shared |= set(actors_by_step[step_id]) & set(actors_by_step[other_id])
+
+    # Both verdicts report the same per-step form, so a reader can see which
+    # actor sits behind each baseline step without going back to the TSS.
+    per_step = ", ".join(f"{step_id} → {actors_by_step[step_id]}" for step_id in step_ids)
 
     if shared:
-        return False, (
-            "actors are not separated: " + "; ".join(shared)
-        )
+        return False, f"separation violated: {per_step}; shared: {sorted(shared)}"
 
-    return True, (
-        f"target steps for baseline step(s) {step_ids} have disjoint actors "
-        f"{actors_by_step}"
-    )
+    return True, f"actors separated: {per_step}"
 
 
 def _disposition_in(tss: TargetStateSpec, requirement: Requirement) -> tuple[bool, str]:
