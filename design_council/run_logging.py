@@ -240,6 +240,7 @@ class ModelResolution(NamedTuple):
     prompt: str
     completion: str
     params: dict[str, Any]
+    thinking_tokens: int | None = None
 
 
 def resolve_model(
@@ -268,6 +269,7 @@ def resolve_model(
     )
 
     return ModelResolution(
+        thinking_tokens=getattr(client, "last_thinking_tokens", None),
         resolved_model=resolved_model,
         probe=ResolutionProbe(
             timestamp_utc=utc_now_iso(),
@@ -377,6 +379,7 @@ class RunLogger:
                 prompt_hash=sha256_text(resolution.prompt),
                 input_tokens=resolution.probe.input_tokens,
                 output_tokens=resolution.probe.output_tokens,
+                thinking_tokens=resolution.thinking_tokens,
                 raw_completion=resolution.completion,
             )
         )

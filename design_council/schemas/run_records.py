@@ -33,6 +33,12 @@ class CallRecord(BaseModel):
     provider says it used. They differ whenever an undated alias resolves to a
     snapshot, which is exactly the case a reproducible run has to record.
 
+    thinking_tokens is the reasoning portion of output_tokens, where the
+    provider reports it. It is not a separate charge — output_tokens already
+    includes it — but without it a run's visible completion length looks
+    inexplicably small next to its billed output. None means the provider did
+    not report a breakdown.
+
     prompt_hash rather than the prompt itself keeps the line a manageable size
     while still letting two runs be compared for identical input. The prompt is
     reconstructable from the KB and encoding, both of which the manifest pins by
@@ -53,6 +59,7 @@ class CallRecord(BaseModel):
     prompt_hash: str = Field(pattern=SHA256_HEX)
     input_tokens: int = Field(ge=0)
     output_tokens: int = Field(ge=0)
+    thinking_tokens: int | None = None
     raw_completion: str
 
 
