@@ -46,11 +46,24 @@ def main(argv: list[str]) -> int:
 
     passed = sum(1 for r in result.results if r.passed)
     total = len(result.results)
-    print(f"\nconformance_score: {result.conformance_score:.4f}  ({passed}/{total})\n")
+    tested = total - result.vacuous_count
+    substantive = result.substantive_score
+    substantive_text = (
+        "undefined (every requirement was vacuous)"
+        if substantive is None
+        else f"{substantive:.4f}  ({passed - result.vacuous_count}/{tested})"
+    )
+
+    print()
+    print(f"conformance_score: {result.conformance_score:.4f}  ({passed}/{total})")
+    print(f"vacuous_count:     {result.vacuous_count}")
+    print(f"substantive_score: {substantive_text}")
+    print()
 
     for entry in result.results:
         verdict = "PASS" if entry.passed else "FAIL"
-        print(f"{entry.requirement_id}  {verdict}  {entry.reason}")
+        marker = " [vacuous]" if entry.vacuous else ""
+        print(f"{entry.requirement_id}  {verdict}{marker}  {entry.reason}")
 
     return 0
 

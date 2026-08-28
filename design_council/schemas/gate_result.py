@@ -25,6 +25,21 @@ class RequirementResult(BaseModel):
     requirement_id: str = Field(min_length=1)
     passed: bool
     reason: str = Field(min_length=1)
+    vacuous: bool = False
+
+    @model_validator(mode="after")
+    def check_only_passes_are_vacuous(self) -> "RequirementResult":
+        """A failing requirement is never vacuous.
+
+        Vacuity means the rule had nothing left to check and so could not be
+        violated. A rule that was violated was, by definition, checked.
+        """
+        if self.vacuous and not self.passed:
+            raise ValueError(
+                f"{self.requirement_id}: a failing requirement cannot be vacuous"
+            )
+
+        return self
 
 
 class GateResult(BaseModel):
@@ -69,6 +84,41 @@ class GateResult(BaseModel):
     def failed_requirement_ids(self) -> list[str]:
         """Requirements that did not pass, in the order they were evaluated."""
         return [r.requirement_id for r in self.results if not r.passed]
+
+    def vacuous_requirement_ids(self) -> list[str]:
+        """Requirements that passed only because nothing was left to check."""
+        return [r.requirement_id for r in self.results if r.vacuous]
+
+    @property
+    def vacuous_count(self) -> int:
+        """How many passes held only because their subject was eliminated.
+
+        Read from the structured `vacuous` flag on each result, not from the
+        reason text — the prose marking is for human readers and must not be
+        load-bearing.
+        """
+        return sum(1 for r in self.results if r.vacuous)
+
+    @property
+    def substantive_score(self) -> float | None:
+        """Conformance over only those requirements that were actually tested.
+
+        conformance_score counts a vacuous pass as a pass, which flatters a
+        redesign that deleted the step a rule constrained. This view removes
+        vacuous requirements from both the numerator and the denominator, so it
+        answers a narrower question: of the rules that had something to check,
+        what fraction held?
+
+        Returns None when every requirement was vacuous. There is no defensible
+        number for that case: 1.0 would claim total conformance on the strength
+        of nothing having been checked, and 0.0 would claim a failure that no
+        rule reported. An undefined score must stay undefined.
+        """
+        tested = [r for r in self.results if not r.vacuous]
+        if not tested:
+            return None
+
+        return sum(1 for r in tested if r.passed) / len(tested)
 
 
 def score_for(results: list[RequirementResult]) -> float:

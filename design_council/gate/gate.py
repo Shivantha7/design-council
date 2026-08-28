@@ -14,11 +14,25 @@ Every baseline step is resolved to its successors through the disposition
 mapping helpers on TargetStateSpec, never by matching names or reading prose.
 """
 
-from typing import Any, Callable
+from typing import Any, Callable, NamedTuple
 
 from design_council.schemas.gate_result import GateResult, RequirementResult, score_for
 from design_council.schemas.tss import Disposition, TargetStateSpec, check_against_encoding
 from design_council.schemas.workflow_encoding import Requirement, WorkflowEncoding
+
+
+class RuleOutcome(NamedTuple):
+    """What a rule decided, and whether it had anything to decide on.
+
+    vacuous marks a pass that held only because the rule's subject was
+    eliminated, so there was nothing left to violate. It is carried as a flag
+    rather than inferred from the reason text: the prose marking is for human
+    readers, and a downstream count must not depend on wording.
+    """
+
+    passed: bool
+    reason: str
+    vacuous: bool = False
 
 
 class GateConfigError(Exception):
@@ -82,28 +96,30 @@ def _disposition_of(
 
 # --- rules -------------------------------------------------------------------
 #
-# Each rule takes the TSS and the requirement, and returns (passed, reason).
-# A rule that passes only because it had nothing to compare prefixes its reason
-# with "vacuously satisfied: " so that such passes can be counted separately.
+# Each rule takes the TSS and the requirement, and returns a RuleOutcome.
+# A rule that passes only because it had nothing to compare sets vacuous=True
+# and also prefixes its reason with "vacuously satisfied: " — the flag is what
+# is counted, the prose is what a reader sees.
 
 
-def _step_preserved(tss: TargetStateSpec, requirement: Requirement) -> tuple[bool, str]:
+def _step_preserved(tss: TargetStateSpec, requirement: Requirement) -> RuleOutcome:
     """The baseline step must survive the redesign in some form."""
     params = _params(requirement, {"baseline_step_id": str})
     step_id = params["baseline_step_id"]
     disposition = _disposition_of(tss, requirement, step_id)
 
     if disposition is Disposition.ELIMINATED:
-        return False, f"baseline step {step_id} is eliminated; it must be preserved"
+        return RuleOutcome(False, f"baseline step {step_id} is eliminated; it must be preserved")
 
     target_ids = [step.step_id for step in tss.target_steps_for(step_id)]
-    return True, (
+    return RuleOutcome(
+        True,
         f"baseline step {step_id} is preserved as {disposition.value}, "
-        f"carried by target step(s) {target_ids}"
+        f"carried by target step(s) {target_ids}",
     )
 
 
-def _inputs_required(tss: TargetStateSpec, requirement: Requirement) -> tuple[bool, str]:
+def _inputs_required(tss: TargetStateSpec, requirement: Requirement) -> RuleOutcome:
     """Every target step carrying the baseline step must receive given inputs."""
     params = _params(
         requirement, {"baseline_step_id": str, "required_inputs": list}
@@ -113,9 +129,10 @@ def _inputs_required(tss: TargetStateSpec, requirement: Requirement) -> tuple[bo
     disposition = _disposition_of(tss, requirement, step_id)
 
     if disposition is Disposition.ELIMINATED:
-        return False, (
+        return RuleOutcome(
+            False,
             f"baseline step {step_id} is eliminated, so no target step carries "
-            f"the required input(s) {required}"
+            f"the required input(s) {required}",
         )
 
     shortfalls = []
@@ -125,21 +142,23 @@ def _inputs_required(tss: TargetStateSpec, requirement: Requirement) -> tuple[bo
             shortfalls.append(f"{step.step_id} is missing {missing}")
 
     if shortfalls:
-        return False, (
+        return RuleOutcome(
+            False,
             f"target step(s) carrying baseline step {step_id} do not receive all "
-            f"required input(s) {required}: " + "; ".join(shortfalls)
+            f"required input(s) {required}: " + "; ".join(shortfalls),
         )
 
     target_ids = [step.step_id for step in tss.target_steps_for(step_id)]
-    return True, (
+    return RuleOutcome(
+        True,
         f"every target step carrying baseline step {step_id} {target_ids} "
-        f"receives all required input(s) {required}"
+        f"receives all required input(s) {required}",
     )
 
 
 def _ordering_preserved(
     tss: TargetStateSpec, requirement: Requirement
-) -> tuple[bool, str]:
+) -> RuleOutcome:
     """All targets of 'before' must precede all targets of 'after'."""
     params = _params(requirement, {"before_step_id": str, "after_step_id": str})
     before_id = params["before_step_id"]
@@ -157,9 +176,11 @@ def _ordering_preserved(
         if disposition is Disposition.ELIMINATED
     ]
     if eliminated:
-        return True, (
+        return RuleOutcome(
+            True,
             f"vacuously satisfied: baseline step(s) {eliminated} are eliminated, "
-            f"so there is no ordering between {before_id} and {after_id} to check"
+            f"so there is no ordering between {before_id} and {after_id} to check",
+            vacuous=True,
         )
 
     position = {step.step_id: index for index, step in enumerate(tss.steps)}
@@ -173,21 +194,23 @@ def _ordering_preserved(
     after_ids = [step.step_id for step in after_steps]
 
     if last_before < first_after:
-        return True, (
+        return RuleOutcome(
+            True,
             f"target step(s) {before_ids} for baseline {before_id} all precede "
-            f"target step(s) {after_ids} for baseline {after_id}"
+            f"target step(s) {after_ids} for baseline {after_id}",
         )
 
-    return False, (
+    return RuleOutcome(
+        False,
         f"ordering not preserved: target step(s) {before_ids} for baseline "
         f"{before_id} do not all precede target step(s) {after_ids} for baseline "
-        f"{after_id} in the redesigned step order"
+        f"{after_id} in the redesigned step order",
     )
 
 
 def _actor_separation(
     tss: TargetStateSpec, requirement: Requirement
-) -> tuple[bool, str]:
+) -> RuleOutcome:
     """The traced target steps of the listed baseline steps must not share an actor."""
     params = _params(requirement, {"baseline_step_ids": list})
     step_ids = list(params["baseline_step_ids"])
@@ -207,9 +230,11 @@ def _actor_separation(
         if disposition is Disposition.ELIMINATED
     ]
     if eliminated:
-        return True, (
+        return RuleOutcome(
+            True,
             f"vacuously satisfied: baseline step(s) {eliminated} are eliminated, "
-            f"so there are no actors to separate across {step_ids}"
+            f"so there are no actors to separate across {step_ids}",
+            vacuous=True,
         )
 
     actors_by_step = {
@@ -227,12 +252,12 @@ def _actor_separation(
     per_step = ", ".join(f"{step_id} → {actors_by_step[step_id]}" for step_id in step_ids)
 
     if shared:
-        return False, f"separation violated: {per_step}; shared: {sorted(shared)}"
+        return RuleOutcome(False, f"separation violated: {per_step}; shared: {sorted(shared)}")
 
-    return True, f"actors separated: {per_step}"
+    return RuleOutcome(True, f"actors separated: {per_step}")
 
 
-def _disposition_in(tss: TargetStateSpec, requirement: Requirement) -> tuple[bool, str]:
+def _disposition_in(tss: TargetStateSpec, requirement: Requirement) -> RuleOutcome:
     """The baseline step's disposition must be one of an allowed set."""
     params = _params(requirement, {"baseline_step_id": str, "allowed": list})
     step_id = params["baseline_step_id"]
@@ -249,18 +274,20 @@ def _disposition_in(tss: TargetStateSpec, requirement: Requirement) -> tuple[boo
     disposition = _disposition_of(tss, requirement, step_id)
 
     if disposition.value in allowed:
-        return True, (
+        return RuleOutcome(
+            True,
             f"baseline step {step_id} has disposition {disposition.value!r}, "
-            f"which is within the allowed set {sorted(allowed)}"
+            f"which is within the allowed set {sorted(allowed)}",
         )
 
-    return False, (
+    return RuleOutcome(
+        False,
         f"baseline step {step_id} has disposition {disposition.value!r}, "
-        f"which is outside the allowed set {sorted(allowed)}"
+        f"which is outside the allowed set {sorted(allowed)}",
     )
 
 
-RULES: dict[str, Callable[[TargetStateSpec, Requirement], tuple[bool, str]]] = {
+RULES: dict[str, Callable[[TargetStateSpec, Requirement], RuleOutcome]] = {
     "step_preserved": _step_preserved,
     "inputs_required": _inputs_required,
     "ordering_preserved": _ordering_preserved,
@@ -305,12 +332,13 @@ def evaluate(encoding: WorkflowEncoding, tss: TargetStateSpec) -> GateResult:
                 f"{sorted(RULES)}"
             )
 
-        passed, reason = rule(tss, requirement)
+        outcome = rule(tss, requirement)
         results.append(
             RequirementResult(
                 requirement_id=requirement.requirement_id,
-                passed=passed,
-                reason=reason,
+                passed=outcome.passed,
+                reason=outcome.reason,
+                vacuous=outcome.vacuous,
             )
         )
 

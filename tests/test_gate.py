@@ -5,9 +5,15 @@ import json
 from pathlib import Path
 
 import pytest
+from pydantic import ValidationError
 
 from design_council.gate import RULES, GateConfigError, evaluate
-from design_council.schemas import TargetStateSpec, WorkflowEncoding
+from design_council.schemas import (
+    GateResult,
+    RequirementResult,
+    TargetStateSpec,
+    WorkflowEncoding,
+)
 
 DUMMY_DIR = Path(__file__).resolve().parent.parent / "data" / "dummy"
 ENCODING_PATH = DUMMY_DIR / "dummy_p2p_encoding.json"
@@ -111,6 +117,109 @@ def test_two_distinct_rule_types_have_a_demonstrated_failure():
             failing_rule_types.add(by_id[requirement_id].rule_type)
 
     assert failing_rule_types == {"step_preserved", "inputs_required"}
+
+
+# --- derived views: vacuous_count and substantive_score ----------------------
+
+
+def test_conformant_fixture_has_no_vacuous_requirements():
+    result = evaluate(dev_encoding(), tss(VIP_CONFORMANT_PATH))
+
+    assert result.vacuous_count == 0
+    assert result.vacuous_requirement_ids() == []
+    assert result.substantive_score == 1.0
+
+
+def test_no_approval_fixture_substantive_score_excludes_the_silenced_rules():
+    """conformance_score reads 7/8 for a workflow with no authorisation, because
+    two of its passes held only because approval was deleted. The substantive
+    score drops those from both sides of the fraction."""
+    result = evaluate(dev_encoding(), tss(VIP_NO_APPROVAL_PATH))
+
+    assert result.conformance_score == pytest.approx(7 / 8)
+    assert result.vacuous_count == 2
+    assert result.vacuous_requirement_ids() == ["VIP-R-04", "VIP-R-06"]
+    assert result.substantive_score == pytest.approx(5 / 6)
+
+
+def test_pc_violating_fixture_substantive_score():
+    result = evaluate(r2r_encoding(), tss(PC_VIOLATING_PATH))
+
+    assert result.vacuous_count == 1
+    assert result.vacuous_requirement_ids() == ["R2R-R-03"]
+    assert result.substantive_score == pytest.approx(5 / 6)
+
+
+def test_substantive_score_is_none_when_everything_is_vacuous():
+    """No defensible number exists: 1.0 would claim conformance on the strength
+    of nothing having been checked, 0.0 a failure nothing reported."""
+    result = GateResult(
+        results=[
+            RequirementResult(
+                requirement_id="X-1",
+                passed=True,
+                reason="vacuously satisfied: nothing to check",
+                vacuous=True,
+            ),
+            RequirementResult(
+                requirement_id="X-2",
+                passed=True,
+                reason="vacuously satisfied: nothing to check",
+                vacuous=True,
+            ),
+        ],
+        conformance_score=1.0,
+    )
+
+    assert result.vacuous_count == 2
+    assert result.conformance_score == 1.0
+    assert result.substantive_score is None
+
+
+def test_a_failing_requirement_cannot_be_vacuous():
+    with pytest.raises(ValidationError, match="cannot be vacuous"):
+        RequirementResult(
+            requirement_id="X-3", passed=False, reason="broke", vacuous=True
+        )
+
+
+def test_vacuity_is_carried_as_a_flag_not_inferred_from_prose():
+    """The count must not depend on wording. The prose marker and the flag are
+    kept in step here, but only the flag is load-bearing."""
+    for source, path in [
+        (dev_encoding(), VIP_CONFORMANT_PATH),
+        (dev_encoding(), VIP_NO_APPROVAL_PATH),
+        (dev_encoding(), VIP_SOD_VIOLATION_PATH),
+        (r2r_encoding(), PC_VIOLATING_PATH),
+        (fpa_encoding(), RF_VIOLATING_PATH),
+    ]:
+        result = evaluate(source, tss(path))
+        for entry in result.results:
+            assert entry.vacuous == entry.reason.startswith("vacuously satisfied: ")
+
+
+def test_derived_views_are_deterministic():
+    source = dev_encoding()
+    subject = tss(VIP_NO_APPROVAL_PATH)
+
+    first = evaluate(source, subject)
+    second = evaluate(source, subject)
+
+    assert first.vacuous_count == second.vacuous_count
+    assert first.substantive_score == second.substantive_score
+    assert first.vacuous_requirement_ids() == second.vacuous_requirement_ids()
+    assert first.model_dump_json() == second.model_dump_json()
+
+
+def test_derived_views_survive_a_round_trip_through_json():
+    """A GateResult read back from runs/ must yield the same derived figures,
+    which is why vacuity is a stored field rather than a computed one."""
+    original = evaluate(dev_encoding(), tss(VIP_NO_APPROVAL_PATH))
+
+    restored = GateResult.model_validate_json(original.model_dump_json())
+
+    assert restored.vacuous_count == original.vacuous_count
+    assert restored.substantive_score == original.substantive_score
 
 
 # --- determinism -------------------------------------------------------------
