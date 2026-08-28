@@ -17,6 +17,9 @@ Specifications for finance workflows.
   to `runs/`.
 - **The KB `ref` field is TBC until manually verified against standards texts; never fill
   in paragraph references to accounting standards yourself.**
+- **Where a provider exposes no dated snapshot, record requested id, resolved id, and
+  provider `created_at`, and enforce resolved-model stability across every run in an
+  experimental set.**
 
 ## Style
 Prefer plain, simple code over clever abstractions. This is research code that must be

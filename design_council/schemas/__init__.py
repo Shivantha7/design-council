@@ -5,6 +5,12 @@ from design_council.schemas.gate_result import (
     RequirementResult,
     score_for,
 )
+from design_council.schemas.run_records import (
+    CallRecord,
+    Condition,
+    ResolutionProbe,
+    RunManifest,
+)
 from design_council.schemas.tss import (
     Disposition,
     DispositionEntry,
@@ -21,9 +27,13 @@ from design_council.schemas.workflow_encoding import (
 )
 
 __all__ = [
+    "CallRecord",
+    "Condition",
     "Disposition",
     "GateResult",
     "RequirementResult",
+    "ResolutionProbe",
+    "RunManifest",
     "DispositionEntry",
     "Domain",
     "Requirement",
