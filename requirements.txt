@@ -3,3 +3,4 @@ langgraph
 anthropic
 pytest
 pyyaml
+reportlab
