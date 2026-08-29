@@ -18,9 +18,8 @@ from pydantic import ValidationError
 
 from design_council.gate import evaluate
 from design_council.kb.loader import KnowledgeBase
-from design_council.run_logging import ModelClient, RunLogger, sha256_text, utc_now_iso
+from design_council.run_logging import ModelClient, RunLogger, log_model_call
 from design_council.schemas import (
-    CallRecord,
     Disposition,
     GateResult,
     TargetStateSpec,
@@ -133,42 +132,6 @@ def build_repair_prompt(original_prompt: str, bad_output: str, error: str) -> st
     )
 
 
-def _call_and_log(
-    client: ModelClient,
-    logger: RunLogger,
-    prompt: str,
-    agent_role: str,
-    workflow_id: str,
-    requested_model: str,
-    sampling_params: dict[str, Any],
-) -> tuple[str, int, int]:
-    """Make one call and record it before doing anything with the result."""
-    text, input_tokens, output_tokens, resolved_model = client.complete(
-        prompt, model=requested_model
-    )
-
-    logger.log_call(
-        CallRecord(
-            timestamp_utc=utc_now_iso(),
-            run_id=logger.run_id,
-            condition=logger.condition,
-            agent_role=agent_role,
-            workflow_id=workflow_id,
-            requested_model=requested_model,
-            resolved_model=resolved_model,
-            sampling_params=sampling_params,
-            seed=None,
-            prompt_hash=sha256_text(prompt),
-            input_tokens=input_tokens,
-            output_tokens=output_tokens,
-            thinking_tokens=getattr(client, "last_thinking_tokens", None),
-            raw_completion=text,
-        )
-    )
-
-    return text, input_tokens, output_tokens
-
-
 def parse_tss(text: str) -> TargetStateSpec:
     """Strip fences, parse, validate. Raises ValidationError or ValueError."""
     return TargetStateSpec.model_validate_json(strip_code_fences(text))
@@ -193,26 +156,27 @@ def run_baseline(
     requested_model = logger.manifest.requested_model
     prompt = build_prompt(encoding, kb)
 
-    text, input_tokens, output_tokens = _call_and_log(
-        client, logger, prompt, AGENT_ROLE, encoding.workflow_id, requested_model, params
+    record = log_model_call(
+        client, logger, prompt, AGENT_ROLE, encoding.workflow_id, params
     )
-    total_input, total_output = input_tokens, output_tokens
+    text = record.raw_completion
+    total_input, total_output = record.input_tokens, record.output_tokens
 
     try:
         tss = parse_tss(text)
     except (ValidationError, ValueError) as first_error:
         repair_prompt = build_repair_prompt(prompt, text, str(first_error))
-        repair_text, input_tokens, output_tokens = _call_and_log(
+        repair_record = log_model_call(
             client,
             logger,
             repair_prompt,
             REPAIR_AGENT_ROLE,
             encoding.workflow_id,
-            requested_model,
             params,
         )
-        total_input += input_tokens
-        total_output += output_tokens
+        repair_text = repair_record.raw_completion
+        total_input += repair_record.input_tokens
+        total_output += repair_record.output_tokens
 
         try:
             tss = parse_tss(repair_text)

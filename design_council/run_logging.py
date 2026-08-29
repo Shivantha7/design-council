@@ -39,6 +39,17 @@ MANIFEST_NAME = "run_manifest.json"
 CALLS_NAME = "calls.jsonl"
 
 
+class CallTruncatedError(Exception):
+    """A model call stopped at max_tokens instead of finishing.
+
+    The completion is partial, and where the whole budget went to reasoning it
+    may be empty. Either way it is not a contribution: a run that carried it
+    forward would reconcile around something the model never finished saying.
+    The call is logged with truncated=True before this is raised, so the record
+    shows what happened.
+    """
+
+
 class RunIntegrityError(Exception):
     """A run cannot be recorded as the thing it claims to be.
 
@@ -424,3 +435,65 @@ class RunLogger:
             return 0
 
         return sum(1 for line in self.calls_path.read_text().splitlines() if line.strip())
+
+
+def log_model_call(
+    client: ModelClient,
+    logger: "RunLogger",
+    prompt: str,
+    agent_role: str,
+    workflow_id: str,
+    sampling_params: dict[str, Any] | None = None,
+    **call_params: Any,
+) -> CallRecord:
+    """Make one model call, record it, and refuse to return a truncated one.
+
+    Shared by every agent so the guard cannot be present in one caller and
+    missing in another. Returns the CallRecord that was written, which carries
+    the completion and the token counts.
+
+    The order matters: the record is written first, then the truncation check
+    raises. A truncated call is a fact about the run and belongs in the log
+    whether or not the run survives it.
+    """
+    requested_model = logger.manifest.requested_model
+
+    text, input_tokens, output_tokens, resolved_model = client.complete(
+        prompt, model=requested_model, **call_params
+    )
+
+    recorded_params = dict(sampling_params or {})
+    recorded_params.update(call_params)
+
+    truncated = getattr(client, "last_stop_reason", None) == "max_tokens"
+
+    record = CallRecord(
+        timestamp_utc=utc_now_iso(),
+        run_id=logger.run_id,
+        condition=logger.condition,
+        agent_role=agent_role,
+        workflow_id=workflow_id,
+        requested_model=requested_model,
+        resolved_model=resolved_model,
+        sampling_params=recorded_params,
+        seed=None,
+        prompt_hash=sha256_text(prompt),
+        input_tokens=input_tokens,
+        output_tokens=output_tokens,
+        thinking_tokens=getattr(client, "last_thinking_tokens", None),
+        truncated=truncated,
+        raw_completion=text,
+    )
+    logger.log_call(record)
+
+    if truncated:
+        raise CallTruncatedError(
+            f"{agent_role} stopped at max_tokens ({recorded_params.get('max_tokens', '?')}) "
+            f"without finishing: {output_tokens} output tokens, of which "
+            f"{record.thinking_tokens} reasoning, leaving "
+            f"{len(text)} visible characters. The call is logged with "
+            f"truncated=true; the run stops here rather than carrying a partial "
+            f"contribution forward."
+        )
+
+    return record

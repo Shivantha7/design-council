@@ -38,10 +38,8 @@ from design_council.agents.baseline import (
 )
 from design_council.gate import evaluate
 from design_council.kb.loader import KnowledgeBase
-from design_council.run_logging import ModelClient, RunLogger, sha256_text, utc_now_iso
+from design_council.run_logging import ModelClient, RunLogger, log_model_call
 from design_council.schemas import (
-    CallRecord,
-    Disposition,
     GateResult,
     TargetStateSpec,
     WorkflowEncoding,
@@ -281,40 +279,38 @@ def build_synthesis_repair_prompt(
 # --- the graph ---------------------------------------------------------------
 
 
-def _call_and_log(
+def _contribution(
     client: ModelClient,
     logger: RunLogger,
     prompt: str,
     agent_role: str,
     workflow_id: str,
     sampling_params: dict[str, Any],
+    **call_params: Any,
 ) -> str:
-    """One call, recorded before its result is used for anything."""
-    requested_model = logger.manifest.requested_model
-    text, input_tokens, output_tokens, resolved_model = client.complete(
-        prompt, model=requested_model
+    """One deliberation call whose result is fit to enter the transcript.
+
+    log_model_call() refuses a truncated call. This adds the belt-and-braces
+    check: a completion that is empty or whitespace is not a contribution
+    either, whatever produced it. A silent blank would leave the synthesis
+    reconciling six voices while believing it had seven.
+    """
+    record = log_model_call(
+        client, logger, prompt, agent_role, workflow_id, sampling_params, **call_params
     )
 
-    logger.log_call(
-        CallRecord(
-            timestamp_utc=utc_now_iso(),
-            run_id=logger.run_id,
-            condition=logger.condition,
-            agent_role=agent_role,
-            workflow_id=workflow_id,
-            requested_model=requested_model,
-            resolved_model=resolved_model,
-            sampling_params=sampling_params,
-            seed=None,
-            prompt_hash=sha256_text(prompt),
-            input_tokens=input_tokens,
-            output_tokens=output_tokens,
-            thinking_tokens=getattr(client, "last_thinking_tokens", None),
-            raw_completion=text,
+    if not record.raw_completion.strip():
+        raise CouncilError(
+            f"{agent_role} returned no visible content ({record.output_tokens} "
+            f"output tokens, of which {record.thinking_tokens} reasoning). An "
+            f"empty contribution is not a position; the run stops rather than "
+            f"letting the synthesis reconcile around a silent seat."
         )
-    )
 
-    return text
+    return record.raw_completion
+
+
+SYNTHESIS_MAX_TOKENS = 24000
 
 
 def build_graph(
@@ -322,6 +318,7 @@ def build_graph(
     logger: RunLogger,
     kb: KnowledgeBase,
     sampling_params: dict[str, Any] | None = None,
+    synthesis_max_tokens: int = SYNTHESIS_MAX_TOKENS,
 ):
     """Seven round-1 nodes, then seven round-2 nodes, then synthesis.
 
@@ -341,7 +338,7 @@ def build_graph(
         def node(state: CouncilState) -> dict:
             base = build_base_context(state.encoding, kb)
             prompt = build_round1_prompt(base, role, charters[role])
-            text = _call_and_log(
+            text = _contribution(
                 client,
                 logger,
                 prompt,
@@ -357,7 +354,7 @@ def build_graph(
         def node(state: CouncilState) -> dict:
             base = build_base_context(state.encoding, kb)
             prompt = build_round2_prompt(base, role, charters[role], state.positions)
-            text = _call_and_log(
+            text = _contribution(
                 client,
                 logger,
                 prompt,
@@ -372,26 +369,28 @@ def build_graph(
     def synthesis_node(state: CouncilState) -> dict:
         base = build_base_context(state.encoding, kb)
         prompt = build_synthesis_prompt(base, state.positions, state.critiques)
-        text = _call_and_log(
+        text = _contribution(
             client,
             logger,
             prompt,
             SYNTHESIS_ROLE,
             state.encoding.workflow_id,
             params,
+            max_tokens=synthesis_max_tokens,
         )
 
         try:
             return {"tss_raw": text, "tss": parse_tss(text)}
         except (ValidationError, ValueError) as first_error:
             repair_prompt = build_synthesis_repair_prompt(prompt, text, str(first_error))
-            repair_text = _call_and_log(
+            repair_text = _contribution(
                 client,
                 logger,
                 repair_prompt,
                 SYNTHESIS_REPAIR_ROLE,
                 state.encoding.workflow_id,
                 params,
+                max_tokens=synthesis_max_tokens,
             )
 
             try:
@@ -459,6 +458,7 @@ def run_council(
     client: ModelClient,
     logger: RunLogger,
     sampling_params: dict[str, Any] | None = None,
+    synthesis_max_tokens: int = SYNTHESIS_MAX_TOKENS,
 ) -> tuple[TargetStateSpec, GateResult]:
     """Execute the council protocol and write the run directory.
 
@@ -466,7 +466,7 @@ def run_council(
     gate_result.json, the manifest and the call log — so the two conditions are
     comparable with the same tools. The transcript is the one addition.
     """
-    graph = build_graph(client, logger, kb, sampling_params)
+    graph = build_graph(client, logger, kb, sampling_params, synthesis_max_tokens)
     initial = CouncilState(encoding=encoding, kb_rendering=kb.render_for_prompt())
 
     final = CouncilState.model_validate(graph.invoke(initial))

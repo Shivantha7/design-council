@@ -17,7 +17,11 @@ from typing import Any
 
 import anthropic
 
-DEFAULT_MAX_TOKENS = 8000
+DEFAULT_MAX_TOKENS = 16000
+
+# The synthesis call must emit a complete Target-State Specification on top of
+# its own reasoning, so it gets a larger ceiling than a deliberation turn.
+SYNTHESIS_MAX_TOKENS = 24000
 
 
 class AnthropicClient:
@@ -33,6 +37,7 @@ class AnthropicClient:
         self.requested_model = requested_model
         self.max_tokens = max_tokens
         self.last_thinking_tokens: int | None = None
+        self.last_stop_reason: str | None = None
         self._client = (
             anthropic.Anthropic() if api_key is None else anthropic.Anthropic(api_key=api_key)
         )
@@ -73,6 +78,10 @@ class AnthropicClient:
         # because the ModelClient protocol returns a four-tuple, and widening
         # it for one provider's detail would push provider specifics into every
         # caller and every mock.
+        # Surfaced, not judged, here: whether a truncated call is fatal is the
+        # caller's decision, and log_model_call() makes it in one place.
+        self.last_stop_reason = response.stop_reason
+
         details = getattr(response.usage, "output_tokens_details", None)
         self.last_thinking_tokens = (
             None if details is None else getattr(details, "thinking_tokens", None)

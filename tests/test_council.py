@@ -383,3 +383,115 @@ def test_council_imports_no_provider_sdk():
             imported.add(node.module.split(".")[0])
 
     assert not (imported & {"anthropic", "openai"})
+
+
+# --- truncation and empty-contribution guards --------------------------------
+
+from design_council.run_logging import CallTruncatedError  # noqa: E402
+from design_council.agents.council import SYNTHESIS_MAX_TOKENS, build_graph  # noqa: E402
+
+
+class TruncatingClient(CouncilMockClient):
+    """Stops at max_tokens on a nominated role, as the real one did."""
+
+    def __init__(self, tss_json, truncate_on: str, **kwargs):
+        super().__init__(tss_json, **kwargs)
+        self.truncate_on = truncate_on
+        self.last_stop_reason = "end_turn"
+
+    def complete(self, prompt, **params):
+        text, i, o, model = super().complete(prompt, **params)
+        if self.truncate_on == "round1" and "This is round 1." in prompt:
+            self.last_stop_reason = "max_tokens"
+            self.last_thinking_tokens = 16000
+            return "", 7900, 16000, model
+        self.last_stop_reason = "end_turn"
+        return text, i, o, model
+
+
+class EmptyContributionClient(CouncilMockClient):
+    """Finishes normally but says nothing visible."""
+
+    def __init__(self, tss_json, empty_on: str, **kwargs):
+        super().__init__(tss_json, **kwargs)
+        self.empty_on = empty_on
+        self.last_stop_reason = "end_turn"
+
+    def complete(self, prompt, **params):
+        text, i, o, model = super().complete(prompt, **params)
+        if self.empty_on == "round1" and "This is round 1." in prompt:
+            return "   \n  ", 7900, 40, model
+        return text, i, o, model
+
+
+def test_a_truncated_call_raises_and_is_logged_as_truncated(tmp_path):
+    source = encoding()
+    client = TruncatingClient(valid_tss_json(source), truncate_on="round1")
+    logger = make_logger(tmp_path, client)
+
+    with pytest.raises(CallTruncatedError, match="max_tokens"):
+        run_council(source, load_kb(), client, logger)
+
+    records = logged_records(logger)
+    assert records[-1].agent_role == "round1_maximalist"
+    assert records[-1].truncated is True
+    assert records[-1].raw_completion == ""
+    assert records[-1].thinking_tokens == 16000
+
+
+def test_a_truncated_call_does_not_enter_state(tmp_path):
+    """The failure that produced an empty maximalist position: the run must
+    stop before the blank reaches round 2."""
+    source = encoding()
+    kb = load_kb()
+    client = TruncatingClient(valid_tss_json(source), truncate_on="round1")
+    logger = make_logger(tmp_path, client)
+
+    graph = build_graph(client, logger, kb)
+    with pytest.raises(CallTruncatedError):
+        graph.invoke(CouncilState(encoding=source, kb_rendering=kb.render_for_prompt()))
+
+    roles = [r.agent_role for r in logged_records(logger)]
+    assert roles == ["model_resolution_probe", "round1_maximalist"]
+    assert not (logger.run_dir / TSS_FILENAME).exists()
+
+
+def test_an_empty_contribution_raises_even_when_the_call_finished(tmp_path):
+    """Belt and braces: a model that legitimately returns nothing visible is
+    also not a voice the synthesis should reconcile around."""
+    source = encoding()
+    client = EmptyContributionClient(valid_tss_json(source), empty_on="round1")
+    logger = make_logger(tmp_path, client)
+
+    with pytest.raises(CouncilError, match="no visible content"):
+        run_council(source, load_kb(), client, logger)
+
+    records = logged_records(logger)
+    assert records[-1].agent_role == "round1_maximalist"
+    assert records[-1].truncated is False
+
+
+def test_the_normal_path_is_unchanged_and_records_truncated_false(tmp_path):
+    source = encoding()
+    client = CouncilMockClient(valid_tss_json(source))
+    logger = make_logger(tmp_path, client)
+
+    tss, gate_result = run_council(source, load_kb(), client, logger)
+
+    assert tss.workflow_id == source.workflow_id
+    records = logged_records(logger)
+    assert len([r for r in records if r.agent_role != "model_resolution_probe"]) == 15
+    assert all(r.truncated is False for r in records)
+
+
+def test_synthesis_gets_the_larger_ceiling(tmp_path):
+    """The synthesis must emit a complete TSS on top of its reasoning."""
+    source = encoding()
+    client = CouncilMockClient(valid_tss_json(source))
+    logger = make_logger(tmp_path, client)
+
+    run_council(source, load_kb(), client, logger, sampling_params={"max_tokens": 16000})
+
+    records = {r.agent_role: r for r in logged_records(logger)}
+    assert records["round1_maximalist"].sampling_params["max_tokens"] == 16000
+    assert records[SYNTHESIS_ROLE].sampling_params["max_tokens"] == SYNTHESIS_MAX_TOKENS

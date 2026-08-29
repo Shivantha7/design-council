@@ -39,6 +39,12 @@ class CallRecord(BaseModel):
     inexplicably small next to its billed output. None means the provider did
     not report a breakdown.
 
+    truncated records that the provider stopped at max_tokens rather than
+    finishing. Such a completion is partial by definition, and its raw_completion
+    may be empty if the whole budget went to reasoning. The record is written
+    anyway — the log must show what happened — but the run stops rather than
+    letting a truncated contribution enter state.
+
     prompt_hash rather than the prompt itself keeps the line a manageable size
     while still letting two runs be compared for identical input. The prompt is
     reconstructable from the KB and encoding, both of which the manifest pins by
@@ -60,6 +66,7 @@ class CallRecord(BaseModel):
     input_tokens: int = Field(ge=0)
     output_tokens: int = Field(ge=0)
     thinking_tokens: int | None = None
+    truncated: bool = False
     raw_completion: str
 
 
