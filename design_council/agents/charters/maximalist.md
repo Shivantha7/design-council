@@ -1,0 +1,3 @@
+# Charter: maximalist
+
+CHARTER TBD
