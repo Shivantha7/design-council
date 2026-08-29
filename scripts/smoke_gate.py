@@ -24,6 +24,38 @@ def load_json(path: Path) -> dict:
         return json.load(handle)
 
 
+def gate_report_lines(result) -> list[str]:
+    """The three scores and one line per requirement.
+
+    Shared with scripts/compare_tss.py so a gate result reads identically
+    wherever it is shown.
+    """
+    passed = sum(1 for r in result.results if r.passed)
+    total = len(result.results)
+    tested = total - result.vacuous_count
+    substantive = result.substantive_score
+    substantive_text = (
+        "undefined (every requirement was vacuous)"
+        if substantive is None
+        else f"{substantive:.4f}  ({passed - result.vacuous_count}/{tested})"
+    )
+
+    lines = [
+        "",
+        f"conformance_score: {result.conformance_score:.4f}  ({passed}/{total})",
+        f"vacuous_count:     {result.vacuous_count}",
+        f"substantive_score: {substantive_text}",
+        "",
+    ]
+
+    for entry in result.results:
+        verdict = "PASS" if entry.passed else "FAIL"
+        marker = " [vacuous]" if entry.vacuous else ""
+        lines.append(f"{entry.requirement_id}  {verdict}{marker}  {entry.reason}")
+
+    return lines
+
+
 def main(argv: list[str]) -> int:
     if len(argv) != 3:
         print(__doc__.strip(), file=sys.stderr)
@@ -44,26 +76,8 @@ def main(argv: list[str]) -> int:
         print(f"\nGateConfigError: {error}", file=sys.stderr)
         return 1
 
-    passed = sum(1 for r in result.results if r.passed)
-    total = len(result.results)
-    tested = total - result.vacuous_count
-    substantive = result.substantive_score
-    substantive_text = (
-        "undefined (every requirement was vacuous)"
-        if substantive is None
-        else f"{substantive:.4f}  ({passed - result.vacuous_count}/{tested})"
-    )
-
-    print()
-    print(f"conformance_score: {result.conformance_score:.4f}  ({passed}/{total})")
-    print(f"vacuous_count:     {result.vacuous_count}")
-    print(f"substantive_score: {substantive_text}")
-    print()
-
-    for entry in result.results:
-        verdict = "PASS" if entry.passed else "FAIL"
-        marker = " [vacuous]" if entry.vacuous else ""
-        print(f"{entry.requirement_id}  {verdict}{marker}  {entry.reason}")
+    for line in gate_report_lines(result):
+        print(line)
 
     return 0
 
