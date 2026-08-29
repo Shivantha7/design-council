@@ -22,6 +22,7 @@ oversight.
 from typing import Any
 
 import anthropic
+import httpx2
 
 DEFAULT_MAX_TOKENS = 16000
 
@@ -40,6 +41,40 @@ SYNTHESIS_MAX_TOKENS = 24000
 # change to either ceiling, or to the SDK's arithmetic, fails a test rather than
 # a run.
 SDK_NONSTREAMING_MAX_TOKENS = 128_000 * 600 // 3600
+
+
+class StreamInterrupted(Exception):
+    """A streamed response died before the message completed.
+
+    A network fault, not a model behaviour: the connection dropped part way
+    through. Whatever arrived before the drop is carried on the exception so
+    the attempt can be logged with its partial text and whatever usage the
+    provider had already reported, rather than logged as a blank.
+
+    Detection lives here because which exceptions mean 'the stream broke' is
+    provider-specific knowledge. The retry loop lives in log_model_call(),
+    where the logger is, so that every attempt gets its own record.
+    """
+
+    def __init__(
+        self,
+        message: str,
+        partial_text: str = "",
+        input_tokens: int = 0,
+        output_tokens: int | None = None,
+        resolved_model: str | None = None,
+    ) -> None:
+        super().__init__(message)
+        self.partial_text = partial_text
+        self.input_tokens = input_tokens
+        self.output_tokens = output_tokens
+        self.resolved_model = resolved_model
+
+
+# Transport-level failures that mean the stream broke mid-flight. httpx2's
+# TransportError covers RemoteProtocolError (the incomplete chunked read seen
+# in practice) along with read and connection errors.
+STREAM_FAILURES = (httpx2.TransportError, anthropic.APIConnectionError)
 
 
 class AnthropicClient:
@@ -81,13 +116,19 @@ class AnthropicClient:
         # exceed ten minutes, which the synthesis ceiling does. Streaming also
         # removes the HTTP timeout risk on long deliberation turns. The final
         # message carries the same fields a non-streaming response would.
-        with self._client.messages.stream(
-            model=model,
-            max_tokens=max_tokens,
-            messages=[{"role": "user", "content": prompt}],
-            **params,
-        ) as stream:
-            response = stream.get_final_message()
+        try:
+            with self._client.messages.stream(
+                model=model,
+                max_tokens=max_tokens,
+                messages=[{"role": "user", "content": prompt}],
+                **params,
+            ) as stream:
+                response = stream.get_final_message()
+        except STREAM_FAILURES as error:
+            raise StreamInterrupted(
+                f"stream interrupted: {type(error).__name__}: {error}",
+                **_salvage(locals().get("stream")),
+            ) from error
 
         # Adaptive thinking is on by default on this model family, so the
         # content list can hold thinking blocks as well as text. Only text
@@ -117,3 +158,36 @@ class AnthropicClient:
             response.usage.output_tokens,
             response.model,
         )
+
+
+def _salvage(stream: Any) -> dict[str, Any]:
+    """Whatever the provider had already sent before the stream broke.
+
+    A partial message carries the input token count (sent early, in
+    message_start) and any text emitted so far. Recovering it keeps a failed
+    attempt honest about what it cost rather than logging zeros.
+    """
+    empty = {"partial_text": "", "input_tokens": 0, "output_tokens": None,
+             "resolved_model": None}
+    if stream is None:
+        return empty
+
+    try:
+        snapshot = stream.current_message_snapshot
+    except Exception:  # the stream may have died before any snapshot existed
+        return empty
+
+    if snapshot is None:
+        return empty
+
+    text = "".join(
+        block.text for block in snapshot.content if getattr(block, "type", None) == "text"
+    )
+    usage = getattr(snapshot, "usage", None)
+
+    return {
+        "partial_text": text,
+        "input_tokens": getattr(usage, "input_tokens", 0) or 0,
+        "output_tokens": getattr(usage, "output_tokens", None),
+        "resolved_model": getattr(snapshot, "model", None),
+    }

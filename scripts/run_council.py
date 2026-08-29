@@ -49,25 +49,32 @@ def print_call_table(logger: RunLogger) -> None:
     records = [CallRecord.model_validate(json.loads(l)) for l in lines]
 
     print()
-    print(f"{'agent_role':28} {'in':>7} {'out':>7} {'thinking':>9}")
-    print(f"{'-' * 28} {'-' * 7} {'-' * 7} {'-' * 9}")
+    print(f"{'agent_role':28} {'status':>14} {'in':>7} {'out':>7} {'thinking':>9}")
+    print(f"{'-' * 28} {'-' * 14} {'-' * 7} {'-' * 7} {'-' * 9}")
 
     total_in = total_out = total_thinking = 0
     for record in records:
         thinking = "-" if record.thinking_tokens is None else str(record.thinking_tokens)
+        out = "-" if record.output_tokens is None else str(record.output_tokens)
         print(
-            f"{record.agent_role:28} {record.input_tokens:>7} "
-            f"{record.output_tokens:>7} {thinking:>9}"
+            f"{record.agent_role:28} {record.attempt_status.value:>14} "
+            f"{record.input_tokens:>7} {out:>7} {thinking:>9}"
         )
+        # Every attempt counts toward cost, including failed streams: those
+        # tokens were billed. See docs/freeze_notes.md.
         total_in += record.input_tokens
-        total_out += record.output_tokens
+        total_out += record.output_tokens or 0
         total_thinking += record.thinking_tokens or 0
 
-    print(f"{'-' * 28} {'-' * 7} {'-' * 7} {'-' * 9}")
-    print(f"{'TOTAL (' + str(len(records)) + ' calls)':28} {total_in:>7} "
+    failed = sum(1 for r in records if r.attempt_status.value != "ok")
+    print(f"{'-' * 28} {'-' * 14} {'-' * 7} {'-' * 7} {'-' * 9}")
+    print(f"{'TOTAL (' + str(len(records)) + ' attempts)':28} {'':>14} {total_in:>7} "
           f"{total_out:>7} {total_thinking:>9}")
     print()
     print("Reasoning tokens are part of output, not additional to it.")
+    if failed:
+        print(f"{failed} attempt(s) failed mid-stream; their tokens are counted "
+              f"(billed) but their text was discarded.")
 
 
 def print_report(

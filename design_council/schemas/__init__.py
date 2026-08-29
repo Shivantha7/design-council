@@ -6,6 +6,7 @@ from design_council.schemas.gate_result import (
     score_for,
 )
 from design_council.schemas.run_records import (
+    AttemptStatus,
     CallRecord,
     Condition,
     ResolutionProbe,
@@ -27,6 +28,7 @@ from design_council.schemas.workflow_encoding import (
 )
 
 __all__ = [
+    "AttemptStatus",
     "CallRecord",
     "Condition",
     "Disposition",

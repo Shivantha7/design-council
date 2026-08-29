@@ -12,6 +12,7 @@ more here than the handful of conveniences it lacks.
 
 import hashlib
 import os
+import time
 import secrets
 import subprocess
 from collections.abc import MutableMapping
@@ -20,6 +21,7 @@ from pathlib import Path
 from typing import Any, NamedTuple, Protocol
 
 from design_council.schemas.run_records import (
+    AttemptStatus,
     CallRecord,
     Condition,
     ResolutionProbe,
@@ -37,6 +39,20 @@ PROBE_PROMPT = "Reply with the single word: ok"
 
 MANIFEST_NAME = "run_manifest.json"
 CALLS_NAME = "calls.jsonl"
+
+
+# Backoff between stream retries, in seconds. Three attempts total: the first,
+# then one after 2s, then one after 8s.
+STREAM_RETRY_BACKOFF = (2.0, 8.0)
+
+
+class StreamRetriesExhausted(Exception):
+    """Three consecutive attempts at one call all died mid-stream.
+
+    Every attempt is in the log with attempt_status 'stream_failed'. A fourth
+    try is not obviously better than stopping, and a run that limped on through
+    repeated network failure would be hard to trust.
+    """
 
 
 class CallTruncatedError(Exception):
@@ -444,9 +460,16 @@ def log_model_call(
     agent_role: str,
     workflow_id: str,
     sampling_params: dict[str, Any] | None = None,
+    sleep=time.sleep,
     **call_params: Any,
 ) -> CallRecord:
     """Make one model call, record it, and refuse to return a truncated one.
+
+    A stream that dies mid-flight is retried on the same prompt, up to three
+    attempts in all with 2s then 8s between them. Every attempt gets its own
+    CallRecord: the failures with attempt_status 'stream_failed' and whatever
+    partial text arrived, the success with 'ok'. Only the success is returned,
+    so a failed attempt's text can never reach the deliberation.
 
     Shared by every agent so the guard cannot be present in one caller and
     missing in another. Returns the CallRecord that was written, which carries
@@ -456,32 +479,67 @@ def log_model_call(
     raises. A truncated call is a fact about the run and belongs in the log
     whether or not the run survives it.
     """
+    from design_council.agents.anthropic_client import StreamInterrupted
+
     requested_model = logger.manifest.requested_model
-
-    text, input_tokens, output_tokens, resolved_model = client.complete(
-        prompt, model=requested_model, **call_params
-    )
-
     recorded_params = dict(sampling_params or {})
     recorded_params.update(call_params)
 
+    def record_for(**fields: Any) -> CallRecord:
+        return CallRecord(
+            timestamp_utc=utc_now_iso(),
+            run_id=logger.run_id,
+            condition=logger.condition,
+            agent_role=agent_role,
+            workflow_id=workflow_id,
+            requested_model=requested_model,
+            sampling_params=recorded_params,
+            seed=None,
+            prompt_hash=sha256_text(prompt),
+            **fields,
+        )
+
+    attempts = len(STREAM_RETRY_BACKOFF) + 1
+    for attempt in range(attempts):
+        try:
+            text, input_tokens, output_tokens, resolved_model = client.complete(
+                prompt, model=requested_model, **call_params
+            )
+            break
+        except StreamInterrupted as error:
+            # The attempt was billed, so it is logged: whatever text arrived,
+            # whatever usage the provider had already reported. Its text never
+            # reaches the caller.
+            logger.log_call(
+                record_for(
+                    resolved_model=error.resolved_model or logger.expected_model,
+                    input_tokens=error.input_tokens,
+                    output_tokens=error.output_tokens,
+                    thinking_tokens=None,
+                    truncated=False,
+                    attempt_status=AttemptStatus.STREAM_FAILED,
+                    raw_completion=error.partial_text,
+                )
+            )
+
+            if attempt == attempts - 1:
+                raise StreamRetriesExhausted(
+                    f"{agent_role}: {attempts} consecutive attempts died "
+                    f"mid-stream. All are logged with attempt_status "
+                    f"'stream_failed'. Last error: {error}"
+                ) from error
+
+            sleep(STREAM_RETRY_BACKOFF[attempt])
+
     truncated = getattr(client, "last_stop_reason", None) == "max_tokens"
 
-    record = CallRecord(
-        timestamp_utc=utc_now_iso(),
-        run_id=logger.run_id,
-        condition=logger.condition,
-        agent_role=agent_role,
-        workflow_id=workflow_id,
-        requested_model=requested_model,
+    record = record_for(
         resolved_model=resolved_model,
-        sampling_params=recorded_params,
-        seed=None,
-        prompt_hash=sha256_text(prompt),
         input_tokens=input_tokens,
         output_tokens=output_tokens,
         thinking_tokens=getattr(client, "last_thinking_tokens", None),
         truncated=truncated,
+        attempt_status=AttemptStatus.OK,
         raw_completion=text,
     )
     logger.log_call(record)

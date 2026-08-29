@@ -28,6 +28,17 @@ SUPPLEMENTARY — DESCRIPTIVE, NOT PRE-REGISTERED
     are not pre-registered, must not be reported as confirmatory findings, and
     are labelled as supplementary everywhere they are emitted.
 
+ACCOUNTING RULE for call records, fixed here before any held-out run
+    Content is read only from records with attempt_status == 'ok'. A record
+    marked 'stream_failed' is a network fault whose partial text must never be
+    treated as a contribution.
+
+    Per-condition token comparisons count EVERY record, failed attempts
+    included. Those tokens were billed, and a condition that needed three
+    attempts to get one answer really did cost three attempts. Reporting only
+    successful attempts would understate the cost of exactly the condition
+    that suffers most from long calls.
+
 Everything here is computed from a TargetStateSpec and its WorkflowEncoding.
 No model is involved and no network call is made, so a measure can be recomputed
 from artefacts already on disk at any time.

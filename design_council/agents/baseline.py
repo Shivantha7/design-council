@@ -160,7 +160,7 @@ def run_baseline(
         client, logger, prompt, AGENT_ROLE, encoding.workflow_id, params
     )
     text = record.raw_completion
-    total_input, total_output = record.input_tokens, record.output_tokens
+    total_input, total_output = record.input_tokens, record.output_tokens or 0
 
     try:
         tss = parse_tss(text)
@@ -176,7 +176,7 @@ def run_baseline(
         )
         repair_text = repair_record.raw_completion
         total_input += repair_record.input_tokens
-        total_output += repair_record.output_tokens
+        total_output += repair_record.output_tokens or 0
 
         try:
             tss = parse_tss(repair_text)

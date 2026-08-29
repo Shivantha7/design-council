@@ -19,6 +19,19 @@ SHA256_HEX = r"^[0-9a-f]{64}$"
 GIT_COMMIT_HEX = r"^[0-9a-f]{40}$"
 
 
+class AttemptStatus(str, Enum):
+    """How a call attempt ended.
+
+    'stream_failed' is a network fault, not a model behaviour: the connection
+    dropped mid-response. Such an attempt is logged — it was billed, and a run
+    that silently omitted it would misstate its own cost — but its text never
+    enters the deliberation.
+    """
+
+    OK = "ok"
+    STREAM_FAILED = "stream_failed"
+
+
 class Condition(str, Enum):
     """Which arm of the experiment produced this run."""
 
@@ -38,6 +51,14 @@ class CallRecord(BaseModel):
     includes it — but without it a run's visible completion length looks
     inexplicably small next to its billed output. None means the provider did
     not report a breakdown.
+
+    attempt_status separates a completed exchange from an attempt the network
+    cut short. output_tokens is null where a failed stream reported none.
+
+    ACCOUNTING RULE, fixed before any held-out run: content is read only from
+    records with attempt_status == 'ok'; per-condition token comparisons count
+    every record, including failed attempts, because those tokens were billed
+    and are part of what the condition really cost.
 
     truncated records that the provider stopped at max_tokens rather than
     finishing. Such a completion is partial by definition, and its raw_completion
@@ -64,9 +85,10 @@ class CallRecord(BaseModel):
     seed: int | None = None
     prompt_hash: str = Field(pattern=SHA256_HEX)
     input_tokens: int = Field(ge=0)
-    output_tokens: int = Field(ge=0)
+    output_tokens: int | None = Field(default=None, ge=0)
     thinking_tokens: int | None = None
     truncated: bool = False
+    attempt_status: AttemptStatus = AttemptStatus.OK
     raw_completion: str
 
 
