@@ -328,3 +328,66 @@ def test_sampling_params_carry_only_what_is_sent():
 
     assert client.sampling_params() == {"max_tokens": 8000}
     assert "temperature" not in client.sampling_params()
+
+
+# --- SDK limits and the streaming contract -----------------------------------
+
+
+def test_sdk_nonstreaming_limit_matches_the_sdk_arithmetic():
+    """Pinned from anthropic/_base_client.py: a non-streaming request whose
+    max_tokens implies more than ten minutes is refused."""
+    from design_council.agents.anthropic_client import SDK_NONSTREAMING_MAX_TOKENS
+
+    assert SDK_NONSTREAMING_MAX_TOKENS == 21333
+
+    maximum_time, default_time = 60 * 60, 60 * 10
+    expected = maximum_time * SDK_NONSTREAMING_MAX_TOKENS / 128_000
+    assert expected <= default_time
+
+    just_over = maximum_time * (SDK_NONSTREAMING_MAX_TOKENS + 1) / 128_000
+    assert just_over > default_time
+
+
+def test_the_ceilings_sit_where_they_are_meant_to():
+    from design_council.agents.anthropic_client import (
+        DEFAULT_MAX_TOKENS,
+        SDK_NONSTREAMING_MAX_TOKENS,
+        SYNTHESIS_MAX_TOKENS,
+    )
+
+    assert DEFAULT_MAX_TOKENS == 16000
+    assert SYNTHESIS_MAX_TOKENS == 24000
+
+    # Deliberation would survive without streaming; synthesis would not. This
+    # is the asymmetry that made the failure appear only on the last call.
+    assert DEFAULT_MAX_TOKENS < SDK_NONSTREAMING_MAX_TOKENS
+    assert SYNTHESIS_MAX_TOKENS > SDK_NONSTREAMING_MAX_TOKENS
+
+
+def test_the_council_synthesis_ceiling_matches_the_client_constant():
+    from design_council.agents.anthropic_client import SYNTHESIS_MAX_TOKENS as client_ceiling
+    from design_council.agents.council import SYNTHESIS_MAX_TOKENS as council_ceiling
+
+    assert council_ceiling == client_ceiling
+
+
+def test_the_client_streams_every_call():
+    """A revert to messages.create() would work in tests and fail in production
+    on the synthesis call only, so the call style is asserted directly."""
+    source = (REPO_ROOT / "design_council" / "agents" / "anthropic_client.py").read_text()
+
+    assert "messages.stream(" in source
+    assert "get_final_message()" in source
+    assert "messages.create(" not in source
+
+
+def test_the_pipeline_reads_only_fields_a_streamed_message_carries():
+    """The three contract points between the SDK and this project: the resolved
+    model, the usage block, and the stop reason. All three are present on the
+    final message of a stream, and all three are read by name here."""
+    source = (REPO_ROOT / "design_council" / "agents" / "anthropic_client.py").read_text()
+
+    assert "response.model" in source
+    assert "response.usage.input_tokens" in source
+    assert "response.usage.output_tokens" in source
+    assert "response.stop_reason" in source

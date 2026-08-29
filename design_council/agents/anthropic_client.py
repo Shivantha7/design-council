@@ -5,6 +5,12 @@ upstream of it — the agents, the run logger, the gate — sees the ModelClient
 protocol and nothing more, which is what lets the whole experiment be tested
 against MockClient without touching the network.
 
+All calls are streamed. The SDK refuses a non-streaming request whose
+max_tokens implies it could run past ten minutes, and the synthesis ceiling is
+above that line; streaming also avoids HTTP timeouts on long turns. Nothing
+consumes the stream incrementally — get_final_message() reassembles it — so the
+rest of the pipeline sees an ordinary response.
+
 Sampling note. On claude-sonnet-5 the temperature, top_p and top_k parameters
 were removed from the API and are rejected with a 400. The model samples at its
 own default, which is the variance the consistency measure relies on; there is
@@ -22,6 +28,18 @@ DEFAULT_MAX_TOKENS = 16000
 # The synthesis call must emit a complete Target-State Specification on top of
 # its own reasoning, so it gets a larger ceiling than a deliberation turn.
 SYNTHESIS_MAX_TOKENS = 24000
+
+# The SDK refuses a non-streaming request whose max_tokens implies it could run
+# past its ten-minute default timeout. From anthropic/_base_client.py:
+#
+#     expected_time = 3600 * max_tokens / 128_000
+#     if expected_time > 600: raise ValueError(...)
+#
+# which caps non-streaming at 128_000 * 600 // 3600 tokens. SYNTHESIS_MAX_TOKENS
+# is above that line, which is why every call streams. Pinned here so that a
+# change to either ceiling, or to the SDK's arithmetic, fails a test rather than
+# a run.
+SDK_NONSTREAMING_MAX_TOKENS = 128_000 * 600 // 3600
 
 
 class AnthropicClient:
@@ -58,12 +76,18 @@ class AnthropicClient:
         model = params.pop("model", None) or self.requested_model
         max_tokens = params.pop("max_tokens", None) or self.max_tokens
 
-        response = self._client.messages.create(
+        # Streamed rather than created outright. The SDK estimates request
+        # duration from max_tokens and refuses a non-streaming call that could
+        # exceed ten minutes, which the synthesis ceiling does. Streaming also
+        # removes the HTTP timeout risk on long deliberation turns. The final
+        # message carries the same fields a non-streaming response would.
+        with self._client.messages.stream(
             model=model,
             max_tokens=max_tokens,
             messages=[{"role": "user", "content": prompt}],
             **params,
-        )
+        ) as stream:
+            response = stream.get_final_message()
 
         # Adaptive thinking is on by default on this model family, so the
         # content list can hold thinking blocks as well as text. Only text
