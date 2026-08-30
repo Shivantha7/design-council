@@ -49,3 +49,42 @@ additional charge on top of output, and must not be added to it.
 The resolution probe (`agent_role == "model_resolution_probe"`) is
 infrastructure, not experimental work. Exclude it from per-condition token
 comparisons.
+
+## Disposition labelling fidelity — prompt strengthened, 30 Aug 2026
+
+Fixed after the dev sweep, before any held-out run.
+
+**Evidence.** Across 18 dev runs (3 workflows x 2 conditions x 3 repetitions)
+the 144 recorded dispositions were:
+
+| disposition | count |
+| --- | ---: |
+| restructured | 90 |
+| retained | 38 |
+| merged | 16 |
+| absorbed | 0 |
+| eliminated | 0 |
+
+Two of the five categories never occurred. The rendered transcript of the
+completed VIP council run shows why this is a labelling problem rather than an
+absence of ambition: the maximalist argued explicitly for eliminating VIP-01
+and VIP-02 ("eliminate as a discrete human-mediated step; absorb into TGT-01"),
+and the synthesis recorded both as `merged`. A depth measure whose scalar
+counts "not retained" was therefore, in practice, counting how often a step got
+called `restructured` rather than `retained`.
+
+**Change.** The disposition convention shared by the baseline prompt and every
+council prompt (including the synthesis) gains a labelling-fidelity paragraph
+instructing the model to label by what structurally happened rather than by
+what sounds safer, and stating that the requirements gate — not the label — is
+the safety mechanism.
+
+The convention is versioned (`v2, 30 Aug 2026`) and its sha256 is recorded in
+every run manifest as `config.prompt_fragment_hashes.disposition_convention`,
+so a run is attributable to the wording that produced it. Runs made before this
+change carry no such key and are identifiable by its absence.
+
+**Consequence for analysis.** Dev runs before and after this change were made
+under different instructions and must not be pooled. The pre-change dev sweep
+stands as its own set; comparisons across the change are between-prompt
+comparisons, not between-condition ones.

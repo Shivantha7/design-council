@@ -18,6 +18,10 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from design_council.agents.anthropic_client import AnthropicClient  # noqa: E402
+from design_council.agents.baseline import (  # noqa: E402
+    DISPOSITION_CONVENTION_VERSION,
+    prompt_fragment_hashes,
+)
 from design_council.agents.council import (  # noqa: E402
     CouncilError,
     charter_hashes,
@@ -163,6 +167,8 @@ def main() -> int:
                 ),
                 # A recorded parameter: how much patience this run had for a
                 # broken stream shapes what it cost and whether it finished.
+                "prompt_fragment_hashes": prompt_fragment_hashes(),
+                "disposition_convention_version": DISPOSITION_CONVENTION_VERSION,
                 "stream_retry_backoff": list(STREAM_RETRY_BACKOFF),
                 "stream_retry_connectivity_wait_seconds": CONNECTIVITY_WAIT_SECONDS,
                 "protocol": "council: 7 round1 + 7 round2 + 1 synthesis",

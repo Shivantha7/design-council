@@ -26,6 +26,67 @@ from design_council.schemas import (
     WorkflowEncoding,
 )
 
+# The disposition convention, shared verbatim by the baseline prompt and — via
+# build_base_context() — by every council prompt including the synthesis. One
+# definition, so the two conditions cannot drift in what they were told.
+#
+# v2, 30 Aug 2026: the labelling-fidelity paragraph was added after 18 dev runs
+# produced 90 restructured and 0 eliminated out of 144 dispositions, while a
+# council transcript showed the maximalist arguing for eliminations that the
+# synthesis recorded as merged. See docs/freeze_notes.md.
+DISPOSITION_CONVENTION = "\n".join(
+    [
+        "=== DISPOSITION CONVENTION ===",
+        "Every baseline step must appear exactly once in disposition_mapping "
+        "— no omissions, no duplicates, no steps that are not in the "
+        "baseline.",
+        "",
+        "  eliminated   the function ceases to exist in the target state. "
+        "Nothing performs it. target_step_ids must be empty.",
+        "  merged       the function persists, combined with other steps "
+        "into the step(s) named in target_step_ids.",
+        "  absorbed     the function persists, subsumed into the scope of "
+        "the step(s) named in target_step_ids.",
+        "  retained     the function persists substantially unchanged, "
+        "carried by the step(s) named in target_step_ids.",
+        "  restructured the function persists but is reorganised, carried "
+        "by the step(s) named in target_step_ids.",
+        "",
+        "Only 'eliminated' asserts the function is gone. Every other "
+        "disposition requires a non-empty target_step_ids, and every id "
+        "listed there must be the step_id of a step you define in 'steps'.",
+        "",
+        "Label dispositions by what structurally happened, not by what sounds "
+        "safer. If a baseline step's function ceases to exist in the target "
+        "state, the disposition is eliminated — an empty target_step_ids list "
+        "— even if related work continues elsewhere. If its function persists "
+        "inside another step, that is merged or absorbed, and target_step_ids "
+        "must identify the carrier. Do not record an elimination as a merge to "
+        "soften it; the requirements gate, not the label, is the safety "
+        "mechanism. Restructured means the step's internal structure, actor, "
+        "or mechanism changed materially — a renamed step with the same actor "
+        "and mechanism is retained.",
+    ]
+)
+
+DISPOSITION_CONVENTION_VERSION = "v2, 30 Aug 2026"
+
+
+def prompt_fragment_hashes() -> dict[str, str]:
+    """sha256 of the prompt fragments a run is attributable to.
+
+    The disposition convention is the fragment most likely to change and most
+    likely to change results, so a run records which wording produced it.
+    """
+    import hashlib
+
+    return {
+        "disposition_convention": hashlib.sha256(
+            DISPOSITION_CONVENTION.encode("utf-8")
+        ).hexdigest(),
+    }
+
+
 AGENT_ROLE = "baseline_designer"
 REPAIR_AGENT_ROLE = "baseline_designer_repair"
 
@@ -78,25 +139,7 @@ def build_prompt(encoding: WorkflowEncoding, kb: KnowledgeBase) -> str:
             "=== OUTPUT SCHEMA (JSON Schema for the object you must return) ===",
             json.dumps(TargetStateSpec.model_json_schema(), indent=2),
             "",
-            "=== DISPOSITION CONVENTION ===",
-            "Every baseline step must appear exactly once in disposition_mapping "
-            "— no omissions, no duplicates, no steps that are not in the "
-            "baseline.",
-            "",
-            "  eliminated   the function ceases to exist in the target state. "
-            "Nothing performs it. target_step_ids must be empty.",
-            "  merged       the function persists, combined with other steps "
-            "into the step(s) named in target_step_ids.",
-            "  absorbed     the function persists, subsumed into the scope of "
-            "the step(s) named in target_step_ids.",
-            "  retained     the function persists substantially unchanged, "
-            "carried by the step(s) named in target_step_ids.",
-            "  restructured the function persists but is reorganised, carried "
-            "by the step(s) named in target_step_ids.",
-            "",
-            "Only 'eliminated' asserts the function is gone. Every other "
-            "disposition requires a non-empty target_step_ids, and every id "
-            "listed there must be the step_id of a step you define in 'steps'.",
+            DISPOSITION_CONVENTION,
             "",
             "Set workflow_id to the encoding's workflow_id, and "
             "baseline_step_ids to the step_ids of the current-state workflow in "

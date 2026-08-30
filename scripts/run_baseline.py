@@ -17,7 +17,12 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from design_council.agents.anthropic_client import AnthropicClient  # noqa: E402
-from design_council.agents.baseline import BaselineError, run_baseline  # noqa: E402
+from design_council.agents.baseline import (  # noqa: E402
+    DISPOSITION_CONVENTION_VERSION,
+    BaselineError,
+    prompt_fragment_hashes,
+    run_baseline,
+)
 from design_council.kb.loader import KB_PATH, load_kb  # noqa: E402
 from design_council.run_logging import (  # noqa: E402
     CONNECTIVITY_WAIT_SECONDS,
@@ -87,6 +92,8 @@ def main() -> int:
                 ),
                 # A recorded parameter: how much patience this run had for a
                 # broken stream shapes what it cost and whether it finished.
+                "prompt_fragment_hashes": prompt_fragment_hashes(),
+                "disposition_convention_version": DISPOSITION_CONVENTION_VERSION,
                 "stream_retry_backoff": list(STREAM_RETRY_BACKOFF),
                 "stream_retry_connectivity_wait_seconds": CONNECTIVITY_WAIT_SECONDS,
             },

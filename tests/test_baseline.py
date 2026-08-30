@@ -391,3 +391,61 @@ def test_the_pipeline_reads_only_fields_a_streamed_message_carries():
     assert "response.usage.input_tokens" in source
     assert "response.usage.output_tokens" in source
     assert "response.stop_reason" in source
+
+
+# --- disposition labelling fidelity ------------------------------------------
+
+
+def test_the_convention_carries_the_labelling_fidelity_paragraph():
+    from design_council.agents.baseline import DISPOSITION_CONVENTION
+
+    for phrase in [
+        "Label dispositions by what structurally happened, not by what sounds safer",
+        "the disposition is eliminated",
+        "target_step_ids must identify the carrier",
+        "Do not record an elimination as a merge to soften it",
+        "the requirements gate, not the label, is the safety mechanism",
+        "a renamed step with the same actor and mechanism is retained",
+    ]:
+        assert phrase in DISPOSITION_CONVENTION, phrase
+
+
+def test_the_convention_reaches_both_conditions_identically():
+    """Condition parity: one definition, so baseline and council cannot drift."""
+    from design_council.agents.baseline import DISPOSITION_CONVENTION, build_prompt
+    from design_council.agents.council import build_base_context, build_round1_prompt
+    from design_council.kb.loader import load_kb
+
+    source, kb = encoding(), load_kb()
+    baseline_prompt = build_prompt(source, kb)
+    council_context = build_base_context(source, kb)
+
+    assert DISPOSITION_CONVENTION in baseline_prompt
+    assert DISPOSITION_CONVENTION in council_context
+    assert baseline_prompt == council_context
+
+    round1 = build_round1_prompt(council_context, list(__import__(
+        "design_council.agents.council", fromlist=["CouncilRole"]).CouncilRole)[0],
+        "charter")
+    assert DISPOSITION_CONVENTION in round1
+
+
+def test_the_convention_hash_is_recorded_and_versioned():
+    import hashlib
+
+    from design_council.agents.baseline import (
+        DISPOSITION_CONVENTION,
+        DISPOSITION_CONVENTION_VERSION,
+        prompt_fragment_hashes,
+    )
+
+    expected = hashlib.sha256(DISPOSITION_CONVENTION.encode("utf-8")).hexdigest()
+    assert prompt_fragment_hashes()["disposition_convention"] == expected
+    assert DISPOSITION_CONVENTION_VERSION == "v2, 30 Aug 2026"
+
+    for script in ["run_baseline.py", "run_council.py"]:
+        source = (REPO_ROOT / "scripts" / script).read_text()
+        assert '"prompt_fragment_hashes": prompt_fragment_hashes()' in source
+        assert (
+            '"disposition_convention_version": DISPOSITION_CONVENTION_VERSION' in source
+        )
