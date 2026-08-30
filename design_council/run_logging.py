@@ -12,6 +12,7 @@ more here than the handful of conveniences it lacks.
 
 import hashlib
 import os
+import socket
 import time
 import secrets
 import subprocess
@@ -41,17 +42,27 @@ MANIFEST_NAME = "run_manifest.json"
 CALLS_NAME = "calls.jsonl"
 
 
-# Backoff between stream retries, in seconds. Three attempts total: the first,
-# then one after 2s, then one after 8s.
-STREAM_RETRY_BACKOFF = (2.0, 8.0)
+# Backoff between stream retries, in seconds: five retries after the first
+# attempt, six attempts in all, spanning about five minutes of patience. Sized
+# against observed reality — a machine that lost DNS mid-run defeated a ten
+# second schedule three attempts in a row.
+STREAM_RETRY_BACKOFF = (2.0, 8.0, 30.0, 90.0, 180.0)
+
+# Before every retry after the first, wait for the network to come back rather
+# than spending an attempt on a link that is provably dead.
+CONNECTIVITY_HOST = "api.anthropic.com"
+CONNECTIVITY_PORT = 443
+CONNECTIVITY_WAIT_SECONDS = 60.0
+CONNECTIVITY_POLL_SECONDS = 3.0
 
 
 class StreamRetriesExhausted(Exception):
-    """Three consecutive attempts at one call all died mid-stream.
+    """Every attempt at one call died mid-stream.
 
-    Every attempt is in the log with attempt_status 'stream_failed'. A fourth
-    try is not obviously better than stopping, and a run that limped on through
-    repeated network failure would be hard to trust.
+    Every attempt is in the log with attempt_status 'stream_failed'. After five
+    retries spread over five minutes, with the network confirmed live before
+    each one, another try is not obviously better than stopping — and a run
+    that limped on through sustained network failure would be hard to trust.
     """
 
 
@@ -453,6 +464,45 @@ class RunLogger:
         return sum(1 for line in self.calls_path.read_text().splitlines() if line.strip())
 
 
+def network_is_reachable(
+    host: str = CONNECTIVITY_HOST,
+    port: int = CONNECTIVITY_PORT,
+    timeout: float = 5.0,
+) -> bool:
+    """Cheap liveness check: can we open a socket to the API host?
+
+    No request is made and no tokens are spent. A DNS failure — the fault that
+    defeated the previous schedule — surfaces here as a refused resolution.
+    """
+    try:
+        with socket.create_connection((host, port), timeout=timeout):
+            return True
+    except OSError:
+        return False
+
+
+def wait_for_connectivity(
+    timeout: float = CONNECTIVITY_WAIT_SECONDS,
+    poll: float = CONNECTIVITY_POLL_SECONDS,
+    probe=network_is_reachable,
+    sleep=time.sleep,
+) -> bool:
+    """Block until the network answers, or until timeout.
+
+    Returns whether it came back. A False result is not fatal: the retry is
+    attempted anyway, so a probe that is itself broken cannot stall a run.
+    """
+    waited = 0.0
+    while True:
+        if probe():
+            return True
+        if waited >= timeout:
+            return False
+
+        sleep(poll)
+        waited += poll
+
+
 def log_model_call(
     client: ModelClient,
     logger: "RunLogger",
@@ -461,12 +511,15 @@ def log_model_call(
     workflow_id: str,
     sampling_params: dict[str, Any] | None = None,
     sleep=time.sleep,
+    await_network=wait_for_connectivity,
     **call_params: Any,
 ) -> CallRecord:
     """Make one model call, record it, and refuse to return a truncated one.
 
-    A stream that dies mid-flight is retried on the same prompt, up to three
-    attempts in all with 2s then 8s between them. Every attempt gets its own
+    A stream that dies mid-flight is retried on the same prompt: six attempts
+    in all, backing off 2s, 8s, 30s, 90s and 180s. From the second retry
+    onward the network is confirmed live before the attempt is spent, so a
+    sustained outage consumes waiting rather than attempts. Every attempt gets its own
     CallRecord: the failures with attempt_status 'stream_failed' and whatever
     partial text arrived, the success with 'ok'. Only the success is returned,
     so a failed attempt's text can never reach the deliberation.
@@ -530,6 +583,11 @@ def log_model_call(
                 ) from error
 
             sleep(STREAM_RETRY_BACKOFF[attempt])
+
+            # From the second retry onward, confirm the network is actually
+            # there before spending another attempt on it.
+            if attempt >= 1:
+                await_network()
 
     truncated = getattr(client, "last_stop_reason", None) == "max_tokens"
 

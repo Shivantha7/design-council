@@ -134,33 +134,109 @@ def test_two_failures_then_success(tmp_path):
     assert record.raw_completion == "the completion"
 
 
-def test_three_consecutive_failures_raise(tmp_path):
-    client = FlakyClient(failures=3)
+def test_every_attempt_failing_raises(tmp_path):
+    """Five retries after the first attempt: six in all, then stop."""
+    attempts = len(STREAM_RETRY_BACKOFF) + 1
+    client = FlakyClient(failures=attempts)
     logger = make_logger(tmp_path, client)
 
-    with pytest.raises(StreamRetriesExhausted, match="3 consecutive attempts"):
+    with pytest.raises(StreamRetriesExhausted, match=f"{attempts} consecutive attempts"):
         log_model_call(
             client, logger, "a prompt", "round2_pragmatist", "P2P-VIP-01",
-            sleep=no_sleep,
+            sleep=no_sleep, await_network=lambda: True,
         )
 
     written = [r for r in records_of(logger) if r.agent_role == "round2_pragmatist"]
-    assert len(written) == 3
+    assert len(written) == attempts == 6
     assert all(r.attempt_status is AttemptStatus.STREAM_FAILED for r in written)
 
 
-def test_backoff_is_two_then_eight_seconds(tmp_path):
-    client = FlakyClient(failures=2)
+def test_a_late_success_still_succeeds(tmp_path):
+    """Five failures then a success: the run continues on the sixth attempt."""
+    client = FlakyClient(failures=5)
+    logger = make_logger(tmp_path, client)
+
+    record = log_model_call(
+        client, logger, "a prompt", "synthesis", "P2P-VIP-01",
+        sleep=no_sleep, await_network=lambda: True,
+    )
+
+    statuses = [r.attempt_status.value for r in records_of(logger) if r.agent_role == "synthesis"]
+    assert statuses == ["stream_failed"] * 5 + ["ok"]
+    assert record.raw_completion == "the completion"
+
+
+def test_the_backoff_schedule_is_followed_in_order(tmp_path):
+    client = FlakyClient(failures=5)
     logger = make_logger(tmp_path, client)
     slept = []
 
     log_model_call(
         client, logger, "a prompt", "synthesis", "P2P-VIP-01",
-        sleep=slept.append,
+        sleep=slept.append, await_network=lambda: True,
     )
 
-    assert slept == [2.0, 8.0]
-    assert STREAM_RETRY_BACKOFF == (2.0, 8.0)
+    assert slept == [2.0, 8.0, 30.0, 90.0, 180.0]
+    assert STREAM_RETRY_BACKOFF == (2.0, 8.0, 30.0, 90.0, 180.0)
+    assert sum(STREAM_RETRY_BACKOFF) == 310.0  # about five minutes of patience
+
+
+def test_connectivity_is_checked_from_the_second_retry_onward(tmp_path):
+    """The first retry goes straight through — a single dropped stream is not
+    evidence the network is down. After that, attempts are only spent on a
+    link confirmed live."""
+    client = FlakyClient(failures=5)
+    logger = make_logger(tmp_path, client)
+    checks = []
+
+    log_model_call(
+        client, logger, "a prompt", "synthesis", "P2P-VIP-01",
+        sleep=no_sleep, await_network=lambda: checks.append(True) or True,
+    )
+
+    assert len(checks) == 4  # before retries 2, 3, 4 and 5, not the first
+
+
+def test_wait_for_connectivity_returns_when_the_network_comes_back():
+    from design_council.run_logging import wait_for_connectivity
+
+    results = iter([False, False, True])
+    slept = []
+
+    assert wait_for_connectivity(
+        timeout=60.0, poll=3.0, probe=lambda: next(results), sleep=slept.append
+    ) is True
+    assert slept == [3.0, 3.0]
+
+
+def test_wait_for_connectivity_gives_up_after_its_timeout():
+    """A probe that never succeeds must not stall a run for ever, and a False
+    result is not fatal: the attempt is made anyway."""
+    from design_council.run_logging import wait_for_connectivity
+
+    slept = []
+    assert wait_for_connectivity(
+        timeout=9.0, poll=3.0, probe=lambda: False, sleep=slept.append
+    ) is False
+    assert sum(slept) >= 9.0
+
+
+def test_the_retry_policy_is_recorded_in_the_manifest_config(tmp_path):
+    """A recorded parameter: how much patience a run had shapes whether it
+    finished and what it cost."""
+    from design_council.run_logging import CONNECTIVITY_WAIT_SECONDS
+
+    for script in ["run_baseline.py", "run_council.py"]:
+        source = (REPO_ROOT / "scripts" / script).read_text()
+        assert '"stream_retry_backoff": list(STREAM_RETRY_BACKOFF)' in source
+        assert (
+            '"stream_retry_connectivity_wait_seconds": CONNECTIVITY_WAIT_SECONDS'
+            in source
+        )
+
+    # the value that would be written matches the constant in force
+    assert list(STREAM_RETRY_BACKOFF) == [2.0, 8.0, 30.0, 90.0, 180.0]
+    assert CONNECTIVITY_WAIT_SECONDS == 60.0
 
 
 def test_the_normal_path_writes_one_ok_record(tmp_path):

@@ -20,10 +20,12 @@ from design_council.agents.anthropic_client import AnthropicClient  # noqa: E402
 from design_council.agents.baseline import BaselineError, run_baseline  # noqa: E402
 from design_council.kb.loader import KB_PATH, load_kb  # noqa: E402
 from design_council.run_logging import (  # noqa: E402
+    CONNECTIVITY_WAIT_SECONDS,
     DEFAULT_REQUESTED_MODEL,
     DEFAULT_RUNS_ROOT,
     RunIntegrityError,
     RunLogger,
+    STREAM_RETRY_BACKOFF,
     git_commit,
     load_env,
     resolve_model,
@@ -83,6 +85,10 @@ def main() -> int:
                     "provider default; temperature/top_p/top_k not settable on "
                     "this model family"
                 ),
+                # A recorded parameter: how much patience this run had for a
+                # broken stream shapes what it cost and whether it finished.
+                "stream_retry_backoff": list(STREAM_RETRY_BACKOFF),
+                "stream_retry_connectivity_wait_seconds": CONNECTIVITY_WAIT_SECONDS,
             },
         )
     except RunIntegrityError as error:
