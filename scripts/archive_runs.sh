@@ -48,7 +48,10 @@ if [ -e "$archive" ]; then
   exit 1
 fi
 
-tar czf "$archive" -C "$repo_root" runs
+# COPYFILE_DISABLE stops macOS tar embedding AppleDouble (._*) metadata files,
+# which doubled the entry count of earlier archives and confuse extraction on
+# Linux. No effect on other platforms.
+COPYFILE_DISABLE=1 tar czf "$archive" -C "$repo_root" runs
 
 run_count="$(find "$runs_dir" -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')"
 size="$(du -h "$archive" | cut -f1 | tr -d ' ')"
