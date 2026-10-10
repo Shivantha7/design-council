@@ -30,10 +30,11 @@ from design_council.schemas import (
 # build_base_context() — by every council prompt including the synthesis. One
 # definition, so the two conditions cannot drift in what they were told.
 #
-# v2, 30 Aug 2026: the labelling-fidelity paragraph was added after 18 dev runs
-# produced 90 restructured and 0 eliminated out of 144 dispositions, while a
-# council transcript showed the maximalist arguing for eliminations that the
-# synthesis recorded as merged. See docs/freeze_notes.md.
+# v1, restored 11 Oct 2026 for the held-out set. The v2 labelling-fidelity
+# paragraph (commit 01034ae, 30 Aug 2026) is removed, so the wording, and the
+# assembled prompts, are byte-identical to those the v1 development grid ran
+# under. The held-out set is compared against that grid. See
+# docs/freeze_notes.md.
 DISPOSITION_CONVENTION = "\n".join(
     [
         "=== DISPOSITION CONVENTION ===",
@@ -55,21 +56,10 @@ DISPOSITION_CONVENTION = "\n".join(
         "Only 'eliminated' asserts the function is gone. Every other "
         "disposition requires a non-empty target_step_ids, and every id "
         "listed there must be the step_id of a step you define in 'steps'.",
-        "",
-        "Label dispositions by what structurally happened, not by what sounds "
-        "safer. If a baseline step's function ceases to exist in the target "
-        "state, the disposition is eliminated — an empty target_step_ids list "
-        "— even if related work continues elsewhere. If its function persists "
-        "inside another step, that is merged or absorbed, and target_step_ids "
-        "must identify the carrier. Do not record an elimination as a merge to "
-        "soften it; the requirements gate, not the label, is the safety "
-        "mechanism. Restructured means the step's internal structure, actor, "
-        "or mechanism changed materially — a renamed step with the same actor "
-        "and mechanism is retained.",
     ]
 )
 
-DISPOSITION_CONVENTION_VERSION = "v2, 30 Aug 2026"
+DISPOSITION_CONVENTION_VERSION = "v1, restored 11 Oct 2026"
 
 
 def prompt_fragment_hashes() -> dict[str, str]:

@@ -1,0 +1,248 @@
+{
+  "workflow_id": "P2P-EXR-01",
+  "name": "Expense reimbursement",
+  "domain": "P2P",
+  "source": {
+    "publisher": "APQC",
+    "document_reference": "APQC PCF Cross-Industry v8.0 (Feb 2026), process anchor pending verification (employee expense reimbursement); step decomposition per docs/HELDOUT_SPEC_2026-10-10.md (signed off 10 Oct 2026). APQC activity IDs pending verification against PCF v8.0 text."
+  },
+  "steps": [
+    {
+      "step_id": "EXR-01",
+      "name": "Claim submission with receipts",
+      "description": "The employee submits an out-of-pocket expense claim, attaching receipts for claim lines above the receipt threshold.",
+      "actor": "Employee",
+      "inputs": [
+        "Receipts for claim lines above the receipt threshold",
+        "Expense details"
+      ],
+      "outputs": [
+        "Submitted expense claim"
+      ]
+    },
+    {
+      "step_id": "EXR-02",
+      "name": "Receipt capture and data extraction",
+      "description": "Receipt images are captured and their data extracted into the claim record.",
+      "actor": "AP analyst",
+      "inputs": [
+        "Submitted expense claim"
+      ],
+      "outputs": [
+        "Structured claim record"
+      ]
+    },
+    {
+      "step_id": "EXR-03",
+      "name": "Policy compliance check",
+      "description": "Claim lines are checked against expense policy limits, categories and per diem rates, and non-compliant lines are flagged.",
+      "actor": "AP analyst",
+      "inputs": [
+        "Structured claim record",
+        "Expense policy"
+      ],
+      "outputs": [
+        "Policy-checked claim"
+      ]
+    },
+    {
+      "step_id": "EXR-04",
+      "name": "Line manager approval",
+      "description": "The claimant's line manager approves or rejects the policy-checked claim.",
+      "actor": "Line manager",
+      "inputs": [
+        "Policy-checked claim"
+      ],
+      "outputs": [
+        "Approved expense claim"
+      ]
+    },
+    {
+      "step_id": "EXR-05",
+      "name": "Finance review",
+      "description": "Finance reviews approved claims for coding, policy exceptions and supporting evidence.",
+      "actor": "Finance reviewer",
+      "inputs": [
+        "Approved expense claim"
+      ],
+      "outputs": [
+        "Finance-reviewed claim"
+      ]
+    },
+    {
+      "step_id": "EXR-06",
+      "name": "Posting",
+      "description": "The claim is posted to expense accounts and cost centres in the period the expense was incurred, translating foreign-currency lines.",
+      "actor": "GL accountant",
+      "inputs": [
+        "Approved expense claim",
+        "Expense transaction date",
+        "Transaction-date exchange rate",
+        "Chart of accounts"
+      ],
+      "outputs": [
+        "Expense posted to GL"
+      ]
+    },
+    {
+      "step_id": "EXR-07",
+      "name": "Reimbursement via AP payment run",
+      "description": "The approved claim is paid to the employee through the AP payment run.",
+      "actor": "AP analyst",
+      "inputs": [
+        "Approved expense claim",
+        "Employee bank details"
+      ],
+      "outputs": [
+        "Reimbursement paid"
+      ]
+    },
+    {
+      "step_id": "EXR-08",
+      "name": "Employee notification",
+      "description": "The employee is notified that the claim has been reimbursed.",
+      "actor": "AP analyst",
+      "inputs": [
+        "Reimbursement paid"
+      ],
+      "outputs": [
+        "Employee notification"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "requirement_id": "EXR-R-01",
+      "statement": "Whatever carries claim submission must still consume receipts for claim lines above the receipt threshold.",
+      "rule_type": "inputs_required",
+      "params": {
+        "baseline_step_id": "EXR-01",
+        "required_inputs": [
+          "Receipts for claim lines above the receipt threshold"
+        ]
+      }
+    },
+    {
+      "requirement_id": "EXR-R-02",
+      "statement": "The policy compliance check must occur before line manager approval.",
+      "rule_type": "ordering_preserved",
+      "params": {
+        "before_step_id": "EXR-03",
+        "after_step_id": "EXR-04"
+      }
+    },
+    {
+      "requirement_id": "EXR-R-03",
+      "statement": "Claim submission and claim approval must not be performed by the same actor.",
+      "rule_type": "actor_separation",
+      "params": {
+        "baseline_step_ids": [
+          "EXR-01",
+          "EXR-04"
+        ]
+      }
+    },
+    {
+      "requirement_id": "EXR-R-04",
+      "statement": "Whatever carries posting must still consume the expense transaction date (KB-01).",
+      "rule_type": "inputs_required",
+      "params": {
+        "baseline_step_id": "EXR-06",
+        "required_inputs": [
+          "Expense transaction date"
+        ]
+      }
+    },
+    {
+      "requirement_id": "EXR-R-05",
+      "statement": "Whatever carries posting must still consume the transaction-date exchange rate (KB-07).",
+      "rule_type": "inputs_required",
+      "params": {
+        "baseline_step_id": "EXR-06",
+        "required_inputs": [
+          "Transaction-date exchange rate"
+        ]
+      }
+    },
+    {
+      "requirement_id": "EXR-R-06",
+      "statement": "Line manager approval must occur before reimbursement.",
+      "rule_type": "ordering_preserved",
+      "params": {
+        "before_step_id": "EXR-04",
+        "after_step_id": "EXR-07"
+      }
+    },
+    {
+      "requirement_id": "EXR-R-07",
+      "statement": "The policy compliance check must survive in some form.",
+      "rule_type": "step_preserved",
+      "params": {
+        "baseline_step_id": "EXR-03"
+      }
+    },
+    {
+      "requirement_id": "EXR-R-08",
+      "statement": "Line manager approval must survive in some form.",
+      "rule_type": "step_preserved",
+      "params": {
+        "baseline_step_id": "EXR-04"
+      }
+    },
+    {
+      "requirement_id": "EXR-R-09",
+      "statement": "Reimbursement must survive in some form.",
+      "rule_type": "step_preserved",
+      "params": {
+        "baseline_step_id": "EXR-07"
+      }
+    },
+    {
+      "requirement_id": "EXR-R-10",
+      "statement": "Claim submission must survive in some form.",
+      "rule_type": "step_preserved",
+      "params": {
+        "baseline_step_id": "EXR-01"
+      }
+    }
+  ],
+  "source_mapping": {
+    "EXR-01": {
+      "apqc_activity_ids": [],
+      "practitioner_note": "PENDING PCF VERIFICATION"
+    },
+    "EXR-02": {
+      "apqc_activity_ids": [],
+      "practitioner_note": "PENDING PCF VERIFICATION"
+    },
+    "EXR-03": {
+      "apqc_activity_ids": [],
+      "practitioner_note": "PENDING PCF VERIFICATION"
+    },
+    "EXR-04": {
+      "apqc_activity_ids": [],
+      "practitioner_note": "PENDING PCF VERIFICATION"
+    },
+    "EXR-05": {
+      "apqc_activity_ids": [],
+      "practitioner_note": "PENDING PCF VERIFICATION"
+    },
+    "EXR-06": {
+      "apqc_activity_ids": [],
+      "practitioner_note": "PENDING PCF VERIFICATION"
+    },
+    "EXR-07": {
+      "apqc_activity_ids": [],
+      "practitioner_note": "PENDING PCF VERIFICATION"
+    },
+    "EXR-08": {
+      "apqc_activity_ids": [],
+      "practitioner_note": "PENDING PCF VERIFICATION"
+    }
+  },
+  "unconstrained_by_design": [
+    "EXR-02",
+    "EXR-05",
+    "EXR-08"
+  ]
+}

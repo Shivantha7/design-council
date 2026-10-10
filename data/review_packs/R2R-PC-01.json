@@ -1,0 +1,147 @@
+{
+  "workflow_id": "R2R-PC-01",
+  "reading": "Depth does not separate on this workflow. The mean gap (0.750 baseline against 0.833 council) is a single 0.125 quantum — one step of eight — and the ranges overlap: the council's best equals the baseline's best. No separation claim is made from these data. The demonstrated advantage on this workflow is qualitative and is set out overleaf.",
+  "controls": [
+    {
+      "title": "Intercompany matching split from exception resolution",
+      "marker": "Intercompany exception resolution, settlement and elimination preparation",
+      "where": "TS-06 step name",
+      "roles": [
+        "unanimous"
+      ],
+      "kb": [
+        "KB-14"
+      ],
+      "quote": "Unanimous agreement to split high-volume rule-based matching … from mismatch resolution, settlement and elimination preparation, which remains a distinct, explicitly resourced human function",
+      "quote_role": "synthesis rationale, PC-04"
+    },
+    {
+      "title": "Near-miss retention in the match audit log",
+      "marker": "Full matched/near-miss audit log",
+      "where": "TS-05 output",
+      "roles": [
+        "accounting_standards",
+        "agentic_architect"
+      ],
+      "kb": [
+        "KB-14"
+      ],
+      "quote": "kept fully auditable including near-misses to protect IFRS 10 completeness",
+      "quote_role": "synthesis rationale, PC-04"
+    },
+    {
+      "title": "Periodic completeness attestation on intercompany",
+      "marker": "Periodic completeness attestation",
+      "where": "TS-05 output",
+      "roles": [
+        "accounting_standards"
+      ],
+      "kb": [
+        "KB-14"
+      ],
+      "quote": "kept fully auditable including near-misses to protect IFRS 10 completeness per accounting_standards' and agentic_architect's concerns",
+      "quote_role": "synthesis rationale, PC-04"
+    },
+    {
+      "title": "Documented degraded-mode fallback as a named input",
+      "marker": "Documented degraded-mode fallback procedure",
+      "where": "TS-01 and TS-02 inputs",
+      "roles": [
+        "emerging_economy"
+      ],
+      "kb": [],
+      "quote": "I concede that every automation I proposed — the cutoff lock in TS-01, the mechanical posting engine in TS-02, the allocation engine, the IC match…",
+      "quote_role": "maximalist, round 2 (conceding)"
+    },
+    {
+      "title": "Infrastructure and business exceptions logged separately",
+      "marker": "Infrastructure-exception log",
+      "where": "TS-01 output",
+      "roles": [
+        "emerging_economy",
+        "agentic_architect"
+      ],
+      "kb": [],
+      "quote": "That framing assumes continuous, reliable system polling of subledger status — a fair assumption in a tier-one ERP environment, not a fair baseline assumption",
+      "quote_role": "emerging_economy, round 2"
+    },
+    {
+      "title": "Named allocation-basis owner with review log",
+      "marker": "Basis-review log",
+      "where": "TS-04 output and actor",
+      "roles": [
+        "hitl_designer",
+        "pragmatist",
+        "finance_domain",
+        "emerging_economy"
+      ],
+      "kb": [],
+      "quote": "routing allocation-basis anomalies into 'the close manager's exception queue' is not the same as preserving a human allocation-basis owner",
+      "quote_role": "hitl_designer, round 2"
+    },
+    {
+      "title": "Two-tier reconciliation certification",
+      "marker": "Reconciliation certifications (light-touch and full)",
+      "where": "TS-07 output",
+      "roles": [
+        "accounting_standards",
+        "hitl_designer"
+      ],
+      "kb": [
+        "KB-02"
+      ],
+      "quote": "certification remains a genuine human attestation act for every account — light-touch for low-risk, full evidence review for high-risk — rather than accepting an automated match rate as certification",
+      "quote_role": "synthesis rationale, PC-05"
+    },
+    {
+      "title": "Consolidation validated against full entity submissions",
+      "marker": "Consolidated balances validated against full entity submissions",
+      "where": "TS-08 output",
+      "roles": [
+        "pragmatist",
+        "finance_domain",
+        "emerging_economy",
+        "hitl_designer",
+        "agentic_architect"
+      ],
+      "kb": [
+        "KB-07",
+        "KB-08"
+      ],
+      "quote": "flag-only review cannot detect errors that don't cross a tolerance threshold",
+      "quote_role": "synthesis rationale, PC-06"
+    },
+    {
+      "title": "Policy-change disclosure output",
+      "marker": "Policy-change disclosures where applicable",
+      "where": "TS-08 output",
+      "roles": [
+        "accounting_standards"
+      ],
+      "kb": [
+        "KB-06"
+      ],
+      "quote": "Exchange differences must be tracked and reported, not netted invisibly",
+      "quote_role": "KB-08, cited by accounting_standards"
+    },
+    {
+      "title": "Release gate enforcing requirement ordering as a system precondition",
+      "marker": "Management-review-complete status",
+      "where": "TS-10 input",
+      "roles": [
+        "agentic_architect",
+        "emerging_economy"
+      ],
+      "kb": [
+        "KB-02"
+      ],
+      "quote": "a release gate that structurally enforces R2R-R-03 and R2R-R-04 as system preconditions",
+      "quote_role": "synthesis rationale, PC-08"
+    }
+  ],
+  "reviewer_questions": [
+    "Depth does not separate here but ten role-attributed controls do. Is control count a defensible secondary measure, or does it need a pre-registered definition before it can be reported?",
+    "The release gate encodes two requirements as system preconditions. Should the gate's ordering rules be checkable against the target state's own gating logic rather than step order alone?",
+    "Near-miss retention was argued from IFRS 10 completeness. Does KB-14 as written support that inference, or is the council reasoning beyond the entry?"
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "workflow_id": "P2P-VIP-01",
+  "reading": "Depth separates on this workflow: the baseline range (0.375 to 0.500) and the council range (0.875 to 1.000) are disjoint at n=3. This is the only workflow in the development grid where the ranges do not overlap.",
+  "controls": [
+    {
+      "title": "Validation exception queue at capture",
+      "marker": "Low-confidence/validation exception queue entries",
+      "where": "TS-01 output",
+      "roles": [
+        "agentic_architect",
+        "hitl_designer",
+        "finance_domain"
+      ],
+      "kb": [],
+      "quote": "Anything below the confidence threshold is not silently passed forward — it is routed to an AP-clerk exception queue with the specific low-confidence fields flagged, not the whole document.",
+      "quote_role": "agentic_architect, round 1"
+    },
+    {
+      "title": "Variance packet assembled before handoff",
+      "marker": "Variance packet",
+      "where": "TS-02 output, TS-03 input",
+      "roles": [
+        "agentic_architect",
+        "finance_domain"
+      ],
+      "kb": [],
+      "quote": "when a match falls outside tolerance, the same agent assembles the variance packet (PO, GRN, invoice, computed variance, historical vendor pattern) before handing off, rather than dropping a bare \"exception\" flag",
+      "quote_role": "agentic_architect, round 1"
+    },
+    {
+      "title": "Structured attributable resolution record",
+      "marker": "Structured attributable audit trail",
+      "where": "TS-03 output",
+      "roles": [
+        "hitl_designer",
+        "finance_domain",
+        "accounting_standards"
+      ],
+      "kb": [
+        "KB-02",
+        "KB-05"
+      ],
+      "quote": "resolution rationale (VIP-04) and reconciliation sign-off (VIP-08) must be captured as structured, attributable records, not narrative comments buried in a ticket system",
+      "quote_role": "hitl_designer, round 1"
+    },
+    {
+      "title": "Risk-tiered approval replacing uniform routing",
+      "marker": "Risk-tiered approval and authorisation",
+      "where": "TS-04 step name",
+      "roles": [
+        "hitl_designer",
+        "finance_domain",
+        "pragmatist",
+        "emerging_economy"
+      ],
+      "kb": [
+        "KB-02"
+      ],
+      "quote": "Today's step implies uniform hierarchical routing for everything matched. I want…",
+      "quote_role": "hitl_designer, round 1"
+    },
+    {
+      "title": "Auto-authorisation rule-fired log",
+      "marker": "Auto-authorisation rule-fired log",
+      "where": "TS-04 output",
+      "roles": [
+        "finance_domain",
+        "agentic_architect"
+      ],
+      "kb": [
+        "KB-02"
+      ],
+      "quote": "my round-1 description of T-4 (\"Risk-tiered approval and authorisation\") specified that auto-approval events log \"which rule authorised it,\" but I did not specify what the…",
+      "quote_role": "finance_domain, round 2"
+    },
+    {
+      "title": "Mandatory sampling audit of the auto-approved population",
+      "marker": "Periodic sampling audit record",
+      "where": "TS-04 output",
+      "roles": [
+        "pragmatist",
+        "agentic_architect",
+        "hitl_designer"
+      ],
+      "kb": [],
+      "quote": "neither position has specified what fraction of volume is an acceptable delegation ceiling, nor what compensating control (sampling audits of auto-approved invoices? periodic re-authorisation of the delegation matrix itself?) prevents the delegated tier from silently…",
+      "quote_role": "pragmatist, round 2"
+    },
+    {
+      "title": "Governed delegation-of-authority policy engine for the low-risk tier",
+      "marker": "policy-delegation engine for the low-risk tier",
+      "where": "TS-04 actor",
+      "roles": [
+        "hitl_designer",
+        "emerging_economy",
+        "agentic_architect"
+      ],
+      "kb": [],
+      "quote": "I accept that a governed, versioned tolerance-rule and delegation-matrix object is the right mechanism for risk-tiering",
+      "quote_role": "emerging_economy, round 2"
+    },
+    {
+      "title": "Offline-cached delegation policy with named fallback approver",
+      "marker": "offline-cached delegation policy",
+      "where": "TS-04 input",
+      "roles": [
+        "emerging_economy",
+        "hitl_designer"
+      ],
+      "kb": [],
+      "quote": "I now accept that my tiered-approval design needs an explicit, auditable delegated/offline fallback authority (not a bypass, a named alternate approver with logged after-the-fact reconciliation)",
+      "quote_role": "hitl_designer, round 2"
+    },
+    {
+      "title": "Matching kept as a discrete auditable step boundary",
+      "marker": "discrete step boundary",
+      "where": "TS-02 description",
+      "roles": [
+        "finance_domain",
+        "pragmatist",
+        "accounting_standards"
+      ],
+      "kb": [
+        "KB-09"
+      ],
+      "quote": "This remains a discrete step boundary, not an inline computation inside a larger pipeline, because the boundary is the auditable point at which the in…",
+      "quote_role": "council synthesis, TS-02"
+    },
+    {
+      "title": "Discrete subledger lock preserved under continuous reconciliation",
+      "marker": "Subledger lock",
+      "where": "TS-07 output",
+      "roles": [
+        "finance_domain",
+        "accounting_standards",
+        "agentic_architect"
+      ],
+      "kb": [
+        "KB-03"
+      ],
+      "quote": "the period-end confirmed balance and the subledger lock that enforces cutoff (KB-03) must remain a hard gate — this is not something continuous reconciliation should be allowed to soften",
+      "quote_role": "finance_domain, round 1"
+    }
+  ],
+  "reviewer_questions": [
+    "The delegated approval tier has no stated volume ceiling. What fraction of invoice value may be auto-authorised before the sampling audit stops being a sufficient compensating control?",
+    "Segregation is specified at credential level between approval and posting. Is a service account executing delegated authorisation a distinct actor for VIP-R-06 purposes, or does the gate's actor comparison need to see identity rather than role name?",
+    "The offline approval fallback reconciles after the fact. What is the acceptable reconciliation window before an unreconciled offline approval becomes an audit finding?"
+  ],
+  "excluded_claims": [
+    {
+      "title": "Segregation enforced at credential level",
+      "reason": "Excluded from the controls list: baseline draw 7fc2 already states \"Authorisation is performed by an approver, structurally distinct from the accountant who later posts the entry.\" The council version is stronger (separate credentials, logs and escalation ownership, enforced architecturally) but the control is not absent from every baseline draw, so it is not claimed as council-only."
+    }
+  ]
+}

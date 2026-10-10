@@ -63,6 +63,9 @@ class DispositionProfile(BaseModel):
     def count(self, disposition: Disposition) -> int:
         return self.counts[disposition.value]
 
+    def count_by_value(self, value: str) -> int:
+        return self.counts[value]
+
 
 class SupplementaryDescriptives(BaseModel):
     """Exploratory descriptives. NOT pre-registered; not confirmatory.

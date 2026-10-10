@@ -1,0 +1,159 @@
+{
+  "workflow_id": "FPA-RF-01",
+  "reading": "Depth does not separate on this workflow. The mean gap (0.625 baseline against 0.792 council) is within the sampling spread measured at n=3: one baseline draw reached 0.875, matching the council's best, and the baseline range here is the widest in the grid. No separation claim is made from these data. The demonstrated advantage is qualitative, and this workflow additionally carries the pre-registered confabulation check overleaf.",
+  "controls": [
+    {
+      "title": "Dual-track actuals ingestion for non-integrated entities",
+      "marker": "Manual entity templates (non-integrated units)",
+      "where": "TS-02 input",
+      "roles": [
+        "emerging_economy",
+        "finance_domain"
+      ],
+      "kb": [],
+      "quote": "for those entities there is no automated GL feed to begin with, and treating their manual template-upload-and-reconciliation path as an 'exception' mi…",
+      "quote_role": "finance_domain, round 2 (conceding)"
+    },
+    {
+      "title": "Named human certification of the actuals baseline",
+      "marker": "Certification sign-off record",
+      "where": "TS-02 output",
+      "roles": [
+        "pragmatist",
+        "finance_domain",
+        "emerging_economy",
+        "hitl_designer",
+        "accounting_standards",
+        "agentic_architect"
+      ],
+      "kb": [
+        "KB-03"
+      ],
+      "quote": "a named human certification sign-off attaches to the baseline each cycle, with failures escalated rather than silently passed through",
+      "quote_role": "synthesis rationale, RF-02"
+    },
+    {
+      "title": "Named judgment owner with contemporaneous rationale",
+      "marker": "Updated driver assumptions with named owner and logged rationale",
+      "where": "TS-03 output",
+      "roles": [
+        "hitl_designer",
+        "emerging_economy"
+      ],
+      "kb": [
+        "KB-04"
+      ],
+      "quote": "not merely 'analyst effort shifts to exception review' but 'analyst becomes the named accountable cur…",
+      "quote_role": "emerging_economy, round 2 (conceding)"
+    },
+    {
+      "title": "Tagged exchange-difference schedule",
+      "marker": "Tagged exchange-difference schedule",
+      "where": "TS-03 output",
+      "roles": [
+        "accounting_standards",
+        "finance_domain",
+        "maximalist"
+      ],
+      "kb": [
+        "KB-08"
+      ],
+      "quote": "the FX-driver refresh must write out a tagged, separately retrievable exchange-difference line, not just an updated blended assumption",
+      "quote_role": "maximalist, round 2 (conceding)"
+    },
+    {
+      "title": "Human-authored, attributed BU commentary",
+      "marker": "human-authored, attributed commentary",
+      "where": "TS-04 output",
+      "roles": [
+        "pragmatist",
+        "finance_domain",
+        "emerging_economy",
+        "hitl_designer",
+        "agentic_architect"
+      ],
+      "kb": [
+        "KB-04"
+      ],
+      "quote": "a BU lead reviewing a plausible AI draft under deadline pressure scrutinises it less than a blank template forces",
+      "quote_role": "synthesis rationale, RF-04"
+    },
+    {
+      "title": "Basis-change disclosure log",
+      "marker": "Basis-change disclosure log",
+      "where": "TS-05 output",
+      "roles": [
+        "accounting_standards"
+      ],
+      "kb": [
+        "KB-06"
+      ],
+      "quote": "any change to the consolidation/computation methodology itself is now…",
+      "quote_role": "synthesis rationale, RF-05"
+    },
+    {
+      "title": "Anomaly resolution record with defined SLA",
+      "marker": "Anomaly resolution record",
+      "where": "TS-05 output",
+      "roles": [
+        "finance_domain",
+        "hitl_designer",
+        "emerging_economy"
+      ],
+      "kb": [
+        "KB-05"
+      ],
+      "quote": "'chase and correct anomalous submissions' remains named human judgment with a defined SLA",
+      "quote_role": "synthesis rationale, RF-05"
+    },
+    {
+      "title": "FX- and basis-change-isolated bridges",
+      "marker": "Bridge analyses (FX- and basis-change-isolated)",
+      "where": "TS-06 output",
+      "roles": [
+        "accounting_standards",
+        "finance_domain"
+      ],
+      "kb": [
+        "KB-06",
+        "KB-08"
+      ],
+      "quote": "data-quality-narrated-as-business-movement",
+      "quote_role": "synthesis rationale, RF-06"
+    },
+    {
+      "title": "Traceable approval record tied to items reviewed",
+      "marker": "Traceable approval record (items reviewed)",
+      "where": "TS-07 output",
+      "roles": [
+        "hitl_designer",
+        "pragmatist",
+        "maximalist",
+        "finance_domain"
+      ],
+      "kb": [],
+      "quote": "That's a rubber stamp with better production values, and my original position didn't say enough about it.",
+      "quote_role": "pragmatist, round 2 (conceding)"
+    },
+    {
+      "title": "Publication event-gated on the approval signal",
+      "marker": "Version archived with linked assumptions-basis",
+      "where": "TS-08 output",
+      "roles": [
+        "agentic_architect",
+        "hitl_designer",
+        "pragmatist"
+      ],
+      "kb": [
+        "KB-02"
+      ],
+      "quote": "publication is event-gated strictly on the TS-07 approval signal, never time- or best-effort-gated",
+      "quote_role": "synthesis rationale, RF-08"
+    }
+  ],
+  "reviewer_questions": [
+    "The standards role declared silence on cadence, forecasting judgment and approval governance rather than extrapolating. Does that satisfy the pre-registered confabulation check as specified, or does the check need a stricter operationalisation before held-out runs?",
+    "RF-05 carries an inputs_required rule but no survival requirement and is not on the open-to-elimination list. How should that be resolved before the freeze?",
+    "Baseline depth ranged 0.500 to 0.875 on this workflow. Does n=3 give enough resolution to state any effect here, or does FPA need more repetitions than the other two?"
+  ]
+}

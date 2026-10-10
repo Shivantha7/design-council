@@ -396,9 +396,16 @@ def test_the_pipeline_reads_only_fields_a_streamed_message_carries():
 # --- disposition labelling fidelity ------------------------------------------
 
 
-def test_the_convention_carries_the_labelling_fidelity_paragraph():
+def test_the_convention_is_v1_without_the_labelling_fidelity_paragraph():
+    """v1 restored for the held-out set (docs/freeze_notes.md, 11 Oct 2026).
+
+    The v2 paragraph must be absent, so held-out prompts match the v1 dev grid.
+    """
     from design_council.agents.baseline import DISPOSITION_CONVENTION
 
+    assert DISPOSITION_CONVENTION.endswith(
+        "listed there must be the step_id of a step you define in 'steps'."
+    )
     for phrase in [
         "Label dispositions by what structurally happened, not by what sounds safer",
         "the disposition is eliminated",
@@ -407,7 +414,7 @@ def test_the_convention_carries_the_labelling_fidelity_paragraph():
         "the requirements gate, not the label, is the safety mechanism",
         "a renamed step with the same actor and mechanism is retained",
     ]:
-        assert phrase in DISPOSITION_CONVENTION, phrase
+        assert phrase not in DISPOSITION_CONVENTION, phrase
 
 
 def test_the_convention_reaches_both_conditions_identically():
@@ -441,7 +448,7 @@ def test_the_convention_hash_is_recorded_and_versioned():
 
     expected = hashlib.sha256(DISPOSITION_CONVENTION.encode("utf-8")).hexdigest()
     assert prompt_fragment_hashes()["disposition_convention"] == expected
-    assert DISPOSITION_CONVENTION_VERSION == "v2, 30 Aug 2026"
+    assert DISPOSITION_CONVENTION_VERSION == "v1, restored 11 Oct 2026"
 
     for script in ["run_baseline.py", "run_council.py"]:
         source = (REPO_ROOT / "scripts" / script).read_text()
