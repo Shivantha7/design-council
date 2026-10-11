@@ -14,15 +14,15 @@ EXPORT = Path(__file__).resolve().parent.parent / "export"
 ROLE_LABELS = {
     "maximalist": "Maximalist",
     "pragmatist": "Pragmatist",
-    "finance_domain": "Finance domain",
-    "emerging_economy": "Emerging-economy constraint",
-    "hitl_designer": "Human-in-the-loop designer",
-    "agentic_architect": "Agentic architect",
-    "accounting_standards": "Accounting standards",
+    "finance_domain": "Finance Domain",
+    "emerging_economy": "Emerging-Economy Constraint",
+    "hitl_designer": "Human-in-the-Loop Designer",
+    "agentic_architect": "Agentic Architect",
+    "accounting_standards": "Accounting Standards",
     "synthesis": "Synthesis",
-    "baseline_designer": "Single agentic AI (baseline)",
+    "baseline_designer": "Budget-matched single agent",
 }
-CONDITION_LABELS = {"council": "Council (multi-agent)", "baseline": "Baseline (single agentic AI)"}
+CONDITION_LABELS = {"council": "Council (multi-agent)", "baseline": "Budget-matched single agent"}
 DISPOSITIONS = ["eliminated", "absorbed", "merged", "restructured", "retained"]
 
 
@@ -56,7 +56,12 @@ def label(workflow_id: str) -> str:
 
 
 def role(name: str) -> str:
-    return ROLE_LABELS.get(name, name.replace("_", " ").capitalize())
+    return ROLE_LABELS.get(name, name.replace("_", " ").title())
+
+
+def pct(x: float) -> str:
+    """PI as a percentage, as reported in the dissertation."""
+    return f"{round(100 * x)}%"
 
 
 def exploratory_note(what: str) -> None:

@@ -14,7 +14,7 @@ passing = [c for c in controls if c["outcome"] == "PASS"]
 with st.container(horizontal=True):
     st.metric("Council-attributed controls", len(passing), border=True)
     st.metric("At ≥ 75% (exploratory)", sum(c["strict_75"] for c in passing), border=True)
-    st.metric("Controls coded", len(controls), border=True)
+    st.metric("Distinct controls after merging (from 307 candidates)", len(controls), border=True)
 
 left, right = st.columns(2)
 with left:
@@ -22,7 +22,7 @@ with left:
     st.dataframe(frame([{"Workflow": r["workflow_id"], "Coded": r["final_controls"], "Attributed": r["pass"],
                          "≥ 75%": r["strict_75"]} for r in g["per_workflow"]]), hide_index=True)
 with right:
-    st.subheader("By introducing agentic AI role", anchor=False)
+    st.subheader("By introducing role", anchor=False)
     roles = frame([{"role": role(r["role"]), "primary": r["primary"], "any": r["any"]} for r in g["by_role"]])
     st.altair_chart(alt.Chart(roles).mark_bar().encode(
         x=alt.X("primary:Q", title="Attributed controls (primary role)"),

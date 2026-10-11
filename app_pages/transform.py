@@ -22,7 +22,7 @@ st.altair_chart(chart, width="stretch")
 st.dataframe(frame([{"Disposition": d.capitalize(), "Council": x4["council"][d], "Baseline": x4["baseline"][d]}
                     for d in DISPOSITIONS]), hide_index=True)
 st.markdown("No step was eliminated in either condition. The council restructures far more often, and absorbs "
-            "and merges less often, than the single agentic AI baseline.")
+            "and merges less often, than the budget-matched single agent.")
 
 st.subheader("By workflow", anchor=False)
 idx = index()

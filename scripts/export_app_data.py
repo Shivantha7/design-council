@@ -372,54 +372,81 @@ def main() -> int:
     write(out / "results" / "dev_grid.json", {"set": "dev-v1", "instrument": "disposition convention v1",
                                               "cells": dev_rows})
 
-    # Findings (headline statements, built from the exported numbers).
+    # Findings and limits (wording per the final dissertation; every number from the export).
     fi = tables["fill_ins"]
+    x3, x4, x5 = tables["x3_depth"], tables["x4_dispositions"], tables["x5_stabilisation"]
     pp = productivity["variants"][PRIMARY]["pooled"]
-    pa = productivity["variants"][AGENTIC_ONLY]["pooled"]
-    cls = Counter(f["classification"] for f in json.loads((out / "results" / "conformance_failures.json").read_text())["failures"])
-    exact = [r["workflow_id"] for r in tables["x3_depth"] if r["gap_exact"] == "1/5"]
-    top_role = governance_top = None
     gc = json.loads((out / "results" / "governance_controls.json").read_text())
-    if gc["by_role"]:
-        top_role, governance_top = gc["by_role"][0]["role"], gc["by_role"][0]["primary"]
+    fails = json.loads((out / "results" / "conformance_failures.json").read_text())["failures"]
+    council_fails = [f for f in fails if f["condition"] == "council"]
+    deeper = sum(1 for r in x3 if r["gap"] > 0)
+    sign_p = sum(math.comb(len(x3), k) for k in range(deeper, len(x3) + 1)) / 2 ** len(x3)  # one-sided
+    gap_by = {g: mean(r["gap"] for r in x3 if r["profile"] == g) for g in ("judgment-dense", "transactional")}
+    total_steps = sum(len(encodings[wf].steps) for wf in HELDOUT)
+    open_steps = sum(len(encodings[wf].unconstrained_by_design) for wf in HELDOUT)
+    jd_hitl = [s for s in productivity["variants"][PRIMARY]["structural"] if s["workflow_id"] not in TRANSACTIONAL]
+    hitl_orig = sum(s["original"]["HITL"] for s in jd_hitl)
+    hitl_council = sum(s["council"]["HITL"]["mean"] for s in jd_hitl)
+    roles_primary = {r["role"]: r["primary"] for r in gc["by_role"]}
+    wf_with_pass = sum(1 for r in gc["per_workflow"] if r["pass"] > 0)
+    candidates = sum(len(json.loads((coding.CODING / f"controls_{wf}.json").read_text())["candidates"]) for wf in HELDOUT)
+    cons = fi["consistency_by_condition"]
+
+    def pct(x):
+        return f"{round(100 * x)}%"
+
     findings = [
-        {"id": "H1", "status": "pre-registered", "title": "Conformance is a floor, not a discriminator",
-         "text": f"{fi['runs_below_1']} of {fi['total_runs']} runs fell below 1.0 ({fi['runs_below_1_council']} council, "
-                 f"{fi['runs_below_1_baseline']} baseline), so Branch {fi['h1_branch']} applies. In an exploratory "
-                 f"classification, {cls.get('NAMING', 0)} of these are naming mismatches under exact matching, "
-                 f"{cls.get('SUBSTANTIVE', 0)} substantive and {cls.get('UNCLEAR', 0)} unclear."},
-        {"id": "H2", "status": "pre-registered", "title": "Agentic AI deliberation transforms more deeply",
-         "text": f"Council mean depth exceeded the single agentic AI baseline by at least the 0.2 SESOI on "
-                 f"{fi['h2_workflows_meeting_sesoi']} of 7 workflows (threshold {fi['h2_threshold']}), so H2 is "
-                 f"{'supported' if fi['h2_supported'] else 'not supported'}. {len(exact)} of those gaps are exactly 0.2 "
-                 f"({', '.join(exact)}), decided by exact-fraction comparison."},
-        {"id": "H3", "status": "pre-registered", "title": "Depth does not stabilise by run 4 or 5",
-         "text": f"{fi['h3_stabilised_cells']} of 14 cells stabilised against a threshold of {fi['h3_threshold']}, so the "
-                 f"stabilisation claim is {'supported' if fi['h3_supported'] else 'not supported'}. The stopping rule "
-                 f"is reported as an efficiency rule, not as evidence of convergence."},
-        {"id": "ELIM", "status": "pre-registered", "title": "No step is eliminated; the council restructures",
-         "text": f"Neither condition eliminated any step. Absorbed dispositions: council {tables['x4_dispositions']['council']['absorbed']}, "
-                 f"baseline {tables['x4_dispositions']['baseline']['absorbed']}. The council restructures "
-                 f"({tables['x4_dispositions']['council']['restructured']} vs {tables['x4_dispositions']['baseline']['restructured']}) "
-                 f"rather than removing steps."},
-        {"id": "GOV", "status": "pre-registered coding", "title": "Deliberation adds governance controls",
-         "text": f"{len(passing)} council-attributed controls (present in ≥ 60% of council runs and in no baseline run). "
-                 f"The {top_role.replace('_', ' ') if top_role else '–'} role introduced the most "
-                 f"({governance_top} as primary role)."},
-        {"id": "PROD", "status": "exploratory", "title": "Productivity potential is concentrated in transactional work",
-         "text": f"Pooled structural productivity potential (PI) is {pp['all']['pi']:.3f} under the primary classification "
-                 f"and {pa['all']['pi']:.3f} when only agentic AI (not deterministic automation) counts. Transactional "
-                 f"workflows {pp['transactional']['pi']:.3f}, judgment-dense {pp['judgment-dense']['pi']:.3f}. These are "
-                 f"estimates under stated assumptions, not measured outcomes."},
+        {"id": "F1", "status": "pre-registered", "title": "Agentic deliberation transforms more deeply",
+         "text": f"The council's mean depth was higher than the budget-matched single agent's on {deeper} of "
+                 f"{len(x3)} workflows. The gap reached the 0.2 SESOI on {fi['h2_workflows_meeting_sesoi']} of 7 "
+                 f"(threshold {fi['h2_threshold']}), so H2 is supported at the threshold. Sign test across workflows: "
+                 f"p = {sign_p:.3f} (one-sided, exploratory)."},
+        {"id": "F2", "status": "exploratory", "title": "Deliberation matters most where judgment matters most",
+         "text": f"Mean depth gap {gap_by['judgment-dense']:.3f} on judgment-dense workflows against "
+                 f"{gap_by['transactional']:.3f} on transactional ones."},
+        {"id": "F3", "status": "pre-registered", "title": "Agentic AI transforms the path, not the task list",
+         "text": f"{x4['council']['eliminated']} eliminations in the council and {x4['baseline']['eliminated']} in the "
+                 f"budget-matched single agent, although {open_steps} of {total_steps} steps were open to elimination "
+                 f"by design."},
+        {"id": "F4", "status": "pre-registered counts", "title": "Single agents compress; multi-agent systems re-architect",
+         "text": f"Council vs budget-matched single agent: restructured {x4['council']['restructured']} vs "
+                 f"{x4['baseline']['restructured']}, absorbed {x4['council']['absorbed']} vs {x4['baseline']['absorbed']}, "
+                 f"merged {x4['council']['merged']} vs {x4['baseline']['merged']}. Run-to-run consistency "
+                 f"{cons['council']:.3f} vs {cons['baseline']:.3f}."},
+        {"id": "F5", "status": "exploratory", "title": "Two kinds of value",
+         "text": f"About {pct(pp['transactional']['pi'])} of human effort is removed on transactional workflows and "
+                 f"about {pct(pp['judgment-dense']['pi'])} on judgment-dense ones, where human checkpoints rise instead "
+                 f"(human-in-the-loop checkpoints across the three judgment-dense workflows: {hitl_orig} in the "
+                 f"originals, {hitl_council:.1f} in the council designs, mean per run). "
+                 f"Pooled: {pct(pp['all']['pi'])}."},
+        {"id": "F6", "status": "pre-registered coding", "title": "Deliberation adds governance",
+         "text": f"{len(passing)} council-attributed controls in {wf_with_pass} of 7 workflows "
+                 f"({sum(c['strict_75'] for c in passing)} at 75%), from {len(controls)} distinct controls "
+                 f"({candidates} candidates). Agentic Architect {roles_primary.get('agentic_architect', 0)}, "
+                 f"Emerging-Economy Constraint {roles_primary.get('emerging_economy', 0)}, "
+                 f"Maximalist {roles_primary.get('maximalist', 0)} (primary role)."},
+    ]
+    naming = sum(1 for f in council_fails if f["classification"] == "NAMING")
+    limits = [
+        {"id": "H1", "text": f"{fi['runs_below_1']} of {fi['total_runs']} runs fell below 1.0 conformance, "
+                             f"{fi['runs_below_1_council']} of them council runs. {naming} of the "
+                             f"{len(council_fails)} council failures are naming differences (exploratory classification)."},
+        {"id": "H3", "text": f"H3 is not supported: {fi['h3_stabilised_cells']} of 14 cells stabilised."},
+        {"id": "COST", "text": f"The council costs about {totals['council']['cost_usd'] / totals['baseline']['cost_usd']:.0f}× "
+                               f"the budget-matched single agent (${totals['council']['mean_cost_usd']:.2f} vs "
+                               f"${totals['baseline']['mean_cost_usd']:.2f} per run)."},
+        {"id": "MODEL", "text": "One model family was used for both conditions."},
+        {"id": "MATCH", "text": "The baseline is budget-matched, not compute-matched."},
     ]
 
     commit = git("rev-parse", "HEAD")
     index = {
         "export_commit": commit,
         "prereg_tag": started.get("prereg_tag"),
-        "research_question": ("Does a multi-agent Design Council of agentic AI roles produce deeper, standards-"
-                              "conformant redesigns of finance workflows than a single agentic AI baseline, and "
-                              "what governance does deliberation add?"),
+        "research_question": ("Does structured multi-agent deliberation, implemented as a role-differentiated "
+                              "Design Council, produce finance workflow redesigns superior to those of a "
+                              "budget-matched strong single agent, when superiority is measured against each "
+                              "workflow's own encoded requirements?"),
         "sets": {
             HELDOUT_SET: {"label": "Held-out (pre-registered)", "commit": started["git_commit"],
                           "requested_model": started["requested_model"], "workflows": HELDOUT,
@@ -434,6 +461,7 @@ def main() -> int:
         },
         "workflows": workflow_index,
         "findings": findings,
+        "limits": limits,
         "headline": {"heldout_runs": len(heldout_runs), "council_attributed_controls": len(passing),
                      "h2": f"{fi['h2_workflows_meeting_sesoi']} of 7", "h3": f"{fi['h3_stabilised_cells']} of 14",
                      "runs_below_1": fi["runs_below_1"], "pooled_pi_primary": pp["all"]["pi"],
@@ -454,14 +482,16 @@ bytes. JSON files use sorted keys. Floats are rounded to 6 decimals.
 
 ## index.json
 - `export_commit`: git commit the export was made from. `prereg_tag`: freeze tag of the held-out set.
-- `research_question`: one sentence.
+- `research_question`: verbatim from the dissertation.
 - `sets.heldout-v1`: `label`, `commit` (pinned run commit), `requested_model`, `workflows` (7 ids),
   `runs` (68 run ids), `cells[]` = {`workflow_id`, `condition`, `run_ids` in rep order, `stop_decision`
   (`complete_at_n4` | `run_5`)}.
 - `sets.dev-v1`: `label`, `workflows` (3 ids), `runs` (18 v1 run ids).
 - `workflows[]`: {`workflow_id`, `name`, `split` (heldout | dev), `profile` (transactional |
   judgment-dense | null), `function_area`, `steps`, `requirements`, `open_steps`} (the last three are counts).
-- `findings[]`: {`id`, `status` (pre-registered | pre-registered coding | exploratory), `title`, `text`}.
+- `findings[]`: {`id` (F1 to F6), `status` (pre-registered | pre-registered counts | pre-registered coding |
+  exploratory), `title`, `text`}.
+- `limits[]`: {`id`, `text`}.
 - `headline`: headline numbers used by the overview page.
 
 ## workflows/<workflow_id>.json

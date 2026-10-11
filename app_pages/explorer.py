@@ -50,7 +50,7 @@ with tab_proc:
 with tab_out:
     cls = st.segmented_control("Actor class", ["class_primary", "class_agentic_only"], default="class_primary",
                                required=True,
-                               format_func=lambda c: "Primary" if c == "class_primary" else "Agentic AI only")
+                               format_func=lambda c: "Primary" if c == "class_primary" else "Agentic AI only (deterministic automation counted as human)")
     st.dataframe(frame([{"Step": s["step_id"], "Name": s["name"], "Actor": s["actor"], "Class": s[cls]}
                         for s in r["steps"]]), hide_index=True)
     st.markdown("**Disposition mapping**")

@@ -9,6 +9,9 @@ st.caption("The v1 development grid: 3 workflows by 2 conditions at n = 3 (18 ru
            "is the confirmatory test. Open individual runs in the run explorer under 'Development grid (v1)'.")
 
 cells = d["cells"]
+st.info("Conformance was 1.0 in 17 of 18 runs. The exception (council, FPA-RF-01, run 853f, 0.8) is a "
+        "capitalisation mismatch: 'Closed-period actuals' in the design against 'closed-period actuals' in the "
+        "requirement.", icon=":material/info:")
 st.dataframe(frame([{"Workflow": label(c["workflow_id"]), "Condition": c["condition"], "n": c["n"],
                      "Depth mean": c["depth_mean"], "Depth min": c["depth_min"], "Depth max": c["depth_max"],
                      "Conformance": c["conformance_mean"], "Consistency": c["consistency"],

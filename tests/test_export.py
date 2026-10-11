@@ -93,3 +93,30 @@ def test_productivity_and_efficiency_match_documents(exported):
     e = load(exported, "results/efficiency.json")
     assert f"| council | 33 | {e['totals']['council']['input_tokens']:,} |" in eff
     assert f"{e['totals']['council']['cost_usd']:,.2f}" in eff
+
+
+def test_findings_and_limits_match_the_dissertation(exported):
+    """The overview's findings and limits, as worded in the final dissertation, are built from the export."""
+    index = load(exported, "index.json")
+    assert index["research_question"].startswith(
+        "Does structured multi-agent deliberation, implemented as a role-differentiated Design Council")
+    f = {x["id"]: x for x in index["findings"]}
+    assert list(f) == ["F1", "F2", "F3", "F4", "F5", "F6"]
+    assert f["F1"]["status"] == "pre-registered"
+    assert "on 7 of 7 workflows" in f["F1"]["text"] and "on 4 of 7" in f["F1"]["text"]
+    assert "p = 0.008 (one-sided, exploratory)" in f["F1"]["text"]
+    assert "0.257" in f["F2"]["text"] and "0.119" in f["F2"]["text"] and f["F2"]["status"] == "exploratory"
+    assert "0 eliminations in the council and 0" in f["F3"]["text"] and "16 of 57 steps" in f["F3"]["text"]
+    for s in ("restructured 170 vs 95", "absorbed 5 vs 17", "merged 55 vs 81", "0.789 vs 0.702"):
+        assert s in f["F4"]["text"], s
+    for s in ("About 37%", "about 2%", "Pooled: 20%"):
+        assert s in f["F5"]["text"], s
+    for s in ("78 council-attributed controls in 7 of 7 workflows (57 at 75%)",
+              "from 277 distinct controls (307 candidates)", "Agentic Architect 28",
+              "Emerging-Economy Constraint 21", "Maximalist 0"):
+        assert s in f["F6"]["text"], s
+    limits = " ".join(x["text"] for x in index["limits"])
+    for s in ("10 of 68 runs fell below 1.0", "9 of them council", "8 of the 9 council failures",
+              "4 of 14 cells", "about 19×", "$1.42 vs $0.07 per run", "One model family",
+              "budget-matched, not compute-matched"):
+        assert s in limits, s
