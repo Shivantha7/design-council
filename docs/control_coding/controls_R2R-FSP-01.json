@@ -1,0 +1,1954 @@
+{
+ "workflow_id": "R2R-FSP-01",
+ "candidates": [
+  {
+   "id": "FSP-C01",
+   "title": "Discrete, attributable human close confirmation as hard gate before downstream work",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain",
+     "pragmatist",
+     "hitl_designer"
+    ],
+    "quote": "What must remain a discrete, dated event is the human confirmation that closes the gate",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T1",
+     "field": "description",
+     "marker": "issues a discrete, timestamped confirmation that the trial balance is closed and reconciled"
+    },
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "The confirmation remains an explicit human decision and the hard gate that unlocks all downstream work"
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T1",
+     "field": "description",
+     "marker": "the GL accountant must issue an explicit, timestamped confirmation action every period - including clean passes"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "performs a discrete, timestamped attestation that the trial balance is closed and reconciled"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "the GL accountant investigates the exception and makes the affirmative confirmation decision"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-FSP-01-b1b5",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "Preserves the period-end cutoff discipline (KB-03) that gates all downstream reporting"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-FSP-01-8bc6",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "Period-end cutoff gates remain enforced before any downstream adjustment or drafting activity can proceed"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-FSP-01-38b8",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "establishing the closed, reconciled trial balance that gates all downstream reporting"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-FSP-01-0590",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "establishing the closed, reconciled trial balance that gates all downstream statement preparation"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-FSP-01-cec0",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "investigates any flagged exceptions before the trial balance is declared closed and reconciled"
+    }
+   ],
+   "flags": [
+    "106a weaker variant: on clean pass the dashboard stages the closed TB automatically; human confirmation only where items are open/stale/flagged (contrasts with d272 'including clean passes' and cac9 'not inferred from no exceptions raised').",
+    "Baseline presence is a judgement call: baselines keep the close as a gate (inherited from current-state FSP-01 and FSP-R-01) but none specifies a timestamped/attributable confirmation record.",
+    "Ordering itself is a current-state requirement (FSP-R-01); the candidate mechanism is the attributable confirmation act, which may overlap with FSP-C02 (exception review) and FSP-C05 (confirmation log/override)."
+   ]
+  },
+  {
+   "id": "FSP-C02",
+   "title": "Automated close-readiness monitoring raising an exception list/log for human review",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "agentic_architect"
+    ],
+    "quote": "who reviews the exception list (not a green/red light) before signing off",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T1",
+     "field": "description",
+     "marker": "the GL accountant reviews the resulting exception list"
+    },
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Close exception log"
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T1",
+     "field": "description",
+     "marker": "Exceptions open a ticket requiring resolution or a reasoned override before confirmation can complete"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Close-readiness exception log"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Close-readiness exception log"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-205000-baseline-R2R-FSP-01-cec0",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "the GL accountant confirms closed status and investigates any flagged exceptions"
+    }
+   ],
+   "flags": [
+    "c9c7 and d272 have no named exception-log output (exception list / ticket in description only); d272 output is 'Close confirmation log' instead.",
+    "Baseline cec0 is a weaker variant (flagged exceptions investigated, no log); b1b5/38b8/0590 mention automated monitoring/dashboard but no exception routing - judged absent.",
+    "Attribution: hitl_designer (c9c7) and agentic_architect (cac9: 'raises an exception list') proposed independently in round1."
+   ]
+  },
+  {
+   "id": "FSP-C03",
+   "title": "Fail-closed pre-check on missing or stale close data (no auto-confirmation)",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "stale or missing feed data causes the agent to fail closed (no auto-confirmation) rather than fail open",
+    "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T1",
+     "field": "description",
+     "marker": "fails closed (no auto-confirmation) on missing or stale data"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "where any item is open, stale, or flagged, the GL accountant investigates the exception"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "106a presence is a weaker/partial variant: stale items route to the human, but clean passes are auto-staged; not described as fail-closed.",
+    "May be one control with FSP-C01/FSP-C02 (gate + exception routing)."
+   ]
+  },
+  {
+   "id": "FSP-C04",
+   "title": "Manual-input fallback for close-status feeds where no system feed exists",
+   "category": "fallback",
+   "codebook_match": "Documented degraded-mode fallback as a named input",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "manually maintained reconciliation workbooks for smaller subsidiaries. The confirmation step needs to remain a distinct human checkpoint that can absorb heterogeneous ev",
+    "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "(manually sourced where no system feed exists)"
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T1",
+     "field": "description",
+     "marker": "where a status feed is itself manually tracked, a manual-input fallback is supported rather than assumed away"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Codebook match is approximate: dev control is a documented degraded-mode procedure as a named input; here the fallback is only described, not a named input.",
+    "Possibly one control with FSP-C18 (platform-independent fallback for consolidation/mapping) and FSP-C32 (release offline fallback)."
+   ]
+  },
+  {
+   "id": "FSP-C05",
+   "title": "Logged override with recorded reason for exceptions",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "every pass/fail decision, override, and reason code is logged and queryable",
+    "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T1",
+     "field": "description",
+     "marker": "Exceptions open a ticket requiring resolution or a reasoned override before confirmation can complete"
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T7",
+     "field": "inputs",
+     "marker": "Consolidated exception and override log"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "The mapping table and any manual override are logged."
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "5655 presence is in the mapping step (override of mapping table), d272 in close and approval inputs - may be two different controls (close override vs mapping override).",
+    "Overlaps with FSP-C26 (approval package incl. override trail) and FSP-C20 (mapping table governance).",
+    "Attribution unclear: d272 hitl_designer also proposed IC 'investigation and override' in round1; 5655 agentic_architect separately proposed logged mapping overrides."
+   ]
+  },
+  {
+   "id": "FSP-C06",
+   "title": "Close confirmation reopenable if a problem surfaces later",
+   "category": "other",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "the confirmation itself is the auditable, reversible checkpoint (close can be reopened)",
+    "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "the close can be reopened if a problem surfaces later"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Single-run mention; whether reopening is a governance control (correction/resilience) or ordinary process is a judgement call."
+   ]
+  },
+  {
+   "id": "FSP-C07",
+   "title": "Estimation entries: named accountable preparer with documented basis before posting; never auto-posted",
+   "category": "approval",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain",
+     "hitl_designer"
+    ],
+    "quote": "KB-04 and KB-10 are explicit that estimates need a documented basis and an accountable human",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T3",
+     "field": "description",
+     "marker": "are prepared by a named accountable preparer with a documented basis attached before posting, reviewed, and posted"
+    },
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T3",
+     "field": "outputs",
+     "marker": "Documented estimation basis records"
+    },
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "require a named accountable preparer to document the basis before posting; they are never auto-posted"
+    },
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Estimation entry basis documentation"
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T2",
+     "field": "description",
+     "marker": "who must supply and sign a documented basis before it posts"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "documents the basis before posting, not after"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Estimation-entry basis memo"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-02b",
+     "field": "description",
+     "marker": "nothing in this category is auto-posted on confidence score alone"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-02b",
+     "field": "outputs",
+     "marker": "Estimate approval record"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-FSP-01-b1b5",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "Estimation entries (provisions, NRV write-downs, ECL) retain an accountable human preparer"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-FSP-01-8bc6",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "Estimation-based entries (provisions, NRV write-downs) retain an accountable human preparer per IAS 8/IAS 2."
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-FSP-01-38b8",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "provisions and other estimation-based adjustments remain posted and signed off by an accountable GL accountant"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-FSP-01-cec0",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "estimation-based entries (provisions, impairments, NRV write-downs) retain an accountable GL accountant"
+    }
+   ],
+   "flags": [
+    "Baseline presence is a weaker variant: accountable preparer retained but no documented-basis output and no 'before posting' precondition; 0590 judged absent.",
+    "Might be two controls: (a) named preparer + documented basis (evidence) and (b) blocking review/approval of estimate items (106a 'Estimate approval record', c9c7 'reviewed'); also c9c7/106a make estimation a separate step (c9c7 T3, 106a TS-02b), others a sub-activity.",
+    "Attribution: several roles in round1 of c9c7 (finance_domain, hitl_designer, agentic_architect) and in every other run."
+   ]
+  },
+  {
+   "id": "FSP-C08",
+   "title": "Revenue cut-off verification kept as a distinct, evidenced activity",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "Revenue cut-off verification stays here as a distinct, evidenced sub-activity",
+    "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "Revenue cut-off verification remains a distinct, evidenced sub-activity within this step"
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T2",
+     "field": "description",
+     "marker": "Revenue cut-off evidence is actively verified against the schedule, not passed through silently."
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "with automated validation against revenue cut-off evidence"
+    },
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T2",
+     "field": "description",
+     "marker": "verified revenue cut-off evidence"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-FSP-01-b1b5",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "with revenue cut-off evidence verified"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-FSP-01-8bc6",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "with revenue cut-off verified"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-FSP-01-38b8",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "revenue cut-off is verified against evidence"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-FSP-01-0590",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "with revenue cut-off evidence verified at the point of posting"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-FSP-01-cec0",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "with revenue cut-off verified"
+    }
+   ],
+   "flags": [
+    "Mechanism is inherited from the current-state encoding (FSP-02 'with revenue cut-off verified'; FSP-R-06), so presence in all baselines is expected; the council increment is only 'distinct/evidenced/not silent'.",
+    "c9c7 is a weak variant (input described as 'verified', no separate verification); 106a only routes 'judgmental revenue cut-off calls' to the estimate queue - judged absent."
+   ]
+  },
+  {
+   "id": "FSP-C09",
+   "title": "Adjustment posting log traceable to the approved schedule line",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "posting log keyed to the approved schedule line items, satisfying the evidential-trail requirement in KB-02",
+    "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T2",
+     "field": "description",
+     "marker": "post automatically with full traceability to the approved adjustment schedule line they correspond to"
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T2",
+     "field": "outputs",
+     "marker": "Adjustment posting log"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-02a",
+     "field": "outputs",
+     "marker": "Posting log"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Attribution: an earlier variant appears in cac9 round1_agentic_architect ('Every posted entry carries a provenance tag'), different form; 5655 round1_agentic_architect also required schedule-line references but the 5655 TSS has no posting log.",
+    "106a 'Posting log' has no explicit schedule-line traceability (weaker variant)."
+   ]
+  },
+  {
+   "id": "FSP-C10",
+   "title": "Schedule/evidence mismatch on adjustments blocked and routed to GL accountant (never auto-overridden)",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "any entry lacking matching support, any amount variance against the approved schedule, or any unapproved/estimate-flagged line is routed to the GL accountant rather than posted",
+    "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T2",
+     "field": "description",
+     "marker": "Any entry lacking matching support, any amount variance against the schedule, or any estimate-bearing line"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "Any schedule/evidence mismatch or missing approval reference is routed to the GL accountant as an exception"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Partly overlaps FSP-C07 in d272 (the same sentence also routes estimate-bearing lines)."
+   ]
+  },
+  {
+   "id": "FSP-C11",
+   "title": "Mechanical postings reversible by standard journal reversal (no one-way writes)",
+   "category": "fallback",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "The agent's postings are reversible journal entries with a standard reversal protocol, not one-way writes.",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T2",
+     "field": "description",
+     "marker": "All postings are reversible through a standard protocol, never one-way writes, so error correction remains possible."
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-02a",
+     "field": "description",
+     "marker": "Every posting is logged and reversible by journal reversal, not file edit."
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Category is a judgement call (resilience/correction vs evidence)."
+   ]
+  },
+  {
+   "id": "FSP-C12",
+   "title": "Unmatched intercompany items routed to a Group accountant exception queue; never force-matched, netted or auto-cleared",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "hitl_designer",
+     "finance_domain"
+    ],
+    "quote": "queues unmatched IC items or missing/stale rates to the group accountant rather than resolving them silently",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T4",
+     "field": "description",
+     "marker": "routed to the group accountant for resolution rather than auto-cleared"
+    },
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "Intercompany exception queue"
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T3",
+     "field": "description",
+     "marker": "Unmatched intercompany balances, elimination breaks, and rate-source anomalies are never auto-resolved or netted away"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "Unmatched or mismatched intercompany items are hard-stopped and escalated to the Group accountant for resolution"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "Intercompany elimination exception log"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Codebook relation unclear: dev 'Intercompany matching split from exception resolution' is a separate step; here exception resolution is a queue inside the consolidation step - recorded as new.",
+    "In c9c7, d272 and 106a the IC queue and the FX-rate anomaly routing (FSP-C13) are one queue; cac9 keeps 'two distinct, labelled exception queues' - may be one control or two."
+   ]
+  },
+  {
+   "id": "FSP-C13",
+   "title": "FX rate anomalies / translation movements above threshold surfaced to Group accountant before routine OCI treatment",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "agentic_architect"
+    ],
+    "quote": "mandatory human review of translation differences, particularly outliers, rate anomalies or hyperinflationary adjustments",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T4",
+     "field": "description",
+     "marker": "stale or missing rates, and anomalous translation movements are routed to the group accountant"
+    },
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "two distinct, labelled exception queues"
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T3",
+     "field": "description",
+     "marker": "rate-source anomalies are never auto-resolved or netted away"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "exchange differences above a defined threshold, and any unusual movement, are surfaced"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "Unmatched intercompany items and rate-feed anomalies are not auto-resolved"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Only 5655 has a defined threshold on exchange differences; other runs route rate anomalies only.",
+    "May be the same control as FSP-C12 in runs where both share one queue."
+   ]
+  },
+  {
+   "id": "FSP-C14",
+   "title": "Intercompany elimination completeness record/schedule kept as a separate artefact",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "accounting_standards"
+    ],
+    "quote": "Whatever step carries this function must produce a separately traceable elimination record",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_accounting_standards"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T4",
+     "field": "outputs",
+     "marker": "Intercompany elimination record"
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T3",
+     "field": "description",
+     "marker": "so elimination completeness and exchange-difference visibility each remain separately demonstrable"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Intercompany elimination completeness schedule"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "intercompany elimination completeness remain two separately logged, non-netted outputs"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-FSP-01-b1b5",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "both of which remain mandatory and separately evidenced in the outputs"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-FSP-01-0590",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "keeping both computations fully auditable"
+    }
+   ],
+   "flags": [
+    "Baseline presence is a weak/implied variant (no elimination record output; generic 'separately evidenced'/'auditable').",
+    "d272 and 106a have no named output (description only); cac9 has only an exception queue - judged absent.",
+    "Possible relation to dev 'Near-miss retention in the match audit log' / 'Periodic completeness attestation on intercompany'; recorded as new. Overlaps FSP-C15 (separate translation differences) since several runs state both in one sentence."
+   ]
+  },
+  {
+   "id": "FSP-C15",
+   "title": "Translation differences separately tagged/logged, never netted into consolidation or elimination",
+   "category": "evidence",
+   "codebook_match": "Tagged exchange-difference schedule",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "pragmatist"
+    ],
+    "quote": "needs a human set of eyes so differences are never netted invisibly",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T4",
+     "field": "description",
+     "marker": "never netted into a single black-box consolidated figure"
+    },
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "differences separately tagged for OCI"
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T3",
+     "field": "description",
+     "marker": "remain three separately logged, independently queryable outputs even though one step produces them"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "Translation differences are logged as their own separately dated artifact, distinct from any elimination workpaper."
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "two separately logged, non-netted outputs of this single pass"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-FSP-01-b1b5",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "Translation differences"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-FSP-01-8bc6",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "Translation differences"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-FSP-01-38b8",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "Translation differences"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-FSP-01-0590",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "Translation differences"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-FSP-01-cec0",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "Translation differences"
+    }
+   ],
+   "flags": [
+    "'Translation differences' is already a separate output in the current-state encoding (FSP-04); baseline presence is the inherited output only, without the 'never netted/separately logged' property - judgement call.",
+    "Attribution: many roles across runs (accounting_standards, emerging_economy, agentic_architect, finance_domain) state non-netting in round1; c9c7 hitl_designer chosen as first clear proposal."
+   ]
+  },
+  {
+   "id": "FSP-C16",
+   "title": "Group accountant completeness attestation over intercompany elimination",
+   "category": "approval",
+   "codebook_match": "Periodic completeness attestation on intercompany",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "to meaningfully attest that elimination is complete",
+    "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+    "agent_role": "round2_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "Group accountant capacity shifts from manual matching to exception resolution and completeness attestation."
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Weak presence: mentioned as a capacity shift, not as a specified output or step mechanism.",
+    "Attribution unclear: no round1 proposal found; first appears in 5655 round2_hitl_designer (discussing attestation), then synthesis.",
+    "Might be part of FSP-C14."
+   ]
+  },
+  {
+   "id": "FSP-C17",
+   "title": "Translate before eliminating intercompany (common-currency basis for matching)",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "translate each foreign entity to presentation currency first, *then* consolidate",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T4",
+     "field": "description",
+     "marker": "so eliminations are never struck across inconsistent currency bases"
+    },
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "matched and eliminated against the translated figures, correcting the baseline's reversed sequencing"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "so that intercompany matching never has to operate on mixed-currency balances"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "intercompany balances are expressed in a common currency before matching"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-195830-baseline-R2R-FSP-01-38b8",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "with translation differences routed to OCI, then consolidated with full identification, matching and elimination"
+    }
+   ],
+   "flags": [
+    "May be ordinary processing (sequencing for correctness) rather than a governance control - judgement call.",
+    "d272 does not state the order explicitly - judged absent; baseline 38b8 states translate-then-consolidate without the governance rationale."
+   ]
+  },
+  {
+   "id": "FSP-C18",
+   "title": "Platform-independent / manual (spreadsheet) fallback for consolidation, rate table and mapping",
+   "category": "fallback",
+   "codebook_match": "Documented degraded-mode fallback as a named input",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "Consolidation, translation, and tie-out must remain executable with a spreadsheet-based or offline fallback.",
+    "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T3",
+     "field": "description",
+     "marker": "with a spreadsheet-based fallback specified"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "against a locally-maintainable, inspectable rate table (not vendor-locked)"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "so the local team can operate the mapping manually if the platform is unavailable"
+    },
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "tolerates heterogeneous evidence (system-generated or manually confirmed)"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "cac9 is a weaker variant (tolerance of manually confirmed evidence, not a fallback procedure).",
+    "Attribution: earlier form in cac9 round1_emerging_economy ('without a manual reconciliation fallback'); d272 quote is the clearest.",
+    "May be one control with FSP-C04 and FSP-C32 (fallbacks at different steps); 5655 covers both consolidation and mapping steps."
+   ]
+  },
+  {
+   "id": "FSP-C19",
+   "title": "Unmapped / new accounts routed to named Financial reporting exception review with a mapping exception log; never defaulted",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain",
+     "agentic_architect"
+    ],
+    "quote": "narrowed in practice to an exception review of unmapped or newly mapped items",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T5",
+     "field": "outputs",
+     "marker": "Mapping exception log"
+    },
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Mapping exception log"
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T4",
+     "field": "outputs",
+     "marker": "Mapping exception log"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "marker": "Unmapped-account exception log"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Mapping exception log"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-195830-baseline-R2R-FSP-01-38b8",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "with exceptions routed for review"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-FSP-01-0590",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "with Financial reporting validating exceptions and structural changes"
+    }
+   ],
+   "flags": [
+    "Baseline presence is a weaker variant (exception review, no log, no 'never defaulted' rule)."
+   ]
+  },
+  {
+   "id": "FSP-C20",
+   "title": "Mapping table under version control / named ownership and change control",
+   "category": "other",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "pragmatist",
+     "hitl_designer",
+     "agentic_architect"
+    ],
+    "quote": "(a maintained, version-controlled mapping table), but a human (Financial reporting) must still own the mapping structure and approve changes to it",
+    "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "using a maintained, version-controlled mapping table"
+    },
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "Financial reporting retains ownership of the mapping table itself"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "via a maintained, version-controlled crosswalk"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "The mapping table and any manual override are logged."
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-193948-baseline-R2R-FSP-01-8bc6",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "using a maintained chart-of-accounts-to-disclosure mapping"
+    }
+   ],
+   "flags": [
+    "5655 is a variant (logging of table and overrides, no version control); c9c7 'maintained ... taxonomy' and d272 'maintained crosswalk' judged absent (no control property).",
+    "Baseline 8bc6 'maintained ... mapping' is a weak/implied variant; 38b8 'standing' mapping judged absent.",
+    "Possible analogue of dev 'Named allocation-basis owner with review log' - recorded as new."
+   ]
+  },
+  {
+   "id": "FSP-C21",
+   "title": "Mapping kept as a distinct step from consolidation and drafting",
+   "category": "other",
+   "codebook_match": "Matching kept as a discrete auditable step boundary",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "I keep it separate rather than folding it into drafting because it has its own distinct failure mode",
+    "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T5",
+     "field": "name",
+     "marker": "Map trial balance to statement line items"
+    },
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-04",
+     "field": "name",
+     "marker": "Map trial balance to statement line items"
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T4",
+     "field": "description",
+     "marker": "This remains a visibly distinct step from drafting and from consolidation"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-05",
+     "field": "name",
+     "marker": "Map trial balance to statement line items"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "this boundary is kept distinct because it is where the Group accountant's output becomes Financial reporting's input"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-193948-baseline-R2R-FSP-01-8bc6",
+     "step_id": "TS-04",
+     "field": "name",
+     "marker": "Map trial balance to statement line items"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-FSP-01-38b8",
+     "step_id": "TS-04",
+     "field": "name",
+     "marker": "Map trial balance to statement line items"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-FSP-01-0590",
+     "step_id": "TS-04",
+     "field": "name",
+     "marker": "Map trial balance to statement line items"
+    }
+   ],
+   "flags": [
+    "Structural presence only in c9c7, cac9, 5655 and in baselines 8bc6/38b8/0590 (step exists, no stated control rationale); b1b5 and cec0 merge mapping into drafting.",
+    "Codebook match is by analogy (dev control concerns matching, not mapping).",
+    "Whether a step boundary is a governance control is a judgement call."
+   ]
+  },
+  {
+   "id": "FSP-C22",
+   "title": "Human-authored, accountable drafter of record for judgmental disclosures (policy changes, prior-period errors)",
+   "category": "approval",
+   "codebook_match": "Human-authored, attributed BU commentary",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "agentic_architect",
+     "finance_domain"
+    ],
+    "quote": "The human preparer must own the judgmental content: policy-change disclosures and prior-period error corrections (KB-05, KB-06).",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "owning all judgmental disclosure content and materiality decisions"
+    },
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "remains human-authored by Financial reporting"
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "Statement and note drafting remains human-authored and human-accountable"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "Financial reporting remains the accountable drafter of record"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "Financial reporting remains the accountable author of record"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Codebook match is by analogy (dev control concerns BU commentary in FP&A)."
+   ]
+  },
+  {
+   "id": "FSP-C23",
+   "title": "Policy-change / prior-period error record explicitly carried into disclosures (not silently dropped or summarised away)",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "pulling the accounting policy change and prior-period error record into the relevant disclosures automatically so nothing gets silently dropped",
+    "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "into the relevant disclosures so nothing is silently dropped"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "error record rather than letting it be summarized away"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Error record as an input is current-state (FSP-06, FSP-R-07); every run and baseline consumes it - only the 'not silently dropped' mechanism is counted here.",
+    "Mechanisms differ (cac9 automated pull vs 106a human review); may be part of FSP-C22."
+   ]
+  },
+  {
+   "id": "FSP-C24",
+   "title": "Analytical review and tie-out retained as a discrete checkpoint between drafting and approval",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "pragmatist",
+     "agentic_architect"
+    ],
+    "quote": "FSP-07 (Analytical review and tie-out) — retained as a distinct step, even though it carries no explicit requirement in this spec.",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T7",
+     "field": "description",
+     "marker": "This remains a distinct step, functionally separate from drafting"
+    },
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "This step is kept as a separate pause point rather than folded into drafting"
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "Tie-out survives as a discrete, human-owned checkpoint"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "Retained as a genuine, separately performed checkpoint between drafting and CFO review"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "formally closes out tie-out, producing dated tie-out evidence before the draft proceeds to management review"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-FSP-01-b1b5",
+     "step_id": "TS-05",
+     "field": "name",
+     "marker": "Analytical review and tie-out"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-FSP-01-38b8",
+     "step_id": "TS-06",
+     "field": "name",
+     "marker": "Automated analytical review and tie-out"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-FSP-01-cec0",
+     "step_id": "TS-05",
+     "field": "name",
+     "marker": "Automated analytical review and tie-out"
+    }
+   ],
+   "flags": [
+    "Baselines b1b5/38b8/cec0 keep a separate tie-out step (structural presence only); 8bc6 and 0590 embed tie-out in drafting - absent.",
+    "106a runs tie-out continuously during drafting but keeps a separate formal close-out step - variant.",
+    "May be one control with FSP-C25 (reviewer independence)."
+   ]
+  },
+  {
+   "id": "FSP-C25",
+   "title": "Tie-out reviewer independent of / distinct from the drafter",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain",
+     "agentic_architect"
+    ],
+    "quote": "be performed by someone other than the drafter of FSP-06 where headcount allows",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T7",
+     "field": "actor",
+     "marker": "Financial reporting (reviewer distinct from the preparer of the draft where feasible)"
+    },
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "performed by a reviewer distinct from the drafting pass"
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "performed by a function independent of whoever produced the draft"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "the independent check is exactly what KB-02's evidential-trail principle requires"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-06",
+     "field": "actor",
+     "marker": "Financial reporting (reviewer distinct from preparer)"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "c9c7 is qualified 'where feasible'; 5655 states an 'independent check' but does not say the reviewer is a different person from the drafter - weaker/implied.",
+    "Baseline b1b5 explicitly places tie-out 'before the draft leaves the preparer function' (same function) - absent."
+   ]
+  },
+  {
+   "id": "FSP-C26",
+   "title": "Approval package must surface upstream exception/judgment trail, not only the finished draft",
+   "category": "evidence",
+   "codebook_match": "Traceable approval record tied to items reviewed",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "The redesign must ensure the CFO's review package explicitly surfaces the judgment items generated upstream",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T8",
+     "field": "description",
+     "marker": "The review package explicitly surfaces the judgment and exception trail generated upstream"
+    },
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "The approval package must explicitly include tie-out evidence, the exception/escalation log"
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T7",
+     "field": "inputs",
+     "marker": "Consolidated exception and override log"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-08",
+     "field": "description",
+     "marker": "The CFO's approval packet carries forward the full exception trail generated upstream"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "The review package explicitly surfaces estimate-based adjustments and their basis"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Codebook match is approximate (dev control is an approval record tied to items reviewed; here the mechanism is the input package).",
+    "106a states it in the description only; its TS-07 inputs remain the baseline pair (draft + tie-out) - weaker variant.",
+    "Attribution: hitl_designer proposed it in round1 of every run."
+   ]
+  },
+  {
+   "id": "FSP-C27",
+   "title": "Approver structurally distinct from the drafter",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "accounting_standards",
+     "hitl_designer"
+    ],
+    "quote": "an independent approval function must remain structurally distinct from the drafting function",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_accounting_standards"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T8",
+     "field": "description",
+     "marker": "The approver is structurally distinct from the drafter at all times."
+    },
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "This actor remains organisationally distinct from whoever performs drafting (TS-05)."
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T7",
+     "field": "description",
+     "marker": "structurally distinct from the drafting actor"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-08",
+     "field": "description",
+     "marker": "kept actor-distinct from drafting"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-07",
+     "field": "name",
+     "marker": "Management review and approval"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-FSP-01-b1b5",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "Actor separation from drafting (TS-04) is preserved to maintain a genuine review control."
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-FSP-01-8bc6",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "Performed by an actor distinct from the preparer of the draft statements."
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-FSP-01-38b8",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "The CFO, independent of the drafting function"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-FSP-01-0590",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "Performed by a different actor than drafting to preserve independent review."
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-FSP-01-cec0",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "preserving segregation of duties"
+    }
+   ],
+   "flags": [
+    "Required by the current-state encoding (FSP-R-08), so presence in all runs is expected.",
+    "106a presence is implied only (CFO actor vs Financial reporting drafter; no explicit statement) - marker is the step name."
+   ]
+  },
+  {
+   "id": "FSP-C28",
+   "title": "Genuine reject/query/escalate path in the approval interface",
+   "category": "approval",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "a defined set of things the human can reject, query, or escalate",
+    "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "the review interface must expose a genuine reject/query/escalate path tied to specific flagged items"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Single-run presence. Related to tie-out kick-back authority (FSP-C37) at a different step."
+   ]
+  },
+  {
+   "id": "FSP-C29",
+   "title": "Logged approval event/token as the sole trigger for release",
+   "category": "gate",
+   "codebook_match": "Publication event-gated on the approval signal",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "but the trigger is the explicit approval signal, never a schedule or inference",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T9",
+     "field": "description",
+     "marker": "strictly trigger-gated on the logged approval event from management review, never fired on a schedule or inference"
+    },
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-08",
+     "field": "description",
+     "marker": "substantially automated once CFO approval is captured"
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T7",
+     "field": "outputs",
+     "marker": "Approval token"
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T8",
+     "field": "description",
+     "marker": "The release action executes only on receipt of the positive, logged approval token from T7"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-08",
+     "field": "outputs",
+     "marker": "CFO approval authorization token"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-08",
+     "field": "description",
+     "marker": "triggered strictly against a verified approved-statements flag"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-203046-baseline-R2R-FSP-01-0590",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "released or submitted through a system-triggered distribution step once approval is recorded"
+    }
+   ],
+   "flags": [
+    "cac9 is a weaker variant (automation follows captured approval, but no token/sole-trigger wording).",
+    "Baseline 0590 is a partial variant (system-triggered release on recorded approval, approval record as control point)."
+   ]
+  },
+  {
+   "id": "FSP-C30",
+   "title": "Released package confirmed identical (byte-for-byte) to the approved version",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain",
+     "pragmatist"
+    ],
+    "quote": "someone needs to own confirming the released package matches the approved package byte-for-byte",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T9",
+     "field": "outputs",
+     "marker": "Approved-vs-released match confirmation"
+    },
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-08",
+     "field": "outputs",
+     "marker": "Version confirmation record"
+    },
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-08",
+     "field": "description",
+     "marker": "a named human confirms that the artifact being released is byte-for-byte the version that was approved"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-09",
+     "field": "description",
+     "marker": "The released artifact must be provably identical to the approved one"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "5655 has no confirmation output and no named confirmer (requirement stated only) - weaker variant.",
+    "Attribution: also cac9 round1_pragmatist ('confirm the approved version is what actually goes out') and 5655 round1_accounting_standards ('provably identical')."
+   ]
+  },
+  {
+   "id": "FSP-C31",
+   "title": "Release logged as a distinct, separately timestamped authorization record (separate from approval)",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "pragmatist"
+    ],
+    "quote": "every release produces an immutable, timestamped record.",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-08",
+     "field": "description",
+     "marker": "so that 'approved but not yet released' is an auditable state"
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T8",
+     "field": "outputs",
+     "marker": "Release log"
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T8",
+     "field": "description",
+     "marker": "logs its own authorizing timestamp as a distinct evidentiary artifact from the approval timestamp"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-09",
+     "field": "outputs",
+     "marker": "Release authorization record"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-08",
+     "field": "description",
+     "marker": "performs an explicit, logged authorization act distinct from the approval decision itself"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "c9c7 TSS has no release log (only the match confirmation, FSP-C30) though its deliberation proposed one - judged absent.",
+    "All baselines retain a separate release step but without any log or authorization record - judged absent.",
+    "Overlaps FSP-C30 in cac9 ('Version confirmation record' serves both)."
+   ]
+  },
+  {
+   "id": "FSP-C32",
+   "title": "Manual/offline fallback path for release/submission where portals or connectivity are unreliable",
+   "category": "fallback",
+   "codebook_match": "Documented degraded-mode fallback as a named input",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "release to regulators or group HQ must retain a manual/offline fallback path (e.g., direct email or physical lodgement) in jurisdictions where e-filing portals or network links are unreliable",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T9",
+     "field": "description",
+     "marker": "with a manual/offline fallback path preserved where e-filing portals or network links are unreliable"
+    },
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-08",
+     "field": "description",
+     "marker": "batch/offline fallback where connectivity is unreliable"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Codebook match approximate (not a named input here). May be one control with FSP-C04 and FSP-C18."
+   ]
+  },
+  {
+   "id": "FSP-C33",
+   "title": "Release failure blocks and escalates rather than retrying silently",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "failure in the filing/distribution system blocks and escalates rather than retrying silently",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T9",
+     "field": "description",
+     "marker": "any failure blocks and escalates rather than retrying silently"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "d272 T8 has a related but different mechanism (submission failure 'must be retriable without reopening the approval decision itself') - not counted as presence."
+   ]
+  },
+  {
+   "id": "FSP-C34",
+   "title": "Release retractable within a window / via controlled correction path",
+   "category": "fallback",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "retractable (a release can be recalled/amended through a controlled correction path, not silently edited)",
+    "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-09",
+     "field": "description",
+     "marker": "retractable through a controlled correction path rather than silently overwritten"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-08",
+     "field": "description",
+     "marker": "with a short retraction window before external transmission is finalized"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Two variants: 5655 post-release correction path vs 106a pre-transmission retraction window - may be two controls.",
+    "Attribution: 106a round1_agentic_architect and round1_pragmatist ('a last-minute recall is possible') proposed the window variant independently."
+   ]
+  },
+  {
+   "id": "FSP-C35",
+   "title": "Tie-out exception / variance log produced for review and approval",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "plus an explicit exception/escalation log (what was flagged, how it was resolved)",
+    "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Exception and escalation log"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "marker": "Variance exception log"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "maintaining a running variance log"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-205000-baseline-R2R-FSP-01-cec0",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "flagging variances; Financial reporting reviews and resolves flagged exceptions"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-FSP-01-38b8",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "with exception-based analytical review by Financial reporting"
+    }
+   ],
+   "flags": [
+    "Baseline presence is a weaker variant (exception review, no log).",
+    "Attribution: 106a round1_agentic_architect also proposed 'a running exception log'; c9c7/d272 deliberations proposed variance flags without a log."
+   ]
+  },
+  {
+   "id": "FSP-C36",
+   "title": "Defined threshold for tie-out variances requiring human explanation",
+   "category": "other",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "raises variance flags against configured analytical thresholds",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "variance items above a defined materiality threshold must be read and explained, not merely acknowledged"
+    },
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "a human must assess whether each flagged variance is explainable and material"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "exercises materiality judgment over unresolved variances"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Only 5655 specifies a defined threshold; d272 and 106a describe human materiality judgment over flagged variances - weaker variants.",
+    "Attribution: c9c7 round1_agentic_architect (configured thresholds) though c9c7 TSS lacks it; d272 and cac9 round1_agentic_architect also proposed thresholds.",
+    "Exchange-difference threshold in 5655 TS-03 counted under FSP-C13."
+   ]
+  },
+  {
+   "id": "FSP-C37",
+   "title": "Unresolved tie-out variances block progression; reviewer may send draft back",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "agentic_architect"
+    ],
+    "quote": "with authority to kick the draft back to FSP-06",
+    "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201339-council-R2R-FSP-01-d272",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "holds authority to kick the draft back to T5 before it reaches the CFO"
+    },
+    {
+     "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "Unresolved variances block progression; they are never silently auto-closed."
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-193948-baseline-R2R-FSP-01-8bc6",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "surfacing variances for correction before the package reaches management"
+    }
+   ],
+   "flags": [
+    "Baseline 8bc6 is a weak/implied variant (variances surfaced for correction, no blocking rule).",
+    "Attribution: d272 round1_agentic_architect also ('the step cannot complete with open variances')."
+   ]
+  },
+  {
+   "id": "FSP-C38",
+   "title": "Substantive human analytical review not limited to system-flagged exceptions (full evidence, not pre-filtered)",
+   "category": "other",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "but the analytical review — explaining variances, assessing plausibility — remains a human function",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T7",
+     "field": "description",
+     "marker": "rather than merely adjudicating system-flagged exceptions"
+    },
+    {
+     "run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "not a residual check on whatever an automated threshold happened to flag"
+    },
+    {
+     "run_id": "20261010-203150-council-R2R-FSP-01-5655",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "receives the full structured evidence log (not a pre-filtered summary)"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Partly opposes FSP-C36 (threshold-based review) in the same 5655 step; whether this is a control mechanism or a quality-of-review requirement is a judgement call.",
+    "Attribution: clearer form first appears in c9c7 round2_hitl_designer ('not merely adjudicate a flagged-exception inbox')."
+   ]
+  },
+  {
+   "id": "FSP-C39",
+   "title": "Tie-out discrepancies classified as current-period correction vs IAS 8 prior-period error, with feedback to the error record",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "a defined trigger for when a discrepancy is a current-period correction versus a prior-period error requiring IAS 8 disclosure",
+    "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T7",
+     "field": "outputs",
+     "marker": "Classified correction record (current-period fix vs. prior-period error)"
+    },
+    {
+     "run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+     "step_id": "T7",
+     "field": "description",
+     "marker": "with the latter feeding back into the drafting step's error record"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Single-run presence."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,3365 @@
+{
+ "workflow_id": "P2P-PRE-01",
+ "controls": [
+  {
+   "id": "PRE-M01",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-01",
+     "field": "outputs",
+     "quote": "Selection/grouping exception queue",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Selection/grouping exception queue",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-01",
+     "field": "outputs",
+     "quote": "Selection exception queue",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-01",
+     "field": "outputs",
+     "quote": "Selection and grouping exception queue",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "An AP analyst provides oversight and can intervene on flagged items",
+     "note": "Analyst intervention on flagged items at selection; no named queue or routing of failed-selection items."
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "attaching exception flags for human review rather than requiring a separate manual selection pass",
+     "note": "Flags at proposal generation are duplicate/blocked-vendor/bank-change screening flags (PRE-M05 object), not selection/grouping exceptions."
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M4",
+    "question": "Master-data anomalies (PRE-M02) are, in 64dc/8682/1b2e, one category of items routed into the selection exception queue; is the queue and the anomaly-surfacing one control?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "PRE-M02"
+     ]
+    }
+   }
+  },
+  {
+   "id": "PRE-M02",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-01",
+     "field": "description",
+     "quote": "Data-quality anomalies (duplicate vendor IDs, missing currency codes, incomplete terms data) are surfaced explicitly, never silently normalised",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "triages the exception queue the system surfaces (stale terms, incomplete master data",
+     "note": "Master-data anomalies surfaced as a category of the selection exception queue."
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "Items that fail a selection rule (disputed holds, newly onboarded vendors, missing/ambiguous terms",
+     "note": "Only terms data named as an anomaly category; vendor master data not named. Sizing sentence is an assumption, not a mechanism."
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "missing or stale vendor master data",
+     "note": "Routed to the exception queue rather than silently included or excluded."
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M4",
+    "question": "Is surfacing master-data anomalies a separate control, or a subset of the items carried by the selection/grouping exception queue (PRE-M01)?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "PRE-M01"
+     ]
+    }
+   }
+  },
+  {
+   "id": "PRE-M03",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-01",
+     "field": "description",
+     "quote": "the due-item list and the proposal remain two separately logged, inspectable artefacts",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "Every selection and grouping decision is logged with the rule that fired and the data snapshot it acted on",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Due-item list",
+     "note": "Due-item list output separately, but no logging/reconstructability of selection decisions stated."
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M04",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T-01",
+     "field": "description",
+     "quote": "The ERP/automation selects approved, matched invoices due under their payment terms",
+     "note": "Selection from the approved-matched pool is stated as the scope of selection, not as an explicit hard gate."
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "Approved-matched status remains a hard structural gate on the query, not a convention.",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "derives the due-item population from payment terms, approval status and currency flags",
+     "note": "Selection from the approved-matched pool is stated as the scope of selection, not as an explicit hard gate. Description names approval status only; input is Approved matched invoices."
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "An ERP-resident agent selects approved, matched invoices falling due under payment terms",
+     "note": "Selection from the approved-matched pool is stated as the scope of selection, not as an explicit hard gate."
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "The ERP automatically identifies approved, matched invoices due under their payment terms",
+     "note": "Selection from the approved-matched pool is stated as the scope of selection, not as an explicit hard gate."
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "The ERP automatically identifies approved, matched invoices (including foreign-currency items) falling due",
+     "note": "Selection from the approved-matched pool is stated as the scope of selection, not as an explicit hard gate."
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "The ERP automatically identifies approved, matched invoices falling due under their payment terms",
+     "note": "Selection from the approved-matched pool is stated as the scope of selection, not as an explicit hard gate."
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "The ERP automatically identifies approved, matched invoices falling due under their payment terms",
+     "note": "Selection from the approved-matched pool is stated as the scope of selection, not as an explicit hard gate."
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "The ERP automatically identifies approved, matched invoices (including foreign-currency items) falling due under their payment terms",
+     "note": "Selection from the approved-matched pool is stated as the scope of selection, not as an explicit hard gate."
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M05",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-02",
+     "field": "description",
+     "quote": "A screening engine pre-computes duplicate-payment flags, blocked-vendor flags and vendor bank-detail-change flags",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "An automated screen flags duplicate payments, blocked vendors, and any vendor bank-detail change",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "A control-screening agent pre-computes duplicate-payment, blocked-vendor and bank-detail-change flags",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "An automated screen runs duplicate-payment matching against payment history, blocked-vendor checks",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "The system automatically flags duplicate payments, blocked vendors and recent vendor bank-detail changes",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "to flag duplicate payments, blocked vendors, and recently changed bank details",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "An automated control layer screens the proposal for duplicate payments, blocked vendors and recent vendor bank-detail changes",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "Embedded system logic screens the proposal in real time for duplicate payments, blocked vendors and recent vendor bank-detail changes",
+     "note": "Screening placed inside proposal generation (TGT-01); flags reviewed at TGT-02."
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "An automated control engine screens the proposal for duplicate payments, blocked vendors and recent vendor bank-detail changes",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M2",
+    "question": "Is presenting the underlying evidence with each flag (PRE-M06) a separate control, or the output/presentation of the automated screen itself?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "PRE-M06"
+     ]
+    }
+   }
+  },
+  {
+   "id": "PRE-M06",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-02",
+     "field": "description",
+     "quote": "presenting each flag with its underlying evidence rather than a pass/fail summary",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "presenting the AP supervisor with the flagged worklist plus the underlying change log and payment history",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "with visibility into what changed, when and by whom for every flagged item",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "together with the specific underlying evidence",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-02",
+     "field": "inputs",
+     "quote": "Vendor bank master change log",
+     "note": "Change log and payment history are inputs to the review step (used by the screen); no statement that evidence accompanies each flag to the reviewer."
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "inputs",
+     "quote": "Vendor bank master change log",
+     "note": "Change log and payment history are inputs to the review step (used by the screen); no statement that evidence accompanies each flag to the reviewer."
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "inputs",
+     "quote": "Vendor bank master change log",
+     "note": "Change log and payment history are inputs to the review step (used by the screen); no statement that evidence accompanies each flag to the reviewer."
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "resolving or holding flagged items using the vendor bank master change log and payment history",
+     "note": "Supervisor uses change log and history to resolve flags; no requirement that evidence be presented with each flag."
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "inputs",
+     "quote": "Vendor bank master change log",
+     "note": "Change log and payment history are inputs to the review step (used by the screen); no statement that evidence accompanies each flag to the reviewer."
+    }
+   },
+   "merge_low": {
+    "pattern": "M2",
+    "question": "Is flag-evidence presentation an attribute of the automated screening control (PRE-M05) rather than a distinct mechanism?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "PRE-M05"
+     ]
+    }
+   }
+  },
+  {
+   "id": "PRE-M07",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-02",
+     "field": "outputs",
+     "quote": "Flagged-exception disposition record",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Exception disposition log",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-02",
+     "field": "outputs",
+     "quote": "Logged flag dispositions",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-02",
+     "field": "outputs",
+     "quote": "Documented exception dispositions",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "confirms dispositions, and removes or holds exception items",
+     "note": "Output \"Exception log\" plus supervisor confirming dispositions; log could record flags rather than dispositions."
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "flagging exceptions into a register",
+     "note": "Register is described as filled by the automated flagging layer, not as a record of supervisor dispositions."
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Exception log",
+     "note": "Exception log is an output of the supervisor review step; could record flags rather than dispositions."
+    }
+   },
+   "merge_low": {
+    "pattern": "M3",
+    "question": "The disposition record is produced at review and consumed at approval (PRE-M13); same record object at adjacent steps - one control or two?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "PRE-M13"
+     ]
+    }
+   }
+  },
+  {
+   "id": "PRE-M08",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T-02",
+     "field": "description",
+     "quote": "release, hold, escalate for out-of-band vendor verification",
+     "note": "Out-of-band verification is one optional disposition, not mandatory before clearance; weaker different mechanism."
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Independent verification artifact (for bank-detail-change flags)",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M09",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-02",
+     "field": "description",
+     "quote": "the step retains a manual log-review fallback rather than relying on automated pre-screening alone",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M10",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "the supervisor also reviews a periodic random sample of unflagged lines",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M1",
+    "question": "Random sampling of unflagged lines (1b2e) and full-proposal review/no auto-clear (8682) are two variants of keeping the clean path from self-certifying at the same review step; one control or two?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "PRE-M11"
+     ]
+    }
+   }
+  },
+  {
+   "id": "PRE-M11",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "Clean (unflagged) proposals are not auto-cleared by the same system that generated the flags",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "rather than treating the clean path as self-certifying",
+     "note": "States clean path is not self-certifying, but the mechanism is sampling (PRE-M10), not full-proposal review."
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "signs off the reviewed proposal before it moves to approval or bank release",
+     "note": "Supervisor signs off the proposal, but review is of flagged exceptions; no full-proposal review stated."
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "reviews the system-flagged exceptions (duplicate payments, blocked vendors, recent bank-detail changes) together with the full proposal",
+     "note": "Full-proposal review stated; no explicit no-auto-clear rule."
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M1",
+    "question": "Is full-proposal review / no auto-clear a variant of the same control as periodic sampling of unflagged lines (PRE-M10)?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "PRE-M10"
+     ]
+    }
+   }
+  },
+  {
+   "id": "PRE-M12",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-03",
+     "field": "description",
+     "quote": "no sub-threshold or risk-tiered auto-approval is introduced",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "Every payment, regardless of value or clean status, is approved by a named authorised signatory",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "The authorised signatory personally approves every payment run",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "with no value-based, risk-based, or pre-configured-policy auto-approval path for any item",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "The reviewed proposal is approved for payment by an authorised signatory acting within delegated limits",
+     "note": "Signatory approval of the reviewed proposal stated; no explicit exclusion of auto-approval."
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "This decision remains a distinct human judgment separate from both proposal generation and proposal review.",
+     "note": "Signatory approval of the reviewed proposal stated; no explicit exclusion of auto-approval."
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "The reviewed proposal is approved for payment by an authorised signatory within delegated limits",
+     "note": "Signatory approval of the reviewed proposal stated; no explicit exclusion of auto-approval."
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "The reviewed proposal is approved for payment by an authorised signatory within delegated limits",
+     "note": "Signatory approval of the reviewed proposal stated; no explicit exclusion of auto-approval."
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "The reviewed proposal is approved for payment by an authorised signatory operating within delegated limits",
+     "note": "Signatory approval of the reviewed proposal stated; no explicit exclusion of auto-approval."
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M13",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-03",
+     "field": "inputs",
+     "quote": "Flagged-exception disposition record",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "inputs",
+     "quote": "Decision packet (read-only: exception log, DOA check)",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-03",
+     "field": "inputs",
+     "quote": "Logged flag dispositions",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-03",
+     "field": "inputs",
+     "quote": "Documented exception dispositions",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M14",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T-03",
+     "field": "description",
+     "quote": "The signatory may be assisted by a risk-annotated summary, but the underlying reviewed proposal and flags must remain visible to them",
+     "note": "Assistance limited to a summary with no auto-approval, but no explicit no-write/non-decisioning restriction."
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "holds no write authority and cannot approve on the signatory",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "it cannot approve or auto-clear items",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "via a digital approval workflow that enforces delegation-of-authority limits",
+     "note": "Automation at approval enforces DOA, but no non-decisioning restriction on it."
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M3",
+    "question": "Non-decisioning agent at approval and agent least privilege at proposal/file generation (PRE-M37) apply the same restriction on agent authority at adjacent points; one control or two?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "PRE-M37"
+     ]
+    }
+   }
+  },
+  {
+   "id": "PRE-M15",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "enforced at the access-control/credential level rather than by job title alone",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "without collapsing actor separation into a single person",
+     "note": "Actor separation preserved under backup approver chains; the separated roles are not named."
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "its system identity is structurally distinct from the approving signatory",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "distinct from the actor who generated the proposal",
+     "note": "Role-level separation of approver from proposal generator; not stated as system/credential-enforced."
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "separate from both proposal generation and proposal review",
+     "note": "Role-level separation of approver from proposal generator; not stated as system/credential-enforced."
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "distinct from whoever generated the proposal",
+     "note": "Role-level separation of approver from proposal generator; not stated as system/credential-enforced."
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "independent of the party that generated the proposal",
+     "note": "Role-level separation of approver from proposal generator; not stated as system/credential-enforced."
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M16",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Timestamped approval record",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "enforces delegation-of-authority limits and timestamps the decision",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M17",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "Back-up/delegated approver chains are named system controls",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M3",
+    "question": "Single candidate holds the backup approver chain (8682 TGT-03) and backup releaser chain (8682 TGT-05) at different steps; should it be split into two controls? (Split halves are sub-parts of PRE-C17, labelled a/b; no separate candidate ids exist.)",
+    "alternative": {
+     "type": "split",
+     "into": [
+      [
+       "PRE-C17a (approver chain, TGT-03)"
+      ],
+      [
+       "PRE-C17b (releaser chain, TGT-05)"
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "id": "PRE-M18",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-04",
+     "field": "description",
+     "quote": "confirming the transmitted file corresponds exactly to the record that cleared screening and approval",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "cross-checked deterministically against an immutable hash of the approved proposal before transmission is even offered",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "An embedded, logged integrity check (hash/line-item match) verifies the generated file against the approved proposal",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "compares it against the snapshot captured at TGT-03 approval time",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M4",
+    "question": "File-content integrity check against the approved proposal (PRE-C18) vs detection of post-approval changes such as bank-detail amendments (PRE-C19); bank details are part of the file content, so is the second a subset of the first or a separate check?",
+    "alternative": {
+     "type": "split",
+     "into": [
+      [
+       "PRE-C18"
+      ],
+      [
+       "PRE-C19"
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "id": "PRE-M19",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T-04",
+     "field": "description",
+     "quote": "a single treasury officer may release under system-enforced, time-separated logging",
+     "note": "Release performed by the treasury officer (human actor); no explicit exclusion of automatic/agent transmission."
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "requires an affirmative, human-triggered confirmation by the treasury officer",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "retains a mandatory human gate even where generation is fully automated",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "No agent may trigger transmission autonomously.",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "is converted into a bank payment file and released to the bank by treasury",
+     "note": "Release performed by the treasury officer (human actor); no explicit exclusion of automatic/agent transmission."
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "actor",
+     "quote": "Treasury officer",
+     "note": "Release performed by the treasury officer (human actor); no explicit exclusion of automatic/agent transmission."
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "actor",
+     "quote": "Treasury officer",
+     "note": "Release performed by the treasury officer (human actor); no explicit exclusion of automatic/agent transmission."
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-04",
+     "field": "actor",
+     "quote": "Treasury officer",
+     "note": "Release performed by the treasury officer (human actor); no explicit exclusion of automatic/agent transmission."
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "actor",
+     "quote": "Treasury officer",
+     "note": "Release performed by the treasury officer (human actor); no explicit exclusion of automatic/agent transmission."
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M20",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-04",
+     "field": "description",
+     "quote": "Above a defined value threshold, release additionally requires dual control",
+     "note": "Threshold-based."
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "release requires a second treasury signatory distinct from the one who reviewed the file summary",
+     "note": "Threshold-based."
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-05",
+     "field": "name",
+     "quote": "Dual-authorisation release to bank",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "by a second treasury officer where bench depth allows",
+     "note": "Second person is a treasury officer or an independent supervisor."
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "with dual-control release confirmation retained for high-value or flagged batches",
+     "note": "Threshold/flag-based."
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M21",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-04",
+     "field": "outputs",
+     "quote": "Release authorisation log",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M2",
+    "question": "Release authorisation log with time-separated logging is the below-threshold compensating arm of dual control at release (PRE-M20); a check vs its own record - one control or two?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "PRE-M20"
+     ]
+    }
+   }
+  },
+  {
+   "id": "PRE-M22",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-04",
+     "field": "description",
+     "quote": "A manual/batch file-upload path remains a first-class alternative to API-based transmission",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "Transmission supports both API-based and manual/batch file-upload paths as co-equal, first-class execution modes",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "Transmission supports a batch/store-and-forward fallback mode as a first-class operating mode",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "Batch/manual file-transfer channels (e.g., signed SFTP upload) remain a first-class, documented mechanism",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M23",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-05",
+     "field": "description",
+     "quote": "end-of-day batch statement reconciliation remains an equally supported, first-class operating mode",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "Batch-file reconciliation (downloaded statement matching) is the first-class baseline design",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "tolerates delayed, end-of-day or manually downloaded statements as a normal operating mode",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "via manual bank-statement reconciliation as an equally first-class channel",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M24",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "A documented manual/batch fallback exists where continuous ERP automation is not available.",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M25",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "a manual, documented, accountable (GL accountant-attested) rate-entry path must exist and be logged",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Manual attested rate-entry path and human verification of the rate source both act on the settlement-date rate source at the posting step; a fallback input path vs a verification checkpoint on the same object - one control or two? (M9: fallback-vs-check pair, not a directional variant.)",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "PRE-M26"
+     ]
+    }
+   }
+  },
+  {
+   "id": "PRE-M26",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T-06",
+     "field": "description",
+     "quote": "or arising from an anomalous or stale rate source, route to the GL accountant for a documented decision",
+     "note": "Human decision triggered by an anomalous/stale rate source, not a standing checkpoint."
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "a manual, documented, accountable (GL accountant-attested) rate-entry path must exist and be logged",
+     "note": "Accountant attestation applies only to manually entered rates when no feed exists; no verification of the live-feed source."
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-07",
+     "field": "description",
+     "quote": "the rate source itself (not only the resulting variance) requires a standing human verification checkpoint",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B2",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "sourced from a documented, defensible reference rate",
+     "note": "Requirement on the rate source with no verification act stated."
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M27",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-05",
+     "field": "outputs",
+     "quote": "Unmatched/exception queue",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "quote": "Settlement exception queue",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-06",
+     "field": "outputs",
+     "quote": "Unmatched/break queue",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "routed to a named Treasury-officer exception queue",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "treasury monitors exceptions rather than performing manual reconciliation",
+     "note": "Treasury officer handles unmatched/exception items; no named queue or output."
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B5",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "The GL accountant reviews system-generated postings and handles unmatched or exception items.",
+     "note": "Unmatched items handled by the GL accountant (matching and posting merged in one step), not a treasury owner; no named queue."
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "with the treasury officer resolving any unmatched or exception items",
+     "note": "Treasury officer handles unmatched/exception items; no named queue or output."
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "with the treasury officer monitoring exceptions",
+     "note": "Treasury officer handles unmatched/exception items; no named queue or output."
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "the treasury officer investigates any unmatched or partial settlements",
+     "note": "Treasury officer handles unmatched/exception items; no named queue or output."
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M28",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "the AP subledger is cleared at invoice-level determinability",
+     "note": "Invoice-level granularity stated at clearing (TS-06), not at settlement matching (TS-05)."
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "auto-matched to the transmitted file at the individual invoice/line-item level (not aggregate bank totals)",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "matches line-by-line to the transmitted payment file",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "matches it to the transmitted payment file line by line",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M29",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-06",
+     "field": "description",
+     "quote": "Differences exceeding a documented materiality threshold",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "breaches a defined materiality threshold",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-07",
+     "field": "description",
+     "quote": "FX variances beyond tolerance, unmatched/partial settlements, and cutoff breaches near period-end",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "settlement differences outside a defined tolerance band, unmatched confirmations, or manually-forced postings",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "the GL accountant reviews system-generated postings and handles exceptions",
+     "note": "GL accountant handles posting exceptions/reviews postings; no defined threshold or tolerance routing."
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "The GL accountant reviews system-generated postings and handles unmatched or exception items.",
+     "note": "GL accountant handles posting exceptions/reviews postings; no defined threshold or tolerance routing."
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "The GL accountant reviews and approves estimation-sensitive FX postings before they are finalised",
+     "note": "Criterion is estimation sensitivity, not a defined threshold."
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M30",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-06",
+     "field": "description",
+     "quote": "with a defined, documented treatment for confirmations that arrive late relative to a period cutoff",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B2",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "period-cutoff discipline over the subledger",
+     "note": "Stated as something preserved by variance escalation; no cutoff mechanism named."
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-07",
+     "field": "outputs",
+     "quote": "Period-gate confirmation",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "A cutoff control (subledger lock or equivalent)",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M31",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-06",
+     "field": "outputs",
+     "quote": "FX settlement difference (separately identified)",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "Exchange difference posted to dedicated account",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-07",
+     "field": "outputs",
+     "quote": "Labelled FX-difference entries",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-06",
+     "field": "outputs",
+     "quote": "Exchange-difference postings",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "FX differences recognised",
+     "note": "FX differences listed as a separate output, but only recognition is stated, not separate identification/no netting."
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "are separately identified and posted, not netted invisibly",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M32",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B2",
+     "step_id": "T-05",
+     "field": "description",
+     "quote": "kept as a distinct, nameable function",
+     "note": "Statement that the settlement function stays distinct; no segregation rule or logged artefact stated."
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "never posted by the same role that also controls the bank-facing side",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Single candidate bundles treasury/GL role segregation and a distinct logged settlement-confirmation artefact (both 1b2e TGT-05); should it be split? (M9: two unlike mechanisms in one candidate; split halves labelled a/b, no separate candidate ids exist.)",
+    "alternative": {
+     "type": "split",
+     "into": [
+      [
+       "PRE-C33a (treasury/GL segregation)"
+      ],
+      [
+       "PRE-C33b (distinct logged settlement-confirmation artefact)"
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "id": "PRE-M33",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "any return or rejection flows back to re-open the relevant AP open item rather than disappearing",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M34",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-07",
+     "field": "outputs",
+     "quote": "Delivery exception queue",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "quote": "Delivery exception queue",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-08",
+     "field": "outputs",
+     "quote": "Delivery-exception queue",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-07",
+     "field": "description",
+     "quote": "Delivery failures and vendor disputes about what a remittance covered are routed to an AP-analyst exception queue",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-07",
+     "field": "description",
+     "quote": "with the AP analyst handling delivery exceptions",
+     "note": "AP analyst handles delivery exceptions; no named queue or output."
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "with the AP analyst monitoring delivery failures",
+     "note": "AP analyst handles delivery exceptions; no named queue or output."
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "with the AP analyst handling exceptions such as bounced notifications",
+     "note": "AP analyst handles delivery exceptions; no named queue or output."
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M35",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "traceable back to the posting record describing which invoices a given cash outflow discharged",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "TGT-08",
+     "field": "description",
+     "quote": "generated and distributed automatically from the settlement confirmation, with per-invoice detail preserved",
+     "note": "Sourced from the settlement confirmation (matching step), not the posting/clearing record."
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-07",
+     "field": "description",
+     "quote": "remittance content is sourced from, and can never diverge from, the subledger clearing detail",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-07",
+     "field": "description",
+     "quote": "dispatched to vendors automatically upon posting confirmation",
+     "note": "Triggered by posting confirmation, but input is the bank settlement confirmation; not sourced from the posting record."
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-07",
+     "field": "inputs",
+     "quote": "GL cash posted",
+     "note": "Remittance generated upon posting with the GL posting as input; no traceability/non-divergence requirement stated."
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M36",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-07",
+     "field": "description",
+     "quote": "or a non-digital channel (SMS, printed advice) where a vendor lacks reliable digital contact data",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "Delivery channel remains flexible (email/PDF, portal, SMS)",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-08",
+     "field": "description",
+     "quote": "Multi-channel delivery (email, SMS, vendor portal, printed advice)",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-07",
+     "field": "description",
+     "quote": "batch-file delivery, vendor-bank channel delivery or other appropriate channels remain valid",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "PRE-M37",
+   "presence": {
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "File generation is mechanical and does not require a manual build, but it cannot itself transmit funds.",
+     "note": ""
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "The agent's write access is limited to the proposal object; it cannot create a payment instruction",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M3",
+    "question": "Agent write-scope restriction at proposal/file generation and non-decisioning agent at approval (PRE-M14) are the same least-privilege restriction at adjacent points; one control or two?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "PRE-M14"
+     ]
+    }
+   }
+  }
+ ]
+}

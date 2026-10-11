@@ -1,0 +1,365 @@
+[
+ {
+  "dev_workflow": "P2P-VIP-01",
+  "title": "Validation exception queue at capture",
+  "marker": "Low-confidence/validation exception queue entries",
+  "roles": [
+   "agentic_architect",
+   "hitl_designer",
+   "finance_domain"
+  ],
+  "kb": []
+ },
+ {
+  "dev_workflow": "P2P-VIP-01",
+  "title": "Variance packet assembled before handoff",
+  "marker": "Variance packet",
+  "roles": [
+   "agentic_architect",
+   "finance_domain"
+  ],
+  "kb": []
+ },
+ {
+  "dev_workflow": "P2P-VIP-01",
+  "title": "Structured attributable resolution record",
+  "marker": "Structured attributable audit trail",
+  "roles": [
+   "hitl_designer",
+   "finance_domain",
+   "accounting_standards"
+  ],
+  "kb": [
+   "KB-02",
+   "KB-05"
+  ]
+ },
+ {
+  "dev_workflow": "P2P-VIP-01",
+  "title": "Risk-tiered approval replacing uniform routing",
+  "marker": "Risk-tiered approval and authorisation",
+  "roles": [
+   "hitl_designer",
+   "finance_domain",
+   "pragmatist",
+   "emerging_economy"
+  ],
+  "kb": [
+   "KB-02"
+  ]
+ },
+ {
+  "dev_workflow": "P2P-VIP-01",
+  "title": "Auto-authorisation rule-fired log",
+  "marker": "Auto-authorisation rule-fired log",
+  "roles": [
+   "finance_domain",
+   "agentic_architect"
+  ],
+  "kb": [
+   "KB-02"
+  ]
+ },
+ {
+  "dev_workflow": "P2P-VIP-01",
+  "title": "Mandatory sampling audit of the auto-approved population",
+  "marker": "Periodic sampling audit record",
+  "roles": [
+   "pragmatist",
+   "agentic_architect",
+   "hitl_designer"
+  ],
+  "kb": []
+ },
+ {
+  "dev_workflow": "P2P-VIP-01",
+  "title": "Governed delegation-of-authority policy engine for the low-risk tier",
+  "marker": "policy-delegation engine for the low-risk tier",
+  "roles": [
+   "hitl_designer",
+   "emerging_economy",
+   "agentic_architect"
+  ],
+  "kb": []
+ },
+ {
+  "dev_workflow": "P2P-VIP-01",
+  "title": "Offline-cached delegation policy with named fallback approver",
+  "marker": "offline-cached delegation policy",
+  "roles": [
+   "emerging_economy",
+   "hitl_designer"
+  ],
+  "kb": []
+ },
+ {
+  "dev_workflow": "P2P-VIP-01",
+  "title": "Matching kept as a discrete auditable step boundary",
+  "marker": "discrete step boundary",
+  "roles": [
+   "finance_domain",
+   "pragmatist",
+   "accounting_standards"
+  ],
+  "kb": [
+   "KB-09"
+  ]
+ },
+ {
+  "dev_workflow": "P2P-VIP-01",
+  "title": "Discrete subledger lock preserved under continuous reconciliation",
+  "marker": "Subledger lock",
+  "roles": [
+   "finance_domain",
+   "accounting_standards",
+   "agentic_architect"
+  ],
+  "kb": [
+   "KB-03"
+  ]
+ },
+ {
+  "dev_workflow": "R2R-PC-01",
+  "title": "Intercompany matching split from exception resolution",
+  "marker": "Intercompany exception resolution, settlement and elimination preparation",
+  "roles": [
+   "unanimous"
+  ],
+  "kb": [
+   "KB-14"
+  ]
+ },
+ {
+  "dev_workflow": "R2R-PC-01",
+  "title": "Near-miss retention in the match audit log",
+  "marker": "Full matched/near-miss audit log",
+  "roles": [
+   "accounting_standards",
+   "agentic_architect"
+  ],
+  "kb": [
+   "KB-14"
+  ]
+ },
+ {
+  "dev_workflow": "R2R-PC-01",
+  "title": "Periodic completeness attestation on intercompany",
+  "marker": "Periodic completeness attestation",
+  "roles": [
+   "accounting_standards"
+  ],
+  "kb": [
+   "KB-14"
+  ]
+ },
+ {
+  "dev_workflow": "R2R-PC-01",
+  "title": "Documented degraded-mode fallback as a named input",
+  "marker": "Documented degraded-mode fallback procedure",
+  "roles": [
+   "emerging_economy"
+  ],
+  "kb": []
+ },
+ {
+  "dev_workflow": "R2R-PC-01",
+  "title": "Infrastructure and business exceptions logged separately",
+  "marker": "Infrastructure-exception log",
+  "roles": [
+   "emerging_economy",
+   "agentic_architect"
+  ],
+  "kb": []
+ },
+ {
+  "dev_workflow": "R2R-PC-01",
+  "title": "Named allocation-basis owner with review log",
+  "marker": "Basis-review log",
+  "roles": [
+   "hitl_designer",
+   "pragmatist",
+   "finance_domain",
+   "emerging_economy"
+  ],
+  "kb": []
+ },
+ {
+  "dev_workflow": "R2R-PC-01",
+  "title": "Two-tier reconciliation certification",
+  "marker": "Reconciliation certifications (light-touch and full)",
+  "roles": [
+   "accounting_standards",
+   "hitl_designer"
+  ],
+  "kb": [
+   "KB-02"
+  ]
+ },
+ {
+  "dev_workflow": "R2R-PC-01",
+  "title": "Consolidation validated against full entity submissions",
+  "marker": "Consolidated balances validated against full entity submissions",
+  "roles": [
+   "pragmatist",
+   "finance_domain",
+   "emerging_economy",
+   "hitl_designer",
+   "agentic_architect"
+  ],
+  "kb": [
+   "KB-07",
+   "KB-08"
+  ]
+ },
+ {
+  "dev_workflow": "R2R-PC-01",
+  "title": "Policy-change disclosure output",
+  "marker": "Policy-change disclosures where applicable",
+  "roles": [
+   "accounting_standards"
+  ],
+  "kb": [
+   "KB-06"
+  ]
+ },
+ {
+  "dev_workflow": "R2R-PC-01",
+  "title": "Release gate enforcing requirement ordering as a system precondition",
+  "marker": "Management-review-complete status",
+  "roles": [
+   "agentic_architect",
+   "emerging_economy"
+  ],
+  "kb": [
+   "KB-02"
+  ]
+ },
+ {
+  "dev_workflow": "FPA-RF-01",
+  "title": "Dual-track actuals ingestion for non-integrated entities",
+  "marker": "Manual entity templates (non-integrated units)",
+  "roles": [
+   "emerging_economy",
+   "finance_domain"
+  ],
+  "kb": []
+ },
+ {
+  "dev_workflow": "FPA-RF-01",
+  "title": "Named human certification of the actuals baseline",
+  "marker": "Certification sign-off record",
+  "roles": [
+   "pragmatist",
+   "finance_domain",
+   "emerging_economy",
+   "hitl_designer",
+   "accounting_standards",
+   "agentic_architect"
+  ],
+  "kb": [
+   "KB-03"
+  ]
+ },
+ {
+  "dev_workflow": "FPA-RF-01",
+  "title": "Named judgment owner with contemporaneous rationale",
+  "marker": "Updated driver assumptions with named owner and logged rationale",
+  "roles": [
+   "hitl_designer",
+   "emerging_economy"
+  ],
+  "kb": [
+   "KB-04"
+  ]
+ },
+ {
+  "dev_workflow": "FPA-RF-01",
+  "title": "Tagged exchange-difference schedule",
+  "marker": "Tagged exchange-difference schedule",
+  "roles": [
+   "accounting_standards",
+   "finance_domain",
+   "maximalist"
+  ],
+  "kb": [
+   "KB-08"
+  ]
+ },
+ {
+  "dev_workflow": "FPA-RF-01",
+  "title": "Human-authored, attributed BU commentary",
+  "marker": "human-authored, attributed commentary",
+  "roles": [
+   "pragmatist",
+   "finance_domain",
+   "emerging_economy",
+   "hitl_designer",
+   "agentic_architect"
+  ],
+  "kb": [
+   "KB-04"
+  ]
+ },
+ {
+  "dev_workflow": "FPA-RF-01",
+  "title": "Basis-change disclosure log",
+  "marker": "Basis-change disclosure log",
+  "roles": [
+   "accounting_standards"
+  ],
+  "kb": [
+   "KB-06"
+  ]
+ },
+ {
+  "dev_workflow": "FPA-RF-01",
+  "title": "Anomaly resolution record with defined SLA",
+  "marker": "Anomaly resolution record",
+  "roles": [
+   "finance_domain",
+   "hitl_designer",
+   "emerging_economy"
+  ],
+  "kb": [
+   "KB-05"
+  ]
+ },
+ {
+  "dev_workflow": "FPA-RF-01",
+  "title": "FX- and basis-change-isolated bridges",
+  "marker": "Bridge analyses (FX- and basis-change-isolated)",
+  "roles": [
+   "accounting_standards",
+   "finance_domain"
+  ],
+  "kb": [
+   "KB-06",
+   "KB-08"
+  ]
+ },
+ {
+  "dev_workflow": "FPA-RF-01",
+  "title": "Traceable approval record tied to items reviewed",
+  "marker": "Traceable approval record (items reviewed)",
+  "roles": [
+   "hitl_designer",
+   "pragmatist",
+   "maximalist",
+   "finance_domain"
+  ],
+  "kb": []
+ },
+ {
+  "dev_workflow": "FPA-RF-01",
+  "title": "Publication event-gated on the approval signal",
+  "marker": "Version archived with linked assumptions-basis",
+  "roles": [
+   "agentic_architect",
+   "hitl_designer",
+   "pragmatist"
+  ],
+  "kb": [
+   "KB-02"
+  ]
+ }
+]

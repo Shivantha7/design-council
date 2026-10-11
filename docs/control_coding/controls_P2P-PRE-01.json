@@ -1,0 +1,1889 @@
+{
+ "workflow_id": "P2P-PRE-01",
+ "candidates": [
+  {
+   "id": "PRE-C01",
+   "title": "Human-owned selection/grouping exception queue at automated proposal generation",
+   "category": "exception",
+   "codebook_match": "Validation exception queue at capture",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "agentic_architect",
+     "pragmatist",
+     "finance_domain",
+     "emerging_economy"
+    ],
+    "quote": "the system must surface a visible exception queue — items excluded despite being due, disputed items pulled back in, foreign-currency items near a rate-sensitive threshold",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-01",
+     "field": "outputs",
+     "marker": "Selection/grouping exception queue"
+    },
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Selection/grouping exception queue"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-01",
+     "field": "outputs",
+     "marker": "Selection exception queue"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-01",
+     "field": "outputs",
+     "marker": "Selection and grouping exception queue"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-193948-baseline-P2P-PRE-01-208e",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "An AP analyst provides oversight and can intervene on flagged items"
+    }
+   ],
+   "flags": [
+    "Codebook match is by mechanism (exception queue at first automated step) but dev control sits at invoice capture, a different stage.",
+    "Baseline 208e presence is a weak variant (analyst can intervene on flagged items; no named queue). Baselines d745/647f/f62e have analyst review of the whole output, not an exception queue - not counted.",
+    "Attribution: proposed independently in round1 by several roles across runs (e0a8 hitl_designer; 8682 hitl_designer/agentic_architect; 1b2e pragmatist/finance_domain/emerging_economy/agentic_architect).",
+    "May overlap with PRE-C02 (data-quality anomaly surfacing), which in some runs is folded into this queue."
+   ]
+  },
+  {
+   "id": "PRE-C02",
+   "title": "Master-data quality anomalies surfaced explicitly rather than silently normalised",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "it must sit alongside a visible data-quality flag (duplicate vendor IDs, missing currency codes) rather than silently suppressing anomalies",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-01",
+     "field": "description",
+     "marker": "are surfaced explicitly, never silently normalised"
+    },
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "owns vendor master-data stewardship"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-01",
+     "field": "description",
+     "marker": "missing or stale vendor master data"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-01",
+     "field": "description",
+     "marker": "the exception path is sized assuming master-data quality varies across entities"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Possibly one control with PRE-C01: in 64dc, 8682 and 1b2e master-data problems are listed as one category routed into the selection exception queue rather than a separate mechanism.",
+    "Presence in 64dc/8682/1b2e is a weaker variant (queue category / sizing assumption) compared with the explicit e0a8 statement."
+   ]
+  },
+  {
+   "id": "PRE-C03",
+   "title": "Logged, reconstructable selection decisions (due-item list as separately logged artefact; rule-fired log)",
+   "category": "evidence",
+   "codebook_match": "Auto-authorisation rule-fired log",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "Every selection decision is logged with the rule that fired, so the due-item list is reconstructable.",
+    "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-01",
+     "field": "description",
+     "marker": "the due-item list and the proposal remain two separately logged, inspectable artefacts"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-01",
+     "field": "description",
+     "marker": "Every selection and grouping decision is logged with the rule that fired and the data snapshot it acted on"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Due-item list"
+    }
+   ],
+   "flags": [
+    "Codebook match is by mechanism (rule-fired log) applied to selection rather than auto-authorisation.",
+    "In e0a8 the separately-logged due-item list appears first in the synthesis, not round1; 64dc round1_agentic_architect also proposed a query-parameter log that did not reach its TSS. Attribution therefore spans different forms.",
+    "Baseline 647f only outputs a \"Due-item list\" with no logging/reconstructability language - weak/implied presence.",
+    "e0a8 (separate artefacts) and 1b2e (rule-fired decision log) may be judged two different mechanisms."
+   ]
+  },
+  {
+   "id": "PRE-C04",
+   "title": "Approved-matched status as hard entry gate for due-item selection",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "accounting_standards",
+     "maximalist"
+    ],
+    "quote": "Approved-matched status (three-way match evidence per KB-09) must remain the entry condition for due-item selection; this cannot be bypassed by automation of the selection",
+    "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+    "agent_role": "round1_accounting_standards"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "Approved-matched status remains a hard structural gate on the query, not a convention."
+    },
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-01",
+     "field": "inputs",
+     "marker": "Approved matched invoices"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-01",
+     "field": "inputs",
+     "marker": "Approved matched invoices"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-01",
+     "field": "inputs",
+     "marker": "Approved matched invoices"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-PRE-01-d745",
+     "step_id": "TGT-01",
+     "field": "inputs",
+     "marker": "Approved matched invoices"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-PRE-01-208e",
+     "step_id": "TS-01",
+     "field": "inputs",
+     "marker": "Approved matched invoices"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-01",
+     "field": "inputs",
+     "marker": "Approved matched invoices"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-PRE-01-872e",
+     "step_id": "TGT-01",
+     "field": "inputs",
+     "marker": "Approved matched invoices"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+     "step_id": "TS-01",
+     "field": "inputs",
+     "marker": "Approved matched invoices"
+    }
+   ],
+   "flags": [
+    "Only 64dc states it explicitly as a hard gate; in all other council runs and all baselines presence is implied by the required input carried from the baseline encoding (PRE-R-01).",
+    "Earlier e0a8 round1_maximalist stated a weaker form (\"approved-matched-invoices input must still be visibly consumed\"); attribution depends on whether that counts."
+   ]
+  },
+  {
+   "id": "PRE-C05",
+   "title": "Automated pre-screening for duplicate payments, blocked vendors and bank-detail changes",
+   "category": "monitoring",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "agentic_architect",
+     "finance_domain"
+    ],
+    "quote": "the system pre-computes duplicate-payment flags, blocked-vendor flags, and vendor-bank-detail-change flags",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-02",
+     "field": "description",
+     "marker": "A screening engine pre-computes duplicate-payment flags, blocked-vendor flags and vendor bank-detail-change flags"
+    },
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "An automated screen flags duplicate payments, blocked vendors, and any vendor bank-detail change"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-02",
+     "field": "description",
+     "marker": "A control-screening agent pre-computes duplicate-payment, blocked-vendor and bank-detail-change flags"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-02",
+     "field": "description",
+     "marker": "An automated screen runs duplicate-payment matching against payment history, blocked-vendor checks"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-PRE-01-d745",
+     "step_id": "TGT-02",
+     "field": "description",
+     "marker": "The system automatically flags duplicate payments, blocked vendors and recent vendor bank-detail changes"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-PRE-01-208e",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "An automated screening engine checks the proposal against the vendor bank-detail change log and payment history"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "An automated control layer screens the proposal for duplicate payments, blocked vendors"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-PRE-01-872e",
+     "step_id": "TGT-01",
+     "field": "description",
+     "marker": "Embedded system logic screens the proposal in real time for duplicate payments, blocked vendors"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "An automated control engine screens the proposal for duplicate payments, blocked vendors"
+    }
+   ],
+   "flags": [
+    "Baseline 872e places the screening inside proposal generation (TGT-01) rather than the review step - same mechanism, different location.",
+    "Automation of an existing baseline control (PRE-03 checks); researcher may judge this ordinary processing of a carried-forward control rather than a new control.",
+    "Attribution: many roles proposed automated pre-screening in round1 across runs; e0a8 hitl_designer chosen as the clearest earliest."
+   ]
+  },
+  {
+   "id": "PRE-C06",
+   "title": "Flag evidence presented to the reviewer (not a bare pass/fail verdict)",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "presents them with the underlying evidence (change log entries, payment history) rather than requiring the supervisor to go hunting",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-02",
+     "field": "description",
+     "marker": "presenting each flag with its underlying evidence rather than a pass/fail summary"
+    },
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "presenting the AP supervisor with the flagged worklist plus the underlying change log and payment history"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-02",
+     "field": "description",
+     "marker": "with visibility into what changed, when and by whom for every flagged item"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-02",
+     "field": "description",
+     "marker": "together with the specific underlying evidence"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-PRE-01-872e",
+     "step_id": "TGT-02",
+     "field": "description",
+     "marker": "resolving or holding flagged items using the vendor bank master change log and payment history"
+    }
+   ],
+   "flags": [
+    "Baseline 872e is a weak/implied variant (supervisor uses the change log and history; no requirement that evidence accompany each flag). Other baselines carry change log/payment history only as step inputs.",
+    "Could be judged part of PRE-C05 (screening) rather than a separate control.",
+    "hitl_designer raised this in round1 of every council run independently."
+   ]
+  },
+  {
+   "id": "PRE-C07",
+   "title": "Recorded supervisory disposition for every flagged item (disposition log/record)",
+   "category": "evidence",
+   "codebook_match": "Structured attributable resolution record",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "maximalist",
+     "finance_domain"
+    ],
+    "quote": "with the agent's output logged as structured flags (not free text) so every supervisor decision is auditable against what the agent surfaced",
+    "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-02",
+     "field": "outputs",
+     "marker": "Flagged-exception disposition record"
+    },
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Exception disposition log"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-02",
+     "field": "outputs",
+     "marker": "Logged flag dispositions"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-02",
+     "field": "outputs",
+     "marker": "Documented exception dispositions"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-193948-baseline-P2P-PRE-01-208e",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Exception log"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Exception register"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Exception log"
+    }
+   ],
+   "flags": [
+    "Attribution unclear: e0a8 round1_finance_domain earlier required review to be a \"distinct, separately-evidenced human step\" (different form); 8682 round1_maximalist also said dispositions \"are logged, not discarded\". Quote chosen is the most explicit round1 statement.",
+    "Baseline \"Exception log\"/\"Exception register\" may record flags rather than supervisor dispositions - judgement call whether same mechanism."
+   ]
+  },
+  {
+   "id": "PRE-C08",
+   "title": "Mandatory independent (out-of-band) verification of vendor bank-detail changes before clearance",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "escalating for out-of-band vendor verification (e.g., callback to a known contact number, not the number on the changed instruction)",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Independent verification artifact (for bank-detail-change flags)"
+    },
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-02",
+     "field": "description",
+     "marker": "escalate for out-of-band vendor verification"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "e0a8 presence is a weaker variant: out-of-band verification is one optional disposition, not mandatory and with no evidence artefact. 64dc makes it non-waivable with an artefact (64dc round1_finance_domain proposed the mandatory form)."
+   ]
+  },
+  {
+   "id": "PRE-C09",
+   "title": "Manual change-log review fallback where bank-detail change log is not a system of record",
+   "category": "fallback",
+   "codebook_match": "Documented degraded-mode fallback as a named input",
+   "attribution": {
+    "roles": [
+     "emerging_economy",
+     "hitl_designer"
+    ],
+    "quote": "vendor bank-detail change logs are often manually maintained spreadsheets rather than system-enforced workflows",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-02",
+     "field": "description",
+     "marker": "the step retains a manual log-review fallback rather than relying on automated pre-screening alone"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Attribution: round1 quote states the problem rather than the fallback; the fallback itself was conceded by round2_hitl_designer in e0a8 to emerging_economy.",
+    "Codebook match partial: dev control is a named degraded-mode input procedure; here the fallback is embedded in description only."
+   ]
+  },
+  {
+   "id": "PRE-C10",
+   "title": "Periodic random sample of unflagged lines reviewed by supervisor",
+   "category": "monitoring",
+   "codebook_match": "Mandatory sampling audit of the auto-approved population",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "a periodic random sample of unflagged lines is pulled for supervisor spot-check",
+    "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-02",
+     "field": "description",
+     "marker": "the supervisor also reviews a periodic random sample of unflagged lines"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Possibly the same control as PRE-C11 (clean path not self-certifying); 8682 achieves the same purpose by full-proposal review instead of sampling."
+   ]
+  },
+  {
+   "id": "PRE-C11",
+   "title": "Supervisor reviews full proposal; clean (unflagged) proposals not auto-cleared by the screening system",
+   "category": "approval",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "present the supervisor with a flagged exception list plus the full proposal for context",
+    "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-02",
+     "field": "description",
+     "marker": "Clean (unflagged) proposals are not auto-cleared by the same system that generated the flags"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-02",
+     "field": "description",
+     "marker": "The AP supervisor reviews the full proposal, not a flags-only summary"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-PRE-01-872e",
+     "step_id": "TGT-02",
+     "field": "description",
+     "marker": "together with the full proposal"
+    }
+   ],
+   "flags": [
+    "Possibly one control with PRE-C10 (sampling of unflagged lines).",
+    "Baseline 872e mentions full-proposal review alongside flags but not the no-auto-clear rule - partial variant."
+   ]
+  },
+  {
+   "id": "PRE-C12",
+   "title": "Every payment run individually approved by a human authorised signatory; no auto-approval path",
+   "category": "approval",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain",
+     "agentic_architect",
+     "hitl_designer",
+     "pragmatist",
+     "accounting_standards",
+     "emerging_economy"
+    ],
+    "quote": "No sub-threshold auto-approval should be introduced without an explicit governance decision outside this workflow's scope.",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-03",
+     "field": "description",
+     "marker": "no sub-threshold or risk-tiered auto-approval is introduced"
+    },
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "there is no sub-threshold auto-clear"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "The authorised signatory personally approves every payment run"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "with no value-based, risk-based, or pre-configured-policy auto-approval path for any item"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-PRE-01-d745",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "approved for payment by an authorised signatory acting within delegated limits"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-PRE-01-208e",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "This decision remains a distinct human judgment"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "approved for payment by an authorised signatory within delegated limits"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-PRE-01-872e",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "via a digital approval workflow that enforces delegation-of-authority limits"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "approved for payment by an authorised signatory operating within delegated limits"
+    }
+   ],
+   "flags": [
+    "Baseline presence is the carried-forward signatory approval (PRE-04) without the explicit prohibition of auto-approval - weaker variant.",
+    "Opposite in direction to dev codebook \"Risk-tiered approval replacing uniform routing\"; a maximalist round1 proposal in 8682 argued for risk-based auto-approval which was rejected.",
+    "Could be split into (a) signatory approval within DOA (baseline-carried) and (b) explicit no-auto-approval rule."
+   ]
+  },
+  {
+   "id": "PRE-C13",
+   "title": "Approval packet carrying the review exception log/dispositions to the signatory",
+   "category": "evidence",
+   "codebook_match": "Variance packet assembled before handoff",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "An agent may assist by surfacing a risk-annotated summary (flags carried over from TGT-02, amount concentrations, new-payee counts)",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-03",
+     "field": "inputs",
+     "marker": "Flagged-exception disposition record"
+    },
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-03",
+     "field": "inputs",
+     "marker": "Decision packet (read-only: exception log, DOA check)"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-03",
+     "field": "inputs",
+     "marker": "Logged flag dispositions"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-03",
+     "field": "inputs",
+     "marker": "Documented exception dispositions"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Codebook match is a judgement call (packet assembled before handoff vs dev variance packet); could alternatively map to \"Traceable approval record tied to items reviewed\".",
+    "e0a8 round1 form (risk-annotated summary) differs from TSS form (disposition record as input with flag evidence); 64dc round1_agentic_architect proposed the decision packet explicitly.",
+    "Overlaps PRE-C14 in 64dc where the packet is produced by the read-only agent."
+   ]
+  },
+  {
+   "id": "PRE-C14",
+   "title": "Non-decisioning agent assistance at approval (no write authority; validate and route only)",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "as a read-only tool, but it has no write authority and cannot approve on the signatory's behalf",
+    "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "holds no write authority and cannot approve on the signatory"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-03",
+     "field": "actor",
+     "marker": "assisted by non-decisioning DOA validation/routing agent"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "it cannot approve or auto-clear items"
+    },
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-03",
+     "field": "description",
+     "marker": "the underlying reviewed proposal and flags must remain visible to them"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-PRE-01-872e",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "via a digital approval workflow that enforces delegation-of-authority limits"
+    }
+   ],
+   "flags": [
+    "e0a8 presence is a weaker variant (assistive summary, no explicit no-write rule).",
+    "Baseline 872e has a DOA-enforcing workflow but no non-decisioning restriction - partial/different mechanism.",
+    "Related to PRE-C13 and PRE-C35 (agent least privilege); may be one control."
+   ]
+  },
+  {
+   "id": "PRE-C15",
+   "title": "System-enforced segregation of proposal construction from approval (identity/credential level)",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy",
+     "agentic_architect",
+     "pragmatist",
+     "accounting_standards"
+    ],
+    "quote": "The target design should allow system-enforced segregation (role-based access controls preventing the same login from both preparing and approving a given proposal)",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "enforced at the access-control/credential level rather than by job title alone"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-01",
+     "field": "description",
+     "marker": "its system identity is structurally distinct from the approving signatory's"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "distinct from whoever operates the proposal-generation agent"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "without collapsing actor separation into a single person"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-PRE-01-d745",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "distinct from the actor who generated the proposal"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-PRE-01-208e",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "separate from both proposal generation and proposal review"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "distinct from whoever generated the proposal"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "independent of the party that generated the proposal"
+    }
+   ],
+   "flags": [
+    "Baseline presence is role-level separation carried from the encoding (PRE-R-04), not credential-level enforcement - weaker variant; could be two controls (role separation vs credential-level enforcement).",
+    "8682 presence is implied only (actor separation preserved under backup chains).",
+    "Not found in e0a8 TSS steps although e0a8 round1 roles proposed it."
+   ]
+  },
+  {
+   "id": "PRE-C16",
+   "title": "Timestamped approval record",
+   "category": "evidence",
+   "codebook_match": "Traceable approval record tied to items reviewed",
+   "attribution": {
+    "roles": [
+     "accounting_standards"
+    ],
+    "quote": "There must be a clear, timestamped, evidenced approval record",
+    "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+    "agent_role": "round1_accounting_standards"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "Timestamped approval record"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-PRE-01-872e",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "timestamps the decision"
+    }
+   ],
+   "flags": [
+    "Codebook match partial: no explicit tie to the specific items reviewed here (packet is a separate input, PRE-C13)."
+   ]
+  },
+  {
+   "id": "PRE-C17",
+   "title": "Named backup/delegated approver and releaser chains for thin staffing",
+   "category": "fallback",
+   "codebook_match": "Offline-cached delegation policy with named fallback approver",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "The target design must support delegated-authority chains (back-up approvers) without collapsing the separation requirement into a single person during leave or turnover",
+    "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "Back-up/delegated approver chains are named system controls"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-05",
+     "field": "description",
+     "marker": "a documented backup-releaser delegation chain exists for thin-staffed offices"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Approver chain (TGT-03) and releaser chain (TGT-05) may be two controls.",
+    "Codebook match partial: no offline-cache element."
+   ]
+  },
+  {
+   "id": "PRE-C18",
+   "title": "Pre-transmission integrity check binding bank file to approved proposal (hash/line-item match)",
+   "category": "gate",
+   "codebook_match": "Release gate enforcing requirement ordering as a system precondition",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "pragmatist"
+    ],
+    "quote": "compute a cryptographic binding (hash) between the file and the specific approved-proposal record from TGT-03",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-04",
+     "field": "inputs",
+     "marker": "Verification/hash-binding record from T-02/T-03"
+    },
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "File integrity check record"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-04",
+     "field": "outputs",
+     "marker": "Integrity check result"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-04",
+     "field": "outputs",
+     "marker": "Pre-transmission verification record"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Codebook match is partial: dev control is a status precondition enforcing step ordering; here the gate verifies file content against the approval.",
+    "May be one control with PRE-C19 (post-approval change detection/hard block)."
+   ]
+  },
+  {
+   "id": "PRE-C19",
+   "title": "Detection of changes between approval and release (delta report / hard block on bank-detail change)",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "that no vendor bank-detail changes have occurred since TGT-02 cleared them, with a kill-switch on mismatch",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-04",
+     "field": "description",
+     "marker": "with no intervening vendor bank-detail change"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-04",
+     "field": "outputs",
+     "marker": "Delta report"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-04",
+     "field": "description",
+     "marker": "hard-blocks transmission and escalates jointly to the AP supervisor and Treasury officer"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Possibly part of PRE-C18 (integrity check); 64dc integrity check refers to the TS-02 flag record but not to post-approval changes, so not counted."
+   ]
+  },
+  {
+   "id": "PRE-C20",
+   "title": "Human-triggered release to bank; no agent or automatic transmission",
+   "category": "approval",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "pragmatist",
+     "agentic_architect",
+     "hitl_designer"
+    ],
+    "quote": "This is where money actually leaves the building; it needs a stop/go a person owns.",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "it is never an automatic consequence of approval clearing"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-05",
+     "field": "description",
+     "marker": "retains a mandatory human gate even where generation is fully automated"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-04",
+     "field": "description",
+     "marker": "it cannot itself transmit funds"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-04",
+     "field": "description",
+     "marker": "No agent may trigger transmission autonomously."
+    },
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-04",
+     "field": "actor",
+     "marker": "Treasury officer (dual control above threshold)"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-PRE-01-d745",
+     "step_id": "TGT-04",
+     "field": "description",
+     "marker": "released to the bank by treasury"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-PRE-01-208e",
+     "step_id": "TS-04",
+     "field": "actor",
+     "marker": "Treasury officer"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-04",
+     "field": "actor",
+     "marker": "Treasury officer"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-PRE-01-872e",
+     "step_id": "TGT-04",
+     "field": "actor",
+     "marker": "Treasury officer"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+     "step_id": "TS-04",
+     "field": "actor",
+     "marker": "Treasury officer"
+    }
+   ],
+   "flags": [
+    "e0a8 and all baseline presences are implied (treasury officer is release actor) without an explicit no-automatic-release rule.",
+    "May be one control with PRE-C21 (second-person release)."
+   ]
+  },
+  {
+   "id": "PRE-C21",
+   "title": "Second-person / dual control at bank release",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "pragmatist",
+     "finance_domain",
+     "hitl_designer"
+    ],
+    "quote": "I'd support adding dual-control release (second treasury sign-off) where volumes justify it",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-04",
+     "field": "description",
+     "marker": "Above a defined value threshold, release additionally requires dual control"
+    },
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "release requires a second treasury signatory distinct from the one who reviewed the file summary"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-05",
+     "field": "name",
+     "marker": "Dual-authorisation release to bank"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-04",
+     "field": "description",
+     "marker": "by a second treasury officer where bench depth allows"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-193948-baseline-P2P-PRE-01-208e",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "with dual-control release confirmation retained for high-value or flagged batches"
+    }
+   ],
+   "flags": [
+    "Variants differ: threshold-based (e0a8, 64dc, baseline 208e), universal (8682), staffing-dependent with independent-supervisor alternative (1b2e). Could be judged separate controls.",
+    "Threshold variants resemble dev \"Risk-tiered approval replacing uniform routing\" applied to release."
+   ]
+  },
+  {
+   "id": "PRE-C22",
+   "title": "Release authorisation log with time-separated logging for single releaser below threshold",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "Segregation here must be achievable through role-based system controls and time-separated review, not solely through headcount.",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round2_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-04",
+     "field": "outputs",
+     "marker": "Release authorisation log"
+    },
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-04",
+     "field": "description",
+     "marker": "under system-enforced, time-separated logging"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Attribution from round2 (no round1 proposal found); the log output itself first appears in the synthesis.",
+    "Could be considered part of PRE-C21 (dual control) as its below-threshold compensating mechanism."
+   ]
+  },
+  {
+   "id": "PRE-C23",
+   "title": "Manual/batch file transmission as a first-class channel alongside API",
+   "category": "fallback",
+   "codebook_match": "Documented degraded-mode fallback as a named input",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "the step must preserve a manual/batch file-upload fallback path alongside any API-based release, not deprecate it",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-04",
+     "field": "description",
+     "marker": "A manual/batch file-upload path remains a first-class alternative to API-based transmission"
+    },
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "Transmission supports both API-based and manual/batch file-upload paths as co-equal, first-class execution modes"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-05",
+     "field": "description",
+     "marker": "Transmission supports a batch/store-and-forward fallback mode as a first-class operating mode"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-04",
+     "field": "description",
+     "marker": "Batch/manual file-transfer channels (e.g., signed SFTP upload) remain a first-class, documented mechanism"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Codebook match partial (dev control is a named input procedure for degraded mode).",
+    "May be one resilience control together with PRE-C24 and PRE-C25 (general manual/batch fallback principle)."
+   ]
+  },
+  {
+   "id": "PRE-C24",
+   "title": "Batch/manual bank-statement reconciliation as first-class settlement confirmation mode",
+   "category": "fallback",
+   "codebook_match": "Documented degraded-mode fallback as a named input",
+   "attribution": {
+    "roles": [
+     "emerging_economy",
+     "pragmatist"
+    ],
+    "quote": "explicitly supports both automated confirmation-matching (where available) and manual statement reconciliation (where it is not)",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-05",
+     "field": "description",
+     "marker": "end-of-day batch statement reconciliation remains an equally supported, first-class operating mode"
+    },
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "Batch-file reconciliation (downloaded statement matching) is the first-class baseline design"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-06",
+     "field": "description",
+     "marker": "tolerates delayed, end-of-day or manually downloaded statements as a normal operating mode"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-05",
+     "field": "description",
+     "marker": "via manual bank-statement reconciliation as an equally first-class channel"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "May be one resilience control with PRE-C23/PRE-C25.",
+    "Baselines d745/647f assume an automated bank API feed; no baseline carries a fallback."
+   ]
+  },
+  {
+   "id": "PRE-C25",
+   "title": "Documented manual/batch fallback for automated due-item selection",
+   "category": "fallback",
+   "codebook_match": "Documented degraded-mode fallback as a named input",
+   "attribution": {
+    "roles": [
+     "pragmatist"
+    ],
+    "quote": "A manual fallback path must exist for every automated step.",
+    "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-01",
+     "field": "description",
+     "marker": "A documented manual/batch fallback exists where continuous ERP automation is not available."
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Attribution quote is a general principle, not specific to selection; may be one control with PRE-C23/PRE-C24."
+   ]
+  },
+  {
+   "id": "PRE-C26",
+   "title": "Manual, documented, attested settlement-rate entry path when no live feed",
+   "category": "fallback",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "a manual, documented rate-entry path must exist",
+    "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "a manual, documented, accountable (GL accountant-attested) rate-entry path must exist and be logged"
+    },
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-06",
+     "field": "inputs",
+     "marker": "Settlement-date exchange rate (with documented manual fallback)"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Related to PRE-C27 (rate-source verification); may be one control around rate-source assurance."
+   ]
+  },
+  {
+   "id": "PRE-C27",
+   "title": "Human verification of FX rate source (stale/anomalous/distorted rates)",
+   "category": "monitoring",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "any automation of the FX posting must retain a human override/exception path, not just a straight-through rate feed",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-07",
+     "field": "description",
+     "marker": "the rate source itself (not only the resulting variance) requires a standing human verification checkpoint"
+    },
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-06",
+     "field": "description",
+     "marker": "or arising from an anomalous or stale rate source, route to the GL accountant for a documented decision"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-06",
+     "field": "description",
+     "marker": "sourced from a documented, defensible reference rate"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "1b2e presence is a weak variant (documented reference rate, no verification checkpoint).",
+    "e0a8 presence is an exception trigger inside the materiality routing (overlaps PRE-C30); 8682 round1_emerging_economy gave the standing-checkpoint form."
+   ]
+  },
+  {
+   "id": "PRE-C28",
+   "title": "Settlement exception/break queue with named treasury owner",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "finance_domain",
+     "emerging_economy"
+    ],
+    "quote": "Unmatched or partial settlements route to an exception queue owned by the Treasury officer rather than being silently resolved.",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-05",
+     "field": "outputs",
+     "marker": "Unmatched/exception queue"
+    },
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "marker": "Settlement exception queue"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-06",
+     "field": "outputs",
+     "marker": "Unmatched/break queue"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-05",
+     "field": "description",
+     "marker": "routed to a named Treasury-officer exception queue"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-PRE-01-d745",
+     "step_id": "TGT-05",
+     "field": "description",
+     "marker": "treasury monitors exceptions rather than performing manual reconciliation"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-PRE-01-208e",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "handles unmatched or exception items"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "with the treasury officer resolving any unmatched or exception items"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-PRE-01-872e",
+     "step_id": "TGT-05",
+     "field": "description",
+     "marker": "with the treasury officer monitoring exceptions"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "the treasury officer investigates any unmatched or partial settlements"
+    }
+   ],
+   "flags": [
+    "Baseline presences are weaker variants (exception handling by an actor, no named queue/output). In 208e the GL accountant, not treasury, handles them."
+   ]
+  },
+  {
+   "id": "PRE-C29",
+   "title": "Invoice/line-level settlement matching for derecognition traceability",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "accounting_standards"
+    ],
+    "quote": "the redesign must preserve invoice-level traceability from the approved proposal through the released file",
+    "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+    "agent_role": "round1_accounting_standards"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-06",
+     "field": "description",
+     "marker": "auto-matched to the transmitted file at the individual invoice/line-item level (not aggregate bank totals)"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-06",
+     "field": "outputs",
+     "marker": "Bank settlement confirmation (invoice-level)"
+    },
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "cleared at invoice-level determinability"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-PRE-01-d745",
+     "step_id": "TGT-05",
+     "field": "description",
+     "marker": "matches line-by-line to the transmitted payment file"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "matches it to the transmitted payment file line by line"
+    }
+   ],
+   "flags": [
+    "Borderline: may be ordinary processing rather than a governance control.",
+    "64dc presence is at clearing, not matching - weaker variant; baseline line-by-line matching is a similar but less explicit mechanism."
+   ]
+  },
+  {
+   "id": "PRE-C30",
+   "title": "Materiality/tolerance threshold routing of FX and settlement variances to GL accountant for documented decision",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "agentic_architect",
+     "maximalist",
+     "finance_domain",
+     "pragmatist"
+    ],
+    "quote": "where the difference exceeds a materiality threshold or where the settlement rate looks anomalous, the posting must route to the GL accountant for a documented decision rather than auto-post",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-06",
+     "field": "description",
+     "marker": "Differences exceeding a documented materiality threshold"
+    },
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Variance/exception escalations"
+    },
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "breaches a defined materiality threshold"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-07",
+     "field": "description",
+     "marker": "FX variances beyond tolerance, unmatched/partial settlements, and cutoff breaches near period-end"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-06",
+     "field": "description",
+     "marker": "settlement differences outside a defined tolerance band, unmatched confirmations, or manually-forced postings"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "The GL accountant reviews and approves estimation-sensitive FX postings before they are finalised"
+    },
+    {
+     "run_id": "20261010-184915-baseline-P2P-PRE-01-d745",
+     "step_id": "TGT-06",
+     "field": "description",
+     "marker": "the GL accountant reviews system-generated postings and handles exceptions"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-PRE-01-208e",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "The GL accountant reviews system-generated postings"
+    }
+   ],
+   "flags": [
+    "Baseline presences are weaker variants: accountant review without a defined threshold/tolerance.",
+    "1b2e adds manually-forced postings as a trigger, which could be a separate override-review control.",
+    "Unmatched-confirmation escalation (64dc, 8682, 1b2e) overlaps PRE-C28."
+   ]
+  },
+  {
+   "id": "PRE-C31",
+   "title": "Period-cutoff control over settlement posting (period gate / subledger lock, late-confirmation treatment)",
+   "category": "gate",
+   "codebook_match": "Discrete subledger lock preserved under continuous reconciliation",
+   "attribution": {
+    "roles": [
+     "accounting_standards"
+    ],
+    "quote": "Posting must also respect period-cutoff discipline (KB-03)",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round1_accounting_standards"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-06",
+     "field": "description",
+     "marker": "Postings respect period-cutoff discipline"
+    },
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "period-cutoff discipline over the subledger"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-07",
+     "field": "outputs",
+     "marker": "Period-gate confirmation"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-06",
+     "field": "description",
+     "marker": "A cutoff control (subledger lock or equivalent)"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "e0a8 and 64dc state a discipline rather than a named mechanism (weaker variant); 8682 has a gate output and 1b2e names a subledger lock."
+   ]
+  },
+  {
+   "id": "PRE-C32",
+   "title": "FX settlement difference posted as separately identified line (never netted)",
+   "category": "evidence",
+   "codebook_match": "Tagged exchange-difference schedule",
+   "attribution": {
+    "roles": [
+     "maximalist",
+     "pragmatist",
+     "finance_domain",
+     "hitl_designer",
+     "accounting_standards"
+    ],
+    "quote": "exchange differences must remain separately identifiable, never netted invisibly (KB-08)",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round1_maximalist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-06",
+     "field": "outputs",
+     "marker": "FX settlement difference (separately identified)"
+    },
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Exchange difference posted to dedicated account"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-07",
+     "field": "outputs",
+     "marker": "Labelled FX-difference entries"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-06",
+     "field": "outputs",
+     "marker": "Exchange-difference postings"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "are separately identified and posted, not netted invisibly"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "FX differences recognised"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "FX difference recognised"
+    }
+   ],
+   "flags": [
+    "Borderline control (accounting presentation requirement, KB-08) rather than assurance mechanism.",
+    "Baseline 647f is a weaker variant (FX differences recognised as output; no separate-identification language)."
+   ]
+  },
+  {
+   "id": "PRE-C33",
+   "title": "Treasury/GL segregation and distinct logged settlement-confirmation artefact anchoring posting",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "pragmatist"
+    ],
+    "quote": "the treasury (cash custody/bank relationship) function and the GL (recording) function should stay separated",
+    "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-05",
+     "field": "description",
+     "marker": "never posted by the same role that also controls the bank-facing side"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-05",
+     "field": "description",
+     "marker": "producing a distinct, logged, reconcilable settlement-confirmation artifact that anchors posting"
+    },
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-05",
+     "field": "description",
+     "marker": "kept as a distinct, nameable function"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Likely two controls: (a) treasury vs GL role segregation (1b2e only, explicit) and (b) distinct logged settlement-confirmation artefact (1b2e; e0a8 weaker - distinct function). Researcher to decide split; artefact form attributable to 1b2e round1_accounting_standards.",
+    "Implied presence: all council runs and baselines d745/647f/872e/f62e keep confirmation (Treasury) and posting (GL accountant) as separate steps with different actors; baseline 208e merges matching and posting under the GL accountant. Not listed as explicit presence."
+   ]
+  },
+  {
+   "id": "PRE-C34",
+   "title": "Returns/rejections re-open the AP open item",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "a return or rejection here needs to flow back to re-open the AP open item, not disappear",
+    "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-05",
+     "field": "description",
+     "marker": "any return or rejection flows back to re-open the relevant AP open item rather than disappearing"
+    }
+   ],
+   "baseline_present": [],
+   "flags": []
+  },
+  {
+   "id": "PRE-C35",
+   "title": "Remittance delivery exception queue with named AP analyst owner",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "pragmatist",
+     "finance_domain",
+     "hitl_designer"
+    ],
+    "quote": "provided someone still owns the exception queue so vendors aren't silently left unpaid-looking",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-07",
+     "field": "outputs",
+     "marker": "Delivery exception queue"
+    },
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "marker": "Delivery exception queue"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-08",
+     "field": "outputs",
+     "marker": "Delivery-exception queue"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-07",
+     "field": "description",
+     "marker": "Delivery failures and vendor disputes about what a remittance covered are routed to an AP-analyst exception queue"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-PRE-01-d745",
+     "step_id": "TGT-07",
+     "field": "description",
+     "marker": "with the AP analyst handling delivery exceptions"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "with the AP analyst monitoring delivery failures"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "with the AP analyst handling exceptions such as bounced notifications"
+    }
+   ],
+   "flags": [
+    "Baseline presences are weaker variants (analyst handles exceptions; no queue output). 208e and 872e have none.",
+    "Borderline governance control (vendor communication, no accounting content)."
+   ]
+  },
+  {
+   "id": "PRE-C36",
+   "title": "Remittance sourced from / traceable to the posting-clearing record",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "accounting_standards"
+    ],
+    "quote": "it should remain traceable back to the posting record it describes (which invoices a given cash outflow discharged)",
+    "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+    "agent_role": "round1_accounting_standards"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "traceable back to the posting record describing which invoices a given cash outflow discharged"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-07",
+     "field": "description",
+     "marker": "remittance content is sourced from, and can never diverge from, the subledger clearing detail"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-07",
+     "field": "inputs",
+     "marker": "AP subledger cleared"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-PRE-01-872e",
+     "step_id": "TGT-07",
+     "field": "inputs",
+     "marker": "GL cash posted"
+    }
+   ],
+   "flags": [
+    "Baseline 872e is implied only (remittance triggered from GL posting); 8682 \"per-invoice detail preserved\" may be a weaker variant (not listed)."
+   ]
+  },
+  {
+   "id": "PRE-C37",
+   "title": "Multi-channel/non-digital remittance delivery fallback",
+   "category": "fallback",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "supports multi-channel delivery (email, portal, and a non-digital fallback such as SMS or printed advice)",
+    "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+     "step_id": "T-07",
+     "field": "description",
+     "marker": "or a non-digital channel (SMS, printed advice) where a vendor lacks reliable digital contact data"
+    },
+    {
+     "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "Delivery channel remains flexible (email/PDF, portal, SMS)"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-08",
+     "field": "description",
+     "marker": "Multi-channel delivery (email, SMS, vendor portal, printed advice)"
+    },
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-07",
+     "field": "description",
+     "marker": "batch-file delivery, vendor-bank channel delivery or other appropriate channels remain valid"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Borderline: resilience of vendor communication rather than assurance; may be judged not a governance control.",
+    "May be one resilience control with PRE-C23/PRE-C24/PRE-C25."
+   ]
+  },
+  {
+   "id": "PRE-C38",
+   "title": "Agent least privilege: automation write access limited (proposal object only; file agent cannot transmit)",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "write access limited to a staging",
+    "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+     "step_id": "TGT-01",
+     "field": "description",
+     "marker": "The agent's write access is limited to the proposal object; it cannot create a payment instruction"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-01",
+     "field": "outputs",
+     "marker": "Payment proposal (staged)"
+    },
+    {
+     "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+     "step_id": "TGT-04",
+     "field": "description",
+     "marker": "it cannot itself transmit funds"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "8682 TGT-01 \"staged\" proposal is an implied variant; 8682 TGT-04 marker overlaps PRE-C20 (human-triggered release).",
+    "May be one control with PRE-C14 (non-decisioning approval agent) and PRE-C15 (identity-level segregation)."
+   ]
+  }
+ ]
+}

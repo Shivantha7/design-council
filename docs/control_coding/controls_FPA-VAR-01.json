@@ -1,0 +1,2316 @@
+{
+ "workflow_id": "FPA-VAR-01",
+ "candidates": [
+  {
+   "id": "VAR-C01",
+   "title": "Ingestion pull log (source, timestamp, checksum/hash, version IDs)",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "logs each pull with source-system timestamp and checksum",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Ingestion log (source, timestamp, checksum, budget/forecast version IDs)"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "Every pull is logged with source system, timestamp and a content hash for replayability"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "writing both to a version-tagged, logged landing area"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Actuals dataset (version-logged)"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-193948-baseline-FPA-VAR-01-9ef2",
+     "step_id": "TGT-01",
+     "field": "description",
+     "marker": "removing manual extraction risk while preserving source traceability"
+    }
+   ],
+   "flags": [
+    "Presence partial in 8d63: version-tagged logged landing area / version-logged datasets, no explicit source/timestamp/hash fields.",
+    "Baseline 9ef2 presence is a judgement call: 'source traceability' asserted, no log output named.",
+    "Attribution: agentic_architect also proposed it independently in a8a0 round1 (content hash)."
+   ]
+  },
+  {
+   "id": "VAR-C02",
+   "title": "Ingestion hard-stop gate: halt on unlocked period, unapproved/stale version, or failed reconciliation/completeness",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "If the ingestion agent cannot connect to a source system, or a checksum fails, it must halt and route to a human queue rather than silently proceeding on stale or partial data",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "On reconciliation failure, stale feed, or missing source, the job halts and routes to this analyst"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "The pipeline is structurally restricted to locked-period data and cannot read from an open or preliminary period."
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "the pipeline halts and escalates to this analyst rather than guessing a version"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "The job halts and raises an exception if the period is not locked"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "The job hard-fails into an FP&A analyst exception queue (not a soft warning) if the source period is not locked"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-01",
+     "field": "inputs",
+     "marker": "Period lock status flag"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "confirms version identity (correct approved budget, correct forecast vintage) before the dataset is released downstream"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "6fd0 presence is a weaker variant: human version-identity confirmation before release, no automated halt condition stated.",
+    "Agentic_architect proposed the halt in round1 of every council run; attribution quote taken from the earliest run.",
+    "May overlap with VAR-C03 (exception queue the halt routes to) - could be one control."
+   ]
+  },
+  {
+   "id": "VAR-C03",
+   "title": "Named analyst owns ingestion exception queue/log",
+   "category": "exception",
+   "codebook_match": "Validation exception queue at capture",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "pragmatist",
+     "finance_domain"
+    ],
+    "quote": "for triaging extraction exceptions (missing entities, late-posted journals inside the lock)",
+    "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "owns reconciliation of any late-loading entities, duplicate postings, or stale version mismatches"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Extraction exception log"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Ingestion exception log"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "The analyst owns an exception queue for failed loads"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Extraction exception log"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Ingestion exception log"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-VAR-01-ed96",
+     "step_id": "TGT-01",
+     "field": "description",
+     "marker": "The FP&A analyst configures and validates the pipeline run and resolves any load exceptions."
+    }
+   ],
+   "flags": [
+    "7759 presence partial: analyst owns reconciliation of exceptions but no exception log/queue output named.",
+    "Baseline ed96 presence partial: analyst resolves load exceptions, no log/queue.",
+    "Attribution unclear: several roles across runs (a8a0 pragmatist 'exception queue', 4f3e finance_domain 'exception log'); quote from 6fd0 hitl_designer.",
+    "Codebook match is by analogy (P2P capture queue vs. FP&A ingestion queue); may overlap with VAR-C02."
+   ]
+  },
+  {
+   "id": "VAR-C04",
+   "title": "Standing every-cycle analyst validation of ingestion (ties to lock, control totals, version identity) with record",
+   "category": "approval",
+   "codebook_match": "Named human certification of the actuals baseline",
+   "attribution": {
+    "roles": [
+     "finance_domain",
+     "emerging_economy",
+     "hitl_designer"
+    ],
+    "quote": "someone confirming the extract ties to the lock, which is a real failure point",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "A named FP&A analyst performs a standing, every-cycle validation sign-off confirming the extract ties to the lock"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "confirms the extract ties to the locked period, reconciles control totals"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Version-confirmation record"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Version/lock reconciliation record"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "the step produces a routine version/lock reconciliation output every cycle (not only on hard failure)"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "as a standing review each cycle, not only when an exception fires"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-01",
+     "field": "actor",
+     "marker": "FP&A analyst as exception-handler and version-identity validator"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-VAR-01-ed96",
+     "step_id": "TGT-01",
+     "field": "description",
+     "marker": "The FP&A analyst configures and validates the pipeline run"
+    },
+    {
+     "run_id": "20261010-205000-baseline-FPA-VAR-01-7c5b",
+     "step_id": "VAR-T-01",
+     "field": "actor",
+     "marker": "system-automated extraction, analyst-reviewed"
+    },
+    {
+     "run_id": "20261010-193948-baseline-FPA-VAR-01-9ef2",
+     "step_id": "TGT-01",
+     "field": "description",
+     "marker": "producing one reconciled dataset"
+    },
+    {
+     "run_id": "20261010-203046-baseline-FPA-VAR-01-5154",
+     "step_id": "TGT-01",
+     "field": "description",
+     "marker": "into a single reconciled dataset"
+    }
+   ],
+   "flags": [
+    "The 'standing, every-cycle' framing in 7759 first appears in round2 (agentic_architect folds in a 'standing validation sign-off'); round1 idea was a lock-tie confirmation.",
+    "8d63 presence partial: validator role named in actor, no every-cycle sign-off or record.",
+    "Baseline presences are weaker variants (validate/review/reconciled dataset, no named sign-off or record); 9ef2 and 5154 'reconciled dataset' only implied.",
+    "Possibly two controls: lock-tie/control-total reconciliation vs. budget/forecast version-identity confirmation (6fd0 splits them across TS-01/TS-02)."
+   ]
+  },
+  {
+   "id": "VAR-C05",
+   "title": "Actuals extraction and comparatives load independently triggered (cutoff discipline not gated by other data)",
+   "category": "other",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "Collapsing them into one step would force comparatives loading to wait on the close calendar",
+    "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "This step is independently triggered from comparatives loading"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-02",
+     "field": "inputs",
+     "marker": "Budget/forecast version-approval event"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Judgement call whether this is a governance control at all: the round1 rationale is mainly close-calendar parallelisation (efficiency); TSS frames it as cutoff discipline."
+   ]
+  },
+  {
+   "id": "VAR-C06",
+   "title": "Degraded-mode / documented manual fallback for automated ingestion",
+   "category": "fallback",
+   "codebook_match": "Documented degraded-mode fallback as a named input",
+   "attribution": {
+    "roles": [
+     "emerging_economy",
+     "pragmatist"
+    ],
+    "quote": "while insisting they be built to degrade gracefully",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "designed to degrade gracefully under intermittent connectivity (locally cached/last-known-good data, queued retry)"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "A documented manual fallback (human-run extract against the same lock/version checks) must remain operable"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "7759 variant is graceful degradation (cached/last-known-good, retry), not a documented manual procedure; 8d63 is a documented manual fallback - may be two controls.",
+    "Codebook match partial: in neither run is the fallback a named input of the step.",
+    "Attribution: emerging_economy in 7759/8d63 round1; pragmatist 6fd0 round1 also required a manual fallback for extraction."
+   ]
+  },
+  {
+   "id": "VAR-C07",
+   "title": "Policy-version and FX-table-version stamped/logged per computation run",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "every run must be stamped with the accounting-policy version and the constant-currency FX table version it used",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Policy-version and FX-table-version run log"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "Computation parameter log"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "The engine logs, per run, the policy version and FX rate set applied."
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Policy/FX version log"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Policy-version ID and FX-table-version ID stamp"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "policy-version and FX-table-version lineage tags"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-195830-baseline-FPA-VAR-01-c54a",
+     "step_id": "TGT-02",
+     "field": "description",
+     "marker": "The engine's policy and rate parameters are version-controlled so policy continuity and FX treatment remain auditable."
+    }
+   ],
+   "flags": [
+    "Baseline c54a presence partial: parameters version-controlled, but no per-run stamp/log output.",
+    "Attribution: agentic_architect in all five runs' round1; pragmatist 8d63 round1 also required audit trail of policy version and FX rate set."
+   ]
+  },
+  {
+   "id": "VAR-C08",
+   "title": "Per-cycle named analyst sign-off that loaded policy/FX parameters are the currently approved ones",
+   "category": "approval",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "emerging_economy"
+    ],
+    "quote": "to confirm, each cycle, that the policy and FX parameters loaded into the engine are the correct, currently-approved ones",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "confirms each cycle that the loaded policy and FX parameters are the currently-approved ones"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "validates, each period, that the policy and FX parameters loaded are current"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "Before each run, the FP&A analyst signs off that the policy-version ID and FX-table-version ID in force match"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "A deterministic calculation engine, configured and reviewed by the FP&A analyst"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-02",
+     "field": "actor",
+     "marker": "with FP&A analyst as anomaly reviewer"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-VAR-01-ed96",
+     "step_id": "TGT-02",
+     "field": "description",
+     "marker": "The FP&A analyst parameterises the run with the current accounting policies and FX rate set"
+    },
+    {
+     "run_id": "20261010-193948-baseline-FPA-VAR-01-9ef2",
+     "step_id": "TGT-02",
+     "field": "description",
+     "marker": "FP&A reviews engine configuration and policy mapping"
+    },
+    {
+     "run_id": "20261010-205000-baseline-FPA-VAR-01-7c5b",
+     "step_id": "VAR-T-02",
+     "field": "description",
+     "marker": "an FP&A analyst validates the configuration and outputs"
+    }
+   ],
+   "flags": [
+    "a8a0 and 8d63 presence are weaker variants (analyst configures/reviews or reviews anomalies; no per-cycle sign-off that parameters are current).",
+    "All baseline presences are weaker variants (analyst parameterises/reviews/validates configuration, no explicit per-cycle currency sign-off).",
+    "Attribution: hitl_designer (7759, 6fd0 round1) and emerging_economy 7759 ('validation checkpoint') both proposed it."
+   ]
+  },
+  {
+   "id": "VAR-C09",
+   "title": "Computation halts on missing, stale or mismatched policy/FX reference data (no silent default)",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "if policy or FX inputs are missing or version-mismatched against the prior period, the engine halts and routes to the FP&A analyst rather than silently defaulting",
+    "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "the engine halts and routes to the analyst on any version mismatch or missing parameter rather than defaulting silently"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "Stale or missing reference data halts to an FP&A analyst for review; the engine never silently substitutes a default."
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "8d63 also halts on actuals-vs-comparatives policy-basis mismatch (see VAR-C10); the two candidates overlap in 8d63."
+   ]
+  },
+  {
+   "id": "VAR-C10",
+   "title": "Policy/FX change or accounting-basis divergence surfaced as an explicit disclosure flag",
+   "category": "exception",
+   "codebook_match": "Policy-change disclosure output",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "accounting_standards"
+    ],
+    "quote": "this becomes a disclosure trigger, not just a technical log entry",
+    "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Policy or FX change disclosure flag"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "flagged as an explicit disclosure trigger, not a silent log entry"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "Any divergence in accounting-policy basis between actuals and comparatives is surfaced as a flagged difference"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "halts the run and is surfaced for disclosure rather than computed through"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Possibly two controls: a8a0 flags change vs prior period's policy/FX version; 4f3e and 8d63 flag actuals-vs-comparatives basis mismatch.",
+    "4f3e presence partial: 'flagged difference', no disclosure output named.",
+    "Codebook could equally be 'Basis-change disclosure log' (FPA-RF-01).",
+    "Disclosure surfacing was proposed in round1 by several roles in several runs (6fd0 finance_domain/agentic_architect/accounting_standards, a8a0 maximalist/accounting_standards); 6fd0 TSS does not carry it."
+   ]
+  },
+  {
+   "id": "VAR-C11",
+   "title": "Structural-break validation of computation output (new SKUs, reclassified cost centres, M&A)",
+   "category": "monitoring",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "the analyst reviews engine output for structural breaks (new SKUs, reclassified cost centres, M&A-driven volume effects)",
+    "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "Structural-break validation record"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "no structural break in the underlying population"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-VAR-01-ed96",
+     "step_id": "TGT-02",
+     "field": "description",
+     "marker": "reviews the computed variance dataset for integrity before release"
+    }
+   ],
+   "flags": [
+    "Baseline ed96 presence is a judgement call: generic integrity review of the variance dataset, not a structural-break check."
+   ]
+  },
+  {
+   "id": "VAR-C12",
+   "title": "FX effect reported as a separate line, never netted into price/volume/mix",
+   "category": "evidence",
+   "codebook_match": "FX- and basis-change-isolated bridges",
+   "attribution": {
+    "roles": [
+     "accounting_standards"
+    ],
+    "quote": "the FX effect must stay isolated and separately visible in the variance output",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_accounting_standards"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Variance dataset with FX effect separately isolated"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "Variance dataset (FX effect reported as a separate line)"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "The FX effect is isolated and reported as its own distinct line, never netted into price, volume or mix."
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Variance dataset with isolated FX variance field"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "the FX effect is output as its own separately labeled component rather than netted into price/volume/mix"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-195830-baseline-FPA-VAR-01-c54a",
+     "step_id": "TGT-02",
+     "field": "outputs",
+     "marker": "Isolated FX effect"
+    },
+    {
+     "run_id": "20261010-184915-baseline-FPA-VAR-01-ed96",
+     "step_id": "TGT-02",
+     "field": "name",
+     "marker": "Compute price, volume, mix and FX-isolated variances"
+    },
+    {
+     "run_id": "20261010-193948-baseline-FPA-VAR-01-9ef2",
+     "step_id": "TGT-02",
+     "field": "description",
+     "marker": "isolating the FX effect at constant currency"
+    },
+    {
+     "run_id": "20261010-203046-baseline-FPA-VAR-01-5154",
+     "step_id": "TGT-02",
+     "field": "description",
+     "marker": "with the FX effect isolated at constant currency"
+    },
+    {
+     "run_id": "20261010-205000-baseline-FPA-VAR-01-7c5b",
+     "step_id": "VAR-T-02",
+     "field": "description",
+     "marker": "isolating the FX effect at constant currency"
+    }
+   ],
+   "flags": [
+    "FX isolation at constant currency is already in the current-state encoding (VAR-03); baseline presences may be inherited wording rather than an added control. Only c54a gives it a separate output.",
+    "Judgement call whether this is a governance control or ordinary processing; council adds 'separate line, never netted'.",
+    "Attribution: accounting_standards in all runs' round1, also finance_domain (a8a0) and maximalist (4f3e)."
+   ]
+  },
+  {
+   "id": "VAR-C13",
+   "title": "Variance computation kept as a deterministic, inspectable, reproducible step (not a black box)",
+   "category": "other",
+   "codebook_match": "Matching kept as a discrete auditable step boundary",
+   "attribution": {
+    "roles": [
+     "pragmatist",
+     "agentic_architect"
+    ],
+    "quote": "restructure, not eliminate or hand to a black box",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "kept as a distinct, inspectable step rather than folded into ingestion"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "A deterministic calculation engine, configured and reviewed by the FP&A analyst"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "The computation logic and its lineage tags must be inspectable and locally reproducible"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-195830-baseline-FPA-VAR-01-c54a",
+     "step_id": "TGT-02",
+     "field": "description",
+     "marker": "A rules-based variance engine"
+    }
+   ],
+   "flags": [
+    "a8a0 and baseline c54a presences are weak (deterministic/rules-based engine named, no inspectability statement).",
+    "Codebook match by analogy only (P2P matching step).",
+    "Attribution unclear: black-box objection raised by many roles (7759 pragmatist, 6fd0 pragmatist/finance_domain, a8a0 emerging_economy, 8d63 emerging_economy 'spreadsheet-reproducible')."
+   ]
+  },
+  {
+   "id": "VAR-C14",
+   "title": "Materiality screening kept as a discrete, separately inspectable gate step",
+   "category": "gate",
+   "codebook_match": "Matching kept as a discrete auditable step boundary",
+   "attribution": {
+    "roles": [
+     "maximalist",
+     "pragmatist"
+    ],
+    "quote": "the separation only means something if the screening step remains a discrete, inspectable gate",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_maximalist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "The step remains a discrete, visibly separate gate"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "This remains a separately inspectable step, distinct from computation and from review"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "This step's function is a judgment-bearing gate, not a pure config filter"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-203046-baseline-FPA-VAR-01-5154",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "Retained as a distinct, auditable gating step"
+    }
+   ],
+   "flags": [
+    "VAR-R-08 requires the step to survive; all runs (council and baseline) keep a separate materiality step, so presence beyond explicit statements is implied.",
+    "Codebook match by analogy only."
+   ]
+  },
+  {
+   "id": "VAR-C15",
+   "title": "Logged analyst override authority to add sub-threshold items for qualitative reasons",
+   "category": "exception",
+   "codebook_match": "Named judgment owner with contemporaneous rationale",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "the materiality screen (VAR-04) must retain a human override path for qualitative significance",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "Variances to explain (including logged qualitative overrides)"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Override log"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "Materiality override/exclusion log"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "Materiality override log"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "Override log (rationale for additions/removals)"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-VAR-01-ed96",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "reviews borderline or overridden items before the explain-list is finalised"
+    }
+   ],
+   "flags": [
+    "Baseline ed96 presence partial: overridden items reviewed, but no logged authority or rationale record.",
+    "May be one control with VAR-C16 (exclusions with rationale); several runs use a single bidirectional log.",
+    "Codebook match by analogy (judgment owner with logged rationale).",
+    "Attribution: proposed in round1 by hitl_designer in all runs, also finance_domain (4f3e, 8d63, 6fd0) and agentic_architect (7759)."
+   ]
+  },
+  {
+   "id": "VAR-C16",
+   "title": "Exclusion/stand-down of flagged items only with logged rationale (no silent exclusion)",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "agentic_architect"
+    ],
+    "quote": "explicit authority to add or stand down items, with that override logged",
+    "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Exclusion log with rationale"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "must log documented reasoning whenever they exclude an agent-flagged item"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "may flag above-threshold items as noise for manager awareness without silently excluding them"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "Override log (rationale for additions/removals)"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "4f3e variant forbids silent exclusion (flag as noise) rather than logging exclusions.",
+    "May be the same control as VAR-C15 (bidirectional override log)."
+   ]
+  },
+  {
+   "id": "VAR-C17",
+   "title": "Net-effect aggregation check of sub-threshold variances (anti-threshold-gaming)",
+   "category": "monitoring",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "The threshold step needs a secondary net-effect check",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "Net-effect aggregation check log"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "cumulative small-item patterns"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "an aggregation of related sub-threshold items"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "6fd0 and 8d63 presences are weaker variants: aggregation is only an example reason for analyst override, not an automated check with a log."
+   ]
+  },
+  {
+   "id": "VAR-C18",
+   "title": "Threshold parameters human-owned, versioned and change-controlled",
+   "category": "other",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "controls threshold parameters under change control",
+    "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "distinct from threshold-parameter governance, which is separately change-controlled"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "Threshold values themselves are human-owned configuration, versioned and logged on change."
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "Threshold version record"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "Every inclusion and exclusion carries a logged rationale and the threshold value applied."
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-VAR-01-ed96",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "the FP&A analyst confirms the threshold parameters applied"
+    },
+    {
+     "run_id": "20261010-195830-baseline-FPA-VAR-01-c54a",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "the FP&A analyst owns the threshold parameters"
+    }
+   ],
+   "flags": [
+    "4f3e presence partial: threshold value applied is logged per decision, no change control.",
+    "Baseline presences partial: parameter ownership/confirmation, no versioning or change control.",
+    "Attribution: agentic_architect 7759 round1 also proposed a 'version-controlled parameter set', but 7759 TSS does not carry it."
+   ]
+  },
+  {
+   "id": "VAR-C19",
+   "title": "Analyst reviews full variance population and confirms selection list before release to budget holders",
+   "category": "approval",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "The target state must give the analyst visibility into the full variance population (not only the auto-flagged subset)",
+    "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "sees the full variance population -- not only the auto-flagged subset -- and confirms the selection list"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-04",
+     "field": "inputs",
+     "marker": "Full variance population"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "the analyst reviews the flag list"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-193948-baseline-FPA-VAR-01-9ef2",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "with FP&A analyst sign-off on the flagged set before it is routed to budget holders"
+    }
+   ],
+   "flags": [
+    "4f3e and baseline 9ef2 presences are weaker variants: review/sign-off of the flagged list without full-population visibility.",
+    "May overlap with VAR-C15/C16 (override authority exercised in the same review)."
+   ]
+  },
+  {
+   "id": "VAR-C20",
+   "title": "Tolerance band around threshold routed to explicit human decision",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "hitl_designer"
+    ],
+    "quote": "borderline items within a configurable tolerance band of the threshold",
+    "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "Items within a configurable tolerance band of the threshold"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-VAR-01-ed96",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "reviews borderline or overridden items"
+    },
+    {
+     "run_id": "20261010-195830-baseline-FPA-VAR-01-c54a",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "reviews edge cases"
+    }
+   ],
+   "flags": [
+    "Baseline presences are weaker variants (borderline/edge-case review without a defined band).",
+    "Attribution: near-threshold review was proposed earlier in a8a0 round1 (agentic_architect '10-20% of a threshold boundary', hitl_designer 'near-threshold band') but not carried into a8a0 TSS."
+   ]
+  },
+  {
+   "id": "VAR-C21",
+   "title": "Actor separation between materiality selection and review/challenge",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "pragmatist",
+     "emerging_economy",
+     "finance_domain"
+    ],
+    "quote": "must be a different person from whoever performs VAR-07",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-03",
+     "field": "actor",
+     "marker": "FP&A analyst (thresholding owner, distinct from the VAR-07 successor reviewer)"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-04",
+     "field": "actor",
+     "marker": "FP&A analyst (distinct from the FP&A manager in TS-07)"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "This step's actor is structurally distinct from the actor who later reviews and challenges the report."
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "This actor is organisationally and functionally distinct from the reviewer in TS-06."
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-03",
+     "field": "actor",
+     "marker": "FP&A analyst (identity distinct from TS-06 reviewer)"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-VAR-01-ed96",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "This selecting actor is distinct from the manager who later reviews and challenges the report."
+    },
+    {
+     "run_id": "20261010-193948-baseline-FPA-VAR-01-9ef2",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "performed by a different actor than, the subsequent manager review"
+    },
+    {
+     "run_id": "20261010-195830-baseline-FPA-VAR-01-c54a",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "does not perform the downstream challenge review, preserving separation of duties"
+    },
+    {
+     "run_id": "20261010-203046-baseline-FPA-VAR-01-5154",
+     "step_id": "TGT-06",
+     "field": "description",
+     "marker": "preserving segregation of duties between selection and review"
+    },
+    {
+     "run_id": "20261010-205000-baseline-FPA-VAR-01-7c5b",
+     "step_id": "VAR-T-03",
+     "field": "description",
+     "marker": "organisationally independent of the later review and challenge function"
+    }
+   ],
+   "flags": [
+    "Mandated by requirement VAR-R-04 (actor_separation) and already present in the current-state encoding (analyst vs manager); presence in every run is expected.",
+    "Attribution unclear: raised as a non-negotiable by most roles in round1 of every run."
+   ]
+  },
+  {
+   "id": "VAR-C22",
+   "title": "Separation enforced structurally via access control / distinct system identities",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "emerging_economy"
+    ],
+    "quote": "must be distinct identities in the system's access log",
+    "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "must be a distinct, access-control-enforced identity from the manager performing TS-06"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-06",
+     "field": "actor",
+     "marker": "FP&A manager (identity distinct from TS-03 selector)"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "organisationally and functionally distinct"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "May be a stronger variant of VAR-C21 rather than a separate control.",
+    "4f3e presence partial: 'organisationally and functionally distinct' does not state system enforcement (round1 agentic_architect 4f3e said 'system-permission distinct').",
+    "Attribution: emerging_economy 7759 round1 also called for 'system permissions', not carried into 7759 TSS."
+   ]
+  },
+  {
+   "id": "VAR-C23",
+   "title": "Materiality override/exclusion log supplied to the reviewer",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "with that addition logged and visible to the reviewer",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "any such override is visible to the downstream reviewer"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-07",
+     "field": "inputs",
+     "marker": "Exclusion and override log from TS-04"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-06",
+     "field": "inputs",
+     "marker": "Materiality override/exclusion log"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-06",
+     "field": "inputs",
+     "marker": "Materiality override log"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-06",
+     "field": "inputs",
+     "marker": "Override log"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "7759 presence partial: visibility stated in TS-03 description but the log is not an input of the review step TS-06.",
+    "Overlaps with VAR-C24 (reviewer access to underlying evidence) - could be one control."
+   ]
+  },
+  {
+   "id": "VAR-C24",
+   "title": "Reviewer access to underlying evidence beyond the narrative (variance detail/population, raw commentary, policy/FX log, provenance)",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "The manager must have access to the underlying variance detail and raw commentary, not only the consolidated narrative",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "the manager retains full access to underlying variance detail and raw commentary"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-07",
+     "field": "inputs",
+     "marker": "Full variance population"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-06",
+     "field": "inputs",
+     "marker": "Policy/FX version log"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-06",
+     "field": "inputs",
+     "marker": "Commentary provenance record"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-06",
+     "field": "inputs",
+     "marker": "Policy-version ID and FX-table-version ID stamp"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-06",
+     "field": "inputs",
+     "marker": "Raw budget holder commentary"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-06",
+     "field": "inputs",
+     "marker": "Variance dataset"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Bundles several evidence inputs that differ by run (raw commentary vs policy/FX log vs full population); could be split into separate controls.",
+    "Overlaps with VAR-C23."
+   ]
+  },
+  {
+   "id": "VAR-C25",
+   "title": "Review retained as a non-automated human accountability checkpoint (agent triage cannot bound scope)",
+   "category": "approval",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "must not be allowed to degrade into a sign-off on a polished document",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "this triage never defines the boundary of what the manager may inspect"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "This step remains human and distinct from whoever or whatever performed TS-04."
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "This is the control gate against everything upstream, including any tool-assisted drafting, and is not automated"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-06",
+     "field": "actor",
+     "marker": "FP&A manager"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-06",
+     "field": "actor",
+     "marker": "FP&A manager (identity distinct from TS-03 selector)"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-VAR-01-ed96",
+     "step_id": "TGT-06",
+     "field": "actor",
+     "marker": "FP&A manager"
+    },
+    {
+     "run_id": "20261010-193948-baseline-FPA-VAR-01-9ef2",
+     "step_id": "TGT-06",
+     "field": "description",
+     "marker": "the review-and-challenge function is preserved intact"
+    },
+    {
+     "run_id": "20261010-195830-baseline-FPA-VAR-01-c54a",
+     "step_id": "TGT-06",
+     "field": "actor",
+     "marker": "FP&A manager"
+    },
+    {
+     "run_id": "20261010-203046-baseline-FPA-VAR-01-5154",
+     "step_id": "TGT-06",
+     "field": "actor",
+     "marker": "FP&A manager"
+    },
+    {
+     "run_id": "20261010-205000-baseline-FPA-VAR-01-7c5b",
+     "step_id": "VAR-T-06",
+     "field": "actor",
+     "marker": "FP&A manager"
+    }
+   ],
+   "flags": [
+    "Review survival is mandated by VAR-R-07 and the current state already has a human manager review; 4f3e, 8d63 and all baseline presences are implied (human manager actor only).",
+    "Possibly overlaps with VAR-C24/VAR-C26 (substantive review)."
+   ]
+  },
+  {
+   "id": "VAR-C26",
+   "title": "Reviewer can reject and kick back draft or commentary upstream",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "hitl_designer"
+    ],
+    "quote": "without a human reviewer who can reject and bounce the draft back",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "can reject and bounce the draft back to TS-05/TS-04"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "The manager may send weak commentary or unexplained gaps back to TS-05/TS-06."
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "implausible or boilerplate commentary can be kicked back"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Overlaps with VAR-C39 (analyst-level commentary kickback at consolidation)."
+   ]
+  },
+  {
+   "id": "VAR-C27",
+   "title": "Documented challenge notes retained as evidence of review",
+   "category": "evidence",
+   "codebook_match": "Traceable approval record tied to items reviewed",
+   "attribution": {
+    "roles": [
+     "finance_domain",
+     "hitl_designer"
+    ],
+    "quote": "the challenge notes in TS-06 must be retained as artifacts",
+    "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Documented challenge notes"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "Instances of challenge or disagreement are documented as a retained evidentiary record before sign-off."
+    },
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "Someone must be able to be held accountable for having actually exercised challenge"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "7759 presence is implied: accountability for exercising challenge stated, no challenge record output.",
+    "Codebook match partial (approval record vs challenge record)."
+   ]
+  },
+  {
+   "id": "VAR-C28",
+   "title": "Distribution gated on a logged manager sign-off/approval event",
+   "category": "gate",
+   "codebook_match": "Publication event-gated on the approval signal",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "triggered only after the manager's sign-off is logged",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "pushes the signed-off artifact the moment review is logged as approved"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-09",
+     "field": "inputs",
+     "marker": "Manager sign-off event"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-09",
+     "field": "actor",
+     "marker": "Automated publishing system, triggered by FP&A manager sign-off"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Logged sign-off/authorization event"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "publication cannot occur without the manager's explicit, logged sign-off event from TS-06"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "gated so it cannot fire against a report that has not cleared TS-06"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "Distribution is triggered only by the manager's explicit approval event from TS-06"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "a8a0 adds 'no auto-publish on review completion alone' whereas 7759 auto-pushes once review is logged approved - variants differ in strength.",
+    "4f3e presence partial: gate is 'cleared TS-06', no explicit sign-off event input.",
+    "Attribution: agentic_architect in round1 of 7759, 6fd0, a8a0, 8d63; pragmatist a8a0 also."
+   ]
+  },
+  {
+   "id": "VAR-C29",
+   "title": "Distribution log/record (recipients, timestamp, version)",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "with a full log of what was sent, to whom, and when",
+    "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-09",
+     "field": "outputs",
+     "marker": "Distribution log"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "marker": "Distribution record (recipients, version, timestamp)"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "with a logged send-record of recipients, timestamp and version"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "Delivery logs the recipients, timestamp and version hash"
+    }
+   ],
+   "baseline_present": [],
+   "flags": []
+  },
+  {
+   "id": "VAR-C30",
+   "title": "Distributed artifact confirmed identical to reviewed version",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "an explicit sign-off marker that the distributed version matches the reviewed-and-challenged version",
+    "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "marker": "Distribution sign-off record"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "A sign-off marker confirms the distributed artifact matches the reviewed version exactly"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "confirming the distributed artifact is exactly the reviewed one"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "In 8d63 the check is via the version hash in the delivery log; may be part of VAR-C29 rather than separate.",
+    "8d63 round1 agentic_architect proposed 'version hash' in delivery confirmations, not framed as a match check."
+   ]
+  },
+  {
+   "id": "VAR-C31",
+   "title": "Tracked recall/reissue path for post-distribution corrections",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "a recall/reissue path is required given this touches management-facing output",
+    "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-09",
+     "field": "description",
+     "marker": "reversible via a recall/reissue path if an error is caught post-distribution"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "any post-distribution correction is a tracked reissue, not a silent edit"
+    }
+   ],
+   "baseline_present": [],
+   "flags": []
+  },
+  {
+   "id": "VAR-C32",
+   "title": "Archived provenance chain with the distributed report",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "archiving the final version with its full provenance chain",
+    "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "marker": "Archived provenance chain"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Could be considered part of VAR-C29 (distribution record) or VAR-C40 (provenance)."
+   ]
+  },
+  {
+   "id": "VAR-C33",
+   "title": "Budget-holder commentary human-authored and attributed (no generative draft substituting)",
+   "category": "other",
+   "codebook_match": "Human-authored, attributed BU commentary",
+   "attribution": {
+    "roles": [
+     "pragmatist",
+     "hitl_designer",
+     "agentic_architect"
+    ],
+    "quote": "Budget holder commentary (VAR-05) must remain human-authored.",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Budget holder commentary (human-authored)"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "no system-authored narrative is introduced as a starting draft"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Budget holder commentary (attested)"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Budget holder commentary (human-authored)"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Budget holder commentary (structured, root-cause-tagged, attributed)"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "8d63 is a weaker variant: 'An automated hypothesis may be pre-drafted' - attribution required, human authorship not.",
+    "Attribution: several roles in round1 (7759 pragmatist, hitl_designer, agentic_architect); maximalist argued the opposite."
+   ]
+  },
+  {
+   "id": "VAR-C34",
+   "title": "Commentary SLA tracking with automatic escalation of non-response, logged",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain",
+     "agentic_architect"
+    ],
+    "quote": "an SLA with automatic escalation to the budget holder's manager after N business days of non-response",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Escalation and response-tracking log"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "marker": "Escalation/SLA log"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Escalation log"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Escalation and SLA log"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "automatic escalation to the budget holder's manager on lateness"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Escalation target differs by run (holder's manager; FP&A business partner; FP&A manager in a8a0; within business line 'not to FP&A' in 4f3e) - may be variants.",
+    "8d63 has no escalation log output."
+   ]
+  },
+  {
+   "id": "VAR-C35",
+   "title": "Missing commentary marked outstanding, never auto-filled",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "it is never auto-filled or defaulted to silence",
+    "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "with the item marked outstanding rather than auto-filled"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Could be part of VAR-C34 (escalation) or VAR-C38 (completeness)."
+   ]
+  },
+  {
+   "id": "VAR-C36",
+   "title": "Asynchronous low-bandwidth commentary channel as a first-class path",
+   "category": "fallback",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "the collection channel must support asynchronous, low-bandwidth submission (templated email/offline form)",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "an asynchronous, low-bandwidth-tolerant submission channel (templated email/offline form) as a first-class path"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "The channel is asynchronous and tolerant of low bandwidth (email/offline forms)"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "Structured email/template submission remains a first-class channel alongside any portal"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "store-and-forward mechanisms suitable for low-bandwidth or offline settings"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "Collection operates over asynchronous, low-bandwidth channels (structured email/offline forms) as a floor"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Judgement call whether this is a governance (resilience) control or an inclusion/accessibility design choice."
+   ]
+  },
+  {
+   "id": "VAR-C37",
+   "title": "Structured root-cause / driver-tagged commentary template",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "templated prompts (root cause, one-time vs. recurring, corrective action)",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "templated prompts (root cause, one-time vs. recurring, corrective action)"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-05",
+     "field": "inputs",
+     "marker": "Driver-tagged commentary template"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "structured, root-cause-tagged template"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "Structured email/template submission"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "structured templates returned by email or form"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-195830-baseline-FPA-VAR-01-c54a",
+     "step_id": "TGT-04",
+     "field": "description",
+     "marker": "submitted through a structured commentary template that links each explanation to its variance line"
+    }
+   ],
+   "flags": [
+    "Judgement call whether a template is a control (evidence quality) or ordinary tooling.",
+    "a8a0 and 4f3e presences weaker: structured template mentioned as a channel, no root-cause/driver tagging."
+   ]
+  },
+  {
+   "id": "VAR-C38",
+   "title": "Completeness check: every selected variance has commentary before draft proceeds",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "checking that every selected variance has commentary attached",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "the analyst verifies every selected variance has commentary attached"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "surfacing any flagged item with no commentary received"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "responsible for noticing missing or inconsistent explanations"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "confirming no selected variance is missing commentary"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "performs an explicit completeness check that every selected variance has a matching, adequate commentary entry"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-195830-baseline-FPA-VAR-01-c54a",
+     "step_id": "TGT-05",
+     "field": "description",
+     "marker": "with the analyst resolving any gaps or inconsistencies before handoff to review"
+    }
+   ],
+   "flags": [
+    "a8a0 and baseline c54a presences are weaker variants (noticing/resolving gaps, no explicit check).",
+    "Overlaps with VAR-C39 (adequacy check) - may be one control."
+   ]
+  },
+  {
+   "id": "VAR-C39",
+   "title": "Commentary adequacy/coherence check with kickback to budget holder",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "The analyst's consolidation role must include a kick-back loop to VAR-05 for commentary that doesn't meet a minimum explanatory bar",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "marker": "Commentary quality kickback requests (as needed)"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Coherence-check notes"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "mislabeled drivers"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "that commentary direction matches the variance's actual sign/driver"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "on commentary that fails a basic adequacy check"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-195830-baseline-FPA-VAR-01-c54a",
+     "step_id": "TGT-05",
+     "field": "description",
+     "marker": "resolving any gaps or inconsistencies"
+    }
+   ],
+   "flags": [
+    "a8a0 and 4f3e are checks without a kickback path; 8d63 routes inadequate commentary to escalation rather than analyst kickback - variants differ.",
+    "Baseline c54a presence partial.",
+    "Overlaps with VAR-C38 and VAR-C26."
+   ]
+  },
+  {
+   "id": "VAR-C40",
+   "title": "Draft provenance tagging / per-claim source lineage (AI-generated text distinguishable and traceable)",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "the drafting agent logs prompt, model version, and generated text with source citations",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "every generated passage traceable back to its source variance line and commentary record"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "marker": "Draft variance report (provenance-tagged)"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "marker": "Draft variance report (with per-claim source lineage)"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "The draft retains visible linkage to the policy-consistent, FX-isolated figures"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "a8a0 presence partial: linkage to figures and logs, no per-passage provenance tags.",
+    "7759 also includes 'AI-generated pending review' labelling, which could be a separate control.",
+    "Attribution: hitl_designer 4f3e round1 also required provenance; agentic_architect a8a0/8d63 round1 per-claim tagging."
+   ]
+  },
+  {
+   "id": "VAR-C41",
+   "title": "Commentary provenance record (receipt timestamp / author)",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "hitl_designer"
+    ],
+    "quote": "sends escalating reminders, and timestamps receipt",
+    "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Commentary provenance record"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "commentary author/timestamp"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "8d63 presence partial: author/timestamp carried as draft lineage pointer, not a separate record; overlaps with VAR-C40.",
+    "6fd0 round1 agentic_architect proposed timestamping every submission, not carried into 6fd0 TSS."
+   ]
+  },
+  {
+   "id": "VAR-C42",
+   "title": "Named accountable preparer of the draft (preparer/reviewer audit trail)",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "Keeping drafting and reviewing as separate steps preserves a preparer/reviewer audit trail",
+    "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "This preserves a preparer/reviewer audit trail distinct from the FP&A manager's review in TS-07."
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "standing behind the draft as its named author"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "is the accountable owner of the draft that passes to review"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "this reconciliation of narrative-to-number is a distinct accountable act"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "All runs and baselines have analyst drafting and manager reviewing; maker-checker is implied everywhere, explicit only in listed council runs.",
+    "8d63 presence partial (accountable act for completeness check, not draft ownership)."
+   ]
+  },
+  {
+   "id": "VAR-C43",
+   "title": "Accountable human presentation by manager, distinct from mechanical distribution",
+   "category": "other",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "pragmatist",
+     "finance_domain"
+    ],
+    "quote": "for material or sensitive variances, a human (FP&A manager or delegate) should retain the presentation role",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "the FP&A manager (or delegate) retains an accountable presentation role"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-08",
+     "field": "description",
+     "marker": "Presentation and discussion remain a human-led activity, separated from the mechanical act of distribution."
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "The manager remains the named, accountable actor for authorizing release and for standing behind the figures"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "remains the accountable actor for that presentation, as a distinct accountability moment from review"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-07",
+     "field": "actor",
+     "marker": "FP&A manager"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-VAR-01-ed96",
+     "step_id": "TGT-07",
+     "field": "actor",
+     "marker": "FP&A manager"
+    },
+    {
+     "run_id": "20261010-193948-baseline-FPA-VAR-01-9ef2",
+     "step_id": "TGT-06",
+     "field": "description",
+     "marker": "then presents and distributes the finalised report to management"
+    },
+    {
+     "run_id": "20261010-195830-baseline-FPA-VAR-01-c54a",
+     "step_id": "TGT-07",
+     "field": "actor",
+     "marker": "FP&A manager"
+    },
+    {
+     "run_id": "20261010-203046-baseline-FPA-VAR-01-5154",
+     "step_id": "TGT-07",
+     "field": "actor",
+     "marker": "FP&A manager"
+    },
+    {
+     "run_id": "20261010-205000-baseline-FPA-VAR-01-7c5b",
+     "step_id": "VAR-T-07",
+     "field": "actor",
+     "marker": "FP&A manager"
+    }
+   ],
+   "flags": [
+    "Inherited from current state (VAR-08 actor FP&A manager); 8d63 and all baseline presences are implied (actor only).",
+    "7759 limits mandatory presentation to items above a materiality/sensitivity trigger or standing cadence.",
+    "Judgement call whether presentation accountability is a governance control."
+   ]
+  },
+  {
+   "id": "VAR-C44",
+   "title": "Management discussion record",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "synthesis"
+    ],
+    "quote": "Management discussion record",
+    "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+    "agent_role": "synthesis"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-08",
+     "field": "outputs",
+     "marker": "Management discussion record"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Appears only in the synthesis output; round1 roles (pragmatist, hitl_designer, agentic_architect 6fd0) proposed manager-led discussion but no record. Could be part of VAR-C43."
+   ]
+  },
+  {
+   "id": "VAR-C45",
+   "title": "Offline/portable distribution format as a floor alongside dashboards",
+   "category": "fallback",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "Distribution should default to portable, low-bandwidth artefacts (PDF/CSV export)",
+    "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-FPA-VAR-01-7759",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "defaulting to portable, low-bandwidth formats (PDF/CSV export)"
+    },
+    {
+     "run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+     "step_id": "TS-09",
+     "field": "outputs",
+     "marker": "Distributed variance report (portal and offline artifact)"
+    },
+    {
+     "run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "use bandwidth-appropriate formats"
+    },
+    {
+     "run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "Outputs are produced in lightweight, offline-consumable formats (PDF/spreadsheet)"
+    },
+    {
+     "run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "published via a lightweight channel (document/email) as a non-negotiable floor"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Judgement call whether this is a governance (resilience) control or an inclusion/accessibility design choice."
+   ]
+  }
+ ]
+}

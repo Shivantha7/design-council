@@ -1,0 +1,4382 @@
+{
+ "workflow_id": "R2R-ACR-01",
+ "controls": [
+  {
+   "id": "ACR-M01",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Extraction exception worklist",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Extraction exception log",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Extraction exceptions log",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Extraction exception log",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T1",
+     "field": "outputs",
+     "quote": "Extraction exception queue",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Extraction exception log",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "ACR-T-01",
+     "field": "description",
+     "quote": "The GL accountant resolves extraction exceptions (missing feeds, stale rates) flagged by the platform.",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "The GL accountant reviews extraction exceptions (missing feeds, stale rates)",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Extraction exception log",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-ACR-01",
+     "field": "outputs",
+     "quote": "Extraction exception log",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M02",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "a manual/batch upload path (CSV, scanned statement, portal export) — both are first-class, equally compliant modes",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "a manual extraction lane (file upload, direct entry) is retained as a first-class, equally-governed path",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "are extracted through a permanently supported manual/semi-manual path",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "a structured manual/semi-automated entry path feeds the identical downstream schema",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T1",
+     "field": "description",
+     "quote": "a first-class manual template-upload path where they do not",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M03",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "Rate version, source system, and extraction mode (automated/manual) are logged on every run.",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Extraction mode record (automated/manual) per account",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T1",
+     "field": "outputs",
+     "quote": "Extraction run-log",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M04",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "FX translation and exchange-difference record",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Exchange differences log",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T1",
+     "field": "outputs",
+     "quote": "FX revaluation differences (separately identified)",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M05",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "routed to the GL accountant as a named exception, never carried forward silently",
+     "note": "No halt stated; \"never carried forward silently\" may or may not amount to no-substitution of a default"
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "that account's extraction halts and raises a visible exception",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Is the preventive halt on feed/rate failure a separate control from routing the extraction exception to the GL accountant, given 216b states halt and exception-raising in one sentence on the same failure events?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "ACR-M01"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ACR-M06",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "Unmatched and low-confidence items are routed to an exception queue",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "everything the rules cannot resolve routes to a manual matching queue",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Match-rate and exception metrics",
+     "note": "Exceptions referenced only as metrics; no routing/queue of unmatched items stated at matching"
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Unmatched items and exception queue",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "description",
+     "quote": "items the rules cannot close are routed to an explicit, named exception queue",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Unmatched item exception queue",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "ACR-T-02",
+     "field": "outputs",
+     "quote": "Unmatched exception queue",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "the GL accountant is routed only unmatched or low-confidence items for manual matching",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "the GL accountant triages and manually resolves the residual unmatched population",
+     "note": "Accountant handles residual unmatched; no routing/queue named"
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-ACR-02",
+     "field": "outputs",
+     "quote": "Unmatched item exception queue",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M07",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "carries match-rule provenance (why an item didn't match, which rule nearly fired)",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "Every unmatched item is shown the rule(s) evaluated and why none fired.",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "with a logged rule citation per match, reversible on review",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "routed to a worked exception queue with reason codes",
+     "note": "Reason codes on queued items; rule provenance not explicit"
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "outputs",
+     "quote": "Unmatched items with match-confidence and rule metadata",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Are match-rule provenance and match confidence two attributes of one match-explanation record (517f carries both in one output) rather than separate controls?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "ACR-M14"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ACR-M08",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "an exception-type tag (FX difference, intercompany break, timing difference, true error) captured at the point of queueing",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "Items identified as intercompany or estimation-related (NRV, provisioning, ECL-adjacent) are explicitly tagged for downstream routing",
+     "note": "Tagging at investigation, not at queueing"
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "routed to a worked exception queue with reason codes",
+     "note": "Reason codes at queueing could be type tags; types not stated"
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "ACR-T-03",
+     "field": "description",
+     "quote": "classifies each as timing difference, error, or other",
+     "note": "Type classification at investigation, not at queueing"
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M4",
+    "question": "Does exception-type tagging (FX, intercompany, timing, error) at queueing duplicate intercompany identifiability through matching, since the intercompany tag is one of the tag types?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "ACR-M09"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ACR-M09",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "neither exchange differences nor intercompany breaks are netted invisibly",
+     "note": "Applies to intercompany breaks in the exception queue only, not intercompany items generally through matching"
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "the matching configuration preserves full identifiability of intragroup positions for elimination",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "Intercompany-tagged items remain separately identifiable through both the automated and manual paths.",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "description",
+     "quote": "Intercompany lines are matched to identifiable counterparty entries and must net to zero",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M4",
+    "question": "Is keeping intercompany items identifiable through matching the same mechanism as tagging intercompany breaks at queueing (60e6), the queued breaks being a subset of intercompany items?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "ACR-M08"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ACR-M10",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "automatically via a versioned, change-logged rules engine",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Match rule version log",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "The auto-match rule set and tolerance thresholds are centrally governed, versioned and subject to change control",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M11",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "and manually by the GL accountant where they do not — both modes are compliant and named explicitly",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "routes to a manual matching queue, which is resourced as a designed, permanent capability",
+     "note": "Manual lane covers residual unresolved items rather than accounts where automation is not viable; stated as permanent"
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "a permanently supported manual matching path handles accounts with inconsistent or non-standardised data",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "A manual matching mode remains first-class for accounts/entities where automated matching is not viable.",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "description",
+     "quote": "A manual matching path (low-cost/in-house rules, not a single licensed vendor dependency) is maintained as a first-class route",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "the GL accountant is routed only unmatched or low-confidence items for manual matching",
+     "note": "Manual matching of residual items only, no permanent/designed designation"
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "the GL accountant triages and manually resolves the residual unmatched population",
+     "note": "Manual resolution of residual items only, no permanent/designed designation"
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "TS-ACR-02",
+     "field": "description",
+     "quote": "routed to a reviewable exception queue for manual matching by the GL accountant",
+     "note": "Manual matching of residual items only, no permanent/designed designation"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M12",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "A defined, rehearsed fallback to full manual matching exists for engine outage or systemic mis-ruling",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M1",
+    "question": "Is the invoked outage fallback to full manual matching a variant of the standing first-class manual matching path on the same object at the same step?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "ACR-M11"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ACR-M13",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "carries the same logging standard (preparer identity, timestamp, rationale) as the automated path",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M2",
+    "question": "Is logging manual matches to the automated standard just the record of the manual matching path rather than a separate control?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "ACR-M11"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ACR-M14",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "Unmatched and low-confidence items are routed to an exception queue",
+     "note": "Implies a confidence score but none stated as attached to auto-matches"
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "with a confidence score attached to each auto-match",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "T2",
+     "field": "outputs",
+     "quote": "Unmatched items with match-confidence and rule metadata",
+     "note": "Confidence attached to items routed to the exception queue, not to auto-matches"
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "the GL accountant is routed only unmatched or low-confidence items for manual matching",
+     "note": "Implies a confidence score but none stated as attached to auto-matches"
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Is the match confidence score part of one match-explanation record with rule provenance (517f carries both in one output)?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "ACR-M07"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ACR-M15",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "periodic human sampling even on low-risk, fully-matched accounts",
+     "note": "Sampling at review over accounts, not at matching over auto-matched items"
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "lighter sampled or batch-confirmation review for fully auto-matched, exception-free low-risk accounts",
+     "note": "Sampling at review over accounts, not at matching over auto-matched items"
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Auto-match sampling record",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M3",
+    "question": "Is sampling of auto-matched items at matching the same sampling mechanism as reviewer sampling of the low-risk population at review?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "ACR-M25"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ACR-M16",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Match-rate and exception metrics",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "The automated-match rate is monitored to ensure the matching function, not merely its tooling, is auditable.",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M17",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-02",
+     "field": "name",
+     "quote": "Transaction matching with provenance-carrying exception queue",
+     "note": "Matching is structurally a separate step but separation is not stated as a control (structure vs stated mechanism)"
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-02",
+     "field": "name",
+     "quote": "Tiered transaction matching",
+     "note": "Matching is structurally a separate step but separation is not stated as a control (structure vs stated mechanism)"
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "Matching remains a step distinct from extraction so a feed-load failure and a matching disagreement are diagnosable",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-02",
+     "field": "name",
+     "quote": "Automated matching with exception queue and calibration sampling",
+     "note": "Matching is structurally a separate step but separation is not stated as a control (structure vs stated mechanism)"
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "description",
+     "quote": "Kept as a separate step from extraction because the two are different failure domains",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-02",
+     "field": "name",
+     "quote": "Automated transaction matching with exception queue",
+     "note": "Matching is structurally a separate step but separation is not stated as a control (structure vs stated mechanism)"
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "ACR-T-02",
+     "field": "name",
+     "quote": "Automated transaction matching with exception queue",
+     "note": "Matching is structurally a separate step but separation is not stated as a control (structure vs stated mechanism)"
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-02",
+     "field": "name",
+     "quote": "System-driven transaction matching with exception handling",
+     "note": "Matching is structurally a separate step but separation is not stated as a control (structure vs stated mechanism)"
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-02",
+     "field": "name",
+     "quote": "Automated transaction matching with exception triage",
+     "note": "Matching is structurally a separate step but separation is not stated as a control (structure vs stated mechanism)"
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-ACR-02",
+     "field": "name",
+     "quote": "Automated transaction matching with exception routing",
+     "note": "Matching is structurally a separate step but separation is not stated as a control (structure vs stated mechanism)"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M18",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "every acceptance or override is an explicit, reasoned, logged human action",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "the agent proposes, the human disposes (accept, reject, override with reason) on every item",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "the classification decision and its evidential basis must originate from and be owned by the accountant",
+     "note": "Advisory status stated; accept/override logging not stated"
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "it is advisory and visibly labelled as a suggestion; the accountant must accept, edit, or override",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "it is advisory only: the accountable human confirms or overrides every classification",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "classified by the GL accountant, with system-suggested root causes accelerating investigation",
+     "note": "Human classifies with system suggestions; no advisory-only or accept/override mechanism stated"
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M19",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "No item is auto-closed above a materiality or age threshold without a named human review.",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M4",
+    "question": "Is the no-auto-close-above-threshold gate subsumed by human accept/override on every item, the above-threshold items being a subset?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "ACR-M18"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ACR-M20",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Explained and classified reconciling items",
+     "note": "Explanations are a separate output from JEs by structure only; separation not stated as a control"
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "Classification is recorded as an artifact independent of any resulting journal entry",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Explained reconciling items",
+     "note": "Explanations are a separate output from JEs by structure only; separation not stated as a control"
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "recorded as a distinct artifact separate from any adjusting entry it later gives rise to",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "This step is not merged into matching or into adjustment preparation",
+     "note": "Stated as step separation rather than a separate artifact"
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Explained reconciling items",
+     "note": "Explanations are a separate output from JEs by structure only; separation not stated as a control"
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "ACR-T-03",
+     "field": "outputs",
+     "quote": "Explained reconciling items",
+     "note": "Explanations are a separate output from JEs by structure only; separation not stated as a control"
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Explained reconciling items",
+     "note": "Explanations are a separate output from JEs by structure only; separation not stated as a control"
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Explained reconciling items",
+     "note": "Explanations are a separate output from JEs by structure only; separation not stated as a control"
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-ACR-03",
+     "field": "outputs",
+     "quote": "Explained reconciling items",
+     "note": "Explanations are a separate output from JEs by structure only; separation not stated as a control"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M21",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "require a named, accountable human preparer with a documented basis attached to the entry",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "documents the judgment basis for any estimation-based entry",
+     "note": "Documented basis by accountant; no named-preparer / no-auto-posting element"
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "must be human-authored with a documented basis",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "require a named accountable preparer who records a documented judgment basis, with no default-accept affordance",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T4",
+     "field": "description",
+     "quote": "which require the preparer to enter and certify a documented basis before the entry can proceed",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "ACR-T-04",
+     "field": "description",
+     "quote": "applies a documented basis for estimation-type adjustments",
+     "note": "Documented basis by accountant; no named-preparer / no-auto-posting element"
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "estimation-based adjustments (e.g. provisions, impairments, NRV write-downs) retain a documented human basis",
+     "note": "Documented human basis; no named-preparer / no-auto-posting element"
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M22",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "quote": "Preparer attestation record",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "quote": "Preparer attestation record",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "quote": "Preparer attestation record",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "quote": "Preparer attestation record",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T4",
+     "field": "outputs",
+     "quote": "Preparer attestation record (gated, logged)",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "quote": "Prepared and signed-off reconciliation",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "ACR-T-04",
+     "field": "outputs",
+     "quote": "Prepared and certified reconciliation",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "Submission to review automatically captures the preparer's attestation",
+     "note": "Attestation captured automatically on submission, not a distinct affirmative record"
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "submits the completed reconciliation package in a single accountable preparer action that supersedes the former standalone sign-off step",
+     "note": "Accountable submission; no attestation/sign-off record stated"
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-ACR-03",
+     "field": "outputs",
+     "quote": "Prepared and attested reconciliation",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M23",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "a diff of what changed since the preparer's last touch",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Is the diff-since-last-touch a content element of the preparer attestation record rather than a separate control?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "ACR-M22"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ACR-M24",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T4",
+     "field": "description",
+     "quote": "a 'submit for review' lock distinct from drafting/editing) that the JE batch cannot bypass",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M2",
+    "question": "Is the gated submit-for-review lock the check whose record is the preparer attestation record, so the two are one control?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "ACR-M22"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ACR-M25",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "periodic human sampling even on low-risk, fully-matched accounts",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "lighter sampled or batch-confirmation review for fully auto-matched, exception-free low-risk accounts",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "a sampling floor over the full, non-flagged population is mandatory each cycle",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B2",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "Periodic sampling may run as a secondary detective layer",
+     "note": "Permissive (\"may run\"), not stated as an operative mechanism"
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M3",
+    "question": "Is reviewer sampling of the low-risk population the same sampling mechanism as auto-match sampling at matching?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "ACR-M15"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ACR-M26",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "review effort is risk-tiered by attention allocation",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "with no batch or implicit approval for estimation-bearing or flagged items",
+     "note": "Implies differentiated handling of flagged items; no tiered review depth stated"
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "Review intensity is risk-weighted",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "The reviewer's screen is risk-weighted to foreground aged items, estimation entries, prior-period corrections and auto-match overrides",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "Review depth, not review existence, scales with risk",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M27",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "no account population is auto-approved by a rule engine with zero human touch",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "a boundary enforced structurally and not satisfiable by agent involvement on either side",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "no account class bypasses reviewer visibility entirely",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "no account is auto-approved on the strength of a confidence score alone",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "no reconciliation closes without an identifiable reviewer act",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "reviews and approves the reconciliation and its adjusting entries before posting",
+     "note": "Human reviewer approves, but no exclusion of auto-approval / agent approval stated"
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "ACR-T-05",
+     "field": "description",
+     "quote": "An independent finance controller reviews and approves the reconciliation and its adjusting entries",
+     "note": "Human reviewer approves, but no exclusion of auto-approval / agent approval stated"
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "reviews and approves the reconciliation and its adjusting entries, maintaining segregation of duties",
+     "note": "Human reviewer approves, but no exclusion of auto-approval / agent approval stated"
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "An independent finance controller reviews and approves the reconciliation and its adjusting entries",
+     "note": "Human reviewer approves, but no exclusion of auto-approval / agent approval stated"
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-ACR-04",
+     "field": "description",
+     "quote": "reviews and approves the reconciliation and its adjusting entries",
+     "note": "Human reviewer approves, but no exclusion of auto-approval / agent approval stated"
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "The single candidate bundles (a) no auto-approval and (b) agents cannot approve or count as an SoD actor; part (b) could belong with independent-reviewer segregation.",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "ACR-M31"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ACR-M28",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "An agent pre-screens for completeness, variance and anomaly, surfacing flags the controller resolves",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "reviewer scope is not limited to agent-flagged items",
+     "note": "Agent flagging implied at review; pre-screen not described"
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "an AI risk-scoring pass surfaces unusual items, large or judgment-based adjustments, and policy-inconsistent entries",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Is the agent risk-scoring pre-screen the means of allocating risk-tiered review depth, and so part of that control?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "ACR-M26"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ACR-M29",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "The reviewer is fed exception-level detail",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "surfacing flags the controller resolves",
+     "note": "Flags surfaced to reviewer; exception-level detail feed not stated"
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "The reviewer's screen is risk-weighted to foreground aged items, estimation entries, prior-period corrections and auto-match overrides",
+     "note": "Screen foregrounds exception items; not-totals-only not stated"
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "the reviewer sees the underlying investigation rationale and preparer basis directly, not an aggregated 'all green' dashboard",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Is feeding exception-level detail to the reviewer the same as the risk-weighted reviewer screen (dd48) that foregrounds exception items?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "ACR-M26"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ACR-M30",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "Every reconciliation passes through this mandatory human gate",
+     "note": "Mandatory human gate per reconciliation; no discrete logged decision stated"
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "the controller records a discrete approval decision for every item, with no batch or implicit approval",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "Every account receives a human-visible confirmation each period",
+     "note": "Per-account confirmation; no discrete logged decision stated"
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "The decision to approve or send back is a discrete, logged human action.",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "no reconciliation closes without an identifiable reviewer act",
+     "note": "Identifiable per-reconciliation act; logging/per-item not explicit"
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M31",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "An independent reviewer, structurally and by identity distinct from the TS-04 preparer",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "a distinct human identity from the TS-04 preparer",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "An independent reviewer, distinct from the preparer",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "An independent reviewer, distinct from the preparer",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "The reviewer is structurally distinct from the T4 preparer",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "An independent reviewer, distinct from the preparer of the adjusting entries",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "ACR-T-05",
+     "field": "description",
+     "quote": "maintaining segregation of duties from the preparer",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "An independent reviewer, distinct from the preparer of the adjusting entries",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "An independent finance controller reviews and approves the reconciliation and its adjusting entries",
+     "note": "\"Independent\" stated without naming separation from the preparer"
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-ACR-04",
+     "field": "description",
+     "quote": "An independent finance controller, separate from the preparer",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M32",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "Prior-period errors are corrected retrospectively via an explicit, flagged sub-path that forces visibility to the reviewer",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M33",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "detected continuously and exhaustively across the whole book of reconciliations by automated monitoring",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "Aging of reconciling items is monitored continuously by the system against the ageing threshold",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "Items crossing the ageing threshold are flagged automatically by the system",
+     "note": "Automated flagging; continuity not stated"
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "Item ageing against the risk-rated threshold is computed continuously",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "Open reconciling items are continuously scanned against ageing thresholds",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "The platform continuously tracks the age of open reconciling items against the ageing threshold",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "ACR-T-05",
+     "field": "description",
+     "quote": "the platform automatically flags reconciling items beyond the ageing threshold",
+     "note": "Automated flagging; continuity not stated"
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "The platform continuously ages open reconciling items against risk-based thresholds",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-ACR-04",
+     "field": "inputs",
+     "quote": "Aged-item alerts (system-generated)",
+     "note": "System-generated alerts; continuity not stated"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M34",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "the decision to escalate remain a controller-led human judgment",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "the controller records an explicit escalation decision (owner assigned, deadline, rationale)",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "the decision of whether, how and to whom to escalate remains a controller-owned judgment",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "remains a human, controller-owned, logged action",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "remains a distinct human judgment held by the finance controller",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B5",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "automatically escalates items that breach it, with the finance controller actioning and dispositioning escalated items",
+     "note": "Escalation performed by platform; controller dispositions afterwards"
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "ACR-T-05",
+     "field": "description",
+     "quote": "the controller escalates them for resolution",
+     "note": "Controller escalates after automated flag; human-judgment status not stated"
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B5",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "auto-triggers escalation to the finance controller when thresholds are breached",
+     "note": "Escalation triggered by platform; controller receives it"
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "escalates any reconciling items beyond the ageing threshold for resolution",
+     "note": "Controller escalates; detection not automated, human-judgment status not stated"
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-ACR-04",
+     "field": "description",
+     "quote": "escalated by the controller for resolution",
+     "note": "Controller escalates after automated flag; human-judgment status not stated"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M35",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "Escalation log",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "quote": "Escalation log",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "quote": "Escalation log",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "Escalation log with named resolution owner and deadline",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T6",
+     "field": "outputs",
+     "quote": "Escalation log",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "Escalation log",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "ACR-T-05",
+     "field": "outputs",
+     "quote": "Escalation log",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "Escalation log",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "quote": "Escalation log",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-ACR-04",
+     "field": "outputs",
+     "quote": "Escalation log",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M36",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "the controller records an explicit escalation decision (owner assigned, deadline, rationale)",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "Escalation log with named resolution owner and deadline",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T6",
+     "field": "outputs",
+     "quote": "Resolution tracking record",
+     "note": "Resolution tracking and timeline ownership; per-escalation owner/deadline not explicit"
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M2",
+    "question": "Are named owner and deadline per escalation fields of the escalation log (dd48 output) rather than a separate control?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "ACR-M35"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ACR-M37",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "run as a cross-entity, cadence-driven surveillance function independent of any single account's approval cycle",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M4",
+    "question": "Is portfolio-level cross-entity ageing surveillance a broader-scope instance of continuous automated ageing monitoring on the same object?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "ACR-M33"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ACR-M38",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "in live-dashboard or batch-export form",
+     "note": "Batch form for status reporting, not escalation/review"
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "Retention and reporting mechanisms are specified to function under intermittent connectivity",
+     "note": "Low-connectivity support at retention/reporting, not escalation/review"
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "Review and escalation support both continuous/dashboard and periodic batch operation",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "asynchronously where live dashboards are not reliably reachable",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M39",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "local/low-bandwidth-compatible storage with a defined sync cadence and integrity check",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "Retention and reporting mechanisms are specified to function under intermittent connectivity",
+     "note": "Intermittent-connectivity retention; local/synced storage not named"
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "with hybrid or local storage options where cloud-only retention is infeasible",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "with local/periodically-synced retention remaining an acceptable path",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M40",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "in live-dashboard or batch-export form",
+     "note": "Batch-export of status report; platform independence not stated"
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "to produce exportable, platform-independent status output",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T7",
+     "field": "outputs",
+     "quote": "Retained reconciliation evidence package (portable/exportable)",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M41",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "immutable (WORM-class) archival where infrastructure supports it",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "with amendments routed through a controlled, logged re-filing process rather than silent overwrite",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "T1",
+     "field": "description",
+     "quote": "Every run writes an immutable, inspectable log",
+     "note": "Immutability applies to the extraction run-log at extraction, not to retained reconciliation evidence"
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "ACR-T-06",
+     "field": "description",
+     "quote": "retained continuously in an auditable repository",
+     "note": "Auditable repository; immutability/tamper-evidence not stated"
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-ACR-05",
+     "field": "description",
+     "quote": "automatically archived to a tamper-evident repository",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M42",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "quote": "Retained reconciliation evidence",
+     "note": "Retention stated; automatic capture not stated"
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "archived largely through automated capture",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "is captured incrementally as each upstream step completes and auto-packaged into the system of record",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "accumulates as a by-product of each step",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "is captured automatically at the point each action occurs",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "Reconciliation evidence is retained automatically in the system of record",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "ACR-T-06",
+     "field": "description",
+     "quote": "retained continuously in an auditable repository",
+     "note": "Continuous retention by platform; automatic capture implied not stated"
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "Reconciliation evidence is retained and status, including open escalations, is reported",
+     "note": "Retention stated; automatic capture not stated"
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "Reconciliation evidence is automatically captured in the evidence repository",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-ACR-05",
+     "field": "description",
+     "quote": "is automatically archived to a tamper-evident repository",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M43",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "The GL accountant retains explicit accountability for reviewing the status report for completeness exceptions",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "a named GL accountant (or delegate) affirmatively confirms evidence completeness against the risk-rated schedule",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "Incomplete, overdue or flagged reconciliations are surfaced to an accountable GL accountant for resolution",
+     "note": "Exception routing to accountant; no review of status report before publication"
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "is reviewed by the GL accountant, as named process owner, before publication",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "the GL accountant composes or confirms the narrative report",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-ACR-05",
+     "field": "description",
+     "quote": "with the GL accountant responsible for resolving retention or reporting exceptions",
+     "note": "Exception resolution; no review of status report before publication"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ACR-M44",
+   "presence": {
+    "20261010-185005-council-R2R-ACR-01-60e6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "quote": "Reconciliation status report",
+     "note": ""
+    },
+    "20261010-194041-council-R2R-ACR-01-cb53": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "Reconciliation status report",
+     "note": ""
+    },
+    "20261010-201338-council-R2R-ACR-01-216b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "Reconciliation status report",
+     "note": ""
+    },
+    "20261010-203144-council-R2R-ACR-01-dd48": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "quote": "Reviewed reconciliation status report",
+     "note": ""
+    },
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T7",
+     "field": "outputs",
+     "quote": "Reconciliation status report",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-ACR-01-0bac": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "quote": "Reconciliation status report",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-ACR-01-464b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "ACR-T-06",
+     "field": "outputs",
+     "quote": "Reconciliation status report",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-ACR-01-a86d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "Reconciliation status report",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-ACR-01-48b8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "Reconciliation status report",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-ACR-05",
+     "field": "outputs",
+     "quote": "Reconciliation status report",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  }
+ ]
+}

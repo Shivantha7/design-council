@@ -1,0 +1,771 @@
+{
+ "workflow_id": "P2P-TWM-01",
+ "controls": [
+  {
+   "id": "TWM-M01",
+   "name": "Data-gap exception at match-dataset assembly",
+   "members": [
+    "TWM-C01"
+   ],
+   "reason": "distinct; flagged overlap with C02 rejected (C01 acts at assembly on missing/incomplete documents, C02 at classification on ambiguous results); C03 is a fallback, not an exception",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M02",
+   "name": "Ambiguous classification defaults to human lane",
+   "members": [
+    "TWM-C02"
+   ],
+   "reason": "distinct from C01: same fail-safe idea but different point (classification/release vs assembly) and object (classification result vs source documents)",
+   "confidence": "LOW",
+   "low_reason": "Same fail-safe mechanism (never default to pass) at adjacent points; c32a TGT-01 marker straddles both",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M03",
+   "name": "Manual/degraded-mode fallback for match execution",
+   "members": [
+    "TWM-C03"
+   ],
+   "reason": "distinct; flagged overlap with C42 rejected (different object: match execution vs control reporting)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M04",
+   "name": "Quantity and price/terms variances as separately retrievable artifacts",
+   "members": [
+    "TWM-C04"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-TWM-01-76b4",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "Both legs of the match are preserved as distinct, auditable outputs",
+     "reason": "Same separation of quantity and price/terms variance as distinct auditable outputs"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-TWM-01-47aa",
+     "step_id": "TSM-01",
+     "field": "description",
+     "quote": "the quantity-matching and price/terms-matching functions remain individually traceable outputs so that each can be audited",
+     "reason": "Same separation into individually traceable, auditable outputs"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M05",
+   "name": "FX exchange-difference component separately identified",
+   "members": [
+    "TWM-C05"
+   ],
+   "reason": "distinct from C04: separates a component within price variance rather than quantity vs price legs",
+   "confidence": "LOW",
+   "low_reason": "Same object family (variance detail outputs) at same step; could be read as finer granularity of C04's separation",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M06",
+   "name": "Match document lineage retained, logged and retrievable",
+   "members": [
+    "TWM-C06"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines assert an evidence chain (76b4 TS-01 'full three-document set ... must always be produced'; 47aa TSM-01 and 77c7 TS-02 'cost evidence chain'; 77c7 TS-06 'preserving the evidential trail') but name no retention/lineage logging mechanism; not counted, arguable"
+  },
+  {
+   "id": "TWM-M07",
+   "name": "Versioned, change-controlled tolerance policy with accountable owner",
+   "members": [
+    "TWM-C07"
+   ],
+   "reason": "distinct; flagged merges with C08/C09/C11 rejected (different object or action: per-classification version record, periodic re-approval, engine write-path segregation)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-TWM-01-76b4",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "The tolerance policy remains an explicit, versioned input",
+     "reason": "Versioned tolerance policy"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-TWM-01-76b4",
+     "step_id": "TS-03",
+     "field": "actor",
+     "quote": "AP analyst as policy configuration owner",
+     "reason": "Named policy owner; with versioning, both elements present in 76b4"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": "f555 TWM-T02 and 47aa TSM-02 version the policy without an owner; 77c7 TS-03 names governance without versioning; partial, not listed"
+  },
+  {
+   "id": "TWM-M08",
+   "name": "Classification records tolerance-policy version applied",
+   "members": [
+    "TWM-C08"
+   ],
+   "reason": "distinct from C07: evidence recorded on each classification, not governance of the policy artifact",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M09",
+   "name": "Periodic re-approval / recalibration of tolerance thresholds",
+   "members": [
+    "TWM-C09"
+   ],
+   "reason": "distinct from C07: periodic review action vs change-control of policy content",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M10",
+   "name": "Locally configurable tolerance parameters within central bands",
+   "members": [
+    "TWM-C10"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M11",
+   "name": "Classification engine has no write path to tolerance policy",
+   "members": [
+    "TWM-C11"
+   ],
+   "reason": "distinct from C07: segregation mechanism on the engine, not policy versioning/ownership",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M12",
+   "name": "Classification as deterministic, inspectable rules (ML outside)",
+   "members": [
+    "TWM-C12"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-205000-baseline-P2P-TWM-01-47aa",
+     "step_id": "TSM-02",
+     "field": "description",
+     "quote": "classification stays a documented control rather than an opaque algorithmic judgment",
+     "reason": "Classification kept as documented rules logic rather than opaque algorithmic judgment"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-TWM-01-47aa",
+     "step_id": "TSM-02",
+     "field": "actor",
+     "quote": "rules-based tolerance engine",
+     "reason": "Rules-based engine at the classification step"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "47aa states rules-based, non-opaque classification but not the ML-exclusion element; arguable equivalence"
+  },
+  {
+   "id": "TWM-M13",
+   "name": "Exception disposition reserved to a human (no AI auto-resolve)",
+   "members": [
+    "TWM-C13"
+   ],
+   "reason": "distinct; flagged overlaps with C14/C16 rejected (attribution record and affirmative-engagement requirement are different mechanisms)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-TWM-01-f555",
+     "step_id": "TWM-T03",
+     "field": "description",
+     "quote": "This human-judgment step is preserved unautomated",
+     "reason": "Explicitly keeps disposition human, unautomated"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-TWM-01-76b4",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "This remains a judgment-based human function",
+     "reason": "Explicitly keeps disposition a human function"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": "446f, 77c7, 47aa only imply human disposition (AI suggestions, human actor); not listed"
+  },
+  {
+   "id": "TWM-M14",
+   "name": "Exception resolution attributed to a named individual",
+   "members": [
+    "TWM-C14"
+   ],
+   "reason": "distinct from C13: attribution/evidence of who resolved vs prohibition of AI resolution",
+   "confidence": "LOW",
+   "low_reason": "Same step and object (exception disposition); flagged as possibly the same control as C13",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M15",
+   "name": "AI recommendation logged separately from human decision",
+   "members": [
+    "TWM-C15"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M16",
+   "name": "Affirmative analyst engagement (no single-click acceptance)",
+   "members": [
+    "TWM-C16"
+   ],
+   "reason": "distinct from C13/C15: constrains how the human decides, not who decides or what is logged",
+   "confidence": "LOW",
+   "low_reason": "Same point and object as C13; could be read as a stronger form of human-only disposition",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M17",
+   "name": "Materiality-tiered escalation to senior analyst/AP accountant",
+   "members": [
+    "TWM-C17"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M18",
+   "name": "Deficient evidence packet resolved with data-quality caveat",
+   "members": [
+    "TWM-C18"
+   ],
+   "reason": "distinct from C01: acts at exception resolution, not dataset assembly",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M19",
+   "name": "Agent-assembled evidence packet for investigator",
+   "members": [
+    "TWM-C19"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-193948-baseline-P2P-TWM-01-446f",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "using engine-surfaced variance detail and suggested root causes",
+     "reason": "System-surfaced decision support for the investigator"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-TWM-01-77c7",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "using AI-assisted root-cause suggestions where available",
+     "reason": "AI-assisted decision support for the investigator"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-TWM-01-47aa",
+     "step_id": "TSM-03",
+     "field": "description",
+     "quote": "AI-assisted triage surfacing likely root causes from source documents and vendor correspondence",
+     "reason": "AI triage surfacing material from source documents and correspondence for the investigator"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines provide AI root-cause suggestions rather than an assembled packet; equivalent only if council 0842 'AI-drafted resolution recommendation' presence is accepted as the same control"
+  },
+  {
+   "id": "TWM-M20",
+   "name": "Documented, versioned resolution playbook",
+   "members": [
+    "TWM-C20"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M21",
+   "name": "Root-cause category recorded in resolution evidence",
+   "members": [
+    "TWM-C21"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M22",
+   "name": "Verbatim / unsummarised resolution evidence and control record",
+   "members": [
+    "TWM-C22"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M23",
+   "name": "Risk-tiered release (auto lane for clean; supervisor for exception/override)",
+   "members": [
+    "TWM-C23"
+   ],
+   "reason": "distinct; flagged merge with C24 rejected (authority basis of the auto lane is a separate element)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-195830-baseline-P2P-TWM-01-77c7",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "Clean and in-tolerance matches are released for posting and payment through automated straight-through processing",
+     "reason": "Automated release lane for clean/in-tolerance matches"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-TWM-01-77c7",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "Matches that required tolerance override or exception resolution are reviewed and explicitly approved by a supervisor",
+     "reason": "Supervisor approval for exception/override matches: same tiering"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M24",
+   "name": "Auto-release under pre-authorised delegated authority/release policy",
+   "members": [
+    "TWM-C24"
+   ],
+   "reason": "distinct from C23: concerns the authority under which the auto lane operates, not the routing",
+   "confidence": "LOW",
+   "low_reason": "Same point and object (auto-release lane); could be read as wording/granularity of C23",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": "77c7 has an auto-release lane but states no delegated authority"
+  },
+  {
+   "id": "TWM-M25",
+   "name": "Auto-release action logged",
+   "members": [
+    "TWM-C25"
+   ],
+   "reason": "distinct; flagged overlaps with C26 (lane tag on authorisation) and C27 (reversibility) rejected",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-195830-baseline-P2P-TWM-01-77c7",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "through automated straight-through processing, with the release logged",
+     "reason": "Auto-release logged"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M26",
+   "name": "Release authorisation tagged by lane",
+   "members": [
+    "TWM-C26"
+   ],
+   "reason": "distinct from C25: tag on the authorisation output vs log of the auto-release action",
+   "confidence": "LOW",
+   "low_reason": "Same object (release record); arguably a granularity variant of C25",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "77c7 TS-06 logs 'straight-through releases' to the control record, which may distinguish lanes implicitly; not counted"
+  },
+  {
+   "id": "TWM-M27",
+   "name": "Auto-released items reversible before payment",
+   "members": [
+    "TWM-C27"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M28",
+   "name": "Exception resolution must precede release",
+   "members": [
+    "TWM-C28"
+   ],
+   "reason": "distinct from C23: ordering gate, not lane routing",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-193948-baseline-P2P-TWM-01-446f",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "with the resolution evidenced before release can proceed",
+     "reason": "Resolution precedes release"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-TWM-01-77c7",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "This step must complete, for a given invoice, before that invoice can proceed to release approval.",
+     "reason": "Resolution precedes release"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-TWM-01-47aa",
+     "step_id": "TSM-03",
+     "field": "description",
+     "quote": "This precedes release approval",
+     "reason": "Resolution precedes release"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M29",
+   "name": "Release approver reviews full resolution evidence, not a flag",
+   "members": [
+    "TWM-C29"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "76b4 TS-05 'requiring explicit, evidenced approval' and 446f/47aa 'explicit documented approval' do not state the approver sees resolution evidence (release-step inputs exclude it); not counted, arguable"
+  },
+  {
+   "id": "TWM-M30",
+   "name": "Release approver distinct from exception resolver",
+   "members": [
+    "TWM-C30"
+   ],
+   "reason": "distinct; flagged overlap with C31 rejected (C31 adds the enforcement mechanism)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-TWM-01-f555",
+     "step_id": "TWM-T04",
+     "field": "description",
+     "quote": "independent of the analyst who resolved any exception",
+     "reason": "Same segregation"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-TWM-01-446f",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "distinct from the analyst who resolved any exception",
+     "reason": "Same segregation"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-TWM-01-77c7",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "a supervisor distinct from the analyst who performed the exception resolution",
+     "reason": "Same segregation"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-TWM-01-76b4",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "by a supervisor independent of the investigator",
+     "reason": "Same segregation"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-TWM-01-47aa",
+     "step_id": "TSM-04",
+     "field": "description",
+     "quote": "distinct from the analyst who performed exception resolution",
+     "reason": "Same segregation"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M31",
+   "name": "Segregation enforced by concrete/system mechanism",
+   "members": [
+    "TWM-C31"
+   ],
+   "reason": "distinct from C30: enforcement mechanism vs stated separation",
+   "confidence": "LOW",
+   "low_reason": "Same object and point as C30; could be read as a more granular statement of the same control",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M32",
+   "name": "Instance-level resolver/approver identity log",
+   "members": [
+    "TWM-C32"
+   ],
+   "reason": "distinct from C31: detective record vs preventive enforcement",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M33",
+   "name": "Distinct system identities for automated components",
+   "members": [
+    "TWM-C33"
+   ],
+   "reason": "distinct (different objects from C30/C31)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M34",
+   "name": "Named backup release approver",
+   "members": [
+    "TWM-C34"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M35",
+   "name": "Sampling audit of auto-released population",
+   "members": [
+    "TWM-C35"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M36",
+   "name": "Continuous real-time logging to control record",
+   "members": [
+    "TWM-C36"
+   ],
+   "reason": "distinct; flagged overlap with C37 rejected (timeliness vs immutability)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-TWM-01-f555",
+     "step_id": "TWM-T05",
+     "field": "description",
+     "quote": "logged to the control record in real time as they occur",
+     "reason": "Same continuous logging"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-TWM-01-446f",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "logged in real time to the control record by the monitoring platform",
+     "reason": "Same continuous logging"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-TWM-01-77c7",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "logged continuously to the control record",
+     "reason": "Same continuous logging"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-TWM-01-76b4",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "logged continuously to a live control record",
+     "reason": "Same continuous logging"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-TWM-01-47aa",
+     "step_id": "TSM-05",
+     "field": "description",
+     "quote": "logged in real time to the control record",
+     "reason": "Same continuous logging"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M37",
+   "name": "Immutable / append-only control log",
+   "members": [
+    "TWM-C37"
+   ],
+   "reason": "distinct from C36: immutability property, not logging cadence",
+   "confidence": "LOW",
+   "low_reason": "Same object (control record) and point; could be read as a sub-element of C36",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M38",
+   "name": "Named periodic sign-off/attestation of match-rate and override report",
+   "members": [
+    "TWM-C38"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-195830-baseline-P2P-TWM-01-77c7",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "Periodic control attestation",
+     "reason": "Periodic attestation of match control reporting"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "77c7 attests periodically but names no signer; 446f periodic reports 'for control review' without sign-off not listed"
+  },
+  {
+   "id": "TWM-M39",
+   "name": "Override/anomaly concentration surfaced by approver, analyst or vendor",
+   "members": [
+    "TWM-C39"
+   ],
+   "reason": "distinct; flagged merge with C40 rejected (check vs its escalation)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M40",
+   "name": "Threshold-triggered escalation to named reviewer",
+   "members": [
+    "TWM-C40"
+   ],
+   "reason": "distinct from C39 (escalation of a check, not the check)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M41",
+   "name": "Period-cutoff tag on match control records",
+   "members": [
+    "TWM-C41"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "77c7 TS-01 outputs 'Period-tagged document assembly record' tags the assembly record at receipt, a different object/point; not counted, arguable"
+  },
+  {
+   "id": "TWM-M42",
+   "name": "Lightweight/batch/exportable control reporting for constrained sites",
+   "members": [
+    "TWM-C42"
+   ],
+   "reason": "distinct from C03 (reporting vs match execution)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "TWM-M43",
+   "name": "Monitoring reviewer independent of engine and release operators",
+   "members": [
+    "TWM-C43"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  }
+ ]
+}

@@ -1,0 +1,884 @@
+{
+ "workflow_id": "P2P-EXR-01",
+ "controls": [
+  {
+   "id": "EXR-M01",
+   "name": "Low-confidence extraction exception queue to AP analyst",
+   "members": [
+    "EXR-C01"
+   ],
+   "reason": "distinct; flagged overlap with C13 rejected: different object (extraction exceptions vs policy exceptions)",
+   "confidence": "LOW",
+   "low_reason": "2ec9 routes extraction and policy exceptions to one specialist queue, so C01/C13 could be read as one queue",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-205000-baseline-P2P-EXR-01-1a6b",
+     "step_id": "EXR-T02",
+     "field": "description",
+     "quote": "lines that fail or fall outside system confidence (e.g. missing receipt, unusual category, duplicate suspicion) are routed to an AP analyst for exception review",
+     "reason": "confidence-based routing of lines to AP analyst exception review"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "baseline routing sits inside the policy-check step and 'system confidence' is not clearly extraction confidence"
+  },
+  {
+   "id": "EXR-M02",
+   "name": "Extraction confidence / provenance log",
+   "members": [
+    "EXR-C02"
+   ],
+   "reason": "distinct; flagged overlap with C03 rejected: confidence/model-version metadata is a different object from the receipt-image linkage",
+   "confidence": "LOW",
+   "low_reason": "b45d provenance output bundles the source-image link with confidence score",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M03",
+   "name": "Receipt image durably linked to extracted data and claim line",
+   "members": [
+    "EXR-C03"
+   ],
+   "reason": "distinct; flagged merge with C02 rejected (different evidence object)",
+   "confidence": "LOW",
+   "low_reason": "same b45d output carries both elements",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M04",
+   "name": "Periodic sampling audit of high-confidence extractions",
+   "members": [
+    "EXR-C04"
+   ],
+   "reason": "distinct; flagged merge with C05 rejected: detective sampling vs preventive threshold calibration",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M05",
+   "name": "Extraction confidence thresholds calibrated per receipt-format population",
+   "members": [
+    "EXR-C05"
+   ],
+   "reason": "distinct; preventive calibration, not the C04 detective audit",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M06",
+   "name": "Manual extraction corrections logged as supervised override",
+   "members": [
+    "EXR-C06"
+   ],
+   "reason": "distinct; a record of the correction action, not the C01 routing queue",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M07",
+   "name": "Extraction kept as separate auditable stage from policy check",
+   "members": [
+    "EXR-C07"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "baselines fold extraction into the submission step but keep policy check as a separate step; arguably partial equivalence to the step-boundary control"
+  },
+  {
+   "id": "EXR-M08",
+   "name": "Receipt mandatory above threshold before claim proceeds",
+   "members": [
+    "EXR-C08"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-01",
+     "field": "description",
+     "quote": "Receipts for claim lines above the receipt threshold are mandatory attachments; the system blocks submission if they are missing.",
+     "reason": "explicit blocking gate on missing receipts"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-EXR-01-1a6b",
+     "step_id": "EXR-T01",
+     "field": "description",
+     "quote": "Receipts remain mandatory for claim lines above the receipt threshold.",
+     "reason": "mandatory receipt above threshold"
+    },
+    {
+     "run_id": "20261010-184915-baseline-P2P-EXR-01-0102",
+     "step_id": "EXR2-01",
+     "field": "inputs",
+     "quote": "Receipts for claim lines above the receipt threshold",
+     "reason": "required input, same form as council 2ec9/53eb presence"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-EXR-01-fca9",
+     "step_id": "TS-01",
+     "field": "inputs",
+     "quote": "Receipts for claim lines above the receipt threshold",
+     "reason": "required input, same form as council 2ec9/53eb presence"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-EXR-01-cf77",
+     "step_id": "TGT-01",
+     "field": "inputs",
+     "quote": "Receipts for claim lines above the receipt threshold",
+     "reason": "required input, same form as council 2ec9/53eb presence"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M09",
+   "name": "Manual/paper intake channel as first-class submission path",
+   "members": [
+    "EXR-C09"
+   ],
+   "reason": "distinct; flagged merge with C10 rejected: paper/keyed intake vs asynchronous digital store-and-forward are different mechanisms",
+   "confidence": "LOW",
+   "low_reason": "both are non-digital/low-connectivity submission fallbacks at the same step",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M10",
+   "name": "Store-and-forward offline claim submission",
+   "members": [
+    "EXR-C10"
+   ],
+   "reason": "distinct; see C09",
+   "confidence": "LOW",
+   "low_reason": "could be read as the same submission-fallback control as C09",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M11",
+   "name": "Employee sole accountable initiator; no agent submits on behalf",
+   "members": [
+    "EXR-C11"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M12",
+   "name": "Deterministic policy engine emitting rule-cited flag log",
+   "members": [
+    "EXR-C12"
+   ],
+   "reason": "distinct; flagged overlap with C14 rejected: engine's rule-fired flag record vs human adjudication record are different objects",
+   "confidence": "LOW",
+   "low_reason": "59a3 output 'auditable exception list and decision log' and 2ec9 'versioned exception log' straddle both",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-02",
+     "field": "outputs",
+     "quote": "Policy exception flags",
+     "reason": "flag output from the policy engine"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "baseline flags carry no rule citation or versioning"
+  },
+  {
+   "id": "EXR-M13",
+   "name": "Human adjudication of flagged policy exceptions",
+   "members": [
+    "EXR-C13"
+   ],
+   "reason": "distinct (see C01)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-EXR-01-0102",
+     "step_id": "EXR2-02",
+     "field": "description",
+     "quote": "Non-compliant lines are flagged and routed to an AP analyst for exception review before the claim proceeds to manager approval.",
+     "reason": "flagged lines routed to AP analyst before approval"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-EXR-01-fca9",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "an AP analyst oversees the engine's rule configuration and triages flagged exceptions",
+     "reason": "AP analyst triages flagged exceptions"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-EXR-01-cf77",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "routed to an AP analyst exception queue for manual disposition before the claim proceeds to approval",
+     "reason": "AP analyst manual disposition"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-EXR-01-1a6b",
+     "step_id": "EXR-T02",
+     "field": "description",
+     "quote": "are routed to an AP analyst for exception review before the claim proceeds to approval",
+     "reason": "AP analyst exception review"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M14",
+   "name": "Adjudication / disposition record for policy exceptions",
+   "members": [
+    "EXR-C14"
+   ],
+   "reason": "distinct; flagged merge with C12 rejected (different object)",
+   "confidence": "LOW",
+   "low_reason": "see C12",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M15",
+   "name": "Policy compliance gate completes before manager approval",
+   "members": [
+    "EXR-C15"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-02",
+     "field": "description",
+     "quote": "This is a mandatory, non-bypassable gate that must complete before manager approval.",
+     "reason": "explicit gate before approval"
+    },
+    {
+     "run_id": "20261010-184915-baseline-P2P-EXR-01-0102",
+     "step_id": "EXR2-02",
+     "field": "description",
+     "quote": "before the claim proceeds to manager approval",
+     "reason": "ordering before approval"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-EXR-01-cf77",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "before the claim proceeds to approval",
+     "reason": "ordering before approval"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-EXR-01-1a6b",
+     "step_id": "EXR-T02",
+     "field": "description",
+     "quote": "before the claim proceeds to approval",
+     "reason": "ordering before approval"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-EXR-01-fca9",
+     "step_id": "TS-03",
+     "field": "inputs",
+     "quote": "Policy-checked claim",
+     "reason": "approval consumes policy-checked claim, same form as council 2ec9 presence"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M16",
+   "name": "Policy-table staleness detection",
+   "members": [
+    "EXR-C16"
+   ],
+   "reason": "distinct; flagged overlaps with C25 (sampling at finance review) and C13 rejected: object is staleness of policy tables at the policy step",
+   "confidence": "LOW",
+   "low_reason": "members combine a sampling control (59a3) and a routing of stale lines (53eb); candidate itself may be two controls",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M17",
+   "name": "Universal human manager approval; no auto-approval tier",
+   "members": [
+    "EXR-C17"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-EXR-01-0102",
+     "step_id": "EXR2-03",
+     "field": "description",
+     "quote": "The claimant's line manager reviews and approves or rejects the policy-checked claim.",
+     "reason": "every claim goes to manager approval"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-EXR-01-fca9",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "and approves or rejects the claim",
+     "reason": "every claim goes to manager approval"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-EXR-01-cf77",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "The claimant's line manager reviews and approves or rejects the policy-checked claim",
+     "reason": "every claim goes to manager approval"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-03",
+     "field": "description",
+     "quote": "The claimant's line manager approves or rejects the policy-checked claim",
+     "reason": "every claim goes to manager approval"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-EXR-01-1a6b",
+     "step_id": "EXR-T03",
+     "field": "description",
+     "quote": "This step remains a distinct human decision performed by an actor other than the claim submitter.",
+     "reason": "human decision on every claim"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "baselines retain universal manager approval structurally but do not state the prohibition of auto-approval"
+  },
+  {
+   "id": "EXR-M18",
+   "name": "Flags and overrides surfaced to approving manager",
+   "members": [
+    "EXR-C18"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-193948-baseline-P2P-EXR-01-fca9",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "with system-highlighted exceptions surfaced for closer scrutiny",
+     "reason": "exceptions surfaced to manager"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-03",
+     "field": "description",
+     "quote": "with policy exception flags surfaced for visibility",
+     "reason": "flags surfaced to manager"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "59a3 override-distinguishability element is stronger than baseline flag visibility"
+  },
+  {
+   "id": "EXR-M19",
+   "name": "Self-approval conflict escalates to next-level approver",
+   "members": [
+    "EXR-C19"
+   ],
+   "reason": "distinct; flagged overlap with C20 rejected: escalation of a conflict vs the separation check itself",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M20",
+   "name": "Structural enforcement of submitter/approver separation",
+   "members": [
+    "EXR-C20"
+   ],
+   "reason": "distinct (see C19)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-195830-baseline-P2P-EXR-01-cf77",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "the manager is organisationally distinct from the claimant to preserve segregation of duties",
+     "reason": "submitter/approver separation"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-03",
+     "field": "description",
+     "quote": "The approver is necessarily distinct from the claim submitter.",
+     "reason": "submitter/approver separation"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-EXR-01-1a6b",
+     "step_id": "EXR-T03",
+     "field": "description",
+     "quote": "performed by an actor other than the claim submitter",
+     "reason": "submitter/approver separation"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "baselines state separation without a structural enforcement mechanism"
+  },
+  {
+   "id": "EXR-M21",
+   "name": "Logged manager approval record",
+   "members": [
+    "EXR-C21"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M22",
+   "name": "Low-bandwidth/SMS approval fallback for unflagged claims",
+   "members": [
+    "EXR-C22"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M23",
+   "name": "Risk/exception-triggered finance review",
+   "members": [
+    "EXR-C23"
+   ],
+   "reason": "distinct; flagged merge with C24 rejected: documented/versioned trigger policy adds a separate change-control element",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-EXR-01-0102",
+     "step_id": "EXR2-04",
+     "field": "description",
+     "quote": "residual policy exceptions or insufficient supporting evidence are routed to a finance reviewer",
+     "reason": "exception-triggered finance review"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-EXR-01-fca9",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "replacing the former universal manual finance review with exception-based oversight",
+     "reason": "exception-based review replacing universal review"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-EXR-01-cf77",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "claims with coding ambiguity, large exchange differences, or evidence gaps are routed to a finance reviewer",
+     "reason": "exception-triggered finance review"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-04",
+     "field": "description",
+     "quote": "Finance reviews only the subset of approved claims carrying policy exception flags",
+     "reason": "exception-triggered finance review"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-EXR-01-1a6b",
+     "step_id": "EXR-T04",
+     "field": "description",
+     "quote": "A finance reviewer examines only claims flagged for coding anomalies",
+     "reason": "exception-triggered finance review"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "baselines trigger on exception flags only, without materiality threshold"
+  },
+  {
+   "id": "EXR-M24",
+   "name": "Documented, versioned risk/materiality trigger policy",
+   "members": [
+    "EXR-C24"
+   ],
+   "reason": "distinct from C23 (see C23)",
+   "confidence": "LOW",
+   "low_reason": "could be read as a finer-grained element of the C23 trigger rather than a separate control",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M25",
+   "name": "Periodic sample review of clean/auto-cleared population",
+   "members": [
+    "EXR-C25"
+   ],
+   "reason": "distinct; flagged overlaps with C16 and C34 rejected: different point/object",
+   "confidence": "LOW",
+   "low_reason": "59a3 member marker is sampling of passed lines at the policy step, an adjacent point",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M26",
+   "name": "Finance review decision recorded distinctly",
+   "members": [
+    "EXR-C26"
+   ],
+   "reason": "distinct; flagged merge with C27 rejected: decision record (evidence) vs step/actor separation",
+   "confidence": "LOW",
+   "low_reason": "distinct recording and distinct step are closely related",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M27",
+   "name": "Finance review as distinct step/actor",
+   "members": [
+    "EXR-C27"
+   ],
+   "reason": "distinct (see C26)",
+   "confidence": "LOW",
+   "low_reason": "see C26",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-04",
+     "field": "name",
+     "quote": "Finance exception review",
+     "reason": "separate finance review step, same form as council b45d presence"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "a752 has a separate step but states no separation rationale"
+  },
+  {
+   "id": "EXR-M28",
+   "name": "Finance review gates posting",
+   "members": [
+    "EXR-C28"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-EXR-01-0102",
+     "step_id": "EXR2-04",
+     "field": "description",
+     "quote": "are routed to a finance reviewer before posting is finalised",
+     "reason": "review before posting"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-EXR-01-cf77",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "before posting is finalised",
+     "reason": "review before posting"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-05",
+     "field": "inputs",
+     "quote": "Finance-reviewed claim",
+     "reason": "posting consumes reviewed claim, same form as council 2ec9 presence"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M29",
+   "name": "Closed-period lock with logged override/escalation",
+   "members": [
+    "EXR-C29"
+   ],
+   "reason": "distinct; flagged overlap with C30 rejected: the period check vs the escalation queue for posting exceptions",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "a752 'preserving period cutoff discipline (KB-03)' states the principle without a gate mechanism; not counted"
+  },
+  {
+   "id": "EXR-M30",
+   "name": "Posting exceptions as hard stops to GL accountant queue",
+   "members": [
+    "EXR-C30"
+   ],
+   "reason": "distinct (see C29)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M31",
+   "name": "Documented FX-rate source fallback / staleness bound",
+   "members": [
+    "EXR-C31"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M32",
+   "name": "Posting log of rate source, date, rule and actor",
+   "members": [
+    "EXR-C32"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M33",
+   "name": "Corrections only via reversal entries",
+   "members": [
+    "EXR-C33"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M34",
+   "name": "GL accountant periodic sampling of postings",
+   "members": [
+    "EXR-C34"
+   ],
+   "reason": "distinct; flagged merge with C25 rejected: different object (postings vs claims) and step",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M35",
+   "name": "Named GL accountant ownership of posting ruleset",
+   "members": [
+    "EXR-C35"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M36",
+   "name": "Period-end accrual with accountable GL ownership",
+   "members": [
+    "EXR-C36"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M37",
+   "name": "Separately recorded liability recognition and derecognition",
+   "members": [
+    "EXR-C37"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-06",
+     "field": "description",
+     "quote": "recognition of the liability and its derecognition on payment remain separately determinable (KB-11)",
+     "reason": "same separation of recognition/derecognition"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "baseline is a statement of principle without separate event records"
+  },
+  {
+   "id": "EXR-M38",
+   "name": "Exchange differences tracked separately",
+   "members": [
+    "EXR-C38"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-05",
+     "field": "description",
+     "quote": "Exchange differences arising on settlement are tracked and reported separately rather than netted (KB-08)",
+     "reason": "same control"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-EXR-01-cf77",
+     "step_id": "TGT-04",
+     "field": "outputs",
+     "quote": "Exchange difference record (where applicable)",
+     "reason": "separate exchange-difference record"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M39",
+   "name": "Payment precondition: approval and posting before payment",
+   "members": [
+    "EXR-C39"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-195830-baseline-P2P-EXR-01-cf77",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "The approved, posted claim is paid to the employee through the AP payment run",
+     "reason": "payment of approved, posted claim only"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-06",
+     "field": "description",
+     "quote": "The approved, posted claim is paid to the employee through the AP payment run",
+     "reason": "payment of approved, posted claim only"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "baselines state ordering only, no programmatic precondition"
+  },
+  {
+   "id": "EXR-M40",
+   "name": "Duplicate-payment screening at payment batch",
+   "members": [
+    "EXR-C40"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M41",
+   "name": "AP analyst ownership of payment exceptions",
+   "members": [
+    "EXR-C41"
+   ],
+   "reason": "distinct; overlaps with C40/C42 rejected (ownership of exceptions vs specific checks)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "baselines name AP analyst as payment-run actor (as in council 2ec9's actor-only presence) but state no exception ownership"
+  },
+  {
+   "id": "EXR-M42",
+   "name": "Hold for independent verification of new/changed bank details",
+   "members": [
+    "EXR-C42"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M43",
+   "name": "Multi-rail disbursement in controlled payment process",
+   "members": [
+    "EXR-C43"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M44",
+   "name": "Payment failure notification with reason code",
+   "members": [
+    "EXR-C44"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "EXR-M45",
+   "name": "Multi-channel / low-connectivity employee notification",
+   "members": [
+    "EXR-C45"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  }
+ ]
+}

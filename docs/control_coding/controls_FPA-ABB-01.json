@@ -1,0 +1,2619 @@
+{
+ "workflow_id": "FPA-ABB-01",
+ "candidates": [
+  {
+   "id": "ABB-C01",
+   "title": "Named accountable human issuer signs off agent-drafted assumptions and downside scenario",
+   "category": "approval",
+   "codebook_match": "Named judgment owner with contemporaneous rationale",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "hitl_designer"
+    ],
+    "quote": "but the FP&A manager remains the accountable publisher who reviews and releases the pack",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T1",
+     "field": "description",
+     "marker": "the FP&A manager remains the accountable publisher who authors/edits and signs off the final downside macro scenario"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-01",
+     "field": "description",
+     "marker": "is the accountable issuer of record"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T1",
+     "field": "description",
+     "marker": "The FP&A manager remains the accountable issuer"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "the manager, not the agent, issues the final version-controlled assumption pack"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "the FP&A manager reviews, edits and is the named, dated author who issues the package"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Codebook match is an analogy only: dev control concerns reforecast driver assumptions with logged rationale; here the mechanism is human sign-off over agent-drafted assumptions (rationale only explicit in 333a basis-of-judgment note, see ABB-C09).",
+    "Baselines keep FP&A manager as issuer but with no agent drafting, so no human-over-agent sign-off mechanism; treated as absent (judgement call).",
+    "Attribution: hitl_designer in 333a independently required a named accountable author of the downside scenario in round1."
+   ]
+  },
+  {
+   "id": "ABB-C02",
+   "title": "Versioned assumption pack / assumption version log",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "the central assumptions should be versioned (v1, v1.1 etc.)",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T1",
+     "field": "outputs",
+     "marker": "Central planning assumptions (versioned)"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-01",
+     "field": "outputs",
+     "marker": "Versioned assumption log"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Central planning assumptions (versioned)"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-ABB-01-ef83",
+     "step_id": "TGT-01",
+     "field": "description",
+     "marker": "Assumptions are version-controlled so later changes are traceable."
+    },
+    {
+     "run_id": "20261010-203046-baseline-FPA-ABB-01-95ea",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "a common, version-controlled assumption set"
+    }
+   ],
+   "flags": [
+    "600a ('named, dated author') and ff17 (T6 'explicit, versioned and inspectable' inputs at consolidation) have weaker/indirect variants not listed as presence (judgement call).",
+    "May overlap with ABB-C08 (mid-cycle re-issue) since c041 versioning explicitly covers mid-cycle revisions."
+   ]
+  },
+  {
+   "id": "ABB-C03",
+   "title": "Recorded deviation/diff between agent-drafted baseline and human-submitted figures",
+   "category": "evidence",
+   "codebook_match": "Named judgment owner with contemporaneous rationale",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "required to document and justify material deviations from the baseline rather than simply accept a system-generated number",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T3",
+     "field": "outputs",
+     "marker": "Deviation rationale notes"
+    },
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T4",
+     "field": "outputs",
+     "marker": "Deviation rationale notes"
+    },
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T4",
+     "field": "description",
+     "marker": "any deviation from or acceptance of the automated baseline must carry a recorded rationale"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "the agent's baseline and the final submission are both retained and diffed"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "every agent-proposed parameter and every override is logged with a diff"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "29eb variant is at assumption issuance (parameter/override diff log), not BU submissions; might be a separate control.",
+    "600a variant retains and diffs but does not require a written rationale (weaker variant).",
+    "Codebook match partial: dev control is named owner + logged rationale for driver assumptions."
+   ]
+  },
+  {
+   "id": "ABB-C04",
+   "title": "Acknowledgement-receipt of downside scenario by submitters",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "I would add an explicit acknowledgement-receipt mechanism so submitters confirm they received and will apply the downside scenario",
+    "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T1",
+     "field": "description",
+     "marker": "acknowledgement-receipt mechanism confirming submitters received and will apply the downside scenario"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T1",
+     "field": "outputs",
+     "marker": "Acknowledged downside macro scenario pack"
+    }
+   ],
+   "baseline_present": [],
+   "flags": []
+  },
+  {
+   "id": "ABB-C05",
+   "title": "Offline / multi-channel distribution and submission path as first-class channel",
+   "category": "fallback",
+   "codebook_match": "Dual-track actuals ingestion for non-integrated entities",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "the target step must explicitly support distribution via downloadable, lockable templates",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T1",
+     "field": "description",
+     "marker": "downloadable, lockable template bundle"
+    },
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T3",
+     "field": "description",
+     "marker": "Submission supports an offline-capable, periodically-synced template format as a first-class channel"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-01",
+     "field": "description",
+     "marker": "Distribution is multi-channel (document plus portal), not portal-only"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-03",
+     "field": "description",
+     "marker": "A lightweight, offline-capable submission path (templated spreadsheet, batch upload) is maintained as a first-class"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-04",
+     "field": "description",
+     "marker": "an offline-capable submission channel is maintained"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T3",
+     "field": "description",
+     "marker": "tooling-agnostic, offline-capable templates"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T4",
+     "field": "description",
+     "marker": "tooling-agnostic, offline-capable schema"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "a manual/offline assumption-setting path remains first-class, not a degraded fallback"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "Tooling must remain usable offline/in spreadsheet-equivalent form"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "Output is dual-channel"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "Offline-capable, template-based submission with validation remains a first-class path"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "offline spreadsheet-based submission remaining a legitimate path"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Could be two controls: assumption distribution channel (T1/TS-01) vs. submission channel (T3/T4); clustered as one resilience mechanism.",
+    "Arguably an access/resilience design feature rather than an assurance control; judgement call whether it counts as governance control.",
+    "Codebook match partial: dev control is dual-track ingestion of actuals for non-integrated entities.",
+    "Overlaps with ABB-C34 (async review channel), ABB-C25 (fallback consolidation) and ABB-C44 (manual-lock fallback)."
+   ]
+  },
+  {
+   "id": "ABB-C06",
+   "title": "Manual override/correction path for non-integrated HRIS/headcount data",
+   "category": "fallback",
+   "codebook_match": "Dual-track actuals ingestion for non-integrated entities",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "must retain a manual override/correction path at the cost-centre-owner level",
+    "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-04",
+     "field": "description",
+     "marker": "A manual override/correction path is retained at the cost-centre-owner level where HRIS/payroll data does not fully"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "The step tolerates manual/parallel HR record-keeping rather than assuming a clean HRIS feed."
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "29eb variant is a tolerance statement rather than a named override path (weaker variant).",
+    "Might be one control with ABB-C05 (offline/manual channel)."
+   ]
+  },
+  {
+   "id": "ABB-C07",
+   "title": "Stale/failed data feed halts agent and routes to human instead of interpolating",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "if a data feed is stale or a scenario-generation run fails validation",
+    "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "If a data feed is stale or a scenario run fails validation, the agent halts and routes to the FP&A manager"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "If a data feed is stale or unavailable, the agent flags the gap rather than silently interpolating"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Attribution: c041 round1_agentic_architect proposed the same ('if source feeds are stale or inconsistent beyond tolerance, agent halts drafting') earlier but it did not reach c041 T-01; c041 T-06 and ff17 T7 have stale-input halts at consolidation (clustered under ABB-C19).",
+    "Might be one control with ABB-C19 (halt-and-escalate on exception) at a different step."
+   ]
+  },
+  {
+   "id": "ABB-C08",
+   "title": "Materiality-triggered re-issue of assumptions mid-cycle",
+   "category": "monitoring",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "with a defined re-issue trigger if rates move beyond a materiality band before submissions close",
+    "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "A materiality-triggered re-issue path exists if macro inputs move before submissions close."
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "c041 T-01 'any mid-cycle revision carries a version stamp' is a related but weaker variant (no trigger), not listed as presence; overlaps ABB-C02."
+   ]
+  },
+  {
+   "id": "ABB-C09",
+   "title": "Documented methodology / basis-of-judgment for FX rates and downside scenario",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "agentic_architect"
+    ],
+    "quote": "The output a submitter receives should carry a visible \"basis of judgment\" note, not just numbers",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T1",
+     "field": "outputs",
+     "marker": "Downside macro scenario (authored, basis-of-judgment note attached)"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "The FX rate-selection methodology (source, hierarchy, timing, treatment of multiple/parallel-rate regimes) is documented"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Central FX assumptions (with documented rate methodology)"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Downside macro scenario (with documented stress methodology)"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "The downside scenario remains a legible, inspectable artefact"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Possibly two controls: documented FX rate-selection methodology (29eb only) vs documented downside-scenario basis (333a, 29eb).",
+    "600a presence is a weaker variant (legible/inspectable, not documented methodology).",
+    "Attribution unclear across runs: 29eb round1_agentic_architect separately proposed 'a disclosed methodology' for the scenario; FX methodology in 29eb has no clear round1 originator located.",
+    "Possible overlap with ABB-C01 (named owner of scenario) and codebook 'Named judgment owner with contemporaneous rationale'."
+   ]
+  },
+  {
+   "id": "ABB-C10",
+   "title": "Target-setting reserved to CEO/CFO; analytics/agent decision support only, no write authority",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "hitl_designer"
+    ],
+    "quote": "No agent sets targets. An analytics tool may surface sensitivity tables or prior-year trend data to CEO/CFO as decision support",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T2",
+     "field": "description",
+     "marker": "the target itself is a human governance decision, not an agent output with an override option"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-02",
+     "field": "description",
+     "marker": "The tool computes; it does not decide, and no agent sets or defaults a target on the executives' behalf."
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T2",
+     "field": "description",
+     "marker": "Analytics tooling may supply scenario-achievability comparisons as an aid, but does not set the target."
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "it has no write authority: the executive originates the committed number"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "it is decision support only and never an authoring actor"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Arguably a human-authority design boundary rather than an assurance control (judgement call).",
+    "Might be one control with ABB-C36 (board approval human-only) and ABB-C48 (agent never submits on owner's behalf) as a general 'no agent decision authority' principle.",
+    "Baselines have CEO/CFO set targets with no agent, so the boundary is not stated; treated as absent."
+   ]
+  },
+  {
+   "id": "ABB-C11",
+   "title": "Top-down targets issued with stated reasoning/drivers",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "the only thing I'd add is a requirement that targets be issued together with the reasoning/drivers behind them",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T2",
+     "field": "outputs",
+     "marker": "Provisional top-down targets with stated reasoning/drivers"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Single run; may be ordinary communication rather than a control."
+   ]
+  },
+  {
+   "id": "ABB-C12",
+   "title": "Provisional targets with scheduled recalibration touchpoint",
+   "category": "other",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "with an acknowledged recalibration touchpoint once first-pass bottom-up submissions land",
+    "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-02",
+     "field": "description",
+     "marker": "A recalibration touchpoint is scheduled once first-pass bottom-up submissions land"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-02",
+     "field": "outputs",
+     "marker": "Target recalibration note (post first-pass bottom-up)"
+    },
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T2",
+     "field": "description",
+     "marker": "The targets are issued labelled 'provisional'"
+    },
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "which also finalises the provisional targets issued in T2"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-ABB-01-ef83",
+     "step_id": "TGT-02",
+     "field": "description",
+     "marker": "targets are published to all submitters as negotiation anchors, not fixed allocations"
+    }
+   ],
+   "flags": [
+    "Weak as a governance control; may be ordinary process sequencing (judgement call).",
+    "Attribution: 333a round1_finance_domain proposed 'provisional' targets earlier ('I flag it as \"provisional\" targets'); c041 finance_domain proposed the recalibration touchpoint form.",
+    "ef83 baseline presence is a weak/implied variant (negotiation anchors, no recalibration record)."
+   ]
+  },
+  {
+   "id": "ABB-C13",
+   "title": "Deterministic hard gate blocking above-threshold capex without business case",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "pragmatist"
+    ],
+    "quote": "a deterministic, rule-based gate agent checks each request against the capex threshold and blocks submission into consolidation if a business case is missing",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T3",
+     "field": "description",
+     "marker": "A deterministic, rule-based gate blocks submission of any capex line above the published threshold unless a business"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-05",
+     "field": "description",
+     "marker": "A deterministic Intake Validation function checks completeness against a fixed checklist and routes incomplete"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "A deterministic validation agent enforces a hard completeness gate"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-ABB-01-ef83",
+     "step_id": "TGT-05",
+     "field": "description",
+     "marker": "must attach a documented business case before it can be routed to consolidation"
+    },
+    {
+     "run_id": "20261010-193948-baseline-FPA-ABB-01-09ed",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "any request above the threshold is blocked from submission until a business case is attached"
+    },
+    {
+     "run_id": "20261010-195832-baseline-FPA-ABB-01-355a",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "mandatorily attaches and routes a business case"
+    },
+    {
+     "run_id": "20261010-203046-baseline-FPA-ABB-01-95ea",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "mandatorily attaches and routes a business case for any request above the materiality threshold before it can enter the"
+    },
+    {
+     "run_id": "20261010-205000-baseline-FPA-ABB-01-138f",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "is blocked from submission until a documented business case is attached"
+    }
+   ],
+   "flags": [
+    "ff17 and 29eb consume the business case as input but have no explicit blocking gate; not listed (judgement call).",
+    "355a baseline is a weaker variant (mandatory attach/route; no explicit block).",
+    "The current-state encoding already requires the business case as an input; the novelty is the enforcement mechanism.",
+    "May be one control with ABB-C15 (validation cannot waive/auto-approve)."
+   ]
+  },
+  {
+   "id": "ABB-C14",
+   "title": "Named human reviewer (CFO/capex committee) signs off above-threshold business case, decision logged",
+   "category": "approval",
+   "codebook_match": "Traceable approval record tied to items reviewed",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "finance_domain"
+    ],
+    "quote": "an accountable reviewer (CFO or capex committee) actually reads and signs off on above-threshold business cases before they flow into consolidation",
+    "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "A CFO or capex committee reviews and signs off on every above-threshold business case before it flows into consolidation"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T5",
+     "field": "outputs",
+     "marker": "Capex business-case sign-off log"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "every above-threshold request is routed to a named reviewer (CFO or capital allocation committee) who substantively"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "marker": "Capex business case review sign-off"
+    },
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T3",
+     "field": "description",
+     "marker": "above-threshold cases are paired with a named central FP&A reviewer/coach"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-05",
+     "field": "description",
+     "marker": "a written business case that a human writes and a human reads"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-195832-baseline-FPA-ABB-01-355a",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "mandatorily attaches and routes a business case, with ROI scoring"
+    },
+    {
+     "run_id": "20261010-203046-baseline-FPA-ABB-01-95ea",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "mandatorily attaches and routes a business case"
+    }
+   ],
+   "flags": [
+    "333a (reviewer/coach) and c041 (a human reads) are weaker variants without explicit sign-off authority.",
+    "Baseline presence (355a, 95ea) is implied only: 'routes' a business case without naming a reviewer or sign-off.",
+    "Attribution: 333a round1_hitl_designer proposed 'a named human approver with real authority to reject or modify' earlier, but 333a's TSS carries only the weaker reviewer/coach form.",
+    "Codebook match partial."
+   ]
+  },
+  {
+   "id": "ABB-C15",
+   "title": "Capex validation cannot waive requirement or auto-approve; automated pass/fail is not approval",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "The agent cannot waive the business case requirement",
+    "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-05",
+     "field": "description",
+     "marker": "it can never waive the business-case requirement or auto-approve a request"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "the agent's pass/fail is not itself the approval"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "May be part of ABB-C13 (gate) or ABB-C14 (human sign-off) rather than a distinct control.",
+    "333a round1_hitl_designer also: 'must never auto-approve above-threshold capex' (not reflected in 333a TSS)."
+   ]
+  },
+  {
+   "id": "ABB-C16",
+   "title": "Capex exception path logged and attributable",
+   "category": "exception",
+   "codebook_match": "Structured attributable resolution record",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "with any exception path itself logged and attributable",
+    "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "Any exception path is logged and attributable."
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Single run; codebook match partial (dev record concerns invoice resolution)."
+   ]
+  },
+  {
+   "id": "ABB-C17",
+   "title": "Capital-allocation triage with inspectable scoring and human routing of FX/political-risk requests",
+   "category": "approval",
+   "codebook_match": "Risk-tiered approval replacing uniform routing",
+   "attribution": {
+    "roles": [
+     "emerging_economy",
+     "finance_domain"
+    ],
+    "quote": "any automated scoring/triage of capex business cases must still route anything touching FX or political risk exposure through a human reviewer",
+    "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "any request with material FX or political-risk exposure must be routed to a human reviewer rather than resolved by"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "Any scoring/ranking tool used in triage must remain inspectable"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "marker": "Capex requests (prioritised against available capital)"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Contains two mechanisms (risk-based human routing; inspectable scoring tool) and a processing element (triage ranking); may split.",
+    "Codebook match is partial (risk-tiered routing analogue).",
+    "Triage itself was proposed by 29eb finance_domain; the human-routing element by emerging_economy."
+   ]
+  },
+  {
+   "id": "ABB-C18",
+   "title": "Deterministic, version-pinned, inspectable FX/policy logic in consolidation (no agent inference, single reused logic)",
+   "category": "other",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "the FX/policy application inside the Consolidation Agent (TS-06) must be rule-based and version-controlled, not left to generative inference",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "FX translation and policy application are deterministic, rule-based and auditable, not generative inference"
+    },
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "the same logic path is reused (not re-implemented) across this step and every iteration inside T6"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-06",
+     "field": "description",
+     "marker": "as fixed configuration (never agent-inferred)"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "All inputs remain explicit, versioned and inspectable rather than embedded constants"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "FX and policy logic must remain inspectable by local FP&A staff, not a vendor black box"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "applies the version-pinned accounting policies and central FX assumptions used for actuals"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Clusters several related properties (determinism, version pinning, inspectability, single reused logic); may split.",
+    "Baselines apply the same policies/FX (required input) without stating determinism/inspectability; treated absent."
+   ]
+  },
+  {
+   "id": "ABB-C19",
+   "title": "Halt-and-escalate on reconciliation break / exception (no silent plug)",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "hitl_designer"
+    ],
+    "quote": "Its failure mode must be a hard stop: reconciliation breaks or unmapped inputs route to the FP&A analyst/manager for resolution, never a silent auto-correction.",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "reconciliation breaks, unmapped inputs or FX/policy anomalies hard-stop and route back to the originating T3/T4"
+    },
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T5",
+     "field": "outputs",
+     "marker": "Reconciliation exception flags"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-06",
+     "field": "description",
+     "marker": "the agent halts and escalates to the FP&A analyst with a diff report rather than forcing a balance; it never silently"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T7",
+     "field": "description",
+     "marker": "Where reconciliation fails or an input is stale or missing, the analyst halts the draft and escalates rather than"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "The engine halts and routes any reconciliation break, policy exception or incomplete submission to a named FP&A analyst"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "Any reconciliation break, policy deviation, or FX override halts the run and routes to a named FP&A analyst/controller"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-205000-baseline-FPA-ABB-01-138f",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "exceptions are routed to the FP&A analyst for resolution"
+    },
+    {
+     "run_id": "20261010-205000-baseline-FPA-ABB-01-138f",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Reconciliation exceptions log"
+    },
+    {
+     "run_id": "20261010-193948-baseline-FPA-ABB-01-09ed",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "runs an automated three-statement reconciliation check before releasing the draft for review"
+    },
+    {
+     "run_id": "20261010-195832-baseline-FPA-ABB-01-355a",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "variance flags raised for policy or FX inconsistencies"
+    }
+   ],
+   "flags": [
+    "09ed and 355a baseline presence are weaker variants (check/flags without explicit halt-and-route).",
+    "Codebook: resembles 'Validation exception queue at capture' but at consolidation rather than capture; marked new (judgement call)."
+   ]
+  },
+  {
+   "id": "ABB-C20",
+   "title": "Versioned consolidation run log (inputs, assumption vintage, logic version, timestamp)",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "Every agent action must be loggable with inputs, outputs, agent/model version, and timestamp",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "Each consolidation run is versioned and logged (inputs, assumption vintage, agent/logic version, timestamp)"
+    },
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T5",
+     "field": "outputs",
+     "marker": "Versioned consolidation run log"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-06",
+     "field": "description",
+     "marker": "Every run is logged with input snapshot, policy/FX version, and output."
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-06",
+     "field": "outputs",
+     "marker": "Reconciliation and intercompany-elimination log"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "a policy or FX methodology change is visible in the run history"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "logging every policy application, rate used and submission version consumed"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "ff17 variant is implied (run history) rather than an explicit log output.",
+    "333a quote is a general agent-logging non-negotiable; c041 round1_agentic_architect gave the consolidation-specific form ('Every run is logged with input snapshot, policy/FX version used, and output').",
+    "Analogous to codebook 'Auto-authorisation rule-fired log' but different mechanism; marked new."
+   ]
+  },
+  {
+   "id": "ABB-C21",
+   "title": "Named analyst certification of a discrete reconciled consolidation snapshot",
+   "category": "approval",
+   "codebook_match": "Named human certification of the actuals baseline",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "pragmatist"
+    ],
+    "quote": "I want the target step to visibly separate \"automated consolidation engine output\" from \"analyst exception certification,\"",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "The FP&A analyst remains the accountable reviewer of consolidation output, certifying exceptions and the final"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T7",
+     "field": "description",
+     "marker": "certifying that the accounting-policy and FX treatment applied matches actuals"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "a discrete, timestamped 'ready for review' artifact with an affirmative analyst sign-off certifying faithfulness and"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Draft three-statement budget (reconciled, logged and attested)"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "certifies a discrete, evidenced 'reconciled' snapshot before the draft proceeds"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Reconciliation certification"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Codebook match is an analogy (dev control certifies actuals baseline in reforecast; here it certifies the draft budget consolidation).",
+    "333a and ff17 also specify review 'not merely on exception' / 'by default'; c041 has escalation only (no certification) - absent.",
+    "29eb round1_pragmatist independently asked for 'a named person and a timestamped \"this consolidation is ready for review\" moment'."
+   ]
+  },
+  {
+   "id": "ABB-C22",
+   "title": "Completeness/data-quality gate on submissions before consolidation",
+   "category": "gate",
+   "codebook_match": "Consolidation validated against full entity submissions",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "a completeness/data-quality gate on incoming submissions before consolidation runs",
+    "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "An explicit completeness/data-quality gate checks that no submission has been silently treated as zero or omitted."
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Completeness gate results"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "ff17 T7 ('an input is stale or missing') and 29eb's halt on 'incomplete submission' are related; partial variants clustered under ABB-C19.",
+    "Codebook match is close but dev control concerns entity-level consolidation of actuals."
+   ]
+  },
+  {
+   "id": "ABB-C23",
+   "title": "Intercompany identification and elimination with log/schedule",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain",
+     "accounting_standards"
+    ],
+    "quote": "identify and eliminate intercompany/intragroup budgeted transactions and balances before the three statements are presented as a group position",
+    "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-06",
+     "field": "description",
+     "marker": "intercompany identification-and-elimination"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-06",
+     "field": "outputs",
+     "marker": "Reconciliation and intercompany-elimination log"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T7",
+     "field": "description",
+     "marker": "applying intercompany elimination judgment"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "intercompany positions are identified and eliminated following the methodology used for actuals"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Intercompany elimination schedule"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-205000-baseline-FPA-ABB-01-138f",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "flagging intercompany positions for elimination"
+    }
+   ],
+   "flags": [
+    "May be ordinary accounting processing rather than a governance control; evidence aspect only explicit where a log/schedule is output (c041, 600a).",
+    "Attribution: 333a round1_finance_domain and round1_accounting_standards raised intercompany elimination earlier but it did not reach 333a TSS."
+   ]
+  },
+  {
+   "id": "ABB-C24",
+   "title": "Exchange differences itemised, never netted",
+   "category": "evidence",
+   "codebook_match": "Tagged exchange-difference schedule",
+   "attribution": {
+    "roles": [
+     "accounting_standards"
+    ],
+    "quote": "Exchange differences arising from central FX assumptions must remain visible and traceable through consolidation, not netted into a single adjustment line",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_accounting_standards"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "Exchange differences are preserved as explicit, itemised lines, never netted invisibly."
+    },
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T5",
+     "field": "outputs",
+     "marker": "Draft three-statement budget (reconciled, with itemised exchange differences)"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-203046-baseline-FPA-ABB-01-95ea",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "FX translation reconciliation"
+    }
+   ],
+   "flags": [
+    "95ea baseline presence is a weaker/different variant (FX translation reconciliation, not itemised exchange differences)."
+   ]
+  },
+  {
+   "id": "ABB-C25",
+   "title": "Documented manual/spreadsheet consolidation fallback using same policy/FX inputs",
+   "category": "fallback",
+   "codebook_match": "Documented degraded-mode fallback as a named input",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "A spreadsheet-based fallback consolidation path must remain documented and usable",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "A documented, equally-valid spreadsheet-based consolidation path exists for units without reliable system/FX-feed access"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "A documented manual consolidation and tie-out procedure exists as a fallback when the platform is unavailable"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-06",
+     "field": "description",
+     "marker": "A degraded-mode ingestion path (batch/offline submission) is supported"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "c041 variant is a degraded ingestion path, not a fallback consolidation procedure (partial)."
+   ]
+  },
+  {
+   "id": "ABB-C26",
+   "title": "Trained backup for consolidation/FX function (key-person risk)",
+   "category": "fallback",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "I require documented runbooks and at least one trained backup per critical function",
+    "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "at least one trained backup must exist for this function given talent-concentration risk"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Single run."
+   ]
+  },
+  {
+   "id": "ABB-C27",
+   "title": "Consolidation roll-up split from a separate human reconciliation/validation step",
+   "category": "segregation",
+   "codebook_match": "Matching kept as a discrete auditable step boundary",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "Splitting consolidation into an automated roll-up and a separate reconciliation step",
+    "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T7",
+     "field": "name",
+     "marker": "Three-statement reconciliation and validation"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T7",
+     "field": "description",
+     "marker": "The same accountable FP&A analyst who oversees the roll-up reviews its output as a standing responsibility, not merely"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Same actor on both steps, so not segregation of duties; it is a discrete step boundary (judgement call whether a control).",
+    "ff17 round1_pragmatist argued against this split.",
+    "Codebook match is an analogy."
+   ]
+  },
+  {
+   "id": "ABB-C28",
+   "title": "Bounded review iterations with non-convergence escalation path",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "pragmatist"
+    ],
+    "quote": "a capped number of iteration rounds, a dated escalation path to CFO/CEO if a BU hasn't converged by round N",
+    "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "Iterations are capped (e.g. two structured rounds) and timeboxed against the T1 calendar"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-07",
+     "field": "description",
+     "marker": "a dated escalation path to CFO/CEO if a submitter has not converged by the final round"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T8",
+     "field": "description",
+     "marker": "with a named escalation path for gaps unresolved at the final round"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "with a CFO escalation rule if convergence is not reached"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "explicit non-convergence escalation path"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "333a variant caps iterations but has no escalation path (weaker variant).",
+    "Attribution: 333a round1_pragmatist referenced 'T6's capped iterations' first, without escalation; c041 pragmatist gives the cap+escalation form.",
+    "Iteration capping may be calendar discipline rather than a control; escalation is the control element."
+   ]
+  },
+  {
+   "id": "ABB-C29",
+   "title": "Documented challenge/resolution/override log for review iterations",
+   "category": "evidence",
+   "codebook_match": "Structured attributable resolution record",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "Flagged items require a real conversation with the submitter and a documented resolution",
+    "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T6",
+     "field": "outputs",
+     "marker": "Challenge and rationale record"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-07",
+     "field": "description",
+     "marker": "Flagged items require a real, documented conversation with the submitter and a recorded resolution"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-07",
+     "field": "outputs",
+     "marker": "Documented resolution log for flagged items"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T8",
+     "field": "description",
+     "marker": "every change imposed on a submitter's numbers is logged with its basis against the specific submission it alters"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T8",
+     "field": "outputs",
+     "marker": "Override and escalation log"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "a logged, attributed override decision"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "marker": "Challenge log / kickback record"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "In 333a the record appears only in synthesis output; no 333a round1 proposer located.",
+    "29eb TS-08 'a summary of what changed through challenge' (board input) is a weaker variant, not listed.",
+    "Override logging (ff17, 600a) may be a separate control from resolution of flagged items (c041)."
+   ]
+  },
+  {
+   "id": "ABB-C30",
+   "title": "Non-converging lines kicked back to owners for resubmission rather than silently overridden",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "requiring an explicit kickback path rather than ad hoc FP&A overrides that quietly substitute",
+    "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "are kicked back to TS-03/TS-04/TS-05 for resubmission (not silently overridden by FP&A)"
+    },
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "route back to the originating T3/T4 submission(s) for correction rather than being silently resolved"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "333a variant is at consolidation (exception route-back), not review; partial.",
+    "May be one control with ABB-C29 (challenge/override log) or ABB-C19."
+   ]
+  },
+  {
+   "id": "ABB-C31",
+   "title": "Automated variance/exception flagging to triage review",
+   "category": "monitoring",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "hitl_designer"
+    ],
+    "quote": "an Exception-Flagging function (part of the same Consolidation Agent used in TS-06, not a new agent) highlights variances against targets/prior iterations",
+    "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-07",
+     "field": "description",
+     "marker": "an exception-flagging function highlights material variances against targets, prior iterations and benchmarks"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T8",
+     "field": "description",
+     "marker": "Variance/anomaly-flagging tooling helps the FP&A manager and CFO triage where to focus challenge"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "flags material unexplained movements to focus the conversation"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "fed by an automated variance/exception-flagging agent"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-07",
+     "field": "inputs",
+     "marker": "Automated variance/exception flags"
+    },
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "a continuous variance-flagging property is an input to this step, not a substitute for it"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-195832-baseline-FPA-ABB-01-355a",
+     "step_id": "T7",
+     "field": "description",
+     "marker": "automated variance flags and dashboards directing challenge effort to material outliers"
+    },
+    {
+     "run_id": "20261010-193948-baseline-FPA-ABB-01-09ed",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "flag deviations from top-down targets automatically"
+    }
+   ],
+   "flags": [
+    "May be ordinary analytics rather than a governance control (judgement call).",
+    "333a presence is weaker (mentioned as input property).",
+    "09ed baseline flagging is at submission (TS-04) not review; partial.",
+    "333a round1_hitl_designer also proposed variance flags to focus challenge; codebook 'Variance packet assembled before handoff' is a loose analogue."
+   ]
+  },
+  {
+   "id": "ABB-C32",
+   "title": "Mandatory downside-scenario stress test of the draft budget",
+   "category": "monitoring",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "the draft budget is re-run against the downside scenario as a stress test before anything goes to the board",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "re-applies the downside macro scenario as a stress test on the draft budget each round"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "including a parallel roll-up against the downside scenario"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T6",
+     "field": "outputs",
+     "marker": "Downside-scenario parallel roll-up"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "mandatory stress-testing of the consolidated plan against the downside macro scenario from TS-01"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "marker": "Gap analysis and downside-scenario stress-test results"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "highlights the largest departures from target, prior year and the downside scenario"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-203046-baseline-FPA-ABB-01-95ea",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "mandatory stress-test of the revised budget against the downside scenario"
+    },
+    {
+     "run_id": "20261010-203046-baseline-FPA-ABB-01-95ea",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "marker": "Downside stress-test results"
+    },
+    {
+     "run_id": "20261010-184915-baseline-FPA-ABB-01-ef83",
+     "step_id": "TGT-07",
+     "field": "description",
+     "marker": "using live scenario and sensitivity toggles against the central and downside assumptions"
+    },
+    {
+     "run_id": "20261010-193948-baseline-FPA-ABB-01-09ed",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "using live drill-down into drivers and the downside scenario variant"
+    },
+    {
+     "run_id": "20261010-205000-baseline-FPA-ABB-01-138f",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "using scenario and sensitivity views (including the downside scenario) to pressure-test assumptions"
+    }
+   ],
+   "flags": [
+    "Arguably planning analysis rather than a governance control (judgement call).",
+    "600a, ef83, 09ed, 138f are weaker variants (scenario used as a view/flag, not a mandatory stress-test output).",
+    "c041 T-08 board pack carries 'the downside scenario and its quantified impact' (see ABB-C35) - not listed here.",
+    "29eb also adds a top-down-vs-bottom-up gap analysis in the same output; could be a separate control."
+   ]
+  },
+  {
+   "id": "ABB-C33",
+   "title": "Policy/FX basis change during review surfaced as disclosed policy change",
+   "category": "evidence",
+   "codebook_match": "Policy-change disclosure output",
+   "attribution": {
+    "roles": [
+     "accounting_standards"
+    ],
+    "quote": "any policy change surfaced mid-review must be disclosed as a policy change (KB-06)",
+    "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+    "agent_role": "round1_accounting_standards"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "any such change must be surfaced as a disclosed policy change"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Single run; requirement stated in description, no named disclosure output."
+   ]
+  },
+  {
+   "id": "ABB-C34",
+   "title": "Asynchronous/store-and-forward review channel",
+   "category": "fallback",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "Batched, asynchronous iteration cycles with clear written commentary should be the default-supported mode",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "asynchronous/batched written commentary as the default-supported cadence"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-07",
+     "field": "description",
+     "marker": "A store-and-forward (asynchronous) iteration channel is retained"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "An asynchronous, document-based challenge log is maintained alongside any live review sessions"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "May be one control with ABB-C05 (offline channel); arguably access design rather than assurance.",
+    "600a variant doubles as the challenge log (overlap with ABB-C29)."
+   ]
+  },
+  {
+   "id": "ABB-C35",
+   "title": "Board pack carries unsanitised judgment flags, unresolved challenges and supporting evidence",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "otherwise this becomes ceremonial sign-off on a document nobody can meaningfully interrogate",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T7",
+     "field": "description",
+     "marker": "The pack must explicitly carry the downside macro scenario and the material judgment calls/exception flags surfaced"
+    },
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T7",
+     "field": "inputs",
+     "marker": "Downside macro scenario and material judgment flags (unsanitised)"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-08",
+     "field": "description",
+     "marker": "a summary of what was challenged and left unresolved in review"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-08",
+     "field": "description",
+     "marker": "their adequacy is the accountable responsibility of the FP&A manager preparing the pack"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T9",
+     "field": "description",
+     "marker": "on the basis of a structured decision package"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T9",
+     "field": "inputs",
+     "marker": "Override and escalation log"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-08",
+     "field": "inputs",
+     "marker": "Full decision package (scenarios, reconciliations, capex cases, challenge summary)"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-08",
+     "field": "description",
+     "marker": "not a sanitised summary"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-203046-baseline-FPA-ABB-01-95ea",
+     "step_id": "TS-08",
+     "field": "inputs",
+     "marker": "Downside stress-test results"
+    },
+    {
+     "run_id": "20261010-184915-baseline-FPA-ABB-01-ef83",
+     "step_id": "TGT-08",
+     "field": "description",
+     "marker": "including the embedded downside scenario"
+    },
+    {
+     "run_id": "20261010-193948-baseline-FPA-ABB-01-09ed",
+     "step_id": "TS-08",
+     "field": "description",
+     "marker": "including the downside scenario view"
+    },
+    {
+     "run_id": "20261010-195832-baseline-FPA-ABB-01-355a",
+     "step_id": "T8",
+     "field": "description",
+     "marker": "including the embedded downside scenario view"
+    },
+    {
+     "run_id": "20261010-205000-baseline-FPA-ABB-01-138f",
+     "step_id": "TS-08",
+     "field": "description",
+     "marker": "including the downside scenario implications"
+    }
+   ],
+   "flags": [
+    "Baseline variants carry only the downside scenario/stress results, not challenge or exception content (weaker variants).",
+    "c041 named accountability of the FP&A manager for pack adequacy may be a separate control.",
+    "Codebook 'Traceable approval record tied to items reviewed' is a loose analogue."
+   ]
+  },
+  {
+   "id": "ABB-C36",
+   "title": "Board approval reserved to humans; no agent decision authority",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "No agent may hold decision authority over target-setting, challenge resolution, or board approval.",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T7",
+     "field": "description",
+     "marker": "the approval action and authority remain exclusively with the board"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-08",
+     "field": "description",
+     "marker": "This step remains entirely free of agentic decision authority."
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T9",
+     "field": "description",
+     "marker": "This remains an unautomated governance act with no agent in the decision seat."
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-08",
+     "field": "description",
+     "marker": "Approval remains an irreducibly human, minuted decision"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-08",
+     "field": "description",
+     "marker": "the approval act itself is irreducibly human"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Board approval is human in the current state too; this is a restatement of authority boundary (judgement call whether a target-state control).",
+    "May be one control with ABB-C10 (no agent target-setting)."
+   ]
+  },
+  {
+   "id": "ABB-C37",
+   "title": "Board approval recorded with conditions; conditions reconciled before lock",
+   "category": "evidence",
+   "codebook_match": "Traceable approval record tied to items reviewed",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "I'd have the output explicitly carry any conditions forward rather than treat approval as unconditional",
+    "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-08",
+     "field": "description",
+     "marker": "Any conditions attached to approval ('approved subject to X') are explicitly recorded"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-08",
+     "field": "outputs",
+     "marker": "Board-approved budget (with any conditions)"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-09",
+     "field": "description",
+     "marker": "reconciles any board conditions"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-08",
+     "field": "description",
+     "marker": "is the recorded trigger condition for TS-09"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-193948-baseline-FPA-ABB-01-09ed",
+     "step_id": "TS-08",
+     "field": "description",
+     "marker": "with the approval decision and supporting pack captured in an auditable digital record"
+    }
+   ],
+   "flags": [
+    "600a is a weaker variant (approval recorded as trigger; no conditions).",
+    "09ed baseline records approval and pack but not conditions (partial).",
+    "Might be two controls: approval record vs. conditions reconciliation before lock."
+   ]
+  },
+  {
+   "id": "ABB-C38",
+   "title": "Lock hard-gated on verified board-approval artefact",
+   "category": "gate",
+   "codebook_match": "Publication event-gated on the approval signal",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "the Lock Agent (TS-09) must be hard-wired to trigger only on receipt of a board-approved output artifact from TS-08",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T8",
+     "field": "description",
+     "marker": "A Lock Agent is hard-wired to trigger only on receipt of the board-approved artefact from T7"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-09",
+     "field": "description",
+     "marker": "triggered only by receipt of the board-approved artifact (no calendar date, no confidence-score trigger)"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T10",
+     "field": "description",
+     "marker": "A load-and-lock mechanism is hard-gated on a verified board-approval artifact"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-09",
+     "field": "description",
+     "marker": "A load-and-lock agent is architecturally incapable of firing without a verified board-approval artifact as its trigger"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-09",
+     "field": "description",
+     "marker": "enforcing board-approval-before-lock architecturally, not merely by sequence"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-193948-baseline-FPA-ABB-01-09ed",
+     "step_id": "TS-09",
+     "field": "description",
+     "marker": "with the lock enforced only after board approval is confirmed in the system"
+    },
+    {
+     "run_id": "20261010-203046-baseline-FPA-ABB-01-95ea",
+     "step_id": "TS-09",
+     "field": "description",
+     "marker": "occurs only after, and is gated by, board approval"
+    },
+    {
+     "run_id": "20261010-205000-baseline-FPA-ABB-01-138f",
+     "step_id": "TS-08",
+     "field": "description",
+     "marker": "before any version is loaded into downstream systems"
+    }
+   ],
+   "flags": [
+    "138f baseline is a weaker variant (ordering stated at board step, no system gate).",
+    "Also resembles codebook 'Release gate enforcing requirement ordering as a system precondition'; chose the closer FPA-RF-01 title."
+   ]
+  },
+  {
+   "id": "ABB-C39",
+   "title": "Automated hash/diff match of loaded version against board-approved document",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "EPM load API with pre-load validation (loaded totals must tie to the board-approved document, hash-checked)",
+    "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-09",
+     "field": "description",
+     "marker": "with hash-checked pre-load validation against the board document"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T10",
+     "field": "description",
+     "marker": "runs an automated, machine-generated diff confirming the system-ready version matches the approved document"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-09",
+     "field": "description",
+     "marker": "it performs a hash/version match between the artifact about to be loaded and the one the board actually approved"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-09",
+     "field": "description",
+     "marker": "independently confirms (via diff/hash or manual comparison)"
+    },
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T8",
+     "field": "description",
+     "marker": "a validation mismatch halts the lock and escalates rather than proceeding silently or partially"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "600a and 333a are weaker variants (diff/hash as option; unspecified validation).",
+    "May be one control with ABB-C40 (human attestation) - 29eb explicitly treats them as two distinct evidentiary layers."
+   ]
+  },
+  {
+   "id": "ABB-C40",
+   "title": "Named human attestation that locked version equals board-approved version before lock commits",
+   "category": "approval",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "I require a human certification step where a named, accountable individual (FP&A analyst or manager) attests that the loaded/locked version",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T8",
+     "field": "description",
+     "marker": "attests, on every lock event including clean ones, that the loaded/locked figures are identical to the board-approved"
+    },
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T8",
+     "field": "actor",
+     "marker": "FP&A analyst (named attestor), supported by Lock Agent"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-09",
+     "field": "description",
+     "marker": "independently confirms the loaded version reconciles exactly to the board-approved output"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T10",
+     "field": "description",
+     "marker": "A named FP&A analyst reviews that diff and affirmatively certifies the match before the lock takes effect"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-09",
+     "field": "description",
+     "marker": "a named FP&A analyst must give an affirmative, logged attestation that the loaded version matches what the board"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-09",
+     "field": "description",
+     "marker": "a named FP&A analyst distinct from whoever executed the load independently confirms"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Analogous to codebook 'Named human certification of the actuals baseline' (different object); marked new.",
+    "Overlaps with ABB-C41 (segregation) and ABB-C43 (lock record)."
+   ]
+  },
+  {
+   "id": "ABB-C41",
+   "title": "Lock confirmer distinct from consolidation preparer / loader",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "FP&A analyst, distinct from whoever last touched the consolidation",
+    "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-09",
+     "field": "description",
+     "marker": "a named accountable individual distinct from whoever last touched the consolidation run"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-09",
+     "field": "actor",
+     "marker": "FP&A analyst (independent confirmer, distinct from consolidation preparer)"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-09",
+     "field": "description",
+     "marker": "a named FP&A analyst distinct from whoever executed the load"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Segregation is against different parties (c041: consolidation preparer; 600a: loader) - may be two controls.",
+    "600a round1_hitl_designer independently proposed 'distinct from whoever ran the load'."
+   ]
+  },
+  {
+   "id": "ABB-C42",
+   "title": "Governed, logged, authorised re-open procedure for post-lock changes",
+   "category": "approval",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "finance_domain"
+    ],
+    "quote": "a locked version can only be reopened through a defined, logged, CFO-authorised re-open procedure, never an informal edit",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T8",
+     "field": "description",
+     "marker": "any post-lock correction must go through a formal, logged, CFO-authorised re-open procedure"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-09",
+     "field": "description",
+     "marker": "Any post-lock change requires a documented, sign-off change-control reopening"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T10",
+     "field": "description",
+     "marker": "Any subsequent unlock or rollback requires elevated authorization."
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-09",
+     "field": "description",
+     "marker": "any post-lock correction of a material error must go through a governed amendment/re-forecast process"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-09",
+     "field": "outputs",
+     "marker": "Governed amendment/correction path"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-09",
+     "field": "description",
+     "marker": "Any later correction requires an explicit, logged unlock-relock action referencing the governing approval"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-ABB-01-ef83",
+     "step_id": "TGT-09",
+     "field": "description",
+     "marker": "with system-enforced edit restrictions functioning as the period-discipline gate"
+    },
+    {
+     "run_id": "20261010-193948-baseline-FPA-ABB-01-09ed",
+     "step_id": "TS-09",
+     "field": "description",
+     "marker": "locked via role-based access control"
+    },
+    {
+     "run_id": "20261010-203046-baseline-FPA-ABB-01-95ea",
+     "step_id": "TS-09",
+     "field": "description",
+     "marker": "with system-enforced edit locks replacing manual version control"
+    },
+    {
+     "run_id": "20261010-195832-baseline-FPA-ABB-01-355a",
+     "step_id": "T9",
+     "field": "description",
+     "marker": "locked as the single immutable version"
+    }
+   ],
+   "flags": [
+    "Baseline presence is a weaker variant: edit restriction/immutability of lock, with no governed reopen procedure.",
+    "Codebook 'Discrete subledger lock preserved under continuous reconciliation' is a loose analogue.",
+    "333a round1_finance_domain also: 'Any \"quick correction\" after lock must go through a formal re-approval'."
+   ]
+  },
+  {
+   "id": "ABB-C43",
+   "title": "Immutable audit log / verification record of the load-and-lock event",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "every load/lock action is written to an immutable log with a defined unlock/rollback procedure requiring elevated human authorization",
+    "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T8",
+     "field": "outputs",
+     "marker": "Load/lock attestation record"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T10",
+     "field": "description",
+     "marker": "the action is written to an immutable, auditable log"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-09",
+     "field": "outputs",
+     "marker": "Load-lock verification record"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-195832-baseline-FPA-ABB-01-355a",
+     "step_id": "T9",
+     "field": "description",
+     "marker": "with a full audit trail of the load"
+    },
+    {
+     "run_id": "20261010-205000-baseline-FPA-ABB-01-138f",
+     "step_id": "TS-09",
+     "field": "description",
+     "marker": "with the prior draft and exception log retained for audit trail"
+    }
+   ],
+   "flags": [
+    "May be one control with ABB-C40 (attestation); 29eb 'logged attestation' clustered there.",
+    "138f baseline is a weaker/different variant (retains prior draft and exception log; overlaps ABB-C46)."
+   ]
+  },
+  {
+   "id": "ABB-C44",
+   "title": "Documented manual/file-based lock fallback with same attestation/immutability discipline",
+   "category": "fallback",
+   "codebook_match": "Documented degraded-mode fallback as a named input",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "a manual-lock fallback (access-controlled file/version control) must remain documented for units without that licensing",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T8",
+     "field": "description",
+     "marker": "Units without tier-one EPM licensing retain a documented manual-lock fallback"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T10",
+     "field": "description",
+     "marker": "a checksummed, version-controlled file-based lock carrying the same immutability guarantee is an accepted equivalent"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-09",
+     "field": "description",
+     "marker": "a signed-off manual document with a logged change history treated as an equally valid trigger"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-09",
+     "field": "description",
+     "marker": "The mechanism tolerates batch/offline loading for entities without continuous connectivity."
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "600a fallback is for the approval trigger, not the lock store (partial).",
+    "29eb is a weaker variant (offline loading tolerated, no documented fallback)."
+   ]
+  },
+  {
+   "id": "ABB-C45",
+   "title": "Durable vendor-independent export of locked budget",
+   "category": "fallback",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "The locked version must be exportable to a durable, vendor-independent format",
+    "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-09",
+     "field": "outputs",
+     "marker": "Durable vendor-independent export"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-09",
+     "field": "description",
+     "marker": "The locked version is exported to a durable, vendor-independent format"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Single run."
+   ]
+  },
+  {
+   "id": "ABB-C46",
+   "title": "Archive of assumption set and capex business cases at lock",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "locking also establishes the variance-analysis baseline and archives the assumption set and capex business cases used",
+    "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-09",
+     "field": "outputs",
+     "marker": "Archived assumption set and capex business cases"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-205000-baseline-FPA-ABB-01-138f",
+     "step_id": "TS-09",
+     "field": "description",
+     "marker": "with the prior draft and exception log retained for audit trail"
+    }
+   ],
+   "flags": [
+    "138f baseline retains different artefacts (prior draft, exception log) - weaker/different variant."
+   ]
+  },
+  {
+   "id": "ABB-C47",
+   "title": "Named successor for displaced manual-loading role in transition plan",
+   "category": "other",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "the displaced function and the people who performed it must be named, along with a transition plan.",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T8",
+     "field": "description",
+     "marker": "successor to the former manual-loading role, explicitly named in the transition plan rather than having the function"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Workforce-transition accountability; judgement call whether a governance control.",
+    "Single run."
+   ]
+  },
+  {
+   "id": "ABB-C48",
+   "title": "Agent advisory only; owner's signed submission is the submission of record",
+   "category": "segregation",
+   "codebook_match": "Human-authored, attributed BU commentary",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "The agent is an intake/quality-check tool, not a submitter of record.",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T3",
+     "field": "description",
+     "marker": "the BU head remains the accountable author"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-03",
+     "field": "description",
+     "marker": "it is advisory only and never submits on the BU head's behalf"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-04",
+     "field": "description",
+     "marker": "authorship and sign-off are not transferable to a model"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T3",
+     "field": "description",
+     "marker": "owns the final submission as the accountable preparer of record"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "never writes to the plan; the BU head's signed submission is what feeds consolidation"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "the BU head reviews, overrides and submits the final number"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Accountability principle present in all runs; judgement call whether a discrete control.",
+    "Baselines keep owner preparation without agents; boundary not stated, treated absent.",
+    "Codebook match partial (dev control concerns human-authored commentary)."
+   ]
+  },
+  {
+   "id": "ABB-C49",
+   "title": "Above-threshold capex business case remains human-authored (agent limited to calculations)",
+   "category": "segregation",
+   "codebook_match": "Human-authored, attributed BU commentary",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "agentic_architect"
+    ],
+    "quote": "the authorship of the business case and the named approver for anything crossing the threshold must remain human and accountable",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-05",
+     "field": "description",
+     "marker": "a written business case that a human writes and a human reads"
+    },
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "the business case narrative for requests above the threshold remains human-authored"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "this judgment content remains human-authored, with agent assistance limited to ROI/NPV calculation as a tool invoked by"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "333a round1_hitl_designer proposed it, but 333a TSS does not state it; attribution run differs from presence runs.",
+    "May be one control with ABB-C48 (owner authorship) or ABB-C14 (human reviewer)."
+   ]
+  },
+  {
+   "id": "ABB-C50",
+   "title": "Intake validation agent flags submission anomalies back to owner",
+   "category": "exception",
+   "codebook_match": "Validation exception queue at capture",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "An **Intake Validation Agent** is embedded in the same step (not a separate one)",
+    "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "An intake-validation agent checks submissions against assumptions, prior actuals and internal consistency and flags"
+    },
+    {
+     "run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "A validation agent checks headcount math, cost-per-FTE consistency and policy conformance and flags exceptions back to"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "template-based submission with validation"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-193948-baseline-FPA-ABB-01-09ed",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "standardised templates that enforce the central assumptions and flag deviations from top-down targets automatically"
+    },
+    {
+     "run_id": "20261010-193948-baseline-FPA-ABB-01-09ed",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "with in-line validation against the downside scenario variant"
+    }
+   ],
+   "flags": [
+    "600a and 09ed are weaker variants (template validation, no exception routing).",
+    "333a round1_agentic_architect described an 'intake/quality-check tool' for ABB-03 but 333a TSS does not carry it."
+   ]
+  },
+  {
+   "id": "ABB-C51",
+   "title": "Degraded-mode logging on connector failure without blocking owner",
+   "category": "fallback",
+   "codebook_match": "Infrastructure and business exceptions logged separately",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "if the data connector fails, the agent falls back to a prior-year template and logs the degraded mode",
+    "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "on connector failure the agent falls back to a prior-year template and logs the degraded mode without blocking the BU"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Single run; codebook match partial (infrastructure-exception log analogue)."
+   ]
+  },
+  {
+   "id": "ABB-C52",
+   "title": "Target-setting kept separate from assumption issuance for attributable accountability",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "pragmatist"
+    ],
+    "quote": "it must stay a visible, attributable decision rather than being folded into an algorithmic top-down allocation engine",
+    "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+     "step_id": "T2",
+     "field": "description",
+     "marker": "kept structurally separate from assumption-issuance so that a later miss can be attributed to either a bad assumption"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "distinct from FP&A's assumption-issuance role in TS-01"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Current-state structure already separates these steps/actors; baselines keep the separation without stating a rationale (not listed). Judgement call whether a control.",
+    "333a round1_pragmatist and 600a round1_pragmatist made the same point; ff17 round2_pragmatist/finance_domain gave the 'bad assumption or bad target' framing."
+   ]
+  },
+  {
+   "id": "ABB-C53",
+   "title": "Cost-centre budgeting kept distinct from revenue planning for single-owner traceability",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "pragmatist",
+     "finance_domain"
+    ],
+    "quote": "Different actor (cost centre owners, not BU heads), different approval chain",
+    "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+     "step_id": "T4",
+     "field": "description",
+     "marker": "kept as a structurally distinct step from T3 because the actor, approval chain and downstream consumers"
+    },
+    {
+     "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+     "step_id": "T-04",
+     "field": "description",
+     "marker": "kept distinct from revenue/volume ownership because the drivers, source data (HRIS, open positions, attrition) and"
+    },
+    {
+     "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "kept as a distinct, separately accountable step from revenue planning and capex so that challenge in review can trace a"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Current-state structure already separates these steps; baselines keep separate steps without stated rationale (not listed). Judgement call whether a control.",
+    "c041 round1_finance_domain and 600a round1_finance_domain also proposed this."
+   ]
+  }
+ ]
+}

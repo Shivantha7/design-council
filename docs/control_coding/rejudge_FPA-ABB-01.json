@@ -1,0 +1,5166 @@
+{
+ "workflow_id": "FPA-ABB-01",
+ "controls": [
+  {
+   "id": "ABB-M01",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T1",
+     "field": "description",
+     "quote": "the FP&A manager remains the accountable publisher who authors/edits and signs off the final downside macro scenario",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-01",
+     "field": "description",
+     "quote": "The FP&A manager reviews, substantively adjusts where local market conditions diverge from feed coverage",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T1",
+     "field": "description",
+     "quote": "The FP&A manager remains the accountable issuer: reviews the draft for local realities",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "the manager, not the agent, issues the final version-controlled assumption pack",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "the FP&A manager reviews, edits and is the named, dated author who issues the package",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "FP&A issues the budget calendar and central planning assumptions",
+     "note": "structural actor/step assignment only (no agents in this TSS); no stated restriction/boundary"
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "FP&A issues the budget calendar and a central assumptions pack",
+     "note": "structural actor/step assignment only (no agents in this TSS); no stated restriction/boundary"
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T1",
+     "field": "description",
+     "quote": "FP&A issues the budget calendar and central planning assumptions",
+     "note": "structural actor/step assignment only (no agents in this TSS); no stated restriction/boundary"
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "FP&A issues the budget calendar and central planning assumptions",
+     "note": "structural actor/step assignment only (no agents in this TSS); no stated restriction/boundary"
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "The FP&A manager issues the budget calendar and central planning assumptions",
+     "note": "structural actor/step assignment only (no agents in this TSS); no stated restriction/boundary"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M02",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T1",
+     "field": "outputs",
+     "quote": "Central planning assumptions (versioned)",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-01",
+     "field": "outputs",
+     "quote": "Versioned assumption log",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "All inputs remain explicit, versioned and inspectable rather than embedded constants",
+     "note": "versioning of inputs stated at consolidation, not at assumption issuance"
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Central planning assumptions (versioned)",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "the named, dated author who issues the package",
+     "note": "dated issuance, no versioning of the pack"
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "Assumptions are version-controlled so later changes are traceable.",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "all submitters plan against a common, version-controlled assumption set",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M03",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "must record a documented rationale wherever the submitted number deviates from the agent's baseline",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "every agent-proposed parameter and every override is logged with a diff",
+     "note": "diff log of agent draft vs human override at assumption issuance, not at BU/cost-centre submission"
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "the agent's baseline and the final submission are both retained and diffed so material departures are visible",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M3",
+    "question": "Is the 29eb TS-01 diff log of agent-proposed assumption parameters vs manager overrides the same control as the deviation record of agent baseline vs BU/cost-centre submitted figures (T3/T4/TS-03), or a separate control at assumption issuance (arguably the record of the ABB-M01 sign-off)?",
+    "alternative": {
+     "type": "split",
+     "into": [
+      [
+       "ABB-C03:submission-stage (333a T3/T4, 600a TS-03)"
+      ],
+      [
+       "ABB-C03:assumption-issuance (29eb TS-01)"
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "id": "ABB-M04",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T1",
+     "field": "description",
+     "quote": "acknowledgement-receipt mechanism confirming submitters received and will apply the downside scenario",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M05",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T1",
+     "field": "description",
+     "quote": "distributed through both a central portal and a downloadable, lockable template bundle",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-01",
+     "field": "description",
+     "quote": "Distribution is multi-channel (document plus portal), not portal-only",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "using tooling-agnostic, offline-capable templates that share the same data schema as cloud-based entry",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "Tooling must remain usable offline/in spreadsheet-equivalent form where cloud planning tools are not available.",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "Output is dual-channel: a structured data feed for units with portal/ERP access, and an equally authoritative static document",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M06",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-04",
+     "field": "description",
+     "quote": "A manual override/correction path is retained at the cost-centre-owner level where HRIS/payroll data does not fully integrate",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T4",
+     "field": "description",
+     "quote": "the cost centre owner reviews, adjusts and owns the submission",
+     "note": "owner adjusts an HR-data-based draft; no correction path for non-integrated HRIS data"
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "The step tolerates manual/parallel HR record-keeping rather than assuming a clean HRIS feed.",
+     "note": "tolerance of manual HR records rather than a named override/correction path"
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M07",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "T-06",
+     "field": "description",
+     "quote": "On any reconciliation break, stale-feed condition, or unmatched intercompany balance, the agent halts",
+     "note": "stale-feed halt at consolidation, not assumption issuance"
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "Where reconciliation fails or an input is stale or missing, the analyst halts the draft and escalates",
+     "note": "stale-input halt at reconciliation, not assumption issuance"
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "If a data feed is stale or a scenario run fails validation, the agent halts and routes to the FP&A manager",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "If a data feed is stale or unavailable, the agent flags the gap rather than silently interpolating",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M08",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T-01",
+     "field": "description",
+     "quote": "any mid-cycle revision carries a version stamp",
+     "note": "mid-cycle revision versioned but no re-issue trigger"
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "A materiality-triggered re-issue path exists if macro inputs move before submissions close.",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M09",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T1",
+     "field": "outputs",
+     "quote": "Downside macro scenario (authored, basis-of-judgment note attached)",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Central FX assumptions (with documented rate methodology)",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "The downside scenario remains a legible, inspectable artefact, not merely a parameter buried inside a model.",
+     "note": "legible artefact, no documented methodology/basis"
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M4",
+    "question": "Does one control cover both the documented FX rate-selection methodology (29eb only) and the documented basis/stress methodology of the downside scenario (333a, 29eb), or are these two objects?",
+    "alternative": {
+     "type": "split",
+     "into": [
+      [
+       "ABB-C09:FX-rate-selection-methodology (29eb)"
+      ],
+      [
+       "ABB-C09:downside-scenario-basis (333a, 29eb)"
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "id": "ABB-M10",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "description",
+     "quote": "the target itself is a human governance decision, not an agent output with an override option",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-02",
+     "field": "description",
+     "quote": "The tool computes; it does not decide, and no agent sets or defaults a target on the executives' behalf.",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "description",
+     "quote": "Analytics tooling may supply scenario-achievability comparisons as an aid, but does not set the target.",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "it has no write authority: the executive originates the committed number",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "it is decision support only and never an authoring actor",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "CEO/CFO set top-down revenue, margin and cost targets",
+     "note": "structural actor/step assignment only (no agents in this TSS); no stated restriction/boundary"
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "CEO/CFO set top-down revenue, margin and cost targets",
+     "note": "structural actor/step assignment only (no agents in this TSS); no stated restriction/boundary"
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T2",
+     "field": "description",
+     "quote": "CEO/CFO set top-down revenue, margin and cost targets",
+     "note": "structural actor/step assignment only (no agents in this TSS); no stated restriction/boundary"
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "CEO/CFO set top-down revenue, margin and cost targets using a driver-based model",
+     "note": "structural actor/step assignment only (no agents in this TSS); no stated restriction/boundary"
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "CEO/CFO set top-down revenue, margin and cost targets",
+     "note": "structural actor/step assignment only (no agents in this TSS); no stated restriction/boundary"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M11",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "outputs",
+     "quote": "Provisional top-down targets with stated reasoning/drivers",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M12",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "which also finalises the provisional targets issued in T2",
+     "note": "provisional targets revisited at review (T6) rather than at a touchpoint after first-pass submissions"
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-02",
+     "field": "description",
+     "quote": "A recalibration touchpoint is scheduled once first-pass bottom-up submissions land",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "targets are published to all submitters as negotiation anchors, not fixed allocations",
+     "note": "provisional status only; no scheduled recalibration"
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M13",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "A deterministic, rule-based gate blocks submission of any capex line above the published threshold unless a business case is attached",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-05",
+     "field": "description",
+     "quote": "A deterministic Intake Validation function checks completeness against a fixed checklist and routes incomplete submissions back",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "no request above threshold may be submitted without an attached business case",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "any request above the materiality threshold must attach a documented business case before it can be routed to consolidation",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "any request above the threshold is blocked from submission until a business case is attached",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "an automated workflow that mandatorily attaches and routes a business case, with ROI scoring, for any request above the materiality threshold",
+     "note": "mandatory attachment in automated workflow; blocking not stated explicitly"
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "mandatorily attaches and routes a business case for any request above the materiality threshold before it can enter the consolidation",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "any request above the materiality threshold is blocked from submission until a documented business case is attached",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M14",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "above-threshold cases are paired with a named central FP&A reviewer/coach",
+     "note": "named reviewer/coach without sign-off authority"
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T-05",
+     "field": "description",
+     "quote": "a written business case that a human writes and a human reads",
+     "note": "a human reads; no named reviewer or sign-off"
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "A CFO or capex committee reviews and signs off on every above-threshold business case before it flows into consolidation",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "any request with material FX or political-risk exposure must be routed to a human reviewer",
+     "note": "human review only for FX/political-risk subset, not all above-threshold cases"
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "every above-threshold request is routed to a named reviewer (CFO or capital allocation committee) who substantively reads and signs off",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "mandatorily attaches and routes a business case",
+     "note": "routes the case; no reviewer or sign-off named"
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "mandatorily attaches and routes a business case",
+     "note": "routes the case; no reviewer or sign-off named"
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M15",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-05",
+     "field": "description",
+     "quote": "it can never waive the business-case requirement or auto-approve a request",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "the agent's pass/fail is not itself the approval",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Is \"validation cannot waive the business-case requirement or auto-approve / pass-fail is not approval\" a distinct control, or a stated property of the capex hard gate (ABB-M13) (or of human sign-off, ABB-M14)? One-off: restriction on a gate vs the gate itself.",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "ABB-M13"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ABB-M16",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "Any exception path is logged and attributable.",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M17",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "any request with material FX or political-risk exposure must be routed to a human reviewer rather than resolved by templated scoring",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M18",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "FX translation and policy application are deterministic, rule-based and auditable, not generative inference",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-06",
+     "field": "description",
+     "quote": "as fixed configuration (never agent-inferred)",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "All inputs remain explicit, versioned and inspectable rather than embedded constants",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "FX and policy logic must remain inspectable by local FP&A staff, not a vendor black box",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "applies the version-pinned accounting policies and central FX assumptions used for actuals",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "applying the same accounting policies used for actuals and retranslating multi-currency inputs at the central FX assumptions",
+     "note": "applies same policies/FX as actuals (encoding requirement); no determinism, pinning or inspectability stated"
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "applying the same accounting policies used for actuals and the central FX assumptions for translation",
+     "note": "applies same policies/FX as actuals (encoding requirement); no determinism, pinning or inspectability stated"
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "applying central FX assumptions and the accounting policies applied to actuals",
+     "note": "applies same policies/FX as actuals (encoding requirement); no determinism, pinning or inspectability stated"
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "applying the central FX assumptions to translate multi-currency submissions",
+     "note": "applies same policies/FX as actuals (encoding requirement); no determinism, pinning or inspectability stated"
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "using the same accounting policies as actuals, applying central FX assumptions for translation",
+     "note": "applies same policies/FX as actuals (encoding requirement); no determinism, pinning or inspectability stated"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M19",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "reconciliation breaks, unmapped inputs or FX/policy anomalies hard-stop and route back to the originating T3/T4 submission(s)",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-06",
+     "field": "description",
+     "quote": "the agent halts and escalates to the FP&A analyst with a diff report rather than forcing a balance",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "Where reconciliation fails or an input is stale or missing, the analyst halts the draft and escalates",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "The engine halts and routes any reconciliation break, policy exception or incomplete submission to a named FP&A analyst",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "Any reconciliation break, policy deviation, or FX override halts the run and routes to a named FP&A analyst/controller",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "runs an automated three-statement reconciliation check before releasing the draft for review",
+     "note": "check precedes release; no halt/escalation of breaks stated"
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "variance flags raised for policy or FX inconsistencies",
+     "note": "flags only; no halt or routing"
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "exceptions are routed to the FP&A analyst for resolution",
+     "note": "routes exceptions to analyst; halt not stated"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M20",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "Each consolidation run is versioned and logged (inputs, assumption vintage, agent/logic version, timestamp)",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-06",
+     "field": "description",
+     "quote": "Every run is logged with input snapshot, policy/FX version, and output.",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "a policy or FX methodology change is visible in the run history",
+     "note": "run history implied, no explicit run log"
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "logging every policy application, rate used and submission version consumed",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M21",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "The FP&A analyst remains the accountable reviewer of consolidation output, certifying exceptions and the final reconciled statement.",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "certifying that the accounting-policy and FX treatment applied matches actuals",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "a discrete, timestamped 'ready for review' artifact with an affirmative analyst sign-off",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "certifies a discrete, evidenced 'reconciled' snapshot before the draft proceeds",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M22",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "Where reconciliation fails or an input is stale or missing, the analyst halts the draft and escalates",
+     "note": "missing-input halt at post-roll-up reconciliation, not a gate before consolidation"
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "An explicit completeness/data-quality gate checks that no submission has been silently treated as zero or omitted.",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M4",
+    "question": "Is the completeness/data-quality gate before consolidation separate from halt-and-escalate on exceptions (ABB-M19), given 29eb TS-06 halts on \"incomplete submission\" at the same step, i.e. completeness failures are a subset of the exceptions halted?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "ABB-M19"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ABB-M23",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-06",
+     "field": "outputs",
+     "quote": "Reconciliation and intercompany-elimination log",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "applying intercompany elimination judgment",
+     "note": "elimination stated, no identification log/schedule"
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "intercompany positions are identified and eliminated following the methodology used for actuals",
+     "note": "identification and elimination, no log/schedule"
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "Intercompany elimination schedule",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "flagging intercompany positions for elimination",
+     "note": "identification/flagging for elimination, no log/schedule"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M24",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "Exchange differences are preserved as explicit, itemised lines, never netted invisibly.",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "FX translation reconciliation",
+     "note": "FX translation reconciliation, not itemisation of exchange differences"
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M25",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "A documented, equally-valid spreadsheet-based consolidation path exists for units without reliable system/FX-feed access",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T-06",
+     "field": "description",
+     "quote": "A degraded-mode ingestion path (batch/offline submission) is supported for units without integrated ERP/EPM connectivity",
+     "note": "degraded ingestion into consolidation, not a fallback consolidation procedure"
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "A documented manual consolidation and tie-out procedure exists as a fallback when the platform is unavailable",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M26",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "at least one trained backup must exist for this function given talent-concentration risk",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M27",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T7",
+     "field": "name",
+     "quote": "Three-statement reconciliation and validation",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Is splitting roll-up from a separate human reconciliation step (ff17 T7) a distinct control, or the same as named analyst certification of the reconciled snapshot (ABB-M21), which ff17 performs in that very step? One-off: step boundary vs the act performed in it.",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "ABB-M21"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ABB-M28",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "Iterations are capped (e.g. two structured rounds) and timeboxed against the T1 calendar",
+     "note": "cap without non-convergence escalation path"
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-07",
+     "field": "description",
+     "quote": "a dated escalation path to CFO/CEO if a submitter has not converged by the final round",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T8",
+     "field": "description",
+     "quote": "with a named escalation path for gaps unresolved at the final round",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "with a CFO escalation rule if convergence is not reached",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "Review is time-boxed to a defined number of rounds with an explicit non-convergence escalation path",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M29",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T6",
+     "field": "outputs",
+     "quote": "Challenge and rationale record",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-07",
+     "field": "outputs",
+     "quote": "Documented resolution log for flagged items",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T8",
+     "field": "description",
+     "quote": "every change imposed on a submitter's numbers is logged with its basis against the specific submission it alters",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "a summary of what changed through challenge",
+     "note": "summary passed to the board, not a review-stage log"
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "quote": "Challenge log / kickback record",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M30",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "route back to the originating T3/T4 submission(s) for correction rather than being silently resolved",
+     "note": "route-back at consolidation, not at review"
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "with real authority to send submissions back",
+     "note": "send-back authority at review; no non-override statement"
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "are kicked back to TS-03/TS-04/TS-05 for resubmission (not silently overridden by FP&A)",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M3",
+    "question": "Is kickback of non-converging lines to owners at review (600a TS-07) the same mechanism as route-back of reconciliation breaks to originating submissions at consolidation (333a T5, ABB-M19), i.e. one route-back control at adjacent points?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "ABB-M19"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ABB-M31",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "a continuous variance-flagging property is an input to this step, not a substitute for it",
+     "note": "variance flagging mentioned only as an input property"
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-07",
+     "field": "description",
+     "quote": "an exception-flagging function highlights material variances against targets, prior iterations and benchmarks",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T8",
+     "field": "description",
+     "quote": "Variance/anomaly-flagging tooling helps the FP&A manager and CFO triage where to focus challenge",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "flags material unexplained movements to focus the conversation",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "fed by an automated variance/exception-flagging agent",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "flag deviations from top-down targets automatically",
+     "note": "automated deviation flags at cost-centre submission, not at review"
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "automated variance flags and dashboards directing challenge effort to material outliers",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M32",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "re-applies the downside macro scenario as a stress test on the draft budget each round",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "T-08",
+     "field": "description",
+     "quote": "the downside scenario and its quantified impact",
+     "note": "quantified downside impact presented at board; no review-stage stress test stated"
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "T6",
+     "field": "outputs",
+     "quote": "Downside-scenario parallel roll-up",
+     "note": "downside roll-up at consolidation rather than in review"
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "mandatory stress-testing of the consolidated plan against the downside macro scenario",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "highlights the largest departures from target, prior year and the downside scenario",
+     "note": "flags departures from downside; no stress test of the budget"
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-07",
+     "field": "description",
+     "quote": "using live scenario and sensitivity toggles against the central and downside assumptions",
+     "note": "scenario toggles available; no mandatory stress test"
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "using live drill-down into drivers and the downside scenario variant",
+     "note": "downside view available; no mandatory stress test"
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "mandatory stress-test of the revised budget against the downside scenario",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "using scenario and sensitivity views (including the downside scenario) to pressure-test assumptions",
+     "note": "downside view used to pressure-test assumptions; no mandatory stress test of the budget"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M33",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "any such change must be surfaced as a disclosed policy change",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M34",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "asynchronous/batched written commentary as the default-supported cadence",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-07",
+     "field": "description",
+     "quote": "A store-and-forward (asynchronous) iteration channel is retained",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "An asynchronous, document-based challenge log is maintained alongside any live review sessions",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M35",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "The pack must explicitly carry the downside macro scenario and the material judgment calls/exception flags surfaced during T6, unsanitised",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-08",
+     "field": "description",
+     "quote": "a summary of what was challenged and left unresolved in review",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T9",
+     "field": "description",
+     "quote": "the override/escalation log from T8",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-08",
+     "field": "inputs",
+     "quote": "Full decision package (scenarios, reconciliations, capex cases, challenge summary)",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "any unresolved or escalated challenges from TS-07",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "TGT-08",
+     "field": "description",
+     "quote": "including the embedded downside scenario",
+     "note": "board pack carries downside scenario only; no judgment flags or unresolved challenges"
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "including the downside scenario view",
+     "note": "board pack carries downside scenario only; no judgment flags or unresolved challenges"
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "T8",
+     "field": "description",
+     "quote": "including the embedded downside scenario view",
+     "note": "board pack carries downside scenario only; no judgment flags or unresolved challenges"
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "together with its downside stress-test results",
+     "note": "board pack carries downside scenario only; no judgment flags or unresolved challenges"
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "including the downside scenario implications",
+     "note": "board pack carries downside scenario only; no judgment flags or unresolved challenges"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M36",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "the approval action and authority remain exclusively with the board",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-08",
+     "field": "description",
+     "quote": "This step remains entirely free of agentic decision authority.",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T9",
+     "field": "description",
+     "quote": "This remains an unautomated governance act with no agent in the decision seat.",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "Approval remains an irreducibly human, minuted decision",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "the approval act itself is irreducibly human",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-08",
+     "field": "description",
+     "quote": "The board reviews and approves the revised budget",
+     "note": "structural actor/step assignment only (no agents in this TSS); no stated restriction/boundary"
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "The board reviews the revised budget, including the downside scenario view, and formally approves it",
+     "note": "structural actor/step assignment only (no agents in this TSS); no stated restriction/boundary"
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T8",
+     "field": "description",
+     "quote": "The board reviews and approves the final budget",
+     "note": "structural actor/step assignment only (no agents in this TSS); no stated restriction/boundary"
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "approves the budget, unchanged in substance from the baseline governance gate",
+     "note": "structural actor/step assignment only (no agents in this TSS); no stated restriction/boundary"
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "The board reviews and approves the revised budget",
+     "note": "structural actor/step assignment only (no agents in this TSS); no stated restriction/boundary"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M37",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "Any conditions attached to approval ('approved subject to X') are explicitly recorded",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "is the recorded trigger condition for TS-09",
+     "note": "approval recorded as trigger; no conditions or their reconciliation"
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "with the approval decision and supporting pack captured in an auditable digital record",
+     "note": "approval recorded; no conditions or their reconciliation"
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M38",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T8",
+     "field": "description",
+     "quote": "A Lock Agent is hard-wired to trigger only on receipt of the board-approved artefact from T7",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-09",
+     "field": "description",
+     "quote": "triggered only by receipt of the board-approved artifact",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T10",
+     "field": "description",
+     "quote": "A load-and-lock mechanism is hard-gated on a verified board-approval artifact",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "A load-and-lock agent is architecturally incapable of firing without a verified board-approval artifact",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "enforcing board-approval-before-lock architecturally, not merely by sequence",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "with the lock enforced only after board approval is confirmed in the system",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "occurs only after, and is gated by, board approval",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "before any version is loaded into downstream systems",
+     "note": "ordering precondition stated at board step; no system gate"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M39",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T8",
+     "field": "description",
+     "quote": "a validation mismatch halts the lock and escalates rather than proceeding silently or partially",
+     "note": "unspecified validation of loaded vs approved figures"
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-09",
+     "field": "description",
+     "quote": "with hash-checked pre-load validation against the board document",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T10",
+     "field": "description",
+     "quote": "runs an automated, machine-generated diff confirming the system-ready version matches the approved document",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "it performs a hash/version match between the artifact about to be loaded and the one the board actually approved",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B5",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "independently confirms (via diff/hash or manual comparison)",
+     "note": "diff/hash comparison performed by/for the human confirmer, optional vs manual"
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M40",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T8",
+     "field": "description",
+     "quote": "attests, on every lock event including clean ones, that the loaded/locked figures are identical to the board-approved document",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-09",
+     "field": "description",
+     "quote": "independently confirms the loaded version reconciles exactly to the board-approved output",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T10",
+     "field": "description",
+     "quote": "A named FP&A analyst reviews that diff and affirmatively certifies the match before the lock takes effect",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "a named FP&A analyst must give an affirmative, logged attestation that the loaded version matches what the board approved",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "a named FP&A analyst distinct from whoever executed the load independently confirms",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M41",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-09",
+     "field": "description",
+     "quote": "a named accountable individual distinct from whoever last touched the consolidation run",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "a named FP&A analyst distinct from whoever executed the load",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M42",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T8",
+     "field": "description",
+     "quote": "any post-lock correction must go through a formal, logged, CFO-authorised re-open procedure",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-09",
+     "field": "description",
+     "quote": "Any post-lock change requires a documented, sign-off change-control reopening",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T10",
+     "field": "description",
+     "quote": "Any subsequent unlock or rollback requires elevated authorization.",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "any post-lock correction of a material error must go through a governed amendment/re-forecast process",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "Any later correction requires an explicit, logged unlock-relock action referencing the governing approval",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-09",
+     "field": "description",
+     "quote": "with system-enforced edit restrictions functioning as the period-discipline gate",
+     "note": "edit restriction/immutability of the lock; no governed re-open procedure"
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "locked via role-based access control",
+     "note": "edit restriction/immutability of the lock; no governed re-open procedure"
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T9",
+     "field": "description",
+     "quote": "locked as the single immutable version used by variance analysis",
+     "note": "edit restriction/immutability of the lock; no governed re-open procedure"
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "with system-enforced edit locks replacing manual version control",
+     "note": "edit restriction/immutability of the lock; no governed re-open procedure"
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M43",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T8",
+     "field": "outputs",
+     "quote": "Load/lock attestation record",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T10",
+     "field": "description",
+     "quote": "the action is written to an immutable, auditable log",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "a named FP&A analyst must give an affirmative, logged attestation",
+     "note": "attestation is logged; no separate lock-event record output"
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-09",
+     "field": "outputs",
+     "quote": "Load-lock verification record",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T9",
+     "field": "description",
+     "quote": "with a full audit trail of the load",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "with the prior draft and exception log retained for audit trail",
+     "note": "retains prior draft and exception log, not a record of the load/lock event"
+    }
+   },
+   "merge_low": {
+    "pattern": "M2",
+    "question": "Is the load/lock attestation/verification record (333a, 600a) a separate control from the named human attestation it records (ABB-M40)?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "ABB-M40"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ABB-M44",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T8",
+     "field": "description",
+     "quote": "Units without tier-one EPM licensing retain a documented manual-lock fallback (access-controlled file/version control)",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T10",
+     "field": "description",
+     "quote": "a checksummed, version-controlled file-based lock carrying the same immutability guarantee is an accepted equivalent",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "The mechanism tolerates batch/offline loading for entities without continuous connectivity.",
+     "note": "offline loading tolerated; no documented fallback with attestation/immutability discipline"
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "a signed-off manual document with a logged change history treated as an equally valid trigger",
+     "note": "manual fallback for the approval trigger, not for the lock mechanism itself"
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M45",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-09",
+     "field": "description",
+     "quote": "The locked version is exported to a durable, vendor-independent format",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M46",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-09",
+     "field": "outputs",
+     "quote": "Archived assumption set and capex business cases",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "with the prior draft and exception log retained for audit trail",
+     "note": "archives different artefacts (prior draft, exception log)"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M47",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T8",
+     "field": "description",
+     "quote": "successor to the former manual-loading role, explicitly named in the transition plan",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M48",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "the BU head remains the accountable author",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-03",
+     "field": "description",
+     "quote": "it is advisory only and never submits on the BU head's behalf",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "owns the final submission as the accountable preparer of record",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "never writes to the plan; the BU head's signed submission is what feeds consolidation",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "the BU head reviews, overrides and submits the final number",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "Business unit heads prepare and own revenue and volume plans",
+     "note": "structural actor/step assignment only (no agents in this TSS); no stated restriction/boundary"
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "Business unit heads prepare and own revenue and volume plans",
+     "note": "structural actor/step assignment only (no agents in this TSS); no stated restriction/boundary"
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "Business unit heads prepare and own revenue and volume plans",
+     "note": "structural actor/step assignment only (no agents in this TSS); no stated restriction/boundary"
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "ownership and approval accountability are unchanged from the baseline",
+     "note": "structural actor/step assignment only (no agents in this TSS); no stated restriction/boundary"
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "Business unit heads prepare and own revenue and volume plans",
+     "note": "structural actor/step assignment only (no agents in this TSS); no stated restriction/boundary"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M49",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-05",
+     "field": "description",
+     "quote": "a written business case that a human writes and a human reads",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "the business case narrative for requests above the threshold remains human-authored",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "this judgment content remains human-authored, with agent assistance limited to ROI/NPV calculation",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M50",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "T-05",
+     "field": "description",
+     "quote": "routes incomplete submissions back with a specific deficiency list",
+     "note": "intake validation routing back to owner only for capex completeness lane"
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "An intake-validation agent checks submissions against assumptions, prior actuals and internal consistency and flags anomalies",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "Offline-capable, template-based submission with validation remains a first-class path",
+     "note": "template validation; no anomaly flagging back to owner"
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "standardised templates that enforce the central assumptions and flag deviations from top-down targets automatically",
+     "note": "automated in-template deviation flags; routing back to owner not stated"
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M51",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "on connector failure the agent falls back to a prior-year template and logs the degraded mode without blocking the BU head",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M52",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T2",
+     "field": "name",
+     "quote": "Set top-down targets",
+     "note": "separate step/actor exists structurally (current-state structure); no stated separation"
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T-02",
+     "field": "name",
+     "quote": "Set and calibrate top-down targets",
+     "note": "separate step/actor exists structurally (current-state structure); no stated separation"
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "description",
+     "quote": "kept structurally separate from assumption-issuance so that a later miss can be attributed to either a bad assumption",
+     "note": ""
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "name",
+     "quote": "Set top-down targets (calibrated, executive-originated)",
+     "note": "separate step/actor exists structurally (current-state structure); no stated separation"
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "distinct from FP&A's assumption-issuance role in TS-01",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-02",
+     "field": "name",
+     "quote": "Set top-down targets",
+     "note": "separate step/actor exists structurally (current-state structure); no stated separation"
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "name",
+     "quote": "Set top-down targets",
+     "note": "separate step/actor exists structurally (current-state structure); no stated separation"
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T2",
+     "field": "name",
+     "quote": "Set top-down targets (scenario-adjusted)",
+     "note": "separate step/actor exists structurally (current-state structure); no stated separation"
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "name",
+     "quote": "Set top-down targets via driver-based scenario modelling",
+     "note": "separate step/actor exists structurally (current-state structure); no stated separation"
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "name",
+     "quote": "Set top-down targets",
+     "note": "separate step/actor exists structurally (current-state structure); no stated separation"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "ABB-M53",
+   "presence": {
+    "20261010-192227-council-FPA-ABB-01-333a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T4",
+     "field": "description",
+     "quote": "kept as a structurally distinct step from T3 because the actor, approval chain and downstream consumers",
+     "note": ""
+    },
+    "20261010-194031-council-FPA-ABB-01-c041": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-04",
+     "field": "description",
+     "quote": "kept distinct from revenue/volume ownership because the drivers, source data",
+     "note": ""
+    },
+    "20261010-201338-council-FPA-ABB-01-ff17": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T4",
+     "field": "name",
+     "quote": "Cost centre and headcount budgets",
+     "note": "separate step/actor exists structurally (current-state structure); no stated separation"
+    },
+    "20261010-203125-council-FPA-ABB-01-29eb": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "name",
+     "quote": "Cost centre and headcount budgets (augmented, locally owned)",
+     "note": "separate step/actor exists structurally (current-state structure); no stated separation"
+    },
+    "20261010-205042-council-FPA-ABB-01-600a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "kept as a distinct, separately accountable step from revenue planning and capex so that challenge in review can trace a number to a single owner",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-ABB-01-ef83": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-04",
+     "field": "name",
+     "quote": "Driver-based cost centre and headcount budgeting",
+     "note": "separate step/actor exists structurally (current-state structure); no stated separation"
+    },
+    "20261010-193948-baseline-FPA-ABB-01-09ed": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "name",
+     "quote": "Cost centre and headcount budgets (template-driven)",
+     "note": "separate step/actor exists structurally (current-state structure); no stated separation"
+    },
+    "20261010-195832-baseline-FPA-ABB-01-355a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T4",
+     "field": "name",
+     "quote": "Driver-based cost centre and headcount planning",
+     "note": "separate step/actor exists structurally (current-state structure); no stated separation"
+    },
+    "20261010-203046-baseline-FPA-ABB-01-95ea": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "name",
+     "quote": "Cost centre and headcount budgets",
+     "note": "separate step/actor exists structurally (current-state structure); no stated separation"
+    },
+    "20261010-205000-baseline-FPA-ABB-01-138f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "name",
+     "quote": "Driver-based cost centre and headcount budgeting",
+     "note": "separate step/actor exists structurally (current-state structure); no stated separation"
+    }
+   },
+   "merge_low": null
+  }
+ ]
+}

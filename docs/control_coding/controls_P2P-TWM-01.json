@@ -1,0 +1,2102 @@
+{
+ "workflow_id": "P2P-TWM-01",
+ "candidates": [
+  {
+   "id": "TWM-C01",
+   "title": "Missing/incomplete source documents raise an explicit data-gap exception, never defaulted to a pass",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "emerging_economy",
+     "pragmatist"
+    ],
+    "quote": "the system's default on ambiguity or missing/malformed data (e.g., GRN absent, retrieval failure, unparseable PO line) is to escalate to the human exception queue, never to pass through as clean",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "missing or ambiguous data is queued and flagged as insufficient, never defaulted to a pass"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Data-gap/incomplete-document exception flag"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "Failed or missing retrieval raises a monitored data-exception event rather than stalling or guessing"
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Assembly status flag (complete / incomplete / low-confidence)"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-01",
+     "field": "outputs",
+     "marker": "Assembly/match-failure exception queue entries"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Codebook judgement: mechanism resembles 'Validation exception queue at capture' (dev P2P-VIP-01) but sits at match-dataset assembly, not invoice capture; coded 'new' provisionally.",
+    "Attribution: several roles in 6c3b round1 (agentic_architect fail-safe escalation; emerging_economy 'flag \"insufficient data\"'; pragmatist failure-recovery path) proposed overlapping forms.",
+    "Baseline: no baseline names a data-gap exception; B1 'An AP analyst reviews exceptions flagged by the engine' and B3 actor 'AP analyst exception override' are generic, not counted.",
+    "Possible overlap with TWM-C02 (ambiguous classification defaults to human lane) and TWM-C03 (manual fallback); 5ef7 'low-confidence' flag straddles C01/C02."
+   ]
+  },
+  {
+   "id": "TWM-C02",
+   "title": "Ambiguous or unclassifiable matches default to escalation / human lane, never to auto-clearance",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "Ambiguous or incomplete classifications default to the human lane, never to auto-release.",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "cannot classify with confidence defaults to escalation into the exception queue, never to automatic clearance"
+    },
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "ambiguous cases default to the human lane, never to auto-release"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-01",
+     "field": "description",
+     "marker": "the engine never defaults to a pass on missing or ambiguous data"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Possibly the same control as TWM-C01 (fail-safe default on missing/ambiguous data); split here because C01 is at assembly and C02 at classification/release.",
+    "c32a presence is a judgement call: the TGT-01 sentence covers missing/ambiguous data at matching, not tolerance classification."
+   ]
+  },
+  {
+   "id": "TWM-C03",
+   "title": "Documented manual / degraded-mode fallback for match execution",
+   "category": "fallback",
+   "codebook_match": "Documented degraded-mode fallback as a named input",
+   "attribution": {
+    "roles": [
+     "pragmatist",
+     "emerging_economy"
+    ],
+    "quote": "The target state needs a documented fallback to manual matching by the AP analyst using the same three documents",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "the function degrades to a documented fallback"
+    },
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-01",
+     "field": "actor",
+     "marker": "with AP analyst as fallback executor"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Deferred-match holding state record (for latent/asynchronous GRN or PO posting)"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "including under low-bandwidth/offline conditions via local capture with asynchronous sync"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-01",
+     "field": "name",
+     "marker": "Automated match execution with manual-completion fallback"
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "event-triggered or scheduled/batch, to support constrained-connectivity sites"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-01",
+     "field": "actor",
+     "marker": "manual-capture fallback"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Attribution: pragmatist and emerging_economy both proposed in 6c3b round1 (emerging_economy: batch job against a local staging extract).",
+    "0842 presence is a variant: a deferred-match holding state (named degraded-mode path per round2_agentic_architect) plus offline evidence capture in TS-03, not an explicit manual-matching fallback.",
+    "5ef7 presence is weaker: batch/scheduled retrieval for constrained connectivity, no manual fallback named.",
+    "Possibly overlaps TWM-C42 (low-tooling fallback for monitoring/reporting)."
+   ]
+  },
+  {
+   "id": "TWM-C04",
+   "title": "Quantity and price/terms variances kept as separately retrievable, typed artifacts (not a single opaque match flag)",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "accounting_standards",
+     "agentic_architect",
+     "finance_domain"
+    ],
+    "quote": "Collapsing them into a single pass/fail signal would destroy the cost-evidence chain",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_accounting_standards"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "three separately named, independently retrievable artifacts rather than a single opaque match flag"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "all remain separately typed, line-level, independently retrievable outputs"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "two distinct, named, per-line-retrievable outputs"
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "two separately timestamped, separately retrievable artifacts"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-01",
+     "field": "description",
+     "marker": "retained as separately labelled, individually inspectable outputs"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-TWM-01-76b4",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "Both legs of the match are preserved as distinct, auditable outputs"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-TWM-01-47aa",
+     "step_id": "TSM-01",
+     "field": "description",
+     "marker": "remain individually traceable outputs so that each can be audited"
+    }
+   ],
+   "flags": [
+    "Control status is a judgement call: could be read as ordinary processing output rather than an evidence control.",
+    "Baseline: B1, B2, B3 also list 'Quantity variance detail' and 'Price and terms variance detail' as separate outputs but without stating auditability/separate retrievability; not counted.",
+    "Codebook: possible partial match to 'Matching kept as a discrete auditable step boundary' (dev), which concerns step boundary rather than artifact separation.",
+    "0842 additionally separates a tax-treatment variance ('Tax-treatment variance detail (typed)'), folded in here."
+   ]
+  },
+  {
+   "id": "TWM-C05",
+   "title": "Exchange-difference (FX) component separately identified in price variance",
+   "category": "evidence",
+   "codebook_match": "Tagged exchange-difference schedule",
+   "attribution": {
+    "roles": [
+     "accounting_standards"
+    ],
+    "quote": "any exchange-difference component embedded in a price/terms variance must remain separately identifiable in the variance detail",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_accounting_standards"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Price and terms variance detail (with exchange-difference component separately identifiable)"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Exchange-difference flag (multi-currency pairs)"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Price and terms variance detail (with FX exchange differences separately identified)"
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Price and terms variance detail (with exchange-difference tag where applicable)"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Codebook match is approximate: dev control was an FX schedule in forecasting; here it is a tag/field within match variance detail."
+   ]
+  },
+  {
+   "id": "TWM-C06",
+   "title": "Match document lineage / evidence chain retained, logged and retrievable",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "accounting_standards"
+    ],
+    "quote": "Every retrieval call is logged with source record IDs for traceability.",
+    "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "Every retrieval is logged with source record identifiers."
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Assembled match document set (with reconstructable document lineage)"
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "The underlying invoice-PO-GRN document linkage is retained and exportable, independent of the vendor matching tool"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-01",
+     "field": "outputs",
+     "marker": "Assembled match document set (archived evidentiary artifact)"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-TWM-01-76b4",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "the full three-document set, not a subset, must always be produced"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-TWM-01-47aa",
+     "step_id": "TSM-01",
+     "field": "description",
+     "marker": "establishes the cost basis under the invoice-to-GRN-to-PO evidence chain"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-TWM-01-77c7",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "This establishes the cost evidence chain"
+    }
+   ],
+   "flags": [
+    "Attribution unclear: 6c3b round1_accounting_standards earlier required the assembled set to keep 'the PO and GRN independently retrievable against the invoice' (different form); 0842 agentic_architect quote is the clearest logging form.",
+    "Baseline presences are weaker variants (evidence chain asserted, no retention/lineage logging mechanism); judgement call.",
+    "May split into two controls: retrieval logging (0842) vs archival of the assembled set (df77, 5ef7, c32a)."
+   ]
+  },
+  {
+   "id": "TWM-C07",
+   "title": "Tolerance policy as a versioned, change-controlled artifact with a named accountable owner",
+   "category": "approval",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "pragmatist",
+     "finance_domain"
+    ],
+    "quote": "This becomes a rule engine consuming a versioned, change-controlled tolerance policy artifact.",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "The tolerance policy itself is a centrally versioned and change-controlled artifact"
+    },
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-02",
+     "field": "actor",
+     "marker": "tolerance policy owner (accountable for policy content and version governance"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-02",
+     "field": "actor",
+     "marker": "governed by AP controller/policy owner"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-02",
+     "field": "inputs",
+     "marker": "Tolerance policy (versioned)"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "a named accountable owner (AP supervisor or controller)"
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-02",
+     "field": "actor",
+     "marker": "with AP supervisor as accountable policy owner"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-02",
+     "field": "description",
+     "marker": "threshold changes go through a separate, human-governed change-control process owned by a named AP control owner"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-TWM-01-f555",
+     "step_id": "TWM-T02",
+     "field": "description",
+     "marker": "The tolerance policy is maintained as a versioned, system-enforced ruleset"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-TWM-01-77c7",
+     "step_id": "TS-03",
+     "field": "actor",
+     "marker": "with AP accountant governance over tolerance policy parameters"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-TWM-01-76b4",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "The tolerance policy remains an explicit, versioned input"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-TWM-01-76b4",
+     "step_id": "TS-03",
+     "field": "actor",
+     "marker": "AP analyst as policy configuration owner"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-TWM-01-47aa",
+     "step_id": "TSM-02",
+     "field": "description",
+     "marker": "its thresholds are version-controlled"
+    }
+   ],
+   "flags": [
+    "Baseline presences are partial: B1 and B5 version the policy but name no owner; B3 names governance but not versioning; B4 has both (owner is AP analyst). B2 absent.",
+    "Might be two controls (versioning/change-control vs named policy owner).",
+    "Codebook: no direct dev match (closest 'Named allocation-basis owner with review log')."
+   ]
+  },
+  {
+   "id": "TWM-C08",
+   "title": "Each match classification records the tolerance-policy version applied",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "the matching agent only applies the current approved version and records which version it applied.",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "referencing applied tolerance policy version"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Tolerance-policy version reference (logged)"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Policy-version citation for the classification"
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Tolerance policy version applied (logged)"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-02",
+     "field": "outputs",
+     "marker": "Tolerance policy version reference"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Codebook: functionally similar to 'Auto-authorisation rule-fired log' (records which rule/policy fired) but applies to classification, not authorisation; coded 'new'.",
+    "Possibly a sub-element of TWM-C07."
+   ]
+  },
+  {
+   "id": "TWM-C09",
+   "title": "Periodic re-approval / recalibration of tolerance thresholds through governed change control",
+   "category": "monitoring",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain",
+     "hitl_designer"
+    ],
+    "quote": "explicit periodic review and re-approval of the tolerance policy thresholds themselves",
+    "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "who periodically re-approves thresholds"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "marker": "Tolerance policy review and re-approval record"
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "sets and periodically re-approves"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-06",
+     "field": "outputs",
+     "marker": "Tolerance recalibration recommendation (subject to governed change control)"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-06",
+     "field": "description",
+     "marker": "Exception-category data from TGT-03 feeds a periodic tolerance-policy recalibration review"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Attribution: 6c3b round1_hitl_designer earlier mentions a threshold that 'is periodically reviewed by an accountable human', but that did not reach the 6c3b TSS; df77 finance_domain/hitl_designer proposed the explicit re-approval form.",
+    "c32a variant is a recalibration loop fed by exception categories (finance_domain), arguably distinct from periodic re-approval.",
+    "Could be merged with TWM-C07 (governed tolerance policy)."
+   ]
+  },
+  {
+   "id": "TWM-C10",
+   "title": "Tolerance parameters locally configurable within centrally governed bands",
+   "category": "other",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "the tolerance policy (feeding T02) must stay locally configurable and inspectable without recourse to the vendor's core system change process or premium licensing",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "locally selectable parameters within centrally governed bands"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "locally configured to reflect market-specific FX or price volatility while remaining internally version-consistent"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Control status is a judgement call: primarily an operating-flexibility provision; the governance element is the central band / version consistency that prevents drift."
+   ]
+  },
+  {
+   "id": "TWM-C11",
+   "title": "Classification engine has no write path to the tolerance policy (separation of policy-setting from application)",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "I require additionally that the agent has no write path to that policy.",
+    "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-02",
+     "field": "description",
+     "marker": "The classification engine consumes the policy but has no write path to it"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "May be considered part of TWM-C07 (change-controlled policy); split because it is an explicit segregation mechanism."
+   ]
+  },
+  {
+   "id": "TWM-C12",
+   "title": "Classification kept as deterministic, inspectable rules logic (ML scoring outside, never inside)",
+   "category": "other",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "this must remain a deterministic rules engine, not a generative or ML-scored classifier.",
+    "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "any statistical or ML-based scoring sits alongside, never inside, this classification"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "The engine remains inspectable deterministic logic"
+    },
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "evaluated by a deterministic rules engine"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-205000-baseline-P2P-TWM-01-47aa",
+     "step_id": "TSM-02",
+     "field": "description",
+     "marker": "rather than an opaque algorithmic judgment"
+    }
+   ],
+   "flags": [
+    "Control status is a judgement call (design constraint vs governance control).",
+    "6c3b presence is weaker: 'deterministic rules engine' stated without the ML-exclusion mechanism. 5ef7 mentions 'deterministic line-level quantity comparison' for matching only; not counted.",
+    "Baseline B5 presence is a weaker variant (documented control vs opaque judgement); B4 actor 'Rules/AI engine' contradicts and is not counted."
+   ]
+  },
+  {
+   "id": "TWM-C13",
+   "title": "Exception disposition reserved to a human; AI may propose but never auto-resolve",
+   "category": "approval",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "pragmatist",
+     "emerging_economy",
+     "hitl_designer"
+    ],
+    "quote": "Third, no agent may resolve an exception or alter match data unilaterally.",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "the agent never auto-applies a resolution"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "the copilot never finalises a disposition"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "No materiality threshold permits an agent to resolve an exception unilaterally"
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "no confidence threshold permits autonomous disposition"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "No exception is auto-resolved."
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-TWM-01-f555",
+     "step_id": "TWM-T03",
+     "field": "description",
+     "marker": "This human-judgment step is preserved unautomated"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-TWM-01-76b4",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "This remains a judgment-based human function"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-TWM-01-446f",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "using engine-surfaced variance detail and suggested root causes"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-TWM-01-77c7",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "using AI-assisted root-cause suggestions where available"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-TWM-01-47aa",
+     "step_id": "TSM-03",
+     "field": "actor",
+     "marker": "AP analyst (with AI-assisted exception triage)"
+    }
+   ],
+   "flags": [
+    "Attribution: near-unanimous in 6c3b round1 (agentic_architect, pragmatist, emerging_economy, hitl_designer each reject auto-resolution).",
+    "Baseline presence: B1 and B4 state human-only explicitly; B2, B3, B5 only imply it (AI suggestions with human analyst actor, no explicit prohibition) - judgement call.",
+    "Overlaps TWM-C14 (named attributable resolver) and TWM-C16 (anti-click-through)."
+   ]
+  },
+  {
+   "id": "TWM-C14",
+   "title": "Exception resolution attributed to a named, accountable individual",
+   "category": "evidence",
+   "codebook_match": "Structured attributable resolution record",
+   "attribution": {
+    "roles": [
+     "pragmatist",
+     "hitl_designer"
+    ],
+    "quote": "I will not accept auto-resolution of exceptions without a named human signing the resolution",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "route to a named, accountable AP analyst"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "Resolved match (accepted, corrected or rejected), attributed to a named human"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "with the resolution evidenced and attributed to a named individual"
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "produced by a named, accountable AP analyst for every exception"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "remain owned by a named human AP analyst in every case"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Codebook match is approximate ('Structured attributable resolution record').",
+    "Baselines have an 'AP analyst' actor and 'Exception resolution evidence' output but no named/attributed individual; not counted.",
+    "May be the same control as TWM-C13."
+   ]
+  },
+  {
+   "id": "TWM-C15",
+   "title": "AI recommendation logged separately from the human decision",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "hitl_designer"
+    ],
+    "quote": "The agent's suggestion is logged as a recommendation, never auto-applied.",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "AI recommendation log (distinct from the human decision)"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "Exception resolution evidence (including AI-proposal vs. human-decision distinction)"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "that acceptance is itself logged as a distinct act of judgment"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Attribution: first appears in 6c3b round1_agentic_architect (where it did not reach the TSS); df77 round1_hitl_designer proposed the 'distinct act of judgment' logging form.",
+    "Overlaps TWM-C16 (anti-click-through) in df77."
+   ]
+  },
+  {
+   "id": "TWM-C16",
+   "title": "Analyst must affirmatively engage with evidence (no single-click acceptance of AI suggestion)",
+   "category": "approval",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "hitl_designer"
+    ],
+    "quote": "The interface must force the analyst to engage with the evidence (not a single-click \"accept AI suggestion\" with no friction)",
+    "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "the analyst must affirmatively construct or select the accept/correct/reject decision"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "not a default click-through"
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "requires the analyst to engage with the underlying evidence rather than single-click accepting a system suggestion"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Attribution: 6c3b round1_hitl_designer earlier ('without the human affirmatively choosing it', 'click-through defeats the control's purpose'); 5ef7 agentic_architect quote is clearest.",
+    "May be one control with TWM-C13/C15."
+   ]
+  },
+  {
+   "id": "TWM-C17",
+   "title": "Materiality-tiered escalation of exceptions to a senior analyst / AP accountant",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "exceptions above a materiality threshold must escalate to a senior analyst or AP accountant",
+    "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "materiality tiering routes high-value or high-complexity cases to a senior analyst or AP accountant"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-03",
+     "field": "actor",
+     "marker": "escalating to senior analyst/AP accountant for material or complex exceptions"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Codebook: related in spirit to 'Risk-tiered approval replacing uniform routing' but applies to investigation routing, not approval."
+   ]
+  },
+  {
+   "id": "TWM-C18",
+   "title": "Deficient evidence packet escalated or resolved with an explicit data-quality caveat",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "the design needs to say what the human does when the evidence packet itself is deficient",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round2_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "resolves with an explicit data-quality caveat rather than treating gaps as resolved"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Attribution from round2 (no round1 proposal found)."
+   ]
+  },
+  {
+   "id": "TWM-C19",
+   "title": "Agent-assembled evidence packet for the exception investigator",
+   "category": "evidence",
+   "codebook_match": "Variance packet assembled before handoff",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "an evidence-assembly sub-agent pulls vendor correspondence, prior resolutions for the same vendor/part, and contract amendment history into a single packet",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-03",
+     "field": "inputs",
+     "marker": "Agent-assembled evidence packet (vendor correspondence, prior resolutions, root-cause taxonomy)"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "A triage agent may assemble the exception packet"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-03",
+     "field": "inputs",
+     "marker": "Agent-proposed disposition and precedent (where available)"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-03",
+     "field": "inputs",
+     "marker": "AI-drafted resolution recommendation"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-193948-baseline-P2P-TWM-01-446f",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "using engine-surfaced variance detail and suggested root causes"
+    }
+   ],
+   "flags": [
+    "Control status is a judgement call (decision support rather than assurance).",
+    "0842 presence is weaker (AI-drafted recommendation input, no packet). Baseline B2 is a weaker variant (suggested root causes); B3/B5 AI suggestions similar, not listed.",
+    "Codebook match approximate: dev 'Variance packet' was assembled for handoff, similar mechanism."
+   ]
+  },
+  {
+   "id": "TWM-C20",
+   "title": "Documented, versioned exception-resolution playbook",
+   "category": "other",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "a documented, versioned resolution playbook so that exception-handling expertise is not concentrated solely in one or two senior analysts",
+    "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-03",
+     "field": "inputs",
+     "marker": "Documented, versioned resolution playbook"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Control status is a judgement call (knowledge-continuity resilience rather than assurance)."
+   ]
+  },
+  {
+   "id": "TWM-C21",
+   "title": "Exception root-cause category captured in resolution evidence",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "I would add vendor correspondence and a root-cause classification taxonomy as explicit inputs/outputs",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-03",
+     "field": "inputs",
+     "marker": "root-cause taxonomy"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-03",
+     "field": "outputs",
+     "marker": "Exception resolution evidence, including exception category"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "6c3b presence is weaker: taxonomy is an input to the evidence packet, not a recorded output. df77 'propose a draft root-cause classification' is an AI proposal only; not counted.",
+    "c32a links this to TWM-C09 recalibration loop."
+   ]
+  },
+  {
+   "id": "TWM-C22",
+   "title": "Verbatim / unsummarised resolution evidence and control record",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "accounting_standards"
+    ],
+    "quote": "Exception resolution evidence must be preserved verbatim into control reporting",
+    "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "Verbatim exception resolution evidence"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "marker": "Match control record (full, unsummarised detail)"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Might be two controls (verbatim resolution evidence vs unsummarised control log; accounting_standards proposed the latter: 'retained in full, not summarised away')."
+   ]
+  },
+  {
+   "id": "TWM-C23",
+   "title": "Risk-tiered release: automated release for clean/in-tolerance no-exception matches; human supervisor approval for exception-touched or override matches",
+   "category": "approval",
+   "codebook_match": "Risk-tiered approval replacing uniform routing",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "hitl_designer"
+    ],
+    "quote": "split into two lanes. Clean and within-tolerance matches with no override and no prior exception flag may be released",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-04",
+     "field": "name",
+     "marker": "Tiered match release approval"
+    },
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "is routed to a human AP supervisor who reviews the full resolution evidence"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "released through a policy-gated, system-enforced auto-release path"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "is excluded from auto-release and requires mandatory, individualised human sign-off by the AP supervisor"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "the system enforces a hard gate preventing any match carrying an exception classification from entering this lane"
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-04",
+     "field": "name",
+     "marker": "Risk-based match release control"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-04",
+     "field": "description",
+     "marker": "released for posting and payment processing by an automated release engine"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-05",
+     "field": "description",
+     "marker": "Every exception-resolved match and any release outside standard tolerance is routed to an AP supervisor"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-195830-baseline-P2P-TWM-01-77c7",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "Clean and in-tolerance matches are released for posting and payment through automated straight-through processing"
+    }
+   ],
+   "flags": [
+    "The hard gate excluding exception-classified matches from the auto lane (explicit in df77, 0842) is folded in here; could be coded as a separate gate control.",
+    "Attribution: 6c3b round1 agentic_architect and hitl_designer both proposed the tiering.",
+    "Baseline B3 is the only baseline with an automated release lane; other baselines keep supervisor review of all releases."
+   ]
+  },
+  {
+   "id": "TWM-C24",
+   "title": "Auto-release lane operates under pre-authorised delegated authority / versioned release policy",
+   "category": "approval",
+   "codebook_match": "Governed delegation-of-authority policy engine for the low-risk tier",
+   "attribution": {
+    "roles": [
+     "maximalist",
+     "finance_domain",
+     "hitl_designer"
+    ],
+    "quote": "release is system-authorized against a delegation-of-authority matrix with no human touch",
+    "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+    "agent_role": "round1_maximalist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "pre-authorised delegation-of-authority lane"
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "under the AP supervisor's standing delegated authority"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-04",
+     "field": "description",
+     "marker": "operating under a pre-authorised, versioned release policy"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "attributable to the governing policy configuration"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "0842 presence is weaker (release attributable to policy configuration, no delegation stated); 6c3b only says the gate 'applies the risk appetite already encoded in TS-02's classification' - not counted.",
+    "May be the same control as TWM-C23.",
+    "Baseline B3 has a 'Straight-through release eligibility flag' but no delegated authority; not counted."
+   ]
+  },
+  {
+   "id": "TWM-C25",
+   "title": "Auto-release action logged (rule/policy-fired release log)",
+   "category": "evidence",
+   "codebook_match": "Auto-authorisation rule-fired log",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "For the automated-release lane, the \"approver\" is the logged policy-engine version itself",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-04",
+     "field": "actor",
+     "marker": "Automated release gate (logged policy engine)"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Recallable auto-release log entries (reversible until payment-run cutoff)"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "release authorisations are logged continuously to the control record"
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Auto-release log (clean lane, timestamped)"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-04",
+     "field": "outputs",
+     "marker": "Void-before-posting log entry"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-195830-baseline-P2P-TWM-01-77c7",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "with the release logged"
+    }
+   ],
+   "flags": [
+    "df77 presence is weaker: release authorisations are logged within the general control record, no dedicated auto-release log.",
+    "Overlaps TWM-C26 (lane tagging) and TWM-C27 (reversibility log in 0842/c32a)."
+   ]
+  },
+  {
+   "id": "TWM-C26",
+   "title": "Release authorisation tagged by lane (automated vs supervisor-approved)",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "synthesis"
+    ],
+    "quote": "Released match authorisation (lane-tagged: automated or supervisor-approved)",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "synthesis"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Released match authorisation (lane-tagged: automated or supervisor-approved)"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-04",
+     "field": "outputs",
+     "marker": "Released match authorisation (system-generated)"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-05",
+     "field": "outputs",
+     "marker": "Released match authorisation (supervisor-approved)"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Attribution: no round1/round2 proposal found; appears first in synthesis.",
+    "c32a presence is implied by separate output labels on two steps rather than a tag.",
+    "May be part of TWM-C25."
+   ]
+  },
+  {
+   "id": "TWM-C27",
+   "title": "Auto-released items reversible / recallable before payment (void window, claw-back)",
+   "category": "fallback",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "any release — automated or human — must remain reversible prior to downstream payment posting",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "recallable up to the payment-run cutoff"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "Any straight-through-released match remains reversible and re-openable via the exception path"
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "a kill-switch/claw-back path available before funds leave"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-04",
+     "field": "description",
+     "marker": "held in a bounded, reversible void-before-posting window"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Category judgement: could be coded as fallback or gate."
+   ]
+  },
+  {
+   "id": "TWM-C28",
+   "title": "Exception resolution must precede release (ordering enforced)",
+   "category": "gate",
+   "codebook_match": "Release gate enforcing requirement ordering as a system precondition",
+   "attribution": {
+    "roles": [
+     "finance_domain",
+     "pragmatist",
+     "maximalist"
+    ],
+    "quote": "the ordering of exception resolution before release approval must be structurally enforced (a workflow gate)",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "Exception resolution (TS-03) always precedes release authorisation for any item that was exception-classified"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "Resolution strictly precedes authorization in all cases."
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "a release attempt cannot proceed for a match still carrying an unresolved exception flag"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-04",
+     "field": "description",
+     "marker": "with no exception resolution outstanding"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-193948-baseline-P2P-TWM-01-446f",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "with the resolution evidenced before release can proceed"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-TWM-01-77c7",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "This step must complete, for a given invoice, before that invoice can proceed to release approval."
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-TWM-01-47aa",
+     "step_id": "TSM-03",
+     "field": "description",
+     "marker": "This precedes release approval"
+    }
+   ],
+   "flags": [
+    "Mandated by encoding requirement TWM-R-08; presence partly reflects compliance with that requirement.",
+    "Only 5ef7 states a system-enforced gate; 6c3b and df77 assert ordering; c32a only conditions the auto lane on no outstanding resolution (weaker). 0842 states no explicit ordering in TS-04 (exclusion from auto lane only).",
+    "Baseline B2, B3, B5 state ordering; B1, B4 do not explicitly."
+   ]
+  },
+  {
+   "id": "TWM-C29",
+   "title": "Release approver reviews full resolution evidence and variance detail, not a status flag",
+   "category": "approval",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "with the source documents and variance detail actually presented to them — not a summary count, not a pre-filled \"approve\" button",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "reviews the full resolution evidence from TS-03 (not merely a pass/fail flag)"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "must view the actual resolution evidence and variance detail, not a status flag"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "reviews the full resolution evidence and variance detail, not a status flag"
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "reviews the variance detail, the resolution evidence and the resolver's identity"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-05",
+     "field": "description",
+     "marker": "explicit, evidenced approval"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-TWM-01-76b4",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "requiring explicit, evidenced approval"
+    }
+   ],
+   "flags": [
+    "Attribution: the 6c3b hitl_designer quote concerns the exception resolver, not the release approver; clearer approver-specific proposal is df77 round1_hitl_designer ('The approver needs the same evidentiary basis the resolver had.').",
+    "c32a and B4 presences are weaker ('evidenced approval' without stating the approver sees resolution evidence). B2/B5 'explicit documented approval' not counted."
+   ]
+  },
+  {
+   "id": "TWM-C30",
+   "title": "Segregation: release approver distinct from exception resolver",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "maximalist",
+     "finance_domain",
+     "pragmatist"
+    ],
+    "quote": "the AP supervisor approving release is never the AP analyst/agent who resolved the exception",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_maximalist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "The supervisor is never the same individual who resolved the exception in TS-03"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "so the same actor can never both resolve and release the same invoice"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "The actor performing exception resolution and the actor authorising release are structurally distinct"
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "the system rejects a release attempt where the releasing identity matches the identity of the analyst"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-05",
+     "field": "description",
+     "marker": "The approving supervisor is a distinct individual from whoever performed the exception resolution"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-TWM-01-f555",
+     "step_id": "TWM-T04",
+     "field": "description",
+     "marker": "independent of the analyst who resolved any exception"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-TWM-01-446f",
+     "step_id": "TGT-04",
+     "field": "description",
+     "marker": "distinct from the analyst who resolved any exception"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-TWM-01-77c7",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "a supervisor distinct from the analyst who performed the exception resolution"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-TWM-01-76b4",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "by a supervisor independent of the investigator"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-TWM-01-47aa",
+     "step_id": "TSM-04",
+     "field": "description",
+     "marker": "distinct from the analyst who performed exception resolution"
+    }
+   ],
+   "flags": [
+    "Mandated by encoding requirement TWM-R-09; universal presence reflects the requirement. Attribution therefore not meaningful (many roles restate it).",
+    "Overlaps TWM-C31 (enforcement mechanism)."
+   ]
+  },
+  {
+   "id": "TWM-C31",
+   "title": "Segregation enforced by a concrete / system-level mechanism (credentials, identity check, rotation or dual control)",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy",
+     "agentic_architect"
+    ],
+    "quote": "must name a concrete mechanism for preserving this segregation at thin headcount",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "enforced by a named concrete mechanism (rotation, a second-site reviewer, or a dual-control checklist)"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "The supervisor role is enforced as a distinct system credential from the analyst role in TS-03"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "enforced at the system/identity level"
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "Actor separation is structurally enforced, not merely documented"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "6c3b mechanism is procedural (rotation/dual-control checklist) whereas 0842/df77/5ef7 are system-enforced; could be two controls.",
+    "c32a gives the supervisor 'a distinct system identity from the automated release path in TGT-04' - a different separation, not counted here (see TWM-C33)."
+   ]
+  },
+  {
+   "id": "TWM-C32",
+   "title": "Instance-level segregation log (resolver/approver identity record)",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "role- and instance-level segregation, not a policy reminder",
+    "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Instance-level segregation log (resolver/approver identity record)"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "The round1 quote proposes instance-level enforcement, not a log; the log output itself first appears in the synthesis.",
+    "Could be part of TWM-C31."
+   ]
+  },
+  {
+   "id": "TWM-C33",
+   "title": "Distinct system identities for automated components (match-execution, tolerance-classification, release-automated)",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "finance_domain"
+    ],
+    "quote": "must run under distinct credentials/roles with independently reviewable logs, whether the actor performing either is human or automated",
+    "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-01",
+     "field": "actor",
+     "marker": "system identity: match-execution"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-02",
+     "field": "actor",
+     "marker": "system identity: tolerance-classification"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-04",
+     "field": "actor",
+     "marker": "system identity: release-automated, distinct from match-execution and tolerance-classification identities"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-05",
+     "field": "description",
+     "marker": "operates under a distinct system identity from the automated release path in TGT-04"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Attribution unclear: round1 agentic_architect proposed distinct credentials for resolution vs release (different form); round2_finance_domain required 'distinct system identities'; the per-engine identities appear first in synthesis."
+   ]
+  },
+  {
+   "id": "TWM-C34",
+   "title": "Named backup approver for release approval",
+   "category": "fallback",
+   "codebook_match": "Offline-cached delegation policy with named fallback approver",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "the design must name a backup/delegate approver",
+    "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-05",
+     "field": "description",
+     "marker": "A named backup approver is designated"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-05",
+     "field": "actor",
+     "marker": "with named backup approver"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Codebook match partial: dev control combined offline-cached delegation policy with named fallback approver; only the named fallback approver element is present."
+   ]
+  },
+  {
+   "id": "TWM-C35",
+   "title": "Sampling audit of the auto-released population",
+   "category": "monitoring",
+   "codebook_match": "Mandatory sampling audit of the auto-approved population",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "hitl_designer"
+    ],
+    "quote": "a sample is subject to periodic supervisor audit",
+    "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Audit-sampling record"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "marker": "Sampling audit findings on straight-through releases"
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "marker": "Auto-released population sampling report"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-06",
+     "field": "description",
+     "marker": "performs periodic sampling review of the auto-released clean/in-tolerance population"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Attribution: 0842 round1 agentic_architect and hitl_designer ('batch release with sampling') both proposed; df77 finance_domain/hitl_designer and 5ef7 finance_domain/hitl_designer/agentic_architect independently."
+   ]
+  },
+  {
+   "id": "TWM-C36",
+   "title": "Continuous real-time logging of match outcomes, overrides and resolutions to the control record",
+   "category": "monitoring",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain",
+     "maximalist",
+     "agentic_architect"
+    ],
+    "quote": "I would move this from a periodic batch report to a continuous control feed",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "logged continuously and immutably as they occur"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "logged continuously and in full detail (not summarised)"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "logged continuously to the control record as a native byproduct"
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "logged continuously to the control record rather than compiled on a fixed batch cycle"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-06",
+     "field": "description",
+     "marker": "logged in real time to an append-only control record"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-TWM-01-f555",
+     "step_id": "TWM-T05",
+     "field": "description",
+     "marker": "logged to the control record in real time as they occur"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-TWM-01-446f",
+     "step_id": "TGT-05",
+     "field": "description",
+     "marker": "logged in real time to the control record by the monitoring platform"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-TWM-01-77c7",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "logged continuously to the control record"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-TWM-01-76b4",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "logged continuously to a live control record"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-TWM-01-47aa",
+     "step_id": "TSM-05",
+     "field": "description",
+     "marker": "logged in real time to the control record"
+    }
+   ],
+   "flags": [
+    "Baseline workflow TWM-07 already logs to a control record; the change is continuity. Universal presence in council and baseline."
+   ]
+  },
+  {
+   "id": "TWM-C37",
+   "title": "Immutable / append-only control log",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "must write an immutable, timestamped log entry keyed to the specific invoice/PO/GRN",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "logged continuously and immutably as they occur"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-06",
+     "field": "outputs",
+     "marker": "Append-only match control record"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Could be a sub-element of TWM-C36."
+   ]
+  },
+  {
+   "id": "TWM-C38",
+   "title": "Named periodic human review and sign-off / attestation of the match-rate and override report",
+   "category": "approval",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "pragmatist",
+     "agentic_architect"
+    ],
+    "quote": "the periodic match-rate and override report still needs an AP accountant's reviewed sign-off, not just a live dashboard nobody attests to",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "reviewed with a named, dated sign-off by the AP accountant"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "marker": "Periodic match-rate and override report (locally exportable, human-signed-off)"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-TWM-01-df77",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "marker": "Match-rate and override report (periodically attested)"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-06",
+     "field": "description",
+     "marker": "produces match-rate and override reporting on a defined cadence"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-195830-baseline-P2P-TWM-01-77c7",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Periodic control attestation"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-TWM-01-446f",
+     "step_id": "TGT-05",
+     "field": "description",
+     "marker": "producing periodic match-rate, override and exception reports for control review"
+    }
+   ],
+   "flags": [
+    "c32a presence is weaker (reporting on a defined cadence, no sign-off). 5ef7 has no attestation, only threshold escalation to a named reviewer (TWM-C40).",
+    "Baseline B2 is a weaker variant (periodic reports for review, no sign-off).",
+    "Codebook: resembles dev attestation/certification controls ('Periodic completeness attestation on intercompany', 'Two-tier reconciliation certification') but on a different object; coded 'new'."
+   ]
+  },
+  {
+   "id": "TWM-C39",
+   "title": "Override / anomaly concentration surfaced by approver, analyst or vendor",
+   "category": "monitoring",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "agentic_architect"
+    ],
+    "quote": "it should surface override concentration by approver and by vendor",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "surfacing override concentration by approver and by vendor"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "anomalies such as override clustering by analyst or vendor surfaced as they occur"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "marker": "Continuous anomaly/override monitoring surface"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Baselines B1 ('enabling earlier detection of control drift for review') and B3 ('tracks match rates, override frequency and aging exceptions') are generic dashboards without concentration analysis; not counted.",
+    "May be one control with TWM-C40."
+   ]
+  },
+  {
+   "id": "TWM-C40",
+   "title": "Threshold-triggered escalation of override/sampling exceptions to a named reviewer",
+   "category": "monitoring",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "with escalation triggers (e.g., override-rate threshold breach) configured to page a human rather than relying on someone remembering to look at a report",
+    "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "Override-rate and sampling-exception thresholds trigger an active escalation to a named human reviewer"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "May be one control with TWM-C39."
+   ]
+  },
+  {
+   "id": "TWM-C41",
+   "title": "Period-cutoff tag on match control records",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "accounting_standards"
+    ],
+    "quote": "make period-tagging of match completion an explicit output, not an incidental timestamp",
+    "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+    "agent_role": "round1_accounting_standards"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "Every match control record entry carries an explicit period-cutoff tag"
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "marker": "Match control record (period-tagged)"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-195830-baseline-P2P-TWM-01-77c7",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Period-tagged document assembly record"
+    }
+   ],
+   "flags": [
+    "Baseline B3 tags the document assembly record (at receipt), not match completion/release; weaker/different variant - judgement call.",
+    "Codebook: no direct match (related to cutoff discipline / 'Discrete subledger lock preserved under continuous reconciliation')."
+   ]
+  },
+  {
+   "id": "TWM-C42",
+   "title": "Lightweight / batch / exportable implementation of control reporting for constrained sites",
+   "category": "fallback",
+   "codebook_match": "Documented degraded-mode fallback as a named input",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "Reporting must be deliverable as a lightweight, periodic batch extract rather than a continuously-licensed real-time BI dashboard",
+    "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "A lightweight periodic batch extract remains an acceptable, non-degraded implementation"
+    },
+    {
+     "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "available in a basic, exportable format usable without premium BI/analytics licensing"
+    },
+    {
+     "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "a genuine batch/offline execution path preserved for sites without reliable live connectivity"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-06",
+     "field": "description",
+     "marker": "achievable with lightweight tooling where premium platforms are unavailable"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Codebook match approximate; dev control was a named fallback input procedure.",
+    "Possibly the same control family as TWM-C03; control status (resilience vs accessibility) is a judgement call."
+   ]
+  },
+  {
+   "id": "TWM-C43",
+   "title": "Control-monitoring reviewer organisationally independent of engine and release operators",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "pragmatist",
+     "accounting_standards"
+    ],
+    "quote": "the control-reporting step (TWM-07) must remain a genuinely independent review",
+    "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-06",
+     "field": "description",
+     "marker": "organisationally independent of whoever operates the matching engine"
+    },
+    {
+     "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+     "step_id": "TGT-06",
+     "field": "actor",
+     "marker": "independent of match-execution, tolerance-classification and release-automation operators"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Attribution: c32a synthesis credits 'pragmatist's and accounting_standards' independence concern'; accounting_standards raised it as an open tension in round2 rather than proposing it."
+   ]
+  }
+ ]
+}

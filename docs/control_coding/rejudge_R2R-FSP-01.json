@@ -1,0 +1,3822 @@
+{
+ "workflow_id": "R2R-FSP-01",
+ "controls": [
+  {
+   "id": "FSP-M01",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T1",
+     "field": "description",
+     "quote": "issues a discrete, timestamped confirmation that the trial balance is closed and reconciled before any adjustment posting begins",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "The confirmation remains an explicit human decision and the hard gate that unlocks all downstream work",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T1",
+     "field": "description",
+     "quote": "the GL accountant must issue an explicit, timestamped confirmation action every period - including clean passes",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "performs a discrete, timestamped attestation that the trial balance is closed and reconciled",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "where any item is open, stale, or flagged, the GL accountant investigates the exception and makes the affirmative confirmation decision",
+     "note": "Human confirmation only for non-clean passes; clean passes are auto-staged by the dashboard."
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B5",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "Subledger closure and reconciliation completion are confirmed via automated close-status monitoring",
+     "note": "Actor is GL accountant and step gates downstream, but confirmation is stated as via automated monitoring; no explicit human act."
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "Period-end cutoff gates remain enforced before any downstream adjustment or drafting activity can proceed",
+     "note": "GL accountant confirms close and gate before downstream; no discrete/timestamped act stated."
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B5",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "confirmed via continuous close monitoring, establishing the closed, reconciled trial balance that gates all downstream reporting",
+     "note": "Same as b1b5: confirmation via automated monitoring, actor GL accountant."
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B5",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "confirmed via an automated close-status dashboard, establishing the closed, reconciled trial balance that gates all downstream statement preparation",
+     "note": "Same as b1b5."
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "the GL accountant confirms closed status and investigates any flagged exceptions before the trial balance is declared closed and reconciled",
+     "note": "Explicit human confirmation before TB declared closed; not stated as discrete/timestamped."
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M02",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T1",
+     "field": "description",
+     "quote": "the GL accountant reviews the resulting exception list",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Close exception log",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T1",
+     "field": "description",
+     "quote": "Exceptions open a ticket requiring resolution or a reasoned override before confirmation can complete",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Close-readiness exception log",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Close-readiness exception log",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "continuously monitored via an automated reconciliation engine; the GL accountant confirms closed status and investigates any flagged exceptions",
+     "note": "Automated flagging plus human investigation; no list/log artefact."
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M03",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T1",
+     "field": "description",
+     "quote": "fails closed (no auto-confirmation) on missing or stale data",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "where any item is open, stale, or flagged, the GL accountant investigates the exception and makes the affirmative confirmation decision",
+     "note": "Stale/open items are not auto-staged and go to the human; not described as fail-closed, missing data not mentioned."
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Is the fail-closed pre-check (no auto-confirmation on missing/stale close data) a distinct preventive rule, or the same mechanism as FSP-M01's mandatory human confirmation gate on the same object at the same step (neither a directional pair, a log, adjacent points nor a subset)?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "FSP-M01"
+     ]
+    }
+   }
+  },
+  {
+   "id": "FSP-M04",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "(manually sourced where no system feed exists)",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T1",
+     "field": "description",
+     "quote": "where a status feed is itself manually tracked, a manual-input fallback is supported rather than assumed away",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M05",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T1",
+     "field": "description",
+     "quote": "Exceptions open a ticket requiring resolution or a reasoned override before confirmation can complete",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "The mapping table and any manual override are logged.",
+     "note": "Override logged but no recorded reason; also a different object (mapping) from d272 (close exceptions)."
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "The singleton candidate spans two objects at non-adjacent steps: reasoned override of close exceptions (d272 T1, T7 log) and logging of manual mapping overrides (5655 TS-05, the same quote also used for FSP-M20). Keep as one generic 'logged override' control, or split, with the mapping-override part merged into FSP-M20?",
+    "alternative": {
+     "type": "split",
+     "into": [
+      [
+       "FSP-C05 (close-exception override, d272)"
+      ],
+      [
+       "FSP-C05 (mapping override, 5655) -> merge with FSP-M20"
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "id": "FSP-M06",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "the close can be reopened if a problem surfaces later",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M07",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "are prepared by a named accountable preparer with a documented basis attached before posting",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "require a named accountable preparer to document the basis before posting; they are never auto-posted",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "description",
+     "quote": "who must supply and sign a documented basis before it posts",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "Judgmental entries (provisions, impairments, NRV write-downs) retain a named accountable preparer who sets or approves the assumptions and documents the basis before posting",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02b",
+     "field": "description",
+     "quote": "reviews and approves each item with a documented basis before posting; nothing in this category is auto-posted on confidence score alone",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "Estimation entries (provisions, NRV write-downs, ECL) retain an accountable human preparer",
+     "note": "Accountable human preparer retained; no documented basis or before-posting precondition."
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "Estimation-based entries (provisions, NRV write-downs) retain an accountable human preparer per IAS 8/IAS 2.",
+     "note": "As b1b5."
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "provisions and other estimation-based adjustments remain posted and signed off by an accountable GL accountant",
+     "note": "As b1b5 (sign-off stated, no documented basis)."
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "estimation-based entries (provisions, impairments, NRV write-downs) retain an accountable GL accountant",
+     "note": "As b1b5."
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M08",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T2",
+     "field": "description",
+     "quote": "posted automatically from the approved adjustment schedule and verified revenue cut-off evidence",
+     "note": "Verification stated only as an adjective on the input evidence."
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "Revenue cut-off verification remains a distinct, evidenced sub-activity within this step",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "description",
+     "quote": "Revenue cut-off evidence is actively verified against the schedule, not passed through silently.",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "with automated validation against revenue cut-off evidence",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "TS-02b",
+     "field": "description",
+     "quote": "Estimation-based entries (provisions, impairments, NRV write-downs, judgmental revenue cut-off calls)",
+     "note": "Only judgmental cut-off calls are reviewed (as estimate approvals); no cut-off verification for deterministic cut-off entries."
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "with revenue cut-off evidence verified",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "with revenue cut-off verified. Estimation-based",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "revenue cut-off is verified against evidence",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "with revenue cut-off evidence verified at the point of posting",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "are posted, with revenue cut-off verified",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M09",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "description",
+     "quote": "post automatically with full traceability to the approved adjustment schedule line they correspond to",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02a",
+     "field": "description",
+     "quote": "Every posting is logged and reversible by journal reversal, not file edit.",
+     "note": "Posting log exists (output) but traceability to schedule line not stated."
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M10",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "posted with exception-only human review",
+     "note": "Exceptions on mechanical entries go to human review; exception type and blocking not stated."
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "description",
+     "quote": "Any entry lacking matching support, any amount variance against the schedule, or any estimate-bearing line",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "Any schedule/evidence mismatch or missing approval reference is routed to the GL accountant as an exception and is never auto-overridden",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M11",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "description",
+     "quote": "All postings are reversible through a standard protocol, never one-way writes",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02a",
+     "field": "description",
+     "quote": "Every posting is logged and reversible by journal reversal, not file edit.",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M12",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T4",
+     "field": "description",
+     "quote": "Unmatched intercompany items, stale or missing rates, and anomalous translation movements are routed to the group accountant for resolution rather than auto-cleared",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Intercompany exception queue",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "Unmatched intercompany balances, elimination breaks, and rate-source anomalies are never auto-resolved or netted away",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "Unmatched or mismatched intercompany items are hard-stopped and escalated to the Group accountant for resolution",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "Unmatched intercompany items and rate-feed anomalies are not auto-resolved - they escalate as blocking exceptions to the Group accountant",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Same exception-routing mechanism (route to Group accountant, never auto-resolve) at the same consolidation step on two different objects (IC breaks vs FX rate anomalies); c9c7, d272 and 106a state both in one queue/sentence, cac9 keeps two queues. One control or two?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "FSP-M13"
+     ]
+    }
+   }
+  },
+  {
+   "id": "FSP-M13",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T4",
+     "field": "description",
+     "quote": "stale or missing rates, and anomalous translation movements are routed to the group accountant for resolution",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "Unmatched intercompany items and rate anomalies are routed to the Group accountant as two distinct, labelled exception queues",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "Unmatched intercompany balances, elimination breaks, and rate-source anomalies are never auto-resolved or netted away",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "exchange differences above a defined threshold, and any unusual movement, are surfaced to the Group accountant for review",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "Unmatched intercompany items and rate-feed anomalies are not auto-resolved - they escalate as blocking exceptions to the Group accountant",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Mirror of FSP-M12: FX rate/translation anomaly routing shares the mechanism, step and (in three runs) the queue with IC-break routing. One control or two?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "FSP-M12"
+     ]
+    }
+   }
+  },
+  {
+   "id": "FSP-M14",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T4",
+     "field": "outputs",
+     "quote": "Intercompany elimination record",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "so elimination completeness and exchange-difference visibility each remain separately demonstrable",
+     "note": "Separately logged outputs are the consolidated TB/translated TB/translation differences; no distinct elimination record."
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "quote": "Intercompany elimination completeness schedule",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "intercompany elimination completeness remain two separately logged, non-netted outputs",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "both of which remain mandatory and separately evidenced in the outputs",
+     "note": "Same claim as d272 (elimination separately evidenced in outputs); outputs contain no elimination record. Called identically to d272."
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B2",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "keeping both computations fully auditable",
+     "note": "Auditability stated as a goal; no separate record or output."
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M15",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T4",
+     "field": "description",
+     "quote": "Translation differences and the elimination record remain separately retrievable artifacts, never netted into a single black-box consolidated figure",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "differences separately tagged for OCI",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "remain three separately logged, independently queryable outputs even though one step produces them",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "Translation differences are logged as their own separately dated artifact, distinct from any elimination workpaper.",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "Translation differences (to OCI) and intercompany elimination completeness remain two separately logged, non-netted outputs",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Translation differences",
+     "note": "Translation differences produced as a separate output (and routed to OCI); no explicit never-netted statement."
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Translation differences",
+     "note": "Translation differences produced as a separate output (and routed to OCI); no explicit never-netted statement."
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Translation differences",
+     "note": "Translation differences produced as a separate output (and routed to OCI); no explicit never-netted statement."
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Translation differences",
+     "note": "Translation differences produced as a separate output (and routed to OCI); no explicit never-netted statement."
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Translation differences",
+     "note": "Translation differences produced as a separate output (and routed to OCI); no explicit never-netted statement."
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M16",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B2",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "Group accountant capacity shifts from manual matching to exception resolution and completeness attestation.",
+     "note": "Attestation named only as a capacity shift, not as an operative step mechanism or output."
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M2",
+    "question": "Is the Group accountant completeness attestation a separate check, or the attestation over FSP-M14's elimination completeness record (same object, same step)?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "FSP-M14"
+     ]
+    }
+   }
+  },
+  {
+   "id": "FSP-M17",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T4",
+     "field": "description",
+     "quote": "intercompany balances and transactions are then matched and eliminated on the resulting common-currency basis",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "intercompany balances and transactions are then matched and eliminated against the translated figures",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "The subsidiary trial balance is translated at closing and average rates, translation differences are routed to OCI, and entity trial balances are consolidated",
+     "note": "Order implied only by sentence order; no sequencing word."
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "translated into the presentation currency before consolidation, so that intercompany matching never has to operate on mixed-currency balances",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "intercompany balances are expressed in a common currency before matching",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "with translation differences routed to OCI, then consolidated with full identification, matching and elimination of intragroup balances",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M18",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "tolerates heterogeneous evidence (system-generated or manually confirmed)",
+     "note": "Tolerance of manual evidence, not a fallback procedure for the platform."
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "with a spreadsheet-based fallback specified so the step remains executable without a specific proprietary consolidation platform",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "so the local team can operate the mapping manually if the platform is unavailable",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M19",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "New, reclassified, or unrecognized accounts are exception-routed to a named Financial Reporting reviewer rather than defaulted or silently dropped",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "reviews flagged exceptions (unmapped or newly-appearing accounts, restructured charts of accounts) before they can reach drafting",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T4",
+     "field": "description",
+     "quote": "Unmapped or newly appearing accounts are never defaulted to a bucket; they are routed to Financial reporting for resolution",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "New, reclassified, or otherwise unmapped accounts are routed to Financial reporting as a named exception rather than defaulted by a system guess",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "New or unmapped accounts and structural changes are routed to Financial reporting as an exception",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "using the standing chart-of-accounts-to-disclosure mapping, with exceptions routed for review",
+     "note": "Mapping exceptions routed for review; reviewer, object detail and no-default rule not stated."
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "with Financial reporting validating exceptions and structural changes",
+     "note": "Financial reporting validates mapping exceptions; no log or no-default rule."
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M20",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "against the maintained chart-of-accounts-to-line-item taxonomy",
+     "note": "Maintained mapping only; no version/change control."
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "using a maintained, version-controlled mapping table",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T4",
+     "field": "description",
+     "quote": "Standard account-to-line-item mapping applies automatically from a maintained crosswalk",
+     "note": "As c9c7."
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "The mapping table and any manual override are logged.",
+     "note": "Mapping table logged; no version control or named owner stated."
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "via a maintained, version-controlled crosswalk",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "using a maintained chart-of-accounts-to-disclosure mapping",
+     "note": "As c9c7."
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "with Financial reporting validating exceptions and structural changes",
+     "note": "Structural changes are of the chart of accounts (M19 object), not changes to the mapping table."
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M21",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "name",
+     "quote": "Map trial balance to statement line items",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "name",
+     "quote": "Map trial balance to statement line items",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T4",
+     "field": "description",
+     "quote": "This remains a visibly distinct step from drafting and from consolidation",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "name",
+     "quote": "Map trial balance to statement line items",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "this boundary is kept distinct because it is where the Group accountant",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "name",
+     "quote": "Map trial balance to statement line items",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "name",
+     "quote": "Map trial balance to statement line items",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "name",
+     "quote": "Map trial balance to statement line items",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M22",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "owning all judgmental disclosure content and materiality decisions",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "Narrative judgment (policy-change characterisation, error disclosure, estimation-uncertainty wording) remains human-authored by Financial reporting",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "Statement and note drafting remains human-authored and human-accountable",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "Financial reporting remains the accountable drafter of record",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "Financial reporting remains the accountable author of record",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "kept in one Financial-reporting-owned step since drafting is the substantive judgment activity",
+     "note": "Financial reporting owns drafting incl. judgment; no explicit accountable-author-of-record statement."
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "actor",
+     "quote": "Financial reporting",
+     "note": "Human function is the actor of drafting (incl. policy-change/error disclosures); accountability not stated. Same call as other baselines."
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "actor",
+     "quote": "Financial reporting",
+     "note": "As 8bc6."
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "actor",
+     "quote": "Financial reporting",
+     "note": "As 8bc6."
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "Financial reporting then drafts the primary statements and key notes",
+     "note": "Financial reporting is the drafter; accountability for judgmental content not stated."
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M23",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "including disclosure of accounting policy changes and prior-period errors",
+     "note": "Disclosure content required; no mechanism against omission of the record."
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "automatically pulling the accounting policy change and prior-period error record into the relevant disclosures so nothing is silently dropped",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "Any content touching accounting policy changes, prior-period error correction, or revenue/FX judgment must be reviewed, edited and finalized",
+     "note": "Review of generated text on these topics, not carry-through of the record."
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "especially the characterisation and disclosure of policy changes and prior-period errors",
+     "note": "As d272."
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "explicitly reviewing the accounting policy change and prior-period error record rather than letting it be summarized away",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "including disclosure of policy changes and prior-period errors",
+     "note": "As c9c7."
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "including disclosure of policy changes and prior-period errors",
+     "note": "As c9c7."
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "incorporating required disclosure of policy changes and prior-period error corrections",
+     "note": "As c9c7."
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "including disclosure of policy changes and prior-period errors",
+     "note": "As c9c7."
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "including disclosure of policy changes and prior-period errors",
+     "note": "As c9c7."
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M24",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "This remains a distinct step, functionally separate from drafting",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "This step is kept as a separate pause point rather than folded into drafting",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "Tie-out survives as a discrete, human-owned checkpoint",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "Retained as a genuine, separately performed checkpoint between drafting and CFO review",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "formally closes out tie-out, producing dated tie-out evidence before the draft proceeds to management review",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "name",
+     "quote": "Analytical review and tie-out",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "name",
+     "quote": "Automated analytical review and tie-out",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "name",
+     "quote": "Automated analytical review and tie-out",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M25",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "T7",
+     "field": "actor",
+     "quote": "Financial reporting (reviewer distinct from the preparer of the draft where feasible)",
+     "note": "Qualified \"where feasible\" (conditional)."
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "performed by a reviewer distinct from the drafting pass",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "performed by a function independent of whoever produced the draft",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "the independent check is exactly what KB-02",
+     "note": "Independent checkpoint asserted, but reviewer is not stated to differ from the drafter."
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "actor",
+     "quote": "Financial reporting (reviewer distinct from preparer)",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M26",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T8",
+     "field": "description",
+     "quote": "The review package explicitly surfaces the judgment and exception trail generated upstream",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "The approval package must explicitly include tie-out evidence, the exception/escalation log",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T7",
+     "field": "inputs",
+     "quote": "Consolidated exception and override log",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "approval packet carries forward the full exception trail generated upstream",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "The review package explicitly surfaces estimate-based adjustments and their basis",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M27",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T8",
+     "field": "description",
+     "quote": "The approver is structurally distinct from the drafter at all times.",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "This actor remains organisationally distinct from whoever performs drafting (TS-05).",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "structurally distinct from the drafting actor",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "Retained unchanged in substance and kept actor-distinct from drafting.",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "Management reviews and approves the financial statements",
+     "note": "Segregation implied only by different actor fields (CFO vs Financial reporting); not stated."
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "Actor separation from drafting (TS-04) is preserved to maintain a genuine review control.",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "Performed by an actor distinct from the preparer of the draft statements.",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "The CFO, independent of the drafting function",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "Performed by a different actor than drafting to preserve independent review.",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "independently of the Financial reporting function that drafted them, preserving segregation of duties",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M28",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "the review interface must expose a genuine reject/query/escalate path tied to specific flagged items",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M29",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T9",
+     "field": "description",
+     "quote": "strictly trigger-gated on the logged approval event from management review, never fired on a schedule or inference",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "are substantially automated once CFO approval is captured",
+     "note": "Release automation follows captured approval; logged trigger / sole-trigger not stated."
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T8",
+     "field": "description",
+     "quote": "The release action executes only on receipt of the positive, logged approval token from T7",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "strictly gated on receipt of the CFO",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "triggered strictly against a verified approved-statements flag",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "released or submitted through a system-triggered distribution step once approval is recorded",
+     "note": "As cac9 (release triggered once approval recorded); called identically."
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M30",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T9",
+     "field": "description",
+     "quote": "The release function confirms a byte-for-byte match between the approved and filed/distributed package before release",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "a named human confirms that the artifact being released is byte-for-byte the version that was approved",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B2",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "The released artifact must be provably identical to the approved one",
+     "note": "Stated as a requirement; no confirmation act or record named."
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M2",
+    "question": "The approved-vs-released identity check and the release authorization record (FSP-M31) share one artefact in cac9 ('Version confirmation record'). Is the identity check distinct from its release record?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "FSP-M31"
+     ]
+    }
+   }
+  },
+  {
+   "id": "FSP-M31",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T9",
+     "field": "outputs",
+     "quote": "Approved-vs-released match confirmation",
+     "note": "Release-time record is the identity check only; no release authorization log."
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "This remains a visible, separately timed step so that",
+     "note": "Separately timed release step with a version confirmation record; record is an identity check, not explicitly a release authorization log."
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T8",
+     "field": "description",
+     "quote": "logs its own authorizing timestamp as a distinct evidentiary artifact from the approval timestamp",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-09",
+     "field": "outputs",
+     "quote": "Release authorization record",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "performs an explicit, logged authorization act distinct from the approval decision itself",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M32",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T9",
+     "field": "description",
+     "quote": "with a manual/offline fallback path preserved where e-filing portals or network links are unreliable",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "batch/offline fallback where connectivity is unreliable",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "with electronic distribution/filing support where available",
+     "note": "Implies non-electronic release where unavailable; no fallback path stated."
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M33",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T9",
+     "field": "description",
+     "quote": "any failure blocks and escalates rather than retrying silently",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M34",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "retractable through a controlled correction path rather than silently overwritten",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "with a short retraction window before external transmission is finalized",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M3",
+    "question": "The singleton candidate holds a pre-transmission retraction window (106a TS-08) and a post-release controlled correction path (5655 TS-09): same reversal mechanism at the points before and after external transmission. One control or two?",
+    "alternative": {
+     "type": "split",
+     "into": [
+      [
+       "FSP-C34 (pre-transmission retraction window, 106a)"
+      ],
+      [
+       "FSP-C34 (post-release correction path, 5655)"
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "id": "FSP-M35",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "Exception and escalation log",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "Automated variance detection pre-computes differences between the draft and the underlying trial balance",
+     "note": "Variances flagged for human assessment; no log."
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "quote": "Variance exception log",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "maintaining a running variance log",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "surfacing variances for correction before the package reaches management",
+     "note": "As d272."
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "with exception-based analytical review by Financial reporting",
+     "note": "As d272."
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "flagging variances; Financial reporting reviews and resolves flagged exceptions",
+     "note": "As d272."
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M36",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "not a residual check on whatever an automated threshold happened to flag",
+     "note": "Automated threshold mentioned only to say review is not limited to it."
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "a human must assess whether each flagged variance is explainable and material",
+     "note": "Human materiality judgment over flagged variances; no defined threshold."
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "variance items above a defined materiality threshold must be read and explained, not merely acknowledged",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "exercises materiality judgment over unresolved variances",
+     "note": "As d272."
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M37",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "holds authority to kick the draft back to T5 before it reaches the CFO",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "Unresolved variances block progression; they are never silently auto-closed.",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "surfacing variances for correction before the package reaches management",
+     "note": "Correction before management implied; no blocking rule or send-back authority."
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "Financial reporting reviews and resolves flagged exceptions",
+     "note": "Resolution stated; no blocking of progression."
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M38",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "performs genuine analytical review of variances and plausibility rather than merely adjudicating system-flagged exceptions",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "not a residual check on whatever an automated threshold happened to flag",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "receives the full structured evidence log (not a pre-filtered summary)",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "FSP-M39",
+   "presence": {
+    "20261010-192227-council-R2R-FSP-01-c9c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "Discrepancies are explicitly triaged and classified as current-period corrections or IAS 8 prior-period errors",
+     "note": ""
+    },
+    "20261010-194053-council-R2R-FSP-01-cac9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-R2R-FSP-01-d272": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203150-council-R2R-FSP-01-5655": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205048-council-R2R-FSP-01-106a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-R2R-FSP-01-b1b5": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-R2R-FSP-01-8bc6": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-R2R-FSP-01-38b8": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-R2R-FSP-01-0590": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-R2R-FSP-01-cec0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  }
+ ]
+}

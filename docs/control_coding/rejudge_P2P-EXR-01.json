@@ -1,0 +1,4029 @@
+{
+ "workflow_id": "P2P-EXR-01",
+ "controls": [
+  {
+   "id": "EXR-M01",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "Low-confidence or failed digital extractions route to the AP analyst's manual-keying queue",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "description",
+     "quote": "route to an AP analyst exception queue for manual correction",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "description",
+     "quote": "Low-confidence extractions and policy exceptions route to a named, resourced AP exception specialist",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-02",
+     "field": "description",
+     "quote": "low-confidence lines (illegible, non-Latin script, non-standard formats) route to an AP-analyst exception queue",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "EXR-T02",
+     "field": "description",
+     "quote": "lines that fail or fall outside system confidence (e.g. missing receipt, unusual category, duplicate suspicion) are routed to an AP analyst for exception review",
+     "note": "'system confidence' is unspecified and sits in the policy step; examples are policy/anomaly conditions, not extraction confidence -> object unclear; called absent"
+    }
+   },
+   "merge_low": {
+    "pattern": "M3",
+    "question": "Is routing low-confidence extractions to an AP queue (extraction point) the same control as routing flagged policy exceptions to AP adjudication (policy point)? 2ec9 routes both to one specialist queue.",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "EXR-M13"
+     ]
+    }
+   }
+  },
+  {
+   "id": "EXR-M02",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Structured claim record with linked receipt image and extraction confidence log",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "description",
+     "quote": "logging model version and a confidence score per field",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-02",
+     "field": "outputs",
+     "quote": "Extraction confidence log",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Are the per-field confidence/model-version log and the source-image link two attributes of one extraction-provenance record (b45d states both in one output) rather than separate controls?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "EXR-M03"
+     ]
+    }
+   }
+  },
+  {
+   "id": "EXR-M03",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "the image, the extracted fields and the claim line remain durably linked end to end",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "description",
+     "quote": "with a pointer back to the source image so the record stays attributable",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "outputs",
+     "quote": "Structured claim record (extracted data linked to original receipt images)",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Is the durable image-to-extraction link part of the same extraction-provenance record as the confidence/model-version log (b45d bundles them)?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "EXR-M02"
+     ]
+    }
+   }
+  },
+  {
+   "id": "EXR-M04",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "A periodic sampling audit of high-confidence extractions by vendor/locale/script cohort checks for miscalibration",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "The sampling function is the standing detective control that catches a systematically miscalibrated policy or extraction engine",
+     "note": "sampling of clean auto-cleared claims at finance review aimed partly at extraction miscalibration; neighbouring point and wider object than high-confidence extractions; called absent"
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M05",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "inputs",
+     "quote": "Extraction confidence thresholds (calibrated per receipt-format population)",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M06",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "description",
+     "quote": "which is itself logged as a supervised override rather than a silent edit",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M07",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "a digital path where a capture agent photographs/OCR-extracts receipt data at the moment of submission",
+     "note": "extraction sits inside the submission step, which is a separate step from the policy check; separation from policy is structural only, extraction is not its own stage and no separation is stated; called absent"
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "description",
+     "quote": "This function is kept as its own stage, distinct from submission and from policy screening",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-02",
+     "field": "description",
+     "quote": "Kept as a distinct, separately loggable function from policy compliance",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "EXR2-01",
+     "field": "description",
+     "quote": "their data extracted into a structured claim record at the point of submission",
+     "note": "extraction sits inside the submission step, which is a separate step from the policy check; separation from policy is structural only, extraction is not its own stage and no separation is stated; called absent"
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "performs real-time OCR capture and data extraction on attached receipts for claim lines above the receipt threshold",
+     "note": "extraction sits inside the submission step, which is a separate step from the policy check; separation from policy is structural only, extraction is not its own stage and no separation is stated; called absent"
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "performs OCR extraction and structures the claim record at the point of submission",
+     "note": "extraction sits inside the submission step, which is a separate step from the policy check; separation from policy is structural only, extraction is not its own stage and no separation is stated; called absent"
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TGT-EXR-01",
+     "field": "description",
+     "quote": "performs OCR data extraction at the point of submission, populating a structured claim record in real time",
+     "note": "extraction sits inside the submission step, which is a separate step from the policy check; separation from policy is structural only, extraction is not its own stage and no separation is stated; called absent"
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "EXR-T01",
+     "field": "description",
+     "quote": "performs OCR capture and data extraction on attached receipts in real time, producing a structured claim record at the point of submission",
+     "note": "extraction sits inside the submission step, which is a separate step from the policy check; separation from policy is structural only, extraction is not its own stage and no separation is stated; called absent"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M08",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "Every claim line above the receipt threshold must carry an attached receipt image",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T1",
+     "field": "description",
+     "quote": "Receipts for claim lines above the receipt threshold are still mandatory before the claim can proceed",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T1",
+     "field": "inputs",
+     "quote": "Receipts for claim lines above the receipt threshold (app photo or paper/scan upload)",
+     "note": "receipt above threshold stated as required input/attachment of submission step, no explicit blocking; called present"
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T-01",
+     "field": "inputs",
+     "quote": "Receipts for claim lines above the receipt threshold",
+     "note": "receipt above threshold stated as required input/attachment of submission step, no explicit blocking; called present"
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "EXR2-01",
+     "field": "inputs",
+     "quote": "Receipts for claim lines above the receipt threshold",
+     "note": "receipt above threshold stated as required input/attachment of submission step, no explicit blocking; called present"
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-01",
+     "field": "inputs",
+     "quote": "Receipts for claim lines above the receipt threshold",
+     "note": "receipt above threshold stated as required input/attachment of submission step, no explicit blocking; called present"
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-01",
+     "field": "inputs",
+     "quote": "Receipts for claim lines above the receipt threshold",
+     "note": "receipt above threshold stated as required input/attachment of submission step, no explicit blocking; called present"
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-EXR-01",
+     "field": "description",
+     "quote": "Receipts for claim lines above the receipt threshold are mandatory attachments; the system blocks submission if they are missing.",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "EXR-T01",
+     "field": "description",
+     "quote": "Receipts remain mandatory for claim lines above the receipt threshold.",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M09",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "a manual/paper intake path, keyed by an AP analyst from a physical or low-bandwidth submission",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T1",
+     "field": "description",
+     "quote": "via self-service app or a paper/scan fallback channel",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M1",
+    "question": "Are paper/keyed intake and store-and-forward offline submission two variants of one low-connectivity submission-fallback control on the same object (claim submission)?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "EXR-M10"
+     ]
+    }
+   }
+  },
+  {
+   "id": "EXR-M10",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-01",
+     "field": "description",
+     "quote": "Submission supports asynchronous, store-and-forward operation",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M1",
+    "question": "Is store-and-forward offline submission a variant of the same submission-fallback control as paper/keyed intake?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "EXR-M09"
+     ]
+    }
+   }
+  },
+  {
+   "id": "EXR-M11",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T1",
+     "field": "description",
+     "quote": "no agent or card-feed process may generate or submit a claim on the employee's behalf",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T1",
+     "field": "description",
+     "quote": "The employee remains the sole accountable initiator",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-01",
+     "field": "description",
+     "quote": "no automated agent submits on the employee's behalf",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M12",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "producing a machine-readable list of which rule fired on which line and why",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "citing the specific rule for any flag",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T2",
+     "field": "outputs",
+     "quote": "Policy-checked claim record with visible flags and versioned exception log",
+     "note": "versioned exception log from the engine, rule citation not stated; called present"
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-03",
+     "field": "description",
+     "quote": "writes a timestamped pass/flag artifact citing the policy clause applied",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-EXR-02",
+     "field": "outputs",
+     "quote": "Policy exception flags",
+     "note": "flags emitted as an output artifact but no log, rule citation or versioning; called absent"
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M4",
+    "question": "Is the engine's rule-cited flag log one object with the exception disposition record? 59a3 'auditable exception list and decision log' and 2ec9 'versioned exception log' cover both, so the flag log may be a subset of a single exception record.",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "EXR-M14"
+     ]
+    }
+   }
+  },
+  {
+   "id": "EXR-M13",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "route to a named AP analyst or policy officer for adjudication",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "route to a named AP analyst (or finance reviewer for higher-value/ambiguous flags) for disposition",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T2",
+     "field": "description",
+     "quote": "Low-confidence extractions and policy exceptions route to a named, resourced AP exception specialist",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-03",
+     "field": "description",
+     "quote": "route to an AP analyst with authority to request information, adjust, or reject before the claim proceeds",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "EXR2-02",
+     "field": "description",
+     "quote": "Non-compliant lines are flagged and routed to an AP analyst for exception review before the claim proceeds to manager approval.",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "an AP analyst oversees the engine's rule configuration and triages flagged exceptions",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "routed to an AP analyst exception queue for manual disposition before the claim proceeds to approval",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "TGT-EXR-02",
+     "field": "description",
+     "quote": "non-compliant or exception lines (e.g. missing receipt waivers, over-limit amounts) are flagged for finance exception review",
+     "note": "flagged exceptions are reviewed by a human, but at finance review after manager approval, not at the policy step; called absent"
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "EXR-T02",
+     "field": "description",
+     "quote": "are routed to an AP analyst for exception review before the claim proceeds to approval",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M14",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Policy-checked claim with auditable exception list and decision log",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T3",
+     "field": "outputs",
+     "quote": "Policy-checked claim with flag disposition trail",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "T2",
+     "field": "outputs",
+     "quote": "Policy-checked claim record with visible flags and versioned exception log",
+     "note": "exception log is produced by the compliance agent; unclear whether it records the specialist's accept/correct/escalate decision; called absent"
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-03",
+     "field": "outputs",
+     "quote": "Adjudicated exception record",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M4",
+    "question": "Is the adjudication/disposition record a separate object from the engine's flag log, or one exception record covering both (59a3, 2ec9 outputs straddle)?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "EXR-M12"
+     ]
+    }
+   }
+  },
+  {
+   "id": "EXR-M15",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "This remains a discrete, completed gate that issues a compliant/exception-resolved/rejected decision before the claim reaches the manager",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "completes in full before the claim reaches line manager approval",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T3",
+     "field": "inputs",
+     "quote": "Policy-checked claim record with visible flags",
+     "note": "ordering implied by approval consuming the policy-checked claim; called present"
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-03",
+     "field": "description",
+     "quote": "This gate must complete, and its artifact must exist, before the claim reaches line manager approval.",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "EXR2-02",
+     "field": "description",
+     "quote": "before the claim proceeds to manager approval",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "The claimant's line manager reviews the policy-checked claim",
+     "note": "ordering implied by approval consuming the policy-checked claim; called present"
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "before the claim proceeds to approval",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-EXR-02",
+     "field": "description",
+     "quote": "This is a mandatory, non-bypassable gate that must complete before manager approval.",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "EXR-T02",
+     "field": "description",
+     "quote": "before the claim proceeds to approval",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M16",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "with periodic human sampling of passed lines to catch stale policy tables",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "The sampling function is the standing detective control that catches a systematically miscalibrated policy or extraction engine",
+     "note": "sampling at finance review for a miscalibrated policy engine; neighbouring point, staleness of tables not named; called absent"
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-03",
+     "field": "description",
+     "quote": "flagged, ambiguous, or policy-table-stale lines route to an AP analyst",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "The single candidate spans two mechanisms: 59a3 periodic sampling of passed lines (a sampling control like EXR-M25) and 53eb routing of stale-table lines to an AP analyst (an adjudication route like EXR-M13). Should it be dissolved, its 59a3 element going to EXR-M25 and its 53eb element to EXR-M13?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "EXR-M25",
+      "EXR-M13"
+     ]
+    }
+   }
+  },
+  {
+   "id": "EXR-M17",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "there is no value-based or risk-based auto-approval tier",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T4",
+     "field": "description",
+     "quote": "no ruleset may auto-approve on the manager's behalf",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "No claim is approved by a pre-set delegated-authority rule with no contemporaneous human act",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-04",
+     "field": "description",
+     "quote": "this step is never bypassed by claim cleanliness",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "EXR2-03",
+     "field": "description",
+     "quote": "The claimant's line manager reviews and approves or rejects the policy-checked claim.",
+     "note": "manager approves every claim with no tier or bypass described, but universality/no-auto-approval not stated; called present as less-detailed statement"
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "The claimant's line manager reviews the policy-checked claim",
+     "note": "manager approves every claim with no tier or bypass described, but universality/no-auto-approval not stated; called present as less-detailed statement"
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "The claimant's line manager reviews and approves or rejects the policy-checked claim",
+     "note": "manager approves every claim with no tier or bypass described, but universality/no-auto-approval not stated; called present as less-detailed statement"
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-EXR-03",
+     "field": "description",
+     "quote": "The claimant's line manager approves or rejects the policy-checked claim",
+     "note": "manager approves every claim with no tier or bypass described, but universality/no-auto-approval not stated; called present as less-detailed statement"
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "EXR-T03",
+     "field": "description",
+     "quote": "This step remains a distinct human decision performed by an actor other than the claim submitter.",
+     "note": "manager approves every claim with no tier or bypass described, but universality/no-auto-approval not stated; called present as less-detailed statement"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M18",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "The manager's screen surfaces exactly which lines TS-02 flagged and why",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T4",
+     "field": "description",
+     "quote": "flagged lines surfaced prominently",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "mandatory engagement with the specific flag, amount and any claimant justification where exceptions exist",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-04",
+     "field": "description",
+     "quote": "The manager sees a structured summary of what was auto-cleared versus flagged and why",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "with system-highlighted exceptions surfaced for closer scrutiny",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-EXR-03",
+     "field": "description",
+     "quote": "with policy exception flags surfaced for visibility",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M19",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "the system automatically and structurally escalates to the next-level approver",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T4",
+     "field": "description",
+     "quote": "Where the manager is also the claimant, approval forces escalation to the next-level approver.",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "A claimant who is also the designated approver escalates to the next level up.",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M20",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "inputs",
+     "quote": "Manager-of-record / claimant identity check",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T4",
+     "field": "description",
+     "quote": "Where the manager is also the claimant, approval forces escalation to the next-level approver.",
+     "note": "forced escalation implies a system identity check enforcing separation, but the check is not stated; called present"
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T3",
+     "field": "description",
+     "quote": "Actor separation from submission is enforced structurally through access-control permissions, not by convention.",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B2",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "the manager is organisationally distinct from the claimant to preserve segregation of duties",
+     "note": "separation stated as a property/principle with no enforcement mechanism; called absent"
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B2",
+     "step_id": "TGT-EXR-03",
+     "field": "description",
+     "quote": "The approver is necessarily distinct from the claim submitter.",
+     "note": "separation stated as a property/principle with no enforcement mechanism; called absent"
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B2",
+     "step_id": "EXR-T03",
+     "field": "description",
+     "quote": "performed by an actor other than the claim submitter",
+     "note": "separation stated as a property/principle with no enforcement mechanism; called absent"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M21",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Approved expense claim with logged approval record",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "The agent cannot fire until an approval record from T4 and a posting confirmation from T6 both exist",
+     "note": "approval record from T4 is referenced at the payment step, not stated at T4; called present"
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T3",
+     "field": "outputs",
+     "quote": "Approved expense claim (manager's affirmative action recorded)",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-04",
+     "field": "outputs",
+     "quote": "Logged manager attestation",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M22",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-04",
+     "field": "description",
+     "quote": "Approval is reachable through a low-bandwidth/SMS-equivalent fallback for unflagged claims",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M23",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "It is triggered automatically for claims carrying an unresolved or overridden policy exception, claims above a materiality threshold",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "Finance review is scoped to claims carrying unresolved policy flags, claims above a materiality threshold",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T4",
+     "field": "description",
+     "quote": "examines claims triggered by a documented, versioned risk policy",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-05",
+     "field": "description",
+     "quote": "a risk-triggered gate on claims with policy exceptions, above a materiality threshold",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "EXR2-04",
+     "field": "description",
+     "quote": "Claims with coding anomalies, residual policy exceptions or insufficient supporting evidence are routed to a finance reviewer",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "a finance reviewer intervenes only on system-flagged coding anomalies, policy exceptions or weak evidentiary support",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "claims with coding ambiguity, large exchange differences, or evidence gaps are routed to a finance reviewer",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-EXR-04",
+     "field": "description",
+     "quote": "Finance reviews only the subset of approved claims carrying policy exception flags, coding anomalies, or evidentiary gaps",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "EXR-T04",
+     "field": "description",
+     "quote": "A finance reviewer examines only claims flagged for coding anomalies, policy exceptions or insufficient supporting evidence",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M24",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "inputs",
+     "quote": "Materiality and risk-flag criteria",
+     "note": "trigger criteria as a defined input artifact, not stated as documented/versioned; called present"
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T4",
+     "field": "inputs",
+     "quote": "Risk/materiality trigger policy (versioned and documented)",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Is the documented/versioned trigger policy a separate change-control element or only a parameter of the risk-triggered finance review it governs?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "EXR-M23"
+     ]
+    }
+   }
+  },
+  {
+   "id": "EXR-M25",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "with periodic human sampling of passed lines to catch stale policy tables",
+     "note": "periodic sampling of the engine-passed population, but at the policy step rather than finance review; called present"
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "a periodic statistical sample of fully clean, auto-cleared claims",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-05",
+     "field": "description",
+     "quote": "plus a periodic sample of the clean population to catch systematic rules-engine error",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M3",
+    "question": "Is periodic sampling of the clean/auto-cleared population at finance review the same mechanism as 59a3's periodic sampling of engine-passed lines at the policy step (adjacent point)?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "EXR-M16"
+     ]
+    }
+   }
+  },
+  {
+   "id": "EXR-M26",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "quote": "Finance-reviewed claim with distinct coding/evidence decision log",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T4",
+     "field": "outputs",
+     "quote": "Finance-reviewed claim with recorded review outcome",
+     "note": "review outcome recorded, distinctness from other decisions not stated; called present"
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-05",
+     "field": "description",
+     "quote": "the two attestations are never recorded as a single undifferentiated event",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M2",
+    "question": "Is the distinctly recorded finance-review decision just the record of the distinct finance-review step (a check vs its own record)?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "EXR-M27"
+     ]
+    }
+   }
+  },
+  {
+   "id": "EXR-M27",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "Finance review survives as its own distinct, separately accountable step",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T5",
+     "field": "name",
+     "quote": "Risk-based finance review with periodic sampling",
+     "note": "separate step with finance-reviewer actor, no separation rationale stated; called present"
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T4",
+     "field": "description",
+     "quote": "A finance reviewer, distinct from both the compliance agent and the line manager",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-05",
+     "field": "description",
+     "quote": "This remains structurally and actorally distinct from line manager approval",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "EXR2-04",
+     "field": "actor",
+     "quote": "GL accountant / Finance reviewer (exceptions)",
+     "note": "finance reviewer is a distinct actor from manager and policy engine, but review is folded into the posting step, not its own step; called absent"
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-04",
+     "field": "actor",
+     "quote": "GL accountant (finance reviewer on exception)",
+     "note": "finance reviewer is a distinct actor from manager and policy engine, but review is folded into the posting step, not its own step; called absent"
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TGT-04",
+     "field": "actor",
+     "quote": "GL accountant / Finance reviewer (exception)",
+     "note": "finance reviewer is a distinct actor from manager and policy engine, but review is folded into the posting step, not its own step; called absent"
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-EXR-04",
+     "field": "name",
+     "quote": "Finance exception review",
+     "note": "separate step with finance-reviewer actor, no separation rationale stated; called present"
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "EXR-T04",
+     "field": "actor",
+     "quote": "Finance reviewer / GL accountant",
+     "note": "finance reviewer is a distinct actor from manager and policy engine, but review is folded into the posting step, not its own step; called absent"
+    }
+   },
+   "merge_low": {
+    "pattern": "M2",
+    "question": "Is the distinct finance-review step/actor the same control as its distinctly recorded decision (a check vs its own record)?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "EXR-M26"
+     ]
+    }
+   }
+  },
+  {
+   "id": "EXR-M28",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "whether coding, cost-centre assignment and evidential sufficiency are correct before the number hits the GL",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "it is a gate on posting, not a clean-up performed after the fact",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T5",
+     "field": "inputs",
+     "quote": "Finance-reviewed claim",
+     "note": "ordering implied by posting consuming the finance-reviewed claim; called present"
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T-05",
+     "field": "outputs",
+     "quote": "Finance-reviewed claim",
+     "note": "finance review precedes posting in step order, but posting (T-06) consumes the approved claim, not the finance-reviewed one; no gate stated; called absent"
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "EXR2-04",
+     "field": "description",
+     "quote": "are routed to a finance reviewer before posting is finalised",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "a finance reviewer intervenes only on system-flagged coding anomalies, policy exceptions or weak evidentiary support",
+     "note": "review embedded in the posting step with no stated ordering relative to posting; called absent"
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "before posting is finalised",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-EXR-05",
+     "field": "inputs",
+     "quote": "Finance-reviewed claim",
+     "note": "ordering implied by posting consuming the finance-reviewed claim; called present"
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "EXR-T04",
+     "field": "description",
+     "quote": "before or alongside posting",
+     "note": "'before or alongside' does not make review a precondition of posting; weaker; called absent"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M29",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "it refuses to post into a closed period without an explicit, logged GL-accountant override",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "halts and escalates to a GL accountant rather than posting around a locked period",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T5",
+     "field": "inputs",
+     "quote": "Period-cutoff gate status",
+     "note": "period-cutoff gate held by GL accountant; logged override/escalation not stated; called present"
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T-06",
+     "field": "outputs",
+     "quote": "Period-cutoff exception record",
+     "note": "period-boundary claims escalate to GL accountant with an exception record; lock on closed period not stated as such; called present"
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B2",
+     "step_id": "TGT-EXR-05",
+     "field": "description",
+     "quote": "preserving period cutoff discipline (KB-03)",
+     "note": "principle of cutoff discipline with no gate mechanism; called absent"
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M30",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "are hard stops routed to a named GL-accountant exception queue",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "halts and escalates to a GL accountant rather than posting around a locked period or against a stale/missing rate",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "exception handling for unmapped cost centres or rate-source failures",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-06",
+     "field": "description",
+     "quote": "unmapped cost centres, missing or disputed FX rates, or other estimation-adjacent lines escalate to the GL accountant",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B5",
+     "step_id": "EXR2-04",
+     "field": "description",
+     "quote": "Claims with coding anomalies, residual policy exceptions or insufficient supporting evidence are routed to a finance reviewer before posting is finalised",
+     "note": "coding exceptions at the posting step routed to a finance reviewer rather than a GL-accountant posting-exception queue; overlaps finance review (M23); called absent"
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B5",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "a finance reviewer intervenes only on system-flagged coding anomalies, policy exceptions or weak evidentiary support",
+     "note": "coding exceptions at the posting step routed to a finance reviewer rather than a GL-accountant posting-exception queue; overlaps finance review (M23); called absent"
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B5",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "claims with coding ambiguity, large exchange differences, or evidence gaps are routed to a finance reviewer",
+     "note": "coding exceptions at the posting step routed to a finance reviewer rather than a GL-accountant posting-exception queue; overlaps finance review (M23); called absent"
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B5",
+     "step_id": "EXR-T04",
+     "field": "description",
+     "quote": "A finance reviewer examines only claims flagged for coding anomalies, policy exceptions or insufficient supporting evidence",
+     "note": "coding exceptions at the posting step routed to a finance reviewer rather than a GL-accountant posting-exception queue; overlaps finance review (M23); called absent"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M31",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "a documented manual/central-bank-rate fallback where real-time feeds are unavailable or uneconomic",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "the rate source may be a live feed or a manually captured/locally sourced official rate",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-06",
+     "field": "description",
+     "quote": "provided the staleness bound is documented and applied consistently period over period",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M32",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "Every posting logs the rule, rate, date and actor-of-record used",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "Every automated posting is logged with its rate source and timestamp.",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "provided it is the correct transaction-date rate and is logged",
+     "note": "only the rate is stated as logged; called present"
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M33",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "carries a defined reversal/correcting-entry mechanism",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "Corrections to machine-generated postings are made only through standard journal reversal entries",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-06",
+     "field": "description",
+     "quote": "every automated posting is reversible, not merely overwritable",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M34",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "The GL accountant also performs periodic sampling of automated postings",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M35",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "A GL accountant retains the posting ruleset",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M36",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "posts in the period the expense was incurred (generating an accrual if that period is closed)",
+     "note": "accrual raised by the posting agent for closed-period claims, not period-end estimation of unclaimed expenses with GL ownership; called absent"
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "description",
+     "quote": "explicit responsibility for period-end accrual estimation of expenses incurred but not yet claimed",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M37",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "keeping recognition (posting) and derecognition (payment) as two separately timestamped, separately triggered events",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-07",
+     "field": "outputs",
+     "quote": "Liability-extinguished event",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B2",
+     "step_id": "TGT-EXR-06",
+     "field": "description",
+     "quote": "recognition of the liability and its derecognition on payment remain separately determinable (KB-11)",
+     "note": "stated as a property to preserve, no separate event records; called absent"
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M38",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T5",
+     "field": "outputs",
+     "quote": "Exchange-difference entries where posting-date and settlement-date rates diverge",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-04",
+     "field": "outputs",
+     "quote": "Exchange difference record (where applicable)",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-EXR-05",
+     "field": "description",
+     "quote": "Exchange differences arising on settlement are tracked and reported separately rather than netted (KB-08)",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M39",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "Orchestration structurally prevents a payment batch from including a claim without a logged, unreversed TS-03 approval record",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "The agent cannot fire until an approval record from T4 and a posting confirmation from T6 both exist",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "Routine claims with unchanged bank details are released automatically once approval and posting have cleared",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-07",
+     "field": "description",
+     "quote": "enforcing a hard, programmatic precondition that a valid manager-approval event exists for the specific claim",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "EXR2-05",
+     "field": "description",
+     "quote": "The approved claim is paid to the employee through the AP payment run",
+     "note": "payment stated as of the approved/posted claim (ordering via object/inputs), no explicit precondition check; called present as less-detailed statement"
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "The posted claim is paid to the employee through the AP payment run",
+     "note": "payment stated as of the approved/posted claim (ordering via object/inputs), no explicit precondition check; called present as less-detailed statement"
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "The approved, posted claim is paid to the employee through the AP payment run",
+     "note": "payment stated as of the approved/posted claim (ordering via object/inputs), no explicit precondition check; called present as less-detailed statement"
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-EXR-06",
+     "field": "description",
+     "quote": "The approved, posted claim is paid to the employee through the AP payment run",
+     "note": "payment stated as of the approved/posted claim (ordering via object/inputs), no explicit precondition check; called present as less-detailed statement"
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "EXR-T05",
+     "field": "description",
+     "quote": "The approved claim is paid to the employee through the AP payment run",
+     "note": "payment stated as of the approved/posted claim (ordering via object/inputs), no explicit precondition check; called present as less-detailed statement"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M40",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "the batch remains the unit at which duplicate-payment screening and bank-detail-change validation operate",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "An AP analyst owns the batch and its exceptions (failed bank validations, duplicate-payment flags, unusually large amounts)",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "EXR-T02",
+     "field": "description",
+     "quote": "lines that fail or fall outside system confidence (e.g. missing receipt, unusual category, duplicate suspicion)",
+     "note": "duplicate suspicion screened at the policy step, not at the payment batch; called absent"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M41",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "with named AP-analyst ownership of exception handling (failed validation, bank-detail mismatches, payee/employee mismatches) before funds move",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "An AP analyst owns the batch and its exceptions",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "T6",
+     "field": "actor",
+     "quote": "AP analyst with payment agent",
+     "note": "AP analyst named only as payment-step actor; ownership of payment exceptions not stated; called absent (applied identically to council and baseline)"
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-07",
+     "field": "actor",
+     "quote": "AP analyst (bank-detail verification, failed-payment exceptions), payment agent",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "EXR2-05",
+     "field": "actor",
+     "quote": "AP analyst",
+     "note": "AP analyst named only as payment-step actor; ownership of payment exceptions not stated; called absent (applied identically to council and baseline)"
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "actor",
+     "quote": "AP analyst (payment system)",
+     "note": "AP analyst named only as payment-step actor; ownership of payment exceptions not stated; called absent (applied identically to council and baseline)"
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-05",
+     "field": "actor",
+     "quote": "AP analyst",
+     "note": "AP analyst named only as payment-step actor; ownership of payment exceptions not stated; called absent (applied identically to council and baseline)"
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-EXR-06",
+     "field": "actor",
+     "quote": "AP analyst (system-assisted)",
+     "note": "AP analyst named only as payment-step actor; ownership of payment exceptions not stated; called absent (applied identically to council and baseline)"
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "EXR-T05",
+     "field": "actor",
+     "quote": "AP analyst",
+     "note": "AP analyst named only as payment-step actor; ownership of payment exceptions not stated; called absent (applied identically to council and baseline)"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M42",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B5",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "the batch remains the unit at which duplicate-payment screening and bank-detail-change validation operate",
+     "note": "bank-detail-change validation is agent-assisted with AP-analyst ownership of failures, not a hold for independent human verification; called absent"
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "any claim involving new or changed employee bank details is held for explicit human authorization before funds move",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-07",
+     "field": "description",
+     "quote": "is held for mandatory independent human verification before release",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M43",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "Payment rail selection - bank transfer, mobile money, cash/voucher - is a first-class branch within the same step",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "with mobile-money or other non-bank rails configurable where the deployment context requires it",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T6",
+     "field": "description",
+     "quote": "Disbursement remains channel-plural (bank transfer, cash or cheque)",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-07",
+     "field": "description",
+     "quote": "The design supports multiple disbursement channels (bank transfer, mobile money, cash disbursement with reconciliation)",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M44",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "on failure, a reason code is issued instead",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "EXR-M45",
+   "presence": {
+    "20261010-184959-council-P2P-EXR-01-59a3": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "A system-generated notification (SMS, email, or channel appropriate to the employee)",
+     "note": ""
+    },
+    "20261010-194034-council-P2P-EXR-01-b45d": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "defaulting to a low-connectivity-resilient channel such as SMS where needed",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-EXR-01-2ec9": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T6",
+     "field": "outputs",
+     "quote": "Employee notification (app, SMS, or email)",
+     "note": ""
+    },
+    "20261010-203133-council-P2P-EXR-01-53eb": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "T-07",
+     "field": "description",
+     "quote": "triggers an automatic, multi-channel (not email/app-only) notification to the employee",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-EXR-01-0102": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-EXR-01-fca9": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-EXR-01-cf77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-EXR-01-a752": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-EXR-01-1a6b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  }
+ ]
+}

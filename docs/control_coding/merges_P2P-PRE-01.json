@@ -1,0 +1,884 @@
+{
+ "workflow_id": "P2P-PRE-01",
+ "controls": [
+  {
+   "id": "PRE-M01",
+   "name": "Selection/grouping exception queue at proposal generation",
+   "members": [
+    "PRE-C01"
+   ],
+   "reason": "Rejected flagged merge with PRE-C02: queue is the routing mechanism; PRE-C02 is a distinct rule about surfacing master-data anomalies (different object).",
+   "confidence": "LOW",
+   "low_reason": "Several runs fold master-data anomalies into this same queue, so PRE-C01/PRE-C02 could be read as one control.",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-193948-baseline-P2P-PRE-01-208e",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "An AP analyst provides oversight and can intervene on flagged items",
+     "reason": "Analyst intervention on flagged items at selection; no named queue."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baseline has intervention on flagged items but no exception queue output; arguable equivalence."
+  },
+  {
+   "id": "PRE-M02",
+   "name": "Master-data anomalies surfaced, not silently normalised",
+   "members": [
+    "PRE-C02"
+   ],
+   "reason": "Distinct object (vendor master-data quality) from selection/grouping exception queue; flagged merge with PRE-C01 rejected.",
+   "confidence": "LOW",
+   "low_reason": "In 64dc/8682/1b2e master-data issues appear only as a category of the PRE-C01 queue.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M03",
+   "name": "Logged, reconstructable selection decisions",
+   "members": [
+    "PRE-C03"
+   ],
+   "reason": "Distinct (logging/evidence of selection, not exception handling).",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Due-item list",
+     "reason": "Due-item list produced as an artefact separate from the payment proposal (matches e0a8 form), without explicit logging language."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "647f outputs a separate due-item list but says nothing about logging or reconstructability; 1b2e rule-fired log form has no baseline equivalent."
+  },
+  {
+   "id": "PRE-M04",
+   "name": "Approved-matched status as entry gate for selection",
+   "members": [
+    "PRE-C04"
+   ],
+   "reason": "Distinct.",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-PRE-01-d745",
+     "step_id": "TGT-01",
+     "field": "inputs",
+     "quote": "Approved matched invoices",
+     "reason": "Same required input gating selection as in council members e0a8/8682/1b2e."
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-PRE-01-208e",
+     "step_id": "TS-01",
+     "field": "inputs",
+     "quote": "Approved matched invoices",
+     "reason": "Same required input gating selection as in council members e0a8/8682/1b2e."
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-01",
+     "field": "inputs",
+     "quote": "Approved matched invoices",
+     "reason": "Same required input gating selection as in council members e0a8/8682/1b2e."
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-PRE-01-872e",
+     "step_id": "TGT-01",
+     "field": "inputs",
+     "quote": "Approved matched invoices",
+     "reason": "Same required input gating selection as in council members e0a8/8682/1b2e."
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+     "step_id": "TS-01",
+     "field": "inputs",
+     "quote": "Approved matched invoices",
+     "reason": "Same required input gating selection as in council members e0a8/8682/1b2e."
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M05",
+   "name": "Automated pre-screening: duplicates, blocked vendors, bank-detail changes",
+   "members": [
+    "PRE-C05"
+   ],
+   "reason": "Distinct from PRE-C06 (screening check vs how flag evidence is presented to the reviewer); flagged merge rejected.",
+   "confidence": "LOW",
+   "low_reason": "PRE-C06 could be read as an attribute of the same screening control.",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-PRE-01-d745",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "The system automatically flags duplicate payments, blocked vendors and recent vendor bank-detail changes",
+     "reason": "Same automated screen at review."
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-PRE-01-208e",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "An automated screening engine checks the proposal against the vendor bank-detail change log and payment history",
+     "reason": "Same automated screen at review."
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "An automated control layer screens the proposal for duplicate payments, blocked vendors",
+     "reason": "Same automated screen at review."
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-PRE-01-872e",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "Embedded system logic screens the proposal in real time for duplicate payments, blocked vendors",
+     "reason": "Same screen, placed inside proposal generation."
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "An automated control engine screens the proposal for duplicate payments, blocked vendors",
+     "reason": "Same automated screen at review."
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M06",
+   "name": "Flag evidence presented to reviewer",
+   "members": [
+    "PRE-C06"
+   ],
+   "reason": "Distinct from screening (PRE-C05): different action (presentation of underlying evidence per flag).",
+   "confidence": "LOW",
+   "low_reason": "Flagged as possibly part of PRE-C05.",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-PRE-01-872e",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "resolving or holding flagged items using the vendor bank master change log and payment history",
+     "reason": "Supervisor uses underlying evidence when resolving flags."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "No baseline requires evidence to accompany each flag; 872e only uses the change log/history as reference."
+  },
+  {
+   "id": "PRE-M07",
+   "name": "Recorded supervisory disposition for each flagged item",
+   "members": [
+    "PRE-C07"
+   ],
+   "reason": "Distinct; not merged with PRE-C13 (same record object but PRE-C13 is its delivery to the signatory at a later step).",
+   "confidence": "LOW",
+   "low_reason": "PRE-C07 and PRE-C13 share the identical object (disposition record) at adjacent steps (output of review vs input to approval).",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-193948-baseline-P2P-PRE-01-208e",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "confirms dispositions, and removes or holds exception items",
+     "reason": "Supervisor confirms dispositions; Exception log output."
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-PRE-01-208e",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Exception log",
+     "reason": "Exception log output at review."
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Exception register",
+     "reason": "Exception register at review; supervisor resolves or holds each flag."
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Exception log",
+     "reason": "Exception log at review."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baseline logs/registers may record flags rather than supervisor dispositions; 208e is closest ('confirms dispositions')."
+  },
+  {
+   "id": "PRE-M08",
+   "name": "Mandatory out-of-band verification of bank-detail changes",
+   "members": [
+    "PRE-C08"
+   ],
+   "reason": "Distinct.",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M09",
+   "name": "Manual change-log review fallback",
+   "members": [
+    "PRE-C09"
+   ],
+   "reason": "Distinct.",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M10",
+   "name": "Periodic random sample of unflagged lines",
+   "members": [
+    "PRE-C10"
+   ],
+   "reason": "Rejected flagged merge with PRE-C11: sampling vs full-proposal review are different checks on the clean population.",
+   "confidence": "LOW",
+   "low_reason": "Both address the same risk (clean path not self-certifying) at the same review step.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M11",
+   "name": "Full-proposal review; no auto-clear of clean proposals",
+   "members": [
+    "PRE-C11"
+   ],
+   "reason": "Distinct from PRE-C10 (full review vs sample); flagged merge rejected.",
+   "confidence": "LOW",
+   "low_reason": "See PRE-C10.",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-PRE-01-872e",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "The AP supervisor reviews the system-flagged exceptions (duplicate payments, blocked vendors, recent bank-detail changes) together with the full proposal",
+     "reason": "Supervisor reviews full proposal alongside flags."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "872e has full-proposal review but not the no-auto-clear rule."
+  },
+  {
+   "id": "PRE-M12",
+   "name": "Human signatory approval of every payment run; no auto-approval",
+   "members": [
+    "PRE-C12"
+   ],
+   "reason": "Distinct.",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-PRE-01-d745",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "approved for payment by an authorised signatory acting within delegated limits",
+     "reason": "Every reviewed proposal approved by human signatory; no auto-approval path."
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-PRE-01-208e",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "This decision remains a distinct human judgment",
+     "reason": "Approval explicitly a human judgment."
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "approved for payment by an authorised signatory within delegated limits",
+     "reason": "Human signatory approval."
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-PRE-01-872e",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "approved for payment by an authorised signatory within delegated limits",
+     "reason": "Human signatory approval via digital workflow."
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "approved for payment by an authorised signatory operating within delegated limits",
+     "reason": "Human signatory approval."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines carry signatory approval of every proposal but lack the explicit prohibition of auto-approval."
+  },
+  {
+   "id": "PRE-M13",
+   "name": "Approval packet with exception dispositions to signatory",
+   "members": [
+    "PRE-C13"
+   ],
+   "reason": "Distinct from PRE-C14 (evidence input vs agent authority restriction); not merged with PRE-C07 (later step).",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M14",
+   "name": "Non-decisioning agent assistance at approval",
+   "members": [
+    "PRE-C14"
+   ],
+   "reason": "Not merged with PRE-C38: same least-privilege idea but at a different point (approval vs proposal/file generation); distinct from PRE-C13/PRE-C15.",
+   "confidence": "LOW",
+   "low_reason": "Flagged as possibly one control with PRE-C38 (agent least privilege) at adjacent points.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M15",
+   "name": "System-enforced segregation of proposal construction from approval",
+   "members": [
+    "PRE-C15"
+   ],
+   "reason": "Distinct from PRE-C38 (identity separation vs write-scope restriction).",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-PRE-01-d745",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "distinct from the actor who generated the proposal",
+     "reason": "Role separation of approver from proposal generator."
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-PRE-01-208e",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "separate from both proposal generation and proposal review",
+     "reason": "Role separation."
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "distinct from whoever generated the proposal",
+     "reason": "Role separation."
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "independent of the party that generated the proposal",
+     "reason": "Role separation."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines state role-level separation, not credential/identity-level enforcement; 8682 member presence is itself only role-level."
+  },
+  {
+   "id": "PRE-M16",
+   "name": "Timestamped approval record",
+   "members": [
+    "PRE-C16"
+   ],
+   "reason": "Distinct.",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-PRE-01-872e",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "via a digital approval workflow that enforces delegation-of-authority limits and timestamps the decision",
+     "reason": "Approval decision timestamped by the workflow."
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M17",
+   "name": "Named backup approver/releaser chains",
+   "members": [
+    "PRE-C17"
+   ],
+   "reason": "Single candidate retained (approver and releaser chains are within one candidate; split is author's call).",
+   "confidence": "LOW",
+   "low_reason": "Approver chain (TGT-03) and releaser chain (TGT-05) act at different points and may be two controls.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M18",
+   "name": "Pre-transmission verification of file against approved snapshot (incl. post-approval change block)",
+   "members": [
+    "PRE-C18",
+    "PRE-C19"
+   ],
+   "reason": "Same check at the same point: e0a8 and 1b2e describe one pre-transmission routine comparing the file/bank details to the approved record and blocking on any intervening change; 8682 produces integrity result and delta report in the same step.",
+   "confidence": "LOW",
+   "low_reason": "Could be read as two checks: file-content integrity vs detection of master-data (bank-detail) change since approval; 64dc has only the former.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M19",
+   "name": "Human-triggered release; no automatic/agent transmission",
+   "members": [
+    "PRE-C20"
+   ],
+   "reason": "Distinct from PRE-C21 (a human trigger vs a second person); flagged merge rejected.",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-PRE-01-d745",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "released to the bank by treasury",
+     "reason": "Treasury (human) releases the file."
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-PRE-01-208e",
+     "step_id": "TS-04",
+     "field": "actor",
+     "quote": "Treasury officer",
+     "reason": "Human release actor."
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-04",
+     "field": "actor",
+     "quote": "Treasury officer",
+     "reason": "Human release actor."
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-PRE-01-872e",
+     "step_id": "TGT-04",
+     "field": "actor",
+     "quote": "Treasury officer",
+     "reason": "Human release actor."
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+     "step_id": "TS-04",
+     "field": "actor",
+     "quote": "Treasury officer",
+     "reason": "Human release actor."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines imply human release (treasury actor) without an explicit no-automatic-release rule; e0a8 member presence is the same implied form."
+  },
+  {
+   "id": "PRE-M20",
+   "name": "Dual control at bank release",
+   "members": [
+    "PRE-C21"
+   ],
+   "reason": "Distinct from PRE-C20 and PRE-C22 (compensating log below threshold).",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-193948-baseline-P2P-PRE-01-208e",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "with dual-control release confirmation retained for high-value or flagged batches",
+     "reason": "Threshold-based dual control at release, same as e0a8/64dc variants."
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M21",
+   "name": "Release authorisation log with time-separated logging below threshold",
+   "members": [
+    "PRE-C22"
+   ],
+   "reason": "Not merged with PRE-C21: a compensating logging control for single releasers, not the dual-control check itself.",
+   "confidence": "LOW",
+   "low_reason": "Flagged as possibly the below-threshold arm of PRE-C21.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M22",
+   "name": "Manual/batch bank transmission as first-class channel",
+   "members": [
+    "PRE-C23"
+   ],
+   "reason": "Not merged with PRE-C24/C25/C37: same fallback principle but different points and objects (transmission vs reconciliation vs selection vs remittance).",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M23",
+   "name": "Batch/manual statement reconciliation as first-class mode",
+   "members": [
+    "PRE-C24"
+   ],
+   "reason": "Distinct point/object from PRE-C23/C25/C37.",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M24",
+   "name": "Documented manual fallback for due-item selection",
+   "members": [
+    "PRE-C25"
+   ],
+   "reason": "Distinct point/object from PRE-C23/C24/C37.",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M25",
+   "name": "Attested manual settlement-rate entry path",
+   "members": [
+    "PRE-C26"
+   ],
+   "reason": "Not merged with PRE-C27: a fallback input path vs a verification checkpoint on the rate source.",
+   "confidence": "LOW",
+   "low_reason": "Both concern rate-source assurance at the same posting step; 64dc attestation is a form of verification.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M26",
+   "name": "Human verification of FX rate source",
+   "members": [
+    "PRE-C27"
+   ],
+   "reason": "Distinct from PRE-C26 and PRE-C30 (rate source vs resulting variance).",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M27",
+   "name": "Settlement exception/break queue with treasury owner",
+   "members": [
+    "PRE-C28"
+   ],
+   "reason": "Distinct from PRE-C30 (treasury matching step vs GL posting threshold routing).",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-PRE-01-d745",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "treasury monitors exceptions rather than performing manual reconciliation",
+     "reason": "Treasury handles matching exceptions."
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "with the treasury officer resolving any unmatched or exception items",
+     "reason": "Treasury resolves unmatched items."
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-PRE-01-872e",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "with the treasury officer monitoring exceptions",
+     "reason": "Treasury monitors exceptions."
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "the treasury officer investigates any unmatched or partial settlements",
+     "reason": "Treasury investigates unmatched settlements."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines assign exception handling to treasury but have no named queue output; 208e (GL accountant owner) not counted."
+  },
+  {
+   "id": "PRE-M28",
+   "name": "Line-level settlement matching to transmitted file",
+   "members": [
+    "PRE-C29"
+   ],
+   "reason": "Distinct.",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-PRE-01-d745",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "which the system matches line-by-line to the transmitted payment file",
+     "reason": "Line-by-line matching to transmitted file."
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "matches it to the transmitted payment file line by line",
+     "reason": "Line-by-line matching to transmitted file."
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M29",
+   "name": "Threshold routing of FX/settlement variances to GL accountant",
+   "members": [
+    "PRE-C30"
+   ],
+   "reason": "Distinct from PRE-C27 and PRE-C28 (different object/point).",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "The GL accountant reviews and approves estimation-sensitive FX postings before they are finalised",
+     "reason": "GL accountant review of FX postings."
+    },
+    {
+     "run_id": "20261010-184915-baseline-P2P-PRE-01-d745",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "the GL accountant reviews system-generated postings and handles exceptions",
+     "reason": "GL accountant reviews postings and handles exceptions."
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-PRE-01-208e",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "The GL accountant reviews system-generated postings and handles unmatched or exception items",
+     "reason": "GL accountant reviews postings and exceptions."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines have accountant review without a defined materiality/tolerance threshold - arguably a different check."
+  },
+  {
+   "id": "PRE-M30",
+   "name": "Period-cutoff control over settlement posting",
+   "members": [
+    "PRE-C31"
+   ],
+   "reason": "Distinct.",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M31",
+   "name": "FX difference separately identified, never netted",
+   "members": [
+    "PRE-C32"
+   ],
+   "reason": "Distinct.",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "any exchange differences between invoice recognition and settlement are separately identified and posted, not netted invisibly",
+     "reason": "Same separate-identification requirement."
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "FX differences recognised",
+     "reason": "FX differences as separate output (weaker)."
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M32",
+   "name": "Treasury/GL segregation and distinct settlement-confirmation artefact",
+   "members": [
+    "PRE-C33"
+   ],
+   "reason": "Single candidate retained (may contain two controls; split is author's call).",
+   "confidence": "LOW",
+   "low_reason": "Candidate bundles role segregation and a distinct confirmation artefact.",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-PRE-01-d745",
+     "step_id": "TGT-05",
+     "field": "outputs",
+     "quote": "Bank settlement confirmation",
+     "reason": "Treasury step produces distinct confirmation artefact consumed by GL posting step."
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "quote": "Bank settlement confirmation",
+     "reason": "Same."
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-PRE-01-872e",
+     "step_id": "TGT-05",
+     "field": "outputs",
+     "quote": "Bank settlement confirmation",
+     "reason": "Same."
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "quote": "Bank settlement confirmation",
+     "reason": "Same."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines separate confirmation (treasury) and posting (GL) with a confirmation artefact, but without explicit segregation or logged/reconcilable language; 208e merges both under GL accountant."
+  },
+  {
+   "id": "PRE-M33",
+   "name": "Returns/rejections re-open AP open item",
+   "members": [
+    "PRE-C34"
+   ],
+   "reason": "Distinct.",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M34",
+   "name": "Remittance delivery exception queue",
+   "members": [
+    "PRE-C35"
+   ],
+   "reason": "Distinct.",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-PRE-01-d745",
+     "step_id": "TGT-07",
+     "field": "description",
+     "quote": "with the AP analyst handling delivery exceptions",
+     "reason": "AP analyst owns delivery exceptions."
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-PRE-01-647f",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "with the AP analyst monitoring delivery failures",
+     "reason": "AP analyst monitors delivery failures."
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "with the AP analyst handling exceptions such as bounced notifications",
+     "reason": "AP analyst handles delivery exceptions."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines name an owner but no queue output."
+  },
+  {
+   "id": "PRE-M35",
+   "name": "Remittance sourced from posting/clearing record",
+   "members": [
+    "PRE-C36"
+   ],
+   "reason": "Distinct.",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-PRE-01-872e",
+     "step_id": "TGT-07",
+     "field": "inputs",
+     "quote": "GL cash posted",
+     "reason": "Remittance generated from posting record."
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-PRE-01-872e",
+     "step_id": "TGT-07",
+     "field": "description",
+     "quote": "Upon posting, the system automatically generates and sends remittance advice",
+     "reason": "Remittance triggered by posting."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Only implied: remittance triggered from GL posting, not sourced from subledger clearing detail."
+  },
+  {
+   "id": "PRE-M36",
+   "name": "Multi-channel/non-digital remittance fallback",
+   "members": [
+    "PRE-C37"
+   ],
+   "reason": "Not merged with PRE-C23/C24/C25 (different point/object).",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "PRE-M37",
+   "name": "Agent least privilege at proposal/file generation",
+   "members": [
+    "PRE-C38"
+   ],
+   "reason": "Not merged with PRE-C14 (different point) or PRE-C15 (identity separation vs write scope).",
+   "confidence": "LOW",
+   "low_reason": "Flagged as possibly one control with PRE-C14/PRE-C15.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  }
+ ]
+}

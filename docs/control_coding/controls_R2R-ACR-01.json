@@ -1,0 +1,2113 @@
+{
+ "workflow_id": "R2R-ACR-01",
+ "candidates": [
+  {
+   "id": "ACR-C01",
+   "title": "Extraction exception worklist/log routed to named GL accountant",
+   "category": "exception",
+   "codebook_match": "Validation exception queue at capture",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "agentic_architect",
+     "finance_domain"
+    ],
+    "quote": "the step must surface extraction exceptions (stale or missing closing rates, accounts due under the risk schedule that failed to extract, broken feeds) to the GL accountant as a worklist",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Extraction exception worklist"
+    },
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Extraction exception log"
+    },
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Extraction exceptions log"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Extraction exception log"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T1",
+     "field": "outputs",
+     "marker": "Extraction exception queue"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-ACR-01-0bac",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Extraction exception log"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-ACR-01-464b",
+     "step_id": "ACR-T-01",
+     "field": "description",
+     "marker": "The GL accountant resolves extraction exceptions (missing feeds, stale rates) flagged by the platform."
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-ACR-01-a86d",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "The GL accountant reviews extraction exceptions (missing feeds, stale rates)"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-ACR-01-48b8",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Extraction exception log"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-ACR-01-688a",
+     "step_id": "TS-ACR-01",
+     "field": "outputs",
+     "marker": "Extraction exception log"
+    }
+   ],
+   "flags": [
+    "Baseline presence in 464b and a86d is description-only (no named exception output) - weaker variant.",
+    "Codebook match is by analogy (capture-stage exception queue in P2P); researcher to confirm it is the same mechanism.",
+    "Several roles proposed it independently in round1 across runs (hitl_designer 60e6/517f, agentic_architect dd48, finance_domain 216b)."
+   ]
+  },
+  {
+   "id": "ACR-C02",
+   "title": "First-class manual/semi-manual extraction path alongside automated feeds",
+   "category": "fallback",
+   "codebook_match": "Dual-track actuals ingestion for non-integrated entities",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "A manual fallback must remain a first-class, not a deprecated, path.",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "both are first-class, equally compliant modes, not a primary path with a degraded fallback"
+    },
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "a manual extraction lane (file upload, direct entry) is retained as a first-class, equally-governed path"
+    },
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "extracted through a permanently supported manual/semi-manual path, selected per source system, not a deprecated fallback"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "a structured manual/semi-automated entry path feeds the identical downstream schema"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T1",
+     "field": "description",
+     "marker": "a first-class manual template-upload path where they do not"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "The 60e6 emerging_economy quote covers both ACR-01 and ACR-02 manual paths; may be one control with ACR-C11 (manual matching path).",
+    "Codebook match is partial: dev control was dual-track ingestion for non-integrated entities in FPA; 'Documented degraded-mode fallback as a named input' is an alternative match.",
+    "Arguably resilience/design choice rather than assurance control; researcher to confirm it qualifies."
+   ]
+  },
+  {
+   "id": "ACR-C03",
+   "title": "Extraction run/mode log (source, timestamp, rate version, extraction mode)",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "provided every run is logged with source system, extraction timestamp, and rate version",
+    "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "Rate version, source system, and extraction mode (automated/manual) are logged on every run."
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Extraction mode record (automated/manual) per account"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T1",
+     "field": "outputs",
+     "marker": "Extraction run-log"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "517f run-log records source/timestamp/rate/record count but not extraction mode; dd48 records mode but not rate/source - partial overlaps; may be two controls (run-log vs mode record).",
+    "Same idea also raised in round1 by agentic_architect in 60e6 and 216b (versioned/timestamped runs, rate vintage) where it did not reach the TSS; dd48 mode-per-account record not traced to round1."
+   ]
+  },
+  {
+   "id": "ACR-C04",
+   "title": "Exchange differences produced as a separately visible output/record",
+   "category": "evidence",
+   "codebook_match": "Tagged exchange-difference schedule",
+   "attribution": {
+    "roles": [
+     "accounting_standards",
+     "finance_domain"
+    ],
+    "quote": "I would require the output to carry a visible FX-translation audit trail (KB-08: exchange differences must be tracked, not netted invisibly)",
+    "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+    "agent_role": "round1_accounting_standards"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "FX translation and exchange-difference record"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Exchange differences log"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T1",
+     "field": "outputs",
+     "marker": "FX revaluation differences (separately identified)"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "60e6 tags 'FX difference' as an exception type in the matching queue (see ACR-C08) - possible weaker variant of this control, not counted here.",
+    "accounting_standards raised the KB-08 non-negotiable in round1 in every run; attribution to a single role is not unique."
+   ]
+  },
+  {
+   "id": "ACR-C05",
+   "title": "Extraction halts on unavailable feed/stale rate rather than substituting a default",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "the agent halts that account's extraction and raises a queue item rather than substituting a default",
+    "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "that account's extraction halts and raises a visible exception"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "May be one control with ACR-C01 (exception routing); cb53 'never carried forward silently' is a weaker variant not counted here.",
+    "Same idea in 517f round1_agentic_architect ('halts and raises an exception ... rather than substituting a stale value') but not in 517f TSS."
+   ]
+  },
+  {
+   "id": "ACR-C06",
+   "title": "Matching exception queue for unmatched / low-confidence items",
+   "category": "exception",
+   "codebook_match": "Validation exception queue at capture",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "finance_domain",
+     "agentic_architect"
+    ],
+    "quote": "The human's place is the unmatched/low-confidence queue",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Exception queue with provenance and type tags"
+    },
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "everything the rules cannot resolve routes to a manual matching queue"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Unmatched items and exception queue"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T2",
+     "field": "description",
+     "marker": "items the rules cannot close are routed to an explicit, named exception queue"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-ACR-01-0bac",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Unmatched item exception queue"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-ACR-01-464b",
+     "step_id": "ACR-T-02",
+     "field": "outputs",
+     "marker": "Unmatched exception queue"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-ACR-01-a86d",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "the GL accountant is routed only unmatched or low-confidence items for manual matching"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-ACR-01-48b8",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "the GL accountant triages and manually resolves the residual unmatched population"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-ACR-01-688a",
+     "step_id": "TS-ACR-02",
+     "field": "outputs",
+     "marker": "Unmatched item exception queue"
+    }
+   ],
+   "flags": [
+    "216b has no explicit queue (only 'Match-rate and exception metrics' output and a manual matching path) - not counted; judgement call.",
+    "Baseline a86d and 48b8 are description-only, weaker variants (no named queue output).",
+    "Current-state ACR-02 already routes unmatched items to manual matching; control may be considered inherited.",
+    "Codebook match by analogy only; could be 'new'."
+   ]
+  },
+  {
+   "id": "ACR-C07",
+   "title": "Match-rule provenance / rule metadata on each match or non-match (why it matched or did not)",
+   "category": "evidence",
+   "codebook_match": "Near-miss retention in the match audit log",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "agentic_architect"
+    ],
+    "quote": "the accountant must see match-rule provenance (why something didn't match, what rule nearly fired)",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "an exception queue that carries match-rule provenance (why an item didn't match, which rule nearly fired)"
+    },
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "Every unmatched item is shown the rule(s) evaluated and why none fired."
+    },
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "with a logged rule citation per match, reversible on review"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "routed to a worked exception queue with reason codes"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T2",
+     "field": "outputs",
+     "marker": "Unmatched items with match-confidence and rule metadata"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "dd48 'reason codes' is a weaker variant (reason, not rule provenance).",
+    "216b logs rule citation on matched items (reversibility) rather than on unmatched items - may be a distinct control.",
+    "Codebook match is partial ('which rule nearly fired' ~ near-miss retention); could be 'new'.",
+    "cb53 rule-evaluated element first appears in cb53 round2_agentic_architect (accepted from another role) rather than round1."
+   ]
+  },
+  {
+   "id": "ACR-C08",
+   "title": "Exception-type tagging at point of queueing (FX, intercompany, timing, true error)",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "with explicit tagging of exception *types* (timing difference, FX difference, intercompany break, true error) at the point of queueing",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "an exception-type tag (FX difference, intercompany break, timing difference, true error)"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Overlaps with ACR-C04 (FX separately visible) and ACR-C09 (intercompany identifiability); also with 216b TS-03 downstream tagging of intercompany/estimation items - may be the same control expressed at a different step."
+   ]
+  },
+  {
+   "id": "ACR-C09",
+   "title": "Intercompany items kept separately identifiable through matching",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "accounting_standards",
+     "finance_domain",
+     "maximalist"
+    ],
+    "quote": "Where accounts are intercompany in nature, matching must preserve the ability to fully identify intragroup positions for elimination (KB-14)",
+    "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+    "agent_role": "round1_accounting_standards"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "the matching configuration preserves full identifiability of intragroup positions for elimination"
+    },
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "Intercompany-tagged items remain separately identifiable through both the automated and manual paths."
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T2",
+     "field": "outputs",
+     "marker": "Intercompany match status"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Is it a governance control or an accounting-standards requirement on processing? Researcher to decide.",
+    "60e6 intercompany exception-type tag (ACR-C08) may be the same control.",
+    "Several roles raised it in round1 (accounting_standards cb53/216b/517f, finance_domain 517f, maximalist 517f).",
+    "Possible codebook relation to R2R-PC-01 intercompany controls, but no direct match."
+   ]
+  },
+  {
+   "id": "ACR-C10",
+   "title": "Versioned, change-controlled matching rules and tolerances",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "accounting_standards"
+    ],
+    "quote": "The matching ruleset is itself a governed artifact (versioned, change-logged) so that changes to match tolerances don't silently alter what counts as a reconciling item",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "treated as governed computation-method changes requiring policy-consistency review before deployment"
+    },
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Match rule version log"
+    },
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "The auto-match rule set and tolerance thresholds are centrally governed, versioned and subject to change control"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "60e6 round1_accounting_standards independently proposed the policy-consistency review of tolerance changes; agentic_architect proposed versioning - two roles, possibly two aspects (version log vs pre-deployment review).",
+    "cb53 'Match rule version log' could be classed as evidence rather than gate."
+   ]
+  },
+  {
+   "id": "ACR-C11",
+   "title": "First-class manual matching path (permanent, not deprecated)",
+   "category": "fallback",
+   "codebook_match": "Dual-track actuals ingestion for non-integrated entities",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "A manual fallback must remain a first-class, not a deprecated, path.",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "manually by the GL accountant where they do not — both modes are compliant and named explicitly"
+    },
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "which is resourced as a designed, permanent capability rather than a degraded exception path"
+    },
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "a permanently supported manual matching path handles accounts with inconsistent or non-standardised data"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "A manual matching mode remains first-class for accounts/entities where automated matching is not viable."
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T2",
+     "field": "description",
+     "marker": "is maintained as a first-class route, not a deprecated fallback"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "May be one control with ACR-C02 (manual extraction path) - same quote supports both.",
+    "Baseline current-state ACR-02 already says 'manually otherwise'; baseline TSSs route residual items to manual matching (ACR-C06) but not as a designated first-class path - not counted.",
+    "Codebook match partial; alternative 'Documented degraded-mode fallback as a named input'."
+   ]
+  },
+  {
+   "id": "ACR-C12",
+   "title": "Defined, rehearsed fallback to full manual matching on engine outage, logged as an event",
+   "category": "fallback",
+   "codebook_match": "Documented degraded-mode fallback as a named input",
+   "attribution": {
+    "roles": [
+     "pragmatist"
+    ],
+    "quote": "whether the organisation reverts to full manual matching without losing a reconciliation cycle",
+    "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "A defined, rehearsed fallback to full manual matching exists for engine outage or systemic mis-ruling"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Could be folded into ACR-C11 (manual matching path); distinct here because it is an invoked, logged outage event.",
+    "517f round1_pragmatist ('Every automated step must have a stated manual fallback') proposed the same idea but 517f TSS carries only the first-class path."
+   ]
+  },
+  {
+   "id": "ACR-C13",
+   "title": "Manual matches logged to the same standard as automated (identity, timestamp, rationale)",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "expose a manual-entry/upload interface with the same logging schema (source, timestamp, preparer identity, rule or absence of rule) as the automated path",
+    "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+    "agent_role": "round2_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "carries the same logging standard (preparer identity, timestamp, rationale) as the automated path"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Attribution is round2 (not found in round1 in this form).",
+    "May be part of ACR-C11 or ACR-C07."
+   ]
+  },
+  {
+   "id": "ACR-C14",
+   "title": "Match confidence score attached to each auto-match",
+   "category": "monitoring",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "hitl_designer"
+    ],
+    "quote": "Auto-matched items post straight through with a confidence score attached",
+    "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Matched population with confidence scores"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T2",
+     "field": "outputs",
+     "marker": "Unmatched items with match-confidence and rule metadata"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "517f attaches confidence to unmatched items only - partial; may be one control with ACR-C07.",
+    "Low-confidence routing also appears in 60e6 TS-02 and baseline a86d ('low-confidence items') - not counted as a score output."
+   ]
+  },
+  {
+   "id": "ACR-C15",
+   "title": "Statistical sampling of auto-matched items into the reviewed queue",
+   "category": "monitoring",
+   "codebook_match": "Mandatory sampling audit of the auto-approved population",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "The target design must keep a sampling/spot-check mechanism on auto-matched items, not just the exceptions",
+    "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Auto-match sampling record"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Distinct from reviewer-level sampling (ACR-C25), but both sample the automated population; might be considered one sampling control."
+   ]
+  },
+  {
+   "id": "ACR-C16",
+   "title": "Match-rate / exception metrics monitored",
+   "category": "monitoring",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "pragmatist"
+    ],
+    "quote": "a controller needs to see match rate as its own metric",
+    "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Match-rate and exception metrics"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-195830-baseline-R2R-ACR-01-a86d",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "The automated-match rate is monitored to ensure the matching function, not merely its tooling, is auditable."
+    }
+   ],
+   "flags": [
+    "Borderline control (performance metric vs assurance monitoring)."
+   ]
+  },
+  {
+   "id": "ACR-C17",
+   "title": "Matching kept as a step distinct from extraction (separate failure domains/logs)",
+   "category": "other",
+   "codebook_match": "Matching kept as a discrete auditable step boundary",
+   "attribution": {
+    "roles": [
+     "finance_domain",
+     "agentic_architect",
+     "pragmatist"
+    ],
+    "quote": "conflating \"did the feed load\" with \"do the two sides agree\" obscures two different failure modes with different owners",
+    "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "Matching remains a step distinct from extraction so a feed-load failure and a matching disagreement are diagnosable"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T2",
+     "field": "description",
+     "marker": "Kept as a separate step from extraction because the two are different failure domains"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "All council and baseline TSSs structurally keep extraction and matching as separate steps; only 216b and 517f state it as a control rationale. Baseline presence by structure alone is a judgement call - not counted.",
+    "517f T3 also states investigation is kept separate from matching/adjustment (see ACR-C20)."
+   ]
+  },
+  {
+   "id": "ACR-C18",
+   "title": "AI classification suggestions advisory only; human accepts/overrides every item with logged reason",
+   "category": "approval",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "agentic_architect"
+    ],
+    "quote": "any system suggestion must require an explicit, reasoned accept/override, logged",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "every acceptance or override is an explicit, reasoned, logged human action, not a default confirm"
+    },
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "the agent proposes, the human disposes (accept, reject, override with reason) on every item"
+    },
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "the classification decision and its evidential basis must originate from and be owned by the accountant"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "the accountant must accept, edit, or override before an item is marked explained"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T3",
+     "field": "description",
+     "marker": "advisory only: the accountable human confirms or overrides every classification before it flows downstream"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "216b does not state a logged accept/override, only human ownership - weaker variant.",
+    "Baseline 48b8 has 'system-suggested root causes' with GL accountant classifying, but no stated override/acceptance control - not counted; judgement call.",
+    "Possible codebook relation to 'Named judgment owner with contemporaneous rationale' or 'Structured attributable resolution record'.",
+    "agentic_architect (60e6 round1) proposed the same in parallel ('Every suggestion and every accept/override is logged')."
+   ]
+  },
+  {
+   "id": "ACR-C19",
+   "title": "No auto-close of items above materiality or age threshold without named human review",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "it cannot auto-close an item above a materiality or age threshold without a named reviewer seeing it",
+    "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "No item is auto-closed above a materiality or age threshold without a named human review."
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "May be part of ACR-C18 (human disposes every item)."
+   ]
+  },
+  {
+   "id": "ACR-C20",
+   "title": "Classification recorded as a distinct artifact separate from any resulting journal entry",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "destroys the ability to see the classification rationale independently of the resulting entry",
+    "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "Classification is recorded as an artifact independent of any resulting journal entry"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "recorded as a distinct artifact separate from any adjusting entry it later gives rise to"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T3",
+     "field": "description",
+     "marker": "This step is not merged into matching or into adjustment preparation"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "517f is a weaker variant (step-boundary statement, not a distinct artifact).",
+    "All baselines keep a separate 'Explained reconciling items' output (except 688a merged step) - arguably the same mechanism by structure; not counted."
+   ]
+  },
+  {
+   "id": "ACR-C21",
+   "title": "Estimation-based entries require named accountable human preparer with documented basis (no auto-posting); mechanical entries may be system-drafted",
+   "category": "approval",
+   "codebook_match": "Named judgment owner with contemporaneous rationale",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "maximalist",
+     "accounting_standards",
+     "agentic_architect"
+    ],
+    "quote": "Every estimation-bearing entry (provisions, write-downs, judgment accruals) must have a named, accountable human preparer with a documented basis",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "a documented basis attached to the entry — no auto-posting of estimates"
+    },
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "documents the judgment basis for any estimation-based entry"
+    },
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "must be human-authored with a documented basis"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "require a named accountable preparer who records a documented judgment basis, with no default-accept affordance"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T4",
+     "field": "outputs",
+     "marker": "Certified estimation-based adjusting entries (documented basis)"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-193948-baseline-R2R-ACR-01-464b",
+     "step_id": "ACR-T-04",
+     "field": "description",
+     "marker": "applies a documented basis for estimation-type adjustments"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-ACR-01-a86d",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "estimation-based adjustments (e.g. provisions, impairments, NRV write-downs) retain a documented human basis"
+    }
+   ],
+   "flags": [
+    "Raised in round1 by many roles across runs (hitl_designer, maximalist, accounting_standards, agentic_architect, finance_domain); first-proposer is not unique.",
+    "Baseline variants lack the 'no auto-posting'/named-preparer element - weaker variants."
+   ]
+  },
+  {
+   "id": "ACR-C22",
+   "title": "Preparer attestation record as a distinct, named, timestamped affirmative output",
+   "category": "evidence",
+   "codebook_match": "Named human certification of the actuals baseline",
+   "attribution": {
+    "roles": [
+     "finance_domain",
+     "hitl_designer",
+     "pragmatist",
+     "accounting_standards"
+    ],
+    "quote": "I'd keep the *attestation artifact* (timestamp, preparer identity, completeness checklist) as a named output of TS-04, not as its own step.",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Preparer attestation record"
+    },
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Preparer attestation record"
+    },
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Preparer attestation record"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Preparer attestation record"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T4",
+     "field": "outputs",
+     "marker": "Preparer attestation record (gated, logged)"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-ACR-01-0bac",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Prepared and signed-off reconciliation"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-ACR-01-464b",
+     "step_id": "ACR-T-04",
+     "field": "outputs",
+     "marker": "Prepared and certified reconciliation"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-ACR-01-a86d",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "Submission to review automatically captures the preparer's attestation"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-ACR-01-48b8",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "submits the completed reconciliation package in a single accountable preparer action"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-ACR-01-688a",
+     "step_id": "TS-ACR-03",
+     "field": "outputs",
+     "marker": "Prepared and attested reconciliation"
+    }
+   ],
+   "flags": [
+    "Inherited from current-state ACR-05 (Preparer sign-off); council variants make it a distinct affirmative record.",
+    "Baseline a86d (auto-captured on submission) and 48b8 (submission action) are weaker/implied variants - council explicitly rejects attestation inferred from submission.",
+    "Codebook match by analogy (certification sign-off record); could be 'new'."
+   ]
+  },
+  {
+   "id": "ACR-C23",
+   "title": "Attestation shows what changed since preparer's last touch (diff)",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "The sign-off screen must show the preparer what changed since their last touch",
+    "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "a diff of what changed since the preparer's last touch"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Could be a sub-element of ACR-C22 rather than a separate control."
+   ]
+  },
+  {
+   "id": "ACR-C24",
+   "title": "Gated 'submit for review' lock that the JE batch cannot bypass",
+   "category": "gate",
+   "codebook_match": "Release gate enforcing requirement ordering as a system precondition",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "agentic_architect"
+    ],
+    "quote": "the attestation must be an affirmative, hard state-transition the preparer triggers deliberately (a \"submit for review\" lock, distinct from the act of drafting or editing)",
+    "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+    "agent_role": "round2_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T4",
+     "field": "description",
+     "marker": "a 'submit for review' lock distinct from drafting/editing) that the JE batch cannot bypass"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Attribution is round2 (hitl_designer and agentic_architect both in round2); not found in round1 in this form.",
+    "May be a sub-element of ACR-C22; codebook match is by analogy only."
+   ]
+  },
+  {
+   "id": "ACR-C25",
+   "title": "Risk-weighted reviewer sampling over low-risk / non-flagged population",
+   "category": "monitoring",
+   "codebook_match": "Mandatory sampling audit of the auto-approved population",
+   "attribution": {
+    "roles": [
+     "pragmatist",
+     "finance_domain"
+    ],
+    "quote": "a reconciliation platform that auto-approves reconciliations under a materiality threshold without any human sampling is a governance hole",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "with periodic human sampling even on low-risk, fully-matched accounts"
+    },
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "lighter sampled or batch-confirmation review for fully auto-matched, exception-free low-risk accounts"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "marker": "Reviewer sampling record"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "Periodic sampling may run as a secondary detective layer"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "517f sampling is optional ('may run') - weaker variant.",
+    "dd48 'sampling floor' first appears in round2 (finance_domain/hitl_designer), not round1.",
+    "Possible overlap with ACR-C15 (auto-match sampling) and ACR-C26 (risk-tiered review)."
+   ]
+  },
+  {
+   "id": "ACR-C26",
+   "title": "Risk-tiered review depth with every reconciliation still receiving a human reviewer act",
+   "category": "approval",
+   "codebook_match": "Risk-tiered approval replacing uniform routing",
+   "attribution": {
+    "roles": [
+     "finance_domain",
+     "hitl_designer"
+    ],
+    "quote": "low-risk, fully-matched, zero-variance accounts can route to a lighter-touch system-assisted certification, while high-risk or high-value accounts require full controller review",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "review effort is risk-tiered by attention allocation"
+    },
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "Review intensity is risk-weighted"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "The reviewer's screen is risk-weighted to foreground aged items, estimation entries, prior-period corrections"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "Review depth, not review existence, scales with risk"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Codebook match is partial: dev control replaced uniform routing with tiered approval (incl. auto-approval); here approval remains universal and only depth is tiered.",
+    "cb53 'agent pre-screens' (ACR-C28) is a related but weaker variant - not counted here."
+   ]
+  },
+  {
+   "id": "ACR-C27",
+   "title": "No auto-approval: every reconciliation needs a human reviewer act; agents cannot approve or count as an SoD actor",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "pragmatist",
+     "agentic_architect"
+    ],
+    "quote": "a reconciliation platform that auto-approves reconciliations under a materiality threshold without any human sampling is a governance hole",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "no account population is auto-approved by a rule engine with zero human touch"
+    },
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "a boundary enforced structurally and not satisfiable by agent involvement on either side"
+    },
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "no account class bypasses reviewer visibility entirely"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "no account is auto-approved on the strength of a confidence score alone"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "no automated agent may approve on its own or another agent's behalf"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Two possibly distinct mechanisms clustered: (a) no rule-based auto-approval of any population (60e6, 216b, dd48); (b) agent cannot be an approver/second actor for SoD (cb53, 517f).",
+    "Same 60e6 pragmatist quote also used for ACR-C25; cb53 round1_agentic_architect and 517f round1_agentic_architect are clearer for part (b).",
+    "Baseline TSSs keep a human reviewer but do not state the no-auto-approval rule - not counted; judgement call."
+   ]
+  },
+  {
+   "id": "ACR-C28",
+   "title": "Agent/AI risk-scoring pre-screen of the reconciliation for the reviewer",
+   "category": "monitoring",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "A pre-screening agent runs completeness checks, variance/anomaly detection, and risk-scoring on the prepared reconciliation and proposed JEs before the controller sees them",
+    "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "An agent pre-screens for completeness, variance and anomaly, surfacing flags the controller resolves"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T5",
+     "field": "outputs",
+     "marker": "Reviewer risk assessment"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Possibly part of ACR-C26 (risk-tiered review).",
+    "Same proposal in 60e6 round1_agentic_architect ('Risk Scoring Agent') and 216b round1_agentic_architect, not carried to those TSSs."
+   ]
+  },
+  {
+   "id": "ACR-C29",
+   "title": "Reviewer fed exception-level detail, not a totals-only / 'all green' summary",
+   "category": "evidence",
+   "codebook_match": "Variance packet assembled before handoff",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "must be fed exception-oriented information — flagged estimates, overrides, aged items, unmatched carry-forwards — not a totals-only summary",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "not a totals-only summary"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "not an aggregated 'all green' dashboard"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Codebook match by analogy only; could be 'new'.",
+    "dd48 TS-05 risk-weighted screen foregrounding items is a related variant (counted under ACR-C26)."
+   ]
+  },
+  {
+   "id": "ACR-C30",
+   "title": "Discrete, logged per-item reviewer approval decision (no batch/implicit approval)",
+   "category": "approval",
+   "codebook_match": "Traceable approval record tied to items reviewed",
+   "attribution": {
+    "roles": [
+     "pragmatist"
+    ],
+    "quote": "reviewer approval must remain a discrete, loggable decision even after I merge it with escalation",
+    "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "the controller records a discrete approval decision for every item, with no batch or implicit approval"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "The decision to approve or send back is a discrete, logged human action."
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "no reconciliation closes without an identifiable reviewer act"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "517f is a weaker variant (identifiable act per reconciliation, not per item, not stated as logged).",
+    "216b permits batch-confirmation for low-risk accounts - not counted (contrary variant)."
+   ]
+  },
+  {
+   "id": "ACR-C31",
+   "title": "Independent reviewer distinct from the preparer (preparer/reviewer segregation)",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain",
+     "maximalist",
+     "accounting_standards",
+     "emerging_economy",
+     "pragmatist"
+    ],
+    "quote": "ACR-R-05 requires actor separation between JE preparation and review, and that separation is a real control, not paperwork",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "An independent reviewer, structurally and by identity distinct from the TS-04 preparer"
+    },
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "a distinct human identity from the TS-04 preparer"
+    },
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "An independent reviewer, distinct from the preparer"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "An independent reviewer, distinct from the preparer"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "The reviewer is structurally distinct from the T4 preparer and holds sole approval authority"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-ACR-01-0bac",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "An independent reviewer, distinct from the preparer of the adjusting entries"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-ACR-01-464b",
+     "step_id": "ACR-T-05",
+     "field": "description",
+     "marker": "maintaining segregation of duties from the preparer"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-ACR-01-a86d",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "An independent reviewer, distinct from the preparer of the adjusting entries"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-ACR-01-48b8",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "An independent finance controller reviews and approves"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-ACR-01-688a",
+     "step_id": "TS-ACR-04",
+     "field": "description",
+     "marker": "An independent finance controller, separate from the preparer"
+    }
+   ],
+   "flags": [
+    "Inherited from current-state ACR-06 and encoded requirement ACR-R-05; raised as non-negotiable by nearly every role in round1 - attribution not meaningful.",
+    "Baseline 48b8 says 'independent' without explicitly naming separation from preparer - weaker wording."
+   ]
+  },
+  {
+   "id": "ACR-C32",
+   "title": "Prior-period corrections routed via a flagged sub-path visible to the reviewer",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "Prior-period error correction (KB-05) must route through a distinct, flagged sub-path that forces visibility to the reviewer",
+    "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "an explicit, flagged sub-path that forces visibility to the reviewer"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Related: 60e6 TS-03 routes estimation items to an accountable-preparer path; dd48 TS-05 foregrounds prior-period corrections to the reviewer (part of the same mechanism)."
+   ]
+  },
+  {
+   "id": "ACR-C33",
+   "title": "Continuous automated ageing monitoring against threshold",
+   "category": "monitoring",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "maximalist",
+     "finance_domain",
+     "agentic_architect"
+    ],
+    "quote": "ageing thresholds are monitored continuously and breach notifications fire automatically to item owners",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_maximalist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "detected continuously and exhaustively across the whole book of reconciliations by automated monitoring"
+    },
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "Aging of reconciling items is monitored continuously by the system against the ageing threshold"
+    },
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "Items crossing the ageing threshold are flagged automatically by the system"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "Item ageing against the risk-rated threshold is computed continuously"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "Open reconciling items are continuously scanned against ageing thresholds"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-ACR-01-0bac",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "The platform continuously tracks the age of open reconciling items against the ageing threshold"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-ACR-01-464b",
+     "step_id": "ACR-T-05",
+     "field": "description",
+     "marker": "the platform automatically flags reconciling items beyond the ageing threshold"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-ACR-01-a86d",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "The platform continuously ages open reconciling items against risk-based thresholds"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-ACR-01-688a",
+     "step_id": "TS-ACR-04",
+     "field": "inputs",
+     "marker": "Aged-item alerts (system-generated)"
+    }
+   ],
+   "flags": [
+    "216b and baseline 464b/688a flag automatically but do not state 'continuous' - weaker variants.",
+    "Baseline 48b8: controller escalates within review cycle with no automated monitoring - not present."
+   ]
+  },
+  {
+   "id": "ACR-C34",
+   "title": "Escalation decision remains a human controller judgment (detection automated, decision not)",
+   "category": "approval",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "pragmatist",
+     "accounting_standards"
+    ],
+    "quote": "The escalation function (ACR-07) must preserve a human decision-maker for what happens to aged items, even though detection can be automated.",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "Severity assessment, routing and the decision to escalate remain a controller-led human judgment made at first breach"
+    },
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "the controller records an explicit escalation decision (owner assigned, deadline, rationale)"
+    },
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "the decision of whether, how and to whom to escalate remains a controller-owned judgment"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "remains a human, controller-owned, logged action"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "remains a distinct human judgment held by the finance controller"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-193948-baseline-R2R-ACR-01-464b",
+     "step_id": "ACR-T-05",
+     "field": "description",
+     "marker": "the controller escalates them for resolution"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-ACR-01-48b8",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "escalates any reconciling items beyond the ageing threshold for resolution"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-ACR-01-688a",
+     "step_id": "TS-ACR-04",
+     "field": "description",
+     "marker": "escalated by the controller for resolution"
+    }
+   ],
+   "flags": [
+    "Current-state ACR-07 is already human-performed; baseline presence is inherited and implicit - judgement call.",
+    "Baselines 0bac ('automatically escalates') and a86d ('auto-triggers escalation') place escalation with the system - not present."
+   ]
+  },
+  {
+   "id": "ACR-C35",
+   "title": "Escalation log (retained, separately traceable)",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "pragmatist",
+     "hitl_designer"
+    ],
+    "quote": "escalation needs its own trigger (ageing threshold) and its own log",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Escalation log"
+    },
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "marker": "Escalation log"
+    },
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "marker": "Escalation log"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Escalation log with named resolution owner and deadline"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T6",
+     "field": "outputs",
+     "marker": "Escalation log"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-ACR-01-0bac",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Escalation log"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-ACR-01-464b",
+     "step_id": "ACR-T-05",
+     "field": "outputs",
+     "marker": "Escalation log"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-ACR-01-a86d",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Escalation log"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-ACR-01-48b8",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "marker": "Escalation log"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-ACR-01-688a",
+     "step_id": "TS-ACR-04",
+     "field": "outputs",
+     "marker": "Escalation log"
+    }
+   ],
+   "flags": [
+    "Inherited from current-state ACR-07 output; attribution is not meaningful."
+   ]
+  },
+  {
+   "id": "ACR-C36",
+   "title": "Named resolution owner and deadline recorded per escalation / resolution tracking",
+   "category": "exception",
+   "codebook_match": "Anomaly resolution record with defined SLA",
+   "attribution": {
+    "roles": [
+     "pragmatist",
+     "hitl_designer"
+    ],
+    "quote": "with a mandatory escalation decision (owner assigned, deadline set) recorded at the point of approval",
+    "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "(owner assigned, deadline, rationale)"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Escalation log with named resolution owner and deadline"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T6",
+     "field": "outputs",
+     "marker": "Resolution tracking record"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "517f 'Resolution tracking record' does not specify owner/deadline fields explicitly - partial.",
+    "dd48 round1_hitl_designer independently proposed it ('a resolution owner and deadline')."
+   ]
+  },
+  {
+   "id": "ACR-C37",
+   "title": "Portfolio-level cross-entity ageing surveillance (catch items explained identically over periods)",
+   "category": "monitoring",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "it is a portfolio-level surveillance function: the controller (or a controllership/SOX team) runs a cross-entity aging report periodically",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "run as a cross-entity, cadence-driven surveillance function independent of any single account's approval cycle"
+    },
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-06",
+     "field": "inputs",
+     "marker": "Ageing data across the reconciliation portfolio"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "May be one control with ACR-C33 (continuous ageing monitoring)."
+   ]
+  },
+  {
+   "id": "ACR-C38",
+   "title": "Async/batch operation of escalation and review for low-connectivity sites",
+   "category": "fallback",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "The escalation mechanism must function on a periodic batch/report basis, not only through a live ticketing or workflow tool",
+    "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "Review and escalation support both continuous/dashboard and periodic batch operation"
+    },
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "with batch/async notification supported for low-connectivity sites"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "asynchronously where live dashboards are not reliably reachable"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Mixes extraction notifications (216b TS-01) and escalation/review (216b TS-05, dd48 TS-06); could be split.",
+    "Possibly one resilience theme with ACR-C39/ACR-C40."
+   ]
+  },
+  {
+   "id": "ACR-C39",
+   "title": "Local / periodically-synced evidence retention as compliant alternative to cloud",
+   "category": "fallback",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "The target step must allow local or low-bandwidth-compatible storage with periodic sync",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "via local/low-bandwidth-compatible storage with a defined sync cadence and integrity check"
+    },
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "specified to function under intermittent connectivity"
+    },
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "with hybrid or local storage options where cloud-only retention is infeasible"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "with local/periodically-synced retention remaining an acceptable path"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "cb53 wording is generic (intermittent connectivity) - weaker variant.",
+    "60e6 adds an integrity check on sync - possibly an additional control."
+   ]
+  },
+  {
+   "id": "ACR-C40",
+   "title": "Portable / exportable, platform-independent evidence and status output",
+   "category": "fallback",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "Retention format should be portable (exportable, non-proprietary)",
+    "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "produce exportable, platform-independent status output"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T7",
+     "field": "outputs",
+     "marker": "Retained reconciliation evidence package (portable/exportable)"
+    },
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "in live-dashboard or batch-export form"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "60e6 batch-export of status report is a weaker variant.",
+    "cb53 applies to status output, 517f to evidence package - may be two controls.",
+    "Earliest round1 statement is 60e6 round1_emerging_economy ('status reporting must work by batch export as well as live dashboard')."
+   ]
+  },
+  {
+   "id": "ACR-C41",
+   "title": "Immutable / tamper-evident evidence retention; no silent overwrite",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "into immutable (WORM) storage",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "retained either via immutable (WORM-class) archival where infrastructure supports it"
+    },
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "with amendments routed through a controlled, logged re-filing process rather than silent overwrite"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T1",
+     "field": "description",
+     "marker": "Every run writes an immutable, inspectable log"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-205000-baseline-R2R-ACR-01-688a",
+     "step_id": "TS-ACR-05",
+     "field": "description",
+     "marker": "automatically archived to a tamper-evident repository"
+    }
+   ],
+   "flags": [
+    "517f immutability applies only to the extraction run-log, not to the evidence package - partial.",
+    "cb53 controlled re-filing is a different mechanism with similar purpose - judgement call."
+   ]
+  },
+  {
+   "id": "ACR-C42",
+   "title": "Evidence retention captured automatically at point of action (incl. attestations, approvals, escalations)",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain",
+     "maximalist",
+     "agentic_architect",
+     "pragmatist"
+    ],
+    "quote": "Evidence retention remains an explicit step with named outputs.",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "marker": "Retained reconciliation evidence"
+    },
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Retained reconciliation evidence"
+    },
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "is captured incrementally as each upstream step completes and auto-packaged into the system of record"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "accumulates as a by-product of each step and is archived in a structured, per-account, per-period retrievable form"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T7",
+     "field": "description",
+     "marker": "is captured automatically at the point each action occurs and compiled into a defined, retrievable, portable"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-ACR-01-0bac",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "marker": "Retained reconciliation evidence"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-ACR-01-464b",
+     "step_id": "ACR-T-06",
+     "field": "outputs",
+     "marker": "Retained reconciliation evidence"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-ACR-01-a86d",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Retained reconciliation evidence"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-ACR-01-48b8",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Retained reconciliation evidence"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-ACR-01-688a",
+     "step_id": "TS-ACR-05",
+     "field": "outputs",
+     "marker": "Retained reconciliation evidence"
+    }
+   ],
+   "flags": [
+    "Inherited from current-state ACR-08 and requirement ACR-R-08; attribution not meaningful.",
+    "Clusters plain retention with automatic point-of-action capture; may be two controls (retention vs incremental capture)."
+   ]
+  },
+  {
+   "id": "ACR-C43",
+   "title": "Named GL accountant reviews/confirms status report and evidence completeness before publication",
+   "category": "approval",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "finance_domain"
+    ],
+    "quote": "I require that the accountant (or a designated reviewer) actively reviews the status report before it is treated as final",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-07",
+     "field": "description",
+     "marker": "The GL accountant retains explicit accountability for reviewing the status report for completeness exceptions"
+    },
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Completeness confirmation record"
+    },
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "Incomplete, overdue or flagged reconciliations are surfaced to an accountable GL accountant for resolution"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "marker": "Reviewed reconciliation status report"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T7",
+     "field": "description",
+     "marker": "the GL accountant composes or confirms the narrative report"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-205000-baseline-R2R-ACR-01-688a",
+     "step_id": "TS-ACR-05",
+     "field": "description",
+     "marker": "with the GL accountant responsible for resolving retention or reporting exceptions"
+    }
+   ],
+   "flags": [
+    "216b and baseline 688a are weaker variants (exception resolution, not a pre-publication review).",
+    "cb53 is evidence-completeness confirmation against schedule; others are status-report review - may be two controls."
+   ]
+  },
+  {
+   "id": "ACR-C44",
+   "title": "Reconciliation status reporting",
+   "category": "monitoring",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "pragmatist"
+    ],
+    "quote": "Evidence retention remains an explicit step with named outputs.",
+    "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "marker": "Reconciliation status report"
+    },
+    {
+     "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Reconciliation status report"
+    },
+    {
+     "run_id": "20261010-201338-council-R2R-ACR-01-216b",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Reconciliation status report"
+    },
+    {
+     "run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "marker": "Reviewed reconciliation status report"
+    },
+    {
+     "run_id": "20261010-205046-council-R2R-ACR-01-517f",
+     "step_id": "T7",
+     "field": "outputs",
+     "marker": "Reconciliation status report"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-ACR-01-0bac",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "marker": "Reconciliation status report"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-ACR-01-464b",
+     "step_id": "ACR-T-06",
+     "field": "outputs",
+     "marker": "Reconciliation status report"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-ACR-01-a86d",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Reconciliation status report"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-ACR-01-48b8",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Reconciliation status report"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-ACR-01-688a",
+     "step_id": "TS-ACR-05",
+     "field": "outputs",
+     "marker": "Reconciliation status report"
+    }
+   ],
+   "flags": [
+    "Inherited from current-state ACR-08; borderline whether status reporting is a governance control; attribution not meaningful (quote is generic)."
+   ]
+  }
+ ]
+}

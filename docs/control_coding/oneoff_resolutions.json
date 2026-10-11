@@ -1,0 +1,336 @@
+{
+  "note": "Resolutions of the one-off cases, final, 11 Oct 2026. 'basis' names the decided principle (CONTROL_MERGE_RULE.md) or the author's decision of 11 Oct; UNDECIDABLE = conservative default (does not pass), confirmed by the author.",
+  "borderline": [
+    {
+      "control": "VAR-M14",
+      "runs": [
+        "6fd0",
+        "4f3e",
+        "8d63",
+        "ed96",
+        "c54a"
+      ],
+      "present": true,
+      "basis": "B1: structural, implicit performance counts"
+    },
+    {
+      "control": "VAR-M27",
+      "runs": [
+        "ed96",
+        "9ef2",
+        "c54a",
+        "5154",
+        "7c5b"
+      ],
+      "present": true,
+      "basis": "B1: implicit gating by sequence counts"
+    },
+    {
+      "control": "ACR-M17",
+      "runs": [
+        "60e6",
+        "cb53",
+        "dd48",
+        "0bac",
+        "464b",
+        "a86d",
+        "48b8",
+        "688a"
+      ],
+      "present": true,
+      "basis": "B1: structural separation counts"
+    },
+    {
+      "control": "ACR-M20",
+      "runs": [
+        "60e6",
+        "216b",
+        "517f",
+        "0bac",
+        "464b",
+        "a86d",
+        "48b8",
+        "688a"
+      ],
+      "present": true,
+      "basis": "B1: structural separation counts"
+    },
+    {
+      "control": "EXR-M07",
+      "runs": [
+        "59a3",
+        "0102",
+        "fca9",
+        "cf77",
+        "a752",
+        "1a6b"
+      ],
+      "present": true,
+      "basis": "B1: structural separation counts"
+    },
+    {
+      "control": "EXR-M28",
+      "runs": [
+        "fca9"
+      ],
+      "present": true,
+      "basis": "B1: implicit ordering counts"
+    },
+    {
+      "control": "FSP-M17",
+      "runs": [
+        "d272"
+      ],
+      "present": true,
+      "basis": "B1: order implied by sentence order counts"
+    },
+    {
+      "control": "FSP-M27",
+      "runs": [
+        "106a"
+      ],
+      "present": true,
+      "basis": "B1: segregation implied by distinct actors counts"
+    },
+    {
+      "control": "FSP-M25",
+      "runs": [
+        "c9c7"
+      ],
+      "present": false,
+      "basis": "B4: 'where feasible' covers a subset only"
+    },
+    {
+      "control": "TWM-M03",
+      "runs": [
+        "0842"
+      ],
+      "present": false,
+      "basis": "B4/M4 distinct: different object (late-document holding state, not outage mode)"
+    },
+    {
+      "control": "ABB-M44",
+      "runs": [
+        "600a"
+      ],
+      "present": false,
+      "basis": "B4/M4 distinct: fallback for the approval trigger, not the lock"
+    },
+    {
+      "control": "PRE-M01",
+      "runs": [
+        "872e"
+      ],
+      "present": false,
+      "basis": "B4/M4 distinct: screening flags (PRE-M05 object)"
+    },
+    {
+      "control": "FSP-M20",
+      "runs": [
+        "0590"
+      ],
+      "present": false,
+      "basis": "B4/M4 distinct: chart-of-accounts changes (FSP-M19 object)"
+    },
+    {
+      "control": "EXR-M36",
+      "runs": [
+        "b45d"
+      ],
+      "present": false,
+      "basis": "B4/M4 distinct: different accrual mechanism"
+    },
+    {
+      "control": "EXR-M01",
+      "runs": [
+        "1a6b"
+      ],
+      "present": false,
+      "basis": "B4/M4 distinct: object is not extraction confidence"
+    },
+    {
+      "control": "EXR-M27",
+      "runs": [
+        "0102",
+        "fca9",
+        "cf77",
+        "1a6b"
+      ],
+      "present": true,
+      "basis": "AUTHOR 11 Oct: recommendation accepted (present). Finance review by a distinct reviewer folded into the posting step"
+    },
+    {
+      "control": "EXR-M14",
+      "runs": [
+        "2ec9"
+      ],
+      "present": false,
+      "basis": "UNDECIDABLE: unclear whether the log records the specialist's decision; council run, conservative = absent; AUTHOR 11 Oct: conservative default stands"
+    }
+  ],
+  "merges": [
+    {
+      "controls": [
+        "TWM-M16",
+        "TWM-M13"
+      ],
+      "basis": "M1: strength variant on the same object"
+    },
+    {
+      "controls": [
+        "TWM-M31",
+        "TWM-M30"
+      ],
+      "basis": "M1: enforcement variant of the same segregation"
+    },
+    {
+      "controls": [
+        "ABB-M15",
+        "ABB-M13"
+      ],
+      "basis": "AUTHOR 11 Oct: attribute/property/component of a mechanism = same control (merge). stated property of the capex gate"
+    },
+    {
+      "controls": [
+        "EXR-M02",
+        "EXR-M03"
+      ],
+      "basis": "AUTHOR 11 Oct: attribute/property/component of a mechanism = same control (merge). two attributes of one provenance record"
+    },
+    {
+      "controls": [
+        "EXR-M24",
+        "EXR-M23"
+      ],
+      "basis": "AUTHOR 11 Oct: attribute/property/component of a mechanism = same control (merge). parameter of the review it governs"
+    },
+    {
+      "controls": [
+        "TWM-M24",
+        "TWM-M23"
+      ],
+      "basis": "AUTHOR 11 Oct: attribute/property/component of a mechanism = same control (merge). authority basis of the release lane"
+    },
+    {
+      "controls": [
+        "TWM-M37",
+        "TWM-M36"
+      ],
+      "basis": "AUTHOR 11 Oct: attribute/property/component of a mechanism = same control (merge). property of the same record"
+    },
+    {
+      "controls": [
+        "ACR-M07",
+        "ACR-M14"
+      ],
+      "basis": "AUTHOR 11 Oct: attribute/property/component of a mechanism = same control (merge). two attributes of one match-explanation record"
+    },
+    {
+      "controls": [
+        "ACR-M23",
+        "ACR-M22"
+      ],
+      "basis": "AUTHOR 11 Oct: attribute/property/component of a mechanism = same control (merge). content element of the attestation record"
+    },
+    {
+      "controls": [
+        "ACR-M28",
+        "ACR-M26"
+      ],
+      "basis": "AUTHOR 11 Oct: attribute/property/component of a mechanism = same control (merge). the means of allocating review depth"
+    },
+    {
+      "controls": [
+        "FSP-M03",
+        "FSP-M01"
+      ],
+      "basis": "AUTHOR 11 Oct: attribute/property/component of a mechanism = same control (merge). fail-closed property of the same confirmation gate"
+    }
+  ],
+  "keep_separate": [
+    {
+      "controls": [
+        "VAR-M37",
+        "VAR-M38"
+      ],
+      "basis": "base rule: different checks (completeness vs adequacy)"
+    },
+    {
+      "controls": [
+        "FSP-M12",
+        "FSP-M13"
+      ],
+      "basis": "base rule / M4: different objects"
+    },
+    {
+      "controls": [
+        "ACR-M05",
+        "ACR-M01"
+      ],
+      "basis": "base rule: preventive halt vs escalation route"
+    },
+    {
+      "controls": [
+        "PRE-M25",
+        "PRE-M26"
+      ],
+      "basis": "base rule: fallback input path vs verification checkpoint"
+    },
+    {
+      "controls": [
+        "ACR-M29",
+        "ACR-M26"
+      ],
+      "basis": "AUTHOR 11 Oct: recommendation accepted (keep separate). giving the reviewer exception detail vs the risk screen"
+    },
+    {
+      "controls": [
+        "ABB-M27",
+        "ABB-M21"
+      ],
+      "basis": "AUTHOR 11 Oct: recommendation accepted (keep separate). separating roll-up from reconciliation vs analyst certification"
+    }
+  ],
+  "kept_whole": [
+    {
+      "control": "EXR-M16",
+      "basis": "NO SPLITS"
+    },
+    {
+      "control": "ACR-M27",
+      "basis": "NO SPLITS"
+    },
+    {
+      "control": "PRE-M32",
+      "basis": "NO SPLITS"
+    },
+    {
+      "control": "FSP-M05",
+      "basis": "NO SPLITS"
+    },
+    {
+      "control": "VAR-M15",
+      "basis": "M1: additions and exclusions stay merged"
+    }
+  ],
+  "drops": [
+    {
+      "control": "VAR-M05",
+      "basis": "AUTHOR 11 Oct: recommendation accepted: not a governance control (dropped). Independent triggering of loads, partly calendar-driven"
+    }
+  ],
+  "splits": [
+    {
+      "control": "PRE-M18",
+      "into": {
+        "PRE-M18a": "PRE-C18",
+        "PRE-M18b": "PRE-C19"
+      },
+      "carries_presence": "PRE-M18a",
+      "basis": "M4 distinct: file-integrity check (C18) vs post-approval change detection (C19). PRE-M18a keeps the merged presence (all four council quotes describe the C18 integrity check). PRE-M18b (C19): AUTHOR 11 Oct, re-judged under the single standard, see rejudge_PRE-C19.json",
+      "presence_files": {
+        "PRE-M18b": "rejudge_PRE-C19.json"
+      }
+    }
+  ]
+}

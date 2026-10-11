@@ -1,0 +1,88 @@
+{
+  "control": "PRE-M18b",
+  "candidate": "PRE-C19",
+  "judged": "2026-10-11, single evidence standard (CONTROL_MERGE_RULE.md), by the assistant at the author's instruction",
+  "presence": {
+    "20261010-184915-baseline-P2P-PRE-01-d745": {
+      "present": false,
+      "borderline": true,
+      "pattern": "B3",
+      "step_id": "",
+      "field": "",
+      "quote": "",
+      "note": "bank-detail-change screening only at review, before approval (different point); B3 -> absent"
+    },
+    "20261010-193948-baseline-P2P-PRE-01-208e": {
+      "present": false,
+      "borderline": true,
+      "pattern": "B3",
+      "step_id": "",
+      "field": "",
+      "quote": "",
+      "note": "bank-detail-change screening only at review, before approval (different point); B3 -> absent"
+    },
+    "20261010-195830-baseline-P2P-PRE-01-647f": {
+      "present": false,
+      "borderline": true,
+      "pattern": "B3",
+      "step_id": "",
+      "field": "",
+      "quote": "",
+      "note": "bank-detail-change screening only at review, before approval (different point); B3 -> absent"
+    },
+    "20261010-203046-baseline-P2P-PRE-01-872e": {
+      "present": false,
+      "borderline": true,
+      "pattern": "B3",
+      "step_id": "",
+      "field": "",
+      "quote": "",
+      "note": "bank-detail-change screening only at review, before approval (different point); B3 -> absent"
+    },
+    "20261010-205000-baseline-P2P-PRE-01-f62e": {
+      "present": false,
+      "borderline": true,
+      "pattern": "B3",
+      "step_id": "",
+      "field": "",
+      "quote": "",
+      "note": "bank-detail-change screening only at review, before approval (different point); B3 -> absent"
+    },
+    "20261010-192227-council-P2P-PRE-01-e0a8": {
+      "present": true,
+      "borderline": false,
+      "pattern": "",
+      "step_id": "T-04",
+      "field": "description",
+      "quote": "with no intervening vendor bank-detail change",
+      "note": "release-point confirmation of no post-approval bank-detail change"
+    },
+    "20261010-194035-council-P2P-PRE-01-64dc": {
+      "present": false,
+      "borderline": true,
+      "pattern": "B4",
+      "step_id": "TS-04",
+      "field": "description",
+      "quote": "cross-checked deterministically against an immutable hash of the approved proposal",
+      "note": "file-integrity hash (PRE-C18 object); B4 distinct -> absent"
+    },
+    "20261010-201339-council-P2P-PRE-01-8682": {
+      "present": true,
+      "borderline": false,
+      "pattern": "",
+      "step_id": "TGT-04",
+      "field": "description",
+      "quote": "a delta report is produced showing anything that changed since approval",
+      "note": "delta since approval at release"
+    },
+    "20261010-203139-council-P2P-PRE-01-1b2e": {
+      "present": true,
+      "borderline": false,
+      "pattern": "",
+      "step_id": "TGT-04",
+      "field": "description",
+      "quote": "such as a bank-detail change landing in the window between approval and release",
+      "note": "post-approval delta hard-blocks transmission"
+    }
+  }
+}

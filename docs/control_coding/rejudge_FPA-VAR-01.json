@@ -1,0 +1,4385 @@
+{
+ "workflow_id": "FPA-VAR-01",
+ "controls": [
+  {
+   "id": "VAR-M01",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Ingestion log (source, timestamp, checksum, budget/forecast version IDs)",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "Every pull is logged with source system, timestamp and a content hash for replayability",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "writing both to a version-tagged, logged landing area",
+     "note": "Logged, version-tagged landing; no source/timestamp/hash fields named."
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B2",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "removing manual extraction risk while preserving source traceability",
+     "note": "Traceability stated as goal; no log mechanism or output."
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M02",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "On reconciliation failure, stale feed, or missing source, the job halts and routes to this analyst",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B5",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "confirms version identity (correct approved budget, correct forecast vintage) before the dataset is released downstream",
+     "note": "Human pre-release confirmation, no halt condition; closer to VAR-M04."
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "the pipeline halts and escalates to this analyst rather than guessing a version",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "The job halts and raises an exception if the period is not locked",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "The job hard-fails into an FP&A analyst exception queue (not a soft warning) if the source period is not locked",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M03",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "owns reconciliation of any late-loading entities, duplicate postings, or stale version mismatches",
+     "note": "Analyst owns exceptions (halt routes to analyst); no queue/log output."
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "triages any extraction exceptions (missing entities, late-posted journals inside the lock)",
+     "note": "Plus output Extraction exception log."
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "The analyst owns an exception queue for failed loads",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "owns the exception log and resolves flagged mismatches",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "actor",
+     "quote": "Automated ingestion pipeline, with FP&A analyst as exception-handler and version-identity validator",
+     "note": "Plus output Ingestion exception log."
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "The FP&A analyst configures and validates the pipeline run and resolves any load exceptions.",
+     "note": "Analyst owns load exceptions; no queue/log output (same strength as 7759)."
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M04",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "A named FP&A analyst performs a standing, every-cycle validation sign-off confirming the extract ties to the lock",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "confirms the extract ties to the locked period, reconciles control totals",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "the step produces a routine version/lock reconciliation output every cycle (not only on hard failure)",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "as a standing review each cycle, not only when an exception fires",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "exception resolution and version-identity validation",
+     "note": "Validator role named; no every-cycle framing or record."
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "The FP&A analyst configures and validates the pipeline run",
+     "note": "Unspecific validation of each run."
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "The pipeline is configured and overseen by FP&A",
+     "note": "Oversight of pipeline, not a validation check; \"reconciled dataset\" is an outcome."
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "An automated data pipeline, overseen by the FP&A analyst",
+     "note": "Oversight only; \"reconciled dataset\" is an outcome."
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "VAR-T-01",
+     "field": "actor",
+     "quote": "FP&A analyst (system-automated extraction, analyst-reviewed)",
+     "note": "Unspecific analyst review of extraction."
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M05",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "This step is independently triggered from comparatives loading",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Not a merge question: whether independent triggering of actuals vs comparatives loads (6fd0, rationale partly close-calendar parallelisation) is a governance control at all.",
+    "alternative": {
+     "type": "drop",
+     "control_ids": []
+    }
+   }
+  },
+  {
+   "id": "VAR-M06",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "designed to degrade gracefully under intermittent connectivity (locally cached/last-known-good data, queued retry)",
+     "note": "Graceful degradation variant, not a documented manual procedure."
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "A documented manual fallback (human-run extract against the same lock/version checks) must remain operable",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M07",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Policy-version and FX-table-version run log",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "The engine logs, per run, the policy version and FX rate set applied.",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "Every output figure carries a record of the policy version and FX-rate-table version that produced it.",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Policy-version ID and FX-table-version ID stamp",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "Each computed variance record carries the accounting-policy-version identifier and the constant-currency FX-table-version identifier used to produce it",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "The engine's policy and rate parameters are version-controlled so policy continuity and FX treatment remain auditable.",
+     "note": "Version control of parameters, but no per-run stamp/log of the version applied."
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M08",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "confirms each cycle that the loaded policy and FX parameters are the currently-approved ones",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "validates, each period, that the policy and FX parameters loaded are current",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "A deterministic calculation engine, configured and reviewed by the FP&A analyst",
+     "note": "Analyst review of engine configuration; no explicit currency confirmation."
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "Before each run, the FP&A analyst signs off that the policy-version ID and FX-table-version ID in force match",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "actor",
+     "quote": "Automated variance computation engine, with FP&A analyst as anomaly reviewer",
+     "note": "Review of anomalies in output, not of parameter currency."
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "The FP&A analyst parameterises the run with the current accounting policies and FX rate set",
+     "note": "Analyst sets current parameters each run; act rather than separate confirmation."
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "FP&A reviews engine configuration and policy mapping",
+     "note": "Analyst review of engine configuration; no explicit currency confirmation."
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "VAR-T-02",
+     "field": "description",
+     "quote": "an FP&A analyst validates the configuration and outputs",
+     "note": "Analyst validation of configuration; no explicit currency confirmation."
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M09",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "the engine halts and routes to the analyst on any version mismatch or missing parameter rather than defaulting silently",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "Stale or missing reference data halts to an FP&A analyst for review; the engine never silently substitutes a default.",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M4",
+    "question": "Halt on missing/stale/mismatched policy-FX reference data vs disclosure flag on policy/basis divergence: the triggering objects overlap (8d63 basis mismatch both halts and is surfaced; 4f3e version-mismatch halt).",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "VAR-M10"
+     ]
+    }
+   }
+  },
+  {
+   "id": "VAR-M10",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "Any divergence from the prior period's policy or FX version is flagged as an explicit disclosure trigger",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "Any divergence in accounting-policy basis between actuals and comparatives is surfaced as a flagged difference",
+     "note": "Flagged difference; disclosure not named."
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "A policy-basis mismatch between actuals and comparatives (e.g., budget prepared under a prior policy vintage) halts the run and is surfaced for disclosure",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M4",
+    "question": "Disclosure flag on policy/FX change or basis divergence overlaps the object of the VAR-M09 halt (policy-basis/version mismatch); also bundles change-vs-prior-period (a8a0) and actuals-vs-comparatives divergence (4f3e, 8d63).",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "VAR-M09"
+     ]
+    }
+   }
+  },
+  {
+   "id": "VAR-M11",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "no structural break in the underlying population (new SKUs, reclassified cost centres, M&A-driven volume shifts) has silently distorted the computation",
+     "note": "Plus output Structural-break validation record."
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "actor",
+     "quote": "Automated variance computation engine, with FP&A analyst as anomaly reviewer",
+     "note": "Generic anomaly review, not a structural-break check."
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "reviews the computed variance dataset for integrity before release",
+     "note": "Generic integrity review of output, not a structural-break check."
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "VAR-T-02",
+     "field": "description",
+     "quote": "an FP&A analyst validates the configuration and outputs",
+     "note": "Generic output validation, not a structural-break check."
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M12",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Variance dataset with FX effect separately isolated",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Variance dataset (FX effect reported as a separate line)",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "The FX effect is isolated and reported as its own distinct line, never netted into price, volume or mix.",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Variance dataset with isolated FX variance field",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "the FX effect is output as its own separately labeled component rather than netted into price/volume/mix",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-02",
+     "field": "name",
+     "quote": "Compute price, volume, mix and FX-isolated variances",
+     "note": "FX-isolated variance named as its own component."
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "isolating the FX effect at constant currency",
+     "note": "Isolation stated; no separate line/output named."
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-02",
+     "field": "outputs",
+     "quote": "Isolated FX effect",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "with the FX effect isolated at constant currency",
+     "note": "Isolation stated; no separate line/output named."
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "VAR-T-02",
+     "field": "name",
+     "quote": "Compute price, volume, mix and FX-isolated variances",
+     "note": "FX-isolated variance named as its own component."
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M13",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "kept as a distinct, inspectable step rather than folded into ingestion",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "A deterministic calculation engine, configured and reviewed by the FP&A analyst",
+     "note": "Deterministic engine; no inspectability statement."
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "A rules-based computation engine applies the versioned price/volume/mix decomposition methodology",
+     "note": "Rules-based engine; no inspectability statement."
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "The computation logic and its lineage tags must be inspectable and locally reproducible",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "A rules-based variance engine computes price, volume and mix variances",
+     "note": "Rules-based engine; no inspectability statement."
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M14",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "The step remains a discrete, visibly separate gate",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-04",
+     "field": "name",
+     "quote": "Materiality threshold screening with analyst confirmation and override",
+     "note": "Separate materiality step exists structurally, but no statement that it is retained as a discrete/inspectable gate."
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "This remains a separately inspectable step, distinct from computation and from review",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-03",
+     "field": "name",
+     "quote": "Materiality-based selection with analyst judgment and bidirectional override log",
+     "note": "Separate materiality step exists structurally, but no statement that it is retained as a discrete/inspectable gate."
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "This step's function is a judgment-bearing gate, not a pure config filter",
+     "note": "Separate materiality step exists structurally, but no statement that it is retained as a discrete/inspectable gate."
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TGT-03",
+     "field": "name",
+     "quote": "Screen variances against materiality thresholds",
+     "note": "Separate materiality step exists structurally, but no statement that it is retained as a discrete/inspectable gate."
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "This step remains distinct from, and performed by a different actor than, the subsequent manager review.",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TGT-03",
+     "field": "name",
+     "quote": "Apply materiality thresholds to select variances for explanation",
+     "note": "Separate materiality step exists structurally, but no statement that it is retained as a discrete/inspectable gate."
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "Retained as a distinct, auditable gating step so that the selection logic and its criteria remain inspectable",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "VAR-T-03",
+     "field": "description",
+     "quote": "producing a consistent, auditable selection",
+     "note": "Auditable selection at a separate step; discreteness not stated."
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M15",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "retains explicit, logged authority to add sub-threshold items to the explanation list",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "explicit, logged authority to add back or stand down specific items for qualitative reasons",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Materiality override/exclusion log",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "Every inclusion and exclusion carries a logged rationale and the threshold value applied.",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Override log (rationale for additions/removals)",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "reviews borderline or overridden items before the explain-list is finalised",
+     "note": "Overrides reviewed, but no logged rationale/authority."
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M1",
+    "question": "Logged additions (C15) and logged exclusions (C16) of the materiality selection are directional variants on the same selection list; 4f3e exclusion variant is a no-silent-exclusion rule.",
+    "alternative": {
+     "type": "split",
+     "into": [
+      [
+       "VAR-C15"
+      ],
+      [
+       "VAR-C16"
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "id": "VAR-M16",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Net-effect aggregation check log",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B5",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "cumulative small-item patterns",
+     "note": "Aggregation only an example ground for analyst discretion, not a systematic check."
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B5",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "an aggregation of related sub-threshold items",
+     "note": "Aggregation only an example ground for analyst discretion, not a systematic check."
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M17",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "threshold-parameter governance, which is separately change-controlled",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "Threshold values themselves are human-owned configuration, versioned and logged on change.",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "Every inclusion and exclusion carries a logged rationale and the threshold value applied.",
+     "note": "Threshold value logged per decision; no ownership/change control of parameters."
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "The approved percentage and absolute materiality thresholds are applied mechanically",
+     "note": "\"Approved\" thresholds only; no ownership/versioning/change control stated."
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "the FP&A analyst confirms the threshold parameters applied",
+     "note": "Per-run confirmation of thresholds applied, not ownership/change control."
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "the FP&A analyst owns the threshold parameters",
+     "note": "Human ownership only; no versioning/change control."
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M18",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "sees the full variance population -- not only the auto-flagged subset -- and confirms the selection list",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "the analyst reviews the flag list",
+     "note": "Review of flag list; no full-population view."
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "Items within a configurable tolerance band of the threshold",
+     "note": "Human decision only for band/override items, not the list."
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "reviews borderline or overridden items before the explain-list is finalised",
+     "note": "Review covers only borderline/overridden items, not the list."
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "with FP&A analyst sign-off on the flagged set before it is routed to budget holders",
+     "note": "Sign-off on flagged set; no full-population view."
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "reviews edge cases",
+     "note": "Review covers only edge cases, not the list."
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "VAR-T-03",
+     "field": "actor",
+     "quote": "FP&A system (automated rule engine, FP&A analyst oversight)",
+     "note": "Oversight only; no confirmation of the list."
+    }
+   },
+   "merge_low": {
+    "pattern": "M2",
+    "question": "Analyst confirmation of the selection list vs the override log that records decisions made in that same review: a check vs its own record.",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "VAR-M15"
+     ]
+    }
+   }
+  },
+  {
+   "id": "VAR-M19",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "Items within a configurable tolerance band of the threshold",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "reviews borderline or overridden items before the explain-list is finalised",
+     "note": "Borderline review without a defined band."
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "reviews edge cases",
+     "note": "Edge-case review without a defined band."
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M20",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "actor",
+     "quote": "FP&A analyst (thresholding owner, distinct from the VAR-07 successor reviewer)",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "actor",
+     "quote": "FP&A analyst (distinct from the FP&A manager in TS-07)",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "This step's actor is structurally distinct from the actor who later reviews and challenges the report.",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "This actor is organisationally and functionally distinct from the reviewer in TS-06.",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "actor",
+     "quote": "FP&A analyst (identity distinct from TS-06 reviewer)",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "This selecting actor is distinct from the manager who later reviews and challenges the report.",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "performed by a different actor than, the subsequent manager review",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "does not perform the downstream challenge review, preserving separation of duties",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "preserving segregation of duties between selection and review",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "VAR-T-03",
+     "field": "description",
+     "quote": "organisationally independent of the later review and challenge function",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M21",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "This step's actor is structurally distinct from the actor who later reviews and challenges the report.",
+     "note": "\"Structurally\" distinct; no access-control enforcement stated."
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "This actor is organisationally and functionally distinct from the reviewer in TS-06.",
+     "note": "Organisational separation; no system/access-control enforcement."
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "must be a distinct, access-control-enforced identity from the manager performing TS-06",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "VAR-T-03",
+     "field": "description",
+     "quote": "organisationally independent of the later review and challenge function",
+     "note": "Organisational separation; no system enforcement."
+    }
+   },
+   "merge_low": {
+    "pattern": "M1",
+    "question": "Access-control-enforced separation vs organisational actor separation (VAR-M20): a stronger variant of the same selection/review separation on the same object.",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "VAR-M20"
+     ]
+    }
+   }
+  },
+  {
+   "id": "VAR-M22",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "any such override is visible to the downstream reviewer",
+     "note": "Visibility stated at selection step; log not a review-step input."
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "inputs",
+     "quote": "Exclusion and override log from TS-04",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "inputs",
+     "quote": "Materiality override/exclusion log",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "inputs",
+     "quote": "Materiality override log",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "inputs",
+     "quote": "Override log",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M4",
+    "question": "Override log supplied to reviewer is one of the evidence objects covered by reviewer access to underlying evidence (VAR-M23) at the same review step.",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "VAR-M23"
+     ]
+    }
+   }
+  },
+  {
+   "id": "VAR-M23",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "the manager retains full access to underlying variance detail and raw commentary",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "inputs",
+     "quote": "Full variance population",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "inputs",
+     "quote": "Commentary provenance record",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "inputs",
+     "quote": "Policy-version ID and FX-table-version ID stamp",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "inputs",
+     "quote": "Raw budget holder commentary",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M4",
+    "question": "Reviewer evidence access bundle overlaps the override-log input (VAR-M22) at the same review step; one 'reviewer evidence access' control is possible.",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "VAR-M22"
+     ]
+    }
+   }
+  },
+  {
+   "id": "VAR-M24",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "Retained unchanged in substance as the workflow's primary human accountability checkpoint",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "This step remains human and distinct from whoever or whatever performed TS-04.",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "This is the control gate against everything upstream, including any tool-assisted drafting, and is not automated",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "The FP&A manager reviews and challenges the draft report",
+     "note": "Human manager review stated; no explicit non-automation/accountability-checkpoint statement."
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "The FP&A manager reviews the draft report together with the underlying variance dataset",
+     "note": "Human manager review stated; no explicit non-automation/accountability-checkpoint statement."
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "The FP&A manager reviews and challenges the draft report and its commentary",
+     "note": "Human manager review stated; no explicit non-automation/accountability-checkpoint statement."
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "the review-and-challenge function is preserved intact",
+     "note": "Human manager review stated; no explicit non-automation/accountability-checkpoint statement."
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "reviewed and challenged by a manager who did not perform the materiality-based selection",
+     "note": "Human manager review stated; no explicit non-automation/accountability-checkpoint statement."
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "The draft report and its commentary are reviewed and challenged by a manager",
+     "note": "Human manager review stated; no explicit non-automation/accountability-checkpoint statement."
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "VAR-T-06",
+     "field": "description",
+     "quote": "The draft report and its commentary are reviewed and challenged by a manager",
+     "note": "Human manager review stated; no explicit non-automation/accountability-checkpoint statement."
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M25",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "can reject and bounce the draft back to TS-05/TS-04",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "The manager may send weak commentary or unexplained gaps back to TS-05/TS-06.",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "implausible or boilerplate commentary can be kicked back",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M26",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B2",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "Someone must be able to be held accountable for having actually exercised challenge",
+     "note": "Accountability principle; no challenge record."
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "Documented challenge notes",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M27",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "pushes the signed-off artifact the moment review is logged as approved",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-09",
+     "field": "inputs",
+     "quote": "Manager sign-off event",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "publication cannot occur without the manager's explicit, logged sign-off event from TS-06",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "gated so it cannot fire against a report that has not cleared TS-06",
+     "note": "Gate on review clearance; no explicit sign-off event."
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "Distribution is triggered only by the manager's explicit approval event from TS-06",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TGT-07",
+     "field": "description",
+     "quote": "The reviewed report is presented and distributed to management",
+     "note": "Sequence only (reviewed report distributed); no gate or sign-off event stated."
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "then presents and distributes the finalised report to management",
+     "note": "Sequence only; no gate or sign-off event stated."
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TGT-07",
+     "field": "description",
+     "quote": "The reviewed report is presented and distributed to management",
+     "note": "Sequence only (reviewed report distributed); no gate or sign-off event stated."
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TGT-07",
+     "field": "description",
+     "quote": "The reviewed report is presented and distributed to management",
+     "note": "Sequence only (reviewed report distributed); no gate or sign-off event stated."
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "VAR-T-07",
+     "field": "description",
+     "quote": "The reviewed report is presented and distributed to management",
+     "note": "Sequence only (reviewed report distributed); no gate or sign-off event stated."
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M28",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-09",
+     "field": "outputs",
+     "quote": "Distribution log",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "quote": "Distribution record (recipients, version, timestamp)",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "with a logged send-record of recipients, timestamp and version",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "Delivery logs the recipients, timestamp and version hash",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M29",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "A sign-off marker confirms the distributed artifact matches the reviewed version exactly",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "confirming the distributed artifact is exactly the reviewed one",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M2",
+    "question": "Distributed-equals-reviewed match check vs the distribution record carrying the version/hash (VAR-M28); in 8d63 the check is realised through the logged version hash.",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "VAR-M28"
+     ]
+    }
+   }
+  },
+  {
+   "id": "VAR-M30",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "reversible via a recall/reissue path if an error is caught post-distribution",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "any post-distribution correction is a tracked reissue, not a silent edit",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M31",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "quote": "Archived provenance chain",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M4",
+    "question": "Archived provenance chain (a8a0) overlaps the distribution record (VAR-M28) and draft provenance (VAR-M39); closest object is the distribution record at the same step.",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "VAR-M28"
+     ]
+    }
+   }
+  },
+  {
+   "id": "VAR-M32",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "Commentary content is authored exclusively by the accountable budget holder",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "no system-authored narrative is introduced as a starting draft",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "Budget holders remain the sole authors of variance explanations",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "The commentary content itself is never system-drafted or pre-populated",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "the commentary remains the named budget holder's own attributable statement, not unattributed machine narrative",
+     "note": "Attribution required, but automated pre-draft permitted; human authorship not required."
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "Accountable budget holders are notified via a self-service portal",
+     "note": "Budget holders provide commentary (human authorship implied), but no rule excluding generative drafting or requiring attribution."
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "Accountable budget holders provide commentary on the selected variances, unchanged from the current process.",
+     "note": "Budget holders provide commentary (human authorship implied), but no rule excluding generative drafting or requiring attribution."
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "Accountable budget holders provide commentary on the selected variances",
+     "note": "Budget holders provide commentary (human authorship implied), but no rule excluding generative drafting or requiring attribution."
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "Accountable budget holders provide commentary on the selected variances.",
+     "note": "Budget holders provide commentary (human authorship implied), but no rule excluding generative drafting or requiring attribution."
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "VAR-T-04",
+     "field": "description",
+     "quote": "Accountable budget holders provide commentary on the selected variances.",
+     "note": "Budget holders provide commentary (human authorship implied), but no rule excluding generative drafting or requiring attribution."
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M33",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "SLA tracking with automatic escalation to the holder's manager after non-response",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "Workflow tooling automates assignment, reminders, and SLA tracking, escalating non-response",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "tracks deadlines, sends escalating reminders, and timestamps receipt, escalating non-response to the FP&A manager",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "SLA deadlines are tracked and, where a response lapses, escalation runs within the budget holder's own management line",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "Deadlines are tied to the close calendar with automatic escalation to the budget holder's manager on lateness",
+     "note": "No escalation log output."
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M34",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "surfacing any flagged item with no commentary received",
+     "note": "Missing commentary surfaced at consolidation, not marked outstanding at collection; closer to VAR-M37."
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "with the item marked outstanding rather than auto-filled",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M3",
+    "question": "Missing commentary marked outstanding at collection (a8a0 TS-04) vs completeness check surfacing missing commentary at consolidation (VAR-M37): same mechanism at adjacent points.",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "VAR-M37"
+     ]
+    }
+   }
+  },
+  {
+   "id": "VAR-M35",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "an asynchronous, low-bandwidth-tolerant submission channel (templated email/offline form) as a first-class path",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "The channel is asynchronous and tolerant of low bandwidth (email/offline forms)",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "Structured email/template submission remains a first-class channel alongside any portal",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "store-and-forward mechanisms suitable for low-bandwidth or offline settings",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "Collection operates over asynchronous, low-bandwidth channels (structured email/offline forms) as a floor",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M36",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "templated prompts (root cause, one-time vs. recurring, corrective action)",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "inputs",
+     "quote": "Driver-tagged commentary template",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "Structured email/template submission",
+     "note": "Structured template, no root-cause/driver tagging."
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "structured templates returned by email or form",
+     "note": "Structured template, no root-cause/driver tagging."
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "structured, root-cause-tagged template",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "submitted through a structured commentary template that links each explanation to its variance line",
+     "note": "Structured template, no root-cause/driver tagging."
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M37",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "the analyst verifies every selected variance has commentary attached",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "surfacing any flagged item with no commentary received",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "responsible for noticing missing or inconsistent explanations",
+     "note": "Responsibility for noticing gaps; no explicit check."
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "confirming no selected variance is missing commentary",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "performs an explicit completeness check that every selected variance has a matching, adequate commentary entry",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "with the analyst resolving any gaps or inconsistencies before handoff to review",
+     "note": "Resolving gaps; no explicit completeness check."
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Completeness (every selected variance has commentary) and adequacy/coherence (VAR-M38) are different checks on the same commentary set at the same consolidation point, often performed in one analyst pass (8d63 'matching, adequate').",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "VAR-M38"
+     ]
+    }
+   }
+  },
+  {
+   "id": "VAR-M38",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "commentary meets a minimum explanatory bar (root cause, not restatement)",
+     "note": "Plus kickback to TS-04."
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "checking that commentary actually addresses the computed driver split, flagging implausible explanations",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "noticing missing or inconsistent explanations, mislabeled drivers",
+     "note": "Adequacy noticing; no kickback path."
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "that commentary direction matches the variance's actual sign/driver",
+     "note": "Adequacy check; no kickback path."
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "has a matching, adequate commentary entry",
+     "note": "Adequacy within completeness check; TS-04 adds escalation on failed adequacy (not analyst kickback)."
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "with the analyst resolving any gaps or inconsistencies before handoff to review",
+     "note": "Resolving inconsistencies; no explicit adequacy criterion or kickback."
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Adequacy/coherence check vs completeness check (VAR-M37) on the same object and point, often one analyst pass; kickback element also overlaps reviewer kickback (VAR-M25).",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "VAR-M37"
+     ]
+    }
+   }
+  },
+  {
+   "id": "VAR-M39",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "every generated passage traceable back to its source variance line and commentary record",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "The draft retains visible linkage to the policy-consistent, FX-isolated figures and the materiality override log that produced it.",
+     "note": "Draft-level linkage, no per-passage tags."
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "Every piece of text in the draft is provenance-tagged",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "Every sentence and figure in the draft carries a machine-checkable pointer back to its source variance record",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "links each explanation to its variance line",
+     "note": "Commentary-to-variance linkage at collection step, not draft provenance."
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M4",
+    "question": "Draft per-claim lineage includes commentary author/timestamp in 8d63, overlapping the commentary provenance record (VAR-M40).",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "VAR-M40"
+     ]
+    }
+   }
+  },
+  {
+   "id": "VAR-M40",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "quote": "Commentary provenance record",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "commentary author/timestamp",
+     "note": "Author/timestamp carried as draft lineage at TS-05, not a receipt record at TS-04."
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M4",
+    "question": "Commentary provenance (author/timestamp) is a subset of draft lineage in 8d63 (VAR-M39).",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "VAR-M39"
+     ]
+    }
+   }
+  },
+  {
+   "id": "VAR-M41",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "This preserves a preparer/reviewer audit trail distinct from the FP&A manager's review in TS-07.",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "standing behind the draft as its named author",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "is the accountable owner of the draft that passes to review",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "this reconciliation of narrative-to-number is a distinct accountable act",
+     "note": "Accountability attached to the completeness check only, not ownership of the draft."
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "VAR-M42",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B4",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "the FP&A manager (or delegate) retains an accountable presentation role",
+     "note": "Mandatory only for material/sensitive items or standing cadence."
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-08",
+     "field": "description",
+     "quote": "Presentation and discussion remain a human-led activity, separated from the mechanical act of distribution.",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "The manager remains the named, accountable actor for authorizing release and for standing behind the figures in any live presentation or Q&A",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "remains the accountable actor for that presentation, as a distinct accountability moment from review",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-07",
+     "field": "name",
+     "quote": "Present, distribute and track distribution",
+     "note": "Manager presents (actor + step); accountability not separated from distribution."
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-07",
+     "field": "description",
+     "quote": "The reviewed report is presented and distributed to management",
+     "note": "Manager presents (actor + step); accountability not separated from distribution."
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "then presents and distributes the finalised report to management",
+     "note": "Manager presents (actor + step); accountability not separated from distribution."
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-07",
+     "field": "description",
+     "quote": "The reviewed report is presented and distributed to management",
+     "note": "Manager presents (actor + step); accountability not separated from distribution."
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-07",
+     "field": "description",
+     "quote": "The reviewed report is presented and distributed to management",
+     "note": "Manager presents (actor + step); accountability not separated from distribution."
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "VAR-T-07",
+     "field": "description",
+     "quote": "The reviewed report is presented and distributed to management",
+     "note": "Manager presents (actor + step); accountability not separated from distribution."
+    }
+   },
+   "merge_low": {
+    "pattern": "M2",
+    "question": "Accountable manager presentation vs the management discussion record (VAR-M43) at the same step: an action vs its own record.",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "VAR-M43"
+     ]
+    }
+   }
+  },
+  {
+   "id": "VAR-M43",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-08",
+     "field": "outputs",
+     "quote": "Management discussion record",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M2",
+    "question": "Management discussion record could be read as the evidence record of the accountable presentation (VAR-M42).",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "VAR-M42"
+     ]
+    }
+   }
+  },
+  {
+   "id": "VAR-M44",
+   "presence": {
+    "20261010-184959-council-FPA-VAR-01-7759": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "defaulting to portable, low-bandwidth formats (PDF/CSV export)",
+     "note": ""
+    },
+    "20261010-194032-council-FPA-VAR-01-6fd0": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-09",
+     "field": "outputs",
+     "quote": "Distributed variance report (portal and offline artifact)",
+     "note": ""
+    },
+    "20261010-201339-council-FPA-VAR-01-a8a0": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "use bandwidth-appropriate formats",
+     "note": "Bandwidth-appropriate formats; offline/portable not named."
+    },
+    "20261010-203132-council-FPA-VAR-01-4f3e": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "Outputs are produced in lightweight, offline-consumable formats (PDF/spreadsheet)",
+     "note": ""
+    },
+    "20261010-205043-council-FPA-VAR-01-8d63": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "published via a lightweight channel (document/email) as a non-negotiable floor",
+     "note": ""
+    },
+    "20261010-184915-baseline-FPA-VAR-01-ed96": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-FPA-VAR-01-9ef2": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-FPA-VAR-01-c54a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-FPA-VAR-01-5154": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-FPA-VAR-01-7c5b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  }
+ ]
+}

@@ -1,0 +1,823 @@
+{
+ "workflow_id": "FPA-ABB-01",
+ "controls": [
+  {
+   "id": "ABB-M01",
+   "name": "Named accountable human issuer signs off agent-drafted assumptions and downside scenario",
+   "members": [
+    "ABB-C01"
+   ],
+   "reason": "distinct (human sign-off over agent drafts; not the methodology record C09 or versioning C02)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines keep FP&A manager as issuer but have no agent drafting, so no human-over-agent sign-off; treated absent, but a reader could see plain manager issuance as equivalent."
+  },
+  {
+   "id": "ABB-M02",
+   "name": "Versioned assumption pack / assumption version log",
+   "members": [
+    "ABB-C02"
+   ],
+   "reason": "distinct from C08: versioning record vs materiality-triggered re-issue action",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-ABB-01-ef83",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "Assumptions are version-controlled so later changes are traceable.",
+     "reason": "Same mechanism (version control of the assumption set) at the same step."
+    },
+    {
+     "run_id": "20261010-203046-baseline-FPA-ABB-01-95ea",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "all submitters plan against a common, version-controlled assumption set",
+     "reason": "Same mechanism (version-controlled assumption set) at the same step."
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M03",
+   "name": "Recorded deviation/diff between agent-drafted baseline and human-submitted figures",
+   "members": [
+    "ABB-C03"
+   ],
+   "reason": "distinct (diff/rationale record of agent baseline vs human figures; differs from C29 review log in point and object)",
+   "confidence": "LOW",
+   "low_reason": "29eb member is a parameter/override diff log at assumption issuance (TS-01), a different point from the BU-submission diffs; kept within candidate as given.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M04",
+   "name": "Acknowledgement-receipt of downside scenario by submitters",
+   "members": [
+    "ABB-C04"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M05",
+   "name": "Offline / multi-channel distribution and submission path as first-class channel",
+   "members": [
+    "ABB-C05"
+   ],
+   "reason": "flagged merges with C34/C25/C44/C06 rejected: those are fallbacks at different points/objects (review channel, consolidation, lock, HRIS data)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M06",
+   "name": "Manual override/correction path for non-integrated HRIS/headcount data",
+   "members": [
+    "ABB-C06"
+   ],
+   "reason": "flagged merge with C05 rejected: manual override/correction of HRIS data (object) vs offline submission channel",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M07",
+   "name": "Stale/failed data feed halts agent and routes to human instead of interpolating",
+   "members": [
+    "ABB-C07"
+   ],
+   "reason": "flagged merge with C19 rejected: stale-feed halt at assumption issuance vs reconciliation-break halt at consolidation (different point and object)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M08",
+   "name": "Materiality-triggered re-issue of assumptions mid-cycle",
+   "members": [
+    "ABB-C08"
+   ],
+   "reason": "flagged overlap with C02 rejected: triggered re-issue action vs version record",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M09",
+   "name": "Documented methodology / basis-of-judgment for FX rates and downside scenario",
+   "members": [
+    "ABB-C09"
+   ],
+   "reason": "distinct from C01 (documented methodology vs sign-off)",
+   "confidence": "LOW",
+   "low_reason": "Candidate bundles FX rate-selection methodology (29eb) and downside-scenario basis note (333a, 29eb); arguably two objects, but candidate cannot be split under this task.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M10",
+   "name": "Target-setting reserved to CEO/CFO; analytics/agent decision support only, no write authority",
+   "members": [
+    "ABB-C10"
+   ],
+   "reason": "flagged merge with C36/C48 rejected: same principle but different objects/points (target vs board approval vs BU submission)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M11",
+   "name": "Top-down targets issued with stated reasoning/drivers",
+   "members": [
+    "ABB-C11"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M12",
+   "name": "Provisional targets with scheduled recalibration touchpoint",
+   "members": [
+    "ABB-C12"
+   ],
+   "reason": "distinct from C11 (provisional status/recalibration vs stated reasoning)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-ABB-01-ef83",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "targets are published to all submitters as negotiation anchors, not fixed allocations",
+     "reason": "Targets issued as non-final anchors at the target-setting step, matching the provisional-target element."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "ef83 has provisional (anchor) status but no scheduled recalibration touchpoint or record; equivalence arguable."
+  },
+  {
+   "id": "ABB-M13",
+   "name": "Deterministic hard gate blocking above-threshold capex without business case",
+   "members": [
+    "ABB-C13"
+   ],
+   "reason": "flagged merge with C15 rejected: hard blocking gate vs restriction that validation cannot waive/auto-approve",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-193948-baseline-FPA-ABB-01-09ed",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "any request above the threshold is blocked from submission until a business case is attached",
+     "reason": "Same blocking gate on the same object at the capex step."
+    },
+    {
+     "run_id": "20261010-205000-baseline-FPA-ABB-01-138f",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "any request above the materiality threshold is blocked from submission until a documented business case is attached",
+     "reason": "Same blocking gate on the same object at the capex step."
+    },
+    {
+     "run_id": "20261010-184915-baseline-FPA-ABB-01-ef83",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "must attach a documented business case before it can be routed to consolidation",
+     "reason": "Mandatory attachment precondition before routing; same gate."
+    },
+    {
+     "run_id": "20261010-203046-baseline-FPA-ABB-01-95ea",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "mandatorily attaches and routes a business case for any request above the materiality threshold before it can enter the consolidation",
+     "reason": "Mandatory attachment precondition before consolidation; same gate."
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M14",
+   "name": "Named human reviewer (CFO/capex committee) signs off above-threshold business case, decision logged",
+   "members": [
+    "ABB-C14"
+   ],
+   "reason": "distinct from C49 (human review/sign-off vs human authorship) and C15",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "355a/95ea baselines route the business case (implying a recipient) but name no reviewer or sign-off; treated absent."
+  },
+  {
+   "id": "ABB-M15",
+   "name": "Capex validation cannot waive requirement or auto-approve; automated pass/fail is not approval",
+   "members": [
+    "ABB-C15"
+   ],
+   "reason": "kept separate from C13 and C14",
+   "confidence": "LOW",
+   "low_reason": "Could be read as a property of the C13 gate (no waiver) or of C14 (pass/fail is not approval) rather than a distinct control.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M16",
+   "name": "Capex exception path logged and attributable",
+   "members": [
+    "ABB-C16"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M17",
+   "name": "Capital-allocation triage with inspectable scoring and human routing of FX/political-risk requests",
+   "members": [
+    "ABB-C17"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M18",
+   "name": "Deterministic, version-pinned, inspectable FX/policy logic in consolidation (no agent inference, single reused logic)",
+   "members": [
+    "ABB-C18"
+   ],
+   "reason": "distinct from C20 (deterministic/pinned logic vs run log)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines apply the same policies/FX as actuals without stating determinism, pinning or inspectability; the 600a member wording is close to baseline wording."
+  },
+  {
+   "id": "ABB-M19",
+   "name": "Halt-and-escalate on reconciliation break / exception (no silent plug)",
+   "members": [
+    "ABB-C19"
+   ],
+   "reason": "distinct from C22 (halt-and-route on break vs completeness gate) and C30 (kickback at review)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-205000-baseline-FPA-ABB-01-138f",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "the three statements are system-reconciled and exceptions are routed to the FP&A analyst for resolution",
+     "reason": "Reconciliation exceptions at consolidation routed to the FP&A analyst rather than resolved silently."
+    },
+    {
+     "run_id": "20261010-205000-baseline-FPA-ABB-01-138f",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "Reconciliation exceptions log",
+     "reason": "Exception record output of the same routing mechanism."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "138f routes exceptions to the analyst but does not explicitly halt the run; 09ed (reconciliation check before release) and 355a (variance flags) are weaker and not listed."
+  },
+  {
+   "id": "ABB-M20",
+   "name": "Versioned consolidation run log (inputs, assumption vintage, logic version, timestamp)",
+   "members": [
+    "ABB-C20"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M21",
+   "name": "Named analyst certification of a discrete reconciled consolidation snapshot",
+   "members": [
+    "ABB-C21"
+   ],
+   "reason": "distinct from C27 (certification act vs step split)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M22",
+   "name": "Completeness/data-quality gate on submissions before consolidation",
+   "members": [
+    "ABB-C22"
+   ],
+   "reason": "kept separate from C19",
+   "confidence": "LOW",
+   "low_reason": "29eb C19 member halts on \"incomplete submission\", adjacent to this completeness gate at the same step.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M23",
+   "name": "Intercompany identification and elimination with log/schedule",
+   "members": [
+    "ABB-C23"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-205000-baseline-FPA-ABB-01-138f",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "flagging intercompany positions for elimination",
+     "reason": "Intercompany identification for elimination at consolidation."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "138f identifies positions for elimination but has no elimination log/schedule; several council members also lack a log, so equivalence is arguable."
+  },
+  {
+   "id": "ABB-M24",
+   "name": "Exchange differences itemised, never netted",
+   "members": [
+    "ABB-C24"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M25",
+   "name": "Documented manual/spreadsheet consolidation fallback using same policy/FX inputs",
+   "members": [
+    "ABB-C25"
+   ],
+   "reason": "distinct from C05/C44 (fallback at consolidation)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M26",
+   "name": "Trained backup for consolidation/FX function (key-person risk)",
+   "members": [
+    "ABB-C26"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M27",
+   "name": "Consolidation roll-up split from a separate human reconciliation/validation step",
+   "members": [
+    "ABB-C27"
+   ],
+   "reason": "kept separate from C21",
+   "confidence": "LOW",
+   "low_reason": "ff17 T7 step split is the step where C21 certification occurs; arguably the same control at different granularity.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M28",
+   "name": "Bounded review iterations with non-convergence escalation path",
+   "members": [
+    "ABB-C28"
+   ],
+   "reason": "distinct from C29 (escalation vs record)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M29",
+   "name": "Documented challenge/resolution/override log for review iterations",
+   "members": [
+    "ABB-C29"
+   ],
+   "reason": "flagged merges with C30/C34 rejected: log vs kickback action vs channel",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M30",
+   "name": "Non-converging lines kicked back to owners for resubmission rather than silently overridden",
+   "members": [
+    "ABB-C30"
+   ],
+   "reason": "kept separate from C19 and C29",
+   "confidence": "LOW",
+   "low_reason": "333a member is the C19 consolidation route-back; the 600a core is review-stage kickback. Overlaps C19 at one run.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M31",
+   "name": "Automated variance/exception flagging to triage review",
+   "members": [
+    "ABB-C31"
+   ],
+   "reason": "distinct from C50 (review-stage variance flags vs intake validation)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-195832-baseline-FPA-ABB-01-355a",
+     "step_id": "T7",
+     "field": "description",
+     "quote": "automated variance flags and dashboards directing challenge effort to material outliers",
+     "reason": "Same automated variance flagging directing review at the review/challenge step."
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M32",
+   "name": "Mandatory downside-scenario stress test of the draft budget",
+   "members": [
+    "ABB-C32"
+   ],
+   "reason": "distinct from C35 (stress test vs board pack content)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-203046-baseline-FPA-ABB-01-95ea",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "mandatory stress-test of the revised budget against the downside scenario",
+     "reason": "Same mandatory downside stress test at the review step."
+    },
+    {
+     "run_id": "20261010-203046-baseline-FPA-ABB-01-95ea",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "quote": "Downside stress-test results",
+     "reason": "Same output."
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M33",
+   "name": "Policy/FX basis change during review surfaced as disclosed policy change",
+   "members": [
+    "ABB-C33"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M34",
+   "name": "Asynchronous/store-and-forward review channel",
+   "members": [
+    "ABB-C34"
+   ],
+   "reason": "flagged merge with C05 rejected: review-stage async channel vs distribution/submission channel",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M35",
+   "name": "Board pack carries unsanitised judgment flags, unresolved challenges and supporting evidence",
+   "members": [
+    "ABB-C35"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "All baselines carry the downside scenario into the board pack (one council member element), but none carry judgment flags or unresolved challenges; treated absent."
+  },
+  {
+   "id": "ABB-M36",
+   "name": "Board approval reserved to humans; no agent decision authority",
+   "members": [
+    "ABB-C36"
+   ],
+   "reason": "flagged merge with C10 rejected: different object/point (board approval vs target-setting)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Board approval is human in all baselines, but no agent-authority boundary is stated; treated absent."
+  },
+  {
+   "id": "ABB-M37",
+   "name": "Board approval recorded with conditions; conditions reconciled before lock",
+   "members": [
+    "ABB-C37"
+   ],
+   "reason": "distinct from C38 (record vs gate)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "09ed TS-08 captures the approval decision in an auditable record but not conditions or their reconciliation before lock; treated absent."
+  },
+  {
+   "id": "ABB-M38",
+   "name": "Lock hard-gated on verified board-approval artefact",
+   "members": [
+    "ABB-C38"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-193948-baseline-FPA-ABB-01-09ed",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "with the lock enforced only after board approval is confirmed in the system",
+     "reason": "Lock system-gated on confirmed board approval."
+    },
+    {
+     "run_id": "20261010-203046-baseline-FPA-ABB-01-95ea",
+     "step_id": "TS-09",
+     "field": "description",
+     "quote": "occurs only after, and is gated by, board approval",
+     "reason": "Lock gated by board approval."
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M39",
+   "name": "Automated hash/diff match of loaded version against board-approved document",
+   "members": [
+    "ABB-C39"
+   ],
+   "reason": "flagged merge with C40 rejected: automated hash/diff vs human attestation (29eb treats as distinct layers)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M40",
+   "name": "Named human attestation that locked version equals board-approved version before lock commits",
+   "members": [
+    "ABB-C40"
+   ],
+   "reason": "distinct from C41 (segregation) and C43 (record)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M41",
+   "name": "Lock confirmer distinct from consolidation preparer / loader",
+   "members": [
+    "ABB-C41"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M42",
+   "name": "Governed, logged, authorised re-open procedure for post-lock changes",
+   "members": [
+    "ABB-C42"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M43",
+   "name": "Immutable audit log / verification record of the load-and-lock event",
+   "members": [
+    "ABB-C43"
+   ],
+   "reason": "kept separate from C40",
+   "confidence": "LOW",
+   "low_reason": "333a/600a members are the record of the attestation/verification in C40; could be read as the same control at a different granularity.",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-195832-baseline-FPA-ABB-01-355a",
+     "step_id": "T9",
+     "field": "description",
+     "quote": "with a full audit trail of the load",
+     "reason": "Audit record of the load-and-lock event at the lock step."
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M44",
+   "name": "Documented manual/file-based lock fallback with same attestation/immutability discipline",
+   "members": [
+    "ABB-C44"
+   ],
+   "reason": "distinct from C05/C25 (fallback at lock)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M45",
+   "name": "Durable vendor-independent export of locked budget",
+   "members": [
+    "ABB-C45"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M46",
+   "name": "Archive of assumption set and capex business cases at lock",
+   "members": [
+    "ABB-C46"
+   ],
+   "reason": "distinct from C43 (archive of assumptions/business cases vs lock-event log)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M47",
+   "name": "Named successor for displaced manual-loading role in transition plan",
+   "members": [
+    "ABB-C47"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M48",
+   "name": "Agent advisory only; owner's signed submission is the submission of record",
+   "members": [
+    "ABB-C48"
+   ],
+   "reason": "flagged merge with C10/C49 rejected: different object (BU/cost-centre submission)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M49",
+   "name": "Above-threshold capex business case remains human-authored (agent limited to calculations)",
+   "members": [
+    "ABB-C49"
+   ],
+   "reason": "flagged merges with C48/C14 rejected: capex business case authorship vs submission authorship vs review sign-off",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M50",
+   "name": "Intake validation agent flags submission anomalies back to owner",
+   "members": [
+    "ABB-C50"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-193948-baseline-FPA-ABB-01-09ed",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "standardised templates that enforce the central assumptions and flag deviations from top-down targets automatically",
+     "reason": "Automated flagging of submission deviations at the cost-centre submission step."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "09ed flags deviations in-template but does not route exceptions back to the owner via a validation function; arguable."
+  },
+  {
+   "id": "ABB-M51",
+   "name": "Degraded-mode logging on connector failure without blocking owner",
+   "members": [
+    "ABB-C51"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ABB-M52",
+   "name": "Target-setting kept separate from assumption issuance for attributable accountability",
+   "members": [
+    "ABB-C52"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines keep target-setting and assumption issuance as separate steps/actors without stated rationale; treated absent."
+  },
+  {
+   "id": "ABB-M53",
+   "name": "Cost-centre budgeting kept distinct from revenue planning for single-owner traceability",
+   "members": [
+    "ABB-C53"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines keep cost-centre and revenue planning as separate steps without stated rationale; treated absent."
+  }
+ ]
+}

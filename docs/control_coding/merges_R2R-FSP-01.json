@@ -1,0 +1,852 @@
+{
+ "workflow_id": "R2R-FSP-01",
+ "controls": [
+  {
+   "id": "FSP-M01",
+   "name": "Discrete attributable human close confirmation as hard gate",
+   "members": [
+    "FSP-C01"
+   ],
+   "reason": "distinct; flagged overlap with C02/C05 rejected: confirmation act vs exception list vs override log are different checks",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-205000-baseline-R2R-FSP-01-cec0",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "the GL accountant confirms closed status and investigates any flagged exceptions before the trial balance is declared closed and reconciled",
+     "reason": "human GL confirmation precedes declaring TB closed"
+    },
+    {
+     "run_id": "20261010-184915-baseline-R2R-FSP-01-b1b5",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "Preserves the period-end cutoff discipline (KB-03) that gates all downstream reporting",
+     "reason": "close step (GL accountant actor) gates downstream work"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-FSP-01-38b8",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "establishing the closed, reconciled trial balance that gates all downstream reporting",
+     "reason": "close step (GL accountant actor) gates downstream work"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-FSP-01-0590",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "establishing the closed, reconciled trial balance that gates all downstream statement preparation",
+     "reason": "close step (GL accountant actor) gates downstream work"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-FSP-01-8bc6",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "Period-end cutoff gates remain enforced before any downstream adjustment or drafting activity can proceed",
+     "reason": "close step (GL accountant actor) gates downstream work"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "All baselines keep a GL-accountant close step that gates downstream work, but none specifies a discrete, timestamped/attributable confirmation act; b1b5/38b8/0590 confirm via automated monitoring. Equivalence depends on whether 'discrete attributable' is the mechanism or wording."
+  },
+  {
+   "id": "FSP-M02",
+   "name": "Automated close-readiness exception list/log for human review",
+   "members": [
+    "FSP-C02"
+   ],
+   "reason": "distinct (detective exception listing, separate from the confirmation act C01 and the fail-closed rule C03)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-205000-baseline-R2R-FSP-01-cec0",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "continuously monitored via an automated reconciliation engine; the GL accountant confirms closed status and investigates any flagged exceptions",
+     "reason": "automated monitoring flags exceptions for GL human review at close"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "cec0 has automated flagging + human investigation of exceptions but no exception list/log artefact; equivalent only if the log is treated as wording/granularity."
+  },
+  {
+   "id": "FSP-M03",
+   "name": "Fail-closed on missing/stale close data",
+   "members": [
+    "FSP-C03"
+   ],
+   "reason": "distinct; flagged merge with C01/C02 rejected: preventive fail-closed rule vs confirmation act vs detective exception list",
+   "confidence": "LOW",
+   "low_reason": "Same object and step as C01/C02; 'no auto-confirmation' is arguably the same mechanism as C01's mandatory human confirmation.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M04",
+   "name": "Manual-input fallback for close-status feeds",
+   "members": [
+    "FSP-C04"
+   ],
+   "reason": "distinct; flagged merge with C18/C32 rejected: same fallback mechanism but on different objects/steps (close feeds vs consolidation/mapping vs release)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M05",
+   "name": "Logged override with recorded reason",
+   "members": [
+    "FSP-C05"
+   ],
+   "reason": "distinct; overlap with C26/C20 rejected (different mechanism)",
+   "confidence": "LOW",
+   "low_reason": "Candidate itself spans two objects (close-exception override in d272 vs mapping override in 5655); author may wish to split rather than merge.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M06",
+   "name": "Close confirmation reopenable",
+   "members": [
+    "FSP-C06"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M07",
+   "name": "Estimation entries: accountable human preparer with documented basis, never auto-posted",
+   "members": [
+    "FSP-C07"
+   ],
+   "reason": "distinct; C10 overlap rejected (C10 is mismatch blocking on all adjustment lines)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-FSP-01-b1b5",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "Estimation entries (provisions, NRV write-downs, ECL) retain an accountable human preparer",
+     "reason": "accountable human preparer for estimation entries at posting"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-FSP-01-8bc6",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "Estimation-based entries (provisions, NRV write-downs) retain an accountable human preparer per IAS 8/IAS 2.",
+     "reason": "accountable human preparer for estimation entries at posting"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-FSP-01-38b8",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "provisions and other estimation-based adjustments remain posted and signed off by an accountable GL accountant",
+     "reason": "estimates posted and signed off by accountable human (not automated)"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-FSP-01-cec0",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "estimation-based entries (provisions, impairments, NRV write-downs) retain an accountable GL accountant",
+     "reason": "accountable human preparer for estimation entries at posting"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines retain the accountable human preparer for estimates at the same step but specify no documented-basis output or before-posting precondition."
+  },
+  {
+   "id": "FSP-M08",
+   "name": "Revenue cut-off verification against evidence",
+   "members": [
+    "FSP-C08"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-FSP-01-b1b5",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "with revenue cut-off evidence verified",
+     "reason": "revenue cut-off verified against evidence at posting"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-FSP-01-8bc6",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "with revenue cut-off verified. Estimation-based",
+     "reason": "revenue cut-off verified at posting; evidence is an input"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-FSP-01-38b8",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "revenue cut-off is verified against evidence",
+     "reason": "revenue cut-off verified against evidence at posting"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-FSP-01-0590",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "with revenue cut-off evidence verified at the point of posting",
+     "reason": "revenue cut-off verified against evidence at posting"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-FSP-01-cec0",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "are posted, with revenue cut-off verified",
+     "reason": "revenue cut-off verified at posting; evidence is an input"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M09",
+   "name": "Posting log traceable to approved schedule line",
+   "members": [
+    "FSP-C09"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M10",
+   "name": "Schedule/evidence mismatch on adjustments blocked and routed",
+   "members": [
+    "FSP-C10"
+   ],
+   "reason": "distinct; overlap with C07 rejected (different check/object)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M11",
+   "name": "Mechanical postings reversible",
+   "members": [
+    "FSP-C11"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M12",
+   "name": "Unmatched intercompany items to Group accountant exception queue",
+   "members": [
+    "FSP-C12"
+   ],
+   "reason": "distinct; flagged merge with C13 rejected: different objects (IC items vs FX rate/translation anomalies)",
+   "confidence": "LOW",
+   "low_reason": "In c9c7, d272 and 106a IC breaks and rate anomalies share one queue; could be read as one exception-routing control at the consolidation step.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M13",
+   "name": "FX rate / translation anomalies surfaced to Group accountant",
+   "members": [
+    "FSP-C13"
+   ],
+   "reason": "distinct; flagged merge with C12 rejected: different object",
+   "confidence": "LOW",
+   "low_reason": "Shares a single queue with C12 in three runs; cac9 keeps two distinct queues.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M14",
+   "name": "Separate intercompany elimination completeness record",
+   "members": [
+    "FSP-C14"
+   ],
+   "reason": "distinct; merge with C15 (different object) and C16 (record vs attestation) rejected",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-FSP-01-b1b5",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "both of which remain mandatory and separately evidenced in the outputs",
+     "reason": "claims elimination is separately evidenced at consolidation step"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-FSP-01-0590",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "keeping both computations fully auditable",
+     "reason": "claims elimination computation is auditable"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines assert separate evidence/auditability but have no elimination record output (outputs are TB(s) and translation differences only); weak/implied."
+  },
+  {
+   "id": "FSP-M15",
+   "name": "Translation differences separately tagged, never netted",
+   "members": [
+    "FSP-C15"
+   ],
+   "reason": "distinct; merge with C14 rejected (different object)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-FSP-01-b1b5",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Translation differences",
+     "reason": "translation differences produced as a separate output of consolidation"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-FSP-01-8bc6",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Translation differences",
+     "reason": "translation differences produced as a separate output of consolidation"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-FSP-01-38b8",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Translation differences",
+     "reason": "translation differences produced as a separate output of consolidation"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-FSP-01-0590",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Translation differences",
+     "reason": "translation differences produced as a separate output of consolidation"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-FSP-01-cec0",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Translation differences",
+     "reason": "translation differences produced as a separate output of consolidation"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Every baseline outputs translation differences as a separate artefact (inherited current-state output) but states no non-netting/separate-logging property."
+  },
+  {
+   "id": "FSP-M16",
+   "name": "Group accountant completeness attestation over IC elimination",
+   "members": [
+    "FSP-C16"
+   ],
+   "reason": "distinct; merge with C14 rejected: attestation (approval) vs record (evidence)",
+   "confidence": "LOW",
+   "low_reason": "Same object (elimination completeness) and same step as C14; could be a granularity variant.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M17",
+   "name": "Translate before eliminating intercompany",
+   "members": [
+    "FSP-C17"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-195830-baseline-R2R-FSP-01-38b8",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "with translation differences routed to OCI, then consolidated with full identification, matching and elimination of intragroup balances",
+     "reason": "translate-then-consolidate/eliminate order at the same step"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M18",
+   "name": "Manual/spreadsheet fallback for consolidation, rates and mapping",
+   "members": [
+    "FSP-C18"
+   ],
+   "reason": "distinct; merge with C04/C32 rejected: same fallback mechanism on different objects/steps",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M19",
+   "name": "Unmapped/new accounts routed to Financial reporting exception review",
+   "members": [
+    "FSP-C19"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-195830-baseline-R2R-FSP-01-38b8",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "with exceptions routed for review",
+     "reason": "mapping exceptions routed for review at mapping step"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-FSP-01-0590",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "with Financial reporting validating exceptions and structural changes",
+     "reason": "Financial reporting validates mapping exceptions"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines route mapping exceptions to review but have no exception log or 'never defaulted' rule."
+  },
+  {
+   "id": "FSP-M20",
+   "name": "Mapping table version/change control with named owner",
+   "members": [
+    "FSP-C20"
+   ],
+   "reason": "distinct; overlap with C05 rejected",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-203046-baseline-R2R-FSP-01-0590",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "with Financial reporting validating exceptions and structural changes",
+     "reason": "Financial reporting validates structural changes at mapping"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-FSP-01-8bc6",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "using a maintained chart-of-accounts-to-disclosure mapping",
+     "reason": "mapping described as maintained"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Neither baseline specifies version control or change approval of the mapping table; 'maintained' and 'validating structural changes' are weak/implied."
+  },
+  {
+   "id": "FSP-M21",
+   "name": "Mapping kept as a distinct step",
+   "members": [
+    "FSP-C21"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-193948-baseline-R2R-FSP-01-8bc6",
+     "step_id": "TS-04",
+     "field": "name",
+     "quote": "Map trial balance to statement line items",
+     "reason": "separate mapping step"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-FSP-01-38b8",
+     "step_id": "TS-04",
+     "field": "name",
+     "quote": "Map trial balance to statement line items",
+     "reason": "separate mapping step"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-FSP-01-0590",
+     "step_id": "TS-04",
+     "field": "name",
+     "quote": "Map trial balance to statement line items",
+     "reason": "separate mapping step"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M22",
+   "name": "Human accountable drafter of record for judgmental disclosures",
+   "members": [
+    "FSP-C22"
+   ],
+   "reason": "distinct; overlap with C23 rejected (authorship vs carry-through mechanism)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-205000-baseline-R2R-FSP-01-cec0",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "Financial reporting then drafts the primary statements and key notes",
+     "reason": "human function drafts after automated mapping"
+    },
+    {
+     "run_id": "20261010-184915-baseline-R2R-FSP-01-b1b5",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "drafting is the substantive judgment activity that consumes the mapped data",
+     "reason": "drafting framed as Financial-reporting-owned judgment activity"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines have Financial reporting as drafter including policy-change/error disclosures, but no explicit accountable author-of-record for judgmental content."
+  },
+  {
+   "id": "FSP-M23",
+   "name": "Policy-change/error record explicitly carried into disclosures",
+   "members": [
+    "FSP-C23"
+   ],
+   "reason": "distinct; possible part of C22 rejected (different mechanism)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "All baselines consume the error record and include policy-change/error disclosure (current-state), but none states a mechanism preventing silent omission; judged absent."
+  },
+  {
+   "id": "FSP-M24",
+   "name": "Analytical review and tie-out as discrete checkpoint",
+   "members": [
+    "FSP-C24"
+   ],
+   "reason": "distinct; merge with C25 rejected (checkpoint vs reviewer independence)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-FSP-01-b1b5",
+     "step_id": "TS-05",
+     "field": "name",
+     "quote": "Analytical review and tie-out",
+     "reason": "separate tie-out step between drafting and approval"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-FSP-01-38b8",
+     "step_id": "TS-06",
+     "field": "name",
+     "quote": "Automated analytical review and tie-out",
+     "reason": "separate tie-out step between drafting and approval"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-FSP-01-cec0",
+     "step_id": "TS-05",
+     "field": "name",
+     "quote": "Automated analytical review and tie-out",
+     "reason": "separate tie-out step between drafting and approval"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M25",
+   "name": "Tie-out reviewer independent of drafter",
+   "members": [
+    "FSP-C25"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M26",
+   "name": "Approval package surfaces upstream exception/judgment trail",
+   "members": [
+    "FSP-C26"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M27",
+   "name": "Approver distinct from drafter",
+   "members": [
+    "FSP-C27"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-FSP-01-b1b5",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "Actor separation from drafting (TS-04) is preserved to maintain a genuine review control.",
+     "reason": "explicit approver/drafter separation"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-FSP-01-8bc6",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "Performed by an actor distinct from the preparer of the draft statements.",
+     "reason": "explicit approver/drafter separation"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-FSP-01-38b8",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "The CFO, independent of the drafting function",
+     "reason": "explicit approver/drafter separation"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-FSP-01-0590",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "Performed by a different actor than drafting to preserve independent review.",
+     "reason": "explicit approver/drafter separation"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-FSP-01-cec0",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "independently of the Financial reporting function that drafted them, preserving segregation of duties",
+     "reason": "explicit approver/drafter separation"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M28",
+   "name": "Reject/query/escalate path in approval",
+   "members": [
+    "FSP-C28"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M29",
+   "name": "Logged approval as sole trigger for release",
+   "members": [
+    "FSP-C29"
+   ],
+   "reason": "distinct; overlap with C31 rejected (trigger vs release log)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-203046-baseline-R2R-FSP-01-0590",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "released or submitted through a system-triggered distribution step once approval is recorded",
+     "reason": "release triggered by recorded approval"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "0590 triggers release on recorded approval but does not state it is the sole trigger (never schedule/inference)."
+  },
+  {
+   "id": "FSP-M30",
+   "name": "Released package confirmed identical to approved",
+   "members": [
+    "FSP-C30"
+   ],
+   "reason": "distinct; flagged overlap with C31 rejected: identity check vs authorization log",
+   "confidence": "LOW",
+   "low_reason": "In cac9 one 'Version confirmation record' serves both C30 and C31.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M31",
+   "name": "Release logged as distinct authorization record",
+   "members": [
+    "FSP-C31"
+   ],
+   "reason": "distinct; overlap with C30/C29 rejected",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M32",
+   "name": "Manual/offline fallback for release/submission",
+   "members": [
+    "FSP-C32"
+   ],
+   "reason": "distinct; merge with C04/C18 rejected (different object/step)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-FSP-01-b1b5",
+     "step_id": "TS-07",
+     "field": "description",
+     "quote": "with electronic distribution/filing support where available",
+     "reason": "'where available' implies non-electronic release otherwise"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "b1b5 only implies a non-electronic path; no fallback is specified."
+  },
+  {
+   "id": "FSP-M33",
+   "name": "Release failure blocks and escalates",
+   "members": [
+    "FSP-C33"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M34",
+   "name": "Release retractable / controlled correction path",
+   "members": [
+    "FSP-C34"
+   ],
+   "reason": "distinct",
+   "confidence": "LOW",
+   "low_reason": "Candidate itself holds two variants (pre-transmission recall window vs post-release correction path); author may wish to split.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M35",
+   "name": "Tie-out exception/variance log",
+   "members": [
+    "FSP-C35"
+   ],
+   "reason": "distinct; merge with C36/C37/C38 rejected (log vs threshold vs blocking vs review scope)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-205000-baseline-R2R-FSP-01-cec0",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "flagging variances; Financial reporting reviews and resolves flagged exceptions",
+     "reason": "tie-out variances flagged and resolved by human"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-FSP-01-38b8",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "with exception-based analytical review by Financial reporting",
+     "reason": "exception-based tie-out review"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines review/resolve flagged tie-out exceptions but produce no exception log."
+  },
+  {
+   "id": "FSP-M36",
+   "name": "Defined threshold for tie-out variances",
+   "members": [
+    "FSP-C36"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "FSP-M37",
+   "name": "Unresolved tie-out variances block progression / send-back",
+   "members": [
+    "FSP-C37"
+   ],
+   "reason": "distinct; C28 relation rejected (different step)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-193948-baseline-R2R-FSP-01-8bc6",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "surfacing variances for correction before the package reaches management",
+     "reason": "variances corrected before package reaches approval"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "8bc6 surfaces variances for correction but states no blocking rule or send-back authority."
+  },
+  {
+   "id": "FSP-M38",
+   "name": "Substantive human analytical review not limited to flags",
+   "members": [
+    "FSP-C38"
+   ],
+   "reason": "distinct; opposition to C36 noted, not a merge",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-FSP-01-b1b5",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "The draft statements are analytically reviewed and system-assisted tie-out confirms agreement",
+     "reason": "human (Financial reporting) analytical review not described as exception-limited"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "b1b5 has human analytical review without exception filtering, but does not state the full-evidence requirement."
+  },
+  {
+   "id": "FSP-M39",
+   "name": "Tie-out discrepancies classified current-period vs IAS 8 error",
+   "members": [
+    "FSP-C39"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  }
+ ]
+}

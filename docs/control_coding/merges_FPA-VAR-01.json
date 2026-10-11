@@ -1,0 +1,860 @@
+{
+ "workflow_id": "FPA-VAR-01",
+ "controls": [
+  {
+   "id": "VAR-M01",
+   "name": "Ingestion pull log (source, timestamp, hash, version IDs)",
+   "members": [
+    "VAR-C01"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "9ef2 TGT-01 asserts 'preserving source traceability' but names no pull log or log output; not listed as equivalent, author may judge otherwise."
+  },
+  {
+   "id": "VAR-M02",
+   "name": "Ingestion hard-stop halt (unlocked period, stale/unapproved version, failed reconciliation)",
+   "members": [
+    "VAR-C02"
+   ],
+   "reason": "distinct; flagged merge with VAR-C03 rejected: the rule separates a check (halt) from its escalation/exception handling (queue owner).",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "All baselines pull 'from the locked, closed period' (current-state input), which resembles the a8a0 'structurally restricted to locked-period data' variant, but no baseline states a halt/fail condition; not listed."
+  },
+  {
+   "id": "VAR-M03",
+   "name": "Named analyst owns ingestion exception queue/log",
+   "members": [
+    "VAR-C03"
+   ],
+   "reason": "distinct; flagged merge with VAR-C02 rejected (escalation/exception handling vs the halting check).",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-VAR-01-ed96",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "The FP&A analyst configures and validates the pipeline run and resolves any load exceptions.",
+     "reason": "Named analyst owns resolution of ingestion load exceptions at the same step; no queue/log output."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "ed96 has analyst ownership of load exceptions but no exception log/queue; equivalent to the council 7759 variant counted as present, not to the log-bearing variants."
+  },
+  {
+   "id": "VAR-M04",
+   "name": "Every-cycle analyst validation of ingestion (lock tie, control totals, version identity)",
+   "members": [
+    "VAR-C04"
+   ],
+   "reason": "distinct (candidate may internally bundle lock-tie and version-identity confirmation; not split here).",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-VAR-01-ed96",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "The FP&A analyst configures and validates the pipeline run",
+     "reason": "Analyst validates each ingestion run at the same step."
+    },
+    {
+     "run_id": "20261010-205000-baseline-FPA-VAR-01-7c5b",
+     "step_id": "VAR-T-01",
+     "field": "actor",
+     "quote": "FP&A analyst (system-automated extraction, analyst-reviewed)",
+     "reason": "Analyst review of each automated extraction, same step."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baseline validation/review is unspecific (no lock tie, control totals, version identity or record); comparable in strength to the 8d63 council variant counted as present. 9ef2/5154 'reconciled dataset' not listed (outcome, not a check)."
+  },
+  {
+   "id": "VAR-M05",
+   "name": "Actuals extraction and comparatives load independently triggered",
+   "members": [
+    "VAR-C05"
+   ],
+   "reason": "distinct",
+   "confidence": "LOW",
+   "low_reason": "Candidate flagged as possibly not a governance control (efficiency rationale); kept as singleton, no merge question.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "VAR-M06",
+   "name": "Degraded-mode / manual fallback for automated ingestion",
+   "members": [
+    "VAR-C06"
+   ],
+   "reason": "distinct (candidate bundles graceful degradation and documented manual fallback; not split here).",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "VAR-M07",
+   "name": "Policy-version and FX-table-version logged per computation run",
+   "members": [
+    "VAR-C07"
+   ],
+   "reason": "distinct; not merged with VAR-C08 (evidence log vs human sign-off are different mechanisms).",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-195830-baseline-FPA-VAR-01-c54a",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "The engine's policy and rate parameters are version-controlled so policy continuity and FX treatment remain auditable.",
+     "reason": "Policy/FX parameters versioned for auditability at the computation step."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "c54a states version control of the parameters but no per-run stamp/log output; arguable whether this is the same mechanism."
+  },
+  {
+   "id": "VAR-M08",
+   "name": "Per-cycle analyst sign-off that policy/FX parameters are current",
+   "members": [
+    "VAR-C08"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-VAR-01-ed96",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "The FP&A analyst parameterises the run with the current accounting policies and FX rate set",
+     "reason": "Analyst sets current policy/FX parameters per run at the computation step."
+    },
+    {
+     "run_id": "20261010-193948-baseline-FPA-VAR-01-9ef2",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "FP&A reviews engine configuration and policy mapping",
+     "reason": "FP&A review of engine policy configuration at the computation step."
+    },
+    {
+     "run_id": "20261010-205000-baseline-FPA-VAR-01-7c5b",
+     "step_id": "VAR-T-02",
+     "field": "description",
+     "quote": "an FP&A analyst validates the configuration and outputs",
+     "reason": "Analyst validation of engine configuration at the computation step."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "No baseline states an explicit per-cycle confirmation that parameters are the currently approved ones; these match the weaker council variants (a8a0, 8d63) that were counted as present."
+  },
+  {
+   "id": "VAR-M09",
+   "name": "Computation halts on missing/stale/mismatched policy or FX reference data",
+   "members": [
+    "VAR-C09"
+   ],
+   "reason": "distinct; not merged with VAR-C10 (halt on reference-data availability/version vs disclosure flag on policy change/basis divergence).",
+   "confidence": "LOW",
+   "low_reason": "The two overlap in 8d63, where a basis mismatch both halts and is surfaced for disclosure; 4f3e 'version mismatch' halt is close to basis-divergence flagging.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "VAR-M10",
+   "name": "Policy/FX change or basis divergence surfaced as explicit disclosure flag",
+   "members": [
+    "VAR-C10"
+   ],
+   "reason": "distinct; merge with VAR-C09 rejected (different action: disclosure surfacing vs halt).",
+   "confidence": "LOW",
+   "low_reason": "See VAR-C09 overlap in 8d63; candidate itself may bundle change-vs-prior-period and actuals-vs-comparatives divergence.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "VAR-M11",
+   "name": "Structural-break validation of computation output",
+   "members": [
+    "VAR-C11"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "ed96 TGT-02 'reviews the computed variance dataset for integrity before release' is a generic integrity review at the same point, not a structural-break check; not listed."
+  },
+  {
+   "id": "VAR-M12",
+   "name": "FX effect reported as a separate line, not netted",
+   "members": [
+    "VAR-C12"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-195830-baseline-FPA-VAR-01-c54a",
+     "step_id": "TGT-02",
+     "field": "outputs",
+     "quote": "Isolated FX effect",
+     "reason": "Separate FX effect output from the computation step."
+    },
+    {
+     "run_id": "20261010-184915-baseline-FPA-VAR-01-ed96",
+     "step_id": "TGT-02",
+     "field": "name",
+     "quote": "Compute price, volume, mix and FX-isolated variances",
+     "reason": "FX isolated as its own variance component."
+    },
+    {
+     "run_id": "20261010-193948-baseline-FPA-VAR-01-9ef2",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "isolating the FX effect at constant currency",
+     "reason": "FX effect isolated at the computation step."
+    },
+    {
+     "run_id": "20261010-203046-baseline-FPA-VAR-01-5154",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "with the FX effect isolated at constant currency",
+     "reason": "FX effect isolated at the computation step."
+    },
+    {
+     "run_id": "20261010-205000-baseline-FPA-VAR-01-7c5b",
+     "step_id": "VAR-T-02",
+     "field": "description",
+     "quote": "isolating the FX effect at constant currency",
+     "reason": "FX effect isolated at the computation step."
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "VAR-M13",
+   "name": "Variance computation kept deterministic and inspectable",
+   "members": [
+    "VAR-C13"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-195830-baseline-FPA-VAR-01-c54a",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "A rules-based variance engine computes price, volume and mix variances",
+     "reason": "Rules-based (deterministic) engine at the computation step."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "c54a names a rules-based engine but states no inspectability/reproducibility; matches the weak a8a0 council variant counted as present."
+  },
+  {
+   "id": "VAR-M14",
+   "name": "Materiality screening kept as a discrete, separately inspectable gate step",
+   "members": [
+    "VAR-C14"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-203046-baseline-FPA-VAR-01-5154",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "Retained as a distinct, auditable gating step so that the selection logic and its criteria remain inspectable",
+     "reason": "Explicitly the same control at the same step."
+    },
+    {
+     "run_id": "20261010-193948-baseline-FPA-VAR-01-9ef2",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "This step remains distinct from, and performed by a different actor than, the subsequent manager review.",
+     "reason": "Materiality step explicitly retained as distinct."
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "VAR-M15",
+   "name": "Logged analyst overrides of materiality selection (additions and exclusions, with rationale)",
+   "members": [
+    "VAR-C15",
+    "VAR-C16"
+   ],
+   "reason": "Same mechanism (logged rationale for analyst override of the automated selection) on the same object (selection list) at the same step; differ only in direction; 8d63 uses one bidirectional log present under both.",
+   "confidence": "LOW",
+   "low_reason": "Additions and exclusions could be argued as distinct checks; 4f3e C16 variant is a no-silent-exclusion rule rather than a log.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "ed96 TGT-03 'reviews borderline or overridden items before the explain-list is finalised' reviews overrides but has no logged rationale/authority; not listed."
+  },
+  {
+   "id": "VAR-M16",
+   "name": "Net-effect aggregation check of sub-threshold variances",
+   "members": [
+    "VAR-C17"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "VAR-M17",
+   "name": "Threshold parameters human-owned, versioned and change-controlled",
+   "members": [
+    "VAR-C18"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-195830-baseline-FPA-VAR-01-c54a",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "the FP&A analyst owns the threshold parameters",
+     "reason": "Human ownership of threshold parameters at the materiality step."
+    },
+    {
+     "run_id": "20261010-184915-baseline-FPA-VAR-01-ed96",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "the FP&A analyst confirms the threshold parameters applied",
+     "reason": "Analyst confirms thresholds applied, comparable to the 4f3e council variant."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines show ownership/confirmation but no versioning or change control."
+  },
+  {
+   "id": "VAR-M18",
+   "name": "Analyst confirms selection list (with full-population view) before release to budget holders",
+   "members": [
+    "VAR-C19"
+   ],
+   "reason": "distinct; not merged with VAR-C15/C16 (approval of the list vs logging of overrides).",
+   "confidence": "LOW",
+   "low_reason": "Overrides are exercised within the same review, so a reader could treat it as one control with the override log.",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-193948-baseline-FPA-VAR-01-9ef2",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "with FP&A analyst sign-off on the flagged set before it is routed to budget holders",
+     "reason": "Analyst sign-off on the selection list at the same point."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "9ef2 lacks the full-population visibility; matches the weaker 4f3e council variant counted as present."
+  },
+  {
+   "id": "VAR-M19",
+   "name": "Near-threshold tolerance band routed to human decision",
+   "members": [
+    "VAR-C20"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-VAR-01-ed96",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "reviews borderline or overridden items before the explain-list is finalised",
+     "reason": "Human review of borderline items at the materiality step."
+    },
+    {
+     "run_id": "20261010-195830-baseline-FPA-VAR-01-c54a",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "reviews edge cases",
+     "reason": "Human review of edge cases at the materiality step."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines have borderline/edge-case review without a defined tolerance band."
+  },
+  {
+   "id": "VAR-M20",
+   "name": "Actor separation between materiality selection and review",
+   "members": [
+    "VAR-C21"
+   ],
+   "reason": "distinct; not merged with VAR-C22 (organisational separation vs system/access-control enforcement).",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-VAR-01-ed96",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "This selecting actor is distinct from the manager who later reviews and challenges the report.",
+     "reason": "Same separation."
+    },
+    {
+     "run_id": "20261010-193948-baseline-FPA-VAR-01-9ef2",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "performed by a different actor than, the subsequent manager review",
+     "reason": "Same separation."
+    },
+    {
+     "run_id": "20261010-195830-baseline-FPA-VAR-01-c54a",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "does not perform the downstream challenge review, preserving separation of duties",
+     "reason": "Same separation."
+    },
+    {
+     "run_id": "20261010-203046-baseline-FPA-VAR-01-5154",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "preserving segregation of duties between selection and review",
+     "reason": "Same separation."
+    },
+    {
+     "run_id": "20261010-205000-baseline-FPA-VAR-01-7c5b",
+     "step_id": "VAR-T-03",
+     "field": "description",
+     "quote": "organisationally independent of the later review and challenge function",
+     "reason": "Same separation."
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "VAR-M21",
+   "name": "Separation enforced via access control / distinct system identities",
+   "members": [
+    "VAR-C22"
+   ],
+   "reason": "distinct; flagged merge with VAR-C21 rejected (system-enforced preventive mechanism vs organisational assignment).",
+   "confidence": "LOW",
+   "low_reason": "Could be read as a stronger-granularity variant of VAR-C21 on the same object.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "No baseline states system enforcement; but 7c5b 'organisationally independent' resembles the 4f3e 'organisationally and functionally distinct' wording that was counted as council presence for this candidate."
+  },
+  {
+   "id": "VAR-M22",
+   "name": "Materiality override log supplied to reviewer",
+   "members": [
+    "VAR-C23"
+   ],
+   "reason": "distinct; flagged merge with VAR-C24 rejected (different object: override log vs other underlying evidence).",
+   "confidence": "LOW",
+   "low_reason": "Both are reviewer-evidence inputs at the review step; could be treated as one 'reviewer evidence access' control.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "VAR-M23",
+   "name": "Reviewer access to underlying evidence beyond narrative",
+   "members": [
+    "VAR-C24"
+   ],
+   "reason": "distinct (candidate bundles several evidence objects; not split here).",
+   "confidence": "LOW",
+   "low_reason": "Overlaps VAR-C23 at the same step; bundle of differing evidence objects.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "VAR-M24",
+   "name": "Review retained as a non-automated human accountability checkpoint",
+   "members": [
+    "VAR-C25"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-VAR-01-ed96",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "The FP&A manager reviews and challenges the draft report and its commentary",
+     "reason": "Human manager review retained at the review step."
+    },
+    {
+     "run_id": "20261010-193948-baseline-FPA-VAR-01-9ef2",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "the review-and-challenge function is preserved intact",
+     "reason": "Human review retained."
+    },
+    {
+     "run_id": "20261010-195830-baseline-FPA-VAR-01-c54a",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "reviewed and challenged by a manager who did not perform the materiality-based selection",
+     "reason": "Human manager review retained."
+    },
+    {
+     "run_id": "20261010-203046-baseline-FPA-VAR-01-5154",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "The draft report and its commentary are reviewed and challenged by a manager",
+     "reason": "Human manager review retained."
+    },
+    {
+     "run_id": "20261010-205000-baseline-FPA-VAR-01-7c5b",
+     "step_id": "VAR-T-06",
+     "field": "description",
+     "quote": "The draft report and its commentary are reviewed and challenged by a manager",
+     "reason": "Human manager review retained."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines retain human manager review (as do 4f3e/8d63, counted as present on actor alone) but have no agent triage, so the 'triage cannot bound scope' element has no counterpart."
+  },
+  {
+   "id": "VAR-M25",
+   "name": "Reviewer can reject and kick back draft/commentary upstream",
+   "members": [
+    "VAR-C26"
+   ],
+   "reason": "distinct; not merged with VAR-C39 (different point and actor: manager review vs analyst consolidation).",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "VAR-M26",
+   "name": "Documented challenge notes retained",
+   "members": [
+    "VAR-C27"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "VAR-M27",
+   "name": "Distribution gated on logged manager sign-off event",
+   "members": [
+    "VAR-C28"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "All baselines distribute the 'Reviewed variance report' after review (sequence implied), comparable to the 4f3e 'cleared TS-06' variant, but none states a gate or sign-off event; not listed."
+  },
+  {
+   "id": "VAR-M28",
+   "name": "Distribution log (recipients, timestamp, version)",
+   "members": [
+    "VAR-C29"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "VAR-M29",
+   "name": "Distributed artifact confirmed identical to reviewed version",
+   "members": [
+    "VAR-C30"
+   ],
+   "reason": "distinct; not merged with VAR-C29 (match check vs record).",
+   "confidence": "LOW",
+   "low_reason": "In 8d63 the check is realised through the version hash in the distribution log.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "VAR-M30",
+   "name": "Tracked recall/reissue path for post-distribution corrections",
+   "members": [
+    "VAR-C31"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "VAR-M31",
+   "name": "Archived provenance chain with distributed report",
+   "members": [
+    "VAR-C32"
+   ],
+   "reason": "distinct; not merged with VAR-C29 or VAR-C40 (different object/point).",
+   "confidence": "LOW",
+   "low_reason": "Could be read as part of the distribution record (C29) or draft provenance (C40).",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "VAR-M32",
+   "name": "Budget-holder commentary human-authored and attributed",
+   "members": [
+    "VAR-C33"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines have budget holders providing commentary (human-authored by implication) but none excludes generative drafting; not listed."
+  },
+  {
+   "id": "VAR-M33",
+   "name": "Commentary SLA tracking with automatic escalation, logged",
+   "members": [
+    "VAR-C34"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "VAR-M34",
+   "name": "Missing commentary marked outstanding, never auto-filled",
+   "members": [
+    "VAR-C35"
+   ],
+   "reason": "distinct; not merged with VAR-C34 (escalation) or VAR-C38 (completeness check at consolidation).",
+   "confidence": "LOW",
+   "low_reason": "Close to VAR-C38 (unexplained items surfaced) at an adjacent point.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "VAR-M35",
+   "name": "Asynchronous low-bandwidth commentary channel",
+   "members": [
+    "VAR-C36"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "VAR-M36",
+   "name": "Structured root-cause / driver-tagged commentary template",
+   "members": [
+    "VAR-C37"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-195830-baseline-FPA-VAR-01-c54a",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "submitted through a structured commentary template that links each explanation to its variance line",
+     "reason": "Structured commentary template at the same step."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "c54a template has no root-cause/driver tagging; matches the weaker a8a0/4f3e council variants counted as present."
+  },
+  {
+   "id": "VAR-M37",
+   "name": "Completeness check: every selected variance has commentary",
+   "members": [
+    "VAR-C38"
+   ],
+   "reason": "distinct; flagged merge with VAR-C39 rejected (completeness vs adequacy are different checks).",
+   "confidence": "LOW",
+   "low_reason": "Same object and point as VAR-C39; several runs perform both in one analyst pass.",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-195830-baseline-FPA-VAR-01-c54a",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "with the analyst resolving any gaps or inconsistencies before handoff to review",
+     "reason": "Analyst resolves gaps before review at the consolidation step."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "No explicit completeness check; matches the weaker a8a0 council variant."
+  },
+  {
+   "id": "VAR-M38",
+   "name": "Commentary adequacy/coherence check with kickback",
+   "members": [
+    "VAR-C39"
+   ],
+   "reason": "distinct; see VAR-C38 and VAR-C26.",
+   "confidence": "LOW",
+   "low_reason": "See VAR-C38.",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-195830-baseline-FPA-VAR-01-c54a",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "with the analyst resolving any gaps or inconsistencies before handoff to review",
+     "reason": "Analyst resolves inconsistencies at the consolidation step."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "No kickback path or explicit adequacy criterion; matches weaker a8a0/4f3e council variants."
+  },
+  {
+   "id": "VAR-M39",
+   "name": "Draft provenance tagging / per-claim source lineage",
+   "members": [
+    "VAR-C40"
+   ],
+   "reason": "distinct; not merged with VAR-C41 (draft report vs commentary receipt record; different object and step).",
+   "confidence": "LOW",
+   "low_reason": "8d63 carries commentary author/timestamp as draft lineage, overlapping VAR-C41.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "VAR-M40",
+   "name": "Commentary provenance record (receipt timestamp/author)",
+   "members": [
+    "VAR-C41"
+   ],
+   "reason": "distinct; see VAR-C40.",
+   "confidence": "LOW",
+   "low_reason": "See VAR-C40.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "VAR-M41",
+   "name": "Named accountable preparer of the draft",
+   "members": [
+    "VAR-C42"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "All baselines have analyst drafting and manager reviewing (maker-checker implied) but none names draft accountability; baseline independence statements concern selection, not drafting."
+  },
+  {
+   "id": "VAR-M42",
+   "name": "Accountable human presentation by manager",
+   "members": [
+    "VAR-C43"
+   ],
+   "reason": "distinct; not merged with VAR-C44 (accountability role vs discussion record).",
+   "confidence": "LOW",
+   "low_reason": "VAR-C44 occurs at the same step and could be read as its evidence.",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-FPA-VAR-01-ed96",
+     "step_id": "TGT-07",
+     "field": "description",
+     "quote": "The reviewed report is presented and distributed to management.",
+     "reason": "Manager presents to management (actor FP&A manager)."
+    },
+    {
+     "run_id": "20261010-193948-baseline-FPA-VAR-01-9ef2",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "then presents and distributes the finalised report to management",
+     "reason": "Manager presents to management."
+    },
+    {
+     "run_id": "20261010-195830-baseline-FPA-VAR-01-c54a",
+     "step_id": "TGT-07",
+     "field": "description",
+     "quote": "The reviewed report is presented and distributed to management",
+     "reason": "Manager presents to management (actor FP&A manager)."
+    },
+    {
+     "run_id": "20261010-203046-baseline-FPA-VAR-01-5154",
+     "step_id": "TGT-07",
+     "field": "description",
+     "quote": "The reviewed report is presented and distributed to management.",
+     "reason": "Manager presents to management (actor FP&A manager)."
+    },
+    {
+     "run_id": "20261010-205000-baseline-FPA-VAR-01-7c5b",
+     "step_id": "VAR-T-07",
+     "field": "description",
+     "quote": "The reviewed report is presented and distributed to management.",
+     "reason": "Manager presents to management (actor FP&A manager)."
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines keep manager presentation (inherited current state) but do not separate it from mechanical distribution; matches the 8d63 council variant counted on actor alone."
+  },
+  {
+   "id": "VAR-M43",
+   "name": "Management discussion record",
+   "members": [
+    "VAR-C44"
+   ],
+   "reason": "distinct; see VAR-C43.",
+   "confidence": "LOW",
+   "low_reason": "See VAR-C43.",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "VAR-M44",
+   "name": "Offline/portable distribution format floor",
+   "members": [
+    "VAR-C45"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  }
+ ]
+}

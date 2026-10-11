@@ -1,0 +1,912 @@
+{
+ "workflow_id": "R2R-ACR-01",
+ "controls": [
+  {
+   "id": "ACR-M01",
+   "name": "Extraction exception worklist/log to GL accountant",
+   "members": [
+    "ACR-C01"
+   ],
+   "reason": "distinct; flagged merge with ACR-C05 rejected (exception routing vs preventive halt)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-ACR-01-0bac",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Extraction exception log",
+     "reason": "named extraction exception log output"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-ACR-01-48b8",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Extraction exception log",
+     "reason": "named extraction exception log output"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-ACR-01-688a",
+     "step_id": "TS-ACR-01",
+     "field": "outputs",
+     "quote": "Extraction exception log",
+     "reason": "named extraction exception log output"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-ACR-01-464b",
+     "step_id": "ACR-T-01",
+     "field": "description",
+     "quote": "The GL accountant resolves extraction exceptions (missing feeds, stale rates) flagged by the platform.",
+     "reason": "platform flags extraction exceptions to GL accountant"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-ACR-01-a86d",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "The GL accountant reviews extraction exceptions (missing feeds, stale rates)",
+     "reason": "GL accountant reviews extraction exceptions"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M02",
+   "name": "First-class manual extraction path",
+   "members": [
+    "ACR-C02"
+   ],
+   "reason": "distinct; flagged merge with ACR-C11 rejected (same idea but different point: extraction vs matching)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M03",
+   "name": "Extraction run/mode log",
+   "members": [
+    "ACR-C03"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M04",
+   "name": "Exchange differences separately recorded",
+   "members": [
+    "ACR-C04"
+   ],
+   "reason": "distinct; ACR-C08 FX exception tag is a different object/point (matching queue)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M05",
+   "name": "Extraction halts on unavailable feed/stale rate",
+   "members": [
+    "ACR-C05"
+   ],
+   "reason": "distinct; flagged merge with ACR-C01 rejected: preventive halt vs exception routing",
+   "confidence": "LOW",
+   "low_reason": "Both act at extraction on the same failure events and 216b pairs the halt with raising an exception; could be read as one exception-handling control",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M06",
+   "name": "Matching exception queue for unmatched/low-confidence items",
+   "members": [
+    "ACR-C06"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-ACR-01-0bac",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Unmatched item exception queue",
+     "reason": "named unmatched exception queue"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-ACR-01-464b",
+     "step_id": "ACR-T-02",
+     "field": "outputs",
+     "quote": "Unmatched exception queue",
+     "reason": "named unmatched exception queue"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-ACR-01-688a",
+     "step_id": "TS-ACR-02",
+     "field": "outputs",
+     "quote": "Unmatched item exception queue",
+     "reason": "named unmatched exception queue"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-ACR-01-a86d",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "the GL accountant is routed only unmatched or low-confidence items for manual matching",
+     "reason": "unmatched/low-confidence routed to accountant (no named queue output)"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-ACR-01-48b8",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "the GL accountant triages and manually resolves the residual unmatched population",
+     "reason": "residual unmatched triaged by accountant (no named queue output)"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M07",
+   "name": "Match-rule provenance on matches/non-matches",
+   "members": [
+    "ACR-C07"
+   ],
+   "reason": "distinct; ACR-C14 (confidence score) is different metadata",
+   "confidence": "LOW",
+   "low_reason": "517f attaches confidence and rule metadata in one output; C07 and C14 could be read as one match-explanation record",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M08",
+   "name": "Exception-type tagging at queueing",
+   "members": [
+    "ACR-C08"
+   ],
+   "reason": "distinct; FX (ACR-C04) and intercompany (ACR-C09) controls act on different objects/points",
+   "confidence": "LOW",
+   "low_reason": "Tag types include FX and intercompany; overlap with ACR-C04/ACR-C09 is arguable",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "464b ACR-T-03 classifies items as timing difference, error, or other, but at investigation, not at the point of queueing; not counted"
+  },
+  {
+   "id": "ACR-M09",
+   "name": "Intercompany items kept separately identifiable through matching",
+   "members": [
+    "ACR-C09"
+   ],
+   "reason": "distinct",
+   "confidence": "LOW",
+   "low_reason": "60e6 intercompany-break exception tag (ACR-C08) could be read as the same identifiability mechanism",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M10",
+   "name": "Versioned, change-controlled matching rules",
+   "members": [
+    "ACR-C10"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M11",
+   "name": "First-class manual matching path",
+   "members": [
+    "ACR-C11"
+   ],
+   "reason": "distinct; flagged merge with ACR-C02 rejected (different point); ACR-C12 and ACR-C13 kept separate",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines route residual unmatched items to manual matching (e.g. 688a TS-ACR-02) but not as a designated permanent path for accounts where automation is not viable; not counted"
+  },
+  {
+   "id": "ACR-M12",
+   "name": "Rehearsed fallback to full manual matching on engine outage",
+   "members": [
+    "ACR-C12"
+   ],
+   "reason": "distinct: invoked outage fallback vs standing manual lane (ACR-C11)",
+   "confidence": "LOW",
+   "low_reason": "Same object (manual matching) at same step; could be read as granularity of ACR-C11",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M13",
+   "name": "Manual matches logged to same standard as automated",
+   "members": [
+    "ACR-C13"
+   ],
+   "reason": "distinct: logging standard, not the manual path itself",
+   "confidence": "LOW",
+   "low_reason": "Flag suggests it may be part of ACR-C11 or ACR-C07",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M14",
+   "name": "Match confidence score on auto-matches",
+   "members": [
+    "ACR-C14"
+   ],
+   "reason": "distinct from ACR-C07 (score vs rule provenance)",
+   "confidence": "LOW",
+   "low_reason": "517f overlap with ACR-C07 (confidence and rule metadata in one output)",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "a86d routes 'low-confidence items', implying a score, but no score is attached as an output; not counted"
+  },
+  {
+   "id": "ACR-M15",
+   "name": "Sampling of auto-matched items",
+   "members": [
+    "ACR-C15"
+   ],
+   "reason": "distinct from ACR-C25: different point (matching vs review) and object (auto-matches vs reconciliations)",
+   "confidence": "LOW",
+   "low_reason": "Both sample the automated population; could be considered one sampling control",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M16",
+   "name": "Match-rate monitoring",
+   "members": [
+    "ACR-C16"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-195830-baseline-R2R-ACR-01-a86d",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "The automated-match rate is monitored to ensure the matching function, not merely its tooling, is auditable.",
+     "reason": "match rate monitored at matching step"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M17",
+   "name": "Matching kept distinct from extraction",
+   "members": [
+    "ACR-C17"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "All baselines structurally keep extraction and matching as separate steps but none states it as a control; not counted"
+  },
+  {
+   "id": "ACR-M18",
+   "name": "AI classification advisory; human accept/override logged",
+   "members": [
+    "ACR-C18"
+   ],
+   "reason": "distinct; ACR-C19 is a threshold gate on auto-close",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "48b8 TS-03 has system-suggested root causes with the accountant classifying, but no stated accept/override control; not counted"
+  },
+  {
+   "id": "ACR-M19",
+   "name": "No auto-close above materiality/age threshold without named review",
+   "members": [
+    "ACR-C19"
+   ],
+   "reason": "distinct: threshold gate on auto-close vs per-item human disposition (ACR-C18)",
+   "confidence": "LOW",
+   "low_reason": "Same step and object as ACR-C18; if humans dispose every item the gate may be subsumed",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M20",
+   "name": "Classification recorded as artifact separate from JE",
+   "members": [
+    "ACR-C20"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines (except 688a) keep 'Explained reconciling items' as a separate output from JEs; arguably the same by structure; not counted"
+  },
+  {
+   "id": "ACR-M21",
+   "name": "Estimation entries: named human preparer with documented basis",
+   "members": [
+    "ACR-C21"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-193948-baseline-R2R-ACR-01-464b",
+     "step_id": "ACR-T-04",
+     "field": "description",
+     "quote": "applies a documented basis for estimation-type adjustments",
+     "reason": "documented basis for estimation adjustments"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-ACR-01-a86d",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "estimation-based adjustments (e.g. provisions, impairments, NRV write-downs) retain a documented human basis",
+     "reason": "documented human basis for estimation adjustments"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baseline variants lack the named-preparer / no-auto-posting element"
+  },
+  {
+   "id": "ACR-M22",
+   "name": "Preparer attestation record",
+   "members": [
+    "ACR-C22"
+   ],
+   "reason": "distinct; ACR-C23 (diff) and ACR-C24 (submit lock) kept separate",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-ACR-01-0bac",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "quote": "Prepared and signed-off reconciliation",
+     "reason": "preparer sign-off output"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-ACR-01-464b",
+     "step_id": "ACR-T-04",
+     "field": "outputs",
+     "quote": "Prepared and certified reconciliation",
+     "reason": "preparer certification output"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-ACR-01-688a",
+     "step_id": "TS-ACR-03",
+     "field": "outputs",
+     "quote": "Prepared and attested reconciliation",
+     "reason": "preparer attestation output"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-ACR-01-a86d",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "Submission to review automatically captures the preparer's attestation",
+     "reason": "attestation captured on submission (weaker)"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M23",
+   "name": "Attestation shows diff since preparer's last touch",
+   "members": [
+    "ACR-C23"
+   ],
+   "reason": "distinct: information shown at sign-off, not the attestation record",
+   "confidence": "LOW",
+   "low_reason": "Could be a sub-element (granularity) of ACR-C22",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M24",
+   "name": "Gated submit-for-review lock JE batch cannot bypass",
+   "members": [
+    "ACR-C24"
+   ],
+   "reason": "distinct: preventive gate vs evidence record (ACR-C22)",
+   "confidence": "LOW",
+   "low_reason": "Same point and object as ACR-C22; could be a sub-element",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M25",
+   "name": "Risk-weighted reviewer sampling of low-risk population",
+   "members": [
+    "ACR-C25"
+   ],
+   "reason": "distinct from ACR-C15 (different point/object) and ACR-C26 (sampling vs review depth)",
+   "confidence": "LOW",
+   "low_reason": "Flagged overlap with ACR-C15 and ACR-C26",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M26",
+   "name": "Risk-tiered review depth",
+   "members": [
+    "ACR-C26"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M27",
+   "name": "No auto-approval; agents cannot approve or be SoD actor",
+   "members": [
+    "ACR-C27"
+   ],
+   "reason": "distinct; kept as one candidate as supplied",
+   "confidence": "LOW",
+   "low_reason": "Candidate clusters two mechanisms (no rule-based auto-approval; agent not an SoD actor); part (b) relates to ACR-C31",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines keep a human reviewer approving but do not state a no-auto-approval rule; not counted"
+  },
+  {
+   "id": "ACR-M28",
+   "name": "Agent risk-scoring pre-screen for reviewer",
+   "members": [
+    "ACR-C28"
+   ],
+   "reason": "distinct: detective pre-screen vs review depth (ACR-C26)",
+   "confidence": "LOW",
+   "low_reason": "Flag suggests it may be part of ACR-C26",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M29",
+   "name": "Reviewer fed exception-level detail, not totals-only",
+   "members": [
+    "ACR-C29"
+   ],
+   "reason": "distinct",
+   "confidence": "LOW",
+   "low_reason": "dd48 risk-weighted screen foregrounding items (ACR-C26) is related",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M30",
+   "name": "Discrete logged per-item reviewer approval",
+   "members": [
+    "ACR-C30"
+   ],
+   "reason": "distinct from ACR-C27 (no auto-approval)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baselines output 'Approved reconciliation' but do not state a discrete logged per-item decision; not counted"
+  },
+  {
+   "id": "ACR-M31",
+   "name": "Independent reviewer distinct from preparer",
+   "members": [
+    "ACR-C31"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-ACR-01-0bac",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "An independent reviewer, distinct from the preparer of the adjusting entries",
+     "reason": "reviewer distinct from preparer"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-ACR-01-464b",
+     "step_id": "ACR-T-05",
+     "field": "description",
+     "quote": "maintaining segregation of duties from the preparer",
+     "reason": "SoD from preparer"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-ACR-01-a86d",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "An independent reviewer, distinct from the preparer of the adjusting entries",
+     "reason": "reviewer distinct from preparer"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-ACR-01-48b8",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "An independent finance controller reviews and approves the reconciliation and its adjusting entries",
+     "reason": "independent reviewer (weaker wording)"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-ACR-01-688a",
+     "step_id": "TS-ACR-04",
+     "field": "description",
+     "quote": "An independent finance controller, separate from the preparer",
+     "reason": "reviewer separate from preparer"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M32",
+   "name": "Prior-period corrections via flagged sub-path",
+   "members": [
+    "ACR-C32"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M33",
+   "name": "Continuous automated ageing monitoring",
+   "members": [
+    "ACR-C33"
+   ],
+   "reason": "distinct; flagged merge with ACR-C37 rejected (continuous automated vs periodic portfolio surveillance)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-ACR-01-0bac",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "The platform continuously tracks the age of open reconciling items against the ageing threshold",
+     "reason": "continuous automated ageing"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-ACR-01-a86d",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "The platform continuously ages open reconciling items against risk-based thresholds",
+     "reason": "continuous automated ageing"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-ACR-01-464b",
+     "step_id": "ACR-T-05",
+     "field": "description",
+     "quote": "the platform automatically flags reconciling items beyond the ageing threshold",
+     "reason": "automated ageing flag (continuity not stated)"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-ACR-01-688a",
+     "step_id": "TS-ACR-04",
+     "field": "inputs",
+     "quote": "Aged-item alerts (system-generated)",
+     "reason": "system-generated ageing alerts"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M34",
+   "name": "Escalation decision remains human controller judgment",
+   "members": [
+    "ACR-C34"
+   ],
+   "reason": "distinct from ACR-C35 (log) and ACR-C36 (owner/deadline)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-193948-baseline-R2R-ACR-01-464b",
+     "step_id": "ACR-T-05",
+     "field": "description",
+     "quote": "the controller escalates them for resolution",
+     "reason": "controller performs escalation"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-ACR-01-48b8",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "escalates any reconciling items beyond the ageing threshold for resolution",
+     "reason": "controller performs escalation"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-ACR-01-688a",
+     "step_id": "TS-ACR-04",
+     "field": "description",
+     "quote": "escalated by the controller for resolution",
+     "reason": "controller performs escalation"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "Baseline human escalation is implicit/inherited, not stated as a preserved judgment"
+  },
+  {
+   "id": "ACR-M35",
+   "name": "Escalation log",
+   "members": [
+    "ACR-C35"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-ACR-01-0bac",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "Escalation log",
+     "reason": "escalation log output"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-ACR-01-464b",
+     "step_id": "ACR-T-05",
+     "field": "outputs",
+     "quote": "Escalation log",
+     "reason": "escalation log output"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-ACR-01-a86d",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "Escalation log",
+     "reason": "escalation log output"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-ACR-01-48b8",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "quote": "Escalation log",
+     "reason": "escalation log output"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-ACR-01-688a",
+     "step_id": "TS-ACR-04",
+     "field": "outputs",
+     "quote": "Escalation log",
+     "reason": "escalation log output"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M36",
+   "name": "Named resolution owner and deadline per escalation",
+   "members": [
+    "ACR-C36"
+   ],
+   "reason": "distinct from ACR-C35 (adds owner/deadline assignment)",
+   "confidence": "LOW",
+   "low_reason": "dd48 expresses it as fields of the escalation log; could be granularity of ACR-C35",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M37",
+   "name": "Portfolio-level cross-entity ageing surveillance",
+   "members": [
+    "ACR-C37"
+   ],
+   "reason": "distinct; flagged merge with ACR-C33 rejected",
+   "confidence": "LOW",
+   "low_reason": "Same object (item ageing); differs in cadence/scope; could be granularity",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M38",
+   "name": "Async/batch operation for low-connectivity sites",
+   "members": [
+    "ACR-C38"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M39",
+   "name": "Local/periodically-synced evidence retention",
+   "members": [
+    "ACR-C39"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M40",
+   "name": "Portable/exportable evidence and status output",
+   "members": [
+    "ACR-C40"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M41",
+   "name": "Immutable/tamper-evident evidence retention",
+   "members": [
+    "ACR-C41"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-205000-baseline-R2R-ACR-01-688a",
+     "step_id": "TS-ACR-05",
+     "field": "description",
+     "quote": "automatically archived to a tamper-evident repository",
+     "reason": "tamper-evident evidence archive"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M42",
+   "name": "Automatic evidence retention",
+   "members": [
+    "ACR-C42"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-ACR-01-0bac",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "quote": "Retained reconciliation evidence",
+     "reason": "retained evidence output"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-ACR-01-464b",
+     "step_id": "ACR-T-06",
+     "field": "outputs",
+     "quote": "Retained reconciliation evidence",
+     "reason": "retained evidence output"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-ACR-01-a86d",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "Retained reconciliation evidence",
+     "reason": "retained evidence output"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-ACR-01-48b8",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "Retained reconciliation evidence",
+     "reason": "retained evidence output"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-ACR-01-688a",
+     "step_id": "TS-ACR-05",
+     "field": "outputs",
+     "quote": "Retained reconciliation evidence",
+     "reason": "retained evidence output"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  },
+  {
+   "id": "ACR-M43",
+   "name": "GL accountant review of status report/completeness",
+   "members": [
+    "ACR-C43"
+   ],
+   "reason": "distinct: review check vs report output (ACR-C44)",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-205000-baseline-R2R-ACR-01-688a",
+     "step_id": "TS-ACR-05",
+     "field": "description",
+     "quote": "with the GL accountant responsible for resolving retention or reporting exceptions",
+     "reason": "exception resolution, not pre-publication review"
+    }
+   ],
+   "baseline_confidence": "LOW",
+   "baseline_low_reason": "688a is exception resolution rather than active pre-publication review"
+  },
+  {
+   "id": "ACR-M44",
+   "name": "Reconciliation status reporting",
+   "members": [
+    "ACR-C44"
+   ],
+   "reason": "distinct",
+   "confidence": "HIGH",
+   "low_reason": "",
+   "baseline_equivalence": [
+    {
+     "run_id": "20261010-184915-baseline-R2R-ACR-01-0bac",
+     "step_id": "TS-07",
+     "field": "outputs",
+     "quote": "Reconciliation status report",
+     "reason": "status report output"
+    },
+    {
+     "run_id": "20261010-193948-baseline-R2R-ACR-01-464b",
+     "step_id": "ACR-T-06",
+     "field": "outputs",
+     "quote": "Reconciliation status report",
+     "reason": "status report output"
+    },
+    {
+     "run_id": "20261010-195830-baseline-R2R-ACR-01-a86d",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "Reconciliation status report",
+     "reason": "status report output"
+    },
+    {
+     "run_id": "20261010-203046-baseline-R2R-ACR-01-48b8",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "Reconciliation status report",
+     "reason": "status report output"
+    },
+    {
+     "run_id": "20261010-205000-baseline-R2R-ACR-01-688a",
+     "step_id": "TS-ACR-05",
+     "field": "outputs",
+     "quote": "Reconciliation status report",
+     "reason": "status report output"
+    }
+   ],
+   "baseline_confidence": "HIGH",
+   "baseline_low_reason": ""
+  }
+ ]
+}

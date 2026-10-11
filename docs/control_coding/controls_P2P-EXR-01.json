@@ -1,0 +1,2016 @@
+{
+ "workflow_id": "P2P-EXR-01",
+ "candidates": [
+  {
+   "id": "EXR-C01",
+   "title": "Low-confidence extraction exception queue routed to AP analyst",
+   "category": "exception",
+   "codebook_match": "Validation exception queue at capture",
+   "attribution": {
+    "roles": [
+     "finance_domain",
+     "hitl_designer"
+    ],
+    "quote": "route low-confidence extractions to a manual-keying task performed by an AP analyst",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "Low-confidence or failed digital extractions route to the AP analyst's manual-keying queue"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T2",
+     "field": "description",
+     "marker": "route to an AP analyst exception queue for manual correction"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T2",
+     "field": "description",
+     "marker": "Low-confidence extractions and policy exceptions route to a named, resourced AP exception specialist"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-02",
+     "field": "outputs",
+     "marker": "Low-confidence exception queue items"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-205000-baseline-P2P-EXR-01-1a6b",
+     "step_id": "EXR-T02",
+     "field": "description",
+     "marker": "lines that fail or fall outside system confidence"
+    }
+   ],
+   "flags": [
+    "Baseline 1a6b presence is partial: confidence-based routing sits inside the policy-check step, not an extraction exception queue.",
+    "Attribution: in 59a3 round1_agentic_architect proposed a different variant (low-confidence fields confirmed by the employee inline); the AP-analyst queue is from finance_domain/hitl_designer.",
+    "2ec9 combines extraction and policy exceptions in one specialist queue; may overlap EXR-C13."
+   ]
+  },
+  {
+   "id": "EXR-C02",
+   "title": "Extraction confidence / provenance log (per-field confidence score, model version)",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "with a confidence score attached to every extracted field",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "marker": "Structured claim record with linked receipt image and extraction confidence log"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T2",
+     "field": "outputs",
+     "marker": "Structured claim record with extraction provenance (model version, confidence score, source-image link)"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-02",
+     "field": "outputs",
+     "marker": "Extraction confidence log"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "2ec9 has confidence thresholds as an input but no confidence log output; treated as absent (judgement call).",
+    "Possible overlap with EXR-C03 (b45d provenance output includes the source-image link)."
+   ]
+  },
+  {
+   "id": "EXR-C03",
+   "title": "Receipt image durably linked to extracted data and claim line",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "accounting_standards"
+    ],
+    "quote": "the extracted data record remains durably linked to the original receipt image and to the claim line it supports",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_accounting_standards"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "the image, the extracted fields and the claim line remain durably linked end to end"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T2",
+     "field": "description",
+     "marker": "with a pointer back to the source image so the record stays attributable"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T2",
+     "field": "outputs",
+     "marker": "Structured claim record (extracted data linked to original receipt images)"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "May be one control with EXR-C02 (evidence/provenance of extraction).",
+    "Also raised independently in round1 by finance_domain in b45d and 2ec9 and accounting_standards in b45d and 2ec9."
+   ]
+  },
+  {
+   "id": "EXR-C04",
+   "title": "Periodic sampling audit of high-confidence extractions by cohort",
+   "category": "monitoring",
+   "codebook_match": "Mandatory sampling audit of the auto-approved population",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "The architectural fix is a periodic sampling audit of high-confidence extractions by vendor/locale/script cohort",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round2_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "A periodic sampling audit of high-confidence extractions by vendor/locale/script cohort checks for miscalibration"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Attribution: first appears in round2 (agentic_architect), explicitly in response to an emerging_economy round1 point on OCR accuracy for local receipts.",
+    "b45d T5 says its finance-review sampling catches a miscalibrated 'extraction engine'; possible weaker variant there (not listed as present).",
+    "May overlap EXR-C05 (both target extraction miscalibration)."
+   ]
+  },
+  {
+   "id": "EXR-C05",
+   "title": "Extraction confidence thresholds calibrated per receipt-format population",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "maximalist"
+    ],
+    "quote": "the threshold should be calibrated to the actual observed failure rate per receipt-format population",
+    "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+    "agent_role": "round2_maximalist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T2",
+     "field": "inputs",
+     "marker": "Extraction confidence thresholds (calibrated per receipt-format population)"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Attribution: first appears in round2; the underlying concern was raised by emerging_economy in round1.",
+    "Might be one control with EXR-C04 (miscalibration of extraction confidence)."
+   ]
+  },
+  {
+   "id": "EXR-C06",
+   "title": "Manual extraction corrections logged as supervised override",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "that correction is logged as a supervised override, not a silent edit",
+    "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T2",
+     "field": "description",
+     "marker": "which is itself logged as a supervised override rather than a silent edit"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Could be read as matching dev 'Structured attributable resolution record'; coded as new pending researcher decision.",
+    "Might be part of EXR-C01 (the exception queue) rather than a separate control."
+   ]
+  },
+  {
+   "id": "EXR-C07",
+   "title": "Extraction kept as a separate, independently auditable stage from policy check",
+   "category": "segregation",
+   "codebook_match": "Matching kept as a discrete auditable step boundary",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "I keep this as its own step (not folded into EXR-01 or EXR-03) specifically so its output is independently inspectable",
+    "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T2",
+     "field": "description",
+     "marker": "This function is kept as its own stage, distinct from submission and from policy screening"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-02",
+     "field": "description",
+     "marker": "Kept as a distinct, separately loggable function from policy compliance"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-03",
+     "field": "description",
+     "marker": "kept independently auditable from the extraction step"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Codebook match is by analogy (step-boundary preservation for auditability), not the same activity.",
+    "Also proposed in 53eb round1_agentic_architect; 59a3 and 2ec9 merge extraction with submission/policy and so lack it."
+   ]
+  },
+  {
+   "id": "EXR-C08",
+   "title": "Receipt mandatory above threshold before claim can proceed",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "pragmatist"
+    ],
+    "quote": "The receipt threshold rule survives at the point of capture.",
+    "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "Every claim line above the receipt threshold must carry an attached receipt image"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T1",
+     "field": "description",
+     "marker": "Receipts for claim lines above the receipt threshold are still mandatory before the claim can proceed"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T1",
+     "field": "inputs",
+     "marker": "Receipts for claim lines above the receipt threshold (app photo or paper/scan upload)"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-01",
+     "field": "inputs",
+     "marker": "Receipts for claim lines above the receipt threshold"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-01",
+     "field": "description",
+     "marker": "the system blocks submission if they are missing"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-EXR-01-1a6b",
+     "step_id": "EXR-T01",
+     "field": "description",
+     "marker": "Receipts remain mandatory for claim lines above the receipt threshold"
+    },
+    {
+     "run_id": "20261010-184915-baseline-P2P-EXR-01-0102",
+     "step_id": "EXR2-01",
+     "field": "inputs",
+     "marker": "Receipts for claim lines above the receipt threshold"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-EXR-01-fca9",
+     "step_id": "TS-01",
+     "field": "inputs",
+     "marker": "Receipts for claim lines above the receipt threshold"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-EXR-01-cf77",
+     "step_id": "TGT-01",
+     "field": "inputs",
+     "marker": "Receipts for claim lines above the receipt threshold"
+    }
+   ],
+   "flags": [
+    "Mandated by requirement EXR-R-01 (required input); presence in 2ec9, 53eb, 0102, fca9, cf77 is the required input only, with no explicit blocking gate (weaker variant).",
+    "Attribution unclear: 59a3 has no clear round1 proposal of the blocking gate; 2ec9 round1_finance_domain also states it ('must still refuse to accept a claim line above the receipt threshold without an attached receipt')."
+   ]
+  },
+  {
+   "id": "EXR-C09",
+   "title": "Manual/paper intake channel as first-class submission path",
+   "category": "fallback",
+   "codebook_match": "Dual-track actuals ingestion for non-integrated entities",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "Retain a manual/paper-plus-later-digitisation path alongside any digital channel.",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-01",
+     "field": "description",
+     "marker": "a manual/paper intake path, keyed by an AP analyst from a physical or low-bandwidth submission"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T1",
+     "field": "description",
+     "marker": "via self-service app or a paper/scan fallback channel"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Codebook match is by analogy (dual-track ingestion); could also be 'Documented degraded-mode fallback as a named input', or new.",
+    "Governance status debatable (access/resilience rather than assurance).",
+    "May be one control with EXR-C10 (store-and-forward offline submission)."
+   ]
+  },
+  {
+   "id": "EXR-C10",
+   "title": "Store-and-forward offline claim submission",
+   "category": "fallback",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "The target step should support asynchronous, store-and-forward submission (queue locally, sync when connectivity returns)",
+    "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-01",
+     "field": "description",
+     "marker": "Submission supports asynchronous, store-and-forward operation"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "May be one control with EXR-C09 (non-digital/low-connectivity submission fallback).",
+    "Governance status debatable (resilience of access rather than assurance)."
+   ]
+  },
+  {
+   "id": "EXR-C11",
+   "title": "Employee is sole accountable initiator; no agent submits on employee's behalf",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "The employee remains the trigger and sole accountable actor for initiating a claim.",
+    "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T1",
+     "field": "description",
+     "marker": "no agent or card-feed process may generate or submit a claim on the employee's behalf"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T1",
+     "field": "description",
+     "marker": "The employee remains the sole accountable initiator"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-01",
+     "field": "description",
+     "marker": "no automated agent submits on the employee's behalf"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Not present in 59a3 run; attribution taken from b45d, the first run where it appears in the TSS."
+   ]
+  },
+  {
+   "id": "EXR-C12",
+   "title": "Deterministic, versioned policy rules engine emitting a rule-cited flag/decision log",
+   "category": "evidence",
+   "codebook_match": "Auto-authorisation rule-fired log",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "a machine-readable list of exceptions (which rule fired, on which line, why)",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "producing a machine-readable list of which rule fired on which line and why"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T3",
+     "field": "description",
+     "marker": "citing the specific rule for any flag"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T2",
+     "field": "outputs",
+     "marker": "Policy-checked claim record with visible flags and versioned exception log"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-03",
+     "field": "description",
+     "marker": "writes a timestamped pass/flag artifact citing the policy clause applied"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-02",
+     "field": "outputs",
+     "marker": "Policy exception flags"
+    }
+   ],
+   "flags": [
+    "Baseline a752 presence is a weaker variant (flags output, no rule citation or versioning).",
+    "Overlaps EXR-C14 (adjudication/disposition record); 2ec9 'versioned exception log' could belong to either.",
+    "Versioning of rule tables (59a3 input 'Expense policy (versioned rule tables)') folded in here; could be a separate control."
+   ]
+  },
+  {
+   "id": "EXR-C13",
+   "title": "Human adjudication of flagged policy exceptions (no auto-resolve)",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "These require an AP analyst or policy officer to adjudicate, not just a system flag.",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "route to a named AP analyst or policy officer for adjudication"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T3",
+     "field": "description",
+     "marker": "route to a named AP analyst (or finance reviewer for higher-value/ambiguous flags) for disposition"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T2",
+     "field": "description",
+     "marker": "Low-confidence extractions and policy exceptions route to a named, resourced AP exception specialist"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-03",
+     "field": "description",
+     "marker": "route to an AP analyst with authority to request information, adjust, or reject"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-EXR-01-0102",
+     "step_id": "EXR2-02",
+     "field": "description",
+     "marker": "Non-compliant lines are flagged and routed to an AP analyst for exception review"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-EXR-01-fca9",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "an AP analyst oversees the engine's rule configuration and triages flagged exceptions"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-EXR-01-cf77",
+     "step_id": "TGT-02",
+     "field": "description",
+     "marker": "routed to an AP analyst exception queue for manual disposition"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-EXR-01-1a6b",
+     "step_id": "EXR-T02",
+     "field": "description",
+     "marker": "are routed to an AP analyst for exception review before the claim proceeds to approval"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-02",
+     "field": "description",
+     "marker": "are flagged for finance exception review"
+    }
+   ],
+   "flags": [
+    "Baseline a752 is a variant: flags go to finance exception review (after approval), not AP adjudication before approval.",
+    "Codebook: no exact dev equivalent; could be read as an exception-queue analogue of 'Validation exception queue at capture'.",
+    "2ec9 marker is shared with EXR-C01 (one queue for both extraction and policy exceptions)."
+   ]
+  },
+  {
+   "id": "EXR-C14",
+   "title": "Adjudication / disposition record for policy exceptions",
+   "category": "evidence",
+   "codebook_match": "Structured attributable resolution record",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "must emit a structured, retrievable log (inputs used, rule or rate applied, decision made, timestamp, actor-of-record whether human or agent)",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "marker": "Policy-checked claim with auditable exception list and decision log"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T3",
+     "field": "outputs",
+     "marker": "Policy-checked claim with flag disposition trail"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-03",
+     "field": "outputs",
+     "marker": "Adjudicated exception record"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Attribution unclear: the quoted round1 proposal is a generic all-steps logging non-negotiable, not specific to exception disposition.",
+    "May be one control with EXR-C12 (rule-cited flag log); 2ec9 'versioned exception log' ambiguous between them and not listed here."
+   ]
+  },
+  {
+   "id": "EXR-C15",
+   "title": "Policy compliance gate completes before line manager approval",
+   "category": "gate",
+   "codebook_match": "Release gate enforcing requirement ordering as a system precondition",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "This step must remain a clearly bounded checkpoint that produces a decision (compliant / exception-resolved / rejected) before the claim reaches the manager",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "This remains a discrete, completed gate that issues a compliant/exception-resolved/rejected decision"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T3",
+     "field": "description",
+     "marker": "completes in full before the claim reaches line manager approval"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-03",
+     "field": "description",
+     "marker": "This gate must complete, and its artifact must exist, before the claim reaches line manager approval"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T3",
+     "field": "inputs",
+     "marker": "Policy-checked claim record with visible flags"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-02",
+     "field": "description",
+     "marker": "This is a mandatory, non-bypassable gate that must complete before manager approval"
+    },
+    {
+     "run_id": "20261010-184915-baseline-P2P-EXR-01-0102",
+     "step_id": "EXR2-02",
+     "field": "description",
+     "marker": "before the claim proceeds to manager approval"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-EXR-01-cf77",
+     "step_id": "TGT-02",
+     "field": "description",
+     "marker": "before the claim proceeds to approval"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-EXR-01-1a6b",
+     "step_id": "EXR-T02",
+     "field": "description",
+     "marker": "before the claim proceeds to approval"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-EXR-01-fca9",
+     "step_id": "TS-03",
+     "field": "inputs",
+     "marker": "Policy-checked claim"
+    }
+   ],
+   "flags": [
+    "Mandated by requirement EXR-R-02 (ordering); 2ec9 and fca9 presence is implied only by the approval step's input.",
+    "Baselines 0102/cf77/1a6b state ordering for exceptions but not an explicit gate on completion (weaker)."
+   ]
+  },
+  {
+   "id": "EXR-C16",
+   "title": "Policy-table staleness detection (stale lines routed / passed lines sampled)",
+   "category": "monitoring",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "is a risk I will not accept where policy tables themselves are frequently stale",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "with periodic human sampling of passed lines to catch stale policy tables"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-03",
+     "field": "description",
+     "marker": "flagged, ambiguous, or policy-table-stale lines route to an AP analyst"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Could be two controls: 59a3 is a sampling control (overlaps EXR-C25) while 53eb is exception routing of stale lines (overlaps EXR-C13)."
+   ]
+  },
+  {
+   "id": "EXR-C17",
+   "title": "Universal human manager approval on every claim; no auto-approval tier",
+   "category": "approval",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer",
+     "pragmatist"
+    ],
+    "quote": "line manager approval must remain a substantive act by an accountable human, with visibility into whatever the automated policy check flagged, on every claim without exception",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "there is no value-based or risk-based auto-approval tier"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T4",
+     "field": "description",
+     "marker": "no ruleset may auto-approve on the manager's behalf"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T3",
+     "field": "description",
+     "marker": "No claim is approved by a pre-set delegated-authority rule with no contemporaneous human act"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-04",
+     "field": "description",
+     "marker": "this step is never bypassed by claim cleanliness"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-EXR-01-0102",
+     "step_id": "EXR2-03",
+     "field": "description",
+     "marker": "reviews and approves or rejects the policy-checked claim"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-EXR-01-fca9",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "and approves or rejects the claim"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-EXR-01-cf77",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "reviews and approves or rejects the policy-checked claim"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-03",
+     "field": "description",
+     "marker": "The claimant's line manager approves or rejects the policy-checked claim"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-EXR-01-1a6b",
+     "step_id": "EXR-T03",
+     "field": "description",
+     "marker": "This step remains a distinct human decision"
+    }
+   ],
+   "flags": [
+    "Baseline presence is a weaker variant: manager approval retained (required by EXR-R-08) but no explicit universality / prohibition of auto-approval.",
+    "Codebook: stands in contrast to dev 'Risk-tiered approval replacing uniform routing'; coded new."
+   ]
+  },
+  {
+   "id": "EXR-C18",
+   "title": "Flags and overrides surfaced to the approving manager",
+   "category": "other",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain",
+     "hitl_designer"
+    ],
+    "quote": "requiring that policy exceptions be surfaced to the manager as explicit line-level flags",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "distinguishing clean claims from claims cleared only by override"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T4",
+     "field": "description",
+     "marker": "flagged lines surfaced prominently"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T3",
+     "field": "inputs",
+     "marker": "Policy-checked claim record with visible flags"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-04",
+     "field": "description",
+     "marker": "The manager sees a structured summary of what was auto-cleared versus flagged and why"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-193948-baseline-P2P-EXR-01-fca9",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "with system-highlighted exceptions surfaced for closer scrutiny"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-03",
+     "field": "description",
+     "marker": "with policy exception flags surfaced for visibility"
+    }
+   ],
+   "flags": [
+    "Override-distinguishability element (59a3, from hitl_designer) is stronger than baseline flag visibility; may be two controls.",
+    "Category judgement: decision-support visibility rather than a classic control mechanism."
+   ]
+  },
+  {
+   "id": "EXR-C19",
+   "title": "Self-approval conflict triggers automatic escalation to next-level approver",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "adding an automatic escalation to the next-level approver for claims above a materiality threshold or where the manager is also the claimant",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-03",
+     "field": "description",
+     "marker": "the system automatically and structurally escalates to the next-level approver"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T4",
+     "field": "description",
+     "marker": "Where the manager is also the claimant, approval forces escalation to the next-level approver."
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T3",
+     "field": "description",
+     "marker": "A claimant who is also the designated approver escalates to the next level up."
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Overlaps EXR-C20 (structural submitter/approver separation); baselines state separation but not escalation.",
+    "Round1 proposal also included a materiality-based escalation that did not reach the TSS."
+   ]
+  },
+  {
+   "id": "EXR-C20",
+   "title": "Structural enforcement of submitter/approver actor separation",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "Submission and approval must remain distinct actors even as agents are introduced (EXR-R-03).",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T3",
+     "field": "description",
+     "marker": "Actor separation from submission is enforced structurally through access-control permissions, not by convention."
+    },
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-03",
+     "field": "inputs",
+     "marker": "Manager-of-record / claimant identity check"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-195830-baseline-P2P-EXR-01-cf77",
+     "step_id": "TGT-03",
+     "field": "description",
+     "marker": "the manager is organisationally distinct from the claimant to preserve segregation of duties"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-03",
+     "field": "description",
+     "marker": "The approver is necessarily distinct from the claim submitter."
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-EXR-01-1a6b",
+     "step_id": "EXR-T03",
+     "field": "description",
+     "marker": "performed by an actor other than the claim submitter"
+    }
+   ],
+   "flags": [
+    "Mandated by EXR-R-03; baselines restate separation without a structural enforcement mechanism (weaker).",
+    "Access-control mechanism specifically first appears in 2ec9 round1_pragmatist ('I want to see the access-control design before I sign off').",
+    "Overlaps EXR-C19 (59a3 identity check feeds the self-approval escalation)."
+   ]
+  },
+  {
+   "id": "EXR-C21",
+   "title": "Logged manager approval/attestation record with identity and timestamp",
+   "category": "evidence",
+   "codebook_match": "Traceable approval record tied to items reviewed",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "The approval gate in TS-03 must always require a human decision, logged with an identity and timestamp.",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "marker": "Approved expense claim with logged approval record"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T3",
+     "field": "outputs",
+     "marker": "Approved expense claim (manager's affirmative action recorded)"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-04",
+     "field": "outputs",
+     "marker": "Logged manager attestation"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T7",
+     "field": "description",
+     "marker": "The agent cannot fire until an approval record from T4"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "b45d presence is implied (approval record referenced as payment precondition, not output of T4).",
+    "Codebook match partial: dev control ties the record to items reviewed; EXR records do not explicitly do so."
+   ]
+  },
+  {
+   "id": "EXR-C22",
+   "title": "Low-bandwidth/SMS approval fallback limited to unflagged claims",
+   "category": "fallback",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "often need an SMS, USSD, or low-bandwidth mobile fallback to approve without missing cutoff windows",
+    "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-04",
+     "field": "description",
+     "marker": "Approval is reachable through a low-bandwidth/SMS-equivalent fallback for unflagged claims"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Restriction to unflagged claims (flagged forces richer channel) first appears in 53eb round2_agentic_architect; attribution split.",
+    "Also proposed in b45d round1_emerging_economy but not adopted in the b45d TSS.",
+    "Could match dev 'Documented degraded-mode fallback as a named input' by analogy."
+   ]
+  },
+  {
+   "id": "EXR-C23",
+   "title": "Risk/exception-triggered finance review (replacing universal review)",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "pragmatist",
+     "hitl_designer"
+    ],
+    "quote": "it narrows to claims that are flagged by TS-02, exceed a materiality threshold, or are randomly sampled for assurance",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "triggered automatically for claims carrying an unresolved or overridden policy exception"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "Finance review is scoped to claims carrying unresolved policy flags, claims above a materiality threshold"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T4",
+     "field": "description",
+     "marker": "examines claims triggered by a documented, versioned risk policy"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-05",
+     "field": "description",
+     "marker": "a risk-triggered gate on claims with policy exceptions, above a materiality threshold"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-EXR-01-0102",
+     "step_id": "EXR2-04",
+     "field": "description",
+     "marker": "residual policy exceptions or insufficient supporting evidence are routed to a finance reviewer"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-EXR-01-fca9",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "a finance reviewer intervenes only on system-flagged coding anomalies, policy exceptions or weak evidentiary support"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-EXR-01-cf77",
+     "step_id": "TGT-04",
+     "field": "description",
+     "marker": "claims with coding ambiguity, large exchange differences, or evidence gaps are routed to a finance reviewer"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-04",
+     "field": "description",
+     "marker": "Finance reviews only the subset of approved claims carrying policy exception flags"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-EXR-01-1a6b",
+     "step_id": "EXR-T04",
+     "field": "description",
+     "marker": "A finance reviewer examines only claims flagged for coding anomalies"
+    }
+   ],
+   "flags": [
+    "Baseline variants are exception-flag triggered only (no materiality threshold or sampling); judgement whether same control.",
+    "Codebook: arguably analogous to 'Risk-tiered approval replacing uniform routing' (review rather than approval); coded new.",
+    "Several roles proposed this independently in round1 across runs (pragmatist, hitl_designer, finance_domain)."
+   ]
+  },
+  {
+   "id": "EXR-C24",
+   "title": "Documented, versioned risk/materiality trigger policy for finance review",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "The reduction of EXR-05 from full review to exception-based review must be accompanied by a documented, versioned sampling/trigger policy.",
+    "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T4",
+     "field": "inputs",
+     "marker": "Risk/materiality trigger policy (versioned and documented)"
+    },
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-04",
+     "field": "inputs",
+     "marker": "Materiality and risk-flag criteria"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "59a3 presence is a weaker variant (criteria as input, not stated as versioned/documented).",
+    "May be part of EXR-C23 rather than a separate control."
+   ]
+  },
+  {
+   "id": "EXR-C25",
+   "title": "Periodic sample review of the clean / auto-cleared population",
+   "category": "monitoring",
+   "codebook_match": "Mandatory sampling audit of the auto-approved population",
+   "attribution": {
+    "roles": [
+     "pragmatist",
+     "finance_domain",
+     "hitl_designer"
+    ],
+    "quote": "or fall into a periodic random sample",
+    "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "a periodic statistical sample of fully clean, auto-cleared claims"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-05",
+     "field": "outputs",
+     "marker": "Periodic sample review record"
+    },
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "with periodic human sampling of passed lines to catch stale policy tables"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "59a3 presence is a variant (sampling of passed policy lines at the compliance step, not in finance review); overlaps EXR-C16.",
+    "Attribution: 59a3 round1_pragmatist proposed random sampling in finance review earlier ('or are randomly sampled for assurance') but the 59a3 TSS did not adopt it there."
+   ]
+  },
+  {
+   "id": "EXR-C26",
+   "title": "Finance review decision recorded distinctly from policy-check and manager decisions",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "accounting_standards"
+    ],
+    "quote": "even a narrowed, risk-based finance review must produce a distinguishable coding/evidence decision that is traceable separately from the upstream policy-check decision",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round2_accounting_standards"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "marker": "Finance-reviewed claim with distinct coding/evidence decision log"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-05",
+     "field": "description",
+     "marker": "the two attestations are never recorded as a single undifferentiated event"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T4",
+     "field": "outputs",
+     "marker": "Finance-reviewed claim with recorded review outcome"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Attribution: first appears in round2.",
+    "2ec9 presence is weaker (recorded outcome, not explicitly distinct).",
+    "May be one control with EXR-C27 (finance review kept distinct)."
+   ]
+  },
+  {
+   "id": "EXR-C27",
+   "title": "Finance review kept as distinct step/actor from policy engine and manager",
+   "category": "segregation",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "I hold that finance review tests a materially different question than the policy check does.",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round2_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "Finance review survives as its own distinct, separately accountable step"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T4",
+     "field": "description",
+     "marker": "A finance reviewer, distinct from both the compliance agent and the line manager"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-05",
+     "field": "description",
+     "marker": "This remains structurally and actorally distinct from line manager approval"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T5",
+     "field": "name",
+     "marker": "Risk-based finance review with periodic sampling"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-04",
+     "field": "name",
+     "marker": "Finance exception review"
+    }
+   ],
+   "flags": [
+    "b45d and a752 presence implied (separate step, no explicit separation rationale).",
+    "Attribution: first appears in round2; overlaps EXR-C26."
+   ]
+  },
+  {
+   "id": "EXR-C28",
+   "title": "Finance review gates posting",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "accounting_standards"
+    ],
+    "quote": "must still receive human review before they reach the ledger",
+    "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+    "agent_role": "round1_accounting_standards"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "it is a gate on posting, not a clean-up performed after the fact"
+    },
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-04",
+     "field": "description",
+     "marker": "correct before the number hits the GL"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T5",
+     "field": "inputs",
+     "marker": "Finance-reviewed claim"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-EXR-01-0102",
+     "step_id": "EXR2-04",
+     "field": "description",
+     "marker": "are routed to a finance reviewer before posting is finalised"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-EXR-01-cf77",
+     "step_id": "TGT-04",
+     "field": "description",
+     "marker": "before posting is finalised"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-05",
+     "field": "inputs",
+     "marker": "Finance-reviewed claim"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-EXR-01-1a6b",
+     "step_id": "EXR-T04",
+     "field": "description",
+     "marker": "before or alongside posting"
+    }
+   ],
+   "flags": [
+    "2ec9 and a752 presence implied by posting input only; 1a6b is weaker ('before or alongside').",
+    "fca9 embeds review in posting without stated ordering; not listed.",
+    "Attribution: 59a3 round1_pragmatist made a general point about checkpoints 'before ... a number hits the ledger'."
+   ]
+  },
+  {
+   "id": "EXR-C29",
+   "title": "Closed-period / period-lock gate with logged override or escalation",
+   "category": "gate",
+   "codebook_match": "Discrete subledger lock preserved under continuous reconciliation",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "accounting_standards"
+    ],
+    "quote": "refuse to post into a closed period without an explicit, logged override by the GL accountant (KB-03)",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "it refuses to post into a closed period without an explicit, logged GL-accountant override"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "halts and escalates to a GL accountant rather than posting around a locked period"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T5",
+     "field": "inputs",
+     "marker": "Period-cutoff gate status"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-06",
+     "field": "outputs",
+     "marker": "Period-cutoff exception record"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-05",
+     "field": "description",
+     "marker": "preserving period cutoff discipline (KB-03)"
+    }
+   ],
+   "flags": [
+    "Baseline a752 presence is a weak statement of principle without a mechanism.",
+    "Codebook match is partial (dev control is a subledger lock under continuous reconciliation).",
+    "b45d marker shared with EXR-C30."
+   ]
+  },
+  {
+   "id": "EXR-C30",
+   "title": "Posting exceptions as hard stops to a named GL accountant queue",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect",
+     "finance_domain",
+     "hitl_designer"
+    ],
+    "quote": "Exceptions — missing rate, closed period, unmapped cost centre — are routed to a GL accountant exception queue",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "are hard stops routed to a named GL-accountant exception queue"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "halts and escalates to a GL accountant rather than posting around a locked period or against a stale/missing rate"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "exception handling for unmapped cost centres or rate-source failures"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-06",
+     "field": "description",
+     "marker": "unmapped cost centres, missing or disputed FX rates, or other estimation-adjacent lines escalate to the GL accountant"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Overlaps EXR-C29 (closed period is one exception type).",
+    "Baseline finance-reviewer exception routing at posting (see EXR-C23) is a different mechanism; not counted."
+   ]
+  },
+  {
+   "id": "EXR-C31",
+   "title": "Documented FX-rate source fallback / staleness bound",
+   "category": "fallback",
+   "codebook_match": "Documented degraded-mode fallback as a named input",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "a manual, documented central-bank-rate fallback must remain a legitimate input path",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "a documented manual/central-bank-rate fallback where real-time feeds are unavailable or uneconomic"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "the rate source may be a live feed or a manually captured/locally sourced official rate"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-06",
+     "field": "description",
+     "marker": "provided the staleness bound is documented and applied consistently period over period"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "53eb is a variant (documented staleness bound for batch rates) rather than a manual fallback path."
+   ]
+  },
+  {
+   "id": "EXR-C32",
+   "title": "Posting log recording rate source, date, rule and actor",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "Every posting is logged with the rule/rate/date used",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "Every posting logs the rule, rate, date and actor-of-record used"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "Every automated posting is logged with its rate source and timestamp."
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "provided it is the correct transaction-date rate and is logged"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "2ec9 presence is weaker (rate logged only).",
+    "53eb 'timestamped liability-recognised event' is treated under EXR-C37, not here."
+   ]
+  },
+  {
+   "id": "EXR-C33",
+   "title": "Corrections to automated postings only via reversal/correcting entries",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "Postings, payment batches and notifications must each have a defined reversal or correction mechanism",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "carries a defined reversal/correcting-entry mechanism"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "Corrections to machine-generated postings are made only through standard journal reversal entries"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-06",
+     "field": "description",
+     "marker": "every automated posting is reversible, not merely overwritable"
+    }
+   ],
+   "baseline_present": [],
+   "flags": []
+  },
+  {
+   "id": "EXR-C34",
+   "title": "GL accountant periodic sampling of automated postings",
+   "category": "monitoring",
+   "codebook_match": "Mandatory sampling audit of the auto-approved population",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "must periodically sample automated postings to catch systemic misconfiguration",
+    "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "The GL accountant also performs periodic sampling of automated postings"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Also proposed in 53eb round1_hitl_designer but not adopted in that TSS.",
+    "May be one control with EXR-C25 (sampling detective control), at a different step."
+   ]
+  },
+  {
+   "id": "EXR-C35",
+   "title": "Named GL accountant ownership of the posting ruleset",
+   "category": "other",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "pragmatist"
+    ],
+    "quote": "a GL accountant retains ownership of the posting rule set and the period-cutoff gate",
+    "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+    "agent_role": "round1_pragmatist"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "A GL accountant retains the posting ruleset"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-193948-baseline-P2P-EXR-01-fca9",
+     "step_id": "TS-02",
+     "field": "description",
+     "marker": "an AP analyst oversees the engine's rule configuration"
+    }
+   ],
+   "flags": [
+    "Baseline fca9 is a variant at a different step (AP analyst over the policy engine, not posting ruleset).",
+    "Overlaps EXR-C29 (same sentence assigns the period-cutoff gate)."
+   ]
+  },
+  {
+   "id": "EXR-C36",
+   "title": "Period-end accrual with accountable GL ownership",
+   "category": "other",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "this needs an accrual estimate, which is a judgment call, not something to silently automate away",
+    "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T5",
+     "field": "description",
+     "marker": "explicit responsibility for period-end accrual estimation of expenses incurred but not yet claimed"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "generating an accrual if that period is closed"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Governance status debatable (accounting treatment with named accountability).",
+    "b45d is a different mechanism (accrual on closed-period posting) — may be a separate control.",
+    "2ec9 round2_accounting_standards raised this as a gap; adoption likely followed that."
+   ]
+  },
+  {
+   "id": "EXR-C37",
+   "title": "Separately recorded liability recognition and derecognition events",
+   "category": "evidence",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "accounting_standards"
+    ],
+    "quote": "The recognition point (posting) and the derecognition point (payment) for the employee payable must remain two distinguishable events (KB-11).",
+    "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+    "agent_role": "round1_accounting_standards"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T7",
+     "field": "description",
+     "marker": "keeping recognition (posting) and derecognition (payment) as two separately timestamped, separately triggered events"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-06",
+     "field": "outputs",
+     "marker": "Liability-recognised event"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-07",
+     "field": "outputs",
+     "marker": "Liability-extinguished event"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-06",
+     "field": "description",
+     "marker": "recognition of the liability and its derecognition on payment remain separately determinable (KB-11)"
+    }
+   ],
+   "flags": [
+    "Raised earlier by 59a3 round1_accounting_standards but not carried into the 59a3 TSS.",
+    "Baseline a752 is a statement of principle (weaker)."
+   ]
+  },
+  {
+   "id": "EXR-C38",
+   "title": "Exchange differences tracked separately",
+   "category": "evidence",
+   "codebook_match": "Tagged exchange-difference schedule",
+   "attribution": {
+    "roles": [
+     "accounting_standards"
+    ],
+    "quote": "KB-08 requires any exchange difference arising between the transaction-date posting and the eventual payment-date settlement to be tracked and reported, not netted away",
+    "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+    "agent_role": "round1_accounting_standards"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T5",
+     "field": "outputs",
+     "marker": "Exchange-difference entries where posting-date and settlement-date rates diverge"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-195830-baseline-P2P-EXR-01-cf77",
+     "step_id": "TGT-04",
+     "field": "outputs",
+     "marker": "Exchange difference record (where applicable)"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-05",
+     "field": "description",
+     "marker": "Exchange differences arising on settlement are tracked and reported separately rather than netted (KB-08)"
+    }
+   ],
+   "flags": [
+    "Governance status debatable (accounting output); raised by accounting_standards in every run's round1 but in only one council TSS."
+   ]
+  },
+  {
+   "id": "EXR-C39",
+   "title": "Payment precondition: logged, unreversed approval (and posting) before payment",
+   "category": "gate",
+   "codebook_match": "Release gate enforcing requirement ordering as a system precondition",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "the system must be able to prove that EXR-04's approval record exists and is unreversed before a payment batch includes the claim",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "prevents a payment batch from including a claim without a logged, unreversed TS-03 approval record"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T7",
+     "field": "description",
+     "marker": "The agent cannot fire until an approval record from T4 and a posting confirmation from T6 both exist"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "released automatically once approval and posting have cleared"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-07",
+     "field": "description",
+     "marker": "enforcing a hard, programmatic precondition that a valid manager-approval event exists for the specific claim"
+    }
+   ],
+   "baseline_present": [
+    {
+     "run_id": "20261010-184915-baseline-P2P-EXR-01-0102",
+     "step_id": "EXR2-05",
+     "field": "description",
+     "marker": "The approved claim is paid to the employee"
+    },
+    {
+     "run_id": "20261010-193948-baseline-P2P-EXR-01-fca9",
+     "step_id": "TS-05",
+     "field": "description",
+     "marker": "The posted claim is paid to the employee"
+    },
+    {
+     "run_id": "20261010-195830-baseline-P2P-EXR-01-cf77",
+     "step_id": "TGT-05",
+     "field": "description",
+     "marker": "The approved, posted claim is paid to the employee"
+    },
+    {
+     "run_id": "20261010-203046-baseline-P2P-EXR-01-a752",
+     "step_id": "TGT-EXR-06",
+     "field": "description",
+     "marker": "The approved, posted claim is paid to the employee"
+    },
+    {
+     "run_id": "20261010-205000-baseline-P2P-EXR-01-1a6b",
+     "step_id": "EXR-T05",
+     "field": "description",
+     "marker": "The approved claim is paid to the employee"
+    }
+   ],
+   "flags": [
+    "Mandated by EXR-R-06; baseline presence is implied ordering only, with no programmatic precondition (weaker).",
+    "2ec9 presence is weaker (release on clearance, not stated as hard precondition)."
+   ]
+  },
+  {
+   "id": "EXR-C40",
+   "title": "Duplicate-payment screening retained at the payment batch boundary",
+   "category": "gate",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "finance_domain"
+    ],
+    "quote": "duplicate-payment risk when a rejected-and-resubmitted claim re-enters the payment queue",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_finance_domain"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "marker": "Duplicate-payment and bank-detail validation log"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T7",
+     "field": "description",
+     "marker": "duplicate-payment flags"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Batch-as-control-boundary argument first appears in 59a3 round2_pragmatist; attribution split.",
+    "Duplicate suspicion also appears at policy check (b45d T3 'suspected duplicate', baseline 1a6b 'duplicate suspicion'); possibly the same control at a different step.",
+    "Baselines retain an AP payment run but state no screening; treated as absent."
+   ]
+  },
+  {
+   "id": "EXR-C41",
+   "title": "AP analyst ownership of payment exceptions before funds move",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "with an exception path owned by the AP analyst for bank-validation failures, duplicate-payment flags, or payee/employee mismatches",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "with named AP-analyst ownership of exception handling"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T7",
+     "field": "description",
+     "marker": "An AP analyst owns the batch and its exceptions"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-07",
+     "field": "actor",
+     "marker": "AP analyst (bank-detail verification, failed-payment exceptions), payment agent"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T6",
+     "field": "actor",
+     "marker": "AP analyst with payment agent"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "2ec9 presence is implied by actor only.",
+    "Overlaps EXR-C40 and EXR-C42."
+   ]
+  },
+  {
+   "id": "EXR-C42",
+   "title": "Hold for independent human verification of new/changed bank details",
+   "category": "approval",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "hitl_designer"
+    ],
+    "quote": "I insist on a human authorization checkpoint at the batch level, particularly for new or changed employee bank details",
+    "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+    "agent_role": "round1_hitl_designer"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "any claim involving new or changed employee bank details is held for explicit human authorization before funds move"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-07",
+     "field": "description",
+     "marker": "is held for mandatory independent human verification before release"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "59a3 TS-06 mentions 'bank-detail-change validation' at batch level: possible weaker variant, not listed as present.",
+    "Also proposed independently by 53eb round1_hitl_designer."
+   ]
+  },
+  {
+   "id": "EXR-C43",
+   "title": "Multi-rail disbursement within the same controlled payment process",
+   "category": "fallback",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "cash/voucher/mobile-money reimbursement channels remain operationally necessary",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "Payment rail selection - bank transfer, mobile money, cash/voucher - is a first-class branch within the same step"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T7",
+     "field": "description",
+     "marker": "with mobile-money or other non-bank rails configurable where the deployment context requires it"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T6",
+     "field": "description",
+     "marker": "Disbursement remains channel-plural (bank transfer, cash or cheque)"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-07",
+     "field": "description",
+     "marker": "cash disbursement with reconciliation"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Governance status debatable (access/resilience); 53eb adds reconciliation of cash disbursement, which may be a distinct control."
+   ]
+  },
+  {
+   "id": "EXR-C44",
+   "title": "Payment failure notification with reason code",
+   "category": "exception",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "agentic_architect"
+    ],
+    "quote": "or on failure, with a reason code",
+    "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+    "agent_role": "round1_agentic_architect"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T7",
+     "field": "description",
+     "marker": "on failure, a reason code is issued instead"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Marginal as a governance control (communication of exception outcome)."
+   ]
+  },
+  {
+   "id": "EXR-C45",
+   "title": "Multi-channel / low-connectivity employee notification",
+   "category": "fallback",
+   "codebook_match": "new",
+   "attribution": {
+    "roles": [
+     "emerging_economy"
+    ],
+    "quote": "including SMS-based notification (not email-only)",
+    "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+    "agent_role": "round1_emerging_economy"
+   },
+   "council_present": [
+    {
+     "run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+     "step_id": "TS-06",
+     "field": "description",
+     "marker": "(SMS, email, or channel appropriate to the employee)"
+    },
+    {
+     "run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+     "step_id": "T7",
+     "field": "description",
+     "marker": "defaulting to a low-connectivity-resilient channel such as SMS where needed"
+    },
+    {
+     "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+     "step_id": "T6",
+     "field": "outputs",
+     "marker": "Employee notification (app, SMS, or email)"
+    },
+    {
+     "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+     "step_id": "T-07",
+     "field": "description",
+     "marker": "multi-channel (not email/app-only) notification"
+    }
+   ],
+   "baseline_present": [],
+   "flags": [
+    "Likely not a governance control (service resilience rather than assurance); included for exhaustiveness."
+   ]
+  }
+ ]
+}

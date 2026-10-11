@@ -1,0 +1,4205 @@
+{
+ "workflow_id": "P2P-TWM-01",
+ "controls": [
+  {
+   "id": "TWM-M01",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "missing or ambiguous data is queued and flagged as insufficient, never defaulted to a pass",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Data-gap/incomplete-document exception flag",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "Failed or missing retrieval raises a monitored data-exception event rather than stalling or guessing",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "an incomplete or low-confidence flag routes the item directly to exception handling rather than silently proceeding",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "the case is routed to a human exception queue; the engine never defaults to a pass on missing or ambiguous data",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-01",
+     "field": "actor",
+     "quote": "with AP analyst exception override",
+     "note": "Assembly-step exception override by analyst; no explicit data-gap exception raised"
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B2",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "the full three-document set, not a subset, must always be produced",
+     "note": "Completeness requirement with no stated exception/flag mechanism for gaps"
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M02",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "Any variance the engine cannot classify with confidence defaults to escalation into the exception queue, never to automatic clearance",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "flags assembly status as complete, incomplete or low-confidence before proceeding",
+     "note": "Low-confidence default to exception at assembly, not at classification"
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "the engine never defaults to a pass on missing or ambiguous data",
+     "note": "Fail-safe default stated at assembly/matching step, not at tolerance classification"
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M3",
+    "question": "Is the fail-safe default for unclassifiable/ambiguous matches at classification the same mechanism as the data-gap exception at assembly (M01), at an adjacent point?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "TWM-M01"
+     ]
+    }
+   }
+  },
+  {
+   "id": "TWM-M03",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "the function degrades to a documented fallback",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B9",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Deferred-match holding state record (for latent/asynchronous GRN or PO posting)",
+     "note": "Holding state for late-posted documents rather than a degraded execution mode for outage/connectivity"
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "name",
+     "quote": "Automated match execution with manual-completion fallback",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "event-triggered or scheduled/batch, to support constrained-connectivity sites",
+     "note": "Batch execution mode for constrained sites; no manual fallback stated"
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-01",
+     "field": "actor",
+     "quote": "with AP analyst oversight of assembly failures and manual-capture fallback",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M04",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "three separately named, independently retrievable artifacts rather than a single opaque match flag",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "all remain separately typed, line-level, independently retrievable outputs",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "two distinct, named, per-line-retrievable outputs",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "two separately timestamped, separately retrievable artifacts",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "retained as separately labelled, individually inspectable outputs",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TWM-T01",
+     "field": "outputs",
+     "quote": "Price and terms variance detail",
+     "note": "Two variance outputs listed separately but no statement that they are kept separately retrievable"
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "producing variance detail for both dimensions",
+     "note": "Two variance outputs listed separately but no statement that they are kept separately retrievable"
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "producing combined quantity and price/terms variance detail",
+     "note": "Outputs listed separately but description says combined"
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "Both legs of the match are preserved as distinct, auditable outputs",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TSM-01",
+     "field": "description",
+     "quote": "the quantity-matching and price/terms-matching functions remain individually traceable outputs so that each can be audited",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M05",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Price and terms variance detail (with exchange-difference component separately identifiable)",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Exchange-difference flag (multi-currency pairs)",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Price and terms variance detail (with FX exchange differences separately identified)",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Price and terms variance detail (with exchange-difference tag where applicable)",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M4",
+    "question": "Is separate identification of the FX component within price variance a finer-grained instance of keeping variance legs separately retrievable (M04)?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "TWM-M04"
+     ]
+    }
+   }
+  },
+  {
+   "id": "TWM-M06",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "the assembled document set, quantity variance detail, and price/terms variance detail",
+     "note": "Assembled document set stated as an independently retrievable artifact; no lineage/logging wording"
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "Every retrieval is logged with source record identifiers.",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Assembled match document set (with reconstructable document lineage)",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "The underlying invoice-PO-GRN document linkage is retained and exportable, independent of the vendor matching tool",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-01",
+     "field": "description",
+     "quote": "an archived copy of the assembled match document set that preserves the invoice-PO-GRN evidence chain",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B2",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "This establishes the cost evidence chain",
+     "note": "Evidence chain asserted; no retention/logging mechanism"
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B2",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "The invoice-to-GRN-to-PO evidence chain this assembles is the basis on which cost and liability recognition are later established",
+     "note": "Evidence chain asserted; no retention/logging mechanism"
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B2",
+     "step_id": "TSM-01",
+     "field": "description",
+     "quote": "establishes the cost basis under the invoice-to-GRN-to-PO evidence chain",
+     "note": "Evidence chain asserted; no retention/logging mechanism"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M07",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "The tolerance policy itself is a centrally versioned and change-controlled artifact",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "The tolerance policy is consumed as an explicit, versioned, human-owned input",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "The tolerance policy is an explicit, versioned artifact with a named accountable owner (AP supervisor or controller)",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "the tolerance policy is a versioned, governed configuration object that an accountable control owner (AP supervisor) sets",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "threshold changes go through a separate, human-governed change-control process owned by a named AP control owner",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TWM-T02",
+     "field": "description",
+     "quote": "The tolerance policy is maintained as a versioned, system-enforced ruleset",
+     "note": "Versioning stated, no accountable owner"
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "actor",
+     "quote": "with AP accountant governance over tolerance policy parameters",
+     "note": "Named governing role, no versioning/change control stated"
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "The tolerance policy remains an explicit, versioned input",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TSM-02",
+     "field": "description",
+     "quote": "its thresholds are version-controlled",
+     "note": "Versioning stated, no accountable owner"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M08",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Match classification (clean, tolerance or exception), referencing applied tolerance policy version",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Tolerance-policy version reference (logged)",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Policy-version citation for the classification",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "outputs",
+     "quote": "Tolerance policy version applied (logged)",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-02",
+     "field": "outputs",
+     "quote": "Tolerance policy version reference",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M09",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "who periodically re-approves thresholds",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "sets and periodically re-approves",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "Exception-category data from TGT-03 feeds a periodic tolerance-policy recalibration review",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M10",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "locally selectable parameters within centrally governed bands",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "it may be locally configured to reflect market-specific FX or price volatility while remaining internally version-consistent",
+     "note": "Local configuration constrained by version consistency rather than explicit central bands"
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M11",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "The classification engine consumes the policy but has no write path to it",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M12",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "evaluated by a deterministic rules engine",
+     "note": "Deterministic rules engine stated; no ML-exclusion element"
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-02",
+     "field": "description",
+     "quote": "The engine remains inspectable deterministic logic; any statistical or ML-based scoring sits alongside, never inside, this classification",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "TS-01",
+     "field": "description",
+     "quote": "deterministic line-level quantity comparison against goods receipt data",
+     "note": "Determinism stated for matching, not classification"
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TWM-T02",
+     "field": "description",
+     "quote": "The tolerance policy is maintained as a versioned, system-enforced ruleset",
+     "note": "Ruleset contrasted with manual table, not with opaque/ML logic"
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TSM-02",
+     "field": "description",
+     "quote": "classification stays a documented control rather than an opaque algorithmic judgment",
+     "note": "Rules-based, non-opaque classification stated; no ML-exclusion element"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M13",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "the agent never auto-applies a resolution",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "the copilot never finalises a disposition",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "No materiality threshold permits an agent to resolve an exception unilaterally",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "no confidence threshold permits autonomous disposition",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "No exception is auto-resolved.",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TWM-T03",
+     "field": "description",
+     "quote": "This human-judgment step is preserved unautomated",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "using engine-surfaced variance detail and suggested root causes, and resolved as accepted, corrected or rejected",
+     "note": "Human analyst resolves with system suggestions; no reservation/prohibition of automated disposition stated"
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "using AI-assisted root-cause suggestions where available, and resolved as accepted, corrected or rejected",
+     "note": "Human analyst resolves with AI suggestions; no reservation/prohibition stated"
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "This remains a judgment-based human function",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TSM-03",
+     "field": "description",
+     "quote": "Matches classified as exceptions are investigated by an AP analyst, with AI-assisted triage",
+     "note": "Human analyst resolves with AI triage; no reservation/prohibition stated"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M14",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "route to a named, accountable AP analyst",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Resolved match (accepted, corrected or rejected), attributed to a named human",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "with the resolution evidenced and attributed to a named individual",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "produced by a named, accountable AP analyst for every exception",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "remain owned by a named human AP analyst in every case",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M2",
+    "question": "Is attribution of the resolution to a named individual the record of the human-only disposition control (M13) rather than a separate control?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "TWM-M13"
+     ]
+    }
+   }
+  },
+  {
+   "id": "TWM-M15",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "AI recommendation log (distinct from the human decision)",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Exception resolution evidence (including AI-proposal vs. human-decision distinction)",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M16",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "the analyst must affirmatively construct or select the accept/correct/reject decision",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "the analyst reviews the typed variance detail and the agent's recommendation, and records the final accepted/corrected/rejected decision as their own",
+     "note": "Analyst review and own-decision recording; no explicit anti-click-through constraint"
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "that acceptance is itself logged as a distinct act of judgment, not a default click-through",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "requires the analyst to engage with the underlying evidence rather than single-click accepting a system suggestion",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "the accept/correct/reject decision and its written evidentiary basis remain owned by a named human AP analyst",
+     "note": "Ownership of decision and written basis; no requirement of affirmative engagement"
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Is the affirmative-engagement (no single-click) requirement a stronger form of human-only disposition (M13) at the same step and object, rather than a distinct mechanism? (strength variant, not a record or directional pair)",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "TWM-M13"
+     ]
+    }
+   }
+  },
+  {
+   "id": "TWM-M17",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "materiality tiering routes high-value or high-complexity cases to a senior analyst or AP accountant",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M18",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "resolves with an explicit data-quality caveat rather than treating gaps as resolved",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M19",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "inputs",
+     "quote": "Agent-assembled evidence packet (vendor correspondence, prior resolutions, root-cause taxonomy)",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "inputs",
+     "quote": "AI-drafted resolution recommendation",
+     "note": "AI cross-references sources to draft a root cause/resolution; a recommendation, not an assembled evidence set"
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "An AI investigation assistant may retrieve vendor correspondence, prior case history and PO/GRN detail",
+     "note": "Agent retrieves evidence for investigator; not called a packet"
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "description",
+     "quote": "A decision-support agent may retrieve vendor correspondence, prior resolution history and similar past exceptions",
+     "note": "Agent retrieves evidence for investigator; not called a packet"
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "A triage agent may assemble the exception packet",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "using engine-surfaced variance detail and suggested root causes",
+     "note": "Root-cause suggestions, not an assembled evidence set"
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "using AI-assisted root-cause suggestions where available",
+     "note": "Root-cause suggestions, not an assembled evidence set"
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TSM-03",
+     "field": "description",
+     "quote": "AI-assisted triage surfacing likely root causes from source documents and vendor correspondence",
+     "note": "Root-cause suggestions drawn from sources, not an assembled evidence set"
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M20",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "inputs",
+     "quote": "Documented, versioned resolution playbook",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M21",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-03",
+     "field": "outputs",
+     "quote": "Exception resolution evidence, including exception category",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M22",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Verbatim exception resolution evidence",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B2",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "because error correction must be evidenced, not suppressed (IAS 8)",
+     "note": "Principle rationale, no verbatim/unsummarised capture mechanism"
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M23",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "name",
+     "quote": "Tiered match release approval",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "released through a policy-gated, system-enforced auto-release path",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "the system enforces a hard gate preventing any match carrying an exception classification from entering this lane",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "name",
+     "quote": "Risk-based match release control",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "released for posting and payment processing by an automated release engine",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-02",
+     "field": "description",
+     "quote": "Clean and tolerance-passed matches route directly toward release",
+     "note": "Direct routing toward release, but TGT-04 still has supervisor review of clean matches; no auto-release lane"
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "Clean and in-tolerance matches are released for posting and payment through automated straight-through processing",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M24",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "this applies the risk appetite already encoded in TS-02's classification and introduces no new judgment",
+     "note": "Policy-engine gate applying encoded risk appetite; no delegation of authority stated"
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "attributable to the governing policy configuration",
+     "note": "Policy-gated auto-release attributable to policy; no delegation of authority stated"
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "pre-authorised delegation-of-authority lane",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "under the AP supervisor's standing delegated authority",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "operating under a pre-authorised, versioned release policy",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-03",
+     "field": "outputs",
+     "quote": "Straight-through release eligibility flag",
+     "note": "Eligibility flag drives auto-release; no policy/authority basis stated"
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Is the authority basis of the auto-release lane (delegated authority/release policy) a separate control, or an attribute of the risk-tiered release lane (M23)? (attribute of the same mechanism)",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "TWM-M23"
+     ]
+    }
+   }
+  },
+  {
+   "id": "TWM-M25",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "actor",
+     "quote": "Automated release gate (logged policy engine)",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "the action is logged, timestamped, attributable to the governing policy configuration",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "release authorisations are logged continuously to the control record",
+     "note": "General release logging covering the straight-through lane; no dedicated auto-release log"
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "quote": "Auto-release log (clean lane, timestamped)",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "Every auto-release is logged",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "through automated straight-through processing, with the release logged",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M26",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "quote": "Released match authorisation (lane-tagged: automated or supervisor-approved)",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-04",
+     "field": "outputs",
+     "quote": "Released match authorisation (system-generated)",
+     "note": "Lane distinguished by separately labelled outputs on two steps (TGT-05: supervisor-approved), not a tag"
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M4",
+    "question": "Is the lane tag on release authorisations a separate control, or does it overlap the auto-release log (M25), whose entries are the automated-lane subset of tagged release records?",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "TWM-M25"
+     ]
+    }
+   }
+  },
+  {
+   "id": "TWM-M27",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "recallable up to the payment-run cutoff",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "Any straight-through-released match remains reversible and re-openable via the exception path",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "a kill-switch/claw-back path available before funds leave",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "held in a bounded, reversible void-before-posting window",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M28",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "Exception resolution (TS-03) always precedes release authorisation for any item that was exception-classified",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "Any match that passed through exception resolution or a tolerance override is excluded from auto-release",
+     "note": "Ordering implied by \"passed through\"; no ordering rule stated"
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "Resolution strictly precedes authorization in all cases.",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "a release attempt cannot proceed for a match still carrying an unresolved exception flag",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "with no exception resolution outstanding",
+     "note": "Release condition on auto lane; ordering for supervisor lane only implied"
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TWM-T04",
+     "field": "description",
+     "quote": "Clean, tolerance-passed and exception-resolved invoices are reviewed by an AP supervisor",
+     "note": "Ordering implied by \"exception-resolved\"; no ordering rule stated"
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-03",
+     "field": "description",
+     "quote": "with the resolution evidenced before release can proceed",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "This step must complete, for a given invoice, before that invoice can proceed to release approval.",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "Cleanly matched, tolerance-passed and exception-resolved invoices are reviewed and released",
+     "note": "Ordering implied by \"exception-resolved\"; no ordering rule stated"
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TSM-03",
+     "field": "description",
+     "quote": "This precedes release approval",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M29",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "reviews the full resolution evidence from TS-03 (not merely a pass/fail flag)",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "must view the actual resolution evidence and variance detail, not a status flag",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "reviews the full resolution evidence and variance detail, not a status flag",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "reviews the variance detail, the resolution evidence and the resolver's identity before releasing",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-05",
+     "field": "inputs",
+     "quote": "Exception resolution evidence",
+     "note": "Approver step receives resolution evidence and requires \"explicit, evidenced approval\"; review of evidence not stated outright"
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "requiring explicit, evidenced approval",
+     "note": "\"Evidenced approval\" may mean the approval is evidenced; resolution evidence not an input to the release step"
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M30",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "The supervisor is never the same individual who resolved the exception in TS-03",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "so the same actor can never both resolve and release the same invoice",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "The actor performing exception resolution and the actor authorising release are structurally distinct",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "the system rejects a release attempt where the releasing identity matches the identity of the analyst",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "The approving supervisor is a distinct individual from whoever performed the exception resolution",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TWM-T04",
+     "field": "description",
+     "quote": "independent of the analyst who resolved any exception",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-04",
+     "field": "description",
+     "quote": "distinct from the analyst who resolved any exception",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "a supervisor distinct from the analyst who performed the exception resolution",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "by a supervisor independent of the investigator",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TSM-04",
+     "field": "description",
+     "quote": "distinct from the analyst who performed exception resolution",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M31",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "enforced by a named concrete mechanism (rotation, a second-site reviewer, or a dual-control checklist)",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "The supervisor role is enforced as a distinct system credential from the analyst role in TS-03",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "enforced at the system/identity level",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "description",
+     "quote": "Actor separation is structurally enforced, not merely documented",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Is the concrete/system enforcement of resolver-approver segregation a separate control, or the enforcement form of the stated segregation (M30)? (enforcement vs statement of the same control)",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "TWM-M30"
+     ]
+    }
+   }
+  },
+  {
+   "id": "TWM-M32",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "quote": "Released match authorisation (timestamped, attributable)",
+     "note": "Resolver (TS-03 attributed to a named human) and approver attributable separately; no combined identity log"
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "quote": "Instance-level segregation log (resolver/approver identity record)",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M33",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-04",
+     "field": "actor",
+     "quote": "system identity: release-automated, distinct from match-execution and tolerance-classification identities",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M34",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "A named backup approver is designated",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M35",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-04",
+     "field": "outputs",
+     "quote": "Audit-sampling record",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "quote": "Sampling audit findings on straight-through releases",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "quote": "Auto-released population sampling report",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "performs periodic sampling review of the auto-released clean/in-tolerance population",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M36",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "logged continuously and immutably as they occur",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "logged continuously and in full detail (not summarised)",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "logged continuously to the control record as a native byproduct",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "logged continuously to the control record rather than compiled on a fixed batch cycle",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "logged in real time to an append-only control record",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TWM-T05",
+     "field": "description",
+     "quote": "logged to the control record in real time as they occur",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "logged in real time to the control record by the monitoring platform",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "logged continuously to the control record",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-06",
+     "field": "description",
+     "quote": "logged continuously to a live control record",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TSM-05",
+     "field": "description",
+     "quote": "logged in real time to the control record",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M37",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "logged continuously and immutably as they occur",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-06",
+     "field": "outputs",
+     "quote": "Append-only match control record",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": {
+    "pattern": "M9",
+    "question": "Is immutability/append-only a separate control, or a property of the continuously logged control record (M36)? (property of the same record)",
+    "alternative": {
+     "type": "merge_with",
+     "control_ids": [
+      "TWM-M36"
+     ]
+    }
+   }
+  },
+  {
+   "id": "TWM-M38",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "reviewed with a named, dated sign-off by the AP accountant",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "outputs",
+     "quote": "Periodic match-rate and override report (locally exportable, human-signed-off)",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "A controller-level human reviews and attests the resulting match-rate and override report",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "produces match-rate and override reporting on a defined cadence",
+     "note": "Periodic report production; no sign-off/attestation"
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TGT-05",
+     "field": "description",
+     "quote": "producing periodic match-rate, override and exception reports for control review",
+     "note": "Periodic report production for review; no sign-off/attestation"
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": true,
+     "borderline": true,
+     "pattern": "B1",
+     "step_id": "TS-06",
+     "field": "outputs",
+     "quote": "Periodic control attestation",
+     "note": "Periodic attestation stated; no named signer and object is the control rather than the report"
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M39",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "surfacing override concentration by approver and by vendor",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "anomalies such as override clustering by analyst or vendor surfaced as they occur",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M40",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "Override-rate and sampling-exception thresholds trigger an active escalation to a named human reviewer",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M41",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "Every match control record entry carries an explicit period-cutoff tag",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": true,
+     "pattern": "B3",
+     "step_id": "TS-01",
+     "field": "outputs",
+     "quote": "Period-tagged document assembly record",
+     "note": "Period tag on assembly record at receipt, not on match control record at completion/release"
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M42",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "A lightweight periodic batch extract remains an acceptable, non-degraded implementation",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "available in a basic, exportable format usable without premium BI/analytics licensing",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TS-05",
+     "field": "description",
+     "quote": "a genuine batch/offline execution path preserved for sites without reliable live connectivity",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-06",
+     "field": "description",
+     "quote": "achievable with lightweight tooling where premium platforms are unavailable",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  },
+  {
+   "id": "TWM-M43",
+   "presence": {
+    "20261010-185003-council-P2P-TWM-01-6c3b": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-194038-council-P2P-TWM-01-0842": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-201338-council-P2P-TWM-01-df77": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203143-council-P2P-TWM-01-5ef7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "TGT-06",
+     "field": "actor",
+     "quote": "independent of match-execution, tolerance-classification and release-automation operators",
+     "note": ""
+    },
+    "20261010-184915-baseline-P2P-TWM-01-f555": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-193948-baseline-P2P-TWM-01-446f": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-195830-baseline-P2P-TWM-01-77c7": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-203046-baseline-P2P-TWM-01-76b4": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false,
+     "borderline": false,
+     "pattern": "",
+     "step_id": "",
+     "field": "",
+     "quote": "",
+     "note": ""
+    }
+   },
+   "merge_low": null
+  }
+ ]
+}
