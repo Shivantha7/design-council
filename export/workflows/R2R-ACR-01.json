@@ -1,0 +1,209 @@
+{
+  "domain": "R2R",
+  "function_area": "Record-to-report",
+  "name": "Account reconciliation",
+  "open_steps": [
+    "ACR-05",
+    "ACR-07"
+  ],
+  "profile": "transactional",
+  "requirements": [
+    {
+      "params": {
+        "baseline_step_id": "ACR-01",
+        "required_inputs": [
+          "Reconciliation schedule by account risk rating"
+        ]
+      },
+      "requirement_id": "ACR-R-01",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries balance extraction must still consume the reconciliation schedule by account risk rating."
+    },
+    {
+      "params": {
+        "baseline_step_id": "ACR-02"
+      },
+      "requirement_id": "ACR-R-02",
+      "rule_type": "step_preserved",
+      "statement": "Transaction matching must survive in some form."
+    },
+    {
+      "params": {
+        "baseline_step_id": "ACR-03"
+      },
+      "requirement_id": "ACR-R-03",
+      "rule_type": "step_preserved",
+      "statement": "Investigation and classification of reconciling items must survive in some form."
+    },
+    {
+      "params": {
+        "baseline_step_id": "ACR-04"
+      },
+      "requirement_id": "ACR-R-04",
+      "rule_type": "step_preserved",
+      "statement": "Preparation of adjusting journal entries must survive in some form."
+    },
+    {
+      "params": {
+        "baseline_step_ids": [
+          "ACR-04",
+          "ACR-06"
+        ]
+      },
+      "requirement_id": "ACR-R-05",
+      "rule_type": "actor_separation",
+      "statement": "Journal entry preparation and reconciliation review must not be performed by the same actor."
+    },
+    {
+      "params": {
+        "baseline_step_id": "ACR-04",
+        "required_inputs": [
+          "Prior-period error record"
+        ]
+      },
+      "requirement_id": "ACR-R-06",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries preparation of adjusting journal entries must still consume the prior-period error record (KB-05)."
+    },
+    {
+      "params": {
+        "baseline_step_id": "ACR-01",
+        "required_inputs": [
+          "Closing exchange rates"
+        ]
+      },
+      "requirement_id": "ACR-R-07",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries balance extraction must still consume closing exchange rates (KB-07)."
+    },
+    {
+      "params": {
+        "baseline_step_id": "ACR-08"
+      },
+      "requirement_id": "ACR-R-08",
+      "rule_type": "step_preserved",
+      "statement": "Retention of reconciliation evidence must survive in some form."
+    },
+    {
+      "params": {
+        "baseline_step_id": "ACR-06"
+      },
+      "requirement_id": "ACR-R-09",
+      "rule_type": "step_preserved",
+      "statement": "Reviewer approval must survive in some form."
+    }
+  ],
+  "source": {
+    "document_reference": "APQC PCF Cross-Industry v8.0 (Feb 2026), process anchor pending verification (general ledger account reconciliation); step decomposition per docs/HELDOUT_SPEC_2026-10-10.md (signed off 10 Oct 2026). APQC activity IDs pending verification against PCF v8.0 text.",
+    "publisher": "APQC"
+  },
+  "split": "heldout",
+  "steps": [
+    {
+      "actor": "GL accountant",
+      "description": "GL balances and comparison balances (bank, subledger, third party) are extracted for every in-scope account due under its risk-rated frequency, with foreign-currency balances retranslated at the closing rate.",
+      "inputs": [
+        "Reconciliation schedule by account risk rating",
+        "GL balances",
+        "Comparison balances",
+        "Closing exchange rates"
+      ],
+      "name": "Extract GL and comparison balances",
+      "outputs": [
+        "Balances for reconciliation"
+      ],
+      "step_id": "ACR-01"
+    },
+    {
+      "actor": "GL accountant",
+      "description": "Transactions are matched between the GL and the comparison source, automatically where rules allow and manually otherwise.",
+      "inputs": [
+        "Balances for reconciliation"
+      ],
+      "name": "Transaction matching",
+      "outputs": [
+        "Matched and unmatched items"
+      ],
+      "step_id": "ACR-02"
+    },
+    {
+      "actor": "GL accountant",
+      "description": "Unmatched items are investigated, explained, supported with evidence and classified.",
+      "inputs": [
+        "Matched and unmatched items",
+        "Supporting documents"
+      ],
+      "name": "Investigate and classify reconciling items",
+      "outputs": [
+        "Explained reconciling items"
+      ],
+      "step_id": "ACR-03"
+    },
+    {
+      "actor": "GL accountant",
+      "description": "Adjusting journal entries are prepared for items requiring correction, with prior-period errors corrected retrospectively.",
+      "inputs": [
+        "Explained reconciling items",
+        "Prior-period error record"
+      ],
+      "name": "Prepare adjusting journal entries",
+      "outputs": [
+        "Proposed adjusting journal entries"
+      ],
+      "step_id": "ACR-04"
+    },
+    {
+      "actor": "GL accountant",
+      "description": "The preparer signs off the completed reconciliation.",
+      "inputs": [
+        "Explained reconciling items",
+        "Proposed adjusting journal entries"
+      ],
+      "name": "Preparer sign-off",
+      "outputs": [
+        "Prepared reconciliation"
+      ],
+      "step_id": "ACR-05"
+    },
+    {
+      "actor": "Finance controller",
+      "description": "An independent reviewer reviews and approves the reconciliation and its adjusting entries.",
+      "inputs": [
+        "Prepared reconciliation",
+        "Proposed adjusting journal entries"
+      ],
+      "name": "Reviewer approval",
+      "outputs": [
+        "Approved reconciliation",
+        "Approved journal entries"
+      ],
+      "step_id": "ACR-06"
+    },
+    {
+      "actor": "Finance controller",
+      "description": "Reconciling items beyond the ageing threshold are escalated for resolution.",
+      "inputs": [
+        "Approved reconciliation"
+      ],
+      "name": "Escalate aged reconciling items",
+      "outputs": [
+        "Escalation log"
+      ],
+      "step_id": "ACR-07"
+    },
+    {
+      "actor": "GL accountant",
+      "description": "Reconciliation evidence is retained and reconciliation status is reported.",
+      "inputs": [
+        "Approved reconciliation"
+      ],
+      "name": "Retain evidence and report status",
+      "outputs": [
+        "Retained reconciliation evidence",
+        "Reconciliation status report"
+      ],
+      "step_id": "ACR-08"
+    }
+  ],
+  "workflow_id": "R2R-ACR-01"
+}

@@ -1,0 +1,200 @@
+{
+  "domain": "R2R",
+  "function_area": "Record-to-report",
+  "name": "Period close management",
+  "open_steps": [
+    "PC-01",
+    "PC-02",
+    "PC-03",
+    "PC-06"
+  ],
+  "profile": null,
+  "requirements": [
+    {
+      "params": {
+        "baseline_step_id": "PC-05"
+      },
+      "requirement_id": "R2R-R-01",
+      "rule_type": "step_preserved",
+      "statement": "The GL reconciliation function must survive the redesign in some form; it may be retained, restructured, merged or absorbed, but not eliminated."
+    },
+    {
+      "params": {
+        "baseline_step_id": "PC-04"
+      },
+      "requirement_id": "R2R-R-02",
+      "rule_type": "step_preserved",
+      "statement": "The intercompany processing function must survive in some form."
+    },
+    {
+      "params": {
+        "after_step_id": "PC-08",
+        "before_step_id": "PC-05"
+      },
+      "requirement_id": "R2R-R-03",
+      "rule_type": "ordering_preserved",
+      "statement": "Reconciliation must be complete before the reporting package is produced."
+    },
+    {
+      "params": {
+        "after_step_id": "PC-08",
+        "before_step_id": "PC-07"
+      },
+      "requirement_id": "R2R-R-04",
+      "rule_type": "ordering_preserved",
+      "statement": "Management review must occur before the reporting package is produced."
+    },
+    {
+      "params": {
+        "baseline_step_ids": [
+          "PC-02",
+          "PC-07"
+        ]
+      },
+      "requirement_id": "R2R-R-05",
+      "rule_type": "actor_separation",
+      "statement": "Journal preparation and management review must not be performed by the same actor."
+    },
+    {
+      "params": {
+        "baseline_step_id": "PC-08"
+      },
+      "requirement_id": "R2R-R-06",
+      "rule_type": "step_preserved",
+      "statement": "The reporting package function must survive in some form."
+    },
+    {
+      "params": {
+        "baseline_step_id": "PC-07"
+      },
+      "requirement_id": "R2R-R-07",
+      "rule_type": "step_preserved",
+      "statement": "Management review of the close must survive in some form."
+    }
+  ],
+  "source": {
+    "document_reference": "APQC PCF Cross-Industry v8.0 (Feb 2026), 9.3.2 Perform general accounting (10748) with reporting under 9.3.4 (10750); step decomposition per MSc provenance artefact with Trintech/HighRadius R2R/OpsDog documentation.",
+    "publisher": "APQC"
+  },
+  "split": "dev",
+  "steps": [
+    {
+      "actor": "Close manager",
+      "description": "Initiate the period-end close per the close calendar: confirm subledger cutoff (AP, AR, fixed assets, payroll), lock transaction posting, distribute the close checklist with task owners and deadlines, confirm data readiness for journal preparation.",
+      "inputs": [
+        "Close calendar",
+        "Subledger status (AP, AR, fixed assets, payroll)"
+      ],
+      "name": "Close calendar initiation and subledger cutoff",
+      "outputs": [
+        "Posting locked",
+        "Close checklist distributed",
+        "Data readiness confirmed"
+      ],
+      "step_id": "PC-01"
+    },
+    {
+      "actor": "GL accountant",
+      "description": "Prepare and post period-end journal entries per the close checklist: recurring accruals from templates and schedules; prepayment releases per amortisation schedules; provisions and estimates requiring judgment and supporting documentation (bad debt, inventory, litigation); reclassifications and error corrections. Mix of mechanical template-driven entries and estimation-based entries requiring preparer judgment and evidence.",
+      "inputs": [
+        "Close checklist",
+        "Accrual templates and schedules",
+        "Amortisation schedules",
+        "Provision support documentation"
+      ],
+      "name": "Period-end journal entries",
+      "outputs": [
+        "Period-end journals posted with supporting evidence"
+      ],
+      "step_id": "PC-02"
+    },
+    {
+      "actor": "GL accountant",
+      "description": "Run cost and overhead allocations per the allocation model: shared-service recharges, corporate overhead distribution, intercompany management fees. Validate allocation bases and post allocation journals.",
+      "inputs": [
+        "Allocation model",
+        "Allocation bases",
+        "Cost centre data"
+      ],
+      "name": "Process allocations",
+      "outputs": [
+        "Allocation journals posted"
+      ],
+      "step_id": "PC-03"
+    },
+    {
+      "actor": "GL accountant",
+      "description": "Match and reconcile intercompany balances across entities (AR/AP mirror accounts, loans, recharges); investigate and resolve mismatches with counterparty entities; process settlements and netting; prepare elimination entries for consolidation. Matching is high-volume and rule-based; mismatch resolution requires inter-entity coordination and judgment.",
+      "inputs": [
+        "Intercompany balances by entity",
+        "Counterparty confirmations"
+      ],
+      "name": "Intercompany processing",
+      "outputs": [
+        "Intercompany balances matched and settled",
+        "Elimination entries prepared"
+      ],
+      "step_id": "PC-04"
+    },
+    {
+      "actor": "GL accountant",
+      "description": "Reconcile GL accounts to subledgers, bank statements and supporting schedules per the reconciliation policy; accounts risk-rated with frequency and reviewer requirements varying by rating; prepare reconciliation certifications with supporting evidence; flag and age unreconciled items for resolution.",
+      "inputs": [
+        "GL balances",
+        "Subledger balances",
+        "Bank statements",
+        "Supporting schedules",
+        "Reconciliation policy"
+      ],
+      "name": "GL and balance-sheet reconciliations",
+      "outputs": [
+        "Reconciliation certifications with evidence",
+        "Unreconciled items flagged and aged"
+      ],
+      "step_id": "PC-05"
+    },
+    {
+      "actor": "Financial accountant",
+      "description": "Prepare the trial balance; run consolidation across entities including currency translation, elimination of intercompany balances and profit, and minority-interest processing; validate consolidated balances against entity submissions.",
+      "inputs": [
+        "Entity trial balances",
+        "FX rates",
+        "Elimination entries"
+      ],
+      "name": "Trial balance, consolidation and eliminations",
+      "outputs": [
+        "Consolidated balances validated"
+      ],
+      "step_id": "PC-06"
+    },
+    {
+      "actor": "Controller",
+      "description": "Review draft consolidated results against expectations and prior period; investigate anomalies; determine, document and post management adjustments; sign off account-level results for reporting.",
+      "inputs": [
+        "Draft consolidated results",
+        "Prior period comparatives",
+        "Expectations"
+      ],
+      "name": "Management review and adjustments",
+      "outputs": [
+        "Management adjustments posted",
+        "Account-level sign-off"
+      ],
+      "step_id": "PC-07"
+    },
+    {
+      "actor": "Group reporting accountant",
+      "description": "Compile the period-end reporting package: financial statements, management commentary, variance schedules and KPI summaries; distribute to management and group per the reporting timetable.",
+      "inputs": [
+        "Signed-off consolidated results",
+        "Reporting timetable"
+      ],
+      "name": "Financial reporting package",
+      "outputs": [
+        "Reporting package distributed"
+      ],
+      "step_id": "PC-08"
+    }
+  ],
+  "workflow_id": "R2R-PC-01"
+}

@@ -1,0 +1,230 @@
+{
+  "domain": "P2P",
+  "function_area": "Procure-to-pay",
+  "name": "Payment run execution",
+  "open_steps": [
+    "PRE-06",
+    "PRE-08"
+  ],
+  "profile": "transactional",
+  "requirements": [
+    {
+      "params": {
+        "baseline_step_id": "PRE-01",
+        "required_inputs": [
+          "Approved matched invoices"
+        ]
+      },
+      "requirement_id": "PRE-R-01",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries due-item selection must still consume approved matched invoices."
+    },
+    {
+      "params": {
+        "after_step_id": "PRE-04",
+        "before_step_id": "PRE-03"
+      },
+      "requirement_id": "PRE-R-02",
+      "rule_type": "ordering_preserved",
+      "statement": "Proposal review, which includes the duplicate-payment check, must occur before payment approval."
+    },
+    {
+      "params": {
+        "after_step_id": "PRE-05",
+        "before_step_id": "PRE-03"
+      },
+      "requirement_id": "PRE-R-03",
+      "rule_type": "ordering_preserved",
+      "statement": "Proposal review, which verifies vendor bank-detail changes, must occur before the payment file is released to the bank."
+    },
+    {
+      "params": {
+        "baseline_step_ids": [
+          "PRE-02",
+          "PRE-04"
+        ]
+      },
+      "requirement_id": "PRE-R-04",
+      "rule_type": "actor_separation",
+      "statement": "Payment proposal and payment approval must not be performed by the same actor."
+    },
+    {
+      "params": {
+        "after_step_id": "PRE-05",
+        "before_step_id": "PRE-04"
+      },
+      "requirement_id": "PRE-R-05",
+      "rule_type": "ordering_preserved",
+      "statement": "Payment approval must occur before the payment file is generated and released to the bank."
+    },
+    {
+      "params": {
+        "baseline_step_id": "PRE-07",
+        "required_inputs": [
+          "Bank settlement confirmation"
+        ]
+      },
+      "requirement_id": "PRE-R-06",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries posting and clearing must still consume the bank settlement confirmation (KB-11)."
+    },
+    {
+      "params": {
+        "baseline_step_id": "PRE-07",
+        "required_inputs": [
+          "Settlement-date exchange rate"
+        ]
+      },
+      "requirement_id": "PRE-R-07",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries posting and clearing must still consume the settlement-date exchange rate (KB-08)."
+    },
+    {
+      "params": {
+        "baseline_step_id": "PRE-02"
+      },
+      "requirement_id": "PRE-R-08",
+      "rule_type": "step_preserved",
+      "statement": "Payment proposal generation must survive in some form."
+    },
+    {
+      "params": {
+        "baseline_step_id": "PRE-03"
+      },
+      "requirement_id": "PRE-R-09",
+      "rule_type": "step_preserved",
+      "statement": "Proposal review must survive in some form."
+    },
+    {
+      "params": {
+        "baseline_step_id": "PRE-04"
+      },
+      "requirement_id": "PRE-R-10",
+      "rule_type": "step_preserved",
+      "statement": "Payment approval must survive in some form."
+    },
+    {
+      "params": {
+        "baseline_step_id": "PRE-05"
+      },
+      "requirement_id": "PRE-R-11",
+      "rule_type": "step_preserved",
+      "statement": "Payment file generation and release must survive in some form."
+    }
+  ],
+  "source": {
+    "document_reference": "APQC PCF Cross-Industry v8.0 (Feb 2026), process anchor pending verification (accounts payable payment processing); step decomposition per docs/HELDOUT_SPEC_2026-10-10.md (signed off 10 Oct 2026). APQC activity IDs pending verification against PCF v8.0 text.",
+    "publisher": "APQC"
+  },
+  "split": "heldout",
+  "steps": [
+    {
+      "actor": "AP analyst",
+      "description": "Approved, matched invoices falling due under their payment terms are selected for the payment run, including foreign-currency items.",
+      "inputs": [
+        "Approved matched invoices",
+        "Payment terms"
+      ],
+      "name": "Due-item selection",
+      "outputs": [
+        "Due-item list"
+      ],
+      "step_id": "PRE-01"
+    },
+    {
+      "actor": "AP analyst (with ERP)",
+      "description": "The ERP generates a payment proposal from the due-item list, grouping items by vendor, currency and payment method.",
+      "inputs": [
+        "Due-item list",
+        "Vendor master data"
+      ],
+      "name": "Payment proposal generation",
+      "outputs": [
+        "Payment proposal"
+      ],
+      "step_id": "PRE-02"
+    },
+    {
+      "actor": "AP supervisor",
+      "description": "The proposal is reviewed for duplicate payments, blocked vendors and recent changes to vendor bank details, and exceptions are removed or held.",
+      "inputs": [
+        "Payment proposal",
+        "Vendor bank master change log",
+        "Payment history"
+      ],
+      "name": "Proposal review",
+      "outputs": [
+        "Reviewed payment proposal"
+      ],
+      "step_id": "PRE-03"
+    },
+    {
+      "actor": "Authorised signatory",
+      "description": "The reviewed proposal is approved for payment by an authorised signatory within delegated limits.",
+      "inputs": [
+        "Reviewed payment proposal",
+        "Delegation of authority"
+      ],
+      "name": "Payment approval",
+      "outputs": [
+        "Approved payment proposal"
+      ],
+      "step_id": "PRE-04"
+    },
+    {
+      "actor": "Treasury officer",
+      "description": "The approved proposal is converted into a bank payment file and released to the bank.",
+      "inputs": [
+        "Approved payment proposal",
+        "Vendor bank details"
+      ],
+      "name": "Payment file generation and release to bank",
+      "outputs": [
+        "Payment file transmitted to bank"
+      ],
+      "step_id": "PRE-05"
+    },
+    {
+      "actor": "Treasury officer",
+      "description": "The bank's confirmation of executed payments is received and matched to the transmitted file.",
+      "inputs": [
+        "Payment file transmitted to bank",
+        "Bank statement"
+      ],
+      "name": "Bank confirmation receipt",
+      "outputs": [
+        "Bank settlement confirmation"
+      ],
+      "step_id": "PRE-06"
+    },
+    {
+      "actor": "GL accountant",
+      "description": "Settled payments are posted, clearing open items in the AP subledger and recording cash in the GL, with foreign-currency settlement differences recognised.",
+      "inputs": [
+        "Bank settlement confirmation",
+        "Settlement-date exchange rate",
+        "AP subledger open items"
+      ],
+      "name": "Posting and clearing",
+      "outputs": [
+        "AP subledger cleared",
+        "GL cash posted"
+      ],
+      "step_id": "PRE-07"
+    },
+    {
+      "actor": "AP analyst",
+      "description": "Vendors are sent remittance advice detailing the invoices settled by each payment.",
+      "inputs": [
+        "Bank settlement confirmation",
+        "Vendor contact data"
+      ],
+      "name": "Remittance advice to vendors",
+      "outputs": [
+        "Remittance advice"
+      ],
+      "step_id": "PRE-08"
+    }
+  ],
+  "workflow_id": "P2P-PRE-01"
+}

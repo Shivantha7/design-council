@@ -1,0 +1,179 @@
+{
+  "domain": "FPA",
+  "function_area": "Financial planning and analysis",
+  "name": "Rolling forecast update",
+  "open_steps": [
+    "RF-01",
+    "RF-02",
+    "RF-03",
+    "RF-04"
+  ],
+  "profile": null,
+  "requirements": [
+    {
+      "params": {
+        "baseline_step_id": "RF-06"
+      },
+      "requirement_id": "FPA-R-01",
+      "rule_type": "step_preserved",
+      "statement": "The variance analysis function must survive the redesign in some form."
+    },
+    {
+      "params": {
+        "baseline_step_id": "RF-05",
+        "required_inputs": [
+          "closed-period actuals (validated baseline)"
+        ]
+      },
+      "requirement_id": "FPA-R-02",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries the consolidation function must still consume closed-period actuals."
+    },
+    {
+      "params": {
+        "baseline_step_id": "RF-07"
+      },
+      "requirement_id": "FPA-R-03",
+      "rule_type": "step_preserved",
+      "statement": "Management review and approval must survive in some form."
+    },
+    {
+      "params": {
+        "after_step_id": "RF-08",
+        "before_step_id": "RF-07"
+      },
+      "requirement_id": "FPA-R-04",
+      "rule_type": "ordering_preserved",
+      "statement": "Approval must occur before the forecast is published."
+    },
+    {
+      "params": {
+        "baseline_step_id": "RF-08"
+      },
+      "requirement_id": "FPA-R-05",
+      "rule_type": "step_preserved",
+      "statement": "Forecast publication must survive in some form."
+    }
+  ],
+  "source": {
+    "document_reference": "APQC PCF Cross-Industry v8.0 (Feb 2026), 9.1.2 Perform planning/budgeting/forecasting (10738); step decomposition per MSc provenance artefact with AFP practice guides and OpsDog documentation.",
+    "publisher": "APQC"
+  },
+  "split": "dev",
+  "steps": [
+    {
+      "actor": "FP&A manager",
+      "description": "Initiate the forecast cycle per the rolling cadence: confirm forecast horizon and granularity, refresh the assumptions pack (macro indicators, corporate targets, known business events), issue timetable and templates to business units.",
+      "inputs": [
+        "Rolling forecast calendar",
+        "Macro indicators",
+        "Corporate targets"
+      ],
+      "name": "Forecast cycle initiation and assumptions refresh",
+      "outputs": [
+        "Assumptions pack issued",
+        "Timetable and templates distributed"
+      ],
+      "step_id": "RF-01"
+    },
+    {
+      "actor": "FP&A analyst",
+      "description": "Extract closed-period actuals from the GL and management reporting systems; map to forecast structure; validate completeness and consistency with published results; load into the forecast model as the baseline.",
+      "inputs": [
+        "GL actuals",
+        "Management reporting extracts"
+      ],
+      "name": "Actuals collection and data preparation",
+      "outputs": [
+        "closed-period actuals (validated baseline) loaded to forecast model"
+      ],
+      "step_id": "RF-02"
+    },
+    {
+      "actor": "FP&A analyst",
+      "description": "Update forecast driver assumptions: volume and demand drivers from operations, pricing and rate assumptions, FX rates, headcount and cost inflation. Mix of mechanically refreshed drivers (FX, actual run-rates) and judgment-based assumptions requiring business input.",
+      "inputs": [
+        "Operational volume data",
+        "Pricing data",
+        "FX rates",
+        "Headcount plans"
+      ],
+      "name": "Driver assumption updates",
+      "outputs": [
+        "Updated driver assumptions"
+      ],
+      "step_id": "RF-03"
+    },
+    {
+      "actor": "BU finance leads",
+      "description": "Business units prepare and submit their forecast updates against the refreshed drivers and templates: revenue, cost, headcount and capex projections with commentary on changes since the prior forecast.",
+      "inputs": [
+        "Updated driver assumptions",
+        "Templates",
+        "Prior forecast"
+      ],
+      "name": "Business unit forecast submissions",
+      "outputs": [
+        "BU forecast submissions with commentary"
+      ],
+      "step_id": "RF-04"
+    },
+    {
+      "actor": "FP&A analyst",
+      "description": "Consolidate BU submissions into the group forecast model; validate completeness, internal consistency (intercompany, headcount-to-cost coherence), and continuity against actuals; chase and correct anomalous submissions.",
+      "inputs": [
+        "BU forecast submissions",
+        "closed-period actuals (validated baseline)",
+        "Group forecast model"
+      ],
+      "name": "Consolidation and validation of submissions",
+      "outputs": [
+        "Consolidated group forecast, validated"
+      ],
+      "step_id": "RF-05"
+    },
+    {
+      "actor": "FP&A analyst",
+      "description": "Analyse the consolidated forecast against budget and against the prior forecast: quantify and explain movements by driver and business unit; prepare bridge analyses and risk/opportunity schedules.",
+      "inputs": [
+        "Consolidated forecast",
+        "Budget",
+        "Prior forecast"
+      ],
+      "name": "Variance analysis",
+      "outputs": [
+        "Bridge analyses",
+        "Risk/opportunity schedules"
+      ],
+      "step_id": "RF-06"
+    },
+    {
+      "actor": "CFO / FP&A director",
+      "description": "Present the consolidated forecast and variance analysis to management; challenge sessions on key assumptions; incorporate directed revisions; obtain approval of the forecast as the current planning baseline.",
+      "inputs": [
+        "Consolidated forecast",
+        "Variance analysis"
+      ],
+      "name": "Management review and approval",
+      "outputs": [
+        "Approved forecast baseline"
+      ],
+      "step_id": "RF-07"
+    },
+    {
+      "actor": "FP&A manager",
+      "description": "Publish the approved forecast: update planning systems and reporting baselines, distribute the forecast pack and commentary to stakeholders, archive the version with assumptions log.",
+      "inputs": [
+        "Approved forecast baseline"
+      ],
+      "name": "Publish forecast and reporting",
+      "outputs": [
+        "Forecast published",
+        "Systems updated",
+        "Version archived"
+      ],
+      "step_id": "RF-08"
+    }
+  ],
+  "workflow_id": "FPA-RF-01"
+}

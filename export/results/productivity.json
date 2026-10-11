@@ -1,0 +1,1010 @@
+{
+  "bootstrap": 10000,
+  "decisions": "docs/PRODUCTIVITY_DECISIONS.md",
+  "draws": 10000,
+  "exploratory": true,
+  "method": "docs/PRODUCTIVITY_METHOD.md",
+  "seed": 20261011,
+  "variants": {
+    "agentic-only": {
+      "oat": {
+        "e_judgment": {
+          "at_max": 0.074333,
+          "at_min": 0.074333
+        },
+        "e_transactional": {
+          "at_max": 0.074333,
+          "at_min": 0.074333
+        },
+        "k": {
+          "at_max": 0.074333,
+          "at_min": 0.074333
+        },
+        "m": {
+          "at_max": 0.07,
+          "at_min": 0.09875
+        },
+        "r_h": {
+          "at_max": 0.04875,
+          "at_min": 0.113
+        }
+      },
+      "per_workflow": [
+        {
+          "median": 0.251958,
+          "p05": 0.022108,
+          "p95": 0.589392,
+          "profile": "transactional",
+          "runs": 5,
+          "workflow_id": "P2P-TWM-01",
+          "worst_case": 0.0
+        },
+        {
+          "median": 0.099533,
+          "p05": 0.004646,
+          "p95": 0.461007,
+          "profile": "transactional",
+          "runs": 4,
+          "workflow_id": "P2P-PRE-01",
+          "worst_case": 0.0
+        },
+        {
+          "median": 0.335861,
+          "p05": 0.116171,
+          "p95": 0.611844,
+          "profile": "transactional",
+          "runs": 4,
+          "workflow_id": "P2P-EXR-01",
+          "worst_case": 0.0
+        },
+        {
+          "median": 0.040683,
+          "p05": 0.002055,
+          "p95": 0.148163,
+          "profile": "transactional",
+          "runs": 5,
+          "workflow_id": "R2R-ACR-01",
+          "worst_case": 0.0
+        },
+        {
+          "median": 0.01704,
+          "p05": 0.0,
+          "p95": 0.087454,
+          "profile": "judgment-dense",
+          "runs": 5,
+          "workflow_id": "R2R-FSP-01",
+          "worst_case": 0.0
+        },
+        {
+          "median": 0.040397,
+          "p05": 0.0,
+          "p95": 0.253168,
+          "profile": "judgment-dense",
+          "runs": 5,
+          "workflow_id": "FPA-VAR-01",
+          "worst_case": 0.0
+        },
+        {
+          "median": 0.021078,
+          "p05": 0.0,
+          "p95": 0.308697,
+          "profile": "judgment-dense",
+          "runs": 5,
+          "workflow_id": "FPA-ABB-01",
+          "worst_case": 0.0
+        }
+      ],
+      "pooled": {
+        "all": {
+          "p05": 0.021078,
+          "p95": 0.251958,
+          "pi": 0.040683
+        },
+        "judgment-dense": {
+          "p05": 0.01704,
+          "p95": 0.040397,
+          "pi": 0.021078
+        },
+        "transactional": {
+          "p05": 0.070108,
+          "p95": 0.335861,
+          "pi": 0.175745
+        }
+      },
+      "prcc": {
+        "e_judgment": 0.003215,
+        "e_transactional": -0.029836,
+        "k": 0.008275,
+        "m": -0.552222,
+        "r_h": -0.503866
+      },
+      "structural": [
+        {
+          "council": {
+            "AGENT": {
+              "max": 2,
+              "mean": 1.0,
+              "min": 0
+            },
+            "HITL": {
+              "max": 2,
+              "mean": 1.6,
+              "min": 0
+            },
+            "HUMAN": {
+              "max": 5,
+              "mean": 3.6,
+              "min": 2
+            },
+            "HYBRID": {
+              "max": 1,
+              "mean": 0.6,
+              "min": 0
+            },
+            "approvals": {
+              "max": 2,
+              "mean": 1.0,
+              "min": 0
+            },
+            "h2h": {
+              "max": 4,
+              "mean": 1.8,
+              "min": 0
+            },
+            "handoffs": {
+              "max": 5,
+              "mean": 4.2,
+              "min": 4
+            },
+            "steps": {
+              "max": 6,
+              "mean": 5.2,
+              "min": 5
+            }
+          },
+          "original": {
+            "AGENT": 0,
+            "HITL": 1,
+            "HUMAN": 7,
+            "HYBRID": 0,
+            "approvals": 1,
+            "h2h": 2,
+            "handoffs": 2,
+            "steps": 7
+          },
+          "workflow_id": "P2P-TWM-01"
+        },
+        {
+          "council": {
+            "AGENT": {
+              "max": 2,
+              "mean": 0.75,
+              "min": 0
+            },
+            "HITL": {
+              "max": 4,
+              "mean": 2.0,
+              "min": 1
+            },
+            "HUMAN": {
+              "max": 7,
+              "mean": 5.75,
+              "min": 4
+            },
+            "HYBRID": {
+              "max": 2,
+              "mean": 0.75,
+              "min": 0
+            },
+            "approvals": {
+              "max": 2,
+              "mean": 1.25,
+              "min": 1
+            },
+            "h2h": {
+              "max": 5,
+              "mean": 3.5,
+              "min": 1
+            },
+            "handoffs": {
+              "max": 7,
+              "mean": 5.5,
+              "min": 5
+            },
+            "steps": {
+              "max": 8,
+              "mean": 7.25,
+              "min": 7
+            }
+          },
+          "original": {
+            "AGENT": 0,
+            "HITL": 1,
+            "HUMAN": 8,
+            "HYBRID": 0,
+            "approvals": 1,
+            "h2h": 5,
+            "handoffs": 5,
+            "steps": 8
+          },
+          "workflow_id": "P2P-PRE-01"
+        },
+        {
+          "council": {
+            "AGENT": {
+              "max": 4,
+              "mean": 2.5,
+              "min": 1
+            },
+            "HITL": {
+              "max": 2,
+              "mean": 1.25,
+              "min": 1
+            },
+            "HUMAN": {
+              "max": 5,
+              "mean": 3.75,
+              "min": 3
+            },
+            "HYBRID": {
+              "max": 1,
+              "mean": 0.25,
+              "min": 0
+            },
+            "approvals": {
+              "max": 1,
+              "mean": 1.0,
+              "min": 1
+            },
+            "h2h": {
+              "max": 4,
+              "mean": 2.0,
+              "min": 1
+            },
+            "handoffs": {
+              "max": 5,
+              "mean": 4.75,
+              "min": 4
+            },
+            "steps": {
+              "max": 7,
+              "mean": 6.5,
+              "min": 6
+            }
+          },
+          "original": {
+            "AGENT": 0,
+            "HITL": 1,
+            "HUMAN": 8,
+            "HYBRID": 0,
+            "approvals": 1,
+            "h2h": 5,
+            "handoffs": 5,
+            "steps": 8
+          },
+          "workflow_id": "P2P-EXR-01"
+        },
+        {
+          "council": {
+            "AGENT": {
+              "max": 0,
+              "mean": 0.0,
+              "min": 0
+            },
+            "HITL": {
+              "max": 3,
+              "mean": 2.2,
+              "min": 2
+            },
+            "HUMAN": {
+              "max": 7,
+              "mean": 6.4,
+              "min": 6
+            },
+            "HYBRID": {
+              "max": 1,
+              "mean": 0.2,
+              "min": 0
+            },
+            "approvals": {
+              "max": 2,
+              "mean": 2.0,
+              "min": 2
+            },
+            "h2h": {
+              "max": 2,
+              "mean": 2.0,
+              "min": 2
+            },
+            "handoffs": {
+              "max": 2,
+              "mean": 2.0,
+              "min": 2
+            },
+            "steps": {
+              "max": 7,
+              "mean": 6.6,
+              "min": 6
+            }
+          },
+          "original": {
+            "AGENT": 0,
+            "HITL": 2,
+            "HUMAN": 8,
+            "HYBRID": 0,
+            "approvals": 2,
+            "h2h": 2,
+            "handoffs": 2,
+            "steps": 8
+          },
+          "workflow_id": "R2R-ACR-01"
+        },
+        {
+          "council": {
+            "AGENT": {
+              "max": 0,
+              "mean": 0.0,
+              "min": 0
+            },
+            "HITL": {
+              "max": 2,
+              "mean": 1.2,
+              "min": 1
+            },
+            "HUMAN": {
+              "max": 9,
+              "mean": 8.6,
+              "min": 8
+            },
+            "HYBRID": {
+              "max": 0,
+              "mean": 0.0,
+              "min": 0
+            },
+            "approvals": {
+              "max": 2,
+              "mean": 1.2,
+              "min": 1
+            },
+            "h2h": {
+              "max": 4,
+              "mean": 3.4,
+              "min": 3
+            },
+            "handoffs": {
+              "max": 4,
+              "mean": 3.4,
+              "min": 3
+            },
+            "steps": {
+              "max": 9,
+              "mean": 8.6,
+              "min": 8
+            }
+          },
+          "original": {
+            "AGENT": 0,
+            "HITL": 1,
+            "HUMAN": 9,
+            "HYBRID": 0,
+            "approvals": 1,
+            "h2h": 3,
+            "handoffs": 3,
+            "steps": 9
+          },
+          "workflow_id": "R2R-FSP-01"
+        },
+        {
+          "council": {
+            "AGENT": {
+              "max": 0,
+              "mean": 0.0,
+              "min": 0
+            },
+            "HITL": {
+              "max": 5,
+              "mean": 1.8,
+              "min": 0
+            },
+            "HUMAN": {
+              "max": 9,
+              "mean": 6.6,
+              "min": 4
+            },
+            "HYBRID": {
+              "max": 3,
+              "mean": 0.8,
+              "min": 0
+            },
+            "approvals": {
+              "max": 2,
+              "mean": 1.0,
+              "min": 0
+            },
+            "h2h": {
+              "max": 6,
+              "mean": 3.2,
+              "min": 1
+            },
+            "handoffs": {
+              "max": 6,
+              "mean": 4.0,
+              "min": 3
+            },
+            "steps": {
+              "max": 9,
+              "mean": 7.4,
+              "min": 7
+            }
+          },
+          "original": {
+            "AGENT": 0,
+            "HITL": 1,
+            "HUMAN": 8,
+            "HYBRID": 0,
+            "approvals": 1,
+            "h2h": 3,
+            "handoffs": 3,
+            "steps": 8
+          },
+          "workflow_id": "FPA-VAR-01"
+        },
+        {
+          "council": {
+            "AGENT": {
+              "max": 0,
+              "mean": 0.0,
+              "min": 0
+            },
+            "HITL": {
+              "max": 6,
+              "mean": 3.8,
+              "min": 2
+            },
+            "HUMAN": {
+              "max": 9,
+              "mean": 7.2,
+              "min": 3
+            },
+            "HYBRID": {
+              "max": 5,
+              "mean": 1.8,
+              "min": 0
+            },
+            "approvals": {
+              "max": 3,
+              "mean": 2.2,
+              "min": 2
+            },
+            "h2h": {
+              "max": 8,
+              "mean": 5.4,
+              "min": 0
+            },
+            "handoffs": {
+              "max": 8,
+              "mean": 7.8,
+              "min": 7
+            },
+            "steps": {
+              "max": 10,
+              "mean": 9.0,
+              "min": 8
+            }
+          },
+          "original": {
+            "AGENT": 0,
+            "HITL": 2,
+            "HUMAN": 9,
+            "HYBRID": 0,
+            "approvals": 2,
+            "h2h": 8,
+            "handoffs": 8,
+            "steps": 9
+          },
+          "workflow_id": "FPA-ABB-01"
+        }
+      ]
+    },
+    "primary": {
+      "oat": {
+        "e_judgment": {
+          "at_max": 0.196188,
+          "at_min": 0.2215
+        },
+        "e_transactional": {
+          "at_max": 0.208844,
+          "at_min": 0.208844
+        },
+        "k": {
+          "at_max": 0.202938,
+          "at_min": 0.21475
+        },
+        "m": {
+          "at_max": 0.190937,
+          "at_min": 0.22675
+        },
+        "r_h": {
+          "at_max": 0.128344,
+          "at_min": 0.289344
+        }
+      },
+      "per_workflow": [
+        {
+          "median": 0.618582,
+          "p05": 0.349332,
+          "p95": 0.806793,
+          "profile": "transactional",
+          "runs": 5,
+          "workflow_id": "P2P-TWM-01",
+          "worst_case": 0.0
+        },
+        {
+          "median": 0.349565,
+          "p05": 0.093172,
+          "p95": 0.670665,
+          "profile": "transactional",
+          "runs": 4,
+          "workflow_id": "P2P-PRE-01",
+          "worst_case": 0.0
+        },
+        {
+          "median": 0.398491,
+          "p05": 0.181758,
+          "p95": 0.646669,
+          "profile": "transactional",
+          "runs": 4,
+          "workflow_id": "P2P-EXR-01",
+          "worst_case": 0.0
+        },
+        {
+          "median": 0.072063,
+          "p05": 0.005818,
+          "p95": 0.341956,
+          "profile": "transactional",
+          "runs": 5,
+          "workflow_id": "R2R-ACR-01",
+          "worst_case": 0.0
+        },
+        {
+          "median": 0.022514,
+          "p05": 0.0,
+          "p95": 0.110875,
+          "profile": "judgment-dense",
+          "runs": 5,
+          "workflow_id": "R2R-FSP-01",
+          "worst_case": 0.0
+        },
+        {
+          "median": 0.199213,
+          "p05": 0.059274,
+          "p95": 0.390519,
+          "profile": "judgment-dense",
+          "runs": 5,
+          "workflow_id": "FPA-VAR-01",
+          "worst_case": 0.0
+        },
+        {
+          "median": 0.021078,
+          "p05": 0.0,
+          "p95": 0.347842,
+          "profile": "judgment-dense",
+          "runs": 5,
+          "workflow_id": "FPA-ABB-01",
+          "worst_case": 0.0
+        }
+      ],
+      "pooled": {
+        "all": {
+          "p05": 0.022514,
+          "p95": 0.398491,
+          "pi": 0.199213
+        },
+        "judgment-dense": {
+          "p05": 0.021078,
+          "p95": 0.199213,
+          "pi": 0.022514
+        },
+        "transactional": {
+          "p05": 0.210814,
+          "p95": 0.508536,
+          "pi": 0.374028
+        }
+      },
+      "prcc": {
+        "e_judgment": -0.107327,
+        "e_transactional": -0.034096,
+        "k": -0.045107,
+        "m": -0.19362,
+        "r_h": -0.437877
+      },
+      "structural": [
+        {
+          "council": {
+            "AGENT": {
+              "max": 4,
+              "mean": 3.4,
+              "min": 3
+            },
+            "HITL": {
+              "max": 2,
+              "mean": 1.6,
+              "min": 0
+            },
+            "HUMAN": {
+              "max": 2,
+              "mean": 1.2,
+              "min": 0
+            },
+            "HYBRID": {
+              "max": 1,
+              "mean": 0.6,
+              "min": 0
+            },
+            "approvals": {
+              "max": 2,
+              "mean": 1.0,
+              "min": 0
+            },
+            "h2h": {
+              "max": 1,
+              "mean": 0.2,
+              "min": 0
+            },
+            "handoffs": {
+              "max": 5,
+              "mean": 4.2,
+              "min": 4
+            },
+            "steps": {
+              "max": 6,
+              "mean": 5.2,
+              "min": 5
+            }
+          },
+          "original": {
+            "AGENT": 0,
+            "HITL": 1,
+            "HUMAN": 7,
+            "HYBRID": 0,
+            "approvals": 1,
+            "h2h": 2,
+            "handoffs": 2,
+            "steps": 7
+          },
+          "workflow_id": "P2P-TWM-01"
+        },
+        {
+          "council": {
+            "AGENT": {
+              "max": 4,
+              "mean": 2.0,
+              "min": 0
+            },
+            "HITL": {
+              "max": 5,
+              "mean": 3.5,
+              "min": 2
+            },
+            "HUMAN": {
+              "max": 5,
+              "mean": 3.0,
+              "min": 1
+            },
+            "HYBRID": {
+              "max": 3,
+              "mean": 2.25,
+              "min": 1
+            },
+            "approvals": {
+              "max": 2,
+              "mean": 1.25,
+              "min": 1
+            },
+            "h2h": {
+              "max": 3,
+              "mean": 1.0,
+              "min": 0
+            },
+            "handoffs": {
+              "max": 7,
+              "mean": 5.5,
+              "min": 5
+            },
+            "steps": {
+              "max": 8,
+              "mean": 7.25,
+              "min": 7
+            }
+          },
+          "original": {
+            "AGENT": 0,
+            "HITL": 1,
+            "HUMAN": 8,
+            "HYBRID": 0,
+            "approvals": 1,
+            "h2h": 5,
+            "handoffs": 5,
+            "steps": 8
+          },
+          "workflow_id": "P2P-PRE-01"
+        },
+        {
+          "council": {
+            "AGENT": {
+              "max": 4,
+              "mean": 3.0,
+              "min": 2
+            },
+            "HITL": {
+              "max": 2,
+              "mean": 1.5,
+              "min": 1
+            },
+            "HUMAN": {
+              "max": 3,
+              "mean": 3.0,
+              "min": 3
+            },
+            "HYBRID": {
+              "max": 1,
+              "mean": 0.5,
+              "min": 0
+            },
+            "approvals": {
+              "max": 1,
+              "mean": 1.0,
+              "min": 1
+            },
+            "h2h": {
+              "max": 1,
+              "mean": 1.0,
+              "min": 1
+            },
+            "handoffs": {
+              "max": 5,
+              "mean": 4.75,
+              "min": 4
+            },
+            "steps": {
+              "max": 7,
+              "mean": 6.5,
+              "min": 6
+            }
+          },
+          "original": {
+            "AGENT": 0,
+            "HITL": 1,
+            "HUMAN": 8,
+            "HYBRID": 0,
+            "approvals": 1,
+            "h2h": 5,
+            "handoffs": 5,
+            "steps": 8
+          },
+          "workflow_id": "P2P-EXR-01"
+        },
+        {
+          "council": {
+            "AGENT": {
+              "max": 2,
+              "mean": 0.6,
+              "min": 0
+            },
+            "HITL": {
+              "max": 3,
+              "mean": 2.2,
+              "min": 2
+            },
+            "HUMAN": {
+              "max": 7,
+              "mean": 5.8,
+              "min": 4
+            },
+            "HYBRID": {
+              "max": 1,
+              "mean": 0.2,
+              "min": 0
+            },
+            "approvals": {
+              "max": 2,
+              "mean": 2.0,
+              "min": 2
+            },
+            "h2h": {
+              "max": 2,
+              "mean": 2.0,
+              "min": 2
+            },
+            "handoffs": {
+              "max": 2,
+              "mean": 2.0,
+              "min": 2
+            },
+            "steps": {
+              "max": 7,
+              "mean": 6.6,
+              "min": 6
+            }
+          },
+          "original": {
+            "AGENT": 0,
+            "HITL": 2,
+            "HUMAN": 8,
+            "HYBRID": 0,
+            "approvals": 2,
+            "h2h": 2,
+            "handoffs": 2,
+            "steps": 8
+          },
+          "workflow_id": "R2R-ACR-01"
+        },
+        {
+          "council": {
+            "AGENT": {
+              "max": 0,
+              "mean": 0.0,
+              "min": 0
+            },
+            "HITL": {
+              "max": 3,
+              "mean": 1.6,
+              "min": 1
+            },
+            "HUMAN": {
+              "max": 9,
+              "mean": 8.2,
+              "min": 7
+            },
+            "HYBRID": {
+              "max": 2,
+              "mean": 0.4,
+              "min": 0
+            },
+            "approvals": {
+              "max": 2,
+              "mean": 1.2,
+              "min": 1
+            },
+            "h2h": {
+              "max": 4,
+              "mean": 3.4,
+              "min": 3
+            },
+            "handoffs": {
+              "max": 4,
+              "mean": 3.4,
+              "min": 3
+            },
+            "steps": {
+              "max": 9,
+              "mean": 8.6,
+              "min": 8
+            }
+          },
+          "original": {
+            "AGENT": 0,
+            "HITL": 1,
+            "HUMAN": 9,
+            "HYBRID": 0,
+            "approvals": 1,
+            "h2h": 3,
+            "handoffs": 3,
+            "steps": 9
+          },
+          "workflow_id": "R2R-FSP-01"
+        },
+        {
+          "council": {
+            "AGENT": {
+              "max": 2,
+              "mean": 0.4,
+              "min": 0
+            },
+            "HITL": {
+              "max": 5,
+              "mean": 3.4,
+              "min": 0
+            },
+            "HUMAN": {
+              "max": 5,
+              "mean": 4.0,
+              "min": 2
+            },
+            "HYBRID": {
+              "max": 5,
+              "mean": 3.0,
+              "min": 0
+            },
+            "approvals": {
+              "max": 2,
+              "mean": 1.0,
+              "min": 0
+            },
+            "h2h": {
+              "max": 3,
+              "mean": 2.0,
+              "min": 0
+            },
+            "handoffs": {
+              "max": 6,
+              "mean": 4.0,
+              "min": 3
+            },
+            "steps": {
+              "max": 9,
+              "mean": 7.4,
+              "min": 7
+            }
+          },
+          "original": {
+            "AGENT": 0,
+            "HITL": 1,
+            "HUMAN": 8,
+            "HYBRID": 0,
+            "approvals": 1,
+            "h2h": 3,
+            "handoffs": 3,
+            "steps": 8
+          },
+          "workflow_id": "FPA-VAR-01"
+        },
+        {
+          "council": {
+            "AGENT": {
+              "max": 0,
+              "mean": 0.0,
+              "min": 0
+            },
+            "HITL": {
+              "max": 7,
+              "mean": 4.0,
+              "min": 2
+            },
+            "HUMAN": {
+              "max": 9,
+              "mean": 7.0,
+              "min": 2
+            },
+            "HYBRID": {
+              "max": 6,
+              "mean": 2.0,
+              "min": 0
+            },
+            "approvals": {
+              "max": 3,
+              "mean": 2.2,
+              "min": 2
+            },
+            "h2h": {
+              "max": 8,
+              "mean": 5.4,
+              "min": 0
+            },
+            "handoffs": {
+              "max": 8,
+              "mean": 7.8,
+              "min": 7
+            },
+            "steps": {
+              "max": 10,
+              "mean": 9.0,
+              "min": 8
+            }
+          },
+          "original": {
+            "AGENT": 0,
+            "HITL": 2,
+            "HUMAN": 9,
+            "HYBRID": 0,
+            "approvals": 2,
+            "h2h": 8,
+            "handoffs": 8,
+            "steps": 9
+          },
+          "workflow_id": "FPA-ABB-01"
+        }
+      ]
+    }
+  }
+}

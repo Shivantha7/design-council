@@ -1,0 +1,458 @@
+{
+  "export_commit": "dfee684726198392ab94940ac0b5f6bba36adb49",
+  "findings": [
+    {
+      "id": "F1",
+      "status": "pre-registered",
+      "text": "The council's mean depth was higher than the budget-matched single agent's on 7 of 7 workflows. The gap reached the 0.2 SESOI on 4 of 7 (threshold 4), so H2 is supported at the threshold. Sign test across workflows: p = 0.008 (one-sided, exploratory).",
+      "title": "Agentic deliberation transforms more deeply"
+    },
+    {
+      "id": "F2",
+      "status": "exploratory",
+      "text": "Mean depth gap 0.257 on judgment-dense workflows against 0.119 on transactional ones.",
+      "title": "Deliberation matters most where judgment matters most"
+    },
+    {
+      "id": "F3",
+      "status": "pre-registered",
+      "text": "0 eliminations in the council and 0 in the budget-matched single agent, although 16 of 57 steps were open to elimination by design.",
+      "title": "Agentic AI transforms the path, not the task list"
+    },
+    {
+      "id": "F4",
+      "status": "pre-registered counts",
+      "text": "Council vs budget-matched single agent: restructured 170 vs 95, absorbed 5 vs 17, merged 55 vs 81. Run-to-run consistency 0.789 vs 0.702.",
+      "title": "Single agents compress; multi-agent systems re-architect"
+    },
+    {
+      "id": "F5",
+      "status": "exploratory",
+      "text": "About 37% of human effort is removed on transactional workflows and about 2% on judgment-dense ones, where human checkpoints rise instead (human-in-the-loop checkpoints across the three judgment-dense workflows: 4 in the originals, 9.0 in the council designs, mean per run). Pooled: 20%.",
+      "title": "Two kinds of value"
+    },
+    {
+      "id": "F6",
+      "status": "pre-registered coding",
+      "text": "78 council-attributed controls in 7 of 7 workflows (57 at 75%), from 277 distinct controls (307 candidates). Agentic Architect 28, Emerging-Economy Constraint 21, Maximalist 0 (primary role).",
+      "title": "Deliberation adds governance"
+    }
+  ],
+  "headline": {
+    "council_attributed_controls": 78,
+    "council_to_baseline_cost_ratio": 19.058971,
+    "h2": "4 of 7",
+    "h3": "4 of 14",
+    "heldout_runs": 68,
+    "pooled_pi_primary": 0.199213,
+    "runs_below_1": 10
+  },
+  "limits": [
+    {
+      "id": "H1",
+      "text": "10 of 68 runs fell below 1.0 conformance, 9 of them council runs. 8 of the 9 council failures are naming differences (exploratory classification)."
+    },
+    {
+      "id": "H3",
+      "text": "H3 is not supported: 4 of 14 cells stabilised."
+    },
+    {
+      "id": "COST",
+      "text": "The council costs about 19× the budget-matched single agent ($1.42 vs $0.07 per run)."
+    },
+    {
+      "id": "MODEL",
+      "text": "One model family was used for both conditions."
+    },
+    {
+      "id": "MATCH",
+      "text": "The baseline is budget-matched, not compute-matched."
+    }
+  ],
+  "prereg_tag": "prereg-heldout-2026-10-11",
+  "research_question": "Does structured multi-agent deliberation, implemented as a role-differentiated Design Council, produce finance workflow redesigns superior to those of a budget-matched strong single agent, when superiority is measured against each workflow's own encoded requirements?",
+  "sets": {
+    "dev-v1": {
+      "label": "Development grid (v1)",
+      "runs": [
+        "20260828-175146-baseline-P2P-VIP-01-fd37",
+        "20260829-051950-council-P2P-VIP-01-13b0",
+        "20260829-112622-baseline-R2R-PC-01-08d1",
+        "20260829-114505-baseline-FPA-RF-01-ae27",
+        "20260830-012555-council-R2R-PC-01-546c",
+        "20260830-014158-council-FPA-RF-01-d722",
+        "20260830-022032-baseline-P2P-VIP-01-b43c",
+        "20260830-022117-baseline-P2P-VIP-01-7fc2",
+        "20260830-022209-council-P2P-VIP-01-4c1d",
+        "20260830-051923-baseline-R2R-PC-01-6f86",
+        "20260830-052014-baseline-R2R-PC-01-674d",
+        "20260830-052106-baseline-FPA-RF-01-1429",
+        "20260830-052213-baseline-FPA-RF-01-1fbc",
+        "20260830-052308-council-P2P-VIP-01-2023",
+        "20260830-055127-council-R2R-PC-01-18e1",
+        "20260830-082855-council-R2R-PC-01-41ed",
+        "20260830-112004-council-FPA-RF-01-853f",
+        "20260830-155801-council-FPA-RF-01-a6de"
+      ],
+      "workflows": [
+        "P2P-VIP-01",
+        "R2R-PC-01",
+        "FPA-RF-01"
+      ]
+    },
+    "heldout-v1": {
+      "cells": [
+        {
+          "condition": "council",
+          "run_ids": [
+            "20261010-185003-council-P2P-TWM-01-6c3b",
+            "20261010-194038-council-P2P-TWM-01-0842",
+            "20261010-201338-council-P2P-TWM-01-df77",
+            "20261010-203143-council-P2P-TWM-01-5ef7",
+            "20261010-205046-council-P2P-TWM-01-c32a"
+          ],
+          "stop_decision": "run_5",
+          "workflow_id": "P2P-TWM-01"
+        },
+        {
+          "condition": "baseline",
+          "run_ids": [
+            "20261010-184915-baseline-P2P-TWM-01-f555",
+            "20261010-193948-baseline-P2P-TWM-01-446f",
+            "20261010-195830-baseline-P2P-TWM-01-77c7",
+            "20261010-203046-baseline-P2P-TWM-01-76b4",
+            "20261010-205000-baseline-P2P-TWM-01-47aa"
+          ],
+          "stop_decision": "run_5",
+          "workflow_id": "P2P-TWM-01"
+        },
+        {
+          "condition": "council",
+          "run_ids": [
+            "20261010-192227-council-P2P-PRE-01-e0a8",
+            "20261010-194035-council-P2P-PRE-01-64dc",
+            "20261010-201339-council-P2P-PRE-01-8682",
+            "20261010-203139-council-P2P-PRE-01-1b2e"
+          ],
+          "stop_decision": "complete_at_n4",
+          "workflow_id": "P2P-PRE-01"
+        },
+        {
+          "condition": "baseline",
+          "run_ids": [
+            "20261010-184915-baseline-P2P-PRE-01-d745",
+            "20261010-193948-baseline-P2P-PRE-01-208e",
+            "20261010-195830-baseline-P2P-PRE-01-647f",
+            "20261010-203046-baseline-P2P-PRE-01-872e",
+            "20261010-205000-baseline-P2P-PRE-01-f62e"
+          ],
+          "stop_decision": "run_5",
+          "workflow_id": "P2P-PRE-01"
+        },
+        {
+          "condition": "council",
+          "run_ids": [
+            "20261010-184959-council-P2P-EXR-01-59a3",
+            "20261010-194034-council-P2P-EXR-01-b45d",
+            "20261010-201338-council-P2P-EXR-01-2ec9",
+            "20261010-203133-council-P2P-EXR-01-53eb"
+          ],
+          "stop_decision": "complete_at_n4",
+          "workflow_id": "P2P-EXR-01"
+        },
+        {
+          "condition": "baseline",
+          "run_ids": [
+            "20261010-184915-baseline-P2P-EXR-01-0102",
+            "20261010-193948-baseline-P2P-EXR-01-fca9",
+            "20261010-195830-baseline-P2P-EXR-01-cf77",
+            "20261010-203046-baseline-P2P-EXR-01-a752",
+            "20261010-205000-baseline-P2P-EXR-01-1a6b"
+          ],
+          "stop_decision": "run_5",
+          "workflow_id": "P2P-EXR-01"
+        },
+        {
+          "condition": "council",
+          "run_ids": [
+            "20261010-185005-council-R2R-ACR-01-60e6",
+            "20261010-194041-council-R2R-ACR-01-cb53",
+            "20261010-201338-council-R2R-ACR-01-216b",
+            "20261010-203144-council-R2R-ACR-01-dd48",
+            "20261010-205046-council-R2R-ACR-01-517f"
+          ],
+          "stop_decision": "run_5",
+          "workflow_id": "R2R-ACR-01"
+        },
+        {
+          "condition": "baseline",
+          "run_ids": [
+            "20261010-184915-baseline-R2R-ACR-01-0bac",
+            "20261010-193948-baseline-R2R-ACR-01-464b",
+            "20261010-195830-baseline-R2R-ACR-01-a86d",
+            "20261010-203046-baseline-R2R-ACR-01-48b8",
+            "20261010-205000-baseline-R2R-ACR-01-688a"
+          ],
+          "stop_decision": "run_5",
+          "workflow_id": "R2R-ACR-01"
+        },
+        {
+          "condition": "council",
+          "run_ids": [
+            "20261010-192227-council-R2R-FSP-01-c9c7",
+            "20261010-194053-council-R2R-FSP-01-cac9",
+            "20261010-201339-council-R2R-FSP-01-d272",
+            "20261010-203150-council-R2R-FSP-01-5655",
+            "20261010-205048-council-R2R-FSP-01-106a"
+          ],
+          "stop_decision": "run_5",
+          "workflow_id": "R2R-FSP-01"
+        },
+        {
+          "condition": "baseline",
+          "run_ids": [
+            "20261010-184915-baseline-R2R-FSP-01-b1b5",
+            "20261010-193948-baseline-R2R-FSP-01-8bc6",
+            "20261010-195830-baseline-R2R-FSP-01-38b8",
+            "20261010-203046-baseline-R2R-FSP-01-0590",
+            "20261010-205000-baseline-R2R-FSP-01-cec0"
+          ],
+          "stop_decision": "run_5",
+          "workflow_id": "R2R-FSP-01"
+        },
+        {
+          "condition": "council",
+          "run_ids": [
+            "20261010-184959-council-FPA-VAR-01-7759",
+            "20261010-194032-council-FPA-VAR-01-6fd0",
+            "20261010-201339-council-FPA-VAR-01-a8a0",
+            "20261010-203132-council-FPA-VAR-01-4f3e",
+            "20261010-205043-council-FPA-VAR-01-8d63"
+          ],
+          "stop_decision": "run_5",
+          "workflow_id": "FPA-VAR-01"
+        },
+        {
+          "condition": "baseline",
+          "run_ids": [
+            "20261010-184915-baseline-FPA-VAR-01-ed96",
+            "20261010-193948-baseline-FPA-VAR-01-9ef2",
+            "20261010-195830-baseline-FPA-VAR-01-c54a",
+            "20261010-203046-baseline-FPA-VAR-01-5154",
+            "20261010-205000-baseline-FPA-VAR-01-7c5b"
+          ],
+          "stop_decision": "run_5",
+          "workflow_id": "FPA-VAR-01"
+        },
+        {
+          "condition": "council",
+          "run_ids": [
+            "20261010-192227-council-FPA-ABB-01-333a",
+            "20261010-194031-council-FPA-ABB-01-c041",
+            "20261010-201338-council-FPA-ABB-01-ff17",
+            "20261010-203125-council-FPA-ABB-01-29eb",
+            "20261010-205042-council-FPA-ABB-01-600a"
+          ],
+          "stop_decision": "run_5",
+          "workflow_id": "FPA-ABB-01"
+        },
+        {
+          "condition": "baseline",
+          "run_ids": [
+            "20261010-184915-baseline-FPA-ABB-01-ef83",
+            "20261010-193948-baseline-FPA-ABB-01-09ed",
+            "20261010-195832-baseline-FPA-ABB-01-355a",
+            "20261010-203046-baseline-FPA-ABB-01-95ea",
+            "20261010-205000-baseline-FPA-ABB-01-138f"
+          ],
+          "stop_decision": "run_5",
+          "workflow_id": "FPA-ABB-01"
+        }
+      ],
+      "commit": "fe1a87a8a5672d763c3248a4b18f227ae1b3b204",
+      "label": "Held-out (pre-registered)",
+      "requested_model": "claude-sonnet-5",
+      "runs": [
+        "20261010-184915-baseline-FPA-ABB-01-ef83",
+        "20261010-184915-baseline-FPA-VAR-01-ed96",
+        "20261010-184915-baseline-P2P-EXR-01-0102",
+        "20261010-184915-baseline-P2P-PRE-01-d745",
+        "20261010-184915-baseline-P2P-TWM-01-f555",
+        "20261010-184915-baseline-R2R-ACR-01-0bac",
+        "20261010-184915-baseline-R2R-FSP-01-b1b5",
+        "20261010-184959-council-FPA-VAR-01-7759",
+        "20261010-184959-council-P2P-EXR-01-59a3",
+        "20261010-185003-council-P2P-TWM-01-6c3b",
+        "20261010-185005-council-R2R-ACR-01-60e6",
+        "20261010-192227-council-FPA-ABB-01-333a",
+        "20261010-192227-council-P2P-PRE-01-e0a8",
+        "20261010-192227-council-R2R-FSP-01-c9c7",
+        "20261010-193948-baseline-FPA-ABB-01-09ed",
+        "20261010-193948-baseline-FPA-VAR-01-9ef2",
+        "20261010-193948-baseline-P2P-EXR-01-fca9",
+        "20261010-193948-baseline-P2P-PRE-01-208e",
+        "20261010-193948-baseline-P2P-TWM-01-446f",
+        "20261010-193948-baseline-R2R-ACR-01-464b",
+        "20261010-193948-baseline-R2R-FSP-01-8bc6",
+        "20261010-194031-council-FPA-ABB-01-c041",
+        "20261010-194032-council-FPA-VAR-01-6fd0",
+        "20261010-194034-council-P2P-EXR-01-b45d",
+        "20261010-194035-council-P2P-PRE-01-64dc",
+        "20261010-194038-council-P2P-TWM-01-0842",
+        "20261010-194041-council-R2R-ACR-01-cb53",
+        "20261010-194053-council-R2R-FSP-01-cac9",
+        "20261010-195830-baseline-FPA-VAR-01-c54a",
+        "20261010-195830-baseline-P2P-EXR-01-cf77",
+        "20261010-195830-baseline-P2P-PRE-01-647f",
+        "20261010-195830-baseline-P2P-TWM-01-77c7",
+        "20261010-195830-baseline-R2R-ACR-01-a86d",
+        "20261010-195830-baseline-R2R-FSP-01-38b8",
+        "20261010-195832-baseline-FPA-ABB-01-355a",
+        "20261010-201338-council-FPA-ABB-01-ff17",
+        "20261010-201338-council-P2P-EXR-01-2ec9",
+        "20261010-201338-council-P2P-TWM-01-df77",
+        "20261010-201338-council-R2R-ACR-01-216b",
+        "20261010-201339-council-FPA-VAR-01-a8a0",
+        "20261010-201339-council-P2P-PRE-01-8682",
+        "20261010-201339-council-R2R-FSP-01-d272",
+        "20261010-203046-baseline-FPA-ABB-01-95ea",
+        "20261010-203046-baseline-FPA-VAR-01-5154",
+        "20261010-203046-baseline-P2P-EXR-01-a752",
+        "20261010-203046-baseline-P2P-PRE-01-872e",
+        "20261010-203046-baseline-P2P-TWM-01-76b4",
+        "20261010-203046-baseline-R2R-ACR-01-48b8",
+        "20261010-203046-baseline-R2R-FSP-01-0590",
+        "20261010-203125-council-FPA-ABB-01-29eb",
+        "20261010-203132-council-FPA-VAR-01-4f3e",
+        "20261010-203133-council-P2P-EXR-01-53eb",
+        "20261010-203139-council-P2P-PRE-01-1b2e",
+        "20261010-203143-council-P2P-TWM-01-5ef7",
+        "20261010-203144-council-R2R-ACR-01-dd48",
+        "20261010-203150-council-R2R-FSP-01-5655",
+        "20261010-205000-baseline-FPA-ABB-01-138f",
+        "20261010-205000-baseline-FPA-VAR-01-7c5b",
+        "20261010-205000-baseline-P2P-EXR-01-1a6b",
+        "20261010-205000-baseline-P2P-PRE-01-f62e",
+        "20261010-205000-baseline-P2P-TWM-01-47aa",
+        "20261010-205000-baseline-R2R-ACR-01-688a",
+        "20261010-205000-baseline-R2R-FSP-01-cec0",
+        "20261010-205042-council-FPA-ABB-01-600a",
+        "20261010-205043-council-FPA-VAR-01-8d63",
+        "20261010-205046-council-P2P-TWM-01-c32a",
+        "20261010-205046-council-R2R-ACR-01-517f",
+        "20261010-205048-council-R2R-FSP-01-106a"
+      ],
+      "workflows": [
+        "P2P-TWM-01",
+        "P2P-PRE-01",
+        "P2P-EXR-01",
+        "R2R-ACR-01",
+        "R2R-FSP-01",
+        "FPA-VAR-01",
+        "FPA-ABB-01"
+      ]
+    }
+  },
+  "workflows": [
+    {
+      "function_area": "Procure-to-pay",
+      "name": "Three-way matching",
+      "open_steps": 2,
+      "profile": "transactional",
+      "requirements": 10,
+      "split": "heldout",
+      "steps": 7,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "function_area": "Procure-to-pay",
+      "name": "Payment run execution",
+      "open_steps": 2,
+      "profile": "transactional",
+      "requirements": 11,
+      "split": "heldout",
+      "steps": 8,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "function_area": "Procure-to-pay",
+      "name": "Expense reimbursement",
+      "open_steps": 3,
+      "profile": "transactional",
+      "requirements": 10,
+      "split": "heldout",
+      "steps": 8,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "function_area": "Record-to-report",
+      "name": "Account reconciliation",
+      "open_steps": 2,
+      "profile": "transactional",
+      "requirements": 9,
+      "split": "heldout",
+      "steps": 8,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "function_area": "Record-to-report",
+      "name": "Financial statement preparation",
+      "open_steps": 2,
+      "profile": "judgment-dense",
+      "requirements": 11,
+      "split": "heldout",
+      "steps": 9,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "function_area": "Financial planning and analysis",
+      "name": "Variance analysis",
+      "open_steps": 3,
+      "profile": "judgment-dense",
+      "requirements": 8,
+      "split": "heldout",
+      "steps": 8,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "function_area": "Financial planning and analysis",
+      "name": "Annual budget build",
+      "open_steps": 2,
+      "profile": "judgment-dense",
+      "requirements": 11,
+      "split": "heldout",
+      "steps": 9,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "function_area": "Procure-to-pay",
+      "name": "Vendor invoice processing",
+      "open_steps": 3,
+      "profile": null,
+      "requirements": 8,
+      "split": "dev",
+      "steps": 8,
+      "workflow_id": "P2P-VIP-01"
+    },
+    {
+      "function_area": "Record-to-report",
+      "name": "Period close management",
+      "open_steps": 4,
+      "profile": null,
+      "requirements": 7,
+      "split": "dev",
+      "steps": 8,
+      "workflow_id": "R2R-PC-01"
+    },
+    {
+      "function_area": "Financial planning and analysis",
+      "name": "Rolling forecast update",
+      "open_steps": 4,
+      "profile": null,
+      "requirements": 5,
+      "split": "dev",
+      "steps": 8,
+      "workflow_id": "FPA-RF-01"
+    }
+  ]
+}

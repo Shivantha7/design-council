@@ -1,0 +1,449 @@
+{
+  "fill_ins": {
+    "cells_stopped_at_4": 2,
+    "cells_with_fifth_run": 12,
+    "consistency_by_condition": {
+      "baseline": 0.702494,
+      "council": 0.789201
+    },
+    "h1_branch": "B",
+    "h2_supported": true,
+    "h2_threshold": 4,
+    "h2_workflows_meeting_sesoi": 4,
+    "h3_stabilised_cells": 4,
+    "h3_supported": false,
+    "h3_threshold": 8,
+    "runs_below_1": 10,
+    "runs_below_1_baseline": 1,
+    "runs_below_1_council": 9,
+    "total_runs": 68
+  },
+  "x1_run_completion": [
+    {
+      "baseline_n": 5,
+      "baseline_stopped_at_4": false,
+      "council_n": 5,
+      "council_stopped_at_4": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_n": 5,
+      "baseline_stopped_at_4": false,
+      "council_n": 4,
+      "council_stopped_at_4": true,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_n": 5,
+      "baseline_stopped_at_4": false,
+      "council_n": 4,
+      "council_stopped_at_4": true,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_n": 5,
+      "baseline_stopped_at_4": false,
+      "council_n": 5,
+      "council_stopped_at_4": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_n": 5,
+      "baseline_stopped_at_4": false,
+      "council_n": 5,
+      "council_stopped_at_4": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_n": 5,
+      "baseline_stopped_at_4": false,
+      "council_n": 5,
+      "council_stopped_at_4": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_n": 5,
+      "baseline_stopped_at_4": false,
+      "council_n": 5,
+      "council_stopped_at_4": false,
+      "workflow_id": "FPA-ABB-01"
+    }
+  ],
+  "x2_conformance_failures": [
+    {
+      "condition": "council",
+      "failed": [
+        "TWM-R-06"
+      ],
+      "passed": 9,
+      "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "score": 0.9,
+      "total": 10,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "condition": "council",
+      "failed": [
+        "TWM-R-06"
+      ],
+      "passed": 9,
+      "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+      "score": 0.9,
+      "total": 10,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "condition": "council",
+      "failed": [
+        "TWM-R-06"
+      ],
+      "passed": 9,
+      "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+      "score": 0.9,
+      "total": 10,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "condition": "council",
+      "failed": [
+        "TWM-R-06"
+      ],
+      "passed": 9,
+      "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+      "score": 0.9,
+      "total": 10,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "condition": "council",
+      "failed": [
+        "PRE-R-07"
+      ],
+      "passed": 10,
+      "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+      "score": 0.909091,
+      "total": 11,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "condition": "council",
+      "failed": [
+        "PRE-R-06"
+      ],
+      "passed": 10,
+      "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+      "score": 0.909091,
+      "total": 11,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "condition": "baseline",
+      "failed": [
+        "PRE-R-06"
+      ],
+      "passed": 10,
+      "run_id": "20261010-193948-baseline-P2P-PRE-01-208e",
+      "score": 0.909091,
+      "total": 11,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "condition": "council",
+      "failed": [
+        "EXR-R-01"
+      ],
+      "passed": 9,
+      "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+      "score": 0.9,
+      "total": 10,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "condition": "council",
+      "failed": [
+        "FSP-R-06"
+      ],
+      "passed": 10,
+      "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+      "score": 0.909091,
+      "total": 11,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "condition": "council",
+      "failed": [
+        "ABB-R-07"
+      ],
+      "passed": 10,
+      "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "score": 0.909091,
+      "total": 11,
+      "workflow_id": "FPA-ABB-01"
+    }
+  ],
+  "x3_depth": [
+    {
+      "baseline_max": 0.857143,
+      "baseline_mean": 0.771429,
+      "baseline_min": 0.714286,
+      "council_max": 1.0,
+      "council_mean": 0.971429,
+      "council_min": 0.857143,
+      "gap": 0.2,
+      "gap_exact": "1/5",
+      "meets_sesoi": true,
+      "profile": "transactional",
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_max": 0.75,
+      "baseline_mean": 0.725,
+      "baseline_min": 0.625,
+      "council_max": 0.875,
+      "council_mean": 0.875,
+      "council_min": 0.875,
+      "gap": 0.15,
+      "gap_exact": "3/20",
+      "meets_sesoi": false,
+      "profile": "transactional",
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_max": 1.0,
+      "baseline_mean": 0.825,
+      "baseline_min": 0.625,
+      "council_max": 0.875,
+      "council_mean": 0.875,
+      "council_min": 0.875,
+      "gap": 0.05,
+      "gap_exact": "1/20",
+      "meets_sesoi": false,
+      "profile": "transactional",
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_max": 1.0,
+      "baseline_mean": 0.825,
+      "baseline_min": 0.625,
+      "council_max": 1.0,
+      "council_mean": 0.9,
+      "council_min": 0.875,
+      "gap": 0.075,
+      "gap_exact": "3/40",
+      "meets_sesoi": false,
+      "profile": "transactional",
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_max": 0.666667,
+      "baseline_mean": 0.511111,
+      "baseline_min": 0.333333,
+      "council_max": 0.888889,
+      "council_mean": 0.733333,
+      "council_min": 0.555556,
+      "gap": 0.222222,
+      "gap_exact": "2/9",
+      "meets_sesoi": true,
+      "profile": "judgment-dense",
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_max": 0.75,
+      "baseline_mean": 0.525,
+      "baseline_min": 0.25,
+      "council_max": 1.0,
+      "council_mean": 0.875,
+      "council_min": 0.75,
+      "gap": 0.35,
+      "gap_exact": "7/20",
+      "meets_sesoi": true,
+      "profile": "judgment-dense",
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_max": 0.777778,
+      "baseline_mean": 0.6,
+      "baseline_min": 0.444444,
+      "council_max": 0.888889,
+      "council_mean": 0.8,
+      "council_min": 0.666667,
+      "gap": 0.2,
+      "gap_exact": "1/5",
+      "meets_sesoi": true,
+      "profile": "judgment-dense",
+      "workflow_id": "FPA-ABB-01"
+    }
+  ],
+  "x4_dispositions": {
+    "baseline": {
+      "absorbed": 17,
+      "eliminated": 0,
+      "merged": 81,
+      "restructured": 95,
+      "retained": 92
+    },
+    "council": {
+      "absorbed": 5,
+      "eliminated": 0,
+      "merged": 55,
+      "restructured": 170,
+      "retained": 39
+    }
+  },
+  "x5_stabilisation": [
+    {
+      "after_3": 0.952381,
+      "after_4": 0.964286,
+      "after_5": 0.971429,
+      "condition": "council",
+      "consistency": 0.828571,
+      "consistency_max": 1.0,
+      "consistency_min": 0.571429,
+      "stabilised": "Yes (run 5 = run 4)",
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "after_3": 0.809524,
+      "after_4": 0.785714,
+      "after_5": 0.771429,
+      "condition": "baseline",
+      "consistency": 0.828571,
+      "consistency_max": 1.0,
+      "consistency_min": 0.571429,
+      "stabilised": "Yes (run 5 = run 4)",
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "after_3": 0.875,
+      "after_4": 0.875,
+      "after_5": null,
+      "condition": "council",
+      "consistency": 1.0,
+      "consistency_max": 1.0,
+      "consistency_min": 1.0,
+      "stabilised": "Yes (stopped at 4)",
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "after_3": 0.75,
+      "after_4": 0.71875,
+      "after_5": 0.725,
+      "condition": "baseline",
+      "consistency": 0.85,
+      "consistency_max": 1.0,
+      "consistency_min": 0.625,
+      "stabilised": "No (run 5 ≠ run 4)",
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "after_3": 0.875,
+      "after_4": 0.875,
+      "after_5": null,
+      "condition": "council",
+      "consistency": 0.729167,
+      "consistency_max": 0.875,
+      "consistency_min": 0.625,
+      "stabilised": "Yes (stopped at 4)",
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "after_3": 0.833333,
+      "after_4": 0.8125,
+      "after_5": 0.825,
+      "condition": "baseline",
+      "consistency": 0.5375,
+      "consistency_max": 0.75,
+      "consistency_min": 0.25,
+      "stabilised": "No (run 5 ≠ run 4)",
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "after_3": 0.875,
+      "after_4": 0.90625,
+      "after_5": 0.9,
+      "condition": "council",
+      "consistency": 0.7,
+      "consistency_max": 0.875,
+      "consistency_min": 0.5,
+      "stabilised": "No (run 5 ≠ run 4)",
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "after_3": 0.75,
+      "after_4": 0.78125,
+      "after_5": 0.825,
+      "condition": "baseline",
+      "consistency": 0.6625,
+      "consistency_max": 0.875,
+      "consistency_min": 0.375,
+      "stabilised": "No (run 5 ≠ run 4)",
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "after_3": 0.814815,
+      "after_4": 0.777778,
+      "after_5": 0.733333,
+      "condition": "council",
+      "consistency": 0.666667,
+      "consistency_max": 0.888889,
+      "consistency_min": 0.444444,
+      "stabilised": "No (run 5 ≠ run 4)",
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "after_3": 0.481481,
+      "after_4": 0.527778,
+      "after_5": 0.511111,
+      "condition": "baseline",
+      "consistency": 0.7,
+      "consistency_max": 0.888889,
+      "consistency_min": 0.555556,
+      "stabilised": "No (run 5 ≠ run 4)",
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "after_3": 0.916667,
+      "after_4": 0.90625,
+      "after_5": 0.875,
+      "condition": "council",
+      "consistency": 0.8,
+      "consistency_max": 1.0,
+      "consistency_min": 0.625,
+      "stabilised": "No (run 5 ≠ run 4)",
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "after_3": 0.625,
+      "after_4": 0.53125,
+      "after_5": 0.525,
+      "condition": "baseline",
+      "consistency": 0.75,
+      "consistency_max": 1.0,
+      "consistency_min": 0.5,
+      "stabilised": "No (run 5 ≠ run 4)",
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "after_3": 0.777778,
+      "after_4": 0.805556,
+      "after_5": 0.8,
+      "condition": "council",
+      "consistency": 0.8,
+      "consistency_max": 1.0,
+      "consistency_min": 0.555556,
+      "stabilised": "No (run 5 ≠ run 4)",
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "after_3": 0.666667,
+      "after_4": 0.638889,
+      "after_5": 0.6,
+      "condition": "baseline",
+      "consistency": 0.588889,
+      "consistency_max": 0.888889,
+      "consistency_min": 0.222222,
+      "stabilised": "No (run 5 ≠ run 4)",
+      "workflow_id": "FPA-ABB-01"
+    }
+  ]
+}

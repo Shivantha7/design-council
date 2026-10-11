@@ -1,0 +1,170 @@
+{
+  "council_to_baseline_cost_ratio": 19.058971,
+  "descriptive": true,
+  "per_cell": [
+    {
+      "calls": 15.0,
+      "condition": "council",
+      "cost_usd": 1.411109,
+      "input_tokens": 279255.4,
+      "n": 5,
+      "output_tokens": 85259.8,
+      "runtime_min": 16.582779,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "calls": 1.0,
+      "condition": "baseline",
+      "cost_usd": 0.0662,
+      "input_tokens": 7720.0,
+      "n": 5,
+      "output_tokens": 5076.0,
+      "runtime_min": 0.742115,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "calls": 15.0,
+      "condition": "council",
+      "cost_usd": 1.45665,
+      "input_tokens": 286784.0,
+      "n": 4,
+      "output_tokens": 88308.25,
+      "runtime_min": 17.151329,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "calls": 1.0,
+      "condition": "baseline",
+      "cost_usd": 0.075602,
+      "input_tokens": 7688.0,
+      "n": 5,
+      "output_tokens": 6022.6,
+      "runtime_min": 0.858556,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "calls": 15.0,
+      "condition": "council",
+      "cost_usd": 1.396753,
+      "input_tokens": 279267.75,
+      "n": 4,
+      "output_tokens": 83821.75,
+      "runtime_min": 16.449495,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "calls": 1.0,
+      "condition": "baseline",
+      "cost_usd": 0.06672,
+      "input_tokens": 7435.0,
+      "n": 5,
+      "output_tokens": 5185.0,
+      "runtime_min": 0.753482,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "calls": 15.0,
+      "condition": "council",
+      "cost_usd": 1.33035,
+      "input_tokens": 277720.8,
+      "n": 5,
+      "output_tokens": 77490.8,
+      "runtime_min": 15.153815,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "calls": 1.0,
+      "condition": "baseline",
+      "cost_usd": 0.067118,
+      "input_tokens": 7436.0,
+      "n": 5,
+      "output_tokens": 5224.6,
+      "runtime_min": 0.74941,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "calls": 15.2,
+      "condition": "council",
+      "cost_usd": 1.528672,
+      "input_tokens": 308575.2,
+      "n": 5,
+      "output_tokens": 91152.2,
+      "runtime_min": 17.270604,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "calls": 1.0,
+      "condition": "baseline",
+      "cost_usd": 0.079692,
+      "input_tokens": 8008.0,
+      "n": 5,
+      "output_tokens": 6367.6,
+      "runtime_min": 0.897486,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "calls": 15.0,
+      "condition": "council",
+      "cost_usd": 1.32449,
+      "input_tokens": 272712.8,
+      "n": 5,
+      "output_tokens": 77906.4,
+      "runtime_min": 15.214311,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "calls": 1.0,
+      "condition": "baseline",
+      "cost_usd": 0.063708,
+      "input_tokens": 7348.0,
+      "n": 5,
+      "output_tokens": 4901.2,
+      "runtime_min": 0.673901,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "calls": 15.0,
+      "condition": "council",
+      "cost_usd": 1.464716,
+      "input_tokens": 297212.2,
+      "n": 5,
+      "output_tokens": 87029.2,
+      "runtime_min": 16.909649,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "calls": 1.0,
+      "condition": "baseline",
+      "cost_usd": 0.071126,
+      "input_tokens": 7828.0,
+      "n": 5,
+      "output_tokens": 5547.0,
+      "runtime_min": 0.819227,
+      "workflow_id": "FPA-ABB-01"
+    }
+  ],
+  "prices_usd_per_million": {
+    "input": 2.0,
+    "output": 10.0
+  },
+  "totals": {
+    "baseline": {
+      "calls": 35,
+      "cost_usd": 2.45083,
+      "input_tokens": 267315,
+      "mean_cost_usd": 0.070024,
+      "mean_runtime_min": 0.784882,
+      "output_tokens": 191620,
+      "runs": 35
+    },
+    "council": {
+      "calls": 496,
+      "cost_usd": 46.710298,
+      "input_tokens": 9441589,
+      "mean_cost_usd": 1.415464,
+      "mean_runtime_min": 16.365427,
+      "output_tokens": 2782712,
+      "runs": 33
+    }
+  }
+}
