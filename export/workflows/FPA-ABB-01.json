@@ -1,0 +1,240 @@
+{
+  "domain": "FPA",
+  "function_area": "Financial planning and analysis",
+  "name": "Annual budget build",
+  "open_steps": [
+    "ABB-02",
+    "ABB-07"
+  ],
+  "profile": "judgment-dense",
+  "requirements": [
+    {
+      "params": {
+        "baseline_step_id": "ABB-01"
+      },
+      "requirement_id": "ABB-R-01",
+      "rule_type": "step_preserved",
+      "statement": "Issue of the budget calendar and central planning assumptions must survive in some form."
+    },
+    {
+      "params": {
+        "baseline_step_id": "ABB-03"
+      },
+      "requirement_id": "ABB-R-02",
+      "rule_type": "step_preserved",
+      "statement": "Revenue and volume planning must survive in some form."
+    },
+    {
+      "params": {
+        "baseline_step_id": "ABB-04"
+      },
+      "requirement_id": "ABB-R-03",
+      "rule_type": "step_preserved",
+      "statement": "Cost centre and headcount budgeting must survive in some form."
+    },
+    {
+      "params": {
+        "baseline_step_id": "ABB-05",
+        "required_inputs": [
+          "Business case for capex above threshold"
+        ]
+      },
+      "requirement_id": "ABB-R-04",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries capex requests must still consume a business case for capex above threshold."
+    },
+    {
+      "params": {
+        "baseline_step_id": "ABB-06",
+        "required_inputs": [
+          "Accounting policies applied to actuals"
+        ]
+      },
+      "requirement_id": "ABB-R-05",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries consolidation of the draft budget must still consume the accounting policies applied to actuals (KB-06)."
+    },
+    {
+      "params": {
+        "baseline_step_id": "ABB-06"
+      },
+      "requirement_id": "ABB-R-06",
+      "rule_type": "step_preserved",
+      "statement": "Consolidation into a draft P&L, balance sheet and cash flow must survive in some form."
+    },
+    {
+      "params": {
+        "baseline_step_id": "ABB-06",
+        "required_inputs": [
+          "Central FX assumptions"
+        ]
+      },
+      "requirement_id": "ABB-R-07",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries consolidation of the draft budget must still consume the central FX assumptions (KB-07)."
+    },
+    {
+      "params": {
+        "after_step_id": "ABB-09",
+        "before_step_id": "ABB-08"
+      },
+      "requirement_id": "ABB-R-08",
+      "rule_type": "ordering_preserved",
+      "statement": "Board approval must occur before the approved version is loaded and locked."
+    },
+    {
+      "params": {
+        "baseline_step_id": "ABB-09"
+      },
+      "requirement_id": "ABB-R-09",
+      "rule_type": "step_preserved",
+      "statement": "Loading and locking of the approved version must survive in some form."
+    },
+    {
+      "params": {
+        "baseline_step_id": "ABB-01",
+        "required_inputs": [
+          "Downside macro scenario"
+        ]
+      },
+      "requirement_id": "ABB-R-10",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries issue of the central planning assumptions must still consume a downside macro scenario."
+    },
+    {
+      "params": {
+        "baseline_step_id": "ABB-08"
+      },
+      "requirement_id": "ABB-R-11",
+      "rule_type": "step_preserved",
+      "statement": "Board approval must survive in some form."
+    }
+  ],
+  "source": {
+    "document_reference": "APQC PCF Cross-Industry v8.0 (Feb 2026), process anchor pending verification (budget development); step decomposition per docs/HELDOUT_SPEC_2026-10-10.md (signed off 10 Oct 2026). APQC activity IDs pending verification against PCF v8.0 text.",
+    "publisher": "APQC"
+  },
+  "split": "heldout",
+  "steps": [
+    {
+      "actor": "FP&A manager",
+      "description": "The budget calendar and central planning assumptions (inflation, FX, interest rates), including at least one downside macro scenario, are issued to all submitters.",
+      "inputs": [
+        "Macroeconomic outlook",
+        "Downside macro scenario"
+      ],
+      "name": "Issue calendar and central planning assumptions",
+      "outputs": [
+        "Budget calendar",
+        "Central planning assumptions",
+        "Central FX assumptions"
+      ],
+      "step_id": "ABB-01"
+    },
+    {
+      "actor": "CEO / CFO",
+      "description": "Top-down revenue, margin and cost targets are set.",
+      "inputs": [
+        "Strategic plan",
+        "Central planning assumptions"
+      ],
+      "name": "Set top-down targets",
+      "outputs": [
+        "Top-down targets"
+      ],
+      "step_id": "ABB-02"
+    },
+    {
+      "actor": "Business unit heads",
+      "description": "Business unit heads prepare and own revenue and volume plans.",
+      "inputs": [
+        "Top-down targets",
+        "Central planning assumptions"
+      ],
+      "name": "Revenue and volume plans",
+      "outputs": [
+        "Revenue and volume plans"
+      ],
+      "step_id": "ABB-03"
+    },
+    {
+      "actor": "Cost centre owners",
+      "description": "Cost centre owners prepare and own cost centre and headcount budgets.",
+      "inputs": [
+        "Top-down targets",
+        "Central planning assumptions"
+      ],
+      "name": "Cost centre and headcount budgets",
+      "outputs": [
+        "Cost centre and headcount budgets"
+      ],
+      "step_id": "ABB-04"
+    },
+    {
+      "actor": "Business unit heads",
+      "description": "Business unit heads submit capex requests, with a business case for requests above the threshold.",
+      "inputs": [
+        "Business case for capex above threshold",
+        "Central planning assumptions"
+      ],
+      "name": "Capex requests",
+      "outputs": [
+        "Capex requests"
+      ],
+      "step_id": "ABB-05"
+    },
+    {
+      "actor": "FP&A analyst",
+      "description": "Submissions are consolidated into a draft three-statement budget prepared on the same accounting basis as actuals, with the three statements reconciled.",
+      "inputs": [
+        "Revenue and volume plans",
+        "Cost centre and headcount budgets",
+        "Capex requests",
+        "Accounting policies applied to actuals",
+        "Central FX assumptions"
+      ],
+      "name": "Consolidate into draft P&L, balance sheet, cash flow",
+      "outputs": [
+        "Draft three-statement budget"
+      ],
+      "step_id": "ABB-06"
+    },
+    {
+      "actor": "FP&A manager / CFO",
+      "description": "The draft budget is reviewed and challenged in iterations with submitters.",
+      "inputs": [
+        "Draft three-statement budget"
+      ],
+      "name": "Review and challenge iterations",
+      "outputs": [
+        "Revised budget"
+      ],
+      "step_id": "ABB-07"
+    },
+    {
+      "actor": "Board",
+      "description": "The board approves the budget.",
+      "inputs": [
+        "Revised budget"
+      ],
+      "name": "Board approval",
+      "outputs": [
+        "Board-approved budget"
+      ],
+      "step_id": "ABB-08"
+    },
+    {
+      "actor": "FP&A analyst",
+      "description": "The approved budget is loaded and locked as the single version used by variance analysis.",
+      "inputs": [
+        "Board-approved budget"
+      ],
+      "name": "Load and lock approved version",
+      "outputs": [
+        "Locked approved budget version"
+      ],
+      "step_id": "ABB-09"
+    }
+  ],
+  "workflow_id": "FPA-ABB-01"
+}

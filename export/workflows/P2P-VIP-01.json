@@ -1,0 +1,209 @@
+{
+  "domain": "P2P",
+  "function_area": "Procure-to-pay",
+  "name": "Vendor invoice processing",
+  "open_steps": [
+    "VIP-01",
+    "VIP-02",
+    "VIP-04"
+  ],
+  "profile": null,
+  "requirements": [
+    {
+      "params": {
+        "baseline_step_id": "VIP-03"
+      },
+      "requirement_id": "VIP-R-01",
+      "rule_type": "step_preserved",
+      "statement": "The objective of three-way matching must survive the redesign in some form; the matching function may be retained, restructured, merged or absorbed, but not eliminated."
+    },
+    {
+      "params": {
+        "baseline_step_id": "VIP-03",
+        "required_inputs": [
+          "Purchase order data",
+          "Goods receipt note data"
+        ]
+      },
+      "requirement_id": "VIP-R-02",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries the matching function must still consume PO data and GRN data."
+    },
+    {
+      "params": {
+        "baseline_step_id": "VIP-05"
+      },
+      "requirement_id": "VIP-R-03",
+      "rule_type": "step_preserved",
+      "statement": "Invoice approval must survive in some form."
+    },
+    {
+      "params": {
+        "after_step_id": "VIP-07",
+        "before_step_id": "VIP-05"
+      },
+      "requirement_id": "VIP-R-04",
+      "rule_type": "ordering_preserved",
+      "statement": "Approval must occur before payment execution."
+    },
+    {
+      "params": {
+        "baseline_step_id": "VIP-06"
+      },
+      "requirement_id": "VIP-R-05",
+      "rule_type": "step_preserved",
+      "statement": "GL posting must survive; invoices cannot bypass the ledger."
+    },
+    {
+      "params": {
+        "baseline_step_ids": [
+          "VIP-05",
+          "VIP-06"
+        ]
+      },
+      "requirement_id": "VIP-R-06",
+      "rule_type": "actor_separation",
+      "statement": "The approval function and the posting function must not be performed by the same actor."
+    },
+    {
+      "params": {
+        "baseline_step_id": "VIP-08"
+      },
+      "requirement_id": "VIP-R-07",
+      "rule_type": "step_preserved",
+      "statement": "AP reconciliation must survive the redesign."
+    },
+    {
+      "params": {
+        "baseline_step_id": "VIP-07"
+      },
+      "requirement_id": "VIP-R-08",
+      "rule_type": "step_preserved",
+      "statement": "Payment execution must survive in some form."
+    }
+  ],
+  "source": {
+    "document_reference": "APQC PCF Cross-Industry v8.0 (Feb 2026), 9.6.1 Process accounts payable (10756); step decomposition per PhD encoding spec v1.0 with HighRadius/Conduent/AFP/Trintech practitioner documentation.",
+    "publisher": "APQC"
+  },
+  "split": "dev",
+  "steps": [
+    {
+      "actor": "AP clerk",
+      "description": "Vendor invoices arrive through multiple channels and are logged as invoice records carrying header metadata, establishing the population of invoices entering the process.",
+      "inputs": [
+        "Vendor invoice (email PDF, EDI, supplier portal or paper)"
+      ],
+      "name": "Invoice receipt and intake",
+      "outputs": [
+        "Invoice record with header metadata"
+      ],
+      "step_id": "VIP-01"
+    },
+    {
+      "actor": "AP clerk (with OCR/validation engine)",
+      "description": "Invoice content is extracted from the raw file and validated into a structured record covering vendor ID, invoice number, dates, amounts, currency, line items, tax and PO reference.",
+      "inputs": [
+        "Raw invoice file"
+      ],
+      "name": "Data extraction and validation",
+      "outputs": [
+        "Structured validated invoice record"
+      ],
+      "step_id": "VIP-02"
+    },
+    {
+      "actor": "AP analyst (with ERP matching engine)",
+      "description": "The validated invoice is matched against purchase order and goods receipt data, yielding a clean match, a match within tolerance, or an exception.",
+      "inputs": [
+        "Structured validated invoice record",
+        "Purchase order data",
+        "Goods receipt note data"
+      ],
+      "name": "Purchase order matching",
+      "outputs": [
+        "Match result (clean, tolerance or exception)"
+      ],
+      "step_id": "VIP-03"
+    },
+    {
+      "actor": "AP analyst",
+      "description": "Invoices flagged as exceptions are investigated against variance detail and source documents, and resolved as approved, rejected or held, with the resolution evidenced.",
+      "inputs": [
+        "Exception-flagged invoice",
+        "Variance detail",
+        "Purchase order data",
+        "Goods receipt note data"
+      ],
+      "name": "Exception handling and resolution",
+      "outputs": [
+        "Resolved invoice (approved, rejected or held)",
+        "Audit trail"
+      ],
+      "step_id": "VIP-04"
+    },
+    {
+      "actor": "Approver hierarchy",
+      "description": "Matched invoices are routed through the approval hierarchy according to the approval matrix and authorised for posting.",
+      "inputs": [
+        "Matched invoice",
+        "GL coding",
+        "Approval matrix"
+      ],
+      "name": "Approval routing and authorisation",
+      "outputs": [
+        "Fully approved invoice"
+      ],
+      "step_id": "VIP-05"
+    },
+    {
+      "actor": "AP accountant",
+      "description": "The approved invoice is coded to the chart of accounts, cost centres and project codes, then posted to the general ledger and the accounts payable subledger.",
+      "inputs": [
+        "Fully approved invoice",
+        "Chart of accounts",
+        "Cost centres",
+        "Project codes"
+      ],
+      "name": "GL coding and posting",
+      "outputs": [
+        "GL journal entry posted",
+        "AP subledger updated"
+      ],
+      "step_id": "VIP-06"
+    },
+    {
+      "actor": "Treasury/AP payments officer",
+      "description": "Posted invoices are scheduled against payment terms, vendor bank details and the cash position; a payment file is generated, transmitted and confirmed.",
+      "inputs": [
+        "Approved posted invoice",
+        "Payment terms",
+        "Vendor bank details",
+        "Cash position"
+      ],
+      "name": "Payment scheduling and execution",
+      "outputs": [
+        "Payment file generated",
+        "Payment transmitted",
+        "Payment confirmation received"
+      ],
+      "step_id": "VIP-07"
+    },
+    {
+      "actor": "AP accountant",
+      "description": "Bank confirmations, the AP subledger and vendor statements are reconciled, and the period-end accounts payable balance is confirmed.",
+      "inputs": [
+        "Bank confirmations",
+        "AP subledger",
+        "Vendor statements"
+      ],
+      "name": "Reconciliation and period close",
+      "outputs": [
+        "Reconciled AP ledger",
+        "Period-end balance confirmed"
+      ],
+      "step_id": "VIP-08"
+    }
+  ],
+  "workflow_id": "P2P-VIP-01"
+}

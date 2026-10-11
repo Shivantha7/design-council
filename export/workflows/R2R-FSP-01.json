@@ -1,0 +1,248 @@
+{
+  "domain": "R2R",
+  "function_area": "Record-to-report",
+  "name": "Financial statement preparation",
+  "open_steps": [
+    "FSP-07",
+    "FSP-09"
+  ],
+  "profile": "judgment-dense",
+  "requirements": [
+    {
+      "params": {
+        "after_step_id": "FSP-06",
+        "before_step_id": "FSP-01"
+      },
+      "requirement_id": "FSP-R-01",
+      "rule_type": "ordering_preserved",
+      "statement": "Trial balance close must be confirmed before the primary statements are drafted."
+    },
+    {
+      "params": {
+        "baseline_step_id": "FSP-02",
+        "required_inputs": [
+          "Approved period-end adjustment schedule"
+        ]
+      },
+      "requirement_id": "FSP-R-02",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries posting of period-end adjustments must still consume the approved period-end adjustment schedule."
+    },
+    {
+      "params": {
+        "baseline_step_id": "FSP-03",
+        "required_inputs": [
+          "Intercompany balances and transactions"
+        ]
+      },
+      "requirement_id": "FSP-R-03",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries consolidation must still consume intercompany balances and transactions (KB-14)."
+    },
+    {
+      "params": {
+        "baseline_step_id": "FSP-04",
+        "required_inputs": [
+          "Closing and average exchange rates"
+        ]
+      },
+      "requirement_id": "FSP-R-04",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries translation of the foreign operation must still consume closing and average exchange rates (KB-07, KB-08)."
+    },
+    {
+      "params": {
+        "baseline_step_id": "FSP-05",
+        "required_inputs": [
+          "Statement line-item structure"
+        ]
+      },
+      "requirement_id": "FSP-R-05",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries mapping to statement line items must still consume the statement line-item structure (KB-02)."
+    },
+    {
+      "params": {
+        "baseline_step_id": "FSP-02",
+        "required_inputs": [
+          "Revenue cut-off evidence"
+        ]
+      },
+      "requirement_id": "FSP-R-06",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries posting of period-end adjustments must still consume revenue cut-off evidence (KB-13, KB-03)."
+    },
+    {
+      "params": {
+        "baseline_step_id": "FSP-06",
+        "required_inputs": [
+          "Accounting policy change and prior-period error record"
+        ]
+      },
+      "requirement_id": "FSP-R-07",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries drafting of the statements and notes must still consume the accounting policy change and prior-period error record (KB-05, KB-06)."
+    },
+    {
+      "params": {
+        "baseline_step_ids": [
+          "FSP-06",
+          "FSP-08"
+        ]
+      },
+      "requirement_id": "FSP-R-08",
+      "rule_type": "actor_separation",
+      "statement": "Statement drafting and management approval must not be performed by the same actor."
+    },
+    {
+      "params": {
+        "baseline_step_id": "FSP-08"
+      },
+      "requirement_id": "FSP-R-09",
+      "rule_type": "step_preserved",
+      "statement": "Management review and approval must survive in some form."
+    },
+    {
+      "params": {
+        "baseline_step_id": "FSP-01"
+      },
+      "requirement_id": "FSP-R-10",
+      "rule_type": "step_preserved",
+      "statement": "Confirmation of trial balance close must survive in some form."
+    },
+    {
+      "params": {
+        "baseline_step_id": "FSP-06"
+      },
+      "requirement_id": "FSP-R-11",
+      "rule_type": "step_preserved",
+      "statement": "Drafting of the primary statements and key notes must survive in some form."
+    }
+  ],
+  "source": {
+    "document_reference": "APQC PCF Cross-Industry v8.0 (Feb 2026), process anchor pending verification (external financial reporting); step decomposition per docs/HELDOUT_SPEC_2026-10-10.md (signed off 10 Oct 2026). APQC activity IDs pending verification against PCF v8.0 text.",
+    "publisher": "APQC"
+  },
+  "split": "heldout",
+  "steps": [
+    {
+      "actor": "GL accountant",
+      "description": "Subledger closure and completion of reconciliations are confirmed, establishing the closed, reconciled trial balance.",
+      "inputs": [
+        "Subledger close status",
+        "Reconciliation status report"
+      ],
+      "name": "Confirm trial balance close",
+      "outputs": [
+        "Closed reconciled trial balance"
+      ],
+      "step_id": "FSP-01"
+    },
+    {
+      "actor": "GL accountant",
+      "description": "Approved period-end adjustments (accruals, provisions, deferrals, cut-off) are posted, with revenue cut-off verified.",
+      "inputs": [
+        "Approved period-end adjustment schedule",
+        "Revenue cut-off evidence",
+        "Closed reconciled trial balance"
+      ],
+      "name": "Post period-end adjustments",
+      "outputs": [
+        "Adjusted trial balance"
+      ],
+      "step_id": "FSP-02"
+    },
+    {
+      "actor": "Group accountant",
+      "description": "Entity trial balances are consolidated and intercompany balances and transactions are eliminated.",
+      "inputs": [
+        "Adjusted trial balance",
+        "Intercompany balances and transactions"
+      ],
+      "name": "Consolidation and intercompany elimination",
+      "outputs": [
+        "Consolidated trial balance"
+      ],
+      "step_id": "FSP-03"
+    },
+    {
+      "actor": "Group accountant",
+      "description": "The foreign subsidiary's results and position are translated into the presentation currency, with translation differences taken to other comprehensive income.",
+      "inputs": [
+        "Foreign subsidiary trial balance",
+        "Closing and average exchange rates"
+      ],
+      "name": "Translate foreign operation",
+      "outputs": [
+        "Translated subsidiary trial balance",
+        "Translation differences"
+      ],
+      "step_id": "FSP-04"
+    },
+    {
+      "actor": "Financial reporting",
+      "description": "The consolidated trial balance is mapped to the statement line-item structure.",
+      "inputs": [
+        "Consolidated trial balance",
+        "Translated subsidiary trial balance",
+        "Statement line-item structure"
+      ],
+      "name": "Map trial balance to statement line items",
+      "outputs": [
+        "Mapped statement data"
+      ],
+      "step_id": "FSP-05"
+    },
+    {
+      "actor": "Financial reporting",
+      "description": "The primary statements and key notes (accounting policies, revenue, FX, errors) are drafted, including disclosure of policy changes and prior-period errors.",
+      "inputs": [
+        "Mapped statement data",
+        "Accounting policy change and prior-period error record"
+      ],
+      "name": "Draft primary statements and key notes",
+      "outputs": [
+        "Draft financial statements"
+      ],
+      "step_id": "FSP-06"
+    },
+    {
+      "actor": "Financial reporting",
+      "description": "The draft statements are analytically reviewed and tied out to the trial balance and supporting schedules.",
+      "inputs": [
+        "Draft financial statements"
+      ],
+      "name": "Analytical review and tie-out",
+      "outputs": [
+        "Tie-out evidence"
+      ],
+      "step_id": "FSP-07"
+    },
+    {
+      "actor": "CFO",
+      "description": "Management reviews and approves the financial statements.",
+      "inputs": [
+        "Draft financial statements",
+        "Tie-out evidence"
+      ],
+      "name": "Management review and approval",
+      "outputs": [
+        "Approved financial statements"
+      ],
+      "step_id": "FSP-08"
+    },
+    {
+      "actor": "CFO",
+      "description": "The approved financial statements are released or submitted.",
+      "inputs": [
+        "Approved financial statements"
+      ],
+      "name": "Release / submission",
+      "outputs": [
+        "Released financial statements"
+      ],
+      "step_id": "FSP-09"
+    }
+  ],
+  "workflow_id": "R2R-FSP-01"
+}

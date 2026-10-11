@@ -1,0 +1,206 @@
+{
+  "domain": "FPA",
+  "function_area": "Financial planning and analysis",
+  "name": "Variance analysis",
+  "open_steps": [
+    "VAR-05",
+    "VAR-06",
+    "VAR-08"
+  ],
+  "profile": "judgment-dense",
+  "requirements": [
+    {
+      "params": {
+        "baseline_step_id": "VAR-01",
+        "required_inputs": [
+          "Locked-period actuals"
+        ]
+      },
+      "requirement_id": "VAR-R-01",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries extraction of actuals must still consume locked-period actuals."
+    },
+    {
+      "params": {
+        "baseline_step_id": "VAR-02",
+        "required_inputs": [
+          "Approved budget version",
+          "Latest forecast"
+        ]
+      },
+      "requirement_id": "VAR-R-02",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries loading of comparatives must still consume the approved budget version and the latest forecast."
+    },
+    {
+      "params": {
+        "baseline_step_id": "VAR-04",
+        "required_inputs": [
+          "Materiality thresholds (percentage and absolute)"
+        ]
+      },
+      "requirement_id": "VAR-R-03",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries selection of variances to explain must still consume the percentage and absolute materiality thresholds."
+    },
+    {
+      "params": {
+        "baseline_step_ids": [
+          "VAR-04",
+          "VAR-07"
+        ]
+      },
+      "requirement_id": "VAR-R-04",
+      "rule_type": "actor_separation",
+      "statement": "Selection of variances to explain and review of the variance report must not be performed by the same actor."
+    },
+    {
+      "params": {
+        "baseline_step_id": "VAR-03",
+        "required_inputs": [
+          "Accounting policies applied to actuals"
+        ]
+      },
+      "requirement_id": "VAR-R-05",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries variance computation must still consume the accounting policies applied to actuals (KB-06)."
+    },
+    {
+      "params": {
+        "baseline_step_id": "VAR-03",
+        "required_inputs": [
+          "Constant-currency exchange rates"
+        ]
+      },
+      "requirement_id": "VAR-R-06",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries variance computation must still consume constant-currency exchange rates (KB-07)."
+    },
+    {
+      "params": {
+        "baseline_step_id": "VAR-07"
+      },
+      "requirement_id": "VAR-R-07",
+      "rule_type": "step_preserved",
+      "statement": "Review and challenge of the variance report must survive in some form."
+    },
+    {
+      "params": {
+        "baseline_step_id": "VAR-04"
+      },
+      "requirement_id": "VAR-R-08",
+      "rule_type": "step_preserved",
+      "statement": "Application of materiality thresholds must survive in some form."
+    }
+  ],
+  "source": {
+    "document_reference": "APQC PCF Cross-Industry v8.0 (Feb 2026), process anchor pending verification (performance analysis and reporting); step decomposition per docs/HELDOUT_SPEC_2026-10-10.md (signed off 10 Oct 2026). APQC activity IDs pending verification against PCF v8.0 text.",
+    "publisher": "APQC"
+  },
+  "split": "heldout",
+  "steps": [
+    {
+      "actor": "FP&A analyst",
+      "description": "Actuals are extracted from the locked, closed period.",
+      "inputs": [
+        "Locked-period actuals"
+      ],
+      "name": "Extract actuals from the closed period",
+      "outputs": [
+        "Actuals dataset"
+      ],
+      "step_id": "VAR-01"
+    },
+    {
+      "actor": "FP&A analyst",
+      "description": "The approved budget version and the latest forecast are loaded as comparatives.",
+      "inputs": [
+        "Approved budget version",
+        "Latest forecast"
+      ],
+      "name": "Load approved budget and latest forecast",
+      "outputs": [
+        "Comparatives dataset"
+      ],
+      "step_id": "VAR-02"
+    },
+    {
+      "actor": "FP&A analyst",
+      "description": "Price, volume and mix variances are computed on actuals and budget prepared on the same accounting basis, with the FX effect isolated at constant currency.",
+      "inputs": [
+        "Actuals dataset",
+        "Comparatives dataset",
+        "Accounting policies applied to actuals",
+        "Constant-currency exchange rates"
+      ],
+      "name": "Compute price, volume and mix variances",
+      "outputs": [
+        "Variance dataset"
+      ],
+      "step_id": "VAR-03"
+    },
+    {
+      "actor": "FP&A analyst",
+      "description": "Variances exceeding either the percentage or the absolute threshold are selected for explanation.",
+      "inputs": [
+        "Variance dataset",
+        "Materiality thresholds (percentage and absolute)"
+      ],
+      "name": "Apply materiality thresholds",
+      "outputs": [
+        "Variances to explain"
+      ],
+      "step_id": "VAR-04"
+    },
+    {
+      "actor": "Budget holders",
+      "description": "Accountable budget holders provide commentary on the selected variances.",
+      "inputs": [
+        "Variances to explain"
+      ],
+      "name": "Obtain commentary from budget holders",
+      "outputs": [
+        "Budget holder commentary"
+      ],
+      "step_id": "VAR-05"
+    },
+    {
+      "actor": "FP&A analyst",
+      "description": "Variances and commentary are consolidated into a draft variance report.",
+      "inputs": [
+        "Variances to explain",
+        "Budget holder commentary"
+      ],
+      "name": "Consolidate and draft variance report",
+      "outputs": [
+        "Draft variance report"
+      ],
+      "step_id": "VAR-06"
+    },
+    {
+      "actor": "FP&A manager",
+      "description": "The draft report and its commentary are reviewed and challenged.",
+      "inputs": [
+        "Draft variance report"
+      ],
+      "name": "Review and challenge",
+      "outputs": [
+        "Reviewed variance report"
+      ],
+      "step_id": "VAR-07"
+    },
+    {
+      "actor": "FP&A manager",
+      "description": "The reviewed report is presented and distributed to management.",
+      "inputs": [
+        "Reviewed variance report"
+      ],
+      "name": "Present and distribute to management",
+      "outputs": [
+        "Distributed variance report"
+      ],
+      "step_id": "VAR-08"
+    }
+  ],
+  "workflow_id": "FPA-VAR-01"
+}

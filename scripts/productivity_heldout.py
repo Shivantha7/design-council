@@ -225,15 +225,12 @@ def bootstrap(per_workflow: dict[str, float], workflows: list[str], rng: random.
 # --- main ----------------------------------------------------------------------
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__,
-                                     formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--set-name", required=True)
-    parser.add_argument("--runs-root", type=Path, default=RUNS_ROOT)
-    parser.add_argument("--out", type=Path, required=True)
-    args = parser.parse_args()
+def compute(set_name: str, runs_root: Path = RUNS_ROOT):
+    """All section 3-6 figures. Returns (encodings, council, tss, results).
 
-    encodings, council, tss = load(args.set_name, args.runs_root)
+    Shared by main() and scripts/export_app_data.py, so both report the same numbers.
+    """
+    encodings, council, tss = load(set_name, runs_root)
     carry = {v: {r: carried(encodings[wf], tss[r], v) for wf in TEMPLATE_WORKFLOWS for r in council[wf]}
              for v in VARIANTS}
 
@@ -300,6 +297,19 @@ def main() -> int:
             "pooled": pooled_stats, "worst": worst, "prcc": sens, "oat": oat_rows,
             "central": oat("m", mean(M)),
         }
+
+    return encodings, council, tss, results
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--set-name", required=True)
+    parser.add_argument("--runs-root", type=Path, default=RUNS_ROOT)
+    parser.add_argument("--out", type=Path, required=True)
+    args = parser.parse_args()
+
+    encodings, council, tss, results = compute(args.set_name, args.runs_root)
 
     out = []
     add = out.append

@@ -1,0 +1,6417 @@
+{
+  "by_role": [
+    {
+      "any": 36,
+      "primary": 28,
+      "role": "agentic_architect"
+    },
+    {
+      "any": 22,
+      "primary": 21,
+      "role": "emerging_economy"
+    },
+    {
+      "any": 19,
+      "primary": 12,
+      "role": "hitl_designer"
+    },
+    {
+      "any": 13,
+      "primary": 9,
+      "role": "finance_domain"
+    },
+    {
+      "any": 9,
+      "primary": 4,
+      "role": "accounting_standards"
+    },
+    {
+      "any": 9,
+      "primary": 4,
+      "role": "pragmatist"
+    },
+    {
+      "any": 1,
+      "primary": 0,
+      "role": "maximalist"
+    }
+  ],
+  "controls": [
+    {
+      "baseline_present": 1,
+      "control_id": "TWM-M01",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "TWM-C01"
+      ],
+      "merged_ids": [
+        "TWM-M01"
+      ],
+      "name": "Data-gap exception at match-dataset assembly",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "missing or ambiguous data is queued and flagged as insufficient, never defaulted to a pass",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "agentic_architect",
+        "emerging_economy",
+        "pragmatist"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M02",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "TWM-C02"
+      ],
+      "merged_ids": [
+        "TWM-M02"
+      ],
+      "name": "Ambiguous classification defaults to human lane",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "Any variance the engine cannot classify with confidence defaults to escalation into the exception queue, never to automatic clearance",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M03",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "TWM-C03"
+      ],
+      "merged_ids": [
+        "TWM-M03"
+      ],
+      "name": "Manual/degraded-mode fallback for match execution",
+      "outcome": "PASS",
+      "primary_role": "pragmatist",
+      "quote": "the function degrades to a documented fallback",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "pragmatist",
+        "emerging_economy"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "TWM-M04",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "TWM-C04"
+      ],
+      "merged_ids": [
+        "TWM-M04"
+      ],
+      "name": "Quantity and price/terms variances as separately retrievable artifacts",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "accounting_standards",
+      "quote": "three separately named, independently retrievable artifacts rather than a single opaque match flag",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "accounting_standards",
+        "agentic_architect",
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M05",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "TWM-C05"
+      ],
+      "merged_ids": [
+        "TWM-M05"
+      ],
+      "name": "FX exchange-difference component separately identified",
+      "outcome": "PASS",
+      "primary_role": "accounting_standards",
+      "quote": "Price and terms variance detail (with exchange-difference component separately identifiable)",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "accounting_standards"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M06",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "TWM-C06"
+      ],
+      "merged_ids": [
+        "TWM-M06"
+      ],
+      "name": "Match document lineage retained, logged and retrievable",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "the assembled document set, quantity variance detail, and price/terms variance detail",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "agentic_architect",
+        "accounting_standards"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 4,
+      "control_id": "TWM-M07",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "TWM-C07"
+      ],
+      "merged_ids": [
+        "TWM-M07"
+      ],
+      "name": "Versioned, change-controlled tolerance policy with accountable owner",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "The tolerance policy itself is a centrally versioned and change-controlled artifact",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "agentic_architect",
+        "pragmatist",
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M08",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "TWM-C08"
+      ],
+      "merged_ids": [
+        "TWM-M08"
+      ],
+      "name": "Classification records tolerance-policy version applied",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "Match classification (clean, tolerance or exception), referencing applied tolerance policy version",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M09",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "TWM-C09"
+      ],
+      "merged_ids": [
+        "TWM-M09"
+      ],
+      "name": "Periodic re-approval / recalibration of tolerance thresholds",
+      "outcome": "PASS",
+      "primary_role": "finance_domain",
+      "quote": "who periodically re-approves thresholds",
+      "quote_run_id": "20261010-201338-council-P2P-TWM-01-df77",
+      "roles": [
+        "finance_domain",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M10",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "TWM-C10"
+      ],
+      "merged_ids": [
+        "TWM-M10"
+      ],
+      "name": "Locally configurable tolerance parameters within central bands",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "emerging_economy",
+      "quote": "locally selectable parameters within centrally governed bands",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M11",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "TWM-C11"
+      ],
+      "merged_ids": [
+        "TWM-M11"
+      ],
+      "name": "Classification engine has no write path to tolerance policy",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "The classification engine consumes the policy but has no write path to it",
+      "quote_run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 2,
+      "control_id": "TWM-M12",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "TWM-C12"
+      ],
+      "merged_ids": [
+        "TWM-M12"
+      ],
+      "name": "Classification as deterministic, inspectable rules (ML outside)",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "evaluated by a deterministic rules engine",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "TWM-M13",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "TWM-C13",
+        "TWM-C14",
+        "TWM-C16"
+      ],
+      "merged_ids": [
+        "TWM-M13",
+        "TWM-M14",
+        "TWM-M16"
+      ],
+      "name": "Exception disposition reserved to a human (no AI auto-resolve)",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "the agent never auto-applies a resolution",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "agentic_architect",
+        "pragmatist",
+        "emerging_economy",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M15",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "TWM-C15"
+      ],
+      "merged_ids": [
+        "TWM-M15"
+      ],
+      "name": "AI recommendation logged separately from human decision",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "AI recommendation log (distinct from the human decision)",
+      "quote_run_id": "20261010-194038-council-P2P-TWM-01-0842",
+      "roles": [
+        "agentic_architect",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M17",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "TWM-C17"
+      ],
+      "merged_ids": [
+        "TWM-M17"
+      ],
+      "name": "Materiality-tiered escalation to senior analyst/AP accountant",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "hitl_designer",
+      "quote": "materiality tiering routes high-value or high-complexity cases to a senior analyst or AP accountant",
+      "quote_run_id": "20261010-194038-council-P2P-TWM-01-0842",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M18",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "TWM-C18"
+      ],
+      "merged_ids": [
+        "TWM-M18"
+      ],
+      "name": "Deficient evidence packet resolved with data-quality caveat",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "hitl_designer",
+      "quote": "resolves with an explicit data-quality caveat rather than treating gaps as resolved",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 3,
+      "control_id": "TWM-M19",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "TWM-C19"
+      ],
+      "merged_ids": [
+        "TWM-M19"
+      ],
+      "name": "Agent-assembled evidence packet for investigator",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "Agent-assembled evidence packet (vendor correspondence, prior resolutions, root-cause taxonomy)",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M20",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "TWM-C20"
+      ],
+      "merged_ids": [
+        "TWM-M20"
+      ],
+      "name": "Documented, versioned resolution playbook",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "emerging_economy",
+      "quote": "Documented, versioned resolution playbook",
+      "quote_run_id": "20261010-194038-council-P2P-TWM-01-0842",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M21",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "TWM-C21"
+      ],
+      "merged_ids": [
+        "TWM-M21"
+      ],
+      "name": "Root-cause category recorded in resolution evidence",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "finance_domain",
+      "quote": "Exception resolution evidence, including exception category",
+      "quote_run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M22",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "TWM-C22"
+      ],
+      "merged_ids": [
+        "TWM-M22"
+      ],
+      "name": "Verbatim / unsummarised resolution evidence and control record",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "hitl_designer",
+      "quote": "Verbatim exception resolution evidence",
+      "quote_run_id": "20261010-194038-council-P2P-TWM-01-0842",
+      "roles": [
+        "hitl_designer",
+        "accounting_standards"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 2,
+      "control_id": "TWM-M23",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "TWM-C23",
+        "TWM-C24"
+      ],
+      "merged_ids": [
+        "TWM-M23",
+        "TWM-M24"
+      ],
+      "name": "Risk-tiered release (auto lane for clean; supervisor for exception/override)",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "Tiered match release approval",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "agentic_architect",
+        "hitl_designer",
+        "maximalist",
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "TWM-M25",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "TWM-C25"
+      ],
+      "merged_ids": [
+        "TWM-M25"
+      ],
+      "name": "Auto-release action logged",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "Automated release gate (logged policy engine)",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M26",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "TWM-C26"
+      ],
+      "merged_ids": [
+        "TWM-M26"
+      ],
+      "name": "Release authorisation tagged by lane",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "synthesis",
+      "quote": "Released match authorisation (lane-tagged: automated or supervisor-approved)",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "synthesis"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M27",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "TWM-C27"
+      ],
+      "merged_ids": [
+        "TWM-M27"
+      ],
+      "name": "Auto-released items reversible before payment",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "recallable up to the payment-run cutoff",
+      "quote_run_id": "20261010-194038-council-P2P-TWM-01-0842",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "TWM-M28",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "TWM-C28"
+      ],
+      "merged_ids": [
+        "TWM-M28"
+      ],
+      "name": "Exception resolution must precede release",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "Exception resolution (TS-03) always precedes release authorisation for any item that was exception-classified",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "finance_domain",
+        "pragmatist",
+        "maximalist"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "TWM-M29",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "TWM-C29"
+      ],
+      "merged_ids": [
+        "TWM-M29"
+      ],
+      "name": "Release approver reviews full resolution evidence, not a flag",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "reviews the full resolution evidence from TS-03 (not merely a pass/fail flag)",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "TWM-M30",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "TWM-C30",
+        "TWM-C31"
+      ],
+      "merged_ids": [
+        "TWM-M30",
+        "TWM-M31"
+      ],
+      "name": "Release approver distinct from exception resolver",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "maximalist",
+      "quote": "The supervisor is never the same individual who resolved the exception in TS-03",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "maximalist",
+        "finance_domain",
+        "pragmatist",
+        "emerging_economy",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M32",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "TWM-C32"
+      ],
+      "merged_ids": [
+        "TWM-M32"
+      ],
+      "name": "Instance-level resolver/approver identity log",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "Released match authorisation (timestamped, attributable)",
+      "quote_run_id": "20261010-194038-council-P2P-TWM-01-0842",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M33",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "TWM-C33"
+      ],
+      "merged_ids": [
+        "TWM-M33"
+      ],
+      "name": "Distinct system identities for automated components",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "system identity: release-automated, distinct from match-execution and tolerance-classification identities",
+      "quote_run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+      "roles": [
+        "agentic_architect",
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M34",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "TWM-C34"
+      ],
+      "merged_ids": [
+        "TWM-M34"
+      ],
+      "name": "Named backup release approver",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "emerging_economy",
+      "quote": "A named backup approver is designated",
+      "quote_run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M35",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "TWM-C35"
+      ],
+      "merged_ids": [
+        "TWM-M35"
+      ],
+      "name": "Sampling audit of auto-released population",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "Audit-sampling record",
+      "quote_run_id": "20261010-194038-council-P2P-TWM-01-0842",
+      "roles": [
+        "agentic_architect",
+        "hitl_designer"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "TWM-M36",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "TWM-C36",
+        "TWM-C37"
+      ],
+      "merged_ids": [
+        "TWM-M36",
+        "TWM-M37"
+      ],
+      "name": "Continuous real-time logging to control record",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "logged continuously and immutably as they occur",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "finance_domain",
+        "maximalist",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 2,
+      "control_id": "TWM-M38",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "TWM-C38"
+      ],
+      "merged_ids": [
+        "TWM-M38"
+      ],
+      "name": "Named periodic sign-off/attestation of match-rate and override report",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "pragmatist",
+      "quote": "reviewed with a named, dated sign-off by the AP accountant",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "pragmatist",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M39",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "TWM-C39"
+      ],
+      "merged_ids": [
+        "TWM-M39"
+      ],
+      "name": "Override/anomaly concentration surfaced by approver, analyst or vendor",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "hitl_designer",
+      "quote": "surfacing override concentration by approver and by vendor",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "hitl_designer",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M40",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "TWM-C40"
+      ],
+      "merged_ids": [
+        "TWM-M40"
+      ],
+      "name": "Threshold-triggered escalation to named reviewer",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "Override-rate and sampling-exception thresholds trigger an active escalation to a named human reviewer",
+      "quote_run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M41",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "TWM-C41"
+      ],
+      "merged_ids": [
+        "TWM-M41"
+      ],
+      "name": "Period-cutoff tag on match control records",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "accounting_standards",
+      "quote": "Every match control record entry carries an explicit period-cutoff tag",
+      "quote_run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+      "roles": [
+        "accounting_standards"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M42",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "TWM-C42"
+      ],
+      "merged_ids": [
+        "TWM-M42"
+      ],
+      "name": "Lightweight/batch/exportable control reporting for constrained sites",
+      "outcome": "PASS",
+      "primary_role": "emerging_economy",
+      "quote": "A lightweight periodic batch extract remains an acceptable, non-degraded implementation",
+      "quote_run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "TWM-M43",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "TWM-C43"
+      ],
+      "merged_ids": [
+        "TWM-M43"
+      ],
+      "name": "Monitoring reviewer independent of engine and release operators",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "pragmatist",
+      "quote": "independent of match-execution, tolerance-classification and release-automation operators",
+      "quote_run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+      "roles": [
+        "pragmatist",
+        "accounting_standards"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "PRE-M01",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "PRE-C01"
+      ],
+      "merged_ids": [
+        "PRE-M01"
+      ],
+      "name": "Selection/grouping exception queue at proposal generation",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "Selection/grouping exception queue",
+      "quote_run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+      "roles": [
+        "hitl_designer",
+        "agentic_architect",
+        "pragmatist",
+        "finance_domain",
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "PRE-M02",
+      "council_n": 4,
+      "council_present": 3,
+      "members": [
+        "PRE-C02"
+      ],
+      "merged_ids": [
+        "PRE-M02"
+      ],
+      "name": "Master-data anomalies surfaced, not silently normalised",
+      "outcome": "PASS",
+      "primary_role": "emerging_economy",
+      "quote": "Data-quality anomalies (duplicate vendor IDs, missing currency codes, incomplete terms data) are surfaced explicitly, never silently normalised",
+      "quote_run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "PRE-M03",
+      "council_n": 4,
+      "council_present": 2,
+      "members": [
+        "PRE-C03"
+      ],
+      "merged_ids": [
+        "PRE-M03"
+      ],
+      "name": "Logged, reconstructable selection decisions",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "the due-item list and the proposal remain two separately logged, inspectable artefacts",
+      "quote_run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "PRE-M04",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "PRE-C04"
+      ],
+      "merged_ids": [
+        "PRE-M04"
+      ],
+      "name": "Approved-matched status as entry gate for selection",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "accounting_standards",
+      "quote": "The ERP/automation selects approved, matched invoices due under their payment terms",
+      "quote_run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+      "roles": [
+        "accounting_standards",
+        "maximalist"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "PRE-M05",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "PRE-C05",
+        "PRE-C06"
+      ],
+      "merged_ids": [
+        "PRE-M05",
+        "PRE-M06"
+      ],
+      "name": "Automated pre-screening: duplicates, blocked vendors, bank-detail changes",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "A screening engine pre-computes duplicate-payment flags, blocked-vendor flags and vendor bank-detail-change flags",
+      "quote_run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+      "roles": [
+        "hitl_designer",
+        "agentic_architect",
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 3,
+      "control_id": "PRE-M07",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "PRE-C07"
+      ],
+      "merged_ids": [
+        "PRE-M07"
+      ],
+      "name": "Recorded supervisory disposition for each flagged item",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "Flagged-exception disposition record",
+      "quote_run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+      "roles": [
+        "agentic_architect",
+        "maximalist",
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "PRE-M08",
+      "council_n": 4,
+      "council_present": 2,
+      "members": [
+        "PRE-C08"
+      ],
+      "merged_ids": [
+        "PRE-M08"
+      ],
+      "name": "Mandatory out-of-band verification of bank-detail changes",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "finance_domain",
+      "quote": "release, hold, escalate for out-of-band vendor verification",
+      "quote_run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "PRE-M09",
+      "council_n": 4,
+      "council_present": 1,
+      "members": [
+        "PRE-C09"
+      ],
+      "merged_ids": [
+        "PRE-M09"
+      ],
+      "name": "Manual change-log review fallback",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "emerging_economy",
+      "quote": "the step retains a manual log-review fallback rather than relying on automated pre-screening alone",
+      "quote_run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+      "roles": [
+        "emerging_economy",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 2,
+      "control_id": "PRE-M10",
+      "council_n": 4,
+      "council_present": 2,
+      "members": [
+        "PRE-C10",
+        "PRE-C11"
+      ],
+      "merged_ids": [
+        "PRE-M10",
+        "PRE-M11"
+      ],
+      "name": "Periodic random sample of unflagged lines",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "the supervisor also reviews a periodic random sample of unflagged lines",
+      "quote_run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+      "roles": [
+        "agentic_architect",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "PRE-M12",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "PRE-C12"
+      ],
+      "merged_ids": [
+        "PRE-M12"
+      ],
+      "name": "Human signatory approval of every payment run; no auto-approval",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "no sub-threshold or risk-tiered auto-approval is introduced",
+      "quote_run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+      "roles": [
+        "finance_domain",
+        "agentic_architect",
+        "hitl_designer",
+        "pragmatist",
+        "accounting_standards",
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "PRE-M13",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "PRE-C13"
+      ],
+      "merged_ids": [
+        "PRE-M13"
+      ],
+      "name": "Approval packet with exception dispositions to signatory",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "Flagged-exception disposition record",
+      "quote_run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "PRE-M14",
+      "council_n": 4,
+      "council_present": 3,
+      "members": [
+        "PRE-C14"
+      ],
+      "merged_ids": [
+        "PRE-M14"
+      ],
+      "name": "Non-decisioning agent assistance at approval",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "The signatory may be assisted by a risk-annotated summary, but the underlying reviewed proposal and flags must remain visible to them",
+      "quote_run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 4,
+      "control_id": "PRE-M15",
+      "council_n": 4,
+      "council_present": 3,
+      "members": [
+        "PRE-C15"
+      ],
+      "merged_ids": [
+        "PRE-M15"
+      ],
+      "name": "System-enforced segregation of proposal construction from approval",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "emerging_economy",
+      "quote": "enforced at the access-control/credential level rather than by job title alone",
+      "quote_run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+      "roles": [
+        "emerging_economy",
+        "agentic_architect",
+        "pragmatist",
+        "accounting_standards"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "PRE-M16",
+      "council_n": 4,
+      "council_present": 1,
+      "members": [
+        "PRE-C16"
+      ],
+      "merged_ids": [
+        "PRE-M16"
+      ],
+      "name": "Timestamped approval record",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "accounting_standards",
+      "quote": "Timestamped approval record",
+      "quote_run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+      "roles": [
+        "accounting_standards"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "PRE-M17",
+      "council_n": 4,
+      "council_present": 1,
+      "members": [
+        "PRE-C17"
+      ],
+      "merged_ids": [
+        "PRE-M17"
+      ],
+      "name": "Named backup approver/releaser chains",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "emerging_economy",
+      "quote": "Back-up/delegated approver chains are named system controls",
+      "quote_run_id": "20261010-201339-council-P2P-PRE-01-8682",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "PRE-M18a",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "PRE-C18"
+      ],
+      "merged_ids": [
+        "PRE-M18a"
+      ],
+      "name": "Pre-transmission verification of file against approved snapshot (incl. post-approval change block) (PRE-C18)",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": null,
+      "quote_run_id": null,
+      "roles": [
+        "agentic_architect",
+        "pragmatist"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "PRE-M18b",
+      "council_n": 4,
+      "council_present": 3,
+      "members": [
+        "PRE-C19"
+      ],
+      "merged_ids": [
+        "PRE-M18b"
+      ],
+      "name": "Pre-transmission verification of file against approved snapshot (incl. post-approval change block) (PRE-C19)",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": null,
+      "quote_run_id": null,
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "PRE-M19",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "PRE-C20"
+      ],
+      "merged_ids": [
+        "PRE-M19"
+      ],
+      "name": "Human-triggered release; no automatic/agent transmission",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "pragmatist",
+      "quote": "a single treasury officer may release under system-enforced, time-separated logging",
+      "quote_run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+      "roles": [
+        "pragmatist",
+        "agentic_architect",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "PRE-M20",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "PRE-C21",
+        "PRE-C22"
+      ],
+      "merged_ids": [
+        "PRE-M20",
+        "PRE-M21"
+      ],
+      "name": "Dual control at bank release",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "pragmatist",
+      "quote": "Above a defined value threshold, release additionally requires dual control",
+      "quote_run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+      "roles": [
+        "pragmatist",
+        "finance_domain",
+        "hitl_designer",
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "PRE-M22",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "PRE-C23"
+      ],
+      "merged_ids": [
+        "PRE-M22"
+      ],
+      "name": "Manual/batch bank transmission as first-class channel",
+      "outcome": "PASS",
+      "primary_role": "emerging_economy",
+      "quote": "A manual/batch file-upload path remains a first-class alternative to API-based transmission",
+      "quote_run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "PRE-M23",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "PRE-C24"
+      ],
+      "merged_ids": [
+        "PRE-M23"
+      ],
+      "name": "Batch/manual statement reconciliation as first-class mode",
+      "outcome": "PASS",
+      "primary_role": "emerging_economy",
+      "quote": "end-of-day batch statement reconciliation remains an equally supported, first-class operating mode",
+      "quote_run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+      "roles": [
+        "emerging_economy",
+        "pragmatist"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "PRE-M24",
+      "council_n": 4,
+      "council_present": 1,
+      "members": [
+        "PRE-C25"
+      ],
+      "merged_ids": [
+        "PRE-M24"
+      ],
+      "name": "Documented manual fallback for due-item selection",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "pragmatist",
+      "quote": "A documented manual/batch fallback exists where continuous ERP automation is not available.",
+      "quote_run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+      "roles": [
+        "pragmatist"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "PRE-M25",
+      "council_n": 4,
+      "council_present": 1,
+      "members": [
+        "PRE-C26"
+      ],
+      "merged_ids": [
+        "PRE-M25"
+      ],
+      "name": "Attested manual settlement-rate entry path",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "emerging_economy",
+      "quote": "a manual, documented, accountable (GL accountant-attested) rate-entry path must exist and be logged",
+      "quote_run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "PRE-M26",
+      "council_n": 4,
+      "council_present": 2,
+      "members": [
+        "PRE-C27"
+      ],
+      "merged_ids": [
+        "PRE-M26"
+      ],
+      "name": "Human verification of FX rate source",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "emerging_economy",
+      "quote": "or arising from an anomalous or stale rate source, route to the GL accountant for a documented decision",
+      "quote_run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "PRE-M27",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "PRE-C28"
+      ],
+      "merged_ids": [
+        "PRE-M27"
+      ],
+      "name": "Settlement exception/break queue with treasury owner",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "Unmatched/exception queue",
+      "quote_run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+      "roles": [
+        "agentic_architect",
+        "finance_domain",
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 2,
+      "control_id": "PRE-M28",
+      "council_n": 4,
+      "council_present": 1,
+      "members": [
+        "PRE-C29"
+      ],
+      "merged_ids": [
+        "PRE-M28"
+      ],
+      "name": "Line-level settlement matching to transmitted file",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "accounting_standards",
+      "quote": "auto-matched to the transmitted file at the individual invoice/line-item level (not aggregate bank totals)",
+      "quote_run_id": "20261010-201339-council-P2P-PRE-01-8682",
+      "roles": [
+        "accounting_standards"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 3,
+      "control_id": "PRE-M29",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "PRE-C30"
+      ],
+      "merged_ids": [
+        "PRE-M29"
+      ],
+      "name": "Threshold routing of FX/settlement variances to GL accountant",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "Differences exceeding a documented materiality threshold",
+      "quote_run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+      "roles": [
+        "hitl_designer",
+        "agentic_architect",
+        "maximalist",
+        "finance_domain",
+        "pragmatist"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "PRE-M30",
+      "council_n": 4,
+      "council_present": 3,
+      "members": [
+        "PRE-C31"
+      ],
+      "merged_ids": [
+        "PRE-M30"
+      ],
+      "name": "Period-cutoff control over settlement posting",
+      "outcome": "PASS",
+      "primary_role": "accounting_standards",
+      "quote": "with a defined, documented treatment for confirmations that arrive late relative to a period cutoff",
+      "quote_run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+      "roles": [
+        "accounting_standards"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 2,
+      "control_id": "PRE-M31",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "PRE-C32"
+      ],
+      "merged_ids": [
+        "PRE-M31"
+      ],
+      "name": "FX difference separately identified, never netted",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "maximalist",
+      "quote": "FX settlement difference (separately identified)",
+      "quote_run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+      "roles": [
+        "maximalist",
+        "pragmatist",
+        "finance_domain",
+        "hitl_designer",
+        "accounting_standards"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "PRE-M32",
+      "council_n": 4,
+      "council_present": 1,
+      "members": [
+        "PRE-C33"
+      ],
+      "merged_ids": [
+        "PRE-M32"
+      ],
+      "name": "Treasury/GL segregation and distinct settlement-confirmation artefact",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "pragmatist",
+      "quote": "never posted by the same role that also controls the bank-facing side",
+      "quote_run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+      "roles": [
+        "pragmatist"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "PRE-M33",
+      "council_n": 4,
+      "council_present": 1,
+      "members": [
+        "PRE-C34"
+      ],
+      "merged_ids": [
+        "PRE-M33"
+      ],
+      "name": "Returns/rejections re-open AP open item",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "finance_domain",
+      "quote": "any return or rejection flows back to re-open the relevant AP open item rather than disappearing",
+      "quote_run_id": "20261010-203139-council-P2P-PRE-01-1b2e",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 3,
+      "control_id": "PRE-M34",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "PRE-C35"
+      ],
+      "merged_ids": [
+        "PRE-M34"
+      ],
+      "name": "Remittance delivery exception queue",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "pragmatist",
+      "quote": "Delivery exception queue",
+      "quote_run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+      "roles": [
+        "pragmatist",
+        "finance_domain",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 2,
+      "control_id": "PRE-M35",
+      "council_n": 4,
+      "council_present": 2,
+      "members": [
+        "PRE-C36"
+      ],
+      "merged_ids": [
+        "PRE-M35"
+      ],
+      "name": "Remittance sourced from posting/clearing record",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "accounting_standards",
+      "quote": "traceable back to the posting record describing which invoices a given cash outflow discharged",
+      "quote_run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+      "roles": [
+        "accounting_standards"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "PRE-M36",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "PRE-C37"
+      ],
+      "merged_ids": [
+        "PRE-M36"
+      ],
+      "name": "Multi-channel/non-digital remittance fallback",
+      "outcome": "PASS",
+      "primary_role": "emerging_economy",
+      "quote": "or a non-digital channel (SMS, printed advice) where a vendor lacks reliable digital contact data",
+      "quote_run_id": "20261010-192227-council-P2P-PRE-01-e0a8",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "PRE-M37",
+      "council_n": 4,
+      "council_present": 2,
+      "members": [
+        "PRE-C38"
+      ],
+      "merged_ids": [
+        "PRE-M37"
+      ],
+      "name": "Agent least privilege at proposal/file generation",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "File generation is mechanical and does not require a manual build, but it cannot itself transmit funds.",
+      "quote_run_id": "20261010-201339-council-P2P-PRE-01-8682",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M01",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "EXR-C01"
+      ],
+      "merged_ids": [
+        "EXR-M01"
+      ],
+      "name": "Low-confidence extraction exception queue to AP analyst",
+      "outcome": "PASS",
+      "primary_role": "finance_domain",
+      "quote": "Low-confidence or failed digital extractions route to the AP analyst's manual-keying queue",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "finance_domain",
+        "hitl_designer"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M02",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "EXR-C02",
+        "EXR-C03"
+      ],
+      "merged_ids": [
+        "EXR-M02",
+        "EXR-M03"
+      ],
+      "name": "Extraction confidence / provenance log",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "Structured claim record with linked receipt image and extraction confidence log",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "agentic_architect",
+        "accounting_standards"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M04",
+      "council_n": 4,
+      "council_present": 1,
+      "members": [
+        "EXR-C04"
+      ],
+      "merged_ids": [
+        "EXR-M04"
+      ],
+      "name": "Periodic sampling audit of high-confidence extractions",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "A periodic sampling audit of high-confidence extractions by vendor/locale/script cohort checks for miscalibration",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M05",
+      "council_n": 4,
+      "council_present": 1,
+      "members": [
+        "EXR-C05"
+      ],
+      "merged_ids": [
+        "EXR-M05"
+      ],
+      "name": "Extraction confidence thresholds calibrated per receipt-format population",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "maximalist",
+      "quote": "Extraction confidence thresholds (calibrated per receipt-format population)",
+      "quote_run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+      "roles": [
+        "maximalist"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M06",
+      "council_n": 4,
+      "council_present": 1,
+      "members": [
+        "EXR-C06"
+      ],
+      "merged_ids": [
+        "EXR-M06"
+      ],
+      "name": "Manual extraction corrections logged as supervised override",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "which is itself logged as a supervised override rather than a silent edit",
+      "quote_run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "EXR-M07",
+      "council_n": 4,
+      "council_present": 3,
+      "members": [
+        "EXR-C07"
+      ],
+      "merged_ids": [
+        "EXR-M07"
+      ],
+      "name": "Extraction kept as separate auditable stage from policy check",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "a digital path where a capture agent photographs/OCR-extracts receipt data at the moment of submission",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "EXR-M08",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "EXR-C08"
+      ],
+      "merged_ids": [
+        "EXR-M08"
+      ],
+      "name": "Receipt mandatory above threshold before claim proceeds",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "pragmatist",
+      "quote": "Every claim line above the receipt threshold must carry an attached receipt image",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "pragmatist"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M09",
+      "council_n": 4,
+      "council_present": 3,
+      "members": [
+        "EXR-C09",
+        "EXR-C10"
+      ],
+      "merged_ids": [
+        "EXR-M09",
+        "EXR-M10"
+      ],
+      "name": "Manual/paper intake channel as first-class submission path",
+      "outcome": "PASS",
+      "primary_role": "emerging_economy",
+      "quote": "a manual/paper intake path, keyed by an AP analyst from a physical or low-bandwidth submission",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M11",
+      "council_n": 4,
+      "council_present": 3,
+      "members": [
+        "EXR-C11"
+      ],
+      "merged_ids": [
+        "EXR-M11"
+      ],
+      "name": "Employee sole accountable initiator; no agent submits on behalf",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "no agent or card-feed process may generate or submit a claim on the employee's behalf",
+      "quote_run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "EXR-M12",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "EXR-C12"
+      ],
+      "merged_ids": [
+        "EXR-M12"
+      ],
+      "name": "Deterministic policy engine emitting rule-cited flag log",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "producing a machine-readable list of which rule fired on which line and why",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 4,
+      "control_id": "EXR-M13",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "EXR-C13"
+      ],
+      "merged_ids": [
+        "EXR-M13"
+      ],
+      "name": "Human adjudication of flagged policy exceptions",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "route to a named AP analyst or policy officer for adjudication",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M14",
+      "council_n": 4,
+      "council_present": 3,
+      "members": [
+        "EXR-C14"
+      ],
+      "merged_ids": [
+        "EXR-M14"
+      ],
+      "name": "Adjudication / disposition record for policy exceptions",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "Policy-checked claim with auditable exception list and decision log",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "EXR-M15",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "EXR-C15"
+      ],
+      "merged_ids": [
+        "EXR-M15"
+      ],
+      "name": "Policy compliance gate completes before manager approval",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "This remains a discrete, completed gate that issues a compliant/exception-resolved/rejected decision before the claim reaches the manager",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M16",
+      "council_n": 4,
+      "council_present": 2,
+      "members": [
+        "EXR-C16"
+      ],
+      "merged_ids": [
+        "EXR-M16"
+      ],
+      "name": "Policy-table staleness detection",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "emerging_economy",
+      "quote": "with periodic human sampling of passed lines to catch stale policy tables",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "EXR-M17",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "EXR-C17"
+      ],
+      "merged_ids": [
+        "EXR-M17"
+      ],
+      "name": "Universal human manager approval; no auto-approval tier",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "there is no value-based or risk-based auto-approval tier",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "hitl_designer",
+        "pragmatist"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 2,
+      "control_id": "EXR-M18",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "EXR-C18"
+      ],
+      "merged_ids": [
+        "EXR-M18"
+      ],
+      "name": "Flags and overrides surfaced to approving manager",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "The manager's screen surfaces exactly which lines TS-02 flagged and why",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "finance_domain",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M19",
+      "council_n": 4,
+      "council_present": 3,
+      "members": [
+        "EXR-C19"
+      ],
+      "merged_ids": [
+        "EXR-M19"
+      ],
+      "name": "Self-approval conflict escalates to next-level approver",
+      "outcome": "PASS",
+      "primary_role": "finance_domain",
+      "quote": "the system automatically and structurally escalates to the next-level approver",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M20",
+      "council_n": 4,
+      "council_present": 3,
+      "members": [
+        "EXR-C20"
+      ],
+      "merged_ids": [
+        "EXR-M20"
+      ],
+      "name": "Structural enforcement of submitter/approver separation",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "Manager-of-record / claimant identity check",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M21",
+      "council_n": 4,
+      "council_present": 3,
+      "members": [
+        "EXR-C21"
+      ],
+      "merged_ids": [
+        "EXR-M21"
+      ],
+      "name": "Logged manager approval record",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "Approved expense claim with logged approval record",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M22",
+      "council_n": 4,
+      "council_present": 1,
+      "members": [
+        "EXR-C22"
+      ],
+      "merged_ids": [
+        "EXR-M22"
+      ],
+      "name": "Low-bandwidth/SMS approval fallback for unflagged claims",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "emerging_economy",
+      "quote": "Approval is reachable through a low-bandwidth/SMS-equivalent fallback for unflagged claims",
+      "quote_run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "EXR-M23",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "EXR-C23",
+        "EXR-C24"
+      ],
+      "merged_ids": [
+        "EXR-M23",
+        "EXR-M24"
+      ],
+      "name": "Risk/exception-triggered finance review",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "pragmatist",
+      "quote": "It is triggered automatically for claims carrying an unresolved or overridden policy exception, claims above a materiality threshold",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "pragmatist",
+        "hitl_designer",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M25",
+      "council_n": 4,
+      "council_present": 2,
+      "members": [
+        "EXR-C25"
+      ],
+      "merged_ids": [
+        "EXR-M25"
+      ],
+      "name": "Periodic sample review of clean/auto-cleared population",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "pragmatist",
+      "quote": "a periodic statistical sample of fully clean, auto-cleared claims",
+      "quote_run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+      "roles": [
+        "pragmatist",
+        "finance_domain",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "EXR-M26",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "EXR-C26",
+        "EXR-C27"
+      ],
+      "merged_ids": [
+        "EXR-M26",
+        "EXR-M27"
+      ],
+      "name": "Finance review decision recorded distinctly",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "accounting_standards",
+      "quote": "Finance-reviewed claim with distinct coding/evidence decision log",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "accounting_standards",
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "EXR-M28",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "EXR-C28"
+      ],
+      "merged_ids": [
+        "EXR-M28"
+      ],
+      "name": "Finance review gates posting",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "accounting_standards",
+      "quote": "whether coding, cost-centre assignment and evidential sufficiency are correct before the number hits the GL",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "accounting_standards"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M29",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "EXR-C29"
+      ],
+      "merged_ids": [
+        "EXR-M29"
+      ],
+      "name": "Closed-period lock with logged override/escalation",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "it refuses to post into a closed period without an explicit, logged GL-accountant override",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "agentic_architect",
+        "accounting_standards"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 4,
+      "control_id": "EXR-M30",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "EXR-C30"
+      ],
+      "merged_ids": [
+        "EXR-M30"
+      ],
+      "name": "Posting exceptions as hard stops to GL accountant queue",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "are hard stops routed to a named GL-accountant exception queue",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "agentic_architect",
+        "finance_domain",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M31",
+      "council_n": 4,
+      "council_present": 3,
+      "members": [
+        "EXR-C31"
+      ],
+      "merged_ids": [
+        "EXR-M31"
+      ],
+      "name": "Documented FX-rate source fallback / staleness bound",
+      "outcome": "PASS",
+      "primary_role": "emerging_economy",
+      "quote": "a documented manual/central-bank-rate fallback where real-time feeds are unavailable or uneconomic",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M32",
+      "council_n": 4,
+      "council_present": 3,
+      "members": [
+        "EXR-C32"
+      ],
+      "merged_ids": [
+        "EXR-M32"
+      ],
+      "name": "Posting log of rate source, date, rule and actor",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "Every posting logs the rule, rate, date and actor-of-record used",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M33",
+      "council_n": 4,
+      "council_present": 3,
+      "members": [
+        "EXR-C33"
+      ],
+      "merged_ids": [
+        "EXR-M33"
+      ],
+      "name": "Corrections only via reversal entries",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "carries a defined reversal/correcting-entry mechanism",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M34",
+      "council_n": 4,
+      "council_present": 1,
+      "members": [
+        "EXR-C34"
+      ],
+      "merged_ids": [
+        "EXR-M34"
+      ],
+      "name": "GL accountant periodic sampling of postings",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "hitl_designer",
+      "quote": "The GL accountant also performs periodic sampling of automated postings",
+      "quote_run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M35",
+      "council_n": 4,
+      "council_present": 1,
+      "members": [
+        "EXR-C35"
+      ],
+      "merged_ids": [
+        "EXR-M35"
+      ],
+      "name": "Named GL accountant ownership of posting ruleset",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "pragmatist",
+      "quote": "A GL accountant retains the posting ruleset",
+      "quote_run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+      "roles": [
+        "pragmatist"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M36",
+      "council_n": 4,
+      "council_present": 1,
+      "members": [
+        "EXR-C36"
+      ],
+      "merged_ids": [
+        "EXR-M36"
+      ],
+      "name": "Period-end accrual with accountable GL ownership",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "finance_domain",
+      "quote": "explicit responsibility for period-end accrual estimation of expenses incurred but not yet claimed",
+      "quote_run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M37",
+      "council_n": 4,
+      "council_present": 2,
+      "members": [
+        "EXR-C37"
+      ],
+      "merged_ids": [
+        "EXR-M37"
+      ],
+      "name": "Separately recorded liability recognition and derecognition",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "accounting_standards",
+      "quote": "keeping recognition (posting) and derecognition (payment) as two separately timestamped, separately triggered events",
+      "quote_run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+      "roles": [
+        "accounting_standards"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 2,
+      "control_id": "EXR-M38",
+      "council_n": 4,
+      "council_present": 1,
+      "members": [
+        "EXR-C38"
+      ],
+      "merged_ids": [
+        "EXR-M38"
+      ],
+      "name": "Exchange differences tracked separately",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "accounting_standards",
+      "quote": "Exchange-difference entries where posting-date and settlement-date rates diverge",
+      "quote_run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+      "roles": [
+        "accounting_standards"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "EXR-M39",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "EXR-C39"
+      ],
+      "merged_ids": [
+        "EXR-M39"
+      ],
+      "name": "Payment precondition: approval and posting before payment",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "Orchestration structurally prevents a payment batch from including a claim without a logged, unreversed TS-03 approval record",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M40",
+      "council_n": 4,
+      "council_present": 2,
+      "members": [
+        "EXR-C40"
+      ],
+      "merged_ids": [
+        "EXR-M40"
+      ],
+      "name": "Duplicate-payment screening at payment batch",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "finance_domain",
+      "quote": "the batch remains the unit at which duplicate-payment screening and bank-detail-change validation operate",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "EXR-M41",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "EXR-C41"
+      ],
+      "merged_ids": [
+        "EXR-M41"
+      ],
+      "name": "AP analyst ownership of payment exceptions",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "with named AP-analyst ownership of exception handling (failed validation, bank-detail mismatches, payee/employee mismatches) before funds move",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M42",
+      "council_n": 4,
+      "council_present": 3,
+      "members": [
+        "EXR-C42"
+      ],
+      "merged_ids": [
+        "EXR-M42"
+      ],
+      "name": "Hold for independent verification of new/changed bank details",
+      "outcome": "PASS",
+      "primary_role": "hitl_designer",
+      "quote": "the batch remains the unit at which duplicate-payment screening and bank-detail-change validation operate",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M43",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "EXR-C43"
+      ],
+      "merged_ids": [
+        "EXR-M43"
+      ],
+      "name": "Multi-rail disbursement in controlled payment process",
+      "outcome": "PASS",
+      "primary_role": "emerging_economy",
+      "quote": "Payment rail selection - bank transfer, mobile money, cash/voucher - is a first-class branch within the same step",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M44",
+      "council_n": 4,
+      "council_present": 1,
+      "members": [
+        "EXR-C44"
+      ],
+      "merged_ids": [
+        "EXR-M44"
+      ],
+      "name": "Payment failure notification with reason code",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "on failure, a reason code is issued instead",
+      "quote_run_id": "20261010-194034-council-P2P-EXR-01-b45d",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "EXR-M45",
+      "council_n": 4,
+      "council_present": 4,
+      "members": [
+        "EXR-C45"
+      ],
+      "merged_ids": [
+        "EXR-M45"
+      ],
+      "name": "Multi-channel / low-connectivity employee notification",
+      "outcome": "PASS",
+      "primary_role": "emerging_economy",
+      "quote": "A system-generated notification (SMS, email, or channel appropriate to the employee)",
+      "quote_run_id": "20261010-184959-council-P2P-EXR-01-59a3",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": true,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "ACR-M01",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ACR-C01"
+      ],
+      "merged_ids": [
+        "ACR-M01"
+      ],
+      "name": "Extraction exception worklist/log to GL accountant",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "Extraction exception worklist",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "hitl_designer",
+        "agentic_architect",
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ACR-M02",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ACR-C02"
+      ],
+      "merged_ids": [
+        "ACR-M02"
+      ],
+      "name": "First-class manual extraction path",
+      "outcome": "PASS",
+      "primary_role": "emerging_economy",
+      "quote": "a manual/batch upload path (CSV, scanned statement, portal export) — both are first-class, equally compliant modes",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": true,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ACR-M03",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "ACR-C03"
+      ],
+      "merged_ids": [
+        "ACR-M03"
+      ],
+      "name": "Extraction run/mode log",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "Rate version, source system, and extraction mode (automated/manual) are logged on every run.",
+      "quote_run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ACR-M04",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "ACR-C04"
+      ],
+      "merged_ids": [
+        "ACR-M04"
+      ],
+      "name": "Exchange differences separately recorded",
+      "outcome": "PASS",
+      "primary_role": "accounting_standards",
+      "quote": "FX translation and exchange-difference record",
+      "quote_run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+      "roles": [
+        "accounting_standards",
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ACR-M05",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "ACR-C05"
+      ],
+      "merged_ids": [
+        "ACR-M05"
+      ],
+      "name": "Extraction halts on unavailable feed/stale rate",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "routed to the GL accountant as a named exception, never carried forward silently",
+      "quote_run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "ACR-M06",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ACR-C06"
+      ],
+      "merged_ids": [
+        "ACR-M06"
+      ],
+      "name": "Matching exception queue for unmatched/low-confidence items",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "Unmatched and low-confidence items are routed to an exception queue",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "hitl_designer",
+        "finance_domain",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "ACR-M07",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ACR-C07",
+        "ACR-C14"
+      ],
+      "merged_ids": [
+        "ACR-M07",
+        "ACR-M14"
+      ],
+      "name": "Match-rule provenance on matches/non-matches",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "carries match-rule provenance (why an item didn't match, which rule nearly fired)",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "hitl_designer",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ACR-M08",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "ACR-C08"
+      ],
+      "merged_ids": [
+        "ACR-M08"
+      ],
+      "name": "Exception-type tagging at queueing",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "finance_domain",
+      "quote": "an exception-type tag (FX difference, intercompany break, timing difference, true error) captured at the point of queueing",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ACR-M09",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "ACR-C09"
+      ],
+      "merged_ids": [
+        "ACR-M09"
+      ],
+      "name": "Intercompany items kept separately identifiable through matching",
+      "outcome": "PASS",
+      "primary_role": "accounting_standards",
+      "quote": "the matching configuration preserves full identifiability of intragroup positions for elimination",
+      "quote_run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+      "roles": [
+        "accounting_standards",
+        "finance_domain",
+        "maximalist"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ACR-M10",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "ACR-C10"
+      ],
+      "merged_ids": [
+        "ACR-M10"
+      ],
+      "name": "Versioned, change-controlled matching rules",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "automatically via a versioned, change-logged rules engine",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "agentic_architect",
+        "accounting_standards"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ACR-M11",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ACR-C11",
+        "ACR-C12",
+        "ACR-C13"
+      ],
+      "merged_ids": [
+        "ACR-M11",
+        "ACR-M12",
+        "ACR-M13"
+      ],
+      "name": "First-class manual matching path",
+      "outcome": "PASS",
+      "primary_role": "emerging_economy",
+      "quote": "and manually by the GL accountant where they do not — both modes are compliant and named explicitly",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "emerging_economy",
+        "pragmatist",
+        "agentic_architect"
+      ],
+      "strict_75": true,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ACR-M15",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "ACR-C15"
+      ],
+      "merged_ids": [
+        "ACR-M15"
+      ],
+      "name": "Sampling of auto-matched items",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "hitl_designer",
+      "quote": "Auto-match sampling record",
+      "quote_run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "ACR-M16",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "ACR-C16"
+      ],
+      "merged_ids": [
+        "ACR-M16"
+      ],
+      "name": "Match-rate monitoring",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "pragmatist",
+      "quote": "Match-rate and exception metrics",
+      "quote_run_id": "20261010-201338-council-R2R-ACR-01-216b",
+      "roles": [
+        "pragmatist"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "ACR-M17",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ACR-C17"
+      ],
+      "merged_ids": [
+        "ACR-M17"
+      ],
+      "name": "Matching kept distinct from extraction",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "Transaction matching with provenance-carrying exception queue",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "finance_domain",
+        "agentic_architect",
+        "pragmatist"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "ACR-M18",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ACR-C18"
+      ],
+      "merged_ids": [
+        "ACR-M18"
+      ],
+      "name": "AI classification advisory; human accept/override logged",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "every acceptance or override is an explicit, reasoned, logged human action",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "hitl_designer",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ACR-M19",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "ACR-C19"
+      ],
+      "merged_ids": [
+        "ACR-M19"
+      ],
+      "name": "No auto-close above materiality/age threshold without named review",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "hitl_designer",
+      "quote": "No item is auto-closed above a materiality or age threshold without a named human review.",
+      "quote_run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "ACR-M20",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ACR-C20"
+      ],
+      "merged_ids": [
+        "ACR-M20"
+      ],
+      "name": "Classification recorded as artifact separate from JE",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "Explained and classified reconciling items",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 2,
+      "control_id": "ACR-M21",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ACR-C21"
+      ],
+      "merged_ids": [
+        "ACR-M21"
+      ],
+      "name": "Estimation entries: named human preparer with documented basis",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "require a named, accountable human preparer with a documented basis attached to the entry",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "hitl_designer",
+        "maximalist",
+        "accounting_standards",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "ACR-M22",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ACR-C22",
+        "ACR-C23",
+        "ACR-C24"
+      ],
+      "merged_ids": [
+        "ACR-M22",
+        "ACR-M23",
+        "ACR-M24"
+      ],
+      "name": "Preparer attestation record",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "Preparer attestation record",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "finance_domain",
+        "hitl_designer",
+        "pragmatist",
+        "accounting_standards",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ACR-M25",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "ACR-C25"
+      ],
+      "merged_ids": [
+        "ACR-M25"
+      ],
+      "name": "Risk-weighted reviewer sampling of low-risk population",
+      "outcome": "PASS",
+      "primary_role": "pragmatist",
+      "quote": "periodic human sampling even on low-risk, fully-matched accounts",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "pragmatist",
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ACR-M26",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ACR-C26",
+        "ACR-C28"
+      ],
+      "merged_ids": [
+        "ACR-M26",
+        "ACR-M28"
+      ],
+      "name": "Risk-tiered review depth",
+      "outcome": "PASS",
+      "primary_role": "finance_domain",
+      "quote": "review effort is risk-tiered by attention allocation",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "finance_domain",
+        "hitl_designer",
+        "agentic_architect"
+      ],
+      "strict_75": true,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "ACR-M27",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ACR-C27"
+      ],
+      "merged_ids": [
+        "ACR-M27"
+      ],
+      "name": "No auto-approval; agents cannot approve or be SoD actor",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "pragmatist",
+      "quote": "no account population is auto-approved by a rule engine with zero human touch",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "pragmatist",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ACR-M29",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "ACR-C29"
+      ],
+      "merged_ids": [
+        "ACR-M29"
+      ],
+      "name": "Reviewer fed exception-level detail, not totals-only",
+      "outcome": "PASS",
+      "primary_role": "hitl_designer",
+      "quote": "The reviewer is fed exception-level detail",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": true,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ACR-M30",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ACR-C30"
+      ],
+      "merged_ids": [
+        "ACR-M30"
+      ],
+      "name": "Discrete logged per-item reviewer approval",
+      "outcome": "PASS",
+      "primary_role": "pragmatist",
+      "quote": "Every reconciliation passes through this mandatory human gate",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "pragmatist"
+      ],
+      "strict_75": true,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "ACR-M31",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ACR-C31"
+      ],
+      "merged_ids": [
+        "ACR-M31"
+      ],
+      "name": "Independent reviewer distinct from preparer",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "An independent reviewer, structurally and by identity distinct from the TS-04 preparer",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "finance_domain",
+        "maximalist",
+        "accounting_standards",
+        "emerging_economy",
+        "pragmatist"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ACR-M32",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "ACR-C32"
+      ],
+      "merged_ids": [
+        "ACR-M32"
+      ],
+      "name": "Prior-period corrections via flagged sub-path",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "hitl_designer",
+      "quote": "Prior-period errors are corrected retrospectively via an explicit, flagged sub-path that forces visibility to the reviewer",
+      "quote_run_id": "20261010-203144-council-R2R-ACR-01-dd48",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 4,
+      "control_id": "ACR-M33",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ACR-C33"
+      ],
+      "merged_ids": [
+        "ACR-M33"
+      ],
+      "name": "Continuous automated ageing monitoring",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "maximalist",
+      "quote": "detected continuously and exhaustively across the whole book of reconciliations by automated monitoring",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "maximalist",
+        "finance_domain",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "ACR-M34",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ACR-C34"
+      ],
+      "merged_ids": [
+        "ACR-M34"
+      ],
+      "name": "Escalation decision remains human controller judgment",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "the decision to escalate remain a controller-led human judgment",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "hitl_designer",
+        "pragmatist",
+        "accounting_standards"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "ACR-M35",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ACR-C35",
+        "ACR-C36"
+      ],
+      "merged_ids": [
+        "ACR-M35",
+        "ACR-M36"
+      ],
+      "name": "Escalation log",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "pragmatist",
+      "quote": "Escalation log",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "pragmatist",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ACR-M37",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "ACR-C37"
+      ],
+      "merged_ids": [
+        "ACR-M37"
+      ],
+      "name": "Portfolio-level cross-entity ageing surveillance",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "finance_domain",
+      "quote": "run as a cross-entity, cadence-driven surveillance function independent of any single account's approval cycle",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ACR-M38",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "ACR-C38"
+      ],
+      "merged_ids": [
+        "ACR-M38"
+      ],
+      "name": "Async/batch operation for low-connectivity sites",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "emerging_economy",
+      "quote": "Review and escalation support both continuous/dashboard and periodic batch operation",
+      "quote_run_id": "20261010-201338-council-R2R-ACR-01-216b",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ACR-M39",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "ACR-C39"
+      ],
+      "merged_ids": [
+        "ACR-M39"
+      ],
+      "name": "Local/periodically-synced evidence retention",
+      "outcome": "PASS",
+      "primary_role": "emerging_economy",
+      "quote": "local/low-bandwidth-compatible storage with a defined sync cadence and integrity check",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": true,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ACR-M40",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "ACR-C40"
+      ],
+      "merged_ids": [
+        "ACR-M40"
+      ],
+      "name": "Portable/exportable evidence and status output",
+      "outcome": "PASS",
+      "primary_role": "emerging_economy",
+      "quote": "in live-dashboard or batch-export form",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 2,
+      "control_id": "ACR-M41",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "ACR-C41"
+      ],
+      "merged_ids": [
+        "ACR-M41"
+      ],
+      "name": "Immutable/tamper-evident evidence retention",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "immutable (WORM-class) archival where infrastructure supports it",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "ACR-M42",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ACR-C42"
+      ],
+      "merged_ids": [
+        "ACR-M42"
+      ],
+      "name": "Automatic evidence retention",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "Retained reconciliation evidence",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "finance_domain",
+        "maximalist",
+        "agentic_architect",
+        "pragmatist"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "ACR-M43",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ACR-C43"
+      ],
+      "merged_ids": [
+        "ACR-M43"
+      ],
+      "name": "GL accountant review of status report/completeness",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "The GL accountant retains explicit accountability for reviewing the status report for completeness exceptions",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "hitl_designer",
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "ACR-M44",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ACR-C44"
+      ],
+      "merged_ids": [
+        "ACR-M44"
+      ],
+      "name": "Reconciliation status reporting",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "pragmatist",
+      "quote": "Reconciliation status report",
+      "quote_run_id": "20261010-185005-council-R2R-ACR-01-60e6",
+      "roles": [
+        "pragmatist"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "FSP-M01",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "FSP-C01",
+        "FSP-C03"
+      ],
+      "merged_ids": [
+        "FSP-M01",
+        "FSP-M03"
+      ],
+      "name": "Discrete attributable human close confirmation as hard gate",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "issues a discrete, timestamped confirmation that the trial balance is closed and reconciled before any adjustment posting begins",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "finance_domain",
+        "pragmatist",
+        "hitl_designer",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "FSP-M02",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "FSP-C02"
+      ],
+      "merged_ids": [
+        "FSP-M02"
+      ],
+      "name": "Automated close-readiness exception list/log for human review",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "the GL accountant reviews the resulting exception list",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "hitl_designer",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "FSP-M04",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "FSP-C04"
+      ],
+      "merged_ids": [
+        "FSP-M04"
+      ],
+      "name": "Manual-input fallback for close-status feeds",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "emerging_economy",
+      "quote": "(manually sourced where no system feed exists)",
+      "quote_run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "FSP-M05",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "FSP-C05"
+      ],
+      "merged_ids": [
+        "FSP-M05"
+      ],
+      "name": "Logged override with recorded reason",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "Exceptions open a ticket requiring resolution or a reasoned override before confirmation can complete",
+      "quote_run_id": "20261010-201339-council-R2R-FSP-01-d272",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "FSP-M06",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "FSP-C06"
+      ],
+      "merged_ids": [
+        "FSP-M06"
+      ],
+      "name": "Close confirmation reopenable",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "the close can be reopened if a problem surfaces later",
+      "quote_run_id": "20261010-203150-council-R2R-FSP-01-5655",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 4,
+      "control_id": "FSP-M07",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "FSP-C07"
+      ],
+      "merged_ids": [
+        "FSP-M07"
+      ],
+      "name": "Estimation entries: accountable human preparer with documented basis, never auto-posted",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "are prepared by a named accountable preparer with a documented basis attached before posting",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "finance_domain",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "FSP-M08",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "FSP-C08"
+      ],
+      "merged_ids": [
+        "FSP-M08"
+      ],
+      "name": "Revenue cut-off verification against evidence",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "posted automatically from the approved adjustment schedule and verified revenue cut-off evidence",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "FSP-M09",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "FSP-C09"
+      ],
+      "merged_ids": [
+        "FSP-M09"
+      ],
+      "name": "Posting log traceable to approved schedule line",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "post automatically with full traceability to the approved adjustment schedule line they correspond to",
+      "quote_run_id": "20261010-201339-council-R2R-FSP-01-d272",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "FSP-M10",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "FSP-C10"
+      ],
+      "merged_ids": [
+        "FSP-M10"
+      ],
+      "name": "Schedule/evidence mismatch on adjustments blocked and routed",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "posted with exception-only human review",
+      "quote_run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "FSP-M11",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "FSP-C11"
+      ],
+      "merged_ids": [
+        "FSP-M11"
+      ],
+      "name": "Mechanical postings reversible",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "All postings are reversible through a standard protocol, never one-way writes",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "FSP-M12",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "FSP-C12"
+      ],
+      "merged_ids": [
+        "FSP-M12"
+      ],
+      "name": "Unmatched intercompany items to Group accountant exception queue",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "Unmatched intercompany items, stale or missing rates, and anomalous translation movements are routed to the group accountant for resolution rather than auto-cleared",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "agentic_architect",
+        "hitl_designer",
+        "finance_domain"
+      ],
+      "strict_75": true,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "FSP-M13",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "FSP-C13"
+      ],
+      "merged_ids": [
+        "FSP-M13"
+      ],
+      "name": "FX rate / translation anomalies surfaced to Group accountant",
+      "outcome": "PASS",
+      "primary_role": "hitl_designer",
+      "quote": "stale or missing rates, and anomalous translation movements are routed to the group accountant for resolution",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "hitl_designer",
+        "agentic_architect"
+      ],
+      "strict_75": true,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "FSP-M14",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "FSP-C14",
+        "FSP-C16"
+      ],
+      "merged_ids": [
+        "FSP-M14",
+        "FSP-M16"
+      ],
+      "name": "Separate intercompany elimination completeness record",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "accounting_standards",
+      "quote": "Intercompany elimination record",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "accounting_standards",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "FSP-M15",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "FSP-C15"
+      ],
+      "merged_ids": [
+        "FSP-M15"
+      ],
+      "name": "Translation differences separately tagged, never netted",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "Translation differences and the elimination record remain separately retrievable artifacts, never netted into a single black-box consolidated figure",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "hitl_designer",
+        "pragmatist"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "FSP-M17",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "FSP-C17"
+      ],
+      "merged_ids": [
+        "FSP-M17"
+      ],
+      "name": "Translate before eliminating intercompany",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "intercompany balances and transactions are then matched and eliminated on the resulting common-currency basis",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "FSP-M18",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "FSP-C18"
+      ],
+      "merged_ids": [
+        "FSP-M18"
+      ],
+      "name": "Manual/spreadsheet fallback for consolidation, rates and mapping",
+      "outcome": "PASS",
+      "primary_role": "emerging_economy",
+      "quote": "tolerates heterogeneous evidence (system-generated or manually confirmed)",
+      "quote_run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 2,
+      "control_id": "FSP-M19",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "FSP-C19"
+      ],
+      "merged_ids": [
+        "FSP-M19"
+      ],
+      "name": "Unmapped/new accounts routed to Financial reporting exception review",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "New, reclassified, or unrecognized accounts are exception-routed to a named Financial Reporting reviewer rather than defaulted or silently dropped",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "finance_domain",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "FSP-M20",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "FSP-C20"
+      ],
+      "merged_ids": [
+        "FSP-M20"
+      ],
+      "name": "Mapping table version/change control with named owner",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "pragmatist",
+      "quote": "against the maintained chart-of-accounts-to-line-item taxonomy",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "pragmatist",
+        "hitl_designer",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 3,
+      "control_id": "FSP-M21",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "FSP-C21"
+      ],
+      "merged_ids": [
+        "FSP-M21"
+      ],
+      "name": "Mapping kept as a distinct step",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "Map trial balance to statement line items",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "FSP-M22",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "FSP-C22"
+      ],
+      "merged_ids": [
+        "FSP-M22"
+      ],
+      "name": "Human accountable drafter of record for judgmental disclosures",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "owning all judgmental disclosure content and materiality decisions",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "hitl_designer",
+        "agentic_architect",
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "FSP-M23",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "FSP-C23"
+      ],
+      "merged_ids": [
+        "FSP-M23"
+      ],
+      "name": "Policy-change/error record explicitly carried into disclosures",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "including disclosure of accounting policy changes and prior-period errors",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 3,
+      "control_id": "FSP-M24",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "FSP-C24"
+      ],
+      "merged_ids": [
+        "FSP-M24"
+      ],
+      "name": "Analytical review and tie-out as discrete checkpoint",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "pragmatist",
+      "quote": "This remains a distinct step, functionally separate from drafting",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "pragmatist",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "FSP-M25",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "FSP-C25"
+      ],
+      "merged_ids": [
+        "FSP-M25"
+      ],
+      "name": "Tie-out reviewer independent of drafter",
+      "outcome": "PASS",
+      "primary_role": "finance_domain",
+      "quote": "performed by a reviewer distinct from the drafting pass",
+      "quote_run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+      "roles": [
+        "finance_domain",
+        "agentic_architect"
+      ],
+      "strict_75": true,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "FSP-M26",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "FSP-C26"
+      ],
+      "merged_ids": [
+        "FSP-M26"
+      ],
+      "name": "Approval package surfaces upstream exception/judgment trail",
+      "outcome": "PASS",
+      "primary_role": "hitl_designer",
+      "quote": "The review package explicitly surfaces the judgment and exception trail generated upstream",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": true,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "FSP-M27",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "FSP-C27"
+      ],
+      "merged_ids": [
+        "FSP-M27"
+      ],
+      "name": "Approver distinct from drafter",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "accounting_standards",
+      "quote": "The approver is structurally distinct from the drafter at all times.",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "accounting_standards",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "FSP-M28",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "FSP-C28"
+      ],
+      "merged_ids": [
+        "FSP-M28"
+      ],
+      "name": "Reject/query/escalate path in approval",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "hitl_designer",
+      "quote": "the review interface must expose a genuine reject/query/escalate path tied to specific flagged items",
+      "quote_run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "FSP-M29",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "FSP-C29"
+      ],
+      "merged_ids": [
+        "FSP-M29"
+      ],
+      "name": "Logged approval as sole trigger for release",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "strictly trigger-gated on the logged approval event from management review, never fired on a schedule or inference",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "FSP-M30",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "FSP-C30",
+        "FSP-C31"
+      ],
+      "merged_ids": [
+        "FSP-M30",
+        "FSP-M31"
+      ],
+      "name": "Released package confirmed identical to approved",
+      "outcome": "PASS",
+      "primary_role": "finance_domain",
+      "quote": "The release function confirms a byte-for-byte match between the approved and filed/distributed package before release",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "finance_domain",
+        "pragmatist",
+        "agentic_architect"
+      ],
+      "strict_75": true,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "FSP-M32",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "FSP-C32"
+      ],
+      "merged_ids": [
+        "FSP-M32"
+      ],
+      "name": "Manual/offline fallback for release/submission",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "emerging_economy",
+      "quote": "with a manual/offline fallback path preserved where e-filing portals or network links are unreliable",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "FSP-M33",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "FSP-C33"
+      ],
+      "merged_ids": [
+        "FSP-M33"
+      ],
+      "name": "Release failure blocks and escalates",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "any failure blocks and escalates rather than retrying silently",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "FSP-M34",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "FSP-C34"
+      ],
+      "merged_ids": [
+        "FSP-M34"
+      ],
+      "name": "Release retractable / controlled correction path",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "retractable through a controlled correction path rather than silently overwritten",
+      "quote_run_id": "20261010-203150-council-R2R-FSP-01-5655",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 3,
+      "control_id": "FSP-M35",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "FSP-C35"
+      ],
+      "merged_ids": [
+        "FSP-M35"
+      ],
+      "name": "Tie-out exception/variance log",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "Exception and escalation log",
+      "quote_run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "FSP-M36",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "FSP-C36"
+      ],
+      "merged_ids": [
+        "FSP-M36"
+      ],
+      "name": "Defined threshold for tie-out variances",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "not a residual check on whatever an automated threshold happened to flag",
+      "quote_run_id": "20261010-194053-council-R2R-FSP-01-cac9",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": true,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 2,
+      "control_id": "FSP-M37",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "FSP-C37"
+      ],
+      "merged_ids": [
+        "FSP-M37"
+      ],
+      "name": "Unresolved tie-out variances block progression / send-back",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "holds authority to kick the draft back to T5 before it reaches the CFO",
+      "quote_run_id": "20261010-201339-council-R2R-FSP-01-d272",
+      "roles": [
+        "hitl_designer",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "FSP-M38",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "FSP-C38"
+      ],
+      "merged_ids": [
+        "FSP-M38"
+      ],
+      "name": "Substantive human analytical review not limited to flags",
+      "outcome": "PASS",
+      "primary_role": "hitl_designer",
+      "quote": "performs genuine analytical review of variances and plausibility rather than merely adjudicating system-flagged exceptions",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "FSP-M39",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "FSP-C39"
+      ],
+      "merged_ids": [
+        "FSP-M39"
+      ],
+      "name": "Tie-out discrepancies classified current-period vs IAS 8 error",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "finance_domain",
+      "quote": "Discrepancies are explicitly triaged and classified as current-period corrections or IAS 8 prior-period errors",
+      "quote_run_id": "20261010-192227-council-R2R-FSP-01-c9c7",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "VAR-M01",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "VAR-C01"
+      ],
+      "merged_ids": [
+        "VAR-M01"
+      ],
+      "name": "Ingestion pull log (source, timestamp, hash, version IDs)",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "Ingestion log (source, timestamp, checksum, budget/forecast version IDs)",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "VAR-M02",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "VAR-C02"
+      ],
+      "merged_ids": [
+        "VAR-M02"
+      ],
+      "name": "Ingestion hard-stop halt (unlocked period, stale/unapproved version, failed reconciliation)",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "On reconciliation failure, stale feed, or missing source, the job halts and routes to this analyst",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": true,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "VAR-M03",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "VAR-C03"
+      ],
+      "merged_ids": [
+        "VAR-M03"
+      ],
+      "name": "Named analyst owns ingestion exception queue/log",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "owns reconciliation of any late-loading entities, duplicate postings, or stale version mismatches",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "hitl_designer",
+        "pragmatist",
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 4,
+      "control_id": "VAR-M04",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "VAR-C04"
+      ],
+      "merged_ids": [
+        "VAR-M04"
+      ],
+      "name": "Every-cycle analyst validation of ingestion (lock tie, control totals, version identity)",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "A named FP&A analyst performs a standing, every-cycle validation sign-off confirming the extract ties to the lock",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "finance_domain",
+        "emerging_economy",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "VAR-M06",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "VAR-C06"
+      ],
+      "merged_ids": [
+        "VAR-M06"
+      ],
+      "name": "Degraded-mode / manual fallback for automated ingestion",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "emerging_economy",
+      "quote": "designed to degrade gracefully under intermittent connectivity (locally cached/last-known-good data, queued retry)",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "emerging_economy",
+        "pragmatist"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "VAR-M07",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "VAR-C07"
+      ],
+      "merged_ids": [
+        "VAR-M07"
+      ],
+      "name": "Policy-version and FX-table-version logged per computation run",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "Policy-version and FX-table-version run log",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 3,
+      "control_id": "VAR-M08",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "VAR-C08"
+      ],
+      "merged_ids": [
+        "VAR-M08"
+      ],
+      "name": "Per-cycle analyst sign-off that policy/FX parameters are current",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "confirms each cycle that the loaded policy and FX parameters are the currently-approved ones",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "hitl_designer",
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "VAR-M09",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "VAR-C09"
+      ],
+      "merged_ids": [
+        "VAR-M09"
+      ],
+      "name": "Computation halts on missing/stale/mismatched policy or FX reference data",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "the engine halts and routes to the analyst on any version mismatch or missing parameter rather than defaulting silently",
+      "quote_run_id": "20261010-203132-council-FPA-VAR-01-4f3e",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "VAR-M10",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "VAR-C10"
+      ],
+      "merged_ids": [
+        "VAR-M10"
+      ],
+      "name": "Policy/FX change or basis divergence surfaced as explicit disclosure flag",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "Any divergence from the prior period's policy or FX version is flagged as an explicit disclosure trigger",
+      "quote_run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+      "roles": [
+        "agentic_architect",
+        "accounting_standards"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 2,
+      "control_id": "VAR-M11",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "VAR-C11"
+      ],
+      "merged_ids": [
+        "VAR-M11"
+      ],
+      "name": "Structural-break validation of computation output",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "no structural break in the underlying population (new SKUs, reclassified cost centres, M&A-driven volume shifts) has silently distorted the computation",
+      "quote_run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "VAR-M12",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "VAR-C12"
+      ],
+      "merged_ids": [
+        "VAR-M12"
+      ],
+      "name": "FX effect reported as a separate line, not netted",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "accounting_standards",
+      "quote": "Variance dataset with FX effect separately isolated",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "accounting_standards"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "VAR-M13",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "VAR-C13"
+      ],
+      "merged_ids": [
+        "VAR-M13"
+      ],
+      "name": "Variance computation kept deterministic and inspectable",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "pragmatist",
+      "quote": "kept as a distinct, inspectable step rather than folded into ingestion",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "pragmatist",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "VAR-M14",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "VAR-C14"
+      ],
+      "merged_ids": [
+        "VAR-M14"
+      ],
+      "name": "Materiality screening kept as a discrete, separately inspectable gate step",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "maximalist",
+      "quote": "The step remains a discrete, visibly separate gate",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "maximalist",
+        "pragmatist"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 3,
+      "control_id": "VAR-M15",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "VAR-C15",
+        "VAR-C16",
+        "VAR-C19"
+      ],
+      "merged_ids": [
+        "VAR-M15",
+        "VAR-M18"
+      ],
+      "name": "Logged analyst overrides of materiality selection (additions and exclusions, with rationale)",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "retains explicit, logged authority to add sub-threshold items to the explanation list",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "hitl_designer",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "VAR-M16",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "VAR-C17"
+      ],
+      "merged_ids": [
+        "VAR-M16"
+      ],
+      "name": "Net-effect aggregation check of sub-threshold variances",
+      "outcome": "PASS",
+      "primary_role": "finance_domain",
+      "quote": "Net-effect aggregation check log",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 2,
+      "control_id": "VAR-M17",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "VAR-C18"
+      ],
+      "merged_ids": [
+        "VAR-M17"
+      ],
+      "name": "Threshold parameters human-owned, versioned and change-controlled",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "threshold-parameter governance, which is separately change-controlled",
+      "quote_run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 2,
+      "control_id": "VAR-M19",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "VAR-C20"
+      ],
+      "merged_ids": [
+        "VAR-M19"
+      ],
+      "name": "Near-threshold tolerance band routed to human decision",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "Items within a configurable tolerance band of the threshold",
+      "quote_run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+      "roles": [
+        "agentic_architect",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "VAR-M20",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "VAR-C21",
+        "VAR-C22"
+      ],
+      "merged_ids": [
+        "VAR-M20",
+        "VAR-M21"
+      ],
+      "name": "Actor separation between materiality selection and review",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "FP&A analyst (thresholding owner, distinct from the VAR-07 successor reviewer)",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "hitl_designer",
+        "pragmatist",
+        "emerging_economy",
+        "finance_domain",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "VAR-M22",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "VAR-C23"
+      ],
+      "merged_ids": [
+        "VAR-M22"
+      ],
+      "name": "Materiality override log supplied to reviewer",
+      "outcome": "PASS",
+      "primary_role": "hitl_designer",
+      "quote": "any such override is visible to the downstream reviewer",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": true,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "VAR-M23",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "VAR-C24"
+      ],
+      "merged_ids": [
+        "VAR-M23"
+      ],
+      "name": "Reviewer access to underlying evidence beyond narrative",
+      "outcome": "PASS",
+      "primary_role": "hitl_designer",
+      "quote": "the manager retains full access to underlying variance detail and raw commentary",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": true,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "VAR-M24",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "VAR-C25"
+      ],
+      "merged_ids": [
+        "VAR-M24"
+      ],
+      "name": "Review retained as a non-automated human accountability checkpoint",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "Retained unchanged in substance as the workflow's primary human accountability checkpoint",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "VAR-M25",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "VAR-C26"
+      ],
+      "merged_ids": [
+        "VAR-M25"
+      ],
+      "name": "Reviewer can reject and kick back draft/commentary upstream",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "can reject and bounce the draft back to TS-05/TS-04",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "agentic_architect",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "VAR-M26",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "VAR-C27"
+      ],
+      "merged_ids": [
+        "VAR-M26"
+      ],
+      "name": "Documented challenge notes retained",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "finance_domain",
+      "quote": "Documented challenge notes",
+      "quote_run_id": "20261010-205043-council-FPA-VAR-01-8d63",
+      "roles": [
+        "finance_domain",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "VAR-M27",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "VAR-C28"
+      ],
+      "merged_ids": [
+        "VAR-M27"
+      ],
+      "name": "Distribution gated on logged manager sign-off event",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "pushes the signed-off artifact the moment review is logged as approved",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "VAR-M28",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "VAR-C29",
+        "VAR-C30"
+      ],
+      "merged_ids": [
+        "VAR-M28",
+        "VAR-M29"
+      ],
+      "name": "Distribution log (recipients, timestamp, version)",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "Distribution log",
+      "quote_run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+      "roles": [
+        "agentic_architect",
+        "hitl_designer"
+      ],
+      "strict_75": true,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "VAR-M30",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "VAR-C31"
+      ],
+      "merged_ids": [
+        "VAR-M30"
+      ],
+      "name": "Tracked recall/reissue path for post-distribution corrections",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "reversible via a recall/reissue path if an error is caught post-distribution",
+      "quote_run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "VAR-M31",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "VAR-C32"
+      ],
+      "merged_ids": [
+        "VAR-M31"
+      ],
+      "name": "Archived provenance chain with distributed report",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "Archived provenance chain",
+      "quote_run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "VAR-M32",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "VAR-C33"
+      ],
+      "merged_ids": [
+        "VAR-M32"
+      ],
+      "name": "Budget-holder commentary human-authored and attributed",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "pragmatist",
+      "quote": "Commentary content is authored exclusively by the accountable budget holder",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "pragmatist",
+        "hitl_designer",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "VAR-M33",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "VAR-C34"
+      ],
+      "merged_ids": [
+        "VAR-M33"
+      ],
+      "name": "Commentary SLA tracking with automatic escalation, logged",
+      "outcome": "PASS",
+      "primary_role": "finance_domain",
+      "quote": "SLA tracking with automatic escalation to the holder's manager after non-response",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "finance_domain",
+        "agentic_architect"
+      ],
+      "strict_75": true,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "VAR-M34",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "VAR-C35"
+      ],
+      "merged_ids": [
+        "VAR-M34"
+      ],
+      "name": "Missing commentary marked outstanding, never auto-filled",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "with the item marked outstanding rather than auto-filled",
+      "quote_run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "VAR-M35",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "VAR-C36"
+      ],
+      "merged_ids": [
+        "VAR-M35"
+      ],
+      "name": "Asynchronous low-bandwidth commentary channel",
+      "outcome": "PASS",
+      "primary_role": "emerging_economy",
+      "quote": "an asynchronous, low-bandwidth-tolerant submission channel (templated email/offline form) as a first-class path",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": true,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "VAR-M36",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "VAR-C37"
+      ],
+      "merged_ids": [
+        "VAR-M36"
+      ],
+      "name": "Structured root-cause / driver-tagged commentary template",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "templated prompts (root cause, one-time vs. recurring, corrective action)",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "VAR-M37",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "VAR-C38"
+      ],
+      "merged_ids": [
+        "VAR-M37"
+      ],
+      "name": "Completeness check: every selected variance has commentary",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "the analyst verifies every selected variance has commentary attached",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "VAR-M38",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "VAR-C39"
+      ],
+      "merged_ids": [
+        "VAR-M38"
+      ],
+      "name": "Commentary adequacy/coherence check with kickback",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "commentary meets a minimum explanatory bar (root cause, not restatement)",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "VAR-M39",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "VAR-C40"
+      ],
+      "merged_ids": [
+        "VAR-M39"
+      ],
+      "name": "Draft provenance tagging / per-claim source lineage",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "every generated passage traceable back to its source variance line and commentary record",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": true,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "VAR-M40",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "VAR-C41"
+      ],
+      "merged_ids": [
+        "VAR-M40"
+      ],
+      "name": "Commentary provenance record (receipt timestamp/author)",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "Commentary provenance record",
+      "quote_run_id": "20261010-201339-council-FPA-VAR-01-a8a0",
+      "roles": [
+        "agentic_architect",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "VAR-M41",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "VAR-C42"
+      ],
+      "merged_ids": [
+        "VAR-M41"
+      ],
+      "name": "Named accountable preparer of the draft",
+      "outcome": "PASS",
+      "primary_role": "finance_domain",
+      "quote": "This preserves a preparer/reviewer audit trail distinct from the FP&A manager's review in TS-07.",
+      "quote_run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "VAR-M42",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "VAR-C43",
+        "VAR-C44"
+      ],
+      "merged_ids": [
+        "VAR-M42",
+        "VAR-M43"
+      ],
+      "name": "Accountable human presentation by manager",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "Presentation and discussion remain a human-led activity, separated from the mechanical act of distribution.",
+      "quote_run_id": "20261010-194032-council-FPA-VAR-01-6fd0",
+      "roles": [
+        "hitl_designer",
+        "pragmatist",
+        "finance_domain",
+        "synthesis"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "VAR-M44",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "VAR-C45"
+      ],
+      "merged_ids": [
+        "VAR-M44"
+      ],
+      "name": "Offline/portable distribution format floor",
+      "outcome": "PASS",
+      "primary_role": "emerging_economy",
+      "quote": "defaulting to portable, low-bandwidth formats (PDF/CSV export)",
+      "quote_run_id": "20261010-184959-council-FPA-VAR-01-7759",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": true,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "ABB-M01",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ABB-C01"
+      ],
+      "merged_ids": [
+        "ABB-M01"
+      ],
+      "name": "Named accountable human issuer signs off agent-drafted assumptions and downside scenario",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "the FP&A manager remains the accountable publisher who authors/edits and signs off the final downside macro scenario",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "agentic_architect",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 2,
+      "control_id": "ABB-M02",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "ABB-C02"
+      ],
+      "merged_ids": [
+        "ABB-M02"
+      ],
+      "name": "Versioned assumption pack / assumption version log",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "Central planning assumptions (versioned)",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M03",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "ABB-C03"
+      ],
+      "merged_ids": [
+        "ABB-M03"
+      ],
+      "name": "Recorded deviation/diff between agent-drafted baseline and human-submitted figures",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "hitl_designer",
+      "quote": "must record a documented rationale wherever the submitted number deviates from the agent's baseline",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M04",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "ABB-C04"
+      ],
+      "merged_ids": [
+        "ABB-M04"
+      ],
+      "name": "Acknowledgement-receipt of downside scenario by submitters",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "hitl_designer",
+      "quote": "acknowledgement-receipt mechanism confirming submitters received and will apply the downside scenario",
+      "quote_run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M05",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ABB-C05"
+      ],
+      "merged_ids": [
+        "ABB-M05"
+      ],
+      "name": "Offline / multi-channel distribution and submission path as first-class channel",
+      "outcome": "PASS",
+      "primary_role": "emerging_economy",
+      "quote": "distributed through both a central portal and a downloadable, lockable template bundle",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": true,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M06",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "ABB-C06"
+      ],
+      "merged_ids": [
+        "ABB-M06"
+      ],
+      "name": "Manual override/correction path for non-integrated HRIS/headcount data",
+      "outcome": "PASS",
+      "primary_role": "emerging_economy",
+      "quote": "A manual override/correction path is retained at the cost-centre-owner level where HRIS/payroll data does not fully integrate",
+      "quote_run_id": "20261010-194031-council-FPA-ABB-01-c041",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M07",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "ABB-C07"
+      ],
+      "merged_ids": [
+        "ABB-M07"
+      ],
+      "name": "Stale/failed data feed halts agent and routes to human instead of interpolating",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "If a data feed is stale or a scenario run fails validation, the agent halts and routes to the FP&A manager",
+      "quote_run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M08",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "ABB-C08"
+      ],
+      "merged_ids": [
+        "ABB-M08"
+      ],
+      "name": "Materiality-triggered re-issue of assumptions mid-cycle",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "finance_domain",
+      "quote": "any mid-cycle revision carries a version stamp",
+      "quote_run_id": "20261010-194031-council-FPA-ABB-01-c041",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M09",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "ABB-C09"
+      ],
+      "merged_ids": [
+        "ABB-M09"
+      ],
+      "name": "Documented methodology / basis-of-judgment for FX rates and downside scenario",
+      "outcome": "PASS",
+      "primary_role": "hitl_designer",
+      "quote": "Downside macro scenario (authored, basis-of-judgment note attached)",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "hitl_designer",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "ABB-M10",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ABB-C10"
+      ],
+      "merged_ids": [
+        "ABB-M10"
+      ],
+      "name": "Target-setting reserved to CEO/CFO; analytics/agent decision support only, no write authority",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "the target itself is a human governance decision, not an agent output with an override option",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "agentic_architect",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M11",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "ABB-C11"
+      ],
+      "merged_ids": [
+        "ABB-M11"
+      ],
+      "name": "Top-down targets issued with stated reasoning/drivers",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "hitl_designer",
+      "quote": "Provisional top-down targets with stated reasoning/drivers",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "ABB-M12",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "ABB-C12"
+      ],
+      "merged_ids": [
+        "ABB-M12"
+      ],
+      "name": "Provisional targets with scheduled recalibration touchpoint",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "A recalibration touchpoint is scheduled once first-pass bottom-up submissions land",
+      "quote_run_id": "20261010-194031-council-FPA-ABB-01-c041",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "ABB-M13",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "ABB-C13",
+        "ABB-C15"
+      ],
+      "merged_ids": [
+        "ABB-M13",
+        "ABB-M15"
+      ],
+      "name": "Deterministic hard gate blocking above-threshold capex without business case",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "A deterministic, rule-based gate blocks submission of any capex line above the published threshold unless a business case is attached",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "agentic_architect",
+        "pragmatist"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 2,
+      "control_id": "ABB-M14",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "ABB-C14"
+      ],
+      "merged_ids": [
+        "ABB-M14"
+      ],
+      "name": "Named human reviewer (CFO/capex committee) signs off above-threshold business case, decision logged",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "above-threshold cases are paired with a named central FP&A reviewer/coach",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "hitl_designer",
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M16",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "ABB-C16"
+      ],
+      "merged_ids": [
+        "ABB-M16"
+      ],
+      "name": "Capex exception path logged and attributable",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "Any exception path is logged and attributable.",
+      "quote_run_id": "20261010-205042-council-FPA-ABB-01-600a",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M17",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "ABB-C17"
+      ],
+      "merged_ids": [
+        "ABB-M17"
+      ],
+      "name": "Capital-allocation triage with inspectable scoring and human routing of FX/political-risk requests",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "emerging_economy",
+      "quote": "any request with material FX or political-risk exposure must be routed to a human reviewer rather than resolved by templated scoring",
+      "quote_run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+      "roles": [
+        "emerging_economy",
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "ABB-M18",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ABB-C18"
+      ],
+      "merged_ids": [
+        "ABB-M18"
+      ],
+      "name": "Deterministic, version-pinned, inspectable FX/policy logic in consolidation (no agent inference, single reused logic)",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "FX translation and policy application are deterministic, rule-based and auditable, not generative inference",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 3,
+      "control_id": "ABB-M19",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ABB-C19"
+      ],
+      "merged_ids": [
+        "ABB-M19"
+      ],
+      "name": "Halt-and-escalate on reconciliation break / exception (no silent plug)",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "reconciliation breaks, unmapped inputs or FX/policy anomalies hard-stop and route back to the originating T3/T4 submission(s)",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "agentic_architect",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M20",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "ABB-C20"
+      ],
+      "merged_ids": [
+        "ABB-M20"
+      ],
+      "name": "Versioned consolidation run log (inputs, assumption vintage, logic version, timestamp)",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "Each consolidation run is versioned and logged (inputs, assumption vintage, agent/logic version, timestamp)",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": true,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M21",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "ABB-C21"
+      ],
+      "merged_ids": [
+        "ABB-M21"
+      ],
+      "name": "Named analyst certification of a discrete reconciled consolidation snapshot",
+      "outcome": "PASS",
+      "primary_role": "hitl_designer",
+      "quote": "The FP&A analyst remains the accountable reviewer of consolidation output, certifying exceptions and the final reconciled statement.",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "hitl_designer",
+        "pragmatist"
+      ],
+      "strict_75": true,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M22",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "ABB-C22"
+      ],
+      "merged_ids": [
+        "ABB-M22"
+      ],
+      "name": "Completeness/data-quality gate on submissions before consolidation",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "finance_domain",
+      "quote": "An explicit completeness/data-quality gate checks that no submission has been silently treated as zero or omitted.",
+      "quote_run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "ABB-M23",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "ABB-C23"
+      ],
+      "merged_ids": [
+        "ABB-M23"
+      ],
+      "name": "Intercompany identification and elimination with log/schedule",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "Reconciliation and intercompany-elimination log",
+      "quote_run_id": "20261010-194031-council-FPA-ABB-01-c041",
+      "roles": [
+        "finance_domain",
+        "accounting_standards"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "ABB-M24",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "ABB-C24"
+      ],
+      "merged_ids": [
+        "ABB-M24"
+      ],
+      "name": "Exchange differences itemised, never netted",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "accounting_standards",
+      "quote": "Exchange differences are preserved as explicit, itemised lines, never netted invisibly.",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "accounting_standards"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M25",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "ABB-C25"
+      ],
+      "merged_ids": [
+        "ABB-M25"
+      ],
+      "name": "Documented manual/spreadsheet consolidation fallback using same policy/FX inputs",
+      "outcome": "PASS",
+      "primary_role": "emerging_economy",
+      "quote": "A documented, equally-valid spreadsheet-based consolidation path exists for units without reliable system/FX-feed access",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M26",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "ABB-C26"
+      ],
+      "merged_ids": [
+        "ABB-M26"
+      ],
+      "name": "Trained backup for consolidation/FX function (key-person risk)",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "emerging_economy",
+      "quote": "at least one trained backup must exist for this function given talent-concentration risk",
+      "quote_run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M27",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "ABB-C27"
+      ],
+      "merged_ids": [
+        "ABB-M27"
+      ],
+      "name": "Consolidation roll-up split from a separate human reconciliation/validation step",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "finance_domain",
+      "quote": "Three-statement reconciliation and validation",
+      "quote_run_id": "20261010-201338-council-FPA-ABB-01-ff17",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M28",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ABB-C28"
+      ],
+      "merged_ids": [
+        "ABB-M28"
+      ],
+      "name": "Bounded review iterations with non-convergence escalation path",
+      "outcome": "PASS",
+      "primary_role": "pragmatist",
+      "quote": "Iterations are capped (e.g. two structured rounds) and timeboxed against the T1 calendar",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "pragmatist"
+      ],
+      "strict_75": true,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M29",
+      "council_n": 5,
+      "council_present": 4,
+      "members": [
+        "ABB-C29"
+      ],
+      "merged_ids": [
+        "ABB-M29"
+      ],
+      "name": "Documented challenge/resolution/override log for review iterations",
+      "outcome": "PASS",
+      "primary_role": "hitl_designer",
+      "quote": "Challenge and rationale record",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": true,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M30",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "ABB-C30"
+      ],
+      "merged_ids": [
+        "ABB-M30"
+      ],
+      "name": "Non-converging lines kicked back to owners for resubmission rather than silently overridden",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "finance_domain",
+      "quote": "with real authority to send submissions back",
+      "quote_run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "ABB-M31",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ABB-C31"
+      ],
+      "merged_ids": [
+        "ABB-M31"
+      ],
+      "name": "Automated variance/exception flagging to triage review",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "a continuous variance-flagging property is an input to this step, not a substitute for it",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "agentic_architect",
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 4,
+      "control_id": "ABB-M32",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "ABB-C32"
+      ],
+      "merged_ids": [
+        "ABB-M32"
+      ],
+      "name": "Mandatory downside-scenario stress test of the draft budget",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "re-applies the downside macro scenario as a stress test on the draft budget each round",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M33",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "ABB-C33"
+      ],
+      "merged_ids": [
+        "ABB-M33"
+      ],
+      "name": "Policy/FX basis change during review surfaced as disclosed policy change",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "accounting_standards",
+      "quote": "any such change must be surfaced as a disclosed policy change",
+      "quote_run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+      "roles": [
+        "accounting_standards"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M34",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "ABB-C34"
+      ],
+      "merged_ids": [
+        "ABB-M34"
+      ],
+      "name": "Asynchronous/store-and-forward review channel",
+      "outcome": "PASS",
+      "primary_role": "emerging_economy",
+      "quote": "asynchronous/batched written commentary as the default-supported cadence",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M35",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ABB-C35"
+      ],
+      "merged_ids": [
+        "ABB-M35"
+      ],
+      "name": "Board pack carries unsanitised judgment flags, unresolved challenges and supporting evidence",
+      "outcome": "PASS",
+      "primary_role": "hitl_designer",
+      "quote": "The pack must explicitly carry the downside macro scenario and the material judgment calls/exception flags surfaced during T6, unsanitised",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": true,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "ABB-M36",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ABB-C36"
+      ],
+      "merged_ids": [
+        "ABB-M36"
+      ],
+      "name": "Board approval reserved to humans; no agent decision authority",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "the approval action and authority remain exclusively with the board",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "ABB-M37",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "ABB-C37"
+      ],
+      "merged_ids": [
+        "ABB-M37"
+      ],
+      "name": "Board approval recorded with conditions; conditions reconciled before lock",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "Any conditions attached to approval ('approved subject to X') are explicitly recorded",
+      "quote_run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 3,
+      "control_id": "ABB-M38",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ABB-C38"
+      ],
+      "merged_ids": [
+        "ABB-M38"
+      ],
+      "name": "Lock hard-gated on verified board-approval artefact",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "A Lock Agent is hard-wired to trigger only on receipt of the board-approved artefact from T7",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M39",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ABB-C39"
+      ],
+      "merged_ids": [
+        "ABB-M39"
+      ],
+      "name": "Automated hash/diff match of loaded version against board-approved document",
+      "outcome": "PASS",
+      "primary_role": "agentic_architect",
+      "quote": "a validation mismatch halts the lock and escalates rather than proceeding silently or partially",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": true,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "ABB-M40",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ABB-C40",
+        "ABB-C43"
+      ],
+      "merged_ids": [
+        "ABB-M40",
+        "ABB-M43"
+      ],
+      "name": "Named human attestation that locked version equals board-approved version before lock commits",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "attests, on every lock event including clean ones, that the loaded/locked figures are identical to the board-approved document",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "hitl_designer",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M41",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "ABB-C41"
+      ],
+      "merged_ids": [
+        "ABB-M41"
+      ],
+      "name": "Lock confirmer distinct from consolidation preparer / loader",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "hitl_designer",
+      "quote": "a named accountable individual distinct from whoever last touched the consolidation run",
+      "quote_run_id": "20261010-194031-council-FPA-ABB-01-c041",
+      "roles": [
+        "hitl_designer"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 4,
+      "control_id": "ABB-M42",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ABB-C42"
+      ],
+      "merged_ids": [
+        "ABB-M42"
+      ],
+      "name": "Governed, logged, authorised re-open procedure for post-lock changes",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "any post-lock correction must go through a formal, logged, CFO-authorised re-open procedure",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "agentic_architect",
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M44",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "ABB-C44"
+      ],
+      "merged_ids": [
+        "ABB-M44"
+      ],
+      "name": "Documented manual/file-based lock fallback with same attestation/immutability discipline",
+      "outcome": "PASS",
+      "primary_role": "emerging_economy",
+      "quote": "Units without tier-one EPM licensing retain a documented manual-lock fallback (access-controlled file/version control)",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M45",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "ABB-C45"
+      ],
+      "merged_ids": [
+        "ABB-M45"
+      ],
+      "name": "Durable vendor-independent export of locked budget",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "emerging_economy",
+      "quote": "The locked version is exported to a durable, vendor-independent format",
+      "quote_run_id": "20261010-194031-council-FPA-ABB-01-c041",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "ABB-M46",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "ABB-C46"
+      ],
+      "merged_ids": [
+        "ABB-M46"
+      ],
+      "name": "Archive of assumption set and capex business cases at lock",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "finance_domain",
+      "quote": "Archived assumption set and capex business cases",
+      "quote_run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+      "roles": [
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M47",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "ABB-C47"
+      ],
+      "merged_ids": [
+        "ABB-M47"
+      ],
+      "name": "Named successor for displaced manual-loading role in transition plan",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "emerging_economy",
+      "quote": "successor to the former manual-loading role, explicitly named in the transition plan",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "emerging_economy"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "ABB-M48",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ABB-C48"
+      ],
+      "merged_ids": [
+        "ABB-M48"
+      ],
+      "name": "Agent advisory only; owner's signed submission is the submission of record",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "the BU head remains the accountable author",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M49",
+      "council_n": 5,
+      "council_present": 3,
+      "members": [
+        "ABB-C49"
+      ],
+      "merged_ids": [
+        "ABB-M49"
+      ],
+      "name": "Above-threshold capex business case remains human-authored (agent limited to calculations)",
+      "outcome": "PASS",
+      "primary_role": "hitl_designer",
+      "quote": "a written business case that a human writes and a human reads",
+      "quote_run_id": "20261010-194031-council-FPA-ABB-01-c041",
+      "roles": [
+        "hitl_designer",
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 1,
+      "control_id": "ABB-M50",
+      "council_n": 5,
+      "council_present": 2,
+      "members": [
+        "ABB-C50"
+      ],
+      "merged_ids": [
+        "ABB-M50"
+      ],
+      "name": "Intake validation agent flags submission anomalies back to owner",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "agentic_architect",
+      "quote": "An intake-validation agent checks submissions against assumptions, prior actuals and internal consistency and flags anomalies",
+      "quote_run_id": "20261010-203125-council-FPA-ABB-01-29eb",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 0,
+      "control_id": "ABB-M51",
+      "council_n": 5,
+      "council_present": 1,
+      "members": [
+        "ABB-C51"
+      ],
+      "merged_ids": [
+        "ABB-M51"
+      ],
+      "name": "Degraded-mode logging on connector failure without blocking owner",
+      "outcome": "FAIL-THRESHOLD",
+      "primary_role": "agentic_architect",
+      "quote": "on connector failure the agent falls back to a prior-year template and logs the degraded mode without blocking the BU head",
+      "quote_run_id": "20261010-205042-council-FPA-ABB-01-600a",
+      "roles": [
+        "agentic_architect"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "ABB-M52",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ABB-C52"
+      ],
+      "merged_ids": [
+        "ABB-M52"
+      ],
+      "name": "Target-setting kept separate from assumption issuance for attributable accountability",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "hitl_designer",
+      "quote": "Set top-down targets",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "hitl_designer",
+        "pragmatist"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    },
+    {
+      "baseline_present": 5,
+      "control_id": "ABB-M53",
+      "council_n": 5,
+      "council_present": 5,
+      "members": [
+        "ABB-C53"
+      ],
+      "merged_ids": [
+        "ABB-M53"
+      ],
+      "name": "Cost-centre budgeting kept distinct from revenue planning for single-owner traceability",
+      "outcome": "FAIL-BASELINE",
+      "primary_role": "pragmatist",
+      "quote": "kept as a structurally distinct step from T3 because the actor, approval chain and downstream consumers",
+      "quote_run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "roles": [
+        "pragmatist",
+        "finance_domain"
+      ],
+      "strict_75": false,
+      "workflow_id": "FPA-ABB-01"
+    }
+  ],
+  "per_workflow": [
+    {
+      "final_controls": 38,
+      "pass": 8,
+      "strict_75": 7,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "final_controls": 35,
+      "pass": 8,
+      "strict_75": 8,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "final_controls": 41,
+      "pass": 15,
+      "strict_75": 15,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "final_controls": 37,
+      "pass": 12,
+      "strict_75": 6,
+      "workflow_id": "R2R-ACR-01"
+    },
+    {
+      "final_controls": 36,
+      "pass": 9,
+      "strict_75": 6,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "final_controls": 39,
+      "pass": 13,
+      "strict_75": 8,
+      "workflow_id": "FPA-VAR-01"
+    },
+    {
+      "final_controls": 51,
+      "pass": 13,
+      "strict_75": 7,
+      "workflow_id": "FPA-ABB-01"
+    }
+  ],
+  "role_convention": "primary = first attributed role of the lowest-numbered member candidate; any = every role named",
+  "rule": "pre-registration section 6 item 4: >= 60% of council runs and no baseline run"
+}

@@ -1,0 +1,217 @@
+{
+  "domain": "P2P",
+  "function_area": "Procure-to-pay",
+  "name": "Expense reimbursement",
+  "open_steps": [
+    "EXR-02",
+    "EXR-05",
+    "EXR-08"
+  ],
+  "profile": "transactional",
+  "requirements": [
+    {
+      "params": {
+        "baseline_step_id": "EXR-01",
+        "required_inputs": [
+          "Receipts for claim lines above the receipt threshold"
+        ]
+      },
+      "requirement_id": "EXR-R-01",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries claim submission must still consume receipts for claim lines above the receipt threshold."
+    },
+    {
+      "params": {
+        "after_step_id": "EXR-04",
+        "before_step_id": "EXR-03"
+      },
+      "requirement_id": "EXR-R-02",
+      "rule_type": "ordering_preserved",
+      "statement": "The policy compliance check must occur before line manager approval."
+    },
+    {
+      "params": {
+        "baseline_step_ids": [
+          "EXR-01",
+          "EXR-04"
+        ]
+      },
+      "requirement_id": "EXR-R-03",
+      "rule_type": "actor_separation",
+      "statement": "Claim submission and claim approval must not be performed by the same actor."
+    },
+    {
+      "params": {
+        "baseline_step_id": "EXR-06",
+        "required_inputs": [
+          "Expense transaction date"
+        ]
+      },
+      "requirement_id": "EXR-R-04",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries posting must still consume the expense transaction date (KB-01)."
+    },
+    {
+      "params": {
+        "baseline_step_id": "EXR-06",
+        "required_inputs": [
+          "Transaction-date exchange rate"
+        ]
+      },
+      "requirement_id": "EXR-R-05",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries posting must still consume the transaction-date exchange rate (KB-07)."
+    },
+    {
+      "params": {
+        "after_step_id": "EXR-07",
+        "before_step_id": "EXR-04"
+      },
+      "requirement_id": "EXR-R-06",
+      "rule_type": "ordering_preserved",
+      "statement": "Line manager approval must occur before reimbursement."
+    },
+    {
+      "params": {
+        "baseline_step_id": "EXR-03"
+      },
+      "requirement_id": "EXR-R-07",
+      "rule_type": "step_preserved",
+      "statement": "The policy compliance check must survive in some form."
+    },
+    {
+      "params": {
+        "baseline_step_id": "EXR-04"
+      },
+      "requirement_id": "EXR-R-08",
+      "rule_type": "step_preserved",
+      "statement": "Line manager approval must survive in some form."
+    },
+    {
+      "params": {
+        "baseline_step_id": "EXR-07"
+      },
+      "requirement_id": "EXR-R-09",
+      "rule_type": "step_preserved",
+      "statement": "Reimbursement must survive in some form."
+    },
+    {
+      "params": {
+        "baseline_step_id": "EXR-01"
+      },
+      "requirement_id": "EXR-R-10",
+      "rule_type": "step_preserved",
+      "statement": "Claim submission must survive in some form."
+    }
+  ],
+  "source": {
+    "document_reference": "APQC PCF Cross-Industry v8.0 (Feb 2026), process anchor pending verification (employee expense reimbursement); step decomposition per docs/HELDOUT_SPEC_2026-10-10.md (signed off 10 Oct 2026). APQC activity IDs pending verification against PCF v8.0 text.",
+    "publisher": "APQC"
+  },
+  "split": "heldout",
+  "steps": [
+    {
+      "actor": "Employee",
+      "description": "The employee submits an out-of-pocket expense claim, attaching receipts for claim lines above the receipt threshold.",
+      "inputs": [
+        "Receipts for claim lines above the receipt threshold",
+        "Expense details"
+      ],
+      "name": "Claim submission with receipts",
+      "outputs": [
+        "Submitted expense claim"
+      ],
+      "step_id": "EXR-01"
+    },
+    {
+      "actor": "AP analyst",
+      "description": "Receipt images are captured and their data extracted into the claim record.",
+      "inputs": [
+        "Submitted expense claim"
+      ],
+      "name": "Receipt capture and data extraction",
+      "outputs": [
+        "Structured claim record"
+      ],
+      "step_id": "EXR-02"
+    },
+    {
+      "actor": "AP analyst",
+      "description": "Claim lines are checked against expense policy limits, categories and per diem rates, and non-compliant lines are flagged.",
+      "inputs": [
+        "Structured claim record",
+        "Expense policy"
+      ],
+      "name": "Policy compliance check",
+      "outputs": [
+        "Policy-checked claim"
+      ],
+      "step_id": "EXR-03"
+    },
+    {
+      "actor": "Line manager",
+      "description": "The claimant's line manager approves or rejects the policy-checked claim.",
+      "inputs": [
+        "Policy-checked claim"
+      ],
+      "name": "Line manager approval",
+      "outputs": [
+        "Approved expense claim"
+      ],
+      "step_id": "EXR-04"
+    },
+    {
+      "actor": "Finance reviewer",
+      "description": "Finance reviews approved claims for coding, policy exceptions and supporting evidence.",
+      "inputs": [
+        "Approved expense claim"
+      ],
+      "name": "Finance review",
+      "outputs": [
+        "Finance-reviewed claim"
+      ],
+      "step_id": "EXR-05"
+    },
+    {
+      "actor": "GL accountant",
+      "description": "The claim is posted to expense accounts and cost centres in the period the expense was incurred, translating foreign-currency lines.",
+      "inputs": [
+        "Approved expense claim",
+        "Expense transaction date",
+        "Transaction-date exchange rate",
+        "Chart of accounts"
+      ],
+      "name": "Posting",
+      "outputs": [
+        "Expense posted to GL"
+      ],
+      "step_id": "EXR-06"
+    },
+    {
+      "actor": "AP analyst",
+      "description": "The approved claim is paid to the employee through the AP payment run.",
+      "inputs": [
+        "Approved expense claim",
+        "Employee bank details"
+      ],
+      "name": "Reimbursement via AP payment run",
+      "outputs": [
+        "Reimbursement paid"
+      ],
+      "step_id": "EXR-07"
+    },
+    {
+      "actor": "AP analyst",
+      "description": "The employee is notified that the claim has been reimbursed.",
+      "inputs": [
+        "Reimbursement paid"
+      ],
+      "name": "Employee notification",
+      "outputs": [
+        "Employee notification"
+      ],
+      "step_id": "EXR-08"
+    }
+  ],
+  "workflow_id": "P2P-EXR-01"
+}

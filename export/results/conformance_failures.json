@@ -1,0 +1,126 @@
+{
+  "exploratory": true,
+  "failures": [
+    {
+      "classification": "NAMING",
+      "condition": "council",
+      "failed": [
+        "TWM-R-06"
+      ],
+      "passed": 9,
+      "run_id": "20261010-185003-council-P2P-TWM-01-6c3b",
+      "score": 0.9,
+      "total": 10,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "classification": "NAMING",
+      "condition": "council",
+      "failed": [
+        "TWM-R-06"
+      ],
+      "passed": 9,
+      "run_id": "20261010-194038-council-P2P-TWM-01-0842",
+      "score": 0.9,
+      "total": 10,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "classification": "NAMING",
+      "condition": "council",
+      "failed": [
+        "TWM-R-06"
+      ],
+      "passed": 9,
+      "run_id": "20261010-203143-council-P2P-TWM-01-5ef7",
+      "score": 0.9,
+      "total": 10,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "classification": "NAMING",
+      "condition": "council",
+      "failed": [
+        "TWM-R-06"
+      ],
+      "passed": 9,
+      "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+      "score": 0.9,
+      "total": 10,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "classification": "NAMING",
+      "condition": "council",
+      "failed": [
+        "PRE-R-07"
+      ],
+      "passed": 10,
+      "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+      "score": 0.909091,
+      "total": 11,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "classification": "NAMING",
+      "condition": "council",
+      "failed": [
+        "PRE-R-06"
+      ],
+      "passed": 10,
+      "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+      "score": 0.909091,
+      "total": 11,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "classification": "UNCLEAR",
+      "condition": "baseline",
+      "failed": [
+        "PRE-R-06"
+      ],
+      "passed": 10,
+      "run_id": "20261010-193948-baseline-P2P-PRE-01-208e",
+      "score": 0.909091,
+      "total": 11,
+      "workflow_id": "P2P-PRE-01"
+    },
+    {
+      "classification": "NAMING",
+      "condition": "council",
+      "failed": [
+        "EXR-R-01"
+      ],
+      "passed": 9,
+      "run_id": "20261010-201338-council-P2P-EXR-01-2ec9",
+      "score": 0.9,
+      "total": 10,
+      "workflow_id": "P2P-EXR-01"
+    },
+    {
+      "classification": "SUBSTANTIVE",
+      "condition": "council",
+      "failed": [
+        "FSP-R-06"
+      ],
+      "passed": 10,
+      "run_id": "20261010-205048-council-R2R-FSP-01-106a",
+      "score": 0.909091,
+      "total": 11,
+      "workflow_id": "R2R-FSP-01"
+    },
+    {
+      "classification": "NAMING",
+      "condition": "council",
+      "failed": [
+        "ABB-R-07"
+      ],
+      "passed": 10,
+      "run_id": "20261010-192227-council-FPA-ABB-01-333a",
+      "score": 0.909091,
+      "total": 11,
+      "workflow_id": "FPA-ABB-01"
+    }
+  ],
+  "source": "docs/CONFORMANCE_FAILURE_CLASSIFICATION.md"
+}

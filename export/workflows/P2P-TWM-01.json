@@ -1,0 +1,212 @@
+{
+  "domain": "P2P",
+  "function_area": "Procure-to-pay",
+  "name": "Three-way matching",
+  "open_steps": [
+    "TWM-01",
+    "TWM-07"
+  ],
+  "profile": "transactional",
+  "requirements": [
+    {
+      "params": {
+        "baseline_step_id": "TWM-02"
+      },
+      "requirement_id": "TWM-R-01",
+      "rule_type": "step_preserved",
+      "statement": "Quantity matching against goods receipt data must survive the redesign in some form."
+    },
+    {
+      "params": {
+        "baseline_step_id": "TWM-03"
+      },
+      "requirement_id": "TWM-R-02",
+      "rule_type": "step_preserved",
+      "statement": "Price and terms matching against purchase order data must survive the redesign in some form."
+    },
+    {
+      "params": {
+        "baseline_step_id": "TWM-02",
+        "required_inputs": [
+          "Goods receipt note data"
+        ]
+      },
+      "requirement_id": "TWM-R-03",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries the quantity matching function must still consume goods receipt note data."
+    },
+    {
+      "params": {
+        "baseline_step_id": "TWM-03",
+        "required_inputs": [
+          "Purchase order data"
+        ]
+      },
+      "requirement_id": "TWM-R-04",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries the price and terms matching function must still consume purchase order data."
+    },
+    {
+      "params": {
+        "baseline_step_id": "TWM-04"
+      },
+      "requirement_id": "TWM-R-05",
+      "rule_type": "step_preserved",
+      "statement": "Tolerance evaluation against a stated tolerance policy must survive in some form; matching without a tolerance discipline is not a control."
+    },
+    {
+      "params": {
+        "baseline_step_id": "TWM-04",
+        "required_inputs": [
+          "Tolerance policy"
+        ]
+      },
+      "requirement_id": "TWM-R-06",
+      "rule_type": "inputs_required",
+      "statement": "Whatever carries the tolerance evaluation function must still consume the tolerance policy."
+    },
+    {
+      "params": {
+        "baseline_step_id": "TWM-06"
+      },
+      "requirement_id": "TWM-R-07",
+      "rule_type": "step_preserved",
+      "statement": "Match release approval must survive in some form."
+    },
+    {
+      "params": {
+        "after_step_id": "TWM-06",
+        "before_step_id": "TWM-05"
+      },
+      "requirement_id": "TWM-R-08",
+      "rule_type": "ordering_preserved",
+      "statement": "Exception resolution must occur before match release approval."
+    },
+    {
+      "params": {
+        "baseline_step_ids": [
+          "TWM-05",
+          "TWM-06"
+        ]
+      },
+      "requirement_id": "TWM-R-09",
+      "rule_type": "actor_separation",
+      "statement": "The exception resolution function and the release approval function must not be performed by the same actor."
+    },
+    {
+      "params": {
+        "baseline_step_id": "TWM-05"
+      },
+      "requirement_id": "TWM-R-10",
+      "rule_type": "step_preserved",
+      "statement": "Exception investigation and resolution must survive in some form."
+    }
+  ],
+  "source": {
+    "document_reference": "APQC PCF Cross-Industry v8.0 (Feb 2026), 9.6.1 Process accounts payable (10756); step decomposition per PhD encoding spec v1.0 with HighRadius/Trintech/KnowledgeLeader practitioner documentation. APQC activity IDs pending verification against PCF v8.0 text.",
+    "publisher": "APQC"
+  },
+  "split": "heldout",
+  "steps": [
+    {
+      "actor": "AP analyst (with ERP retrieval)",
+      "description": "The invoice under test is paired with its purchase order and goods receipt note, retrieved from the ERP, forming the complete document set on which the match is executed.",
+      "inputs": [
+        "Structured validated invoice record",
+        "Purchase order data",
+        "Goods receipt note data"
+      ],
+      "name": "Match dataset assembly",
+      "outputs": [
+        "Assembled match document set"
+      ],
+      "step_id": "TWM-01"
+    },
+    {
+      "actor": "AP analyst (with ERP matching engine)",
+      "description": "Invoiced quantities are compared line by line against quantities received per the goods receipt note, producing per-line quantity variances.",
+      "inputs": [
+        "Assembled match document set",
+        "Goods receipt note data"
+      ],
+      "name": "Quantity matching",
+      "outputs": [
+        "Quantity variance detail"
+      ],
+      "step_id": "TWM-02"
+    },
+    {
+      "actor": "AP analyst (with ERP matching engine)",
+      "description": "Invoiced unit prices, discounts and tax treatment are compared line by line against the purchase order, producing per-line price and terms variances.",
+      "inputs": [
+        "Assembled match document set",
+        "Purchase order data"
+      ],
+      "name": "Price and terms matching",
+      "outputs": [
+        "Price and terms variance detail"
+      ],
+      "step_id": "TWM-03"
+    },
+    {
+      "actor": "AP analyst (with ERP matching engine)",
+      "description": "Quantity and price variances are evaluated against the organisation's tolerance policy, classifying the match as clean, within tolerance, or an exception requiring investigation.",
+      "inputs": [
+        "Quantity variance detail",
+        "Price and terms variance detail",
+        "Tolerance policy"
+      ],
+      "name": "Tolerance evaluation",
+      "outputs": [
+        "Match classification (clean, tolerance or exception)"
+      ],
+      "step_id": "TWM-04"
+    },
+    {
+      "actor": "AP analyst",
+      "description": "Matches classified as exceptions are investigated against source documents and vendor correspondence, and resolved as accepted, corrected or rejected, with the resolution evidenced.",
+      "inputs": [
+        "Exception-classified match",
+        "Quantity variance detail",
+        "Price and terms variance detail",
+        "Purchase order data",
+        "Goods receipt note data"
+      ],
+      "name": "Exception investigation and resolution",
+      "outputs": [
+        "Resolved match (accepted, corrected or rejected)",
+        "Exception resolution evidence"
+      ],
+      "step_id": "TWM-05"
+    },
+    {
+      "actor": "AP supervisor",
+      "description": "Cleanly matched, tolerance-passed and exception-resolved invoices are reviewed and released for posting and payment processing, with releases outside standard tolerance requiring explicit approval.",
+      "inputs": [
+        "Match classification (clean, tolerance or exception)",
+        "Resolved match (accepted, corrected or rejected)",
+        "Tolerance policy"
+      ],
+      "name": "Match release approval",
+      "outputs": [
+        "Released match authorisation"
+      ],
+      "step_id": "TWM-06"
+    },
+    {
+      "actor": "AP accountant",
+      "description": "Match outcomes, tolerance overrides and exception resolutions are logged to the control record, and periodic match-rate and override reporting is produced for control review.",
+      "inputs": [
+        "Released match authorisation",
+        "Exception resolution evidence"
+      ],
+      "name": "Match control reporting",
+      "outputs": [
+        "Match control record",
+        "Match-rate and override report"
+      ],
+      "step_id": "TWM-07"
+    }
+  ],
+  "workflow_id": "P2P-TWM-01"
+}

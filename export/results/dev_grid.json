@@ -1,0 +1,144 @@
+{
+  "cells": [
+    {
+      "condition": "council",
+      "conformance_mean": 1.0,
+      "consistency": 0.916667,
+      "depth_max": 1.0,
+      "depth_mean": 0.958333,
+      "depth_min": 0.875,
+      "dispositions": {
+        "absorbed": 0,
+        "eliminated": 0,
+        "merged": 6,
+        "restructured": 17,
+        "retained": 1
+      },
+      "mean_output_tokens": 83077.0,
+      "n": 3,
+      "run_ids": [
+        "20260829-051950-council-P2P-VIP-01-13b0",
+        "20260830-022209-council-P2P-VIP-01-4c1d",
+        "20260830-052308-council-P2P-VIP-01-2023"
+      ],
+      "workflow_id": "P2P-VIP-01"
+    },
+    {
+      "condition": "baseline",
+      "conformance_mean": 1.0,
+      "consistency": 0.916667,
+      "depth_max": 0.5,
+      "depth_mean": 0.458333,
+      "depth_min": 0.375,
+      "dispositions": {
+        "absorbed": 0,
+        "eliminated": 0,
+        "merged": 6,
+        "restructured": 5,
+        "retained": 13
+      },
+      "mean_output_tokens": 5432.0,
+      "n": 3,
+      "run_ids": [
+        "20260828-175146-baseline-P2P-VIP-01-fd37",
+        "20260830-022032-baseline-P2P-VIP-01-b43c",
+        "20260830-022117-baseline-P2P-VIP-01-7fc2"
+      ],
+      "workflow_id": "P2P-VIP-01"
+    },
+    {
+      "condition": "council",
+      "conformance_mean": 1.0,
+      "consistency": 0.833333,
+      "depth_max": 0.875,
+      "depth_mean": 0.833333,
+      "depth_min": 0.75,
+      "dispositions": {
+        "absorbed": 0,
+        "eliminated": 0,
+        "merged": 1,
+        "restructured": 19,
+        "retained": 4
+      },
+      "mean_output_tokens": 85491.333333,
+      "n": 3,
+      "run_ids": [
+        "20260830-012555-council-R2R-PC-01-546c",
+        "20260830-055127-council-R2R-PC-01-18e1",
+        "20260830-082855-council-R2R-PC-01-41ed"
+      ],
+      "workflow_id": "R2R-PC-01"
+    },
+    {
+      "condition": "baseline",
+      "conformance_mean": 1.0,
+      "consistency": 0.833333,
+      "depth_max": 0.875,
+      "depth_mean": 0.75,
+      "depth_min": 0.625,
+      "dispositions": {
+        "absorbed": 0,
+        "eliminated": 0,
+        "merged": 0,
+        "restructured": 18,
+        "retained": 6
+      },
+      "mean_output_tokens": 6152.333333,
+      "n": 3,
+      "run_ids": [
+        "20260829-112622-baseline-R2R-PC-01-08d1",
+        "20260830-051923-baseline-R2R-PC-01-6f86",
+        "20260830-052014-baseline-R2R-PC-01-674d"
+      ],
+      "workflow_id": "R2R-PC-01"
+    },
+    {
+      "condition": "council",
+      "conformance_mean": 0.933333,
+      "consistency": 0.625,
+      "depth_max": 0.875,
+      "depth_mean": 0.791667,
+      "depth_min": 0.75,
+      "dispositions": {
+        "absorbed": 0,
+        "eliminated": 0,
+        "merged": 2,
+        "restructured": 17,
+        "retained": 5
+      },
+      "mean_output_tokens": 95323.333333,
+      "n": 3,
+      "run_ids": [
+        "20260830-014158-council-FPA-RF-01-d722",
+        "20260830-112004-council-FPA-RF-01-853f",
+        "20260830-155801-council-FPA-RF-01-a6de"
+      ],
+      "workflow_id": "FPA-RF-01"
+    },
+    {
+      "condition": "baseline",
+      "conformance_mean": 1.0,
+      "consistency": 0.625,
+      "depth_max": 0.875,
+      "depth_mean": 0.625,
+      "depth_min": 0.5,
+      "dispositions": {
+        "absorbed": 0,
+        "eliminated": 0,
+        "merged": 1,
+        "restructured": 14,
+        "retained": 9
+      },
+      "mean_output_tokens": 6813.333333,
+      "n": 3,
+      "run_ids": [
+        "20260829-114505-baseline-FPA-RF-01-ae27",
+        "20260830-052106-baseline-FPA-RF-01-1429",
+        "20260830-052213-baseline-FPA-RF-01-1fbc"
+      ],
+      "workflow_id": "FPA-RF-01"
+    }
+  ],
+  "instrument": "disposition convention v1",
+  "set": "dev-v1"
+}
