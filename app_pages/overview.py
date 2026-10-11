@@ -28,9 +28,10 @@ for f in idx["findings"]:
     with st.container(border=True):
         st.badge(f["status"], color=colors.get(f["status"], "gray"))
         st.markdown(f"**{f['title']}**")
-        st.markdown(f["text"])
+        st.markdown(f["text"].replace("$", "\\$"))
 
 st.subheader("Limits", anchor=False)
 with st.container(border=True):
     for item in idx["limits"]:
-        st.markdown(f"- **{item['id']}.** {item['text']}")
+        # Escape "$" so amounts are not read as LaTeX.
+        st.markdown(f"- **{item['id']}.** " + item["text"].replace("$", "\\$"))

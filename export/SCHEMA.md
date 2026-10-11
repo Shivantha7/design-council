@@ -6,14 +6,16 @@ bytes. JSON files use sorted keys. Floats are rounded to 6 decimals.
 
 ## index.json
 - `export_commit`: git commit the export was made from. `prereg_tag`: freeze tag of the held-out set.
-- `research_question`: one sentence.
+- `research_question`: verbatim from the dissertation.
 - `sets.heldout-v1`: `label`, `commit` (pinned run commit), `requested_model`, `workflows` (7 ids),
   `runs` (68 run ids), `cells[]` = {`workflow_id`, `condition`, `run_ids` in rep order, `stop_decision`
   (`complete_at_n4` | `run_5`)}.
 - `sets.dev-v1`: `label`, `workflows` (3 ids), `runs` (18 v1 run ids).
 - `workflows[]`: {`workflow_id`, `name`, `split` (heldout | dev), `profile` (transactional |
   judgment-dense | null), `function_area`, `steps`, `requirements`, `open_steps`} (the last three are counts).
-- `findings[]`: {`id`, `status` (pre-registered | pre-registered coding | exploratory), `title`, `text`}.
+- `findings[]`: {`id` (F1 to F6), `status` (pre-registered | pre-registered counts | pre-registered coding |
+  exploratory), `title`, `text`}.
+- `limits[]`: {`id`, `text`}.
 - `headline`: headline numbers used by the overview page.
 
 ## workflows/<workflow_id>.json

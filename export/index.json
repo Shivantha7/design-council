@@ -1,41 +1,41 @@
 {
-  "export_commit": "5e047d357afc3908278585f4d0206fcc5025158c",
+  "export_commit": "dfee684726198392ab94940ac0b5f6bba36adb49",
   "findings": [
     {
-      "id": "H1",
+      "id": "F1",
       "status": "pre-registered",
-      "text": "10 of 68 runs fell below 1.0 (9 council, 1 baseline), so Branch B applies. In an exploratory classification, 8 of these are naming mismatches under exact matching, 1 substantive and 1 unclear.",
-      "title": "Conformance is a floor, not a discriminator"
+      "text": "The council's mean depth was higher than the budget-matched single agent's on 7 of 7 workflows. The gap reached the 0.2 SESOI on 4 of 7 (threshold 4), so H2 is supported at the threshold. Sign test across workflows: p = 0.008 (one-sided, exploratory).",
+      "title": "Agentic deliberation transforms more deeply"
     },
     {
-      "id": "H2",
-      "status": "pre-registered",
-      "text": "Council mean depth exceeded the single agentic AI baseline by at least the 0.2 SESOI on 4 of 7 workflows (threshold 4), so H2 is supported. 2 of those gaps are exactly 0.2 (P2P-TWM-01, FPA-ABB-01), decided by exact-fraction comparison.",
-      "title": "Agentic AI deliberation transforms more deeply"
-    },
-    {
-      "id": "H3",
-      "status": "pre-registered",
-      "text": "4 of 14 cells stabilised against a threshold of 8, so the stabilisation claim is not supported. The stopping rule is reported as an efficiency rule, not as evidence of convergence.",
-      "title": "Depth does not stabilise by run 4 or 5"
-    },
-    {
-      "id": "ELIM",
-      "status": "pre-registered",
-      "text": "Neither condition eliminated any step. Absorbed dispositions: council 5, baseline 17. The council restructures (170 vs 95) rather than removing steps.",
-      "title": "No step is eliminated; the council restructures"
-    },
-    {
-      "id": "GOV",
-      "status": "pre-registered coding",
-      "text": "78 council-attributed controls (present in ≥ 60% of council runs and in no baseline run). The agentic architect role introduced the most (28 as primary role).",
-      "title": "Deliberation adds governance controls"
-    },
-    {
-      "id": "PROD",
+      "id": "F2",
       "status": "exploratory",
-      "text": "Pooled structural productivity potential (PI) is 0.199 under the primary classification and 0.041 when only agentic AI (not deterministic automation) counts. Transactional workflows 0.374, judgment-dense 0.023. These are estimates under stated assumptions, not measured outcomes.",
-      "title": "Productivity potential is concentrated in transactional work"
+      "text": "Mean depth gap 0.257 on judgment-dense workflows against 0.119 on transactional ones.",
+      "title": "Deliberation matters most where judgment matters most"
+    },
+    {
+      "id": "F3",
+      "status": "pre-registered",
+      "text": "0 eliminations in the council and 0 in the budget-matched single agent, although 16 of 57 steps were open to elimination by design.",
+      "title": "Agentic AI transforms the path, not the task list"
+    },
+    {
+      "id": "F4",
+      "status": "pre-registered counts",
+      "text": "Council vs budget-matched single agent: restructured 170 vs 95, absorbed 5 vs 17, merged 55 vs 81. Run-to-run consistency 0.789 vs 0.702.",
+      "title": "Single agents compress; multi-agent systems re-architect"
+    },
+    {
+      "id": "F5",
+      "status": "exploratory",
+      "text": "About 37% of human effort is removed on transactional workflows and about 2% on judgment-dense ones, where human checkpoints rise instead (human-in-the-loop checkpoints across the three judgment-dense workflows: 4 in the originals, 9.0 in the council designs, mean per run). Pooled: 20%.",
+      "title": "Two kinds of value"
+    },
+    {
+      "id": "F6",
+      "status": "pre-registered coding",
+      "text": "78 council-attributed controls in 7 of 7 workflows (57 at 75%), from 277 distinct controls (307 candidates). Agentic Architect 28, Emerging-Economy Constraint 21, Maximalist 0 (primary role).",
+      "title": "Deliberation adds governance"
     }
   ],
   "headline": {
@@ -47,8 +47,30 @@
     "pooled_pi_primary": 0.199213,
     "runs_below_1": 10
   },
+  "limits": [
+    {
+      "id": "H1",
+      "text": "10 of 68 runs fell below 1.0 conformance, 9 of them council runs. 8 of the 9 council failures are naming differences (exploratory classification)."
+    },
+    {
+      "id": "H3",
+      "text": "H3 is not supported: 4 of 14 cells stabilised."
+    },
+    {
+      "id": "COST",
+      "text": "The council costs about 19× the budget-matched single agent ($1.42 vs $0.07 per run)."
+    },
+    {
+      "id": "MODEL",
+      "text": "One model family was used for both conditions."
+    },
+    {
+      "id": "MATCH",
+      "text": "The baseline is budget-matched, not compute-matched."
+    }
+  ],
   "prereg_tag": "prereg-heldout-2026-10-11",
-  "research_question": "Does a multi-agent Design Council of agentic AI roles produce deeper, standards-conformant redesigns of finance workflows than a single agentic AI baseline, and what governance does deliberation add?",
+  "research_question": "Does structured multi-agent deliberation, implemented as a role-differentiated Design Council, produce finance workflow redesigns superior to those of a budget-matched strong single agent, when superiority is measured against each workflow's own encoded requirements?",
   "sets": {
     "dev-v1": {
       "label": "Development grid (v1)",
