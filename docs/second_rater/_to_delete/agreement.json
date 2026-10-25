@@ -1,0 +1,33 @@
+{
+ "P2P-TWM-01": {
+  "cells": 380,
+  "missing": 0,
+  "agreement": 1.0,
+  "kappa": 1.0,
+  "agreement_excl_borderline": 1.0,
+  "kappa_excl_borderline": 1.0,
+  "author_pass": 8,
+  "rater_confirms_pass": 8,
+  "rater_new_pass": [],
+  "author_pass_not_confirmed": []
+ },
+ "R2R-ACR-01": {
+  "cells": 370,
+  "missing": 0,
+  "agreement": 1.0,
+  "kappa": 1.0,
+  "agreement_excl_borderline": 1.0,
+  "kappa_excl_borderline": 1.0,
+  "author_pass": 12,
+  "rater_confirms_pass": 12,
+  "rater_new_pass": [],
+  "author_pass_not_confirmed": []
+ },
+ "pooled": {
+  "cells": 750,
+  "agreement": 1.0,
+  "kappa": 1.0,
+  "agreement_excl_borderline": 1.0,
+  "kappa_excl_borderline": 1.0
+ }
+}

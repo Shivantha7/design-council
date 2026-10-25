@@ -1,0 +1,872 @@
+{
+ "symmetric": {
+  "P2P-TWM-01": {
+   "final": 38,
+   "council_pass": 8,
+   "baseline_pass": 0,
+   "baseline_any_no_council": 0,
+   "council_any_no_baseline": 25,
+   "both": 13
+  },
+  "P2P-PRE-01": {
+   "final": 35,
+   "council_pass": 8,
+   "baseline_pass": 0,
+   "baseline_any_no_council": 0,
+   "council_any_no_baseline": 17,
+   "both": 18
+  },
+  "P2P-EXR-01": {
+   "final": 41,
+   "council_pass": 15,
+   "baseline_pass": 0,
+   "baseline_any_no_council": 0,
+   "council_any_no_baseline": 27,
+   "both": 14
+  },
+  "R2R-ACR-01": {
+   "final": 37,
+   "council_pass": 12,
+   "baseline_pass": 0,
+   "baseline_any_no_council": 0,
+   "council_any_no_baseline": 19,
+   "both": 18
+  },
+  "R2R-FSP-01": {
+   "final": 36,
+   "council_pass": 9,
+   "baseline_pass": 0,
+   "baseline_any_no_council": 0,
+   "council_any_no_baseline": 18,
+   "both": 18
+  },
+  "FPA-VAR-01": {
+   "final": 39,
+   "council_pass": 13,
+   "baseline_pass": 0,
+   "baseline_any_no_council": 0,
+   "council_any_no_baseline": 20,
+   "both": 19
+  },
+  "FPA-ABB-01": {
+   "final": 51,
+   "council_pass": 13,
+   "baseline_pass": 0,
+   "baseline_any_no_council": 0,
+   "council_any_no_baseline": 29,
+   "both": 22
+  }
+ },
+ "length_by_condition": {
+  "council": {
+   "words": 906.606,
+   "steps": 7.242,
+   "controls": 27.515,
+   "per_1000_words": 30.772,
+   "per_step": 3.901
+  },
+  "baseline": {
+   "words": 385.571,
+   "steps": 6.657,
+   "controls": 11.229,
+   "per_1000_words": 30.206,
+   "per_step": 1.731
+  }
+ },
+ "length_by_workflow": {
+  "FPA-ABB-01": {
+   "council": {
+    "words": 1097.6,
+    "steps": 9,
+    "controls": 31.2,
+    "per_1000_words": 28.624,
+    "per_step": 3.495
+   },
+   "baseline": {
+    "words": 486.6,
+    "steps": 9.2,
+    "controls": 13.2,
+    "per_1000_words": 27.186,
+    "per_step": 1.438
+   }
+  },
+  "FPA-VAR-01": {
+   "council": {
+    "words": 883.2,
+    "steps": 7.4,
+    "controls": 29.6,
+    "per_1000_words": 33.561,
+    "per_step": 4.051
+   },
+   "baseline": {
+    "words": 323.8,
+    "steps": 6.8,
+    "controls": 11.4,
+    "per_1000_words": 35.135,
+    "per_step": 1.676
+   }
+  },
+  "P2P-EXR-01": {
+   "council": {
+    "words": 856.5,
+    "steps": 6.5,
+    "controls": 29.5,
+    "per_1000_words": 34.855,
+    "per_step": 4.571
+   },
+   "baseline": {
+    "words": 298.4,
+    "steps": 5.2,
+    "controls": 11.6,
+    "per_1000_words": 39.377,
+    "per_step": 2.24
+   }
+  },
+  "P2P-PRE-01": {
+   "council": {
+    "words": 945.75,
+    "steps": 7.25,
+    "controls": 24.75,
+    "per_1000_words": 26.291,
+    "per_step": 3.424
+   },
+   "baseline": {
+    "words": 397.4,
+    "steps": 6.8,
+    "controls": 10.2,
+    "per_1000_words": 25.897,
+    "per_step": 1.505
+   }
+  },
+  "P2P-TWM-01": {
+   "council": {
+    "words": 891,
+    "steps": 5.2,
+    "controls": 23.2,
+    "per_1000_words": 26.296,
+    "per_step": 4.473
+   },
+   "baseline": {
+    "words": 439.6,
+    "steps": 5.4,
+    "controls": 8.2,
+    "per_1000_words": 18.912,
+    "per_step": 1.52
+   }
+  },
+  "R2R-ACR-01": {
+   "council": {
+    "words": 850.8,
+    "steps": 6.6,
+    "controls": 27.8,
+    "per_1000_words": 32.944,
+    "per_step": 4.243
+   },
+   "baseline": {
+    "words": 355,
+    "steps": 6,
+    "controls": 13.4,
+    "per_1000_words": 38.149,
+    "per_step": 2.27
+   }
+  },
+  "R2R-FSP-01": {
+   "council": {
+    "words": 819.2,
+    "steps": 8.6,
+    "controls": 26.4,
+    "per_1000_words": 32.757,
+    "per_step": 3.086
+   },
+   "baseline": {
+    "words": 398.2,
+    "steps": 7.2,
+    "controls": 10.6,
+    "per_1000_words": 26.786,
+    "per_step": 1.471
+   }
+  }
+ },
+ "runs": [
+  {
+   "wf": "P2P-TWM-01",
+   "cond": "council",
+   "run": "20261010-185003-council-P2P-TWM-01-6c3b",
+   "words": 963,
+   "steps": 5,
+   "controls": 23,
+   "per_1000_words": 23.883696780893043,
+   "per_step": 4.6
+  },
+  {
+   "wf": "P2P-TWM-01",
+   "cond": "council",
+   "run": "20261010-194038-council-P2P-TWM-01-0842",
+   "words": 875,
+   "steps": 5,
+   "controls": 25,
+   "per_1000_words": 28.571428571428573,
+   "per_step": 5.0
+  },
+  {
+   "wf": "P2P-TWM-01",
+   "cond": "council",
+   "run": "20261010-201338-council-P2P-TWM-01-df77",
+   "words": 916,
+   "steps": 5,
+   "controls": 22,
+   "per_1000_words": 24.017467248908297,
+   "per_step": 4.4
+  },
+  {
+   "wf": "P2P-TWM-01",
+   "cond": "council",
+   "run": "20261010-203143-council-P2P-TWM-01-5ef7",
+   "words": 930,
+   "steps": 5,
+   "controls": 21,
+   "per_1000_words": 22.580645161290324,
+   "per_step": 4.2
+  },
+  {
+   "wf": "P2P-TWM-01",
+   "cond": "council",
+   "run": "20261010-205046-council-P2P-TWM-01-c32a",
+   "words": 771,
+   "steps": 6,
+   "controls": 25,
+   "per_1000_words": 32.425421530479895,
+   "per_step": 4.166666666666667
+  },
+  {
+   "wf": "P2P-TWM-01",
+   "cond": "baseline",
+   "run": "20261010-184915-baseline-P2P-TWM-01-f555",
+   "words": 392,
+   "steps": 5,
+   "controls": 7,
+   "per_1000_words": 17.857142857142858,
+   "per_step": 1.4
+  },
+  {
+   "wf": "P2P-TWM-01",
+   "cond": "baseline",
+   "run": "20261010-193948-baseline-P2P-TWM-01-446f",
+   "words": 368,
+   "steps": 5,
+   "controls": 8,
+   "per_1000_words": 21.73913043478261,
+   "per_step": 1.6
+  },
+  {
+   "wf": "P2P-TWM-01",
+   "cond": "baseline",
+   "run": "20261010-195830-baseline-P2P-TWM-01-77c7",
+   "words": 477,
+   "steps": 6,
+   "controls": 11,
+   "per_1000_words": 23.060796645702307,
+   "per_step": 1.8333333333333333
+  },
+  {
+   "wf": "P2P-TWM-01",
+   "cond": "baseline",
+   "run": "20261010-203046-baseline-P2P-TWM-01-76b4",
+   "words": 537,
+   "steps": 6,
+   "controls": 7,
+   "per_1000_words": 13.035381750465548,
+   "per_step": 1.1666666666666667
+  },
+  {
+   "wf": "P2P-TWM-01",
+   "cond": "baseline",
+   "run": "20261010-205000-baseline-P2P-TWM-01-47aa",
+   "words": 424,
+   "steps": 5,
+   "controls": 8,
+   "per_1000_words": 18.867924528301888,
+   "per_step": 1.6
+  },
+  {
+   "wf": "P2P-PRE-01",
+   "cond": "council",
+   "run": "20261010-192227-council-P2P-PRE-01-e0a8",
+   "words": 878,
+   "steps": 7,
+   "controls": 24,
+   "per_1000_words": 27.33485193621868,
+   "per_step": 3.4285714285714284
+  },
+  {
+   "wf": "P2P-PRE-01",
+   "cond": "council",
+   "run": "20261010-194035-council-P2P-PRE-01-64dc",
+   "words": 1034,
+   "steps": 7,
+   "controls": 23,
+   "per_1000_words": 22.243713733075435,
+   "per_step": 3.2857142857142856
+  },
+  {
+   "wf": "P2P-PRE-01",
+   "cond": "council",
+   "run": "20261010-201339-council-P2P-PRE-01-8682",
+   "words": 900,
+   "steps": 8,
+   "controls": 25,
+   "per_1000_words": 27.77777777777778,
+   "per_step": 3.125
+  },
+  {
+   "wf": "P2P-PRE-01",
+   "cond": "council",
+   "run": "20261010-203139-council-P2P-PRE-01-1b2e",
+   "words": 971,
+   "steps": 7,
+   "controls": 27,
+   "per_1000_words": 27.80638516992791,
+   "per_step": 3.857142857142857
+  },
+  {
+   "wf": "P2P-PRE-01",
+   "cond": "baseline",
+   "run": "20261010-184915-baseline-P2P-PRE-01-d745",
+   "words": 363,
+   "steps": 7,
+   "controls": 10,
+   "per_1000_words": 27.548209366391184,
+   "per_step": 1.4285714285714286
+  },
+  {
+   "wf": "P2P-PRE-01",
+   "cond": "baseline",
+   "run": "20261010-193948-baseline-P2P-PRE-01-208e",
+   "words": 382,
+   "steps": 6,
+   "controls": 10,
+   "per_1000_words": 26.17801047120419,
+   "per_step": 1.6666666666666667
+  },
+  {
+   "wf": "P2P-PRE-01",
+   "cond": "baseline",
+   "run": "20261010-195830-baseline-P2P-PRE-01-647f",
+   "words": 383,
+   "steps": 7,
+   "controls": 12,
+   "per_1000_words": 31.33159268929504,
+   "per_step": 1.7142857142857142
+  },
+  {
+   "wf": "P2P-PRE-01",
+   "cond": "baseline",
+   "run": "20261010-203046-baseline-P2P-PRE-01-872e",
+   "words": 388,
+   "steps": 7,
+   "controls": 9,
+   "per_1000_words": 23.195876288659793,
+   "per_step": 1.2857142857142858
+  },
+  {
+   "wf": "P2P-PRE-01",
+   "cond": "baseline",
+   "run": "20261010-205000-baseline-P2P-PRE-01-f62e",
+   "words": 471,
+   "steps": 7,
+   "controls": 10,
+   "per_1000_words": 21.231422505307854,
+   "per_step": 1.4285714285714286
+  },
+  {
+   "wf": "P2P-EXR-01",
+   "cond": "council",
+   "run": "20261010-184959-council-P2P-EXR-01-59a3",
+   "words": 1030,
+   "steps": 6,
+   "controls": 30,
+   "per_1000_words": 29.12621359223301,
+   "per_step": 5.0
+  },
+  {
+   "wf": "P2P-EXR-01",
+   "cond": "council",
+   "run": "20261010-194034-council-P2P-EXR-01-b45d",
+   "words": 831,
+   "steps": 7,
+   "controls": 29,
+   "per_1000_words": 34.89771359807461,
+   "per_step": 4.142857142857143
+  },
+  {
+   "wf": "P2P-EXR-01",
+   "cond": "council",
+   "run": "20261010-201338-council-P2P-EXR-01-2ec9",
+   "words": 793,
+   "steps": 6,
+   "controls": 30,
+   "per_1000_words": 37.83102143757881,
+   "per_step": 5.0
+  },
+  {
+   "wf": "P2P-EXR-01",
+   "cond": "council",
+   "run": "20261010-203133-council-P2P-EXR-01-53eb",
+   "words": 772,
+   "steps": 7,
+   "controls": 29,
+   "per_1000_words": 37.56476683937824,
+   "per_step": 4.142857142857143
+  },
+  {
+   "wf": "P2P-EXR-01",
+   "cond": "baseline",
+   "run": "20261010-184915-baseline-P2P-EXR-01-0102",
+   "words": 269,
+   "steps": 5,
+   "controls": 11,
+   "per_1000_words": 40.89219330855018,
+   "per_step": 2.2
+  },
+  {
+   "wf": "P2P-EXR-01",
+   "cond": "baseline",
+   "run": "20261010-193948-baseline-P2P-EXR-01-fca9",
+   "words": 267,
+   "steps": 5,
+   "controls": 12,
+   "per_1000_words": 44.943820224719104,
+   "per_step": 2.4
+  },
+  {
+   "wf": "P2P-EXR-01",
+   "cond": "baseline",
+   "run": "20261010-195830-baseline-P2P-EXR-01-cf77",
+   "words": 285,
+   "steps": 5,
+   "controls": 12,
+   "per_1000_words": 42.10526315789474,
+   "per_step": 2.4
+  },
+  {
+   "wf": "P2P-EXR-01",
+   "cond": "baseline",
+   "run": "20261010-203046-baseline-P2P-EXR-01-a752",
+   "words": 369,
+   "steps": 6,
+   "controls": 12,
+   "per_1000_words": 32.520325203252035,
+   "per_step": 2.0
+  },
+  {
+   "wf": "P2P-EXR-01",
+   "cond": "baseline",
+   "run": "20261010-205000-baseline-P2P-EXR-01-1a6b",
+   "words": 302,
+   "steps": 5,
+   "controls": 11,
+   "per_1000_words": 36.42384105960265,
+   "per_step": 2.2
+  },
+  {
+   "wf": "R2R-ACR-01",
+   "cond": "council",
+   "run": "20261010-185005-council-R2R-ACR-01-60e6",
+   "words": 890,
+   "steps": 7,
+   "controls": 28,
+   "per_1000_words": 31.46067415730337,
+   "per_step": 4.0
+  },
+  {
+   "wf": "R2R-ACR-01",
+   "cond": "council",
+   "run": "20261010-194041-council-R2R-ACR-01-cb53",
+   "words": 815,
+   "steps": 6,
+   "controls": 30,
+   "per_1000_words": 36.809815950920246,
+   "per_step": 5.0
+  },
+  {
+   "wf": "R2R-ACR-01",
+   "cond": "council",
+   "run": "20261010-201338-council-R2R-ACR-01-216b",
+   "words": 763,
+   "steps": 6,
+   "controls": 27,
+   "per_1000_words": 35.38663171690695,
+   "per_step": 4.5
+  },
+  {
+   "wf": "R2R-ACR-01",
+   "cond": "council",
+   "run": "20261010-203144-council-R2R-ACR-01-dd48",
+   "words": 832,
+   "steps": 7,
+   "controls": 29,
+   "per_1000_words": 34.85576923076923,
+   "per_step": 4.142857142857143
+  },
+  {
+   "wf": "R2R-ACR-01",
+   "cond": "council",
+   "run": "20261010-205046-council-R2R-ACR-01-517f",
+   "words": 954,
+   "steps": 7,
+   "controls": 25,
+   "per_1000_words": 26.20545073375262,
+   "per_step": 3.5714285714285716
+  },
+  {
+   "wf": "R2R-ACR-01",
+   "cond": "baseline",
+   "run": "20261010-184915-baseline-R2R-ACR-01-0bac",
+   "words": 417,
+   "steps": 7,
+   "controls": 12,
+   "per_1000_words": 28.776978417266186,
+   "per_step": 1.7142857142857142
+  },
+  {
+   "wf": "R2R-ACR-01",
+   "cond": "baseline",
+   "run": "20261010-193948-baseline-R2R-ACR-01-464b",
+   "words": 342,
+   "steps": 6,
+   "controls": 14,
+   "per_1000_words": 40.93567251461988,
+   "per_step": 2.3333333333333335
+  },
+  {
+   "wf": "R2R-ACR-01",
+   "cond": "baseline",
+   "run": "20261010-195830-baseline-R2R-ACR-01-a86d",
+   "words": 375,
+   "steps": 6,
+   "controls": 15,
+   "per_1000_words": 40.0,
+   "per_step": 2.5
+  },
+  {
+   "wf": "R2R-ACR-01",
+   "cond": "baseline",
+   "run": "20261010-203046-baseline-R2R-ACR-01-48b8",
+   "words": 314,
+   "steps": 6,
+   "controls": 12,
+   "per_1000_words": 38.21656050955414,
+   "per_step": 2.0
+  },
+  {
+   "wf": "R2R-ACR-01",
+   "cond": "baseline",
+   "run": "20261010-205000-baseline-R2R-ACR-01-688a",
+   "words": 327,
+   "steps": 5,
+   "controls": 14,
+   "per_1000_words": 42.813455657492355,
+   "per_step": 2.8
+  },
+  {
+   "wf": "R2R-FSP-01",
+   "cond": "council",
+   "run": "20261010-192227-council-R2R-FSP-01-c9c7",
+   "words": 778,
+   "steps": 9,
+   "controls": 24,
+   "per_1000_words": 30.848329048843187,
+   "per_step": 2.6666666666666665
+  },
+  {
+   "wf": "R2R-FSP-01",
+   "cond": "council",
+   "run": "20261010-194053-council-R2R-FSP-01-cac9",
+   "words": 713,
+   "steps": 8,
+   "controls": 27,
+   "per_1000_words": 37.86816269284712,
+   "per_step": 3.375
+  },
+  {
+   "wf": "R2R-FSP-01",
+   "cond": "council",
+   "run": "20261010-201339-council-R2R-FSP-01-d272",
+   "words": 902,
+   "steps": 8,
+   "controls": 28,
+   "per_1000_words": 31.042128603104214,
+   "per_step": 3.5
+  },
+  {
+   "wf": "R2R-FSP-01",
+   "cond": "council",
+   "run": "20261010-203150-council-R2R-FSP-01-5655",
+   "words": 1019,
+   "steps": 9,
+   "controls": 28,
+   "per_1000_words": 27.47791952894995,
+   "per_step": 3.111111111111111
+  },
+  {
+   "wf": "R2R-FSP-01",
+   "cond": "council",
+   "run": "20261010-205048-council-R2R-FSP-01-106a",
+   "words": 684,
+   "steps": 9,
+   "controls": 25,
+   "per_1000_words": 36.54970760233918,
+   "per_step": 2.7777777777777777
+  },
+  {
+   "wf": "R2R-FSP-01",
+   "cond": "baseline",
+   "run": "20261010-184915-baseline-R2R-FSP-01-b1b5",
+   "words": 433,
+   "steps": 7,
+   "controls": 10,
+   "per_1000_words": 23.094688221709006,
+   "per_step": 1.4285714285714286
+  },
+  {
+   "wf": "R2R-FSP-01",
+   "cond": "baseline",
+   "run": "20261010-193948-baseline-R2R-FSP-01-8bc6",
+   "words": 404,
+   "steps": 7,
+   "controls": 11,
+   "per_1000_words": 27.22772277227723,
+   "per_step": 1.5714285714285714
+  },
+  {
+   "wf": "R2R-FSP-01",
+   "cond": "baseline",
+   "run": "20261010-195830-baseline-R2R-FSP-01-38b8",
+   "words": 363,
+   "steps": 8,
+   "controls": 12,
+   "per_1000_words": 33.05785123966942,
+   "per_step": 1.5
+  },
+  {
+   "wf": "R2R-FSP-01",
+   "cond": "baseline",
+   "run": "20261010-203046-baseline-R2R-FSP-01-0590",
+   "words": 394,
+   "steps": 7,
+   "controls": 9,
+   "per_1000_words": 22.84263959390863,
+   "per_step": 1.2857142857142858
+  },
+  {
+   "wf": "R2R-FSP-01",
+   "cond": "baseline",
+   "run": "20261010-205000-baseline-R2R-FSP-01-cec0",
+   "words": 397,
+   "steps": 7,
+   "controls": 11,
+   "per_1000_words": 27.707808564231737,
+   "per_step": 1.5714285714285714
+  },
+  {
+   "wf": "FPA-VAR-01",
+   "cond": "council",
+   "run": "20261010-184959-council-FPA-VAR-01-7759",
+   "words": 937,
+   "steps": 7,
+   "controls": 26,
+   "per_1000_words": 27.74813233724653,
+   "per_step": 3.7142857142857144
+  },
+  {
+   "wf": "FPA-VAR-01",
+   "cond": "council",
+   "run": "20261010-194032-council-FPA-VAR-01-6fd0",
+   "words": 849,
+   "steps": 9,
+   "controls": 28,
+   "per_1000_words": 32.97997644287397,
+   "per_step": 3.111111111111111
+  },
+  {
+   "wf": "FPA-VAR-01",
+   "cond": "council",
+   "run": "20261010-201339-council-FPA-VAR-01-a8a0",
+   "words": 897,
+   "steps": 7,
+   "controls": 31,
+   "per_1000_words": 34.55964325529543,
+   "per_step": 4.428571428571429
+  },
+  {
+   "wf": "FPA-VAR-01",
+   "cond": "council",
+   "run": "20261010-203132-council-FPA-VAR-01-4f3e",
+   "words": 837,
+   "steps": 7,
+   "controls": 28,
+   "per_1000_words": 33.452807646356035,
+   "per_step": 4.0
+  },
+  {
+   "wf": "FPA-VAR-01",
+   "cond": "council",
+   "run": "20261010-205043-council-FPA-VAR-01-8d63",
+   "words": 896,
+   "steps": 7,
+   "controls": 35,
+   "per_1000_words": 39.0625,
+   "per_step": 5.0
+  },
+  {
+   "wf": "FPA-VAR-01",
+   "cond": "baseline",
+   "run": "20261010-184915-baseline-FPA-VAR-01-ed96",
+   "words": 351,
+   "steps": 7,
+   "controls": 14,
+   "per_1000_words": 39.88603988603989,
+   "per_step": 2.0
+  },
+  {
+   "wf": "FPA-VAR-01",
+   "cond": "baseline",
+   "run": "20261010-193948-baseline-FPA-VAR-01-9ef2",
+   "words": 351,
+   "steps": 6,
+   "controls": 10,
+   "per_1000_words": 28.49002849002849,
+   "per_step": 1.6666666666666667
+  },
+  {
+   "wf": "FPA-VAR-01",
+   "cond": "baseline",
+   "run": "20261010-195830-baseline-FPA-VAR-01-c54a",
+   "words": 356,
+   "steps": 7,
+   "controls": 14,
+   "per_1000_words": 39.325842696629216,
+   "per_step": 2.0
+  },
+  {
+   "wf": "FPA-VAR-01",
+   "cond": "baseline",
+   "run": "20261010-203046-baseline-FPA-VAR-01-5154",
+   "words": 286,
+   "steps": 7,
+   "controls": 8,
+   "per_1000_words": 27.972027972027973,
+   "per_step": 1.1428571428571428
+  },
+  {
+   "wf": "FPA-VAR-01",
+   "cond": "baseline",
+   "run": "20261010-205000-baseline-FPA-VAR-01-7c5b",
+   "words": 275,
+   "steps": 7,
+   "controls": 11,
+   "per_1000_words": 40.0,
+   "per_step": 1.5714285714285714
+  },
+  {
+   "wf": "FPA-ABB-01",
+   "cond": "council",
+   "run": "20261010-192227-council-FPA-ABB-01-333a",
+   "words": 1258,
+   "steps": 8,
+   "controls": 31,
+   "per_1000_words": 24.6422893481717,
+   "per_step": 3.875
+  },
+  {
+   "wf": "FPA-ABB-01",
+   "cond": "council",
+   "run": "20261010-194031-council-FPA-ABB-01-c041",
+   "words": 1017,
+   "steps": 9,
+   "controls": 30,
+   "per_1000_words": 29.49852507374631,
+   "per_step": 3.3333333333333335
+  },
+  {
+   "wf": "FPA-ABB-01",
+   "cond": "council",
+   "run": "20261010-201338-council-FPA-ABB-01-ff17",
+   "words": 895,
+   "steps": 10,
+   "controls": 26,
+   "per_1000_words": 29.050279329608937,
+   "per_step": 2.6
+  },
+  {
+   "wf": "FPA-ABB-01",
+   "cond": "council",
+   "run": "20261010-203125-council-FPA-ABB-01-29eb",
+   "words": 1262,
+   "steps": 9,
+   "controls": 35,
+   "per_1000_words": 27.733755942947703,
+   "per_step": 3.888888888888889
+  },
+  {
+   "wf": "FPA-ABB-01",
+   "cond": "council",
+   "run": "20261010-205042-council-FPA-ABB-01-600a",
+   "words": 1056,
+   "steps": 9,
+   "controls": 34,
+   "per_1000_words": 32.196969696969695,
+   "per_step": 3.7777777777777777
+  },
+  {
+   "wf": "FPA-ABB-01",
+   "cond": "baseline",
+   "run": "20261010-184915-baseline-FPA-ABB-01-ef83",
+   "words": 468,
+   "steps": 9,
+   "controls": 12,
+   "per_1000_words": 25.641025641025642,
+   "per_step": 1.3333333333333333
+  },
+  {
+   "wf": "FPA-ABB-01",
+   "cond": "baseline",
+   "run": "20261010-193948-baseline-FPA-ABB-01-09ed",
+   "words": 480,
+   "steps": 9,
+   "controls": 14,
+   "per_1000_words": 29.166666666666668,
+   "per_step": 1.5555555555555556
+  },
+  {
+   "wf": "FPA-ABB-01",
+   "cond": "baseline",
+   "run": "20261010-195832-baseline-FPA-ABB-01-355a",
+   "words": 450,
+   "steps": 9,
+   "controls": 13,
+   "per_1000_words": 28.88888888888889,
+   "per_step": 1.4444444444444444
+  },
+  {
+   "wf": "FPA-ABB-01",
+   "cond": "baseline",
+   "run": "20261010-203046-baseline-FPA-ABB-01-95ea",
+   "words": 507,
+   "steps": 9,
+   "controls": 14,
+   "per_1000_words": 27.613412228796843,
+   "per_step": 1.5555555555555556
+  },
+  {
+   "wf": "FPA-ABB-01",
+   "cond": "baseline",
+   "run": "20261010-205000-baseline-FPA-ABB-01-138f",
+   "words": 528,
+   "steps": 10,
+   "controls": 13,
+   "per_1000_words": 24.62121212121212,
+   "per_step": 1.3
+  }
+ ]
+}

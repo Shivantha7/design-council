@@ -9,3 +9,5 @@ __pycache__/
 demo_bundle/
 demo_bundle*.zip
 outputs/
+.venv-service/
+runs_live/

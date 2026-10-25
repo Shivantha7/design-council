@@ -37,6 +37,9 @@ class Condition(str, Enum):
 
     BASELINE = "baseline"
     COUNCIL = "council"
+    # Exploratory, post-freeze (25 Oct 2026): one agent reasoning through the seven
+    # role charters in sequence, compute-matched to the council. Not pre-registered.
+    SEQUENTIAL = "sequential"
 
 
 class CallRecord(BaseModel):

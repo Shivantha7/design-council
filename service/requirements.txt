@@ -1,0 +1,5 @@
+# Service-only dependencies, layered on the research lock (requirements.lock).
+# Regenerate: uv pip compile service/requirements.txt -c requirements.lock -o service/requirements.lock --generate-hashes --universal --python-version 3.12
+# Install:    python3.12 -m venv .venv-service && .venv-service/bin/pip install -r requirements.lock -r service/requirements.lock --require-hashes
+fastapi
+uvicorn

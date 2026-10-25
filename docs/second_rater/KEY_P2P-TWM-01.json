@@ -1,0 +1,466 @@
+{
+ "workflow_id": "P2P-TWM-01",
+ "seed": 20261026,
+ "key": {
+  "A": "20261010-205046-council-P2P-TWM-01-c32a",
+  "B": "20261010-205000-baseline-P2P-TWM-01-47aa"
+ },
+ "controls": [
+  {
+   "n": 1,
+   "id": "TWM-M01",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 2,
+   "id": "TWM-M02",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 3,
+   "id": "TWM-M03",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 4,
+   "id": "TWM-M04",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": true
+    }
+   }
+  },
+  {
+   "n": 5,
+   "id": "TWM-M05",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 6,
+   "id": "TWM-M06",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 7,
+   "id": "TWM-M33",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 8,
+   "id": "TWM-M07",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": true
+    }
+   }
+  },
+  {
+   "n": 9,
+   "id": "TWM-M08",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 10,
+   "id": "TWM-M09",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 11,
+   "id": "TWM-M10",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 12,
+   "id": "TWM-M11",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 13,
+   "id": "TWM-M12",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": true
+    }
+   }
+  },
+  {
+   "n": 14,
+   "id": "TWM-M13",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": true
+    }
+   }
+  },
+  {
+   "n": 15,
+   "id": "TWM-M15",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 16,
+   "id": "TWM-M17",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 17,
+   "id": "TWM-M18",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 18,
+   "id": "TWM-M19",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": true
+    }
+   }
+  },
+  {
+   "n": 19,
+   "id": "TWM-M20",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 20,
+   "id": "TWM-M21",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 21,
+   "id": "TWM-M22",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 22,
+   "id": "TWM-M23",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 23,
+   "id": "TWM-M25",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 24,
+   "id": "TWM-M26",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 25,
+   "id": "TWM-M27",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 26,
+   "id": "TWM-M28",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": true
+    }
+   }
+  },
+  {
+   "n": 27,
+   "id": "TWM-M29",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 28,
+   "id": "TWM-M30",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": true
+    }
+   }
+  },
+  {
+   "n": 29,
+   "id": "TWM-M32",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 30,
+   "id": "TWM-M34",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 31,
+   "id": "TWM-M35",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 32,
+   "id": "TWM-M36",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": true
+    }
+   }
+  },
+  {
+   "n": 33,
+   "id": "TWM-M38",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 34,
+   "id": "TWM-M39",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 35,
+   "id": "TWM-M40",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 36,
+   "id": "TWM-M41",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": false
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 37,
+   "id": "TWM-M42",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 38,
+   "id": "TWM-M43",
+   "author": {
+    "20261010-205046-council-P2P-TWM-01-c32a": {
+     "present": true
+    },
+    "20261010-205000-baseline-P2P-TWM-01-47aa": {
+     "present": false
+    }
+   }
+  }
+ ]
+}

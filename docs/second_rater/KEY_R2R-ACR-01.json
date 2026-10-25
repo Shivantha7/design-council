@@ -1,0 +1,454 @@
+{
+ "workflow_id": "R2R-ACR-01",
+ "seed": 20261026,
+ "key": {
+  "A": "20261010-205000-baseline-R2R-ACR-01-688a",
+  "B": "20261010-205046-council-R2R-ACR-01-517f"
+ },
+ "controls": [
+  {
+   "n": 1,
+   "id": "ACR-M01",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true
+    }
+   }
+  },
+  {
+   "n": 2,
+   "id": "ACR-M02",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 3,
+   "id": "ACR-M03",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 4,
+   "id": "ACR-M04",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 5,
+   "id": "ACR-M05",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 6,
+   "id": "ACR-M38",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 7,
+   "id": "ACR-M41",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true
+    }
+   }
+  },
+  {
+   "n": 8,
+   "id": "ACR-M06",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true
+    }
+   }
+  },
+  {
+   "n": 9,
+   "id": "ACR-M07",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 10,
+   "id": "ACR-M08",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 11,
+   "id": "ACR-M09",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 12,
+   "id": "ACR-M10",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 13,
+   "id": "ACR-M11",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 14,
+   "id": "ACR-M15",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 15,
+   "id": "ACR-M16",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 16,
+   "id": "ACR-M17",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true
+    }
+   }
+  },
+  {
+   "n": 17,
+   "id": "ACR-M18",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 18,
+   "id": "ACR-M19",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 19,
+   "id": "ACR-M20",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true
+    }
+   }
+  },
+  {
+   "n": 20,
+   "id": "ACR-M21",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 21,
+   "id": "ACR-M22",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true
+    }
+   }
+  },
+  {
+   "n": 22,
+   "id": "ACR-M32",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 23,
+   "id": "ACR-M25",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 24,
+   "id": "ACR-M26",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 25,
+   "id": "ACR-M27",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true
+    }
+   }
+  },
+  {
+   "n": 26,
+   "id": "ACR-M29",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 27,
+   "id": "ACR-M30",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 28,
+   "id": "ACR-M31",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true
+    }
+   }
+  },
+  {
+   "n": 29,
+   "id": "ACR-M34",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true
+    }
+   }
+  },
+  {
+   "n": 30,
+   "id": "ACR-M33",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true
+    }
+   }
+  },
+  {
+   "n": 31,
+   "id": "ACR-M35",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true
+    }
+   }
+  },
+  {
+   "n": 32,
+   "id": "ACR-M37",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 33,
+   "id": "ACR-M39",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": false
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 34,
+   "id": "ACR-M42",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true
+    }
+   }
+  },
+  {
+   "n": 35,
+   "id": "ACR-M44",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true
+    }
+   }
+  },
+  {
+   "n": 36,
+   "id": "ACR-M40",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": false
+    }
+   }
+  },
+  {
+   "n": 37,
+   "id": "ACR-M43",
+   "author": {
+    "20261010-205046-council-R2R-ACR-01-517f": {
+     "present": true
+    },
+    "20261010-205000-baseline-R2R-ACR-01-688a": {
+     "present": true
+    }
+   }
+  }
+ ]
+}

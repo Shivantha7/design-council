@@ -1,0 +1,55 @@
+{
+ "P2P-TWM-01": {
+  "cells": 76,
+  "missing": 0,
+  "agreement": 1.0,
+  "kappa": 1.0,
+  "agreement_excl_borderline": 1.0,
+  "kappa_excl_borderline": 1.0,
+  "author_pass": 8,
+  "rater_confirms_pass": 7,
+  "rater_new_pass": [
+   "TWM-M01",
+   "TWM-M33",
+   "TWM-M11",
+   "TWM-M21",
+   "TWM-M23",
+   "TWM-M25",
+   "TWM-M26",
+   "TWM-M29",
+   "TWM-M34",
+   "TWM-M38",
+   "TWM-M43"
+  ],
+  "author_pass_not_confirmed": [
+   "TWM-M05"
+  ]
+ },
+ "R2R-ACR-01": {
+  "cells": 74,
+  "missing": 0,
+  "agreement": 1.0,
+  "kappa": 1.0,
+  "agreement_excl_borderline": 1.0,
+  "kappa_excl_borderline": 1.0,
+  "author_pass": 12,
+  "rater_confirms_pass": 9,
+  "rater_new_pass": [
+   "ACR-M07",
+   "ACR-M18",
+   "ACR-M21"
+  ],
+  "author_pass_not_confirmed": [
+   "ACR-M10",
+   "ACR-M25",
+   "ACR-M39"
+  ]
+ },
+ "pooled": {
+  "cells": 150,
+  "agreement": 1.0,
+  "kappa": 1.0,
+  "agreement_excl_borderline": 1.0,
+  "kappa_excl_borderline": 1.0
+ }
+}
