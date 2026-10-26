@@ -56,6 +56,14 @@ CONDITIONS = ["council", "baseline"]
 DISPOSITIONS = ["eliminated", "absorbed", "merged", "restructured", "retained"]
 PROBE = "model_resolution_probe"
 EXCERPT = 600
+REPO_URL = "https://github.com/shivantha7/design-council"  # shown on the overview
+# Written into export/results/ by their own analysis scripts (no model calls), not by this one.
+# They are carried over byte for byte so that re-running this export does not delete them.
+CARRIED = {
+    "results/bootstrap_h2.json": "scripts/bootstrap_h2.py",
+    "results/depth_verification.json": "scripts/verify_dispositions.py",
+    "results/controls_symmetric_length.json": "scripts/controls_symmetric_length.py",
+}
 
 
 def load_script(name: str):
@@ -210,8 +218,12 @@ def main() -> int:
     parser.add_argument("--runs-root", type=Path, default=RUNS_ROOT)
     args = parser.parse_args()
     out = args.out
+    carried = {rel: (REPO_ROOT / "export" / rel).read_bytes() for rel in CARRIED}
     if out.exists():
         shutil.rmtree(out)
+    for rel, data in carried.items():
+        (out / rel).parent.mkdir(parents=True, exist_ok=True)
+        (out / rel).write_bytes(data)
 
     eff = load_script("efficiency_heldout")
     prod = load_script("productivity_heldout")
@@ -376,7 +388,8 @@ def main() -> int:
     fi = tables["fill_ins"]
     x3, x4, x5 = tables["x3_depth"], tables["x4_dispositions"], tables["x5_stabilisation"]
     pp = productivity["variants"][PRIMARY]["pooled"]
-    gc = json.loads((out / "results" / "governance_controls.json").read_text())
+    ao = productivity["variants"][AGENTIC_ONLY]["pooled"]
+    gc =json.loads((out / "results" / "governance_controls.json").read_text())
     fails = json.loads((out / "results" / "conformance_failures.json").read_text())["failures"]
     council_fails = [f for f in fails if f["condition"] == "council"]
     deeper = sum(1 for r in x3 if r["gap"] > 0)
@@ -408,17 +421,18 @@ def main() -> int:
          "text": f"{x4['council']['eliminated']} eliminations in the council and {x4['baseline']['eliminated']} in the "
                  f"budget-matched single agent, although {open_steps} of {total_steps} steps were open to elimination "
                  f"by design."},
-        {"id": "F4", "status": "pre-registered counts", "title": "Single agents compress; multi-agent systems re-architect",
+        {"id": "F4", "status": "pre-registered counts", "title": "Disposition counts and run-to-run consistency by condition",
          "text": f"Council vs budget-matched single agent: restructured {x4['council']['restructured']} vs "
                  f"{x4['baseline']['restructured']}, absorbed {x4['council']['absorbed']} vs {x4['baseline']['absorbed']}, "
                  f"merged {x4['council']['merged']} vs {x4['baseline']['merged']}. Run-to-run consistency "
                  f"{cons['council']:.3f} vs {cons['baseline']:.3f}."},
         {"id": "F5", "status": "exploratory", "title": "Two kinds of value",
-         "text": f"About {pct(pp['transactional']['pi'])} of human effort is removed on transactional workflows and "
-                 f"about {pct(pp['judgment-dense']['pi'])} on judgment-dense ones, where human checkpoints rise instead "
-                 f"(human-in-the-loop checkpoints across the three judgment-dense workflows: {hitl_orig} in the "
-                 f"originals, {hitl_council:.1f} in the council designs, mean per run). "
-                 f"Pooled: {pct(pp['all']['pi'])}."},
+         "text": f"Human effort removed ranges from about {pct(pp['judgment-dense']['pi'])} on judgment-dense workflows "
+                 f"to about {pct(pp['transactional']['pi'])} on transactional ones (AI agents only: "
+                 f"{pct(ao['transactional']['pi'])} transactional, {pct(ao['all']['pi'])} pooled). On judgment-dense "
+                 f"workflows human checkpoints rise instead (human-in-the-loop checkpoints across the three "
+                 f"judgment-dense workflows: {hitl_orig} in the originals, {hitl_council:.1f} in the council designs, "
+                 f"mean per run). Pooled: {pct(pp['all']['pi'])}."},
         {"id": "F6", "status": "pre-registered coding", "title": "Deliberation adds governance",
          "text": f"{len(passing)} council-attributed controls in {wf_with_pass} of 7 workflows "
                  f"({sum(c['strict_75'] for c in passing)} at 75%), from {len(controls)} distinct controls "
@@ -443,6 +457,7 @@ def main() -> int:
     index = {
         "export_commit": commit,
         "prereg_tag": started.get("prereg_tag"),
+        "repo_url": REPO_URL,
         "research_question": ("Does structured multi-agent deliberation, implemented as a role-differentiated "
                               "Design Council, produce finance workflow redesigns superior to those of a "
                               "budget-matched strong single agent, when superiority is measured against each "
@@ -482,6 +497,7 @@ bytes. JSON files use sorted keys. Floats are rounded to 6 decimals.
 
 ## index.json
 - `export_commit`: git commit the export was made from. `prereg_tag`: freeze tag of the held-out set.
+  `repo_url`: public repository URL (null until published).
 - `research_question`: verbatim from the dissertation.
 - `sets.heldout-v1`: `label`, `commit` (pinned run commit), `requested_model`, `workflows` (7 ids),
   `runs` (68 run ids), `cells[]` = {`workflow_id`, `condition`, `run_ids` in rep order, `stop_decision`
@@ -541,6 +557,22 @@ council_present, council_n, baseline_present, outcome, strict_75, quote, quote_r
 ## results/dev_grid.json
 v1 development grid per workflow x condition: n, run_ids, depth mean/min/max, conformance mean,
 disposition counts, consistency, mean output tokens.
+
+## Carried over from separate analysis scripts (exploratory, no model calls)
+Not computed by this script. Each is written by its own script into `export/results/` and
+copied here byte for byte, so these files keep that script's formatting (not sorted keys,
+floats unrounded).
+- `results/bootstrap_h2.json` (`scripts/bootstrap_h2.py`, `docs/BOOTSTRAP_H2.md`): H2 rule under
+  resampling of runs within cells. `B`, `seed`, `sesoi`, `need`, and for `reported` (depth as
+  recorded) and `verified` (verified depth): `point_gaps`, `point_pass`, `bootstrap_pass_rate`,
+  `per_workflow_pass_prob`, `gap_95ci`, `count_distribution`, `loo_pass_rate`, `loo_fail_cases`.
+- `results/depth_verification.json` (`scripts/verify_dispositions.py`, `docs/DEPTH_VERIFICATION.md`):
+  disposition labels checked against the TSS. `by_condition` and `overall` label checks, and
+  `cells` ("<workflow>|<condition>": n, depth_reported_mean, depth_verified_mean).
+- `results/controls_symmetric_length.json` (`scripts/controls_symmetric_length.py`,
+  `docs/CONTROLS_SYMMETRIC_LENGTH.md`): the section 6 rule applied in both directions
+  (`symmetric` per workflow) and control counts per TSS length (`length_by_condition`,
+  `length_by_workflow`, `runs`).
 """
 
 

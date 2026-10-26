@@ -42,6 +42,13 @@ def test_export_is_deterministic(exported, tmp_path):
         assert (exported / rel).read_bytes() == (again / rel).read_bytes(), rel
 
 
+def test_analysis_results_are_carried_over(exported):
+    """Files written by the separate analysis scripts survive a re-export unchanged."""
+    for rel in ("results/bootstrap_h2.json", "results/depth_verification.json",
+                "results/controls_symmetric_length.json"):
+        assert (exported / rel).read_bytes() == (REPO_ROOT / "export" / rel).read_bytes(), rel
+
+
 def test_run_counts(exported):
     index = load(exported, "index.json")
     assert len(index["sets"]["heldout-v1"]["runs"]) == 68
@@ -109,8 +116,10 @@ def test_findings_and_limits_match_the_dissertation(exported):
     assert "0 eliminations in the council and 0" in f["F3"]["text"] and "16 of 57 steps" in f["F3"]["text"]
     for s in ("restructured 170 vs 95", "absorbed 5 vs 17", "merged 55 vs 81", "0.789 vs 0.702"):
         assert s in f["F4"]["text"], s
-    for s in ("About 37%", "about 2%", "Pooled: 20%"):
+    for s in ("ranges from about 2%", "to about 37%", "AI agents only: 18% transactional, 4% pooled", "Pooled: 20%"):
         assert s in f["F5"]["text"], s
+    assert "compress" not in f["F4"]["title"]
+    assert not any("—" in x.get("title", "") + x["text"] for x in index["findings"] + index["limits"])
     for s in ("78 council-attributed controls in 7 of 7 workflows (57 at 75%)",
               "from 277 distinct controls (307 candidates)", "Agentic Architect 28",
               "Emerging-Economy Constraint 21", "Maximalist 0"):
