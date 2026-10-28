@@ -1,0 +1,423 @@
+{
+  "condition": "council",
+  "consistency_inputs": {
+    "PRE-01": "merged",
+    "PRE-02": "merged",
+    "PRE-03": "restructured",
+    "PRE-04": "retained",
+    "PRE-05": "restructured",
+    "PRE-06": "restructured",
+    "PRE-07": "restructured",
+    "PRE-08": "restructured"
+  },
+  "created_utc": "2026-10-10T20:13:39.250818Z",
+  "depth": {
+    "counts": {
+      "absorbed": 0,
+      "eliminated": 0,
+      "merged": 2,
+      "restructured": 5,
+      "retained": 1
+    },
+    "score": 0.875,
+    "total_baseline_steps": 8
+  },
+  "disposition_convention_version": "v1, restored 11 Oct 2026",
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "PRE-01",
+      "disposition": "merged",
+      "rationale": "Council consensus (pragmatist, finance_domain, agentic_architect, hitl_designer, and accounting_standards on reflection) is that due-item selection and proposal generation already happen as one system pass in modern ERPs and have no genuine judgment content once invoices are approved and matched. The merge is accepted on the condition emerging_economy and accounting_standards insisted on: the required input (approved matched invoices, PRE-R-01) survives explicitly, and the exception queue is sized to catch noisy/unreliable master data rather than assuming a clean input population — a human remains the accountable owner of exceptions, not a bystander to a fully autonomous pass.",
+      "target_step_ids": [
+        "TGT-01"
+      ]
+    },
+    {
+      "baseline_step_id": "PRE-02",
+      "disposition": "merged",
+      "rationale": "Accounting_standards conceded in round 2 that the step boundary between selection and grouping carries no standards weight; what matters is that the merged step keeps currency-level visibility and keeps consuming approved matched invoices. PRE-R-08 (step must survive) is satisfied because proposal generation remains an identifiable function inside TGT-01, not because a human must press the button.",
+      "target_step_ids": [
+        "TGT-01"
+      ]
+    },
+    {
+      "baseline_step_id": "PRE-03",
+      "disposition": "restructured",
+      "rationale": "Decided against maximalist's flag-only/supervisor-on-exception design. The council majority (pragmatist, finance_domain, emerging_economy, hitl_designer, agentic_architect, accounting_standards) converged that vendor-bank-detail-change review is the highest-fraud-exposure control in the workflow and that a supervisor who only ever sees pre-filtered exceptions loses the pattern-sense needed to catch a convincing fake or a false negative the rules engine missed. Automation is retained for flagging only; the supervisor still reviews the full proposal and personally owns every hold/release decision, satisfying PRE-R-09, PRE-R-02 and PRE-R-03.",
+      "target_step_ids": [
+        "TGT-02"
+      ]
+    },
+    {
+      "baseline_step_id": "PRE-04",
+      "disposition": "retained",
+      "rationale": "This was the sharpest council conflict: maximalist proposed an approval engine auto-clearing in-policy items with human involvement only on exception, against pragmatist, finance_domain, emerging_economy, hitl_designer, agentic_architect and accounting_standards, all of whom held that delegated authority is a personal, accountable act that cannot be discharged by a policy-conformance check — and maximalist itself conceded this in round 2. Decision: every proposal receives an actual human approval act; automation (DOA validation/routing) may inform but never discharge it. This also protects KB-11's requirement that the derecognition-intent event have a determinable, independent anchor, and preserves PRE-R-04 and PRE-R-10.",
+      "target_step_ids": [
+        "TGT-03"
+      ]
+    },
+    {
+      "baseline_step_id": "PRE-05",
+      "disposition": "restructured",
+      "rationale": "Converged position (finance_domain, hitl_designer, agentic_architect-after-concession, pragmatist-after-concession) over maximalist's single-agent straight-through design: automating file generation removes the incidental manual-build friction that today catches problems before transmission, so a deliberate replacement is required rather than silent deletion. The step is split into automated generation (TGT-04) and a dual-authorisation release gate (TGT-05) carrying a delta report and pre-transmission integrity check, with a named backup-releaser delegation chain to address emerging_economy's thin-headcount concern without collapsing the control's independence. PRE-R-05 and PRE-R-11 are satisfied across the pair.",
+      "target_step_ids": [
+        "TGT-04",
+        "TGT-05"
+      ]
+    },
+    {
+      "baseline_step_id": "PRE-06",
+      "disposition": "restructured",
+      "rationale": "Decided against folding confirmation receipt invisibly into posting (maximalist/agentic_architect's initial design). The majority (pragmatist, finance_domain, emerging_economy, hitl_designer) held that this hides the queue of unmatched/delayed confirmations exactly when bank feeds are least reliable — precisely the condition under which it matters most. Kept as a distinct, visible, exception-owning step, tolerant of batch/manual reconciliation rather than assuming real-time API feeds, and required by accounting_standards to resolve confirmations to specific invoices/line items so KB-11's determinable-derecognition requirement is not lost in a merge.",
+      "target_step_ids": [
+        "TGT-06"
+      ]
+    },
+    {
+      "baseline_step_id": "PRE-07",
+      "disposition": "restructured",
+      "rationale": "Mechanical postings are automated, but three distinct exception classes are named explicitly per accounting_standards and agentic_architect's round-2 concessions: FX-variance beyond tolerance (KB-08), unmatched/partial settlement (KB-11), and period-cutoff breach (KB-03) — these are treated as separate failure dimensions, not substitutable by one tolerance rule. Emerging_economy's and accounting_standards' converged point on rate-source reliability (KB-02) is adopted as a standing human verification checkpoint for currency corridors subject to parallel-market distortion or thin published-rate coverage, going beyond a pure materiality-threshold model. PRE-R-06 and PRE-R-07 inputs are carried unchanged into TGT-07.",
+      "target_step_ids": [
+        "TGT-07"
+      ]
+    },
+    {
+      "baseline_step_id": "PRE-08",
+      "disposition": "restructured",
+      "rationale": "No KB principle bears directly on remittance mechanics (accounting_standards), and the baseline itself flags this as unconstrained_by_design. Full automation is adopted per broad council agreement, with two retained safeguards: multi-channel delivery (emerging_economy, since universal vendor email access cannot be assumed) and a named human-owned failed-delivery/dispute exception queue (hitl_designer, agentic_architect), so 'the system handled it' is never the final answer when the system is wrong.",
+      "target_step_ids": [
+        "TGT-08"
+      ]
+    }
+  ],
+  "efficiency": {
+    "calls": 15,
+    "cost_usd": 1.467798,
+    "failed_attempts": 0,
+    "input_tokens": 294829,
+    "output_tokens": 87814,
+    "runtime_min": 17.08494
+  },
+  "gate": {
+    "conformance_score": 0.909091,
+    "passed": 10,
+    "results": [
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step PRE-01 ['TGT-01'] receives all required input(s) ['Approved matched invoices']",
+        "requirement_id": "PRE-R-01",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['TGT-02'] for baseline PRE-03 all precede target step(s) ['TGT-03'] for baseline PRE-04",
+        "requirement_id": "PRE-R-02",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['TGT-02'] for baseline PRE-03 all precede target step(s) ['TGT-04', 'TGT-05'] for baseline PRE-05",
+        "requirement_id": "PRE-R-03",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "actors separated: PRE-02 → ['AP automation agent, with AP analyst as exception-queue owner and run-parameter custodian'], PRE-04 → ['Authorised signatory, assisted by non-decisioning DOA validation/routing agent']",
+        "requirement_id": "PRE-R-04",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['TGT-03'] for baseline PRE-04 all precede target step(s) ['TGT-04', 'TGT-05'] for baseline PRE-05",
+        "requirement_id": "PRE-R-05",
+        "vacuous": false
+      },
+      {
+        "passed": false,
+        "reason": "target step(s) carrying baseline step PRE-07 do not receive all required input(s) ['Bank settlement confirmation']: TGT-07 is missing ['Bank settlement confirmation']",
+        "requirement_id": "PRE-R-06",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step PRE-07 ['TGT-07'] receives all required input(s) ['Settlement-date exchange rate']",
+        "requirement_id": "PRE-R-07",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step PRE-02 is preserved as merged, carried by target step(s) ['TGT-01']",
+        "requirement_id": "PRE-R-08",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step PRE-03 is preserved as restructured, carried by target step(s) ['TGT-02']",
+        "requirement_id": "PRE-R-09",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step PRE-04 is preserved as retained, carried by target step(s) ['TGT-03']",
+        "requirement_id": "PRE-R-10",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step PRE-05 is preserved as restructured, carried by target step(s) ['TGT-04', 'TGT-05']",
+        "requirement_id": "PRE-R-11",
+        "vacuous": false
+      }
+    ],
+    "total": 11
+  },
+  "git_commit": "fe1a87a8a5672d763c3248a4b18f227ae1b3b204",
+  "rep": 3,
+  "resolved_model": "claude-sonnet-5",
+  "run_id": "20261010-201339-council-P2P-PRE-01-8682",
+  "set": "heldout-v1",
+  "steps": [
+    {
+      "actor": "AP automation agent, with AP analyst as exception-queue owner and run-parameter custodian",
+      "class_agentic_only": "AGENT",
+      "class_primary": "AGENT",
+      "description": "An AP automation agent derives the due-item population from payment terms, approval status and currency flags, and groups items into a payment proposal by vendor, currency and payment method in the same system pass. Items that fail a selection rule (disputed holds, newly onboarded vendors, missing/ambiguous terms, FX items awaiting a rate decision) are routed to a visible, human-owned exception queue rather than silently included or dropped; the exception path is sized assuming master-data quality varies across entities, not just for rare edge cases. The AP analyst owns run parameters and the exception queue, not manual list curation.",
+      "inputs": [
+        "Approved matched invoices",
+        "Payment terms",
+        "Vendor master data"
+      ],
+      "name": "Automated due-item selection and proposal generation",
+      "outputs": [
+        "Payment proposal (staged)",
+        "Selection exception queue"
+      ],
+      "step_id": "TGT-01"
+    },
+    {
+      "actor": "AP supervisor, assisted by control-screening agent",
+      "class_agentic_only": "HYBRID",
+      "class_primary": "HYBRID",
+      "description": "A control-screening agent pre-computes duplicate-payment, blocked-vendor and bank-detail-change flags against the payment history and change log, and ranks risk. The AP supervisor reviews the full proposal, not a flags-only summary, with visibility into what changed, when and by whom for every flagged item, and personally clears, holds or escalates each flagged item. Clean (unflagged) proposals are not auto-cleared by the same system that generated the flags; the supervisor's review and all dispositions are logged as structured, auditable decisions distinguishable from the agent's recommendation.",
+      "inputs": [
+        "Payment proposal (staged)",
+        "Vendor bank master change log",
+        "Payment history"
+      ],
+      "name": "AI-assisted proposal review",
+      "outputs": [
+        "Reviewed payment proposal",
+        "Logged flag dispositions"
+      ],
+      "step_id": "TGT-02"
+    },
+    {
+      "actor": "Authorised signatory, assisted by non-decisioning DOA validation/routing agent",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The authorised signatory personally approves every payment run; this is a human, accountable act on all items, not only exceptions. A delegation-of-authority validation agent checks amount/vendor/currency against delegated limits and pre-routes to the correct approver tier and presents the supervisor's flagged-item log for context, but it cannot approve or auto-clear items — it only validates and routes. Back-up/delegated approver chains are named system controls to cover leave, turnover or thin-headcount coverage without collapsing actor separation into a single person.",
+      "inputs": [
+        "Reviewed payment proposal",
+        "Delegation of authority",
+        "Logged flag dispositions"
+      ],
+      "name": "Payment approval",
+      "outputs": [
+        "Approved payment proposal"
+      ],
+      "step_id": "TGT-03"
+    },
+    {
+      "actor": "Treasury automation agent, overseen by treasury officer",
+      "class_agentic_only": "HYBRID",
+      "class_primary": "HYBRID",
+      "description": "A treasury automation agent converts the approved proposal into a bank payment file. An embedded, logged integrity check (hash/line-item match) verifies the generated file against the approved proposal before it can proceed to release, and a delta report is produced showing anything that changed since approval (late bank-detail amendments, value or batch-composition changes). File generation is mechanical and does not require a manual build, but it cannot itself transmit funds.",
+      "inputs": [
+        "Approved payment proposal",
+        "Vendor bank details"
+      ],
+      "name": "Automated payment file generation",
+      "outputs": [
+        "Generated payment file",
+        "Integrity check result",
+        "Delta report"
+      ],
+      "step_id": "TGT-04"
+    },
+    {
+      "actor": "Second authorised releaser (treasury officer/manager, or system-enforced delegation chain, distinct from file-generation role)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "A second, independently credentialed releaser — distinct from whoever owns or configured the file-generation agent — authorises transmission, reviewing the integrity check and delta report as the control's defining artifact rather than a repeated summary of the approval. This is the irrevocable point of the workflow and retains a mandatory human gate even where generation is fully automated. Transmission supports a batch/store-and-forward fallback mode as a first-class operating mode, not only live API transmission, and a documented backup-releaser delegation chain exists for thin-staffed offices so the control does not collapse to one person wearing two hats.",
+      "inputs": [
+        "Generated payment file",
+        "Integrity check result",
+        "Delta report"
+      ],
+      "name": "Dual-authorisation release to bank",
+      "outputs": [
+        "Payment file transmitted to bank"
+      ],
+      "step_id": "TGT-05"
+    },
+    {
+      "actor": "Treasury officer, with automated matching engine",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HYBRID",
+      "description": "Confirmations are auto-matched to the transmitted file at the individual invoice/line-item level (not aggregate bank totals), preserving the traceability needed to determine which specific payable was extinguished by which settlement. The mechanism tolerates delayed, end-of-day or manually downloaded statements as a normal operating mode, not only real-time webhook feeds. Unmatched, partial or rejected items are surfaced to a named human owner in a standing break queue rather than ageing silently or being absorbed invisibly into the posting step.",
+      "inputs": [
+        "Payment file transmitted to bank",
+        "Bank statement"
+      ],
+      "name": "Automated bank confirmation matching with break review",
+      "outputs": [
+        "Bank settlement confirmation (invoice-level)",
+        "Unmatched/break queue"
+      ],
+      "step_id": "TGT-06"
+    },
+    {
+      "actor": "GL automation agent, with GL accountant owning exception review (FX variance, unmatched settlement, cutoff breach, rate-source verification for distorted-currency corridors)",
+      "class_agentic_only": "AGENT",
+      "class_primary": "AGENT",
+      "description": "Mechanical settlement postings — clearing AP subledger open items and posting GL cash — are system-generated from the matched, invoice-level confirmation and the settlement-date rate. Exchange differences are posted as their own labelled line, never netted into cash. Three distinct exception classes route to the GL accountant: FX variances beyond tolerance, unmatched/partial settlements, and cutoff breaches near period-end, each requiring a period-gate check so settlement timing cannot drift postings into the wrong reporting period. Where the settlement currency is subject to parallel-market distortion, exchange controls or thin published-rate coverage, the rate source itself (not only the resulting variance) requires a standing human verification checkpoint for the affected corridors.",
+      "inputs": [
+        "Bank settlement confirmation (invoice-level)",
+        "Settlement-date exchange rate",
+        "AP subledger open items"
+      ],
+      "name": "Automated posting, clearing and FX-variance/cutoff review",
+      "outputs": [
+        "AP subledger cleared",
+        "GL cash posted",
+        "Labelled FX-difference entries",
+        "Period-gate confirmation"
+      ],
+      "step_id": "TGT-07"
+    },
+    {
+      "actor": "AP analyst (automated generation/delivery, exception-queue owner for failed delivery)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "AGENT",
+      "description": "Remittance advice is generated and distributed automatically from the settlement confirmation, with per-invoice detail preserved. Multi-channel delivery (email, SMS, vendor portal, printed advice) is used rather than assuming universal reliable email access. Bounced or failed deliveries, and vendor remittance disputes, route to a named AP analyst exception queue rather than disappearing once the system has acted.",
+      "inputs": [
+        "Bank settlement confirmation (invoice-level)",
+        "Vendor contact data"
+      ],
+      "name": "Automated remittance advice distribution",
+      "outputs": [
+        "Remittance advice",
+        "Delivery-exception queue"
+      ],
+      "step_id": "TGT-08"
+    }
+  ],
+  "transcript": [
+    {
+      "chars": 9462,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nPRE-01 (Due-item selection) — merged into TGT-01 \"Continuous due-item identification and proposal generation.\" There is no accounting reason for a human to curate a due-item list in 2026: due dates, terms and FX flags are deterministic data joins against the AP ledger and payment-terms master. I would retire the discrete \"selection\" act and let it become the always-on front end of proposal generation, run by an automation agent. The requirement that this function still consume \"Approved matched invoices\" (PRE-R-01) is preserved as an input to TGT-01, so nothing is lost —",
+      "phase": "round 1",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 7499,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nPRE-01 (Due-item selection) → merged into target step TS-01 \"Payment proposal generation.\" This is not a stretch: in every ERP payment run I have seen (SAP F110, Oracle Payments, Coupa Pay), due-item selection and proposal build are already one system transaction, not two human steps. Collapsing them on paper matches what practitioners already do and requires no new tooling, no new approvals, no change-management campaign — it is a documentation fix more than a process change. The merged step must still pull from approved matched invoices and payment terms, so the requir",
+      "phase": "round 1",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 8199,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nPRE-01 (Due-item selection) — disposition: merged, into a new step \"Automated due-item selection and proposal generation\" (call it TGT-01). In current ERP practice (SAP F110-style payment runs, Oracle Payables pay-run processing), the system already derives the due-item population mechanically from payment terms and due dates; the analyst's real daily work is setting/confirming run parameters and handling the items the algorithm can't place automatically (disputed items, partial holds, foreign-currency items awaiting a rate decision). There is no longer an operationally ",
+      "phase": "round 1",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 8810,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nPRE-01 (Due-item selection) — Restructured, carried by T-01 \"Due-item identification and staging.\" I support system-assisted flagging of due items (rules on terms, approval status, currency), but the human AP analyst must retain the final staging decision. In many offshore and in-country finance operations the vendor master and terms data feeding this step are inconsistently maintained (manual onboarding, legacy terms codes, informal suppliers), so a fully autonomous selection algorithm will silently propagate bad data into the run. Keep the analyst as a checkpoint, not ",
+      "phase": "round 1",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 8462,
+      "excerpt": "**1. PROPOSED DISPOSITIONS**\n\nPRE-01 (Due-item selection) — *restructured*, carried forward into a new step **T-01 \"System-driven due-item selection with exception queue.\"** Selecting items that are due under agreed terms is a rules-matching exercise, not a judgment exercise, so the system can auto-select the bulk of the population. But \"exceptions\" — disputed items, items on hold, newly on-boarded vendors, items with mismatched FX terms — must be routed to a human (AP analyst) exception queue rather than silently included or excluded. The analyst's role shifts from reviewing everything to adj",
+      "phase": "round 1",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 10415,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nPRE-01 (Due-item selection) → merged into a new \"Automated Payment Proposal Generation\" step. Selection against payment terms and approval status is a deterministic, rule-evaluable function with no judgment content once invoices are already matched and approved upstream. I would specify this as a scheduled agent (trigger: daily/run-cadence job or manual run-initiation) with read access to the AP subledger and payment-terms table, write access limited to a staging \"proposal\" object, and a hard exception path: any invoice that fails a selection rule (missing terms, currenc",
+      "phase": "round 1",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 7570,
+      "excerpt": "**1. PROPOSED DISPOSITIONS**\n\nPRE-01 (Due-item selection) — *retained*. The step may be re-tooled with automation for selection logic, but it must keep consuming \"Approved matched invoices\" as its evidence base. This is not a discretionary input: per KB-09, the invoice-to-GRN-to-PO match is what establishes cost and the existence of a valid payable, and per KB-11 it is also the point that fixes recognition of the liability being extinguished downstream. Selection cannot be redesigned to run off raw invoice data or vendor master balances alone.\n\nPRE-02 (Payment proposal generation) — *retained*",
+      "phase": "round 1",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 6318,
+      "excerpt": "1. CONCEDE\n\nI concede ground on PRE-04. The convergence is too strong to wave off as collective conservatism: pragmatist, finance_domain, emerging_economy, hitl_designer, agentic_architect and accounting_standards independently all refuse to let payment approval become a rules-engine auto-clear for in-policy items, and accounting_standards gives the sharpest reason, not just a comfort reason: the approval act is the evidentiary anchor that fixes the moment of *intended* extinguishment under KB-11, and that anchor's value comes from its independence from the proposal-generation logic. If the \"a",
+      "phase": "round 2",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 7945,
+      "excerpt": "1. CONCEDE\n\nI accept finance_domain and hitl_designer's point on splitting payment-file build from bank release into a maker-checker pair (their TGT-04/TGT-05, T-04/T-05). I initially kept PRE-05 as a single treasury-officer step with system-enforced sequencing against the approval token, and I still think that sequencing control is the load-bearing piece. But both members are right that build-and-release-by-one-person is a residual single-point-of-failure that survives even after the approval gate is hardened, and — crucially for my test — this is cheap to implement: most treasury workstation",
+      "phase": "round 2",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 7846,
+      "excerpt": "1. CONCEDE\n\nAccounting_standards' articulation of KB-03 (reporting-period/cutoff discipline) sharpens something my round-1 position only gestured at. I described TGT-07's exception path for FX variances and unmatched settlements, but I did not name the cutoff risk explicitly: settlements landing near period-end must post to the correct period even when the posting is automated. I concede this is a distinct non-negotiable that needs its own equivalent to a \"period gate\" in the automated posting pipeline, not merely folded into the FX-materiality exception trigger I proposed. I accept accounting",
+      "phase": "round 2",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 9536,
+      "excerpt": "# Round 2 — emerging_economy\n\n## 1. CONCEDE\n\n**accounting_standards** has sharpened something I gestured at loosely but didn't anchor properly: the KB-09/KB-11 point that the invoice-to-GRN-to-PO evidence chain is what *establishes* the payable, not merely a fraud safeguard. My round-1 argument for keeping a human at due-item selection leaned on data-quality fragility in offshore/informal vendor environments, which is true but was framed as an operational concern. I now accept the stronger framing: in jurisdictions where vendor master data and terms coding are least reliable, the traceability ",
+      "phase": "round 2",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 8894,
+      "excerpt": "1. CONCEDE\n\nTo the pragmatist and finance_domain: I accept that my T-05 \"dual-authorisation release\" control, while defensible in principle, risks becoming exactly the ceremonial rubber-stamp my own charter warns against unless it carries genuinely new information. Both of them independently converged on a related but better-specified idea — finance_domain's split of file-build from release-authorisation as a maker-checker pair, and the pragmatist's insistence that sequencing be system-enforced rather than procedurally trusted. I now accept finance_domain's framing over my own: the release-sta",
+      "phase": "round 2",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 9045,
+      "excerpt": "1. CONCEDE\n\nI accept emerging_economy's objection to my PRE-05/PRE-06 design. I specified a \"Payment Execution Agent\" with \"direct bank API integration\" and folded confirmation receipt into the same closed loop on the assumption that release and confirmation can be a synchronous round-trip. That is an architecture that only works where host-to-host/API connectivity is reliable, and emerging_economy is right that a target-state spec which only has a happy path is not a target state for the group. I now specify that the Payment Execution Agent must support a store-and-forward/batch mode as a fir",
+      "phase": "round 2",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 6933,
+      "excerpt": "1. CONCEDE\n\nI accept **finance_domain**'s and **agentic_architect**'s point that PRE-01 and PRE-02 can properly be described as *merged* or *restructured* into a single automated step rather than my more conservative \"retained.\" On reflection, the KB gives me no basis to insist on a discrete, separately-labelled \"selection\" act distinct from \"proposal generation\" — KB-09's evidentiary requirement attaches to the *input* (approved matched invoices flowing through to the proposal), not to the number of steps or the presence of a human between them. What I require is that the merged step continue",
+      "phase": "round 2",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 14322,
+      "excerpt": "{\n  \"workflow_id\": \"P2P-PRE-01\",\n  \"baseline_step_ids\": [\"PRE-01\", \"PRE-02\", \"PRE-03\", \"PRE-04\", \"PRE-05\", \"PRE-06\", \"PRE-07\", \"PRE-08\"],\n  \"steps\": [\n    {\n      \"step_id\": \"TGT-01\",\n      \"name\": \"Automated due-item selection and proposal generation\",\n      \"description\": \"An AP automation agent derives the due-item population from payment terms, approval status and currency flags, and groups items into a payment proposal by vendor, currency and payment method in the same system pass. Items that fail a selection rule (disputed holds, newly onboarded vendors, missing/ambiguous terms, FX items",
+      "phase": "synthesis",
+      "role": "synthesis",
+      "truncated": true
+    }
+  ],
+  "workflow_id": "P2P-PRE-01"
+}

@@ -1,5 +1,5 @@
 {
-  "export_commit": "15938359843b3305e6b8dbe3173de1465d0d73aa",
+  "export_commit": "e169f780512f4111ee3faa0eea9932a49c184720",
   "findings": [
     {
       "id": "F1",
@@ -351,6 +351,26 @@
         "R2R-FSP-01",
         "FPA-VAR-01",
         "FPA-ABB-01"
+      ]
+    },
+    "sequential": {
+      "exploratory": true,
+      "label": "Sequential (exploratory, post-freeze)",
+      "runs": [
+        "20261025-012256-sequential-P2P-TWM-01-5711",
+        "20261026-050630-sequential-P2P-TWM-01-6cdb",
+        "20261026-052036-sequential-P2P-TWM-01-cadb",
+        "20261026-053258-sequential-P2P-TWM-01-e656",
+        "20261026-054403-sequential-P2P-TWM-01-8710",
+        "20261027-080433-sequential-FPA-VAR-01-272d",
+        "20261027-082215-sequential-FPA-VAR-01-dad8",
+        "20261027-083540-sequential-FPA-VAR-01-0e87",
+        "20261027-085058-sequential-FPA-VAR-01-f7d2",
+        "20261027-090712-sequential-FPA-VAR-01-a7de"
+      ],
+      "workflows": [
+        "P2P-TWM-01",
+        "FPA-VAR-01"
       ]
     }
   },

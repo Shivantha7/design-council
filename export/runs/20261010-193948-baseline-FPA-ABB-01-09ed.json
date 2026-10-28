@@ -1,0 +1,340 @@
+{
+  "condition": "baseline",
+  "consistency_inputs": {
+    "ABB-01": "restructured",
+    "ABB-02": "retained",
+    "ABB-03": "restructured",
+    "ABB-04": "restructured",
+    "ABB-05": "restructured",
+    "ABB-06": "restructured",
+    "ABB-07": "restructured",
+    "ABB-08": "retained",
+    "ABB-09": "restructured"
+  },
+  "created_utc": "2026-10-10T19:39:48.524179Z",
+  "depth": {
+    "counts": {
+      "absorbed": 0,
+      "eliminated": 0,
+      "merged": 0,
+      "restructured": 7,
+      "retained": 2
+    },
+    "score": 0.777778,
+    "total_baseline_steps": 9
+  },
+  "disposition_convention_version": "v1, restored 11 Oct 2026",
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "ABB-01",
+      "disposition": "restructured",
+      "rationale": "The calendar and central assumptions issuance is preserved but restructured to publish the downside macro scenario as a selectable, system-modelled variant rather than a static document, satisfying ABB-R-01 and ABB-R-10.",
+      "target_step_ids": [
+        "TS-01"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-02",
+      "disposition": "retained",
+      "rationale": "Top-down target setting is unconstrained by design and is retained substantially unchanged, now published directly into the planning platform as guardrails for bottom-up submissions.",
+      "target_step_ids": [
+        "TS-02"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-03",
+      "disposition": "restructured",
+      "rationale": "Revenue and volume planning is preserved per ABB-R-02 but restructured into driver-based templates with in-line validation against the downside scenario, improving quality without changing ownership.",
+      "target_step_ids": [
+        "TS-03"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-04",
+      "disposition": "restructured",
+      "rationale": "Cost centre and headcount budgeting is preserved per ABB-R-03 but restructured into standardised templates with automated deviation flagging against top-down targets.",
+      "target_step_ids": [
+        "TS-04"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-05",
+      "disposition": "restructured",
+      "rationale": "Capex request submission persists but is restructured to enforce the business-case requirement above threshold at point of submission, continuing to consume the business case input per ABB-R-04.",
+      "target_step_ids": [
+        "TS-05"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-06",
+      "disposition": "restructured",
+      "rationale": "Consolidation into the draft three-statement budget survives per ABB-R-06 and is restructured into an automated process that still consumes accounting policies applied to actuals (ABB-R-05, KB-06 policy consistency) and central FX assumptions (ABB-R-07, KB-07 FX translation), adding an automated reconciliation check to strengthen the evidential trail (KB-02).",
+      "target_step_ids": [
+        "TS-06"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-07",
+      "disposition": "restructured",
+      "rationale": "Review and challenge is unconstrained by design and is restructured into a platform-supported continuous cycle with live scenario drill-down, reducing iteration count while preserving the challenge function.",
+      "target_step_ids": [
+        "TS-07"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-08",
+      "disposition": "retained",
+      "rationale": "Board approval survives per ABB-R-11, retained substantially unchanged but with an auditable digital approval record, and continues to precede load-and-lock per ABB-R-08.",
+      "target_step_ids": [
+        "TS-08"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-09",
+      "disposition": "restructured",
+      "rationale": "Loading and locking of the approved version survives per ABB-R-09, restructured to use role-based system controls that enforce the lock only after board approval is confirmed, preserving the ordering required by ABB-R-08 and the period-cutoff discipline in KB-03.",
+      "target_step_ids": [
+        "TS-09"
+      ]
+    }
+  ],
+  "efficiency": {
+    "calls": 1,
+    "cost_usd": 0.064906,
+    "failed_attempts": 0,
+    "input_tokens": 7828,
+    "output_tokens": 4925,
+    "runtime_min": 0.719372
+  },
+  "gate": {
+    "conformance_score": 1.0,
+    "passed": 11,
+    "results": [
+      {
+        "passed": true,
+        "reason": "baseline step ABB-01 is preserved as restructured, carried by target step(s) ['TS-01']",
+        "requirement_id": "ABB-R-01",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ABB-03 is preserved as restructured, carried by target step(s) ['TS-03']",
+        "requirement_id": "ABB-R-02",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ABB-04 is preserved as restructured, carried by target step(s) ['TS-04']",
+        "requirement_id": "ABB-R-03",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step ABB-05 ['TS-05'] receives all required input(s) ['Business case for capex above threshold']",
+        "requirement_id": "ABB-R-04",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step ABB-06 ['TS-06'] receives all required input(s) ['Accounting policies applied to actuals']",
+        "requirement_id": "ABB-R-05",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ABB-06 is preserved as restructured, carried by target step(s) ['TS-06']",
+        "requirement_id": "ABB-R-06",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step ABB-06 ['TS-06'] receives all required input(s) ['Central FX assumptions']",
+        "requirement_id": "ABB-R-07",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['TS-08'] for baseline ABB-08 all precede target step(s) ['TS-09'] for baseline ABB-09",
+        "requirement_id": "ABB-R-08",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ABB-09 is preserved as restructured, carried by target step(s) ['TS-09']",
+        "requirement_id": "ABB-R-09",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step ABB-01 ['TS-01'] receives all required input(s) ['Downside macro scenario']",
+        "requirement_id": "ABB-R-10",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ABB-08 is preserved as retained, carried by target step(s) ['TS-08']",
+        "requirement_id": "ABB-R-11",
+        "vacuous": false
+      }
+    ],
+    "total": 11
+  },
+  "git_commit": "fe1a87a8a5672d763c3248a4b18f227ae1b3b204",
+  "rep": 2,
+  "resolved_model": "claude-sonnet-5",
+  "run_id": "20261010-193948-baseline-FPA-ABB-01-09ed",
+  "set": "heldout-v1",
+  "steps": [
+    {
+      "actor": "FP&A manager",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "FP&A issues the budget calendar and a central assumptions pack (inflation, FX, interest rates) through the planning platform, including at least one downside macro scenario modelled as a selectable variant so submitters can stress-test plans against it from day one.",
+      "inputs": [
+        "Macroeconomic outlook",
+        "Downside macro scenario"
+      ],
+      "name": "Issue calendar, central assumptions and scenario set",
+      "outputs": [
+        "Budget calendar",
+        "Central planning assumptions",
+        "Central FX assumptions",
+        "Downside scenario variant"
+      ],
+      "step_id": "TS-01"
+    },
+    {
+      "actor": "CEO / CFO",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "CEO/CFO set top-down revenue, margin and cost targets, informed by the strategic plan and the central assumptions pack, and publish them into the planning platform as binding guardrails for bottom-up submissions.",
+      "inputs": [
+        "Strategic plan",
+        "Central planning assumptions"
+      ],
+      "name": "Set top-down targets",
+      "outputs": [
+        "Top-down targets"
+      ],
+      "step_id": "TS-02"
+    },
+    {
+      "actor": "Business unit heads",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Business unit heads prepare and own revenue and volume plans using driver-based templates pre-loaded with top-down targets and central assumptions, with in-line validation against the downside scenario variant.",
+      "inputs": [
+        "Top-down targets",
+        "Central planning assumptions",
+        "Downside scenario variant"
+      ],
+      "name": "Revenue and volume plans (driver-based)",
+      "outputs": [
+        "Revenue and volume plans"
+      ],
+      "step_id": "TS-03"
+    },
+    {
+      "actor": "Cost centre owners",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Cost centre owners prepare and own cost centre and headcount budgets using standardised templates that enforce the central assumptions and flag deviations from top-down targets automatically.",
+      "inputs": [
+        "Top-down targets",
+        "Central planning assumptions"
+      ],
+      "name": "Cost centre and headcount budgets (template-driven)",
+      "outputs": [
+        "Cost centre and headcount budgets"
+      ],
+      "step_id": "TS-04"
+    },
+    {
+      "actor": "Business unit heads",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Business unit heads submit capex requests through the planning platform; any request above the threshold is blocked from submission until a business case is attached, enforcing the control at source rather than in later review.",
+      "inputs": [
+        "Business case for capex above threshold",
+        "Central planning assumptions"
+      ],
+      "name": "Capex requests with business case",
+      "outputs": [
+        "Capex requests"
+      ],
+      "step_id": "TS-05"
+    },
+    {
+      "actor": "FP&A analyst",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The planning platform automatically consolidates revenue, cost, headcount and capex submissions into a draft P&L, balance sheet and cash flow, applying the same accounting policies used for actuals and the central FX assumptions for translation, and runs an automated three-statement reconciliation check before releasing the draft for review.",
+      "inputs": [
+        "Revenue and volume plans",
+        "Cost centre and headcount budgets",
+        "Capex requests",
+        "Accounting policies applied to actuals",
+        "Central FX assumptions"
+      ],
+      "name": "Automated consolidation into draft three-statement budget",
+      "outputs": [
+        "Draft three-statement budget",
+        "Automated reconciliation report"
+      ],
+      "step_id": "TS-06"
+    },
+    {
+      "actor": "FP&A manager / CFO",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "FP&A and the CFO run a structured, platform-supported review and challenge cycle with submitters, using live drill-down into drivers and the downside scenario variant to converge on a revised budget in fewer, shorter iterations than the prior email-based cycle.",
+      "inputs": [
+        "Draft three-statement budget",
+        "Automated reconciliation report"
+      ],
+      "name": "Continuous review and challenge cycle",
+      "outputs": [
+        "Revised budget"
+      ],
+      "step_id": "TS-07"
+    },
+    {
+      "actor": "Board",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The board reviews the revised budget, including the downside scenario view, and formally approves it, with the approval decision and supporting pack captured in an auditable digital record.",
+      "inputs": [
+        "Revised budget"
+      ],
+      "name": "Board approval",
+      "outputs": [
+        "Board-approved budget"
+      ],
+      "step_id": "TS-08"
+    },
+    {
+      "actor": "FP&A analyst",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The board-approved budget is loaded into the planning and reporting systems and locked via role-based access control as the single version used for variance analysis, with the lock enforced only after board approval is confirmed in the system.",
+      "inputs": [
+        "Board-approved budget"
+      ],
+      "name": "Load and lock approved budget version",
+      "outputs": [
+        "Locked approved budget version"
+      ],
+      "step_id": "TS-09"
+    }
+  ],
+  "transcript": [
+    {
+      "chars": 8801,
+      "excerpt": "{\n  \"workflow_id\": \"FPA-ABB-01\",\n  \"baseline_step_ids\": [\n    \"ABB-01\",\n    \"ABB-02\",\n    \"ABB-03\",\n    \"ABB-04\",\n    \"ABB-05\",\n    \"ABB-06\",\n    \"ABB-07\",\n    \"ABB-08\",\n    \"ABB-09\"\n  ],\n  \"steps\": [\n    {\n      \"step_id\": \"TS-01\",\n      \"name\": \"Issue calendar, central assumptions and scenario set\",\n      \"description\": \"FP&A issues the budget calendar and a central assumptions pack (inflation, FX, interest rates) through the planning platform, including at least one downside macro scenario modelled as a selectable variant so submitters can stress-test plans against it from day one.\",\n      ",
+      "phase": "single agent",
+      "role": "baseline_designer",
+      "truncated": true
+    }
+  ],
+  "workflow_id": "FPA-ABB-01"
+}

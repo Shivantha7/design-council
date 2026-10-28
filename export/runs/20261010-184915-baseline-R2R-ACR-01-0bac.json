@@ -1,0 +1,287 @@
+{
+  "condition": "baseline",
+  "consistency_inputs": {
+    "ACR-01": "restructured",
+    "ACR-02": "restructured",
+    "ACR-03": "retained",
+    "ACR-04": "merged",
+    "ACR-05": "merged",
+    "ACR-06": "retained",
+    "ACR-07": "restructured",
+    "ACR-08": "restructured"
+  },
+  "created_utc": "2026-10-10T18:49:15.403918Z",
+  "depth": {
+    "counts": {
+      "absorbed": 0,
+      "eliminated": 0,
+      "merged": 2,
+      "restructured": 4,
+      "retained": 2
+    },
+    "score": 0.75,
+    "total_baseline_steps": 8
+  },
+  "disposition_convention_version": "v1, restored 11 Oct 2026",
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "ACR-01",
+      "disposition": "restructured",
+      "rationale": "Extraction is automated end-to-end by the reconciliation platform; the GL accountant now manages scope and extraction exceptions instead of performing extraction manually. The mandatory inputs (risk-rated schedule, closing exchange rates) are preserved per ACR-R-01 and ACR-R-07, and FX retranslation at closing rate per IAS 21/KB-07 is retained as a required computation.",
+      "target_step_ids": [
+        "TS-01"
+      ]
+    },
+    {
+      "baseline_step_id": "ACR-02",
+      "disposition": "restructured",
+      "rationale": "Matching is performed primarily by automated rules/pattern engines, with manual effort confined to a residual exception queue. The matching function survives per ACR-R-02 and continues to establish the evidential basis under KB-02/KB-09.",
+      "target_step_ids": [
+        "TS-02"
+      ]
+    },
+    {
+      "baseline_step_id": "ACR-03",
+      "disposition": "retained",
+      "rationale": "Investigation and classification of reconciling items remains a human judgment task and is carried unchanged, satisfying ACR-R-03 and the error-correction requirement in KB-05.",
+      "target_step_ids": [
+        "TS-03"
+      ]
+    },
+    {
+      "baseline_step_id": "ACR-04",
+      "disposition": "merged",
+      "rationale": "Adjusting journal entry preparation is preserved per ACR-R-04 and continues to consume the prior-period error record per ACR-R-06 (KB-05 error correction). It is merged with the unconstrained preparer sign-off step into a single preparer action, since both are performed by the same preparer and no requirement mandates they be distinct steps.",
+      "target_step_ids": [
+        "TS-04"
+      ]
+    },
+    {
+      "baseline_step_id": "ACR-05",
+      "disposition": "merged",
+      "rationale": "Preparer sign-off is explicitly unconstrained by design; it is folded into the adjusting-entry preparation step as a single preparer confirmation action, eliminating a redundant handoff without removing any control function.",
+      "target_step_ids": [
+        "TS-04"
+      ]
+    },
+    {
+      "baseline_step_id": "ACR-06",
+      "disposition": "retained",
+      "rationale": "Independent reviewer approval survives per ACR-R-09, performed by the finance controller, distinct from the GL accountant who prepares entries in TS-04, satisfying the actor-separation requirement ACR-R-05.",
+      "target_step_ids": [
+        "TS-05"
+      ]
+    },
+    {
+      "baseline_step_id": "ACR-07",
+      "disposition": "restructured",
+      "rationale": "Escalation of aged reconciling items is unconstrained by design; it is restructured into continuous automated ageing monitoring with system-triggered escalation, with the finance controller actioning escalations rather than manually screening for them.",
+      "target_step_ids": [
+        "TS-06"
+      ]
+    },
+    {
+      "baseline_step_id": "ACR-08",
+      "disposition": "restructured",
+      "rationale": "Evidence retention and status reporting survive per ACR-R-08, restructured into automated retention and live dashboard reporting to preserve the evidential trail required by IAS 1/KB-02 while reducing manual filing effort.",
+      "target_step_ids": [
+        "TS-07"
+      ]
+    }
+  ],
+  "efficiency": {
+    "calls": 1,
+    "cost_usd": 0.063632,
+    "failed_attempts": 0,
+    "input_tokens": 7436,
+    "output_tokens": 4876,
+    "runtime_min": 0.691016
+  },
+  "gate": {
+    "conformance_score": 1.0,
+    "passed": 9,
+    "results": [
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step ACR-01 ['TS-01'] receives all required input(s) ['Reconciliation schedule by account risk rating']",
+        "requirement_id": "ACR-R-01",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ACR-02 is preserved as restructured, carried by target step(s) ['TS-02']",
+        "requirement_id": "ACR-R-02",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ACR-03 is preserved as retained, carried by target step(s) ['TS-03']",
+        "requirement_id": "ACR-R-03",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ACR-04 is preserved as merged, carried by target step(s) ['TS-04']",
+        "requirement_id": "ACR-R-04",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "actors separated: ACR-04 → ['GL accountant'], ACR-06 → ['Finance controller']",
+        "requirement_id": "ACR-R-05",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step ACR-04 ['TS-04'] receives all required input(s) ['Prior-period error record']",
+        "requirement_id": "ACR-R-06",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step ACR-01 ['TS-01'] receives all required input(s) ['Closing exchange rates']",
+        "requirement_id": "ACR-R-07",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ACR-08 is preserved as restructured, carried by target step(s) ['TS-07']",
+        "requirement_id": "ACR-R-08",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ACR-06 is preserved as retained, carried by target step(s) ['TS-05']",
+        "requirement_id": "ACR-R-09",
+        "vacuous": false
+      }
+    ],
+    "total": 9
+  },
+  "git_commit": "fe1a87a8a5672d763c3248a4b18f227ae1b3b204",
+  "rep": 1,
+  "resolved_model": "claude-sonnet-5",
+  "run_id": "20261010-184915-baseline-R2R-ACR-01-0bac",
+  "set": "heldout-v1",
+  "steps": [
+    {
+      "actor": "GL accountant (exception oversight) / System",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "GL and comparison balances (bank, subledger, third party) for every in-scope account due under its risk-rated frequency are extracted automatically by the reconciliation platform, with foreign-currency monetary balances retranslated at the closing rate per IAS 21. The GL accountant configures scope and reviews extraction exceptions (e.g. feed failures, stale rates) rather than performing extraction manually.",
+      "inputs": [
+        "Reconciliation schedule by account risk rating",
+        "GL balances",
+        "Comparison balances",
+        "Closing exchange rates"
+      ],
+      "name": "Automated balance extraction and FX retranslation",
+      "outputs": [
+        "Balances for reconciliation",
+        "Extraction exception log"
+      ],
+      "step_id": "TS-01"
+    },
+    {
+      "actor": "System / GL accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "AGENT",
+      "description": "Transactions are matched between the GL and the comparison source automatically using rules and pattern-based matching; only items the engine cannot resolve are routed to an exception queue for the GL accountant. The matching function itself continues to establish the evidential basis for reconciled balances.",
+      "inputs": [
+        "Balances for reconciliation"
+      ],
+      "name": "Automated transaction matching with exception queue",
+      "outputs": [
+        "Matched items",
+        "Unmatched item exception queue"
+      ],
+      "step_id": "TS-02"
+    },
+    {
+      "actor": "GL accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Unmatched items in the exception queue are investigated, explained, supported with evidence and classified by the GL accountant. This judgmental step is not automated, since explanation requires contextual human assessment.",
+      "inputs": [
+        "Unmatched item exception queue",
+        "Supporting documents"
+      ],
+      "name": "Investigate and classify reconciling items",
+      "outputs": [
+        "Explained reconciling items"
+      ],
+      "step_id": "TS-03"
+    },
+    {
+      "actor": "GL accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Adjusting journal entries are prepared for items requiring correction, with prior-period errors corrected retrospectively per IAS 8, drawing on the prior-period error record. The preparer then signs off the completed reconciliation and proposed entries in the same workflow action, consolidating what were previously two preparer-side steps without changing who performs the preparation work.",
+      "inputs": [
+        "Explained reconciling items",
+        "Prior-period error record"
+      ],
+      "name": "Prepare adjusting journal entries and preparer sign-off",
+      "outputs": [
+        "Proposed adjusting journal entries",
+        "Prepared and signed-off reconciliation"
+      ],
+      "step_id": "TS-04"
+    },
+    {
+      "actor": "Finance controller",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "An independent reviewer, distinct from the preparer of the adjusting entries, reviews and approves the reconciliation and its adjusting entries before posting, preserving segregation of duties between preparation and review.",
+      "inputs": [
+        "Prepared and signed-off reconciliation",
+        "Proposed adjusting journal entries"
+      ],
+      "name": "Independent reviewer approval",
+      "outputs": [
+        "Approved reconciliation",
+        "Approved journal entries"
+      ],
+      "step_id": "TS-05"
+    },
+    {
+      "actor": "Finance controller / System",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The platform continuously tracks the age of open reconciling items against the ageing threshold and automatically escalates items that breach it, with the finance controller actioning and dispositioning escalated items rather than manually screening for them.",
+      "inputs": [
+        "Approved reconciliation"
+      ],
+      "name": "Continuous ageing monitoring and escalation",
+      "outputs": [
+        "Escalation log"
+      ],
+      "step_id": "TS-06"
+    },
+    {
+      "actor": "GL accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Reconciliation evidence is retained automatically in the system of record and reconciliation status is reported via a live dashboard, preserving the evidential trail required for fair presentation while removing manual filing effort.",
+      "inputs": [
+        "Approved reconciliation"
+      ],
+      "name": "Automated evidence retention and status reporting",
+      "outputs": [
+        "Retained reconciliation evidence",
+        "Reconciliation status report"
+      ],
+      "step_id": "TS-07"
+    }
+  ],
+  "transcript": [
+    {
+      "chars": 7893,
+      "excerpt": "{\n  \"workflow_id\": \"R2R-ACR-01\",\n  \"baseline_step_ids\": [\"ACR-01\",\"ACR-02\",\"ACR-03\",\"ACR-04\",\"ACR-05\",\"ACR-06\",\"ACR-07\",\"ACR-08\"],\n  \"steps\": [\n    {\n      \"step_id\": \"TS-01\",\n      \"name\": \"Automated balance extraction and FX retranslation\",\n      \"description\": \"GL and comparison balances (bank, subledger, third party) for every in-scope account due under its risk-rated frequency are extracted automatically by the reconciliation platform, with foreign-currency monetary balances retranslated at the closing rate per IAS 21. The GL accountant configures scope and reviews extraction exceptions (",
+      "phase": "single agent",
+      "role": "baseline_designer",
+      "truncated": true
+    }
+  ],
+  "workflow_id": "R2R-ACR-01"
+}

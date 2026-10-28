@@ -1,0 +1,301 @@
+{
+  "condition": "baseline",
+  "consistency_inputs": {
+    "PRE-01": "merged",
+    "PRE-02": "merged",
+    "PRE-03": "restructured",
+    "PRE-04": "retained",
+    "PRE-05": "retained",
+    "PRE-06": "restructured",
+    "PRE-07": "restructured",
+    "PRE-08": "restructured"
+  },
+  "created_utc": "2026-10-10T20:50:00.282243Z",
+  "depth": {
+    "counts": {
+      "absorbed": 0,
+      "eliminated": 0,
+      "merged": 2,
+      "restructured": 4,
+      "retained": 2
+    },
+    "score": 0.75,
+    "total_baseline_steps": 8
+  },
+  "disposition_convention_version": "v1, restored 11 Oct 2026",
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "PRE-01",
+      "disposition": "merged",
+      "rationale": "Due-item selection is automated and combined with proposal generation into a single ERP-driven step, still consuming approved matched invoices as required (PRE-R-01).",
+      "target_step_ids": [
+        "TS-01"
+      ]
+    },
+    {
+      "baseline_step_id": "PRE-02",
+      "disposition": "merged",
+      "rationale": "Proposal generation survives (PRE-R-08) as the second half of the automated selection-and-proposal step, keeping the grouping logic by vendor, currency and payment method.",
+      "target_step_ids": [
+        "TS-01"
+      ]
+    },
+    {
+      "baseline_step_id": "PRE-03",
+      "disposition": "restructured",
+      "rationale": "Proposal review survives (PRE-R-09) but is restructured to add automated exception detection for duplicates, blocked vendors and bank-detail changes, with the supervisor resolving flags; ordering before approval (PRE-R-02) and before file release (PRE-R-03) is preserved by sequencing TS-02 ahead of TS-03 and TS-04.",
+      "target_step_ids": [
+        "TS-02"
+      ]
+    },
+    {
+      "baseline_step_id": "PRE-04",
+      "disposition": "retained",
+      "rationale": "Payment approval survives unchanged (PRE-R-10), performed by the authorised signatory, distinct from the actor generating the proposal (PRE-R-04), and preceding file release (PRE-R-05).",
+      "target_step_ids": [
+        "TS-03"
+      ]
+    },
+    {
+      "baseline_step_id": "PRE-05",
+      "disposition": "retained",
+      "rationale": "Payment file generation and release survives unchanged (PRE-R-11), occurring only after proposal review and approval, satisfying PRE-R-03 and PRE-R-05.",
+      "target_step_ids": [
+        "TS-04"
+      ]
+    },
+    {
+      "baseline_step_id": "PRE-06",
+      "disposition": "restructured",
+      "rationale": "Bank confirmation receipt, an unconstrained step, is restructured into an automated reconciliation engine with treasury oversight for exceptions, improving speed while preserving the confirmation evidence feeding posting.",
+      "target_step_ids": [
+        "TS-05"
+      ]
+    },
+    {
+      "baseline_step_id": "PRE-07",
+      "disposition": "restructured",
+      "rationale": "Posting and clearing persists, still consuming the bank settlement confirmation (PRE-R-06) and settlement-date exchange rate (PRE-R-07), with explicit handling of exchange differences per KB-08 and determinable derecognition timing per KB-11.",
+      "target_step_ids": [
+        "TS-06"
+      ]
+    },
+    {
+      "baseline_step_id": "PRE-08",
+      "disposition": "restructured",
+      "rationale": "Remittance advice, an unconstrained step, is fully automated for transmission to vendors immediately upon settlement confirmation, with analyst oversight limited to exceptions.",
+      "target_step_ids": [
+        "TS-07"
+      ]
+    }
+  ],
+  "efficiency": {
+    "calls": 1,
+    "cost_usd": 0.066456,
+    "failed_attempts": 0,
+    "input_tokens": 7688,
+    "output_tokens": 5108,
+    "runtime_min": 0.73826
+  },
+  "gate": {
+    "conformance_score": 1.0,
+    "passed": 11,
+    "results": [
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step PRE-01 ['TS-01'] receives all required input(s) ['Approved matched invoices']",
+        "requirement_id": "PRE-R-01",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['TS-02'] for baseline PRE-03 all precede target step(s) ['TS-03'] for baseline PRE-04",
+        "requirement_id": "PRE-R-02",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['TS-02'] for baseline PRE-03 all precede target step(s) ['TS-04'] for baseline PRE-05",
+        "requirement_id": "PRE-R-03",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "actors separated: PRE-02 → ['AP analyst (with ERP automation)'], PRE-04 → ['Authorised signatory']",
+        "requirement_id": "PRE-R-04",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['TS-03'] for baseline PRE-04 all precede target step(s) ['TS-04'] for baseline PRE-05",
+        "requirement_id": "PRE-R-05",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step PRE-07 ['TS-06'] receives all required input(s) ['Bank settlement confirmation']",
+        "requirement_id": "PRE-R-06",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step PRE-07 ['TS-06'] receives all required input(s) ['Settlement-date exchange rate']",
+        "requirement_id": "PRE-R-07",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step PRE-02 is preserved as merged, carried by target step(s) ['TS-01']",
+        "requirement_id": "PRE-R-08",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step PRE-03 is preserved as restructured, carried by target step(s) ['TS-02']",
+        "requirement_id": "PRE-R-09",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step PRE-04 is preserved as retained, carried by target step(s) ['TS-03']",
+        "requirement_id": "PRE-R-10",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step PRE-05 is preserved as retained, carried by target step(s) ['TS-04']",
+        "requirement_id": "PRE-R-11",
+        "vacuous": false
+      }
+    ],
+    "total": 11
+  },
+  "git_commit": "fe1a87a8a5672d763c3248a4b18f227ae1b3b204",
+  "rep": 5,
+  "resolved_model": "claude-sonnet-5",
+  "run_id": "20261010-205000-baseline-P2P-PRE-01-f62e",
+  "set": "heldout-v1",
+  "steps": [
+    {
+      "actor": "AP analyst (with ERP automation)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The ERP automatically identifies approved, matched invoices (including foreign-currency items) falling due under their payment terms and generates a payment proposal grouped by vendor, currency and payment method. The AP analyst configures selection parameters and reviews the output for completeness before passing it forward. Consuming approved matched invoices preserves the invoice-to-GRN-to-PO evidence chain that establishes recognition of the payable (KB-11) and the cost basis underlying it (KB-09).",
+      "inputs": [
+        "Approved matched invoices",
+        "Payment terms",
+        "Vendor master data"
+      ],
+      "name": "Automated due-item selection and proposal generation",
+      "outputs": [
+        "Payment proposal"
+      ],
+      "step_id": "TS-01"
+    },
+    {
+      "actor": "AP supervisor (with automated control engine)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HYBRID",
+      "description": "An automated control engine screens the proposal for duplicate payments, blocked vendors and recent vendor bank-detail changes, flagging exceptions; the AP supervisor investigates and resolves or holds flagged items, distinct from whoever produced the proposal. This preserves segregation between proposal generation and review and keeps the duplicate-payment and bank-detail controls effective before funds commitment.",
+      "inputs": [
+        "Payment proposal",
+        "Vendor bank master change log",
+        "Payment history"
+      ],
+      "name": "Proposal review with automated exception detection",
+      "outputs": [
+        "Reviewed payment proposal",
+        "Exception log"
+      ],
+      "step_id": "TS-02"
+    },
+    {
+      "actor": "Authorised signatory",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The reviewed proposal is approved for payment by an authorised signatory operating within delegated limits, independent of the party that generated the proposal.",
+      "inputs": [
+        "Reviewed payment proposal",
+        "Delegation of authority"
+      ],
+      "name": "Payment approval",
+      "outputs": [
+        "Approved payment proposal"
+      ],
+      "step_id": "TS-03"
+    },
+    {
+      "actor": "Treasury officer",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The approved proposal is converted into a bank payment file and released to the bank only after review and approval have both occurred, preserving the control sequence that governs when the payable's derecognition is triggered.",
+      "inputs": [
+        "Approved payment proposal",
+        "Vendor bank details"
+      ],
+      "name": "Payment file generation and release to bank",
+      "outputs": [
+        "Payment file transmitted to bank"
+      ],
+      "step_id": "TS-04"
+    },
+    {
+      "actor": "Treasury officer (with automated reconciliation engine)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HYBRID",
+      "description": "An automated reconciliation engine retrieves the bank's execution confirmation and statement data and matches it to the transmitted payment file line by line; the treasury officer investigates any unmatched or partial settlements. Automation of this unconstrained step improves timeliness without weakening the confirmation evidence feeding posting.",
+      "inputs": [
+        "Payment file transmitted to bank",
+        "Bank statement"
+      ],
+      "name": "Automated bank confirmation matching",
+      "outputs": [
+        "Bank settlement confirmation"
+      ],
+      "step_id": "TS-05"
+    },
+    {
+      "actor": "GL accountant (with automated posting engine)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HYBRID",
+      "description": "Settled payments are posted, clearing open items in the AP subledger and recording cash in the GL. Settlement-date exchange rates are applied and any exchange differences between invoice recognition and settlement are separately identified and posted, not netted invisibly, consistent with the requirement that exchange differences remain tracked and reported (KB-08) and that payable derecognition timing stays determinable (KB-11).",
+      "inputs": [
+        "Bank settlement confirmation",
+        "Settlement-date exchange rate",
+        "AP subledger open items"
+      ],
+      "name": "Posting and clearing with FX difference recognition",
+      "outputs": [
+        "AP subledger cleared",
+        "GL cash posted",
+        "FX difference recognised"
+      ],
+      "step_id": "TS-06"
+    },
+    {
+      "actor": "AP analyst (oversight of automated remittance system)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HYBRID",
+      "description": "Remittance advice detailing settled invoices is generated and transmitted to vendors automatically upon confirmed settlement, with the AP analyst handling exceptions such as bounced notifications. This unconstrained step is fully automated for speed and accuracy.",
+      "inputs": [
+        "Bank settlement confirmation",
+        "Vendor contact data"
+      ],
+      "name": "Automated remittance advice to vendors",
+      "outputs": [
+        "Remittance advice"
+      ],
+      "step_id": "TS-07"
+    }
+  ],
+  "transcript": [
+    {
+      "chars": 7519,
+      "excerpt": "{\n  \"workflow_id\": \"P2P-PRE-01\",\n  \"baseline_step_ids\": [\"PRE-01\", \"PRE-02\", \"PRE-03\", \"PRE-04\", \"PRE-05\", \"PRE-06\", \"PRE-07\", \"PRE-08\"],\n  \"steps\": [\n    {\n      \"step_id\": \"TS-01\",\n      \"name\": \"Automated due-item selection and proposal generation\",\n      \"description\": \"The ERP automatically identifies approved, matched invoices (including foreign-currency items) falling due under their payment terms and generates a payment proposal grouped by vendor, currency and payment method. The AP analyst configures selection parameters and reviews the output for completeness before passing it forwar",
+      "phase": "single agent",
+      "role": "baseline_designer",
+      "truncated": true
+    }
+  ],
+  "workflow_id": "P2P-PRE-01"
+}

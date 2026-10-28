@@ -1,0 +1,376 @@
+{
+  "condition": "council",
+  "consistency_inputs": {
+    "ACR-01": "restructured",
+    "ACR-02": "restructured",
+    "ACR-03": "retained",
+    "ACR-04": "merged",
+    "ACR-05": "merged",
+    "ACR-06": "merged",
+    "ACR-07": "merged",
+    "ACR-08": "restructured"
+  },
+  "created_utc": "2026-10-10T19:40:41.774072Z",
+  "depth": {
+    "counts": {
+      "absorbed": 0,
+      "eliminated": 0,
+      "merged": 4,
+      "restructured": 3,
+      "retained": 1
+    },
+    "score": 0.875,
+    "total_baseline_steps": 8
+  },
+  "disposition_convention_version": "v1, restored 11 Oct 2026",
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "ACR-01",
+      "disposition": "restructured",
+      "rationale": "Extraction is restructured to name automation that already exists in mature close processes while preserving a manual extraction lane as a first-class, resourced path for non-integrated or low-bandwidth environments, per the council's near-unanimous correction of tier-one-infrastructure assumptions. The step boundary is kept separate from matching (rejecting the maximalist merge, held against by six of seven members) because extraction/retranslation and matching are distinct computations with distinct failure modes requiring independently inspectable evidence. The risk-rated schedule and closing exchange rate inputs (ACR-R-01, ACR-R-07) remain explicit, and exchange differences are made separately visible per KB-08.",
+      "target_step_ids": [
+        "TS-01"
+      ]
+    },
+    {
+      "baseline_step_id": "ACR-02",
+      "disposition": "restructured",
+      "rationale": "Matching survives (ACR-R-02) as its own step, restructured around a tiered automated/manual model. The council majority (pragmatist, finance_domain, emerging_economy, hitl_designer, agentic_architect, accounting_standards) rejected collapsing this into extraction; the seam between 'is the balance right' and 'do two balances agree' is kept inspectable. The manual matching lane is specified as permanently resourced, not a shrinking fallback, with a rehearsed degradation path, per emerging_economy's and pragmatist's converged non-negotiables, and intercompany identifiability is preserved per KB-14.",
+      "target_step_ids": [
+        "TS-02"
+      ]
+    },
+    {
+      "baseline_step_id": "ACR-03",
+      "disposition": "retained",
+      "rationale": "Investigation and classification survive essentially unchanged (ACR-R-03). The council was six-to-one against merging this with JE preparation: classification is the fork point between mechanical reclass and estimation treatment (KB-04, KB-10), and its rationale must remain independently inspectable from the resulting entry (KB-02). Agent assistance is confined to advisory retrieval and drafting; the human disposes on every item, not only a low-confidence tail, closing the threshold-ambiguity hitl_designer raised against generous automation of 'routine' items.",
+      "target_step_ids": [
+        "TS-03"
+      ]
+    },
+    {
+      "baseline_step_id": "ACR-04",
+      "disposition": "merged",
+      "rationale": "JE preparation is merged with preparer sign-off into one preparer-owned step, consistent with the full council's convergence that the same-actor handoff between preparing and signing off added no independent check. The merged step still consumes the prior-period error record (ACR-R-06) and preserves retrospective correction per KB-05; estimation-based entries retain a documented human basis per KB-04/KB-10.",
+      "target_step_ids": [
+        "TS-04"
+      ]
+    },
+    {
+      "baseline_step_id": "ACR-05",
+      "disposition": "merged",
+      "rationale": "Sign-off is merged into TS-04 rather than eliminated. The council rejected maximalist's elimination-with-no-successor-artifact position six-to-one: a named, timestamped preparer attestation must remain a distinct, affirmative output, not an inference drawn from system logging of draft submission. This satisfies the unconstrained_by_design flexibility on this step while preserving the evidentiary distinctness KB-02 requires.",
+      "target_step_ids": [
+        "TS-04"
+      ]
+    },
+    {
+      "baseline_step_id": "ACR-06",
+      "disposition": "merged",
+      "rationale": "Reviewer approval survives (ACR-R-09) and remains structurally separated from preparation by human identity, with agent assistance never substituting for or satisfying the separation (ACR-R-05), per the council-wide convergence on agent-non-actor status. It is merged with escalation into one controller-owned review event, following the five-member majority (pragmatist, finance_domain, emerging_economy, hitl_designer, accounting_standards-on-reconsideration) that the controller already holds the full context needed for both decisions in one sitting, while agentic_architect's timing concern is addressed by making the underlying ageing monitoring continuous rather than review-cadence-gated.",
+      "target_step_ids": [
+        "TS-05"
+      ]
+    },
+    {
+      "baseline_step_id": "ACR-07",
+      "disposition": "merged",
+      "rationale": "Escalation is merged into the controller's review step rather than fully absorbed into an unattended monitoring layer. The council majority held that detection of an aged item may be automated and continuous, but resolution of it is a judgment call (write off, pursue, accept explanation) requiring a named human decision of record — maximalist's 'recipient/resolver' framing was held against by five members. The design keeps alerting continuous (addressing the cutoff-discipline concern under KB-03/KB-05 that a monthly review pass would miss mid-cycle breaches) while requiring the controller's explicit, recorded escalation decision for every aged item.",
+      "target_step_ids": [
+        "TS-05"
+      ]
+    },
+    {
+      "baseline_step_id": "ACR-08",
+      "disposition": "restructured",
+      "rationale": "Evidence retention and status reporting survive (ACR-R-08), restructured so that automated packaging and archiving are the mechanism but a named GL accountant affirmatively confirms completeness against the risk-rated schedule before status is reported, per the hitl_designer/finance_domain/pragmatist convergence against 'the system already logged everything' as a substitute for a human completeness check. Retention and reporting are specified to tolerate intermittent connectivity and avoid single-platform, per-seat dependency, per emerging_economy's non-negotiable, so the control functions identically across tier-one and constrained delivery environments.",
+      "target_step_ids": [
+        "TS-06"
+      ]
+    }
+  ],
+  "efficiency": {
+    "calls": 15,
+    "cost_usd": 1.2913,
+    "failed_attempts": 0,
+    "input_tokens": 272670,
+    "output_tokens": 74596,
+    "runtime_min": 14.727355
+  },
+  "gate": {
+    "conformance_score": 1.0,
+    "passed": 9,
+    "results": [
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step ACR-01 ['TS-01'] receives all required input(s) ['Reconciliation schedule by account risk rating']",
+        "requirement_id": "ACR-R-01",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ACR-02 is preserved as restructured, carried by target step(s) ['TS-02']",
+        "requirement_id": "ACR-R-02",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ACR-03 is preserved as retained, carried by target step(s) ['TS-03']",
+        "requirement_id": "ACR-R-03",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ACR-04 is preserved as merged, carried by target step(s) ['TS-04']",
+        "requirement_id": "ACR-R-04",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "actors separated: ACR-04 → ['GL accountant'], ACR-06 → ['Finance controller']",
+        "requirement_id": "ACR-R-05",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step ACR-04 ['TS-04'] receives all required input(s) ['Prior-period error record']",
+        "requirement_id": "ACR-R-06",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step ACR-01 ['TS-01'] receives all required input(s) ['Closing exchange rates']",
+        "requirement_id": "ACR-R-07",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ACR-08 is preserved as restructured, carried by target step(s) ['TS-06']",
+        "requirement_id": "ACR-R-08",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ACR-06 is preserved as merged, carried by target step(s) ['TS-05']",
+        "requirement_id": "ACR-R-09",
+        "vacuous": false
+      }
+    ],
+    "total": 9
+  },
+  "git_commit": "fe1a87a8a5672d763c3248a4b18f227ae1b3b204",
+  "rep": 2,
+  "resolved_model": "claude-sonnet-5",
+  "run_id": "20261010-194041-council-R2R-ACR-01-cb53",
+  "set": "heldout-v1",
+  "steps": [
+    {
+      "actor": "GL accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "GL and comparison balances are extracted per the risk-rated schedule. Automated connectors handle integrated sources; a manual extraction lane (file upload, direct entry) is retained as a first-class, equally-governed path for non-integrated or low-connectivity sources, not a deprecated fallback. Foreign-currency balances are retranslated at the closing rate for every monetary item, with the resulting exchange differences captured as a separately visible output rather than netted into a generic balance. Missing feeds, stale rate tables, or out-of-tolerance retranslated balances are routed to the GL accountant as a named exception, never carried forward silently. Rate version, source system, and extraction mode (automated/manual) are logged on every run.",
+      "inputs": [
+        "Reconciliation schedule by account risk rating",
+        "GL balances",
+        "Comparison balances",
+        "Closing exchange rates"
+      ],
+      "name": "Extract GL and comparison balances (automated and manual lanes)",
+      "outputs": [
+        "Balances for reconciliation",
+        "FX translation and exchange-difference record",
+        "Extraction exception log"
+      ],
+      "step_id": "TS-01"
+    },
+    {
+      "actor": "GL accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Transactions are matched between GL and comparison source using versioned, deterministic automated rules wherever data quality allows; everything the rules cannot resolve routes to a manual matching queue, which is resourced as a designed, permanent capability rather than a degraded exception path, and carries the same logging standard (preparer identity, timestamp, rationale) as the automated path. Every unmatched item is shown the rule(s) evaluated and why none fired. A defined, rehearsed fallback to full manual matching exists for engine outage or systemic mis-ruling, invoked and logged as an explicit event. Where in-scope accounts are intercompany, the matching configuration preserves full identifiability of intragroup positions for elimination.",
+      "inputs": [
+        "Balances for reconciliation"
+      ],
+      "name": "Tiered transaction matching",
+      "outputs": [
+        "Matched and unmatched items",
+        "Match rule version log"
+      ],
+      "step_id": "TS-02"
+    },
+    {
+      "actor": "GL accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Unmatched items are investigated, explained, supported with evidence and classified by the GL accountant, who remains the named, accountable decision-maker for every item. Agent assistance is limited to retrieving supporting documents, surfacing similar historical items, and drafting candidate explanations or classifications; the agent proposes, the human disposes (accept, reject, override with reason) on every item, including high-confidence ones. No item is auto-closed above a materiality or age threshold without a named human review. Classification is recorded as an artifact independent of any resulting journal entry, since it is what determines whether an item is a mechanical reclass or an estimation-based entry requiring documented judgment.",
+      "inputs": [
+        "Matched and unmatched items",
+        "Supporting documents"
+      ],
+      "name": "Investigate and classify reconciling items",
+      "outputs": [
+        "Explained reconciling items"
+      ],
+      "step_id": "TS-03"
+    },
+    {
+      "actor": "GL accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Adjusting journal entries are prepared from explained reconciling items and the prior-period error record, with prior-period errors corrected retrospectively rather than folded into the current period. An agent may draft mechanical, rules-determinable entries as a first pass; the GL accountant edits and validates every draft and documents the judgment basis for any estimation-based entry (e.g. NRV write-downs, provisions). The former separate sign-off step is folded into this one, but its substance survives as a distinct, timestamped, named preparer attestation record certifying completeness and basis of the reconciliation and proposed entries — this is an affirmative act, not an inference drawn from draft submission or system logging. Agent involvement in drafting does not alter who is accountable for the attestation, nor does it create a second 'actor' for downstream separation-of-duties purposes.",
+      "inputs": [
+        "Explained reconciling items",
+        "Prior-period error record"
+      ],
+      "name": "Prepare adjusting journal entries and preparer attestation",
+      "outputs": [
+        "Proposed adjusting journal entries",
+        "Preparer attestation record"
+      ],
+      "step_id": "TS-04"
+    },
+    {
+      "actor": "Finance controller",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "An independent finance controller — a distinct human identity from the TS-04 preparer, a boundary enforced structurally and not satisfiable by agent involvement on either side — reviews and approves the reconciliation and its adjusting entries. An agent pre-screens for completeness, variance and anomaly, surfacing flags the controller resolves; the controller records a discrete approval decision for every item, with no batch or implicit approval for estimation-bearing or flagged items. Aging of reconciling items is monitored continuously by the system against the ageing threshold, with alerts surfaced to the controller as thresholds are crossed rather than withheld until the next scheduled review — a breach occurring mid-cycle must not wait for month-end to be seen. For every aged item, whether surfaced mid-cycle or at scheduled review, the controller records an explicit escalation decision (owner assigned, deadline, rationale), distinct from the approval decision though captured in the same sitting where timing allows.",
+      "inputs": [
+        "Prepared reconciliation",
+        "Proposed adjusting journal entries",
+        "Preparer attestation record"
+      ],
+      "name": "Reviewer approval and aged-item escalation",
+      "outputs": [
+        "Approved reconciliation",
+        "Approved journal entries",
+        "Escalation log"
+      ],
+      "step_id": "TS-05"
+    },
+    {
+      "actor": "GL accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Reconciliation evidence is packaged, timestamped and archived largely through automated capture, with amendments routed through a controlled, logged re-filing process rather than silent overwrite. Before status is reported upward, a named GL accountant (or delegate) affirmatively confirms evidence completeness against the risk-rated schedule — a checkpoint, not an inferred byproduct of system logging. Retention and reporting mechanisms are specified to function under intermittent connectivity and to produce exportable, platform-independent status output, so the control does not silently fail for teams without continuous connectivity or full platform licences.",
+      "inputs": [
+        "Approved reconciliation",
+        "Escalation log"
+      ],
+      "name": "Retain evidence and report status",
+      "outputs": [
+        "Retained reconciliation evidence",
+        "Reconciliation status report",
+        "Completeness confirmation record"
+      ],
+      "step_id": "TS-06"
+    }
+  ],
+  "transcript": [
+    {
+      "chars": 7792,
+      "excerpt": "# PROPOSED DISPOSITIONS\n\n**ACR-01 (Extract GL and comparison balances) + ACR-02 (Transaction matching) → merged into a single step, \"Continuous automated reconciliation engine.\"** There is no defensible reason in 2026 for extraction and matching to be two human-paced steps. An agentic platform can run on an event-driven or daily cadence per the risk-rated schedule, pull GL and comparison balances, retranslate FX at the closing rate, and perform matching in the same pass — because matching logic is just the next computation on data already in memory. Splitting these into separate \"steps\" only m",
+      "phase": "round 1",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 6717,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nACR-01 (Extract GL and comparison balances) — restructured, carried forward into a new Step TS-01 \"Extract and stage balances for reconciliation.\" The underlying work doesn't change: GL and comparison balances still need pulling per the risk-rated schedule, with FX retranslation at close. What I'd change is operational, not structural — add automated extraction connectors and a staging/validation check (e.g., completeness check against the schedule) so the GL accountant isn't manually pulling data from five systems every cycle. Same actor, same control intent, better too",
+      "phase": "round 1",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 7852,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nACR-01 (Extract GL and comparison balances) — restructured, carried by a new step \"Automated balance extraction with exception handling.\" In practice this step is already 80-90% systematized in any shop running an ERP-integrated close calendar: GL and bank/subledger feeds are pulled on a schedule keyed to the account's risk rating, and FX retranslation at the closing rate is a deterministic calculation, not a judgment call. The GL accountant's real job here is managing the exception queue — accounts that fail to extract, feeds that arrive late, FX rate-table publication ",
+      "phase": "round 1",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 7235,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nACR-01 (Extract GL and comparison balances) — RETAINED, restructured in character rather than function, carried by a target step I'll call \"Hybrid balance extraction.\" In many offshore and emerging-market finance operations, bank, subledger and third-party systems are not API-integrated with the GL; extraction is a mix of automated feeds (where licensed connectors exist) and manual download/upload of flat files or even scanned statements. The redesign must keep the manual extraction path as a first-class, supported path, not a deprecated exception. Closing exchange rates",
+      "phase": "round 1",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 6887,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nACR-01 (Extract GL and comparison balances) — restructured, carried by a new TS-01 \"Automated extraction and exception triage.\" Extraction and FX retranslation are mechanical, rules-based tasks that automation handles well, and I don't resist that. But automation here must not become a black box: when a feed fails, a closing rate is stale, or a retranslated balance moves outside a tolerance band, the system must stop and surface the case to a named GL accountant, not silently carry a wrong number forward into matching. The human's place is exception triage, not keystroke",
+      "phase": "round 1",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 8898,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nACR-01 (Extract GL and comparison balances) → restructured, carried by target step T1 \"Automated balance extraction\". This becomes an agent-executed ETL step: an Extraction Agent is triggered by the close calendar per the account's risk-rated frequency, pulls GL and comparison-source balances via system connectors, and calls a closing-rate service for retranslation. It still consumes the reconciliation schedule by risk rating and closing exchange rates as mandatory inputs (ACR-R-01, ACR-R-07). The agent's job is bounded and deterministic — extract, retranslate, stage — s",
+      "phase": "round 1",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 8176,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nACR-01 (Extract GL and comparison balances) — RESTRUCTURED, carried by a target step \"Automated balance extraction and FX retranslation.\" The extraction itself can be automated end-to-end across systems, but per KB-07 the retranslation of monetary balances at the closing rate is a mandatory computation that cannot be eliminated wherever multi-currency accounts exist, and per ACR-R-01/ACR-R-07 the step must still consume the reconciliation schedule by account risk rating and the closing exchange rates as explicit inputs, not as implicit system defaults. I would require th",
+      "phase": "round 1",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 7905,
+      "excerpt": "1. CONCEDE\n\nI accept **agentic_architect's** sharpening on actor-identity versus tooling: my original description of the merged extraction/matching step cast the GL accountant as \"exception configurer\" without being explicit that an agent's actions never count as a second actor for segregation-of-duties purposes. I now build that into my design: no automated draft, match, or pre-screen output — however confidently labeled — relieves the human preparer/reviewer boundary of its obligation to be two distinct human identities. This was implicit in my non-negotiables but agentic_architect is right ",
+      "phase": "round 2",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 7571,
+      "excerpt": "1. CONCEDE\n\nAgentic_architect's point about agent identity sharpens something I only gestured at. I said segregation must be \"system-enforced, not a policy memo,\" but I hadn't thought through the specific failure mode: a GL accountant using an AI co-pilot to draft an entry, then logging in under a different hat to \"review\" it. Agentic_architect's formulation — an agent is never an actor for separation-of-duties purposes, and using one to draft does not entitle the same human to also review — is the right way to close that gap, and I accept it as a non-negotiable addition to my own.\n\nAccounting",
+      "phase": "round 2",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 8558,
+      "excerpt": "1. CONCEDE\n\nAgentic_architect sharpens a point I only gestured at: \"actor separation\" must be enforced on human identity, not on whichever party (human or agent) touched the draft. My ACR-04/05 merge description said the same actor carries the step \"throughout,\" but I hadn't made explicit that an agent assisting preparation does not create a second \"actor\" that could satisfy ACR-R-05 by itself, nor does it let the preparer's manager or a differently-titled person rubber-stamp on the system's say-so. I accept this as a sharpening of my own non-negotiable, not a change in substance.\n\nEmerging_ec",
+      "phase": "round 2",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 8134,
+      "excerpt": "1. CONCEDE\n\nI accept agentic_architect's point that an agent is not an \"actor\" for segregation-of-duties purposes, and that this must be a system-enforced identity check rather than a policy note. This sharpens my own non-negotiable about preparer/reviewer separation in a way I hadn't made explicit: in a thin-bench shared-service model, the temptation to let \"the same accountant configured the agent that drafted and the agent that pre-screened\" slide past as compliant is exactly the kind of quiet control erosion I'm charged with catching, and naming it as an identity-level control rather than ",
+      "phase": "round 2",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 7952,
+      "excerpt": "1. CONCEDE\n\nI accept emerging_economy's point that I under-specified what happens to the humans whose work is automated away. My round-1 design talks about \"exception triage\" and \"configurer\" roles but never commits to naming the transition — retraining, redeployment, or honest headcount reduction — for staff displaced from manual extraction and matching. That silence is exactly the omission-as-decision problem emerging_economy calls out, and it sits squarely inside my charter: I ask \"what does the human see\" at every automated step, but I didn't ask \"what happens to the human who used to do t",
+      "phase": "round 2",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 8952,
+      "excerpt": "1. CONCEDE\n\nEmerging_economy's objection lands cleanly against my round-1 design. T1 (\"Automated balance extraction\") and T2 (\"Automated transaction matching\") were specified as if API connectors and structured comparison-source data are the default case everywhere. That is an infrastructure assumption, not an architectural requirement, and baking it into the step definition would mean the \"exception queue\" silently becomes the dominant path in exactly the operating environments emerging_economy represents — and a dominant path routed through an \"exception handler\" role, rather than a designed",
+      "phase": "round 2",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 6456,
+      "excerpt": "1. CONCEDE\n\nI accept the convergent reading from pragmatist, finance_domain, emerging_economy, hitl_designer and agentic_architect that merging ACR-06 (reviewer approval) with ACR-07 (escalate aged items) into a single controller-owned review-and-escalate event is standards-compatible. In round 1 I treated ACR-07 only as \"good practice worth preserving\" because it is flagged unconstrained_by_design, and I was overly cautious about not endorsing a merge there. On reflection, nothing in KB-03 or KB-05 requires escalation to be a temporally or procedurally separate act from approval — what those ",
+      "phase": "round 2",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 12961,
+      "excerpt": "{\n  \"workflow_id\": \"R2R-ACR-01\",\n  \"baseline_step_ids\": [\"ACR-01\", \"ACR-02\", \"ACR-03\", \"ACR-04\", \"ACR-05\", \"ACR-06\", \"ACR-07\", \"ACR-08\"],\n  \"steps\": [\n    {\n      \"step_id\": \"TS-01\",\n      \"name\": \"Extract GL and comparison balances (automated and manual lanes)\",\n      \"description\": \"GL and comparison balances are extracted per the risk-rated schedule. Automated connectors handle integrated sources; a manual extraction lane (file upload, direct entry) is retained as a first-class, equally-governed path for non-integrated or low-connectivity sources, not a deprecated fallback. Foreign-currency",
+      "phase": "synthesis",
+      "role": "synthesis",
+      "truncated": true
+    }
+  ],
+  "workflow_id": "R2R-ACR-01"
+}

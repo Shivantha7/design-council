@@ -1,0 +1,446 @@
+{
+  "condition": "council",
+  "consistency_inputs": {
+    "ABB-01": "restructured",
+    "ABB-02": "restructured",
+    "ABB-03": "restructured",
+    "ABB-04": "restructured",
+    "ABB-05": "restructured",
+    "ABB-06": "restructured",
+    "ABB-07": "restructured",
+    "ABB-08": "retained",
+    "ABB-09": "restructured"
+  },
+  "created_utc": "2026-10-10T19:40:31.754057Z",
+  "depth": {
+    "counts": {
+      "absorbed": 0,
+      "eliminated": 0,
+      "merged": 0,
+      "restructured": 8,
+      "retained": 1
+    },
+    "score": 0.888889,
+    "total_baseline_steps": 9
+  },
+  "disposition_convention_version": "v1, restored 11 Oct 2026",
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "ABB-01",
+      "disposition": "restructured",
+      "rationale": "The council majority (pragmatist, finance_domain, emerging_economy, hitl_designer, agentic_architect) rejected maximalist's merger of calendar/assumption issuance with top-down target-setting: the downside scenario is an estimate requiring an accountable human author (KB-04), and automated macro/FX feeds are unreliable for frontier/thin markets, so a human must substantively calibrate, not merely approve, the draft. T-01 keeps the FP&A manager as issuer of record, adds versioning (finance_domain) and multi-channel/offline distribution (emerging_economy) as survivability conditions, while permitting agentic drafting assistance (agentic_architect).",
+      "target_step_ids": [
+        "T-01"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-02",
+      "disposition": "restructured",
+      "rationale": "Although unconstrained by design, the council majority (pragmatist, finance_domain, hitl_designer, agentic_architect) held against maximalist's absorption of this step into kickoff with CEO/CFO reduced to ratify/override: a machine-generated default that a human merely overrides quietly shifts accountability from the executive to the model. T-02 keeps top-down target-setting as a discrete CEO/CFO decision, adds decision-support tooling (agentic_architect) and a recalibration touchpoint against first-pass bottom-up data (finance_domain) to address the real driver of challenge-round volume, without eliminating the deliberate human decision.",
+      "target_step_ids": [
+        "T-02"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-03",
+      "disposition": "restructured",
+      "rationale": "The council majority (pragmatist, finance_domain, hitl_designer, agentic_architect, emerging_economy) converged against maximalist's merger of revenue/volume planning into a single orchestrated bottom-up pass: distinct ownership lines must map to distinct, traceable steps so a variance six months later resolves to a named BU head, not a blended planning engine. The step is retained as BU-head-owned with analytics-assisted drafting only, plus an offline-capable submission channel (emerging_economy).",
+      "target_step_ids": [
+        "T-03"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-04",
+      "disposition": "restructured",
+      "rationale": "Same reasoning as ABB-03: cost-centre owners work off different source data and carry different accountability than BU heads, so the council majority rejected merging this into a combined agentic pass. Retained as a distinct, owner-accountable step with drafting assistance, a manual HRIS/headcount override path (emerging_economy), and an offline submission channel.",
+      "target_step_ids": [
+        "T-04"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-05",
+      "disposition": "restructured",
+      "rationale": "Capex retains its own governance rhythm (multi-year phasing, depreciation handoff, threshold-triggered business case) that the council majority (pragmatist, finance_domain, hitl_designer, emerging_economy, agentic_architect) agreed must not be folded into general cost or revenue planning. The business case above threshold remains a literal, mandatory input (ABB-R-04); a deterministic intake-validation function may check completeness but cannot waive or auto-approve it, and the depreciation schedule is surfaced explicitly as finance_domain required.",
+      "target_step_ids": [
+        "T-05"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-06",
+      "disposition": "restructured",
+      "rationale": "This is the strongest automation candidate across the council (maximalist, agentic_architect, hitl_designer, finance_domain, emerging_economy all converge on system-assisted consolidation), but the majority rejects maximalist's framing of full automation with FP&A reduced to passive exception-handling. T-06 keeps accounting policies and central FX assumptions as literal, fixed-configuration inputs (ABB-R-05, ABB-R-07; KB-06, KB-07, KB-08), adds explicit intercompany identification-and-elimination sub-checks (finance_domain, accounting_standards, agentic_architect, pragmatist) because the step's own basis-equivalence claim to actuals pulls IFRS 10 logic into scope, specifies halt-and-escalate rather than silent-plug failure behaviour (agentic_architect), and retains a mandatory FP&A-analyst reconciliation checkpoint plus a degraded-mode ingestion path for low-connectivity units (emerging_economy).",
+      "target_step_ids": [
+        "T-06"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-07",
+      "disposition": "restructured",
+      "rationale": "Maximalist's proposal to dissolve review-and-challenge into a continuous, always-on anomaly-flagging function with no discrete step was held against by six of seven council members (pragmatist, finance_domain, hitl_designer, agentic_architect, emerging_economy, accounting_standards noting the architectural fork): challenge is an adversarial negotiation, not a data-freshness property, and a flag system that silently auto-passes material items is a rubber stamp. T-07 is retained as a distinct step, restructured to combine exception-triage (hitl_designer) with capped, dated iteration rounds and escalation (pragmatist, emerging_economy), mandatory documented human resolution on flagged items, and a store-and-forward channel for submitters without live tooling (emerging_economy).",
+      "target_step_ids": [
+        "T-07"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-08",
+      "disposition": "retained",
+      "rationale": "Unanimous across the council: board approval is a governance act, not a computation, and must remain a human, accountable act with no agentic decision authority, strictly before lock (ABB-R-08, ABB-R-11). The only enrichment, per hitl_designer, is that board materials must substantively show assumptions, downside-scenario impact and unresolved challenge items rather than a bare top-line number, with pack adequacy remaining an accountable FP&A responsibility rather than an unreviewed automated export (addressing hitl_designer's conflict with agentic_architect on this point).",
+      "target_step_ids": [
+        "T-08"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-09",
+      "disposition": "restructured",
+      "rationale": "The mechanical load/lock action can be agent-executed (maximalist, agentic_architect), but the council majority (hitl_designer, finance_domain, accounting_standards, emerging_economy) requires that lock not take effect until a named individual distinct from whoever last touched consolidation independently confirms the loaded version reconciles to the board-approved artifact -- correctness-at-lock is prioritised over speed-to-lock, resolving the finance_domain/agentic_architect conflict in favour of confirmed correctness. The locked version is also exported to a durable, vendor-independent format (emerging_economy) so access to the budget of record does not depend on a single vendor's licensing, and strict ordering after board approval (ABB-R-08) is preserved by making board approval the sole trigger.",
+      "target_step_ids": [
+        "T-09"
+      ]
+    }
+  ],
+  "efficiency": {
+    "calls": 15,
+    "cost_usd": 1.52102,
+    "failed_attempts": 0,
+    "input_tokens": 300145,
+    "output_tokens": 92073,
+    "runtime_min": 17.892397
+  },
+  "gate": {
+    "conformance_score": 1.0,
+    "passed": 11,
+    "results": [
+      {
+        "passed": true,
+        "reason": "baseline step ABB-01 is preserved as restructured, carried by target step(s) ['T-01']",
+        "requirement_id": "ABB-R-01",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ABB-03 is preserved as restructured, carried by target step(s) ['T-03']",
+        "requirement_id": "ABB-R-02",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ABB-04 is preserved as restructured, carried by target step(s) ['T-04']",
+        "requirement_id": "ABB-R-03",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step ABB-05 ['T-05'] receives all required input(s) ['Business case for capex above threshold']",
+        "requirement_id": "ABB-R-04",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step ABB-06 ['T-06'] receives all required input(s) ['Accounting policies applied to actuals']",
+        "requirement_id": "ABB-R-05",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ABB-06 is preserved as restructured, carried by target step(s) ['T-06']",
+        "requirement_id": "ABB-R-06",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step ABB-06 ['T-06'] receives all required input(s) ['Central FX assumptions']",
+        "requirement_id": "ABB-R-07",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['T-08'] for baseline ABB-08 all precede target step(s) ['T-09'] for baseline ABB-09",
+        "requirement_id": "ABB-R-08",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ABB-09 is preserved as restructured, carried by target step(s) ['T-09']",
+        "requirement_id": "ABB-R-09",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step ABB-01 ['T-01'] receives all required input(s) ['Downside macro scenario']",
+        "requirement_id": "ABB-R-10",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ABB-08 is preserved as retained, carried by target step(s) ['T-08']",
+        "requirement_id": "ABB-R-11",
+        "vacuous": false
+      }
+    ],
+    "total": 11
+  },
+  "git_commit": "fe1a87a8a5672d763c3248a4b18f227ae1b3b204",
+  "rep": 2,
+  "resolved_model": "claude-sonnet-5",
+  "run_id": "20261010-194031-council-FPA-ABB-01-c041",
+  "set": "heldout-v1",
+  "steps": [
+    {
+      "actor": "FP&A manager (Assumptions Agent-assisted)",
+      "class_agentic_only": "HYBRID",
+      "class_primary": "HYBRID",
+      "description": "An Assumptions Agent drafts central planning assumptions (inflation, FX, interest rates) and a parameterised downside macro scenario from licensed market-data feeds and scenario templates. The FP&A manager reviews, substantively adjusts where local market conditions diverge from feed coverage (not a light edit-and-approve pass), and is the accountable issuer of record. Every issuance and any mid-cycle revision carries a version stamp so submitters can never work off superseded assumptions. Distribution is multi-channel (document plus portal), not portal-only, so units without reliable always-on connectivity still receive the calendar and assumptions on time.",
+      "inputs": [
+        "Macroeconomic outlook",
+        "Downside macro scenario",
+        "Market-data feeds"
+      ],
+      "name": "Issue calendar and central planning assumptions (model-assisted, human-issued)",
+      "outputs": [
+        "Budget calendar",
+        "Central planning assumptions",
+        "Central FX assumptions",
+        "Downside macro scenario",
+        "Versioned assumption log"
+      ],
+      "step_id": "T-01"
+    },
+    {
+      "actor": "CEO / CFO",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "CEO/CFO set top-down revenue, margin and cost targets against the strategic plan and the issued central assumptions, optionally stress-testing candidate targets against the downside scenario using a decision-support tool. The tool computes; it does not decide, and no agent sets or defaults a target on the executives' behalf. A recalibration touchpoint is scheduled once first-pass bottom-up submissions land, so unachievable targets are surfaced before full consolidation rather than discovered only in review and challenge.",
+      "inputs": [
+        "Strategic plan",
+        "Central planning assumptions",
+        "Downside macro scenario"
+      ],
+      "name": "Set and calibrate top-down targets",
+      "outputs": [
+        "Top-down targets",
+        "Target recalibration note (post first-pass bottom-up)"
+      ],
+      "step_id": "T-02"
+    },
+    {
+      "actor": "Business unit heads",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Business unit heads remain the named, accountable authors of revenue and volume plans. A drafting copilot may pre-populate templates from prior actuals and the central assumptions, but it is advisory only and never submits on the BU head's behalf. A lightweight, offline-capable submission path (templated spreadsheet, batch upload) is maintained as a first-class channel alongside any live planning tool, so units with limited connectivity are not structurally excluded.",
+      "inputs": [
+        "Top-down targets",
+        "Central planning assumptions"
+      ],
+      "name": "Revenue and volume plans (owner-accountable, analytics-supported)",
+      "outputs": [
+        "Revenue and volume plans"
+      ],
+      "step_id": "T-03"
+    },
+    {
+      "actor": "Cost centre owners",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Cost centre owners remain the named, accountable authors of cost centre and headcount budgets, kept distinct from revenue/volume ownership because the drivers, source data (HRIS, open positions, attrition) and accountability chain differ. Drafting assistance is permitted; authorship and sign-off are not transferable to a model. A manual override/correction path is retained at the cost-centre-owner level where HRIS/payroll data does not fully integrate with planning tools, and an offline-capable submission channel is maintained.",
+      "inputs": [
+        "Top-down targets",
+        "Central planning assumptions"
+      ],
+      "name": "Cost centre and headcount budgets (owner-accountable, analytics-supported)",
+      "outputs": [
+        "Cost centre and headcount budgets"
+      ],
+      "step_id": "T-04"
+    },
+    {
+      "actor": "Business unit heads",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Business unit heads author capex requests and, above threshold, a written business case that a human writes and a human reads. A deterministic Intake Validation function checks completeness against a fixed checklist and routes incomplete submissions back with a specific deficiency list; it can never waive the business-case requirement or auto-approve a request. Capex requests carry forward the resulting depreciation schedule as an explicit output, since that schedule is a direct input to the P&L and cash-flow legs of consolidation.",
+      "inputs": [
+        "Business case for capex above threshold",
+        "Central planning assumptions"
+      ],
+      "name": "Capex requests with threshold-triggered business case (intake-validated)",
+      "outputs": [
+        "Capex requests",
+        "Depreciation schedule"
+      ],
+      "step_id": "T-05"
+    },
+    {
+      "actor": "FP&A analyst (Consolidation Agent-assisted)",
+      "class_agentic_only": "HYBRID",
+      "class_primary": "HYBRID",
+      "description": "A Consolidation Agent aggregates revenue/volume, cost/headcount and capex submissions into a draft three-statement budget, applying the accounting policies used for actuals and the central FX assumptions as fixed configuration (never agent-inferred), and performs explicit sub-checks: balance-sheet balance, cash-flow derivation from P&L/BS movements, and intercompany identification-and-elimination (made explicit because the step's own basis-equivalence claim to actuals pulls IFRS 10 elimination discipline into scope). On any reconciliation break, stale-feed condition, or unmatched intercompany balance, the agent halts and escalates to the FP&A analyst with a diff report rather than forcing a balance; it never silently plugs. Every run is logged with input snapshot, policy/FX version, and output. A degraded-mode ingestion path (batch/offline submission) is supported for units without integrated ERP/EPM connectivity, so straight-through automation does not implicitly exclude them.",
+      "inputs": [
+        "Revenue and volume plans",
+        "Cost centre and headcount budgets",
+        "Capex requests",
+        "Accounting policies applied to actuals",
+        "Central FX assumptions"
+      ],
+      "name": "Consolidation engine with mandatory exception review and intercompany elimination",
+      "outputs": [
+        "Draft three-statement budget",
+        "Reconciliation and intercompany-elimination log"
+      ],
+      "step_id": "T-06"
+    },
+    {
+      "actor": "FP&A manager / CFO",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The draft budget is re-derived automatically on each revised submission, and an exception-flagging function highlights material variances against targets, prior iterations and benchmarks so the FP&A manager and CFO focus attention on what matters rather than re-deriving statements by hand. Flagged items require a real, documented conversation with the submitter and a recorded resolution; nothing material is waved through as 'reviewed, no action.' Iteration is bounded by a capped number of rounds with a dated escalation path to CFO/CEO if a submitter has not converged by the final round. A store-and-forward (asynchronous) iteration channel is retained for submitters without live collaborative-tooling access.",
+      "inputs": [
+        "Draft three-statement budget",
+        "Target recalibration note (post first-pass bottom-up)"
+      ],
+      "name": "Exception-triaged review and challenge",
+      "outputs": [
+        "Revised budget",
+        "Documented resolution log for flagged items"
+      ],
+      "step_id": "T-07"
+    },
+    {
+      "actor": "Board",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The board approves the budget, but is given substantive information to interrogate, not a top-line number alone: the central assumptions, the downside scenario and its quantified impact, and a summary of what was challenged and left unresolved in review. Board materials are machine-assembled from the current draft but their adequacy is the accountable responsibility of the FP&A manager preparing the pack, not an unreviewed automated export. This step remains entirely free of agentic decision authority.",
+      "inputs": [
+        "Revised budget",
+        "Documented resolution log for flagged items",
+        "Downside macro scenario"
+      ],
+      "name": "Board approval (substantive, assumption-visible)",
+      "outputs": [
+        "Board-approved budget"
+      ],
+      "step_id": "T-08"
+    },
+    {
+      "actor": "FP&A analyst (independent confirmer, distinct from consolidation preparer)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "A Load-and-Lock Agent loads the board-approved figures into the planning/EPM system and sets the version to locked, triggered only by receipt of the board-approved artifact (no calendar date, no confidence-score trigger) with hash-checked pre-load validation against the board document. Before the lock takes effect, a named accountable individual distinct from whoever last touched the consolidation run independently confirms the loaded version reconciles exactly to the board-approved output. The locked version is exported to a durable, vendor-independent format so a lapsed licence or outage cannot sever access to the budget of record. Any post-lock change requires a documented, sign-off change-control reopening, never a silent edit.",
+      "inputs": [
+        "Board-approved budget"
+      ],
+      "name": "Load and lock approved version (agent-executed, independently confirmed)",
+      "outputs": [
+        "Locked approved budget version",
+        "Durable vendor-independent export"
+      ],
+      "step_id": "T-09"
+    }
+  ],
+  "transcript": [
+    {
+      "chars": 7937,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nABB-01 (Issue calendar and central planning assumptions) — MERGED into a new combined kickoff step, T-01 \"Agentic planning kickoff.\" There is no accounting-standards reason this needs to be a standalone human-paced broadcast event. An agentic planning engine should ingest the macro outlook, generate the downside scenario set (not just one scenario but a distribution), and publish the calendar and assumption pack automatically, with the FP&A manager as approver-of-record rather than author. Because ABB-R-01 and ABB-R-10 require the function and its downside-scenario input",
+      "phase": "round 1",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 7055,
+      "excerpt": "**1. PROPOSED DISPOSITIONS**\n\nABB-01 (Issue calendar and central planning assumptions) — **retained**, carried by a target step of the same shape. This is the trigger event for the whole cycle; nothing about it needs to change for a target state to be credible. The one addition I'd tolerate is explicit inclusion of the downside macro scenario in the distributed pack (already required by ABB-R-10), but that is a content addition, not a process redesign.\n\nABB-02 (Set top-down targets) — **retained**. Flagged as unconstrained by design, but I resist treating that as licence to eliminate it. A con",
+      "phase": "round 1",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 10953,
+      "excerpt": "# PROPOSED DISPOSITIONS\n\n**ABB-01 (Issue calendar and central planning assumptions) — RETAINED.**\nThis stays as the opening, single-source-of-truth step, carried by a target step I'll call \"Issue budget calendar, central assumptions and downside scenario.\" Nothing about this function should be diluted: it is the only point in the cycle where inflation, FX, and interest-rate assumptions are fixed for everyone, and it is the only point where the downside macro scenario enters. My one operational addition: this step's output must be versioned. In practice, central assumptions get revised mid-cycl",
+      "phase": "round 1",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 8358,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nABB-01 (Issue calendar and central planning assumptions) — Retained, carried by an equivalent step in the target state, but restructured in distribution mechanism, not in substance. The FP&A manager remains the single accountable author of the calendar, the central assumptions and the mandatory downside scenario. I do not support collapsing this into an automated \"assumptions feed\" pulled from a third-party macro data vendor, because coverage and reliability of macro indicators (inflation, FX, rates) for frontier and emerging markets is frequently thin or lagged compared",
+      "phase": "round 1",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 8040,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nABB-01 (Issue calendar and central planning assumptions) — retained, carried by a target step I'd call \"Issue calendar and central planning assumptions (model-assisted, human-owned).\" The FP&A manager remains the accountable owner. I would allow macro data feeds, FX curves and even a scenario-generation tool to propose the downside macro scenario, but the FP&A manager (with CFO sign-off) must review, adjust and formally issue the assumptions with a documented basis. This is an estimate under KB-04, and automation may populate it, but it cannot issue itself.\n\nABB-02 (Set ",
+      "phase": "round 1",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 9473,
+      "excerpt": "# POSITION — agentic_architect, Round 1\n\n## 1. PROPOSED DISPOSITIONS\n\n**ABB-01 (Issue calendar and assumptions) → restructured → TS-01 \"Assumptions drafting & issuance.\"**\nSplit the function into a machine step and a human step. An Assumptions Agent pulls inflation, FX-forward, and rate-curve data from licensed market-data feeds, drafts the central planning assumptions and a parameterised downside scenario (e.g., shock magnitudes against defined stress templates). The FP&A manager reviews, edits, and is the accountable issuer of record — nothing goes to submitters without human sign-off. Trigg",
+      "phase": "round 1",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 8332,
+      "excerpt": "# PROPOSED DISPOSITIONS\n\n**ABB-01 (Issue calendar and central planning assumptions):** Retained. The step must continue to issue central planning assumptions, central FX assumptions, and a downside macro scenario. I take no standards-based view on the calendar or the downside-scenario mechanics themselves — the knowledge base is silent on forward planning-assumption governance as such — but the FX assumptions issued here are a direct upstream input to the IAS 21 (KB-07) computation performed later at consolidation, so their basis (spot-rate convention, closing-rate convention) must be defined ",
+      "phase": "round 1",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 10973,
+      "excerpt": "# ROUND 2 — maximalist\n\n## 1. CONCEDE\n\n**To finance_domain and pragmatist, on ABB-03/ABB-04**: I concede the merge of revenue/volume planning and cost-centre/headcount budgeting into a single orchestrated step. I argued efficiency; they argued traceability, and they win on the merits I actually care about. The real test of any redesign is whether, six months into variance analysis, a controller can walk a miss back to a named accountable owner. Collapsing BU heads and cost centre owners into one undifferentiated \"bottom-up planning pass\" doesn't just offend convention — it destroys exactly the",
+      "phase": "round 2",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 7461,
+      "excerpt": "1. CONCEDE\n\nI accept finance_domain's point on intercompany elimination at ABB-06. My round-1 position insisted consolidation stay on \"the same accounting basis as actuals\" but I didn't name what that actually requires for a multi-entity group — if actuals eliminate intragroup positions under IFRS 10 logic, a budget that doesn't do the same isn't really on that basis, it just looks like it is until the first variance report tries to tie out. That's a controller-facing failure I'd have missed until it bit. I fold this into my ABB-06 non-negotiable: the consolidation step must name intercompany ",
+      "phase": "round 2",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 8695,
+      "excerpt": "1. CONCEDE\n\naccounting_standards sharpened something I raised more loosely: the phrase in ABB-06's own description — \"prepared on the same accounting basis as actuals\" — is the textual hook that pulls KB-14 intercompany elimination into scope even though KB-14 is written for statutory consolidation, not budgets. I'd flagged elimination as an operational risk I'd personally seen fail; accounting_standards gave it a standards-based argument rather than a practitioner anecdote. I accept their framing: elimination sub-checks at consolidation are not \"nice-to-have technical hygiene,\" they are impli",
+      "phase": "round 2",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 6716,
+      "excerpt": "1. CONCEDE\n\nI accept agentic_architect's design discipline on failure modes. My round-1 objection to automation at ABB-06 and ABB-09 was that heterogeneous, legacy-ERP environments make straight-through automation unsafe. The agentic_architect proposal doesn't assume straight-through success — it specifies halt-and-escalate behavior when feeds are stale, reconciliation fails to tie, or a load doesn't hash-match the board document. That is the right shape of automation for the contexts I represent: it degrades to a human checkpoint exactly when the system should not be trusted, rather than forc",
+      "phase": "round 2",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 6931,
+      "excerpt": "1. CONCEDE\n\nI concede to agentic_architect that my own proposals for ABB-01, ABB-06, and ABB-09 described the human checkpoint but left the failure mechanics vague. Their pattern — agent drafts or executes, but halts and escalates to a named human on any tolerance breach or mismatch, with input/parameter/output logged — is exactly the mechanism that makes \"human stays in command\" more than a slogan. I adopt that explicitly: the Assumptions Agent, Consolidation Agent, and Load-and-Lock Agent in my target design should halt-and-escalate rather than proceed-and-flag-later, and every run must log ",
+      "phase": "round 2",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 8090,
+      "excerpt": "1. CONCEDE\n\nI accept emerging_economy's point that my agent specifications in round 1 implicitly assumed infrastructure that not every submitting unit has. My Assumptions Agent (TS-01) pulling from market-data APIs, my Intake Validation Agent (TS-05) and especially my Consolidation Agent (TS-06), as I specified them, presumed a connected, instrumented environment. I now accept that each of these must define an explicit degraded-mode path — a templated offline submission that the agent ingests on next sync, rather than a live-only integration — and that the Load-and-Lock Agent's output (TS-09) ",
+      "phase": "round 2",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 9233,
+      "excerpt": "# 1. CONCEDE\n\n**To finance_domain:** I concede a reinforcement rather than a reversal. In round 1 I raised the intercompany-elimination point at ABB-06 explicitly flagged as \"inference, not citation,\" because KB-14 speaks to statutory consolidated financial statements rather than budgets. finance_domain arrived at the identical conclusion independently, from a practitioner failure-mode angle rather than a standards-reading angle (\"the balance sheet doesn't balance, the reconciliation becomes a plug\"). Two independent routes converging on the same requirement strengthens my confidence that this",
+      "phase": "round 2",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 16248,
+      "excerpt": "{\n  \"workflow_id\": \"FPA-ABB-01\",\n  \"baseline_step_ids\": [\"ABB-01\",\"ABB-02\",\"ABB-03\",\"ABB-04\",\"ABB-05\",\"ABB-06\",\"ABB-07\",\"ABB-08\",\"ABB-09\"],\n  \"steps\": [\n    {\n      \"step_id\": \"T-01\",\n      \"name\": \"Issue calendar and central planning assumptions (model-assisted, human-issued)\",\n      \"description\": \"An Assumptions Agent drafts central planning assumptions (inflation, FX, interest rates) and a parameterised downside macro scenario from licensed market-data feeds and scenario templates. The FP&A manager reviews, substantively adjusts where local market conditions diverge from feed coverage (not",
+      "phase": "synthesis",
+      "role": "synthesis",
+      "truncated": true
+    }
+  ],
+  "workflow_id": "FPA-ABB-01"
+}

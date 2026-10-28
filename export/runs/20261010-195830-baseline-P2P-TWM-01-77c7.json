@@ -1,0 +1,279 @@
+{
+  "condition": "baseline",
+  "consistency_inputs": {
+    "TWM-01": "restructured",
+    "TWM-02": "merged",
+    "TWM-03": "merged",
+    "TWM-04": "restructured",
+    "TWM-05": "retained",
+    "TWM-06": "restructured",
+    "TWM-07": "restructured"
+  },
+  "created_utc": "2026-10-10T19:58:30.609186Z",
+  "depth": {
+    "counts": {
+      "absorbed": 0,
+      "eliminated": 0,
+      "merged": 2,
+      "restructured": 4,
+      "retained": 1
+    },
+    "score": 0.857143,
+    "total_baseline_steps": 7
+  },
+  "disposition_convention_version": "v1, restored 11 Oct 2026",
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "TWM-01",
+      "disposition": "restructured",
+      "rationale": "Document assembly is reorganised from an analyst-triggered ERP retrieval into a continuous, automated integration step that assembles the document set at invoice validation. The function is unconstrained by design, so the redesign automates it freely while preserving cutoff tagging per KB-03 (reporting-period discipline).",
+      "target_step_ids": [
+        "TS-01"
+      ]
+    },
+    {
+      "baseline_step_id": "TWM-02",
+      "disposition": "merged",
+      "rationale": "Quantity matching is combined with price/terms matching into a single automated line-matching pass per TWM-R-01. It continues to consume goods receipt note data per TWM-R-03, and its evidential role in establishing cost per KB-09 (inventory cost and evidence) is preserved.",
+      "target_step_ids": [
+        "TS-02"
+      ]
+    },
+    {
+      "baseline_step_id": "TWM-03",
+      "disposition": "merged",
+      "rationale": "Price and terms matching is combined with quantity matching into TS-02 per TWM-R-02. It continues to consume purchase order data per TWM-R-04, retaining the cost-evidence basis under KB-09 and the determinable-liability basis under KB-11 (payables as financial instruments).",
+      "target_step_ids": [
+        "TS-02"
+      ]
+    },
+    {
+      "baseline_step_id": "TWM-04",
+      "disposition": "restructured",
+      "rationale": "Tolerance evaluation is automated but survives as a discrete classification step per TWM-R-05, still consuming the tolerance policy per TWM-R-06. Automation does not remove the tolerance discipline; it only mechanises its application, consistent with KB-06 (policy consistency) requiring consistent application of an accounting/control policy across periods.",
+      "target_step_ids": [
+        "TS-03"
+      ]
+    },
+    {
+      "baseline_step_id": "TWM-05",
+      "disposition": "retained",
+      "rationale": "Exception investigation and resolution is preserved substantially unchanged as a human-performed step per TWM-R-10, with AI assistance only augmenting root-cause analysis. This satisfies KB-05 (error correction), which requires that detection-and-correction paths remain available rather than being suppressed by automation.",
+      "target_step_ids": [
+        "TS-04"
+      ]
+    },
+    {
+      "baseline_step_id": "TWM-06",
+      "disposition": "restructured",
+      "rationale": "Release approval survives per TWM-R-07 but is reorganised: clean/tolerance-passed matches straight-through release automatically, while tolerance-override and exception-resolved matches still require explicit supervisor approval. The supervisor approving release (TS-05) is distinct from the analyst performing exception resolution (TS-04), satisfying TWM-R-09, and TS-04 necessarily completes before TS-05 for any given invoice, satisfying the ordering in TWM-R-08. This also keeps liability recognition/derecognition timing determinable per KB-11.",
+      "target_step_ids": [
+        "TS-05"
+      ]
+    },
+    {
+      "baseline_step_id": "TWM-07",
+      "disposition": "restructured",
+      "rationale": "Control reporting is reorganised from periodic batch reporting into continuous logging with a real-time dashboard plus periodic attestation. The function is unconstrained by design, so it is freely modernised while preserving the evidential trail linking matches to reported balances required by KB-02 (fair presentation and faithful representation).",
+      "target_step_ids": [
+        "TS-06"
+      ]
+    }
+  ],
+  "efficiency": {
+    "calls": 1,
+    "cost_usd": 0.0763,
+    "failed_attempts": 0,
+    "input_tokens": 7720,
+    "output_tokens": 6086,
+    "runtime_min": 0.916248
+  },
+  "gate": {
+    "conformance_score": 1.0,
+    "passed": 10,
+    "results": [
+      {
+        "passed": true,
+        "reason": "baseline step TWM-02 is preserved as merged, carried by target step(s) ['TS-02']",
+        "requirement_id": "TWM-R-01",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step TWM-03 is preserved as merged, carried by target step(s) ['TS-02']",
+        "requirement_id": "TWM-R-02",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step TWM-02 ['TS-02'] receives all required input(s) ['Goods receipt note data']",
+        "requirement_id": "TWM-R-03",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step TWM-03 ['TS-02'] receives all required input(s) ['Purchase order data']",
+        "requirement_id": "TWM-R-04",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step TWM-04 is preserved as restructured, carried by target step(s) ['TS-03']",
+        "requirement_id": "TWM-R-05",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step TWM-04 ['TS-03'] receives all required input(s) ['Tolerance policy']",
+        "requirement_id": "TWM-R-06",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step TWM-06 is preserved as restructured, carried by target step(s) ['TS-05']",
+        "requirement_id": "TWM-R-07",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['TS-04'] for baseline TWM-05 all precede target step(s) ['TS-05'] for baseline TWM-06",
+        "requirement_id": "TWM-R-08",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "actors separated: TWM-05 → ['AP analyst (exception resolution specialist)'], TWM-06 → ['AP supervisor (manual approval for overrides/exceptions; system auto-release for clean/tolerance-passed matches)']",
+        "requirement_id": "TWM-R-09",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step TWM-05 is preserved as retained, carried by target step(s) ['TS-04']",
+        "requirement_id": "TWM-R-10",
+        "vacuous": false
+      }
+    ],
+    "total": 10
+  },
+  "git_commit": "fe1a87a8a5672d763c3248a4b18f227ae1b3b204",
+  "rep": 3,
+  "resolved_model": "claude-sonnet-5",
+  "run_id": "20261010-195830-baseline-P2P-TWM-01-77c7",
+  "set": "heldout-v1",
+  "steps": [
+    {
+      "actor": "Integration/RPA service (ERP-connected), with AP analyst exception override",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "On invoice validation, an integration layer automatically retrieves the related purchase order and goods receipt note from the ERP and assembles the complete match document set in real time, removing the manual retrieval step. The assembled set is timestamped to the reporting period in which the invoice was received, preserving cutoff discipline.",
+      "inputs": [
+        "Structured validated invoice record",
+        "Purchase order data",
+        "Goods receipt note data"
+      ],
+      "name": "Automated match dataset assembly",
+      "outputs": [
+        "Assembled match document set",
+        "Period-tagged document assembly record"
+      ],
+      "step_id": "TS-01"
+    },
+    {
+      "actor": "ERP/AI matching engine, with AP analyst configuration oversight",
+      "class_agentic_only": "HYBRID",
+      "class_primary": "HYBRID",
+      "description": "A matching engine compares invoiced quantities against goods receipt note data and invoiced prices, discounts and tax treatment against purchase order data, line by line, in a single automated pass, producing combined quantity and price/terms variance detail. This establishes the cost evidence chain (purchase price net of discounts, quantity received) underlying inventory and payables measurement.",
+      "inputs": [
+        "Assembled match document set",
+        "Goods receipt note data",
+        "Purchase order data"
+      ],
+      "name": "Automated three-way line matching",
+      "outputs": [
+        "Quantity variance detail",
+        "Price and terms variance detail"
+      ],
+      "step_id": "TS-02"
+    },
+    {
+      "actor": "Matching engine (automated), with AP accountant governance over tolerance policy parameters",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "AGENT",
+      "description": "Quantity and price/terms variances are evaluated automatically against the organisation's tolerance policy, classifying each match as clean, within tolerance, or an exception. Clean and in-tolerance matches are flagged eligible for straight-through release; exceptions are routed to investigation.",
+      "inputs": [
+        "Quantity variance detail",
+        "Price and terms variance detail",
+        "Tolerance policy"
+      ],
+      "name": "Automated tolerance evaluation and classification",
+      "outputs": [
+        "Match classification (clean, tolerance or exception)",
+        "Straight-through release eligibility flag"
+      ],
+      "step_id": "TS-03"
+    },
+    {
+      "actor": "AP analyst (exception resolution specialist)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Matches classified as exceptions are investigated by an AP analyst against source documents and vendor correspondence, using AI-assisted root-cause suggestions where available, and resolved as accepted, corrected or rejected, with the resolution evidenced. This step must complete, for a given invoice, before that invoice can proceed to release approval.",
+      "inputs": [
+        "Exception-classified match",
+        "Quantity variance detail",
+        "Price and terms variance detail",
+        "Purchase order data",
+        "Goods receipt note data"
+      ],
+      "name": "Exception investigation and resolution",
+      "outputs": [
+        "Resolved match (accepted, corrected or rejected)",
+        "Exception resolution evidence"
+      ],
+      "step_id": "TS-04"
+    },
+    {
+      "actor": "AP supervisor (manual approval for overrides/exceptions; system auto-release for clean/tolerance-passed matches)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Clean and in-tolerance matches are released for posting and payment through automated straight-through processing, with the release logged. Matches that required tolerance override or exception resolution are reviewed and explicitly approved by a supervisor distinct from the analyst who performed the exception resolution, before release.",
+      "inputs": [
+        "Match classification (clean, tolerance or exception)",
+        "Straight-through release eligibility flag",
+        "Resolved match (accepted, corrected or rejected)",
+        "Tolerance policy"
+      ],
+      "name": "Match release approval",
+      "outputs": [
+        "Released match authorisation"
+      ],
+      "step_id": "TS-05"
+    },
+    {
+      "actor": "AP accountant / controls analyst",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Match outcomes, tolerance overrides, straight-through releases and exception resolutions are logged continuously to the control record. A real-time dashboard tracks match rates, override frequency and aging exceptions, with periodic attestation produced for control review, preserving the evidential trail linking matches to reported payables.",
+      "inputs": [
+        "Released match authorisation",
+        "Exception resolution evidence"
+      ],
+      "name": "Continuous match control monitoring and reporting",
+      "outputs": [
+        "Match control record",
+        "Real-time match-rate and override dashboard",
+        "Periodic control attestation"
+      ],
+      "step_id": "TS-06"
+    }
+  ],
+  "transcript": [
+    {
+      "chars": 8752,
+      "excerpt": "{\n  \"workflow_id\": \"P2P-TWM-01\",\n  \"baseline_step_ids\": [\n    \"TWM-01\",\n    \"TWM-02\",\n    \"TWM-03\",\n    \"TWM-04\",\n    \"TWM-05\",\n    \"TWM-06\",\n    \"TWM-07\"\n  ],\n  \"steps\": [\n    {\n      \"step_id\": \"TS-01\",\n      \"name\": \"Automated match dataset assembly\",\n      \"description\": \"On invoice validation, an integration layer automatically retrieves the related purchase order and goods receipt note from the ERP and assembles the complete match document set in real time, removing the manual retrieval step. The assembled set is timestamped to the reporting period in which the invoice was received, pres",
+      "phase": "single agent",
+      "role": "baseline_designer",
+      "truncated": true
+    }
+  ],
+  "workflow_id": "P2P-TWM-01"
+}

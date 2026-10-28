@@ -1,0 +1,363 @@
+{
+  "condition": "sequential",
+  "consistency_inputs": {
+    "VAR-01": "merged",
+    "VAR-02": "merged",
+    "VAR-03": "restructured",
+    "VAR-04": "restructured",
+    "VAR-05": "restructured",
+    "VAR-06": "merged",
+    "VAR-07": "retained",
+    "VAR-08": "absorbed"
+  },
+  "created_utc": "2026-10-27T08:50:58.867298Z",
+  "depth": {
+    "counts": {
+      "absorbed": 1,
+      "eliminated": 0,
+      "merged": 3,
+      "restructured": 3,
+      "retained": 1
+    },
+    "score": 0.875,
+    "total_baseline_steps": 8
+  },
+  "disposition_convention_version": "v1, restored 11 Oct 2026",
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "VAR-01",
+      "disposition": "merged",
+      "rationale": "The council converged that manual extraction of actuals from an already-closed, locked period carries no judgment content and should be automated; the live disagreement was whether this collapses into an undifferentiated mega-pipeline (maximalist) or remains a distinct, tool-scoped function with its own manifest and exception queue (pragmatist, finance_domain, hitl_designer, agentic_architect). I side with the latter, decisive majority: VAR-01 survives as T1's load function, consuming the period-lock state as a hard precondition (KB-03, VAR-R-01) and emitting a version-pinned, checksummed manifest so the input is machine-checkable rather than asserted. Per emerging_economy's accepted concern, T1 is tiered — automated where systems are mature, a logged manual intake path elsewhere — rather than assuming a single clean source of truth.",
+      "target_step_ids": [
+        "T1"
+      ]
+    },
+    {
+      "baseline_step_id": "VAR-02",
+      "disposition": "merged",
+      "rationale": "Loading the approved budget and latest forecast is the same class of deterministic retrieval as actuals extraction and is merged into T1 for the same reasons. VAR-R-02's literal inputs (approved budget version, latest forecast) remain consumed and are now version-pinned in the load manifest, resolving finance_domain's concern about forecast-vintage ambiguity by making it a declared halt condition rather than a silent assumption.",
+      "target_step_ids": [
+        "T1"
+      ]
+    },
+    {
+      "baseline_step_id": "VAR-03",
+      "disposition": "restructured",
+      "rationale": "Computation is kept as its own step, distinct from load and screening, per the agentic_architect/finance_domain/hitl_designer/accounting_standards consensus that distinct tool scopes and distinct configuration-ownership cadences should remain distinct and separately logged, so a bad number can be diagnosed as an input problem versus a formula problem. I reject the maximalist's framing of this as purely mechanical: policy application (KB-06, VAR-R-05) and constant-currency FX isolation (KB-07, VAR-R-06) remain hard, versioned, consumed inputs, and the FX effect must survive as its own visible line per KB-08 and the accounting_standards/maximalist concession on this point. The basis-change attestation (triggered only on detected structural discontinuity, not a standing ritual) is adopted from finance_domain/hitl_designer/agentic_architect as the correct scope for the genuine judgment content in this step.",
+      "target_step_ids": [
+        "T2"
+      ]
+    },
+    {
+      "baseline_step_id": "VAR-04",
+      "disposition": "restructured",
+      "rationale": "I reject the maximalist's collapse of thresholding into the computation pipeline. The pragmatist, finance_domain, hitl_designer, agentic_architect and accounting_standards all independently converge on keeping materiality screening as its own distinct, inspectable stage, for both governance reasons (a controller-revisited parameter needs a dated, visible artifact) and architectural reasons (thresholds and override rules change on a different cadence and by a different authority than the computation logic, and coupling them creates a brittle redeploy-everything-for-one-tweak problem). The qualitative override layer (finance_domain, hitl_designer) is adopted as part of T3's governed ruleset, with a named rule-owner, satisfying VAR-R-03 and VAR-R-08.",
+      "target_step_ids": [
+        "T3"
+      ]
+    },
+    {
+      "baseline_step_id": "VAR-05",
+      "disposition": "restructured",
+      "rationale": "This is the step with the sharpest three-way conflict (maximalist exception-only, pragmatist universal sign-off, hitl_designer calibrated tiering), and I adopt hitl_designer's calibrated three-tier model as the target-state default: it was independently accepted in round 2 by the maximalist, pragmatist, finance_domain, and agentic_architect, and directly resolves both failure modes named in the deliberation — the accountability gap of unengaged attribution (maximalist's original design) and the decay-into-ritual risk of universal sign-off (pragmatist's original design). I further adopt emerging_economy's non-negotiable, as refined by agentic_architect, that the default drafting mechanism is a deterministic, driver-matching tool with generative AI only as an infrastructure-gated upgrade, and that tiering is triggered by driver-match/confidence composite rather than a scalar generative confidence score, so the design functions without a hard cloud-AI dependency. Finance_domain's chase/escalation mechanism is retained as co-equal to tiering, since elapsed time, not drafting quality, is the actual close-calendar risk.",
+      "target_step_ids": [
+        "T4"
+      ]
+    },
+    {
+      "baseline_step_id": "VAR-06",
+      "disposition": "merged",
+      "rationale": "Consolidation of variances and commentary into a draft report is low-risk clerical aggregation once structured outputs already exist, as all perspectives agreed. Per finance_domain's and agentic_architect's shared correction, an explicit tie-out/completeness check with a named-owner residual line is built into T4 rather than assumed to happen silently because the underlying data is structured.",
+      "target_step_ids": [
+        "T4"
+      ]
+    },
+    {
+      "baseline_step_id": "VAR-07",
+      "disposition": "retained",
+      "rationale": "VAR-R-07 requires review and challenge to survive, and the council decisively rejected any design that reduces it to a report-level approve/escalate gate: hitl_designer, finance_domain, agentic_architect and accounting_standards all argue, on KB-05 error-correction grounds, that this is the last human checkpoint in an otherwise automated chain and must retain genuine, line-item send-back authority with reach-back visibility into upstream judgment calls (load exceptions, basis attestations, override hits, confidence tiers, the isolated FX line). I reject the maximalist's lighter 'narrative and exception' framing for this step, per accounting_standards' round-2 objection that it cannot perform real error-detection without seeing the computation's basis. VAR-R-04's actor separation is satisfied because T3's automated screening function is governed by a named controller/analyst distinct from the FP&A manager who performs T5.",
+      "target_step_ids": [
+        "T5"
+      ]
+    },
+    {
+      "baseline_step_id": "VAR-08",
+      "disposition": "absorbed",
+      "rationale": "Distribution is a mechanical consequence of manager approval and is absorbed into T5 as a triggered release action, with no separate step or owner, as all perspectives agreed. Per emerging_economy's accepted non-negotiable, the static exportable artifact is specified as a first-class delivery channel, not a fallback configuration, alongside dashboard push, and finance_domain's staged pre-briefing for sensitive items is retained as a configurable property of release. Per accounting_standards/agentic_architect (KB-05), any post-release correction is a new, logged, visible event rather than a silent overwrite.",
+      "target_step_ids": [
+        "T5"
+      ]
+    }
+  ],
+  "efficiency": {
+    "calls": 15,
+    "cost_usd": 1.568118,
+    "failed_attempts": 0,
+    "input_tokens": 397174,
+    "output_tokens": 77377,
+    "runtime_min": 16.220481
+  },
+  "gate": {
+    "conformance_score": 1.0,
+    "passed": 8,
+    "results": [
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step VAR-01 ['T1'] receives all required input(s) ['Locked-period actuals']",
+        "requirement_id": "VAR-R-01",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step VAR-02 ['T1'] receives all required input(s) ['Approved budget version', 'Latest forecast']",
+        "requirement_id": "VAR-R-02",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step VAR-04 ['T3'] receives all required input(s) ['Materiality thresholds (percentage and absolute)']",
+        "requirement_id": "VAR-R-03",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "actors separated: VAR-04 → ['Automated screening function (under named controller/FP&A-analyst governance as threshold-and-override-rule owner)'], VAR-07 → ['FP&A manager']",
+        "requirement_id": "VAR-R-04",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step VAR-03 ['T2'] receives all required input(s) ['Accounting policies applied to actuals']",
+        "requirement_id": "VAR-R-05",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step VAR-03 ['T2'] receives all required input(s) ['Constant-currency exchange rates']",
+        "requirement_id": "VAR-R-06",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step VAR-07 is preserved as retained, carried by target step(s) ['T5']",
+        "requirement_id": "VAR-R-07",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step VAR-04 is preserved as restructured, carried by target step(s) ['T3']",
+        "requirement_id": "VAR-R-08",
+        "vacuous": false
+      }
+    ],
+    "total": 8
+  },
+  "git_commit": "987d710ba37e0c3946c197a3f96ab7f1bf99bac8",
+  "rep": 4,
+  "resolved_model": "claude-sonnet-5",
+  "run_id": "20261027-085058-sequential-FPA-VAR-01-f7d2",
+  "set": "sequential",
+  "steps": [
+    {
+      "actor": "FP&A analyst (named load-exception-queue owner), supported by an automated load function",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "AGENT",
+      "description": "Actuals are extracted from the closed, locked period and the approved budget version and latest forecast are loaded as comparatives, via a tiered automated load function: fully automated, version-pinned retrieval where the source system supports a reliable closed-period feed, degrading to a resourced manual intake path (with the same manifest fields) for entities where it does not. The function consumes the period-lock state as a hard precondition and halts rather than guesses on unresolved version ambiguity, forecast-vintage conflicts, or control-total mismatches, routing these to a named FP&A analyst who owns and actively clears a logged exception queue (not a passive dashboard).",
+      "inputs": [
+        "Locked-period actuals",
+        "Period-lock status attestation",
+        "Approved budget version",
+        "Latest forecast"
+      ],
+      "name": "Automated actuals & comparatives load with analyst-owned exception queue",
+      "outputs": [
+        "Actuals dataset",
+        "Comparatives dataset",
+        "Load manifest (version pins, checksums, row counts)",
+        "Load exception queue (logged, with resolution reasons)"
+      ],
+      "step_id": "T1"
+    },
+    {
+      "actor": "Automated computation function (under named FP&A analyst governance), with analyst-certified basis attestation on detected structural change",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "AGENT",
+      "description": "Price, volume and mix variances are computed on actuals and comparatives on the same accounting basis, consuming the declared, versioned accounting policy set and constant-currency exchange rate table as hard inputs rather than inferred or re-derived values. The FX effect is retained as a separately named, inspectable line in the output, never netted into a blended figure. Before computing, the function runs a structural-diff check against the prior period's comparison basis (product/cost-center hierarchy); if a material discontinuity is detected (new/retired dimension members, re-mapping, M&A), computation halts and routes to a named analyst for a basis attestation (confirm re-mapping or correct it) — a narrow, triggered checkpoint, not a standing periodic review.",
+      "inputs": [
+        "Actuals dataset",
+        "Comparatives dataset",
+        "Accounting policies applied to actuals",
+        "Constant-currency exchange rates",
+        "Prior-period comparison basis (product/cost-center hierarchy)"
+      ],
+      "name": "Variance computation with policy/FX governance and basis-change attestation",
+      "outputs": [
+        "Variance dataset (with FX effect as a distinct, separately reported line)",
+        "Basis-attestation log (populated only on detected structural discontinuity)"
+      ],
+      "step_id": "T2"
+    },
+    {
+      "actor": "Automated screening function (under named controller/FP&A-analyst governance as threshold-and-override-rule owner)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "AGENT",
+      "description": "Variances exceeding either the percentage or the absolute threshold are selected for explanation by a rules-evaluation function kept architecturally and organisationally distinct from computation, because threshold and override rules are configuration set and revisited by a named controller/analyst owner on a different cadence than the computation logic. The numeric thresholds and the qualitative override ruleset (trend reversals, sensitive cost centers, cumulative sub-threshold aggregation) are both explicit, versioned, and logged against the output, so the selection decision is reconstructable after the fact rather than asserted. The function halts rather than silently passes or drops a variance if a rule cannot be evaluated.",
+      "inputs": [
+        "Variance dataset",
+        "Materiality thresholds (percentage and absolute)",
+        "Governed qualitative override ruleset (versioned)"
+      ],
+      "name": "Materiality screening with governed override layer",
+      "outputs": [
+        "Variances to explain (with threshold/ruleset version stamp)",
+        "Screening exception/override log"
+      ],
+      "step_id": "T3"
+    },
+    {
+      "actor": "Budget holders (named, tiered engagement: affirm/amend, authorship, or escalation), supported by a deterministic drafting function and an FP&A-analyst-owned chase mechanism",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Commentary on selected variances defaults to a deterministic, rule-based driver-matching draft (price/volume/FX/known one-offs matched against existing data), with generative drafting available only as a configurable, infrastructure-gated upgrade where procurement and data-governance approval exist — never a hard dependency for producing a draft. Oversight is calibrated by driver-match availability and confidence, not uniform: (a) matched, high-confidence drivers route to the named budget holder for an active, logged affirm/amend; (b) novel, override-flagged, or low-confidence variances are routed as an authorship task — the system supplies data only, the budget holder writes the explanation; (c) anything below a defined confidence/match floor escalates automatically. An SLA-timed chase/escalation mechanism (reminders, escalation to the budget holder's manager on breach), operating over whatever channel the entity can reliably use (integrated task, email, SMS), runs alongside drafting because elapsed time, not drafting effort, is the actual close-calendar risk. Outputs are consolidated into a draft report with an explicit tie-out/completeness check; any unexplained residual is routed to a named owner, not silently assumed away.",
+      "inputs": [
+        "Variances to explain",
+        "Known transactional drivers / driver library",
+        "Budget holder contact channels"
+      ],
+      "name": "Tiered commentary drafting, chase & consolidation",
+      "outputs": [
+        "Budget holder commentary (logged as affirmed, amended, authored, or escalated)",
+        "Draft variance report with tie-out/completeness check and residual line"
+      ],
+      "step_id": "T4"
+    },
+    {
+      "actor": "FP&A manager",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The FP&A manager reviews and challenges the draft report with genuine, line-item send-back authority to the specific accountable commentator or upstream function — not a report-level approve/reject gate. The review interface surfaces the upstream trace needed for this to be a real error-detection act, not a narrative skim: the load manifest and exceptions (T1), the basis-attestation status (T2), the override-rule hits (T3), and the commentary tier/confidence/authorship path (T4), including the FX effect as its own visible line. On approval, release is a system action: publish to dashboard and generate a static exportable artifact (PDF/email) as a first-class delivery channel, not a fallback, with staged/sequenced pre-briefing for politically sensitive or unfavorable items before wider distribution. Any post-release correction is a new, logged, visible event, never a silent overwrite.",
+      "inputs": [
+        "Draft variance report",
+        "Load manifest and exception log",
+        "Basis-attestation log",
+        "Screening exception/override log",
+        "Commentary tier/confidence/authorship log"
+      ],
+      "name": "Review, challenge & release",
+      "outputs": [
+        "Reviewed variance report (with line-level send-back record)",
+        "Distributed variance report (dashboard and static export)",
+        "Correction/reissue log, where applicable"
+      ],
+      "step_id": "T5"
+    }
+  ],
+  "transcript": [
+    {
+      "chars": 7258,
+      "excerpt": "1. PROPOSED DISPOSITIONS\n\nVAR-01 (Extract actuals): merged into a single automated pipeline step. There is no reason a human analyst manually extracts actuals from a locked period in 2026 — extraction from the closed ledger is a deterministic query against a system of record whose cutoff is already enforced upstream. I would carry this into a continuous, agent-run \"Automated Variance Computation & Screening\" step (hereafter T1), with the human role reduced to configuring and governing the pipeline, not operating it transaction by transaction.\n\nVAR-02 (Load comparatives): merged into T1. Loadin",
+      "phase": "perspectives",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 9115,
+      "excerpt": "1. PROPOSED DISPOSITIONS\n\nVAR-01 (Extract actuals) and VAR-02 (Load comparatives): merged into a single automated extraction/load step, T1 (\"Automated Actuals & Comparatives Load\"). I agree with the maximalist that manual extraction of a locked period is pure legacy overhead — most EPM/consolidation tools already do this. But I attach one condition: T1 must emit a reconciliation check (totals to GL, record counts, version tags on budget/forecast) that the FP&A analyst reviews by exception before the dataset is released downstream. This is not a separate workflow step for schema purposes — it i",
+      "phase": "perspectives",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 9699,
+      "excerpt": "1. PROPOSED DISPOSITIONS\n\nVAR-01 (Extract actuals) and VAR-02 (Load comparatives): merged, carried into T1 (\"Automated Load with Data-Quality Gate\"). I agree extraction and comparative loading should be automated — but I want to correct an assumption running through both prior perspectives: \"extraction from a locked period\" is not a clean query against a single source of truth in most real FP&A environments. The period is locked in the ledger, but actuals for variance purposes typically require late intercompany eliminations, a final FX revaluation run, and sometimes a manual topside adjustmen",
+      "phase": "perspectives",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 9221,
+      "excerpt": "1. PROPOSED DISPOSITIONS\n\nVAR-01 (Extract actuals) and VAR-02 (Load comparatives): restructured, carried into T1 (\"Tiered Actuals & Comparatives Load\"). I do not disagree that extraction and comparative loading are mechanical in principle, but \"the ledger is a clean system of record\" is a headquarters assumption that does not hold uniformly across a group with subsidiaries on different ERPs, recently acquired entities still running spreadsheet-based books, or offshore delivery centers with intermittent system access. T1 must therefore be tiered by entity maturity: fully automated extraction wh",
+      "phase": "perspectives",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 13470,
+      "excerpt": "# Perspective: hitl_designer\n\n## 1. PROPOSED DISPOSITIONS\n\n**VAR-01 (Extract actuals) and VAR-02 (Load comparatives): merged, carried into T1 (\"Automated Load with Analyst-Owned Exception Queue\").** I have no objection to automating the mechanical retrieval itself — there is no judgment content in pulling a locked period or a version-tagged forecast, and asking a human to perform that retrieval manually teaches them nothing and catches nothing a system check cannot catch better. But I insist on a distinction the prior drafts blur: automating a task is not the same as automating away its except",
+      "phase": "perspectives",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 15267,
+      "excerpt": "# Perspective: agentic_architect\n\n## 1. PROPOSED DISPOSITIONS\n\n**VAR-01 (Extract actuals) and VAR-02 (Load comparatives): merged, carried into A1 (\"Load Agent — Actuals & Comparatives\").** I agree this is automatable, but I want to name what \"automated\" actually means here as an agent specification, not a hand-wave. A1 is a scheduled/event-triggered agent (fires on period-lock event, not on a clock) with read-only tool access to the GL extract API, the budget version-control system, and the forecast repository. Its tool calls are deterministic retrievals with declared version pins (locked-peri",
+      "phase": "perspectives",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 13799,
+      "excerpt": "# Perspective: accounting_standards\n\n## 1. PROPOSED DISPOSITIONS\n\n**VAR-01 (Extract actuals): retained, carried into T1 (\"Automated Load with Analyst-Owned Exception Queue\").** I have no standards objection to automating the mechanical retrieval of actuals, but my concern is narrower and more literal than the prior perspectives': the actuals extracted must be actuals from the *locked, closed* period, full stop. KB-03's reporting-period discipline principle requires that cutoff enforcement — subledger locks and period gates — survive in some form. Whatever agent or pipeline performs VAR-01 must",
+      "phase": "perspectives",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 8995,
+      "excerpt": "1. CONCEDE\n\nI accept hitl_designer's core objection to my VAR-05 design. An exception-only default from day one does create exactly the accountability gap they describe: a budget holder's name sitting under a narrative they never engaged with is worse than no attribution, because it manufactures assurance that isn't there. I was solving for throughput and treating \"human in the loop by exception\" as costless; it isn't costless if the exception threshold is wrong and nobody notices for two quarters. I now accept the tiered model — affirm/amend for high-confidence pattern-matched drafts, mandato",
+      "phase": "reconsiderations",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 8097,
+      "excerpt": "1. CONCEDE\n\nI concede to hitl_designer on commentary oversight. My round-1 position insisted on universal sign-off for every budget holder on every variance in year one, defended on the grounds that a controller needs to see the human checkpoint actually exercised rather than skipped by exception. hitl_designer's calibrated three-tier model — active affirm/amend for high-confidence recurring-driver drafts, mandatory human authorship (not review) for novel or low-confidence items, automatic escalation below a confidence floor — solves the exact failure mode I was worried about more precisely th",
+      "phase": "reconsiderations",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 7629,
+      "excerpt": "1. CONCEDE\n\nI accept hitl_designer's three-tier calibration for commentary (affirm/amend for high-confidence recurring drivers; mandatory human authorship for novel, undrafted variances; automatic escalation below a confidence floor) as a sharper operationalization of the point I raised but left underspecified — that AI drafting is reliable for pattern-matched drivers and weak for one-offs. My own draft said \"guaranteed human authorship\" for novel variances without saying what happens to the large middle tier of routine, high-confidence items, and hitl_designer's calibration closes that gap wi",
+      "phase": "reconsiderations",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 9586,
+      "excerpt": "# Round 2 Response — emerging_economy\n\n## 1. CONCEDE\n\n**To agentic_architect:** I accept that my round-1 framing of \"AI-assist as optional upgrade, deterministic fallback as default\" needed the mechanism specified, and agentic_architect did that for me better than I did it myself. The point that a narrow-scoped, declared-driver-library agent is \"inherently lighter-weight than a generic generative call\" is correct and actually strengthens my case rather than diluting it — I was arguing from infrastructure constraint, but the deterministic driver-match tool they specify for A4's high-confidence ",
+      "phase": "reconsiderations",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 7881,
+      "excerpt": "1. CONCEDE\n\nAgentic_architect's distinction between load, compute, and screen as separate tool-scoped agents — rather than one undifferentiated pipeline — sharpens a point I made more loosely. I argued T1/T2/T3 should stay as distinct functions for governance-visibility reasons; agentic_architect gives the harder architectural reason: if A1 and A2 are collapsed into one agent identity, a bad number cannot be diagnosed as a load problem versus a computation problem without replaying the whole run. That is a concrete failure mode my framing didn't name. I accept it and fold it into my non-negoti",
+      "phase": "reconsiderations",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 9536,
+      "excerpt": "## 1. CONCEDE\n\n**To emerging_economy:** my A1 specification implicitly assumed every source system is API-accessible and every \"latest forecast\" resolves to a single version-controlled object. That is a headquarters assumption dressed up as an architecture. I now accept that A1 cannot be a single agent design — it must be a tiered agent: where the source system supports reliable programmatic access, A1 runs autonomously with the version-pinning and halt-on-ambiguity behavior I specified; where it does not, A1 degrades to a structured intake form that a named analyst populates, and that manual ",
+      "phase": "reconsiderations",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 7490,
+      "excerpt": "1. CONCEDE\n\nI accept agentic_architect's point that \"the governed input is consumed\" is not itself sufficient — it has to be machine-checkable after the fact, not merely asserted. My round 1 non-negotiables said policy and FX inputs must be \"declared, versioned inputs\" but I did not specify what makes that claim verifiable rather than rhetorical. Agentic_architect's load/compute manifest (policy version, FX table vintage, basis hierarchy, logged per run) is exactly the mechanism that turns KB-02's evidential-trail principle and KB-06/KB-07's continuity requirements from a design intention into",
+      "phase": "reconsiderations",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 14895,
+      "excerpt": "{\n  \"workflow_id\": \"FPA-VAR-01\",\n  \"baseline_step_ids\": [\"VAR-01\", \"VAR-02\", \"VAR-03\", \"VAR-04\", \"VAR-05\", \"VAR-06\", \"VAR-07\", \"VAR-08\"],\n  \"steps\": [\n    {\n      \"step_id\": \"T1\",\n      \"name\": \"Automated actuals & comparatives load with analyst-owned exception queue\",\n      \"description\": \"Actuals are extracted from the closed, locked period and the approved budget version and latest forecast are loaded as comparatives, via a tiered automated load function: fully automated, version-pinned retrieval where the source system supports a reliable closed-period feed, degrading to a resourced manual",
+      "phase": "synthesis",
+      "role": "synthesis",
+      "truncated": true
+    }
+  ],
+  "workflow_id": "FPA-VAR-01"
+}

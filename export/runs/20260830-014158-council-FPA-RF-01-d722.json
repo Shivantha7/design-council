@@ -1,0 +1,395 @@
+{
+  "condition": "council",
+  "consistency_inputs": {
+    "RF-01": "restructured",
+    "RF-02": "restructured",
+    "RF-03": "merged",
+    "RF-04": "retained",
+    "RF-05": "restructured",
+    "RF-06": "retained",
+    "RF-07": "restructured",
+    "RF-08": "restructured"
+  },
+  "created_utc": "2026-08-30T01:41:58.076927Z",
+  "depth": {
+    "counts": {
+      "absorbed": 0,
+      "eliminated": 0,
+      "merged": 1,
+      "restructured": 5,
+      "retained": 2
+    },
+    "score": 0.75,
+    "total_baseline_steps": 8
+  },
+  "disposition_convention_version": "v1 (pre-01034ae)",
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "RF-01",
+      "disposition": "restructured",
+      "rationale": "The step conflated mechanical cadence/timetable governance with judgment-laden assumptions-pack curation. Council converged (finance_domain's proposal, adopted by hitl_designer and emerging_economy) on splitting these: cadence and template distribution become an orchestration-supported governance act (TS-01), while the assumptions-pack content (which corporate targets apply, which events are material) merges downstream with driver refresh (TS-03) since both answer 'what changed since last cycle' and should reach BUs as one coherent package rather than two releases that can drift out of sync.",
+      "target_step_ids": [
+        "TS-01",
+        "TS-03"
+      ]
+    },
+    {
+      "baseline_step_id": "RF-02",
+      "disposition": "restructured",
+      "rationale": "Extraction and mapping mechanics are automated, but the council majority (pragmatist, finance_domain, emerging_economy, hitl_designer, accounting_standards, agentic_architect) insists the cutoff/completeness discipline (KB-03) survive as more than an embedded code gate: a dual ingestion track (automated plus first-class manual path for non-integrated entities, per emerging_economy) feeds identical validation logic, and a named human certification sign-off attaches to the baseline each cycle, with failures escalated rather than silently passed through. This satisfies FPA-R-02's requirement that consolidation consume a validated closed-period actuals baseline.",
+      "target_step_ids": [
+        "TS-02"
+      ]
+    },
+    {
+      "baseline_step_id": "RF-03",
+      "disposition": "merged",
+      "rationale": "Mechanical FX and run-rate drivers auto-refresh with source, date and exchange-difference explicitly tagged (KB-08, conceded by maximalist and specified further by hitl_designer/agentic_architect); judgment-based drivers (pricing, headcount, volume) retain a named owner and contemporaneously logged rationale (hitl_designer's structural requirement, adopted across the council), curated by the FP&A analyst. The council majority rejected maximalist's proposal to fold this judgment into the BU submission step: a distinct, dated FP&A-owned artefact is needed so a bad outcome can be diagnosed as bad instruction versus bad BU execution.",
+      "target_step_ids": [
+        "TS-03"
+      ]
+    },
+    {
+      "baseline_step_id": "RF-04",
+      "disposition": "retained",
+      "rationale": "Five of seven council members (pragmatist, finance_domain, emerging_economy, hitl_designer, agentic_architect) independently rejected the agent-drafts/BU-overrides model on anchoring-bias and accountability grounds: a BU lead reviewing a plausible AI draft under deadline pressure scrutinises it less than a blank template forces, and the commentary that constitutes this step's actual value depends on the preparer having generated the number, not approved someone else's. BU finance leads remain the accountable originators; automation is limited to embedded template validation providing immediate feedback, and templates are made offline-capable per emerging_economy's non-negotiable.",
+      "target_step_ids": [
+        "TS-04"
+      ]
+    },
+    {
+      "baseline_step_id": "RF-05",
+      "disposition": "restructured",
+      "rationale": "Roll-up, intercompany matching and coherence checks are automated as a continuous rule engine with a hard dependency on the validated actuals baseline (satisfying FPA-R-02 and KB-03 by construction), but 'chase and correct anomalous submissions' remains named human judgment with a defined SLA, per the near-unanimous council view that anomaly resolution requires business context a system lacks (KB-05). Per accounting_standards' KB-06 concern, raised independently and unanswered by the automation-forward positions, any change to the consolidation/computation methodology itself is now surfaced as a distinct disclosed basis-change event, separate from anomaly flagging, so a redefinition of the rules is never quietly absorbed. The intercompany check is retained as a load-bearing internal control though the council (accounting_standards) notes KB-14 does not itself reach internal forecasting.",
+      "target_step_ids": [
+        "TS-05"
+      ]
+    },
+    {
+      "baseline_step_id": "RF-06",
+      "disposition": "retained",
+      "rationale": "FPA-R-01 requires this function survive, and the council decisively rejected maximalist's single-actor merge of consolidation and variance analysis: pragmatist, finance_domain, emerging_economy, hitl_designer, agentic_architect and accounting_standards independently converged on the same failure mode from different angles (data-quality-narrated-as-business-movement, single-point-of-failure concentration, loss of a KB-06 basis-change seam, loss of tool-boundary observability). The synthesis holds that FPA-R-01's requirement is judged on functional separation, not mere step-nameability: bridge arithmetic is automated, but this remains its own step with human-authored narrative and risk judgment, distinct from TS-05.",
+      "target_step_ids": [
+        "TS-06"
+      ]
+    },
+    {
+      "baseline_step_id": "RF-07",
+      "disposition": "restructured",
+      "rationale": "FPA-R-03 requires survival; the council (hitl_designer's central concern, adopted by pragmatist, maximalist and finance_domain) held that merely preserving the step's name and position risks a rubber stamp once upstream mechanics are automated. The redesign feeds this step an exception-curated briefing — material movements, judgment-driver rationale, resolved anomalies, basis-change disclosures — rather than a full re-derivation, and requires the approval record be traceable to the specific items reviewed, making the challenge session substantive rather than ceremonial.",
+      "target_step_ids": [
+        "TS-07"
+      ]
+    },
+    {
+      "baseline_step_id": "RF-08",
+      "disposition": "restructured",
+      "rationale": "FPA-R-05 requires survival and FPA-R-04 requires strict ordering after approval. The council converged (agentic_architect's design, adopted by hitl_designer and pragmatist) on making the ordering an architectural invariant: publication is event-gated strictly on the TS-07 approval signal, never time- or best-effort-gated. Per accounting_standards' KB-02 anchor, the archive preserves both the numeric version and its linked assumptions-basis (not just a version snapshot), and per agentic_architect's reversibility requirement the record is written before distribution to allow unambiguous rollback. Distribution retains a non-cloud-dependent channel per emerging_economy's non-negotiable.",
+      "target_step_ids": [
+        "TS-08"
+      ]
+    }
+  ],
+  "efficiency": {
+    "calls": 15,
+    "cost_usd": 1.485576,
+    "failed_attempts": 0,
+    "input_tokens": 284288,
+    "output_tokens": 91700,
+    "runtime_min": 23.754726
+  },
+  "gate": {
+    "conformance_score": 1.0,
+    "passed": 5,
+    "results": [
+      {
+        "passed": true,
+        "reason": "baseline step RF-06 is preserved as retained, carried by target step(s) ['TS-06']",
+        "requirement_id": "FPA-R-01",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step RF-05 ['TS-05'] receives all required input(s) ['closed-period actuals (validated baseline)']",
+        "requirement_id": "FPA-R-02",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step RF-07 is preserved as restructured, carried by target step(s) ['TS-07']",
+        "requirement_id": "FPA-R-03",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['TS-07'] for baseline RF-07 all precede target step(s) ['TS-08'] for baseline RF-08",
+        "requirement_id": "FPA-R-04",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step RF-08 is preserved as restructured, carried by target step(s) ['TS-08']",
+        "requirement_id": "FPA-R-05",
+        "vacuous": false
+      }
+    ],
+    "total": 5
+  },
+  "git_commit": "0661897f5e4cf4bf721fdd79a4e80ba1fad26618",
+  "rep": 1,
+  "resolved_model": "claude-sonnet-5",
+  "run_id": "20260830-014158-council-FPA-RF-01-d722",
+  "set": "dev-v1",
+  "steps": [
+    {
+      "actor": "FP&A manager",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Confirm the forecast horizon, granularity and cadence for the cycle as a named governance act by the FP&A manager; trigger cycle initiation via orchestration tooling on the rolling calendar; issue timetable and templates to business units through a multi-channel, offline-capable distribution path (not cloud-portal-only), so entities without standing connectivity are not excluded. This step carries only the mechanical/calendar content of the former initiation step; assumption curation is relocated to TS-03 so that judgment content is not bundled with pure cadence mechanics.",
+      "inputs": [
+        "Rolling forecast calendar",
+        "Macro indicators",
+        "Corporate targets"
+      ],
+      "name": "Cycle governance and timetable issuance",
+      "outputs": [
+        "Timetable and templates distributed (multi-channel, offline-capable)",
+        "Cycle scope and cadence confirmed"
+      ],
+      "step_id": "TS-01"
+    },
+    {
+      "actor": "FP&A analyst",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Ingest closed-period actuals via an automated GL/management-reporting feed for integrated entities and via a manual template-upload-and-reconciliation path for entities without system integration, applying identical completeness and consistency validation logic to both tracks so neither is treated as a degraded exception. Enforce a hard period-lock gate: actuals for a period not yet closed cannot load as baseline. Preserve revenue-recognition timing embedded in actuals when remapping into forecast structure. A named FP&A analyst issues a dated certification sign-off each cycle confirming the gate fired correctly; any completeness or reconciliation break routes to the analyst as an explicit exception with a resolution path, never silently forwarded as validated.",
+      "inputs": [
+        "GL actuals",
+        "Management reporting extracts",
+        "Manual entity templates (non-integrated units)"
+      ],
+      "name": "Actuals ingestion and validation (dual-track)",
+      "outputs": [
+        "closed-period actuals (validated baseline) loaded to forecast model",
+        "Certification sign-off record"
+      ],
+      "step_id": "TS-02"
+    },
+    {
+      "actor": "FP&A analyst",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Assemble the refreshed assumptions pack (macro indicators, corporate targets, known business events) together with driver assumption refresh, since both answer 'what changed since last cycle' and must travel as one coherent package to business units. FX rates and actual run-rates are refreshed mechanically, with rate source, rate date and the resulting exchange-difference delta logged and retained as a separately traceable component, never netted into a blended figure. Volume, pricing, headcount and cost-inflation assumptions remain judgment calls: each is set by a named business-input owner with a contemporaneously logged rationale, curated by the FP&A analyst as accountable owner of the assembled driver set. This artefact stays distinct from, and upstream of, BU submission (TS-04) so that a poor forecast outcome can be diagnosed as bad instruction versus bad BU execution. Note: automating the mechanical FX/run-rate computation displaces manual re-keying work; the target state requires this displaced time be redirected to exception review and judgment-driver curation rather than assumed away, though the council notes this commitment is not independently schema-enforceable and rests on rationale, not a checkable field.",
+      "inputs": [
+        "closed-period actuals (validated baseline)",
+        "Operational volume data",
+        "Pricing data",
+        "FX rates",
+        "Headcount plans",
+        "Macro indicators",
+        "Corporate targets"
+      ],
+      "name": "Assumptions and driver refresh with named judgment ownership",
+      "outputs": [
+        "Updated driver assumptions with named owner and logged rationale",
+        "Tagged exchange-difference schedule",
+        "Assumptions pack issued"
+      ],
+      "step_id": "TS-03"
+    },
+    {
+      "actor": "BU finance leads",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "BU finance leads originate forecast submissions (revenue, cost, headcount, capex) against the refreshed drivers, using offline-capable templates with embedded validation (schema completeness, headcount-to-cost coherence, continuity checks) that gives immediate feedback at the point of entry rather than a later chase cycle. The BU finance lead remains the accountable preparer of the number, not a reviewer of a machine-generated draft: commentary explaining changes since the prior forecast is human-authored and attributed to a named preparer, preserving the evidentiary basis subsequent steps rely on.",
+      "inputs": [
+        "Updated driver assumptions",
+        "Templates",
+        "Prior forecast"
+      ],
+      "name": "Business unit forecast submission",
+      "outputs": [
+        "BU forecast submissions with human-authored, attributed commentary"
+      ],
+      "step_id": "TS-04"
+    },
+    {
+      "actor": "FP&A analyst",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "An automated rule engine performs roll-up, intercompany matching and headcount-to-cost coherence checks continuously as submissions arrive, and refuses to consolidate if the closed-period actuals baseline is missing or stale, enforcing direct, hard consumption of that baseline. Any change to the consolidation or computation methodology itself (a new formula, a redefined coherence ratio) is surfaced as a disclosed basis-change event, logged distinctly from anomaly flagging on submitted data. Anomalous submissions above threshold are escalated to a named FP&A analyst with a defined resolution SLA; investigating, chasing and correcting anomalous submissions remains human judgment and is never auto-resolved. This step remains a distinct checkpoint from variance analysis (TS-06) so that a data-quality break cannot be absorbed into the same motion that later explains it as a business movement.",
+      "inputs": [
+        "BU forecast submissions with human-authored, attributed commentary",
+        "closed-period actuals (validated baseline)",
+        "Group forecast model"
+      ],
+      "name": "Consolidation, validation and exception resolution",
+      "outputs": [
+        "Consolidated group forecast, validated",
+        "Basis-change disclosure log",
+        "Anomaly resolution record"
+      ],
+      "step_id": "TS-05"
+    },
+    {
+      "actor": "FP&A analyst",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Automated bridge computation quantifies movements by driver and business unit against budget and the prior forecast, immediately upon TS-05's validated output. FX-isolated components are shown separately using TS-03's exchange-difference tag; basis-change events flagged in TS-05 are displayed as a distinct bridge component, not absorbed into business-performance variance. The FP&A analyst supplies human-authored narrative and risk/opportunity judgment on materiality-flagged items; arithmetic is delegable, the forward-looking explanation of what is real risk versus noise is not. Kept as its own step, separate from consolidation, to preserve a seam at which a data-integrity break can be caught before it is narrated as a business story.",
+      "inputs": [
+        "Consolidated forecast",
+        "Budget",
+        "Prior forecast",
+        "Basis-change disclosure log"
+      ],
+      "name": "Variance and bridge analysis",
+      "outputs": [
+        "Bridge analyses (FX- and basis-change-isolated)",
+        "Risk/opportunity schedules with human-authored commentary"
+      ],
+      "step_id": "TS-06"
+    },
+    {
+      "actor": "CFO / FP&A director",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Management reviews an exception-curated briefing pack — material movements, judgment-driver rationale flags, resolved anomalies, and basis-change disclosures — rather than a full re-derivation of every mechanical number, so that automating the upstream mechanics makes this review more substantive, not less. Challenge sessions address the flagged items directly; directed revisions are incorporated. Approval is recorded as a discrete, named, dated act, and the approval record is traceable to the specific items actually reviewed, not merely a sign-off timestamp.",
+      "inputs": [
+        "Consolidated forecast",
+        "Bridge analyses",
+        "Risk/opportunity schedules",
+        "Judgment-driver rationale log"
+      ],
+      "name": "Exception-based management review and approval",
+      "outputs": [
+        "Approved forecast baseline",
+        "Traceable approval record (items reviewed)"
+      ],
+      "step_id": "TS-07"
+    },
+    {
+      "actor": "FP&A manager",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Publication fires only on receipt of the TS-07 approval event — a hard, structural gate, not a time- or best-effort trigger, so it is architecturally impossible for a forecast to be released without recorded sign-off. Planning systems and reporting baselines are updated and the forecast pack distributed through a channel that does not require continuous cloud connectivity or per-seat licensing (e.g., file-based/email pack alongside any BI publication), reaching stakeholders regardless of local infrastructure. Before distribution, an immutable version record is written preserving both the numeric version and its linked assumptions-basis (assumptions pack, FX rate vintage, computation basis), so a post-publish error can be rolled back to a prior published baseline without ambiguity.",
+      "inputs": [
+        "Approved forecast baseline"
+      ],
+      "name": "Automated publication and archival, approval-gated",
+      "outputs": [
+        "Forecast published",
+        "Systems updated",
+        "Version archived with linked assumptions-basis"
+      ],
+      "step_id": "TS-08"
+    }
+  ],
+  "transcript": [
+    {
+      "chars": 7008,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nRF-01 (Forecast cycle initiation and assumptions refresh) — merged, target: T1 \"Continuous assumptions, actuals and driver data pipeline.\" There is no reason a calendar-driven human \"kickoff\" ritual should survive when the cadence, the macro-indicator refresh, and the timetable/template issuance can all be event-triggered by an always-on orchestration agent. The FP&A manager's role shrinks to occasional configuration (horizon, granularity) rather than a recurring discrete step.\n\nRF-02 (Actuals collection and data preparation) — merged, target: T1. GL extraction, mapping,",
+      "phase": "round 1",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 8663,
+      "excerpt": "# PRAGMATIST POSITION — FPA-RF-01 Rolling Forecast Update\n\n## 1. PROPOSED DISPOSITIONS\n\n**RF-01 (Forecast cycle initiation and assumptions refresh) → retained, target: TS-01.**\nKeep this essentially as-is. The FP&A manager still owns cadence, horizon confirmation and the assumptions pack. I'd allow the timetable/template *distribution* to run through a workflow tool rather than email, but that's a tooling change, not a redesign of the function. There's no case for eliminating or merging this: it's the governance anchor for the whole cycle and a controller needs to see it happen every period, o",
+      "phase": "round 1",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 7588,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nRF-01 (Forecast cycle initiation and assumptions refresh) — merged, splitting its two genuinely distinct functions across two target steps. The calendar/governance content (confirm horizon and granularity, issue timetable) is a standing, low-frequency control event that does not depend on data being loaded yet; it should retain its own step, \"Cycle governance and timetable issuance,\" run by the FP&A manager. But the \"assumptions pack\" content (macro indicators, corporate targets, known events) is, in real operating rhythm, the same payload as the driver refresh in RF-03 ",
+      "phase": "round 1",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 6667,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nRF-01 (Forecast cycle initiation and assumptions refresh) — retained, restructured. The kickoff function survives, but I require the \"issue timetable and templates\" output to be defined as multi-channel by design: a centrally-curated assumptions pack pushed by email/shared-drive with an offline-editable spreadsheet template as the default, not a cloud-portal-only distribution. Subsidiaries in constrained-connectivity locations and joint-venture entities with thin licensing budgets cannot be assumed to have always-on access to a planning-cloud front end. Target: TS-01.\n\nR",
+      "phase": "round 1",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 9815,
+      "excerpt": "# Position — hitl_designer\n\n## 1. PROPOSED DISPOSITIONS\n\n**RF-01 (Forecast cycle initiation and assumptions refresh) — restructured, carried forward as the initiation step.**\nThe mechanical parts (calendar computation, distributing templates, pulling published macro indicators) are fine to automate. But \"refresh the assumptions pack\" bundles in judgment calls — which corporate targets apply, which known business events are material enough to flag — that must stay with the FP&A manager as a named, accountable act, not a system default. I want the target step to visibly separate \"system-populate",
+      "phase": "round 1",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 9575,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nRF-01 (Forecast cycle initiation and assumptions refresh) — restructured, carried by a new \"Forecast cycle orchestration agent\" step. The calendar-driven trigger, timetable/template distribution, and pull of macro indicator feeds are mechanical and should run as an agent job (cron/event trigger on the rolling cadence, tool access to the calendar system, macro data APIs, and template repository). The FP&A manager's role shifts from doing this manually to confirming the machine-drafted assumptions pack before it is issued — a human confirmation gate, not elimination of jud",
+      "phase": "round 1",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 8240,
+      "excerpt": "**1. PROPOSED DISPOSITIONS**\n\nRF-01 (Cycle initiation and assumptions refresh): The knowledge base is silent on cadence-setting and timetable issuance — no IAS/IFRS principle in scope governs how a forecast cycle is launched. I take no position requiring this step's survival in any particular form; it may be merged or restructured freely. My only condition is that whatever step absorbs it must still carry forward, unaltered, any revenue-recognition or FX assumptions baked into the \"corporate targets\" and \"macro indicators\" that feed downstream steps (see RF-02, RF-03 below) — a labelling conce",
+      "phase": "round 1",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 7906,
+      "excerpt": "1. CONCEDE\n\nI accept finance_domain's and accounting_standards' point on FX tagging (KB-08). My T1 pipeline description let FX refresh sit inside the same undifferentiated \"mechanical driver\" bucket as run-rate extrapolation. Both of them are right that this risks netting exchange differences into a blended output with no separately traceable component. I concede the correction: within T1, the FX-driver refresh must write out a tagged, separately retrievable exchange-difference line, not just an updated blended assumption. This costs me nothing architecturally — it's a schema requirement insid",
+      "phase": "round 2",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 9664,
+      "excerpt": "## 1. CONCEDE\n\n**To hitl_designer:** I accept the sharper diagnosis of what happens to RF-07 if I only say \"retained.\" Simply preserving the step's *name* and *position* isn't enough — if RF-02/RF-05/RF-06's mechanics get automated and nobody redesigns what the CFO actually sees, the challenge session degrades into signing off on a fully-reconciled pack nobody has time to interrogate. That's a rubber stamp with better production values, and my original position didn't say enough about it. I now accept that RF-07's target step must be explicitly fed an exception-curated briefing (material movem",
+      "phase": "round 2",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 7389,
+      "excerpt": "1. CONCEDE\n\nemerging_economy has changed my mind on one real gap in my own RF-02 disposition. I described \"automated actuals ingestion with exception-based validation\" as if the automated feed were the default state everywhere and manual work were only an occasional escalation. That is not how it actually looks in a group with recently acquired or thinly-integrated subsidiaries: for those entities there is no automated GL feed to begin with, and treating their manual template-upload-and-reconciliation path as an \"exception\" mischaracterises it as rare when it is, for those units, the normal an",
+      "phase": "round 2",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 7216,
+      "excerpt": "1. CONCEDE\n\nhitl_designer's structural point that judgment-based driver assumptions need \"a named human owner and a logged rationale at the point set\" is stronger than my own phrasing of the same concern in RF-03, and I adopt it: my reskilling requirement and hitl_designer's ownership/rationale requirement are two halves of the same disposition, and I concede their framing should govern the target step's internal description — not merely \"analyst effort shifts to exception review\" but \"analyst becomes the named accountable curator of the assembled driver set.\" This does not weaken my non-negot",
+      "phase": "round 2",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 8796,
+      "excerpt": "1. CONCEDE\n\n**finance_domain** on RF-01: I proposed distinguishing \"system-populated calendar/macro feed\" from \"manager-curated assumptions\" within a single restructured step, but finance_domain's sharper move — splitting this into two named target steps, a \"cycle governance and timetable issuance\" step and a separate \"assumptions-and-driver-refresh\" step merged with RF-03 — is a better structural expression of the same distinction I was gesturing at. A named step boundary makes the manager's judgment act visible and auditable in a way that an internal sub-distinction inside one step does not.",
+      "phase": "round 2",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 7697,
+      "excerpt": "1. CONCEDE\n\nI concede to **emerging_economy** that my round-1 designs for the orchestration agent (RF-01) and the ingestion agent (RF-02) implicitly assumed universal API/cloud connectivity — macro-data feeds, GL integration, cloud template distribution — as the default tool boundary, with manual handling relegated to an \"exception path\" triggered by failure. That is the wrong model for entities that never have automated feeds in the first place, not occasionally. I now accept that the ingestion agent's tool boundary must include a first-class manual-upload channel that feeds the *same* valida",
+      "phase": "round 2",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 8425,
+      "excerpt": "# ROUND 2 — accounting_standards\n\n## 1. CONCEDE\n\n**To hitl_designer and agentic_architect, on RF-03's judgment-owner naming.** My round-1 position treated the FX-visibility requirement (KB-08) as satisfied by \"keeping FX separately traceable in the assumptions log.\" Both hitl_designer and agentic_architect go further, requiring that the agent \"log the rate source and the delta explicitly\" and that judgment-based drivers have a named accountable owner at the point of setting, not reconstructed later. I accept this refinement: a log entry that shows an FX delta without showing its source rate an",
+      "phase": "round 2",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 16088,
+      "excerpt": "{\n  \"workflow_id\": \"FPA-RF-01\",\n  \"baseline_step_ids\": [\"RF-01\", \"RF-02\", \"RF-03\", \"RF-04\", \"RF-05\", \"RF-06\", \"RF-07\", \"RF-08\"],\n  \"steps\": [\n    {\n      \"step_id\": \"TS-01\",\n      \"name\": \"Cycle governance and timetable issuance\",\n      \"description\": \"Confirm the forecast horizon, granularity and cadence for the cycle as a named governance act by the FP&A manager; trigger cycle initiation via orchestration tooling on the rolling calendar; issue timetable and templates to business units through a multi-channel, offline-capable distribution path (not cloud-portal-only), so entities without stan",
+      "phase": "synthesis",
+      "role": "synthesis",
+      "truncated": true
+    }
+  ],
+  "workflow_id": "FPA-RF-01"
+}

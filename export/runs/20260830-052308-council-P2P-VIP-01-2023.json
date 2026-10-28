@@ -1,0 +1,400 @@
+{
+  "condition": "council",
+  "consistency_inputs": {
+    "VIP-01": "merged",
+    "VIP-02": "merged",
+    "VIP-03": "restructured",
+    "VIP-04": "restructured",
+    "VIP-05": "restructured",
+    "VIP-06": "restructured",
+    "VIP-07": "restructured",
+    "VIP-08": "restructured"
+  },
+  "created_utc": "2026-08-30T05:23:08.136435Z",
+  "depth": {
+    "counts": {
+      "absorbed": 0,
+      "eliminated": 0,
+      "merged": 2,
+      "restructured": 6,
+      "retained": 0
+    },
+    "score": 1.0,
+    "total_baseline_steps": 8
+  },
+  "disposition_convention_version": "v1 (pre-01034ae)",
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "VIP-01",
+      "disposition": "merged",
+      "rationale": "Explicitly unconstrained by design and unanimously treated by the council as mechanically continuous with extraction. Merged into T1, with the majority's caveat (emerging_economy, finance_domain, hitl_designer) that a permanent manual/paper intake lane and channel/timestamp provenance survive rather than being modelled as a shrinking exception queue.",
+      "target_step_ids": [
+        "T1"
+      ]
+    },
+    {
+      "baseline_step_id": "VIP-02",
+      "disposition": "merged",
+      "rationale": "Also unconstrained by design; merges with VIP-01 into a single capture-and-validation pipeline. The council's near-universal position (pragmatist, finance_domain, agentic_architect, emerging_economy, hitl_designer) is preserved: automation runs unattended on high-confidence extractions, but low-confidence/anomalous records route to a human validator with source-document visibility, and the audit trail distinguishes machine-only from human-affirmed records (hitl_designer's non-negotiable, adopted by emerging_economy and finance_domain in round 2).",
+      "target_step_ids": [
+        "T1"
+      ]
+    },
+    {
+      "baseline_step_id": "VIP-03",
+      "disposition": "restructured",
+      "rationale": "Retained as its own addressable, reportable step, rejecting maximalist's fold into a merged intake/match/authorize pipeline. Six of seven council members (pragmatist, finance_domain, hitl_designer, agentic_architect, accounting_standards, emerging_economy) held that matching needs an independent trigger and log distinguishable from surrounding steps, both for reportability (pragmatist, finance_domain) and because KB-09 ties the PO-GRN-invoice evidence chain to IAS 2 cost measurement, not merely fraud control (accounting_standards). Restructured to add explicit tolerance-band automation, full evidence-lineage logging on every match including clean ones, and an explicit non-PO bypass route (finance_domain, accounting_standards, agentic_architect all converged on this gap), satisfying VIP-R-01/R-02.",
+      "target_step_ids": [
+        "T2"
+      ]
+    },
+    {
+      "baseline_step_id": "VIP-04",
+      "disposition": "restructured",
+      "rationale": "Retained as a distinct, human-decisioned step rather than absorbed into an automated pipeline. This resolves the round-2 conflict directly against maximalist's auto-resolution-with-escalation model: hitl_designer's bright line ('no auto-resolution of exceptions... a human must affirm every exception outcome'), agentic_architect's siding with that line, accounting_standards' KB-05 reading, finance_domain, pragmatist and emerging_economy all converge against maximalist alone. Restructured to add an agent-assisted investigation copilot (draft only, never decides) and an explicit accrual-candidate output closing the GRNI/KB-01/KB-04 linkage that maximalist, agentic_architect and accounting_standards all separately conceded was missing in round 1.",
+      "target_step_ids": [
+        "T3"
+      ]
+    },
+    {
+      "baseline_step_id": "VIP-05",
+      "disposition": "restructured",
+      "rationale": "Retained as a step organisationally and system-permission distinct from posting (VIP-R-03, VIP-R-04, VIP-R-06). Restructured into risk-tiered approval: policy-encoded auto-approval for clean, sub-threshold, non-exception invoices, attributed to a named policy owner and policy version (the position shared by hitl_designer, finance_domain and agentic_architect against pragmatist's insistence on a named individual approver for every invoice). This is a deliberate synthesis decision, not a split: pragmatist's concern is addressed instead by hitl_designer's hard rule, adopted here, that any invoice touched by exception resolution always requires a named human approver regardless of value, and by the requirement that auto-approval remain logged, reversible before posting, and periodically reviewable by the approver hierarchy.",
+      "target_step_ids": [
+        "T4"
+      ]
+    },
+    {
+      "baseline_step_id": "VIP-06",
+      "disposition": "restructured",
+      "rationale": "Non-negotiable across the entire council: GL posting must survive as a distinct step, structurally separate from approval (VIP-R-05, VIP-R-06), because it is the accrual recognition event under KB-01 and the determinable recognition moment under KB-11 (accounting_standards), not a passive pass-through of approval (finance_domain's explicit warning, echoed by accounting_standards in round 2). Restructured to automate mechanical coding while preserving human review for judgment-laden allocations and for accrual-candidate records forwarded from exception resolution, addressing the succession-risk point raised by emerging_economy and finance_domain.",
+      "target_step_ids": [
+        "T5"
+      ]
+    },
+    {
+      "baseline_step_id": "VIP-07",
+      "disposition": "restructured",
+      "rationale": "Retained as its own step; payment execution survives per VIP-R-08 and must follow approval per VIP-R-04. Restructured around agentic_architect's irreversibility framing, adopted convergently by hitl_designer, finance_domain and emerging_economy: everything upstream is a reversible internal state, but bank-file transmission is not, so a maker-checker human release gate is placed specifically there, independent of upstream approval. Mandatory bank-detail-change verification (finance_domain, hitl_designer, emerging_economy, agentic_architect all independently required this) and tracked, non-netted exchange differences (KB-08, accounting_standards) are made explicit, and a manual/asynchronous fallback is retained rather than assuming continuous connectivity or standardised rails (emerging_economy), declining maximalist's always-on 'continuous payment optimization' framing as the reference design.",
+      "target_step_ids": [
+        "T6"
+      ]
+    },
+    {
+      "baseline_step_id": "VIP-08",
+      "disposition": "restructured",
+      "rationale": "AP reconciliation survives per VIP-R-07 and KB-03's cutoff discipline. Restructured to run continuous automated tie-out feeding a discrete, named human period-end sign-off, rejecting the notion (challenged by pragmatist, finance_domain and accounting_standards) that a real-time dashboard state can itself constitute a reconciliation or a certification. The step is explicitly linked back to T3/T5's accrual-candidate records so unresolved GRNI-type items are captured as documented accrual lines before period certification, closing the loop accounting_standards, hitl_designer and agentic_architect all identified as missing from round-1 designs.",
+      "target_step_ids": [
+        "T7"
+      ]
+    }
+  ],
+  "efficiency": {
+    "calls": 16,
+    "cost_usd": 1.460298,
+    "failed_attempts": 1,
+    "input_tokens": 315354,
+    "output_tokens": 82959,
+    "runtime_min": 28.277861
+  },
+  "gate": {
+    "conformance_score": 1.0,
+    "passed": 8,
+    "results": [
+      {
+        "passed": true,
+        "reason": "baseline step VIP-03 is preserved as restructured, carried by target step(s) ['T2']",
+        "requirement_id": "VIP-R-01",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step VIP-03 ['T2'] receives all required input(s) ['Purchase order data', 'Goods receipt note data']",
+        "requirement_id": "VIP-R-02",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step VIP-05 is preserved as restructured, carried by target step(s) ['T4']",
+        "requirement_id": "VIP-R-03",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['T4'] for baseline VIP-05 all precede target step(s) ['T6'] for baseline VIP-07",
+        "requirement_id": "VIP-R-04",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step VIP-06 is preserved as restructured, carried by target step(s) ['T5']",
+        "requirement_id": "VIP-R-05",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "actors separated: VIP-05 → ['Approver hierarchy (named human approvers for material/exception/non-PO invoices; policy-owner-attributed auto-approval for clean sub-threshold invoices)'], VIP-06 → ['AP accountant (distinct system credentials from approval)']",
+        "requirement_id": "VIP-R-06",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step VIP-08 is preserved as restructured, carried by target step(s) ['T7']",
+        "requirement_id": "VIP-R-07",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step VIP-07 is preserved as restructured, carried by target step(s) ['T6']",
+        "requirement_id": "VIP-R-08",
+        "vacuous": false
+      }
+    ],
+    "total": 8
+  },
+  "git_commit": "24be37cf3378e40c844b3af4fc343d9d668e4409",
+  "rep": 3,
+  "resolved_model": "claude-sonnet-5",
+  "run_id": "20260830-052308-council-P2P-VIP-01-2023",
+  "set": "dev-v1",
+  "steps": [
+    {
+      "actor": "AP clerk supervising automated capture/OCR engine, with manual intake lane retained as a first-class path",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HYBRID",
+      "description": "Multi-channel intake (portal, EDI, email PDF, scan, permanent paper lane) and OCR/AI extraction run as a single continuous pipeline producing a structured, validated invoice record (vendor ID, invoice number, dates, amounts, currency, line items, tax, PO reference) with a per-field confidence score. High-confidence extractions pass straight through; low-confidence or anomalous records (duplicate numbers, unrecognized vendor, malformed header, poor-quality scan) route to a human validator who sees the source document image side-by-side with extracted fields, not a bare confirm button. Every record carries channel/timestamp provenance and an explicit flag distinguishing machine-only from human-affirmed data, and confidence thresholds are locally calibrated rather than imported from vendor benchmarks, since non-Latin scripts and degraded scans are a persistent primary channel in some operating units, not a shrinking legacy tail.",
+      "inputs": [
+        "Vendor invoice (email PDF, EDI, supplier portal or paper)",
+        "Raw invoice file"
+      ],
+      "name": "Invoice capture and validation",
+      "outputs": [
+        "Structured validated invoice record with confidence score and provenance metadata",
+        "Human-validated record for low-confidence/anomalous cases"
+      ],
+      "step_id": "T1"
+    },
+    {
+      "actor": "AP analyst (with ERP matching engine)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The validated invoice record is matched against genuine, independently sourced PO and GRN data through a matching engine with configurable tolerance bands, producing a clean match, a tolerance match, or an exception. Clean and in-tolerance matches require no human touch; every match decision, including auto-clean matches, is logged with the three source records it compared (invoice, PO, GRN) so the invoice-to-GRN-to-PO evidence chain that establishes cost under IAS 2/LKAS 2 remains reconstructible. Invoices with no PO reference (utilities, subscriptions, professional services) are explicitly routed around this step to approval rather than forced through an exception path that would dilute genuine variance reporting. Retained as its own addressable, reportable step rather than folded into intake or authorization, so exception-rate KPIs and match-failure categories remain independently queryable by a controller.",
+      "inputs": [
+        "Structured validated invoice record",
+        "Purchase order data",
+        "Goods receipt note data"
+      ],
+      "name": "Automated three-way matching",
+      "outputs": [
+        "Match result (clean, tolerance or exception) with full PO/GRN evidence lineage",
+        "Non-PO invoice population routed directly to approval"
+      ],
+      "step_id": "T2"
+    },
+    {
+      "actor": "AP analyst",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Invoices flagged as exceptions are investigated by a named AP analyst against variance detail, PO/GRN history and vendor communications, with an investigation copilot permitted to assemble evidence and draft a proposed resolution but never to resolve the exception itself. Every exception outcome above a de minimis threshold requires human affirmation grounded in the actual variance evidence, not a confidence score alone; auto-clearing an exception under the same tolerance policy that already failed to clear it as a clean match is treated as suppression, not correction, and is not permitted. Held or disputed items are explicitly linked forward: where goods have been received but the invoice is unresolved, an accrual-candidate (GRNI-type) record is emitted for GL coding/period close rather than left as a silent open item.",
+      "inputs": [
+        "Exception-flagged invoice",
+        "Variance detail",
+        "Purchase order data",
+        "Goods receipt note data",
+        "Vendor history / copilot-drafted proposal (advisory only)"
+      ],
+      "name": "Exception investigation and resolution",
+      "outputs": [
+        "Resolved invoice (approved, rejected or held), human-affirmed",
+        "Audit trail recording the evidence reviewed, not only the verdict",
+        "Accrual-candidate record for unresolved GRNI-type items"
+      ],
+      "step_id": "T3"
+    },
+    {
+      "actor": "Approver hierarchy (named human approvers for material/exception/non-PO invoices; policy-owner-attributed auto-approval for clean sub-threshold invoices)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Matched invoices (clean-matched, coded, below a documented materiality threshold, with no exception history) may be authorised through a policy-encoded auto-approval rule acting under a signed-off delegation of authority, producing a discrete, timestamped, attributable approval record tied to a named policy owner and the policy version applied. Any invoice above the threshold, of non-PO type, or that passed through exception resolution (T3) is always routed to a named human approver in the approval hierarchy regardless of value — exception history overrides auto-approval eligibility as a hard rule. The approval step remains architecturally and organisationally distinct from GL posting (T5): different system role/credentials, no shared execution context, so actor separation is enforced structurally, not just nominally.",
+      "inputs": [
+        "Matched invoice",
+        "GL coding",
+        "Approval matrix",
+        "Exception-history flag"
+      ],
+      "name": "Risk-tiered approval routing and authorisation",
+      "outputs": [
+        "Fully approved invoice with discrete, attributable approval record (named approver or policy owner + policy version)"
+      ],
+      "step_id": "T4"
+    },
+    {
+      "actor": "AP accountant (distinct system credentials from approval)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Mechanical coding to chart of accounts, cost centres and project codes is largely rules-derived from PO/vendor-master data, but the posting event itself — the point at which the payable is recognised as a liability under the accrual basis (IAS 1/LKAS 1, KB-01) and becomes a determinable financial instrument (IFRS 9/SLFRS 9, KB-11) — remains a distinct, reviewable action performed under a system identity separate from approval (T4), satisfying actor separation (VIP-R-06). Invoices lacking clean PO-derived coding, or accrual-candidate records forwarded from T3, receive human coding review and a documented estimation basis where judgment on value or recoverability is involved (IAS 8/LKAS 8, KB-04), addressing succession risk in concentrated coding expertise.",
+      "inputs": [
+        "Fully approved invoice",
+        "Chart of accounts",
+        "Cost centres",
+        "Project codes",
+        "Accrual-candidate records (GRNI/held items)"
+      ],
+      "name": "GL coding and posting",
+      "outputs": [
+        "GL journal entry posted",
+        "AP subledger updated",
+        "Accrual entries with documented basis for held/disputed items"
+      ],
+      "step_id": "T5"
+    },
+    {
+      "actor": "Treasury/AP payments officer",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Posted invoices are scheduled against payment terms, vendor bank details and cash position, with file generation automatable but file transmission to the bank treated as the irreversibility boundary: a maker-checker gate requires human release confirmation, distinct from and in addition to upstream approval, before any payment file leaves the organisation. Any vendor bank-detail change or first-time beneficiary forces human verification regardless of amount. Cross-currency payments generate a tracked, reported exchange-difference record rather than a netted figure (IAS 21/LKAS 21, KB-08). Where connectivity or payment-rail standardisation is unreliable, an asynchronous/manual fallback lane is retained rather than assuming continuous bank connectivity.",
+      "inputs": [
+        "Approved posted invoice",
+        "Payment terms",
+        "Vendor bank details",
+        "Cash position"
+      ],
+      "name": "Payment scheduling and execution",
+      "outputs": [
+        "Payment file generated",
+        "Human release confirmation (maker-checker gate)",
+        "Payment transmitted",
+        "Payment confirmation received",
+        "Exchange-difference record (where applicable)"
+      ],
+      "step_id": "T6"
+    },
+    {
+      "actor": "AP accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Bank confirmations, AP subledger and vendor statements are reconciled continuously where tooling allows, surfacing breaks in near-real time, but the period-end balance is confirmed through a discrete, named human sign-off tied to an enforced cutoff/subledger lock (IAS 1/LKAS 1, KB-03), not a dashboard state. Reconciled figures remain traceable back through journals to source evidence (KB-02). Accrual-candidate records and unresolved exception items forwarded from T3/T5 are captured here as named accrual lines with a documented basis before the period is certified, rather than carried forward silently.",
+      "inputs": [
+        "Bank confirmations",
+        "AP subledger",
+        "Vendor statements",
+        "Accrual-candidate records from exception resolution and posting"
+      ],
+      "name": "Reconciliation and period close",
+      "outputs": [
+        "Reconciled AP ledger",
+        "Period-end balance confirmed with named sign-off",
+        "Cutoff/subledger lock enforced"
+      ],
+      "step_id": "T7"
+    }
+  ],
+  "transcript": [
+    {
+      "chars": 9511,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nVIP-01 (Invoice receipt and intake) — MERGED into a new step, \"Autonomous Capture, Match and Authorize\" (call it TS-01). This baseline step is explicitly unconstrained by design: nothing in the requirements or the standards ties intake to a fixed human-staffed stage. There is no accounting reason a clerk needs to \"log\" an invoice before anything else happens. An intake agent should ingest every channel (EDI, portal, email, paper via OCR) and produce a structured header record as the first event inside a continuous pipeline, not as a discrete queue-and-triage step perform",
+      "phase": "round 1",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 7171,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nVIP-01 (Invoice receipt and intake) — merge into a single \"Invoice capture and validation\" step together with VIP-02. In practice, whether an invoice arrives as EDI, portal upload, email PDF or paper, a competent OCR/validation platform (HighRadius-class) logs it and extracts structured data in one continuous pipeline; keeping intake and extraction as two formally separate steps only adds a handoff nobody actually observes on the floor. I retain the AP clerk as owner of the merged step, not because the technology needs supervision on the happy path, but because paper and",
+      "phase": "round 1",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 7234,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nVIP-01 (Invoice receipt and intake) and VIP-02 (Data extraction and validation) — merge into a single target step, \"Invoice capture and validation\" (T1). This is an accurate reflection of how the work is actually done today in any platform above baseline maturity (HighRadius, Conduent, and comparable capture engines ingest email/EDI/portal/paper and extract+validate fields in one continuous pipeline; a human only re-enters the flow when OCR confidence is low, a duplicate is suspected, or vendor master data doesn't resolve). Splitting intake and extraction into two steps ",
+      "phase": "round 1",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 8516,
+      "excerpt": "# Position Paper — emerging_economy perspective\n\n## 1. PROPOSED DISPOSITIONS\n\n**VIP-01 (Invoice receipt and intake) → restructured, carried by a new Intake & Channel Normalisation step.**\nI do not object to consolidating channels, but I resist any design that assumes every vendor can or will submit via a supplier portal or structured EDI. In our delivery geographies, paper and scanned-email PDF from small and mid-tier vendors remain the dominant channel for years after \"digital-first\" mandates are announced elsewhere in the group. The target step must explicitly retain a manual/paper/email int",
+      "phase": "round 1",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 9388,
+      "excerpt": "# Position Statement — hitl_designer\n\n## 1. PROPOSED DISPOSITIONS\n\n**VIP-01 (Invoice receipt and intake) → restructured, carried by a target \"Intelligent intake and triage\" step.**\nMulti-channel capture is largely mechanical and can be automated end-to-end (portal, EDI, email parsing). But I want a human-visible triage layer surfaced here, not buried later: the system should flag intake anomalies (duplicate invoice numbers, unrecognized vendors, malformed headers) to a named AP clerk role at the point of entry rather than letting them silently ride downstream into VIP-02/03. The clerk's role s",
+      "phase": "round 1",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 8360,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nVIP-01 (Invoice receipt and intake) — MERGED into a new \"Intake & Extraction Agent\" (target step TS-01), together with VIP-02. From an architecture standpoint these are one agentic unit today in every mature implementation: a document lands, an IDP/OCR pipeline fires, and a structured record comes out the other end. Keeping them as two steps with a clerk-mediated handoff between \"log\" and \"extract\" only adds a queue with no independent control value. TS-01's trigger is any inbound channel event (portal webhook, EDI transaction, mailbox rule, scan-to-folder); its tools ar",
+      "phase": "round 1",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 7930,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nVIP-01 (Invoice receipt and intake): retained/merged. This step carries no cited standards principle in the knowledge base and is marked unconstrained by design. I have no objection to it being folded into a combined intake-and-capture step alongside VIP-02, provided the record of the originating channel and timestamp is preserved as metadata — this is not an IFRS requirement per se, but it is the raw material the evidence trail in KB-02 will later depend on. Target: merged into a combined \"invoice capture\" step (call it T-01).\n\nVIP-02 (Data extraction and validation): r",
+      "phase": "round 1",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 7334,
+      "excerpt": "1. CONCEDE\n\nI accept hitl_designer's refinement of what \"audit trail\" must mean inside a collapsed step. My round-1 language — exceptions resolved within tolerance policy \"with the resolution... logged as an immutable audit trail\" — described a verdict log, not an evidence trace. Hitl_designer is right that a confidence score or pass/fail flag attached to an auto-resolved variance is not the same thing as the actual variance evidence being visible to whoever might later challenge it. I concede this changes what TS-01 must output, not whether TS-01 exists: every auto-resolved exception must car",
+      "phase": "round 2",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 8577,
+      "excerpt": "# ROUND 2 — pragmatist\n\n## 1. CONCEDE\n\n**To hitl_designer**, on the mechanics of exception handling: I still hold VIP-04 as a distinct step, but I concede that my Round 1 description was under-specified in a way that matters to a controller. I described the AP analyst \"owning\" exceptions without specifying what evidence they see. hitl_designer's point that a \"confirm\" button with no source-document visibility is a rubber-stamp failure mode is correct, and it's a failure mode I should have named as explicitly as I named the \"system approved it\" failure mode for approvals. I accept the requireme",
+      "phase": "round 2",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 8645,
+      "excerpt": "1. CONCEDE\n\nI accept two points from **emerging_economy** that I underweighted in round 1. First, my merge of VIP-01/VIP-02 into a single \"AP clerk supervising automated capture engine\" step described the technology-forward end of the AP maturity spectrum without naming what happens when it isn't there — paper and low-quality scanned PDF from small vendors is not a shrinking edge case in every operating geography, it is a persistent primary channel, and a target-state design that treats manual intake as a legacy tail will be wrong on day one in those units. I now accept that the merged capture",
+      "phase": "round 2",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 7520,
+      "excerpt": "## 1. CONCEDE\n\n**To pragmatist and finance_domain**, on merging VIP-01 and VIP-02 into a single capture step: in Round 1 I proposed keeping intake and extraction as two restructured steps. Having read both positions again, I accept that a single merged \"capture and validation\" step is sufficient, provided — as both of them and I insist — the AP clerk role is retained as owner of that step rather than assumed away, and the paper/email lane is named as a permanent channel rather than a legacy exception queue destined for zero volume. The step-count reduction itself is not what I was objecting to",
+      "phase": "round 2",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 6894,
+      "excerpt": "1. CONCEDE\n\nTo **accounting_standards**: I had not connected VIP-04 forward to period-close accrual, and this is a real gap in my design. If an invoice is held or disputed at period end because goods were received but the invoice is contested, that is a GRNI-type accrual under KB-01, and if it involves judgment about recoverable value it is an estimate requiring a documented basis under KB-04. My \"Tiered exception resolution\" step needs an explicit output — not just \"resolved/held\" but a flag that routes held items into the accrual mechanism at close, with the same accountable-human requiremen",
+      "phase": "round 2",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 7955,
+      "excerpt": "1. CONCEDE\n\nI accept accounting_standards' point about the GRNI/accrual linkage that my round-1 design left implicit. My TS-03 (exception investigation and resolution) produces a resolved/held disposition but I did not specify what happens to invoices still held or disputed at period end. KB-01 and KB-04 mean that is not a workflow footnote — a held invoice where goods have been received is a liability that must appear somewhere, mechanically accrued or carried by an accountable preparer's documented estimate. I now add this explicitly: TS-03's \"held\" outcome must emit an accrual-candidate rec",
+      "phase": "round 2",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 10083,
+      "excerpt": "# Round 2 — accounting_standards\n\n## 1. CONCEDE\n\nI accept **hitl_designer's** point that audit-trail language must distinguish machine-only actions from human-affirmed ones. My round-1 position said error-correction and reconciliation \"must exist as an identifiable path with an audit-trail output\" but I did not specify what that output must contain. Hitl_designer's non-negotiable — that the trail must distinguish machine-only from human-affirmed actions, and must carry the evidence a human saw, not just the verdict — is a sharper, more testable articulation of exactly what KB-05's \"errors are ",
+      "phase": "round 2",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 16262,
+      "excerpt": "{\n  \"workflow_id\": \"P2P-VIP-01\",\n  \"baseline_step_ids\": [\"VIP-01\",\"VIP-02\",\"VIP-03\",\"VIP-04\",\"VIP-05\",\"VIP-06\",\"VIP-07\",\"VIP-08\"],\n  \"steps\": [\n    {\n      \"step_id\": \"T1\",\n      \"name\": \"Invoice capture and validation\",\n      \"description\": \"Multi-channel intake (portal, EDI, email PDF, scan, permanent paper lane) and OCR/AI extraction run as a single continuous pipeline producing a structured, validated invoice record (vendor ID, invoice number, dates, amounts, currency, line items, tax, PO reference) with a per-field confidence score. High-confidence extractions pass straight through; low-c",
+      "phase": "synthesis",
+      "role": "synthesis",
+      "truncated": true
+    }
+  ],
+  "workflow_id": "P2P-VIP-01"
+}

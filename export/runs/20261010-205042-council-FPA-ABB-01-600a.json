@@ -1,0 +1,446 @@
+{
+  "condition": "council",
+  "consistency_inputs": {
+    "ABB-01": "restructured",
+    "ABB-02": "retained",
+    "ABB-03": "restructured",
+    "ABB-04": "restructured",
+    "ABB-05": "restructured",
+    "ABB-06": "restructured",
+    "ABB-07": "restructured",
+    "ABB-08": "retained",
+    "ABB-09": "restructured"
+  },
+  "created_utc": "2026-10-10T20:50:42.777050Z",
+  "depth": {
+    "counts": {
+      "absorbed": 0,
+      "eliminated": 0,
+      "merged": 0,
+      "restructured": 7,
+      "retained": 2
+    },
+    "score": 0.777778,
+    "total_baseline_steps": 9
+  },
+  "disposition_convention_version": "v1, restored 11 Oct 2026",
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "ABB-01",
+      "disposition": "restructured",
+      "rationale": "Retained as a distinct FP&A-manager-owned step (council majority against folding it into target-setting: the actor and the nature of the act differ, and ABB-07's challenge cycle needs a cleanly dated assumption set to reconcile against). Restructured to add agent-assisted drafting with a stale-feed fallback, a dual structured/document issuance channel for uneven-infrastructure submitters, and a quantified, legible downside scenario, satisfying ABB-R-01 and ABB-R-10.",
+      "target_step_ids": [
+        "TS-01"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-02",
+      "disposition": "retained",
+      "rationale": "Kept as its own CEO/CFO-owned step despite being unconstrained by design. The council majority (pragmatist, finance_domain, hitl_designer, agentic_architect) rejected merging it into ABB-01: strategic target-setting and assumption issuance are different actors making different kinds of decisions, and collapsing them would blur who is answerable for the target. An advisory dashboard is permitted but does not change the disposition.",
+      "target_step_ids": [
+        "TS-02"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-03",
+      "disposition": "restructured",
+      "rationale": "Step and ownership preserved per ABB-R-02; the majority view (pragmatist, finance_domain, emerging_economy, hitl_designer, agentic_architect) held against maximalist's merge of ABB-03/04/05 on the grounds that it would blur per-owner accountability and invert the burden of proof onto reviewers of agent-drafted exceptions. Restructured only to add optional drafting assistance with a diffed, retained baseline and an offline-template fallback.",
+      "target_step_ids": [
+        "TS-03"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-04",
+      "disposition": "restructured",
+      "rationale": "Step and ownership preserved per ABB-R-03, for the same accountability-segregation reasons applied to ABB-03. Restructured to permit agent-assisted drafting while keeping cost centre owners as the accountable authors, with offline submission retained as first-class.",
+      "target_step_ids": [
+        "TS-04"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-05",
+      "disposition": "restructured",
+      "rationale": "Step preserved and kept separate from revenue/cost submission to protect ownership traceability. Restructured per hitl_designer's and agentic_architect's concession: the business-case-above-threshold input (ABB-R-04) is now paired with a named human reviewer obligated to substantively engage with it, not merely a completeness check, closing the rubber-stamp gap identified across the council.",
+      "target_step_ids": [
+        "TS-05"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-06",
+      "disposition": "restructured",
+      "rationale": "Function preserved per ABB-R-06, continuing to consume accounting policies applied to actuals (ABB-R-05) and central FX assumptions (ABB-R-07) as explicit, versioned, inspectable inputs per accounting_standards' and emerging_economy's insistence. Restructured to automate aggregation and FX translation while requiring a halt-on-break reconciliation and a named human certification of a discrete, evidenced snapshot (rejecting maximalist's purely continuous, uncertified model); intercompany elimination is made explicit for multi-entity groups per finance_domain's and accounting_standards' concession, and a manual fallback procedure is specified per emerging_economy.",
+      "target_step_ids": [
+        "TS-06"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-07",
+      "disposition": "restructured",
+      "rationale": "Although unconstrained by design, the council majority (pragmatist, finance_domain, hitl_designer, emerging_economy, agentic_architect) rejected maximalist's absorption of this function into a standing exception queue: a deliberative negotiation with a closure point and a kickback path cannot be replaced by reactive variance triage. Retained as a discrete, closeable step, restructured to be exception-fed, time-boxed with an explicit non-convergence escalation and resubmission path, and supplemented with an asynchronous document-based challenge log for uneven-connectivity participants.",
+      "target_step_ids": [
+        "TS-07"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-08",
+      "disposition": "retained",
+      "rationale": "Preserved unchanged as a discrete governance gate per ABB-R-11; no council member proposed touching its substance. Strengthened only insofar as the board pack must carry the reconciliation certification and unresolved challenges forward so that approval is informed, per hitl_designer's non-negotiable.",
+      "target_step_ids": [
+        "TS-08"
+      ]
+    },
+    {
+      "baseline_step_id": "ABB-09",
+      "disposition": "restructured",
+      "rationale": "Preserved per ABB-R-09, with ordering against board approval (ABB-R-08) enforced architecturally rather than merely by sequence: the lock trigger is conditioned on a verified approval record, which may be a system-of-record signal or a signed manual document with logged history, resolving the connectivity-dependence conflict raised by emerging_economy. An independent human confirmation that the locked artefact matches the board-approved artefact is added per hitl_designer's and agentic_architect's shared refinement, and any post-lock correction requires a logged unlock-relock action.",
+      "target_step_ids": [
+        "TS-09"
+      ]
+    }
+  ],
+  "efficiency": {
+    "calls": 15,
+    "cost_usd": 1.420914,
+    "failed_attempts": 0,
+    "input_tokens": 295102,
+    "output_tokens": 83071,
+    "runtime_min": 16.250751
+  },
+  "gate": {
+    "conformance_score": 1.0,
+    "passed": 11,
+    "results": [
+      {
+        "passed": true,
+        "reason": "baseline step ABB-01 is preserved as restructured, carried by target step(s) ['TS-01']",
+        "requirement_id": "ABB-R-01",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ABB-03 is preserved as restructured, carried by target step(s) ['TS-03']",
+        "requirement_id": "ABB-R-02",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ABB-04 is preserved as restructured, carried by target step(s) ['TS-04']",
+        "requirement_id": "ABB-R-03",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step ABB-05 ['TS-05'] receives all required input(s) ['Business case for capex above threshold']",
+        "requirement_id": "ABB-R-04",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step ABB-06 ['TS-06'] receives all required input(s) ['Accounting policies applied to actuals']",
+        "requirement_id": "ABB-R-05",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ABB-06 is preserved as restructured, carried by target step(s) ['TS-06']",
+        "requirement_id": "ABB-R-06",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step ABB-06 ['TS-06'] receives all required input(s) ['Central FX assumptions']",
+        "requirement_id": "ABB-R-07",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['TS-08'] for baseline ABB-08 all precede target step(s) ['TS-09'] for baseline ABB-09",
+        "requirement_id": "ABB-R-08",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ABB-09 is preserved as restructured, carried by target step(s) ['TS-09']",
+        "requirement_id": "ABB-R-09",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step ABB-01 ['TS-01'] receives all required input(s) ['Downside macro scenario']",
+        "requirement_id": "ABB-R-10",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step ABB-08 is preserved as retained, carried by target step(s) ['TS-08']",
+        "requirement_id": "ABB-R-11",
+        "vacuous": false
+      }
+    ],
+    "total": 11
+  },
+  "git_commit": "fe1a87a8a5672d763c3248a4b18f227ae1b3b204",
+  "rep": 5,
+  "resolved_model": "claude-sonnet-5",
+  "run_id": "20261010-205042-council-FPA-ABB-01-600a",
+  "set": "heldout-v1",
+  "steps": [
+    {
+      "actor": "FP&A manager",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "FP&A manager issues the budget calendar, central planning assumptions (inflation, FX, interest rates) and a quantified, re-runnable downside macro scenario. A drafting agent pulls macro feeds and generates a first-cut calendar and scenario from the prior-cycle template; the FP&A manager reviews, edits and is the named, dated author who issues the package. Output is dual-channel: a structured data feed for units with portal/ERP access, and an equally authoritative static document (PDF/spreadsheet) for offline submitters. If a data feed is stale or unavailable, the agent flags the gap rather than silently interpolating and the FP&A manager supplies the figure manually. The downside scenario remains a legible, inspectable artefact, not merely a parameter buried inside a model.",
+      "inputs": [
+        "Macroeconomic outlook",
+        "Downside macro scenario",
+        "Prior-cycle calendar template"
+      ],
+      "name": "Issue calendar and central planning assumptions",
+      "outputs": [
+        "Budget calendar",
+        "Central planning assumptions",
+        "Central FX assumptions",
+        "Quantified downside macro scenario document"
+      ],
+      "step_id": "TS-01"
+    },
+    {
+      "actor": "CEO / CFO",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "CEO/CFO set top-down revenue, margin and cost targets as strategic allocation judgment, unchanged in substance from the baseline. An optional advisory analytics dashboard may surface historical performance and strategic-plan alignment, but it is decision support only and never an authoring actor; the CEO/CFO remain the sole accountable authors of the target, distinct from FP&A's assumption-issuance role in TS-01.",
+      "inputs": [
+        "Strategic plan",
+        "Central planning assumptions"
+      ],
+      "name": "Set top-down targets",
+      "outputs": [
+        "Top-down targets"
+      ],
+      "step_id": "TS-02"
+    },
+    {
+      "actor": "Business unit heads",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Business unit heads prepare and own revenue and volume plans. A forecast-drafting agent may produce a statistical baseline from historical actuals and pipeline data as a starting point, but the BU head reviews, overrides and submits the final number and must be able to explain and defend it; the agent's baseline and the final submission are both retained and diffed so material departures are visible. Offline-capable, template-based submission with validation remains a first-class path, not a deprecated exception, for units without forecasting-tool access; on connector failure the agent falls back to a prior-year template and logs the degraded mode without blocking the BU head.",
+      "inputs": [
+        "Top-down targets",
+        "Central planning assumptions",
+        "Historical actuals and pipeline data"
+      ],
+      "name": "Revenue and volume plans",
+      "outputs": [
+        "Revenue and volume plans"
+      ],
+      "step_id": "TS-03"
+    },
+    {
+      "actor": "Cost centre owners",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Cost centre owners prepare and own cost centre and headcount budgets, kept as a distinct, separately accountable step from revenue planning and capex so that challenge in review can trace a number to a single owner. A cost-drafting agent may propose a baseline indexed to central assumptions and run-rate; the owner reviews and owns the submission, with offline spreadsheet-based submission remaining a legitimate path for locally-owned attrition/backfill judgment in offshore or thin-connectivity contexts.",
+      "inputs": [
+        "Top-down targets",
+        "Central planning assumptions",
+        "Historical run-rate data"
+      ],
+      "name": "Cost centre and headcount budgets",
+      "outputs": [
+        "Cost centre and headcount budgets"
+      ],
+      "step_id": "TS-04"
+    },
+    {
+      "actor": "Business unit heads; CFO / capital allocation committee (reviewer)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Business unit heads submit capex requests. A deterministic validation agent enforces a hard completeness gate: no request above threshold may be submitted without an attached business case. Separately, every above-threshold request is routed to a named reviewer (CFO or capital allocation committee) who substantively reads and signs off the case before it proceeds to consolidation; the agent's pass/fail is not itself the approval. Any exception path is logged and attributable.",
+      "inputs": [
+        "Business case for capex above threshold",
+        "Central planning assumptions"
+      ],
+      "name": "Capex requests",
+      "outputs": [
+        "Capex requests",
+        "Capex business case review sign-off"
+      ],
+      "step_id": "TS-05"
+    },
+    {
+      "actor": "FP&A analyst / controller",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Submissions are consolidated into a draft three-statement budget prepared on the same accounting basis as actuals. A consolidation agent automates aggregation, applies the version-pinned accounting policies and central FX assumptions used for actuals, and runs a deterministic three-statement reconciliation; for multi-entity groups it explicitly performs intercompany identification and elimination consistent with how actuals are consolidated. Any reconciliation break, policy deviation, or FX override halts the run and routes to a named FP&A analyst/controller, who certifies a discrete, evidenced 'reconciled' snapshot before the draft proceeds — recomputation may be frequent, but every snapshot that moves forward is explicitly certified, not merely live. A documented manual consolidation and tie-out procedure exists as a fallback when the platform is unavailable, using the same policy and FX inputs.",
+      "inputs": [
+        "Revenue and volume plans",
+        "Cost centre and headcount budgets",
+        "Capex requests",
+        "Accounting policies applied to actuals",
+        "Central FX assumptions"
+      ],
+      "name": "Consolidate into draft P&L, balance sheet, cash flow",
+      "outputs": [
+        "Draft three-statement budget",
+        "Reconciliation certification",
+        "Intercompany elimination schedule"
+      ],
+      "step_id": "TS-06"
+    },
+    {
+      "actor": "FP&A manager / CFO",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The draft budget is reviewed and challenged in iterations with submitters by the FP&A manager and CFO. This remains a discrete, nameable, closeable negotiation step — not a standing exception queue — fed by an automated variance/exception-flagging agent that highlights the largest departures from target, prior year and the downside scenario to focus the conversation. Review is time-boxed to a defined number of rounds with an explicit non-convergence escalation path: specific line items that do not converge are kicked back to TS-03/TS-04/TS-05 for resubmission (not silently overridden by FP&A), and persistent non-convergence past the final round is escalated to the CFO for a logged, attributed override decision. An asynchronous, document-based challenge log is maintained alongside any live review sessions so participants without reliable bandwidth or synchronous access can take part.",
+      "inputs": [
+        "Draft three-statement budget",
+        "Automated variance/exception flags"
+      ],
+      "name": "Review and challenge iterations",
+      "outputs": [
+        "Revised budget",
+        "Challenge log / kickback record"
+      ],
+      "step_id": "TS-07"
+    },
+    {
+      "actor": "Board",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The board approves the budget as a discrete, evidenced governance act that strictly precedes load-and-lock. The board pack presents the reconciliation certification, the downside scenario's treatment, and any unresolved or escalated challenges from TS-07 — not a sanitised summary — so that approval is informed, not ceremonial. An optional assistant may compile board materials, but the approval act itself is irreducibly human and is the recorded trigger condition for TS-09.",
+      "inputs": [
+        "Revised budget",
+        "Reconciliation certification",
+        "Challenge log / kickback record"
+      ],
+      "name": "Board approval",
+      "outputs": [
+        "Board-approved budget"
+      ],
+      "step_id": "TS-08"
+    },
+    {
+      "actor": "FP&A analyst",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The approved budget is loaded and immutably locked as the single version used by variance analysis. A load-and-lock mechanism is triggered only by a verified approval record — either a system-of-record approval signal or, where no such system is reachable, a signed-off manual document with a logged change history treated as an equally valid trigger — enforcing board-approval-before-lock architecturally, not merely by sequence. Before finalising the lock, a named FP&A analyst distinct from whoever executed the load independently confirms (via diff/hash or manual comparison) that the loaded artefact matches the board-approved artefact. Any later correction requires an explicit, logged unlock-relock action referencing the governing approval; silent post-lock edits are not permitted.",
+      "inputs": [
+        "Board-approved budget"
+      ],
+      "name": "Load and lock approved version",
+      "outputs": [
+        "Locked approved budget version",
+        "Load-lock verification record"
+      ],
+      "step_id": "TS-09"
+    }
+  ],
+  "transcript": [
+    {
+      "chars": 6521,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nABB-01 (Issue calendar and central planning assumptions) — merged into a new combined step, \"Issue integrated planning package\" (target step, call it TS-01). There is no reason a calendar, macro assumptions, FX assumptions and a downside scenario should be issued as a free-standing human-authored artefact when an agent can pull the macro feed, generate the downside scenario, and draft the calendar in minutes. I would fold ABB-02 straight into the same step rather than let two separate human-authored \"central issuance\" moments survive back to back.\n\nABB-02 (Set top-down t",
+      "phase": "round 1",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 7505,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nABB-01 (Issue calendar and central planning assumptions) — Retained, carried forward unchanged as the opening step. This is the one place in the whole cycle where everyone downstream gets their marching orders; I will not entertain folding it into target-setting (ABB-02) just to shave a step off a diagram. FP&A manager issues calendar, central assumptions, FX assumptions and the mandatory downside scenario in one package, as today.\n\nABB-02 (Set top-down targets) — Retained as a distinct step, output carried by CEO/CFO. It is flagged unconstrained-by-design and I'm not us",
+      "phase": "round 1",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 8804,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nABB-01 (Issue calendar and central planning assumptions) — Retained, unchanged in substance, carried forward as the opening step of the target workflow. This is the single point where macro assumptions, FX rates and the mandatory downside scenario are fixed for the cycle. I would tighten the description to require that the downside scenario be *quantified* (not just narrated) so that it can later be run through the same model as the base case, but the step itself does not move or split.\n\nABB-02 (Set top-down targets) — Retained. Although this step is flagged unconstraine",
+      "phase": "round 1",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 8157,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nABB-01 (Issue calendar and central planning assumptions) — Retained. I support consolidating the assumption package (central planning assumptions, FX, downside scenario) issued through a single FP&A-manager-owned step, but I insist the output channel be dual-track: a structured data feed for units with ERP/portal access, and a static document (PDF/spreadsheet) for units that will submit offline. Do not retire the document form in favour of a portal-only release.\n\nABB-02 (Set top-down targets) — Retained, carried by a target-setting step owned by CEO/CFO, unchanged in sub",
+      "phase": "round 1",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 8429,
+      "excerpt": "# PROPOSED DISPOSITIONS\n\n**ABB-01 (Issue calendar and central planning assumptions) — retained, restructured into T1.**\nThe calendar distribution is clerical and can be automated (templated issuance, scheduling), but the assumption-setting — inflation, FX, rates, and in particular the downside macro scenario — is a judgment act. I do not want \"issue a downside scenario\" to decay into pasting last year's recession case into a template. The target step must show the FP&A manager's name against a dated, reasoned set of assumptions, with the downside scenario explicitly constructed (not inherited)",
+      "phase": "round 1",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 10081,
+      "excerpt": "# PROPOSED DISPOSITIONS\n\n**ABB-01 (Issue calendar and central planning assumptions) → restructured, carried by TS-01.**\nA *Planning Assumptions Drafting Agent* pulls macro data (inflation, FX curves, interest rates) from the organisation's standard data feeds, applies a scenario-generation tool to produce at least one downside macro scenario, and drafts the calendar from the prior cycle's template. This is a bounded, tool-using agent — not a free-form LLM judgment call. The FP&A manager reviews the draft, edits as needed, and is the one who issues it. The agent never issues to submitters direc",
+      "phase": "round 1",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 9482,
+      "excerpt": "# PROPOSED DISPOSITIONS\n\n**ABB-01 (Issue calendar and central planning assumptions): RETAINED.**\nThis step should survive essentially intact as the anchor for both reporting-period discipline (KB-03) and FX handling (KB-07). The central planning assumptions it issues — including central FX assumptions and the downside macro scenario — are inputs that downstream consolidation (ABB-06) cannot do without. I would carry it forward as a single \"Issue calendar, assumptions and FX rates\" step with no reduction in its outputs.\n\n**ABB-02 (Set top-down targets): no standards objection; disposition is fo",
+      "phase": "round 1",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 8428,
+      "excerpt": "1. CONCEDE\n\nThe hitl_designer's distinction between \"the artefact survives\" and \"the accountable human survives\" is a real correction to my position, not a stylistic quibble. I was treating `step_preserved` as satisfied once a function's output still appears somewhere downstream. Hitl_designer is right that a merged step can satisfy the schema's letter while hollowing out the thing the requirement actually protects — a named person who can explain and defend a number. I accept that my TS-02 (\"Integrated unit planning\") must carry explicit, named sub-accountability for revenue/volume (business ",
+      "phase": "round 2",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 7973,
+      "excerpt": "1. CONCEDE\n\nI accept hitl_designer's objection to my treatment of ABB-05: I retained the step and preserved the business-case-above-threshold input, but I said nothing about who reviews it. hitl_designer is right that \"a business case that nobody is accountable for reviewing is a rubber stamp by design\" — the requirement (ABB-R-04) only mandates the input exist, but a controller would ask who reads it. Naming a reviewer (CFO or a capex committee) inside the retained ABB-05 step is cheap, changes nothing about ownership or sequencing, and closes a real gap in my own proposal. I'm folding that i",
+      "phase": "round 2",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 8667,
+      "excerpt": "1. CONCEDE\n\nI accept agentic_architect's discipline of inserting automation inside existing step boundaries rather than reshuffling the process graph. Having now compared my own restructuring language against theirs, I agree that naming an explicit tool/agent, a trigger condition, and a degraded-mode failure path (stale FX feed flagged rather than silently interpolated; reconciliation break halts the pipeline rather than auto-closing) is sharper and more implementable than my own looser \"restructured, with automation acceptable\" phrasing for ABB-01, ABB-06 and ABB-09. I will adopt that failure",
+      "phase": "round 2",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 7698,
+      "excerpt": "1. CONCEDE\n\nI accept agentic_architect's discipline of pairing every drafting agent with an explicit, named degraded-mode behaviour — stale macro feed flagged rather than silently interpolated, failed forecast connector falling back to a prior-year template and logging the degraded mode rather than blocking the business unit head. This is a better operationalisation of my own non-negotiable than I gave it: rather than insisting on a permanent, parallel manual channel for every automated path, I will accept an automated-with-named-fallback pattern, provided the fallback is something a non-speci",
+      "phase": "round 2",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 8097,
+      "excerpt": "1. CONCEDE\n\nI accept agentic_architect's refinement to my T9 proposal: enforcing ABB-R-08 architecturally — the load-and-lock action triggered only by a verified approval record in the system of record, rather than by \"the load-and-lock step occurs after the board approval step\" in a process diagram — is a stronger control than the one I described. My round-1 version asked for a named human to \"confirm the locked version matches the board-approved version byte-for-byte,\" which is a good integrity check but doesn't by itself prevent a load-and-lock task from firing on a stale or unapproved draf",
+      "phase": "round 2",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 7824,
+      "excerpt": "1. CONCEDE\n\nI accept hitl_designer's objection to my original ABB-05/TS-05 design. I specified a Capex Validation Agent as a \"hard gate, not advisory,\" but I conflated two different functions: a deterministic completeness check (is a business case attached above threshold — yes/no) and a substantive judgment (is this business case adequate — does someone actually read it). hitl_designer is right that \"a business case that nobody is accountable for reviewing is a rubber stamp by design.\" I now split these: the agent enforces the mechanical gate (no submission without an attached document above ",
+      "phase": "round 2",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 7467,
+      "excerpt": "1. CONCEDE\n\nI accept finance_domain's point on ABB-06 and intercompany positions. I had flagged this only as a conditional note (\"if the group's actuals consolidation eliminates intragroup positions...\"), treating KB-14 as domain-R2R-only and therefore marginal to my mandate here. Finance_domain is right that this is too passive: the baseline description already requires the budget be prepared \"on the same accounting basis as actuals,\" and for any group with more than one legal entity that basis necessarily includes intercompany elimination under IFRS 10. I now treat this as something the rede",
+      "phase": "round 2",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 14488,
+      "excerpt": "{\n  \"workflow_id\": \"FPA-ABB-01\",\n  \"baseline_step_ids\": [\"ABB-01\",\"ABB-02\",\"ABB-03\",\"ABB-04\",\"ABB-05\",\"ABB-06\",\"ABB-07\",\"ABB-08\",\"ABB-09\"],\n  \"steps\": [\n    {\n      \"step_id\": \"TS-01\",\n      \"name\": \"Issue calendar and central planning assumptions\",\n      \"description\": \"FP&A manager issues the budget calendar, central planning assumptions (inflation, FX, interest rates) and a quantified, re-runnable downside macro scenario. A drafting agent pulls macro feeds and generates a first-cut calendar and scenario from the prior-cycle template; the FP&A manager reviews, edits and is the named, dated a",
+      "phase": "synthesis",
+      "role": "synthesis",
+      "truncated": true
+    }
+  ],
+  "workflow_id": "FPA-ABB-01"
+}

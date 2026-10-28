@@ -1,0 +1,371 @@
+{
+  "condition": "sequential",
+  "consistency_inputs": {
+    "VAR-01": "restructured",
+    "VAR-02": "restructured",
+    "VAR-03": "restructured",
+    "VAR-04": "restructured",
+    "VAR-05": "restructured",
+    "VAR-06": "restructured",
+    "VAR-07": "restructured",
+    "VAR-08": "restructured"
+  },
+  "created_utc": "2026-10-27T09:07:12.161436Z",
+  "depth": {
+    "counts": {
+      "absorbed": 0,
+      "eliminated": 0,
+      "merged": 0,
+      "restructured": 8,
+      "retained": 0
+    },
+    "score": 1.0,
+    "total_baseline_steps": 8
+  },
+  "disposition_convention_version": "v1, restored 11 Oct 2026",
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "VAR-01",
+      "disposition": "restructured",
+      "rationale": "Extraction from the locked period is automated as a scheduled, tool-scoped process, but the council converged (pragmatist, finance_domain, emerging_economy, hitl_designer, agentic_architect; maximalist conceded) that a reconciliation gate against the GL control total and a visible exception-escalation path to a named analyst must be a built-in function, not an implicit assumption, and that a documented manual-procedure path must exist where system integration is unavailable. The locked-period boundary itself remains the sole input per VAR-R-01 and KB-03, preserved unchanged.",
+      "target_step_ids": [
+        "T1"
+      ]
+    },
+    {
+      "baseline_step_id": "VAR-02",
+      "disposition": "restructured",
+      "rationale": "Loading comparatives shares T1's trigger (period lock) and failure-handling pattern (halt-and-escalate), per agentic_architect's tool-contract reasoning, which the council converged on over the maximalist's single monolithic engine. A version-lineage check against the locked period's fiscal calendar, surfaced to a human on ambiguity, replaces silent default-resolution of comparative vintage. Approved budget version and latest forecast remain explicit inputs per VAR-R-02, with file-based handoff accepted as an equal first-class channel per emerging_economy's point.",
+      "target_step_ids": [
+        "T1"
+      ]
+    },
+    {
+      "baseline_step_id": "VAR-03",
+      "disposition": "restructured",
+      "rationale": "Computation is separated architecturally from T1 (distinct trigger, distinct failure mode — parameter drift vs. data unavailability) per agentic_architect, finance_domain, and accounting_standards. The council settled a direct conflict between the maximalist's 'configuration, not something a human applies' framing and accounting_standards'/agentic_architect's requirement that any change to decomposition methodology, policy mapping, or FX rate-set be a hard precondition gate requiring genuine human attestation of its effect, not a version tag nobody reads. Accounting policies applied to actuals and constant-currency exchange rates remain mandatory inputs per VAR-R-05, VAR-R-06, and KB-06/KB-07.",
+      "target_step_ids": [
+        "T2"
+      ]
+    },
+    {
+      "baseline_step_id": "VAR-04",
+      "disposition": "restructured",
+      "rationale": "Mechanical thresholding is automated, but the council unanimously preserved the analyst override path (finance_domain's 'creeping variance' case, formalized by hitl_designer and agentic_architect as a named, reason-coded, auditable action) as the real locus of residual judgment. Entity-level threshold calibration is adopted per emerging_economy to avoid a single global parameter set misreading volatile-currency entities. Kept as a distinct, addressable step with distinct actor identity to satisfy VAR-R-03, VAR-R-08, and the actor-separation requirement VAR-R-04 against T6.",
+      "target_step_ids": [
+        "T3"
+      ]
+    },
+    {
+      "baseline_step_id": "VAR-05",
+      "disposition": "restructured",
+      "rationale": "This is the council's most sharply contested step. The maximalist's exception-only attestation was rejected by six of seven perspectives (pragmatist, finance_domain, emerging_economy, hitl_designer, agentic_architect, and the maximalist's own round-2 concession): a confidence score cannot detect commentary that is plausible but substantively wrong for reasons outside the dataset the model sees (finance_domain's backfilled-SKU example), and exception-only routing would also destroy the training signal needed to ever validate such a model safely (agentic_architect). The target state is AI-assisted drafting with mandatory, affirmative, per-variance attestation every cycle, with non-response as a distinct visible state and first-class asynchronous/offline channels (emerging_economy, hitl_designer) rather than a connectivity-dependent default.",
+      "target_step_ids": [
+        "T4"
+      ]
+    },
+    {
+      "baseline_step_id": "VAR-06",
+      "disposition": "restructured",
+      "rationale": "Consolidation/formatting is automatable, but the council (finance_domain, hitl_designer, agentic_architect, emerging_economy) converged that completeness-checking is a distinct, falsifiable control against the specific real-world failure mode of silently-shipped placeholder commentary — kept separate from T4 because the two failure modes (wrong commentary vs. missing commentary) require separate root-causing.",
+      "target_step_ids": [
+        "T5"
+      ]
+    },
+    {
+      "baseline_step_id": "VAR-07",
+      "disposition": "restructured",
+      "rationale": "The council decisively rejected the maximalist's exception-restricted review design: hitl_designer, agentic_architect, pragmatist (on reconsideration), finance_domain, and emerging_economy converged that full-population access must be a standing, permanent right of the reviewer, with routing used only to prioritize, never to gate, attention — the central unresolved conflict the maximalist itself named and did not win. Migration to prioritized routing is validated per entity class (emerging_economy, finance_domain) rather than on a single blanket timeline, since confidence models trained on clean data are least reliable on the noisiest entities. Remains actor-distinct from T3 per VAR-R-04, satisfying VAR-R-07's survival requirement.",
+      "target_step_ids": [
+        "T6"
+      ]
+    },
+    {
+      "baseline_step_id": "VAR-08",
+      "disposition": "restructured",
+      "rationale": "Distribution is folded into T6's publication trigger for the routine case — a logged, reversible, judgment-free act, per the council's near-unanimous agreement that automated publication is sound once review clears. The maximalist's full collapse into an unconditional auto-publish was rejected: hitl_designer's and agentic_architect's refinement, that the reviewer retains a standing, logged pull-back authority to convene a walkthrough (rather than a fixed materiality-bar trigger, which pragmatist/finance_domain proposed and agentic_architect argued is a weaker, driftable governance mechanism), is adopted. Document-based distribution is retained as an equal first-class channel alongside dashboard push per emerging_economy, not a legacy fallback.",
+      "target_step_ids": [
+        "T6"
+      ]
+    }
+  ],
+  "efficiency": {
+    "calls": 15,
+    "cost_usd": 1.488492,
+    "failed_attempts": 0,
+    "input_tokens": 430866,
+    "output_tokens": 62676,
+    "runtime_min": 13.627717
+  },
+  "gate": {
+    "conformance_score": 0.875,
+    "passed": 7,
+    "results": [
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step VAR-01 ['T1'] receives all required input(s) ['Locked-period actuals']",
+        "requirement_id": "VAR-R-01",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step VAR-02 ['T1'] receives all required input(s) ['Approved budget version', 'Latest forecast']",
+        "requirement_id": "VAR-R-02",
+        "vacuous": false
+      },
+      {
+        "passed": false,
+        "reason": "target step(s) carrying baseline step VAR-04 do not receive all required input(s) ['Materiality thresholds (percentage and absolute)']: T3 is missing ['Materiality thresholds (percentage and absolute)']",
+        "requirement_id": "VAR-R-03",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "actors separated: VAR-04 → ['FP&A analyst'], VAR-07 → ['FP&A manager']",
+        "requirement_id": "VAR-R-04",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step VAR-03 ['T2'] receives all required input(s) ['Accounting policies applied to actuals']",
+        "requirement_id": "VAR-R-05",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step VAR-03 ['T2'] receives all required input(s) ['Constant-currency exchange rates']",
+        "requirement_id": "VAR-R-06",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step VAR-07 is preserved as restructured, carried by target step(s) ['T6']",
+        "requirement_id": "VAR-R-07",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step VAR-04 is preserved as restructured, carried by target step(s) ['T3']",
+        "requirement_id": "VAR-R-08",
+        "vacuous": false
+      }
+    ],
+    "total": 8
+  },
+  "git_commit": "987d710ba37e0c3946c197a3f96ab7f1bf99bac8",
+  "rep": 5,
+  "resolved_model": "claude-sonnet-5",
+  "run_id": "20261027-090712-sequential-FPA-VAR-01-a7de",
+  "set": "sequential",
+  "steps": [
+    {
+      "actor": "FP&A analyst (extraction/loading exception owner)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "A scoped extraction/loading process pulls actuals from the locked closed period and loads the approved budget version and latest forecast as comparatives, via API or file-based channel as the local environment requires. Each run emits a reconciliation receipt (control total tie-out against the GL) and a version-lineage confirmation (budget-version ID, forecast-cycle ID checked against the locked period's fiscal calendar). A clean pass proceeds automatically with no human touch; a reconciliation break or an ambiguous/stale comparative vintage halts the run and routes the specific discrepancy to a named FP&A analyst for resolution, who may also execute the step manually via a documented procedure with the same output contract where system integration is unavailable.",
+      "inputs": [
+        "Locked-period actuals",
+        "Approved budget version",
+        "Latest forecast"
+      ],
+      "name": "Automated extraction and comparative loading with reconciliation and version-lineage gates",
+      "outputs": [
+        "Actuals dataset",
+        "Comparatives dataset",
+        "Reconciliation receipt",
+        "Version-lineage confirmation",
+        "Exception escalation record (on failure)"
+      ],
+      "step_id": "T1"
+    },
+    {
+      "actor": "FP&A analyst (parameter-change attestor)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Price, volume and mix variances are computed on actuals and comparatives prepared on the same accounting basis, with FX effects isolated at constant currency, using decomposition-methodology, policy-mapping and rate-set parameters drawn from a versioned parameter store. Routine, unchanged parameters require no human touch. Any period-over-period change to the decomposition methodology, policy mapping, or FX rate-set is a hard precondition: the engine will not execute against the new parameters until a named accountable owner attests to the change, shown the before/after effect on reported figures, not merely a version diff. Output carries the methodology and rate-set version used, surfaced to the accountable reviewer, not merely logged as unread metadata.",
+      "inputs": [
+        "Actuals dataset",
+        "Comparatives dataset",
+        "Accounting policies applied to actuals",
+        "Constant-currency exchange rates"
+      ],
+      "name": "Variance decomposition engine with parameter-change gate",
+      "outputs": [
+        "Variance dataset (methodology/rate-set tagged)",
+        "Parameter-change attestation record (when applicable)"
+      ],
+      "step_id": "T2"
+    },
+    {
+      "actor": "FP&A analyst",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Variances exceeding the configured percentage or absolute materiality threshold (calibrated at entity or entity-class level to avoid uniform-currency distortion) are automatically selected for explanation. An analyst may add a below-threshold variance to the flagged list via an explicit override tool with a mandatory reason code, visibly distinguished in the output from mechanically-flagged items. This step is staffed and system-accounted distinctly from review and challenge (T6), enforced at the access-control layer, not by convention.",
+      "inputs": [
+        "Variance dataset",
+        "Materiality thresholds (percentage and absolute, entity-calibrated)"
+      ],
+      "name": "Materiality-threshold flagging with override authority",
+      "outputs": [
+        "Variances to explain (threshold-flagged and analyst-added, with provenance and reason codes)"
+      ],
+      "step_id": "T3"
+    },
+    {
+      "actor": "Budget holders (with FP&A-assisted drafting agent)",
+      "class_agentic_only": "HYBRID",
+      "class_primary": "HYBRID",
+      "description": "A drafting agent, scoped to read-only access on the variance decomposition and a driver-pattern library, produces a first-draft commentary with a provenance tag showing which patterns it drew on. Every flagged variance, every cycle, is routed to its accountable budget holder, who must affirmatively confirm or correct the draft; non-response is recorded as a distinct, visible 'outstanding' state and never silently resolved to implied agreement. Attestation channels include synchronous one-click interfaces and first-class asynchronous/offline/low-bandwidth modes (not a degraded fallback), with each channel producing its own provenance tag (e.g., analyst-transcribed-on-behalf-of).",
+      "inputs": [
+        "Variances to explain",
+        "Variance driver decomposition"
+      ],
+      "name": "AI-drafted commentary with mandatory budget-holder attestation",
+      "outputs": [
+        "Budget holder commentary (confirmed / corrected / outstanding, with provenance)"
+      ],
+      "step_id": "T4"
+    },
+    {
+      "actor": "FP&A analyst",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Flagged variances and attested commentary are assembled into a draft report. A deterministic completeness check confirms every flagged item carries either an attestation record or an explicit, visible 'outstanding, escalated' marker — never a silent gap or stale placeholder. Outstanding items are escalated to a named analyst who chases the non-responsive budget holder ahead of the reporting deadline.",
+      "inputs": [
+        "Variances to explain",
+        "Budget holder commentary"
+      ],
+      "name": "Report consolidation with completeness check",
+      "outputs": [
+        "Draft variance report",
+        "Completeness confirmation / escalated-outstanding markers"
+      ],
+      "step_id": "T5"
+    },
+    {
+      "actor": "FP&A manager",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The FP&A manager reviews the draft report in a workspace that ranks the full flagged population by a routing score (anomaly confidence, prior-cycle challenge history, correction flags) but never restricts access to it: the complete population remains a standing, permanent right of the reviewer, with usage logged for recalibration purposes. Exception-based prioritization is earned and graduated per entity class through a validated migration period (full-scope review is the starting state for each entity class; routing is used only to rank attention, never to gate it). On sign-off, routine-cycle reports auto-publish to a live dashboard and/or document-based distribution channel (both first-class, neither a legacy fallback); the manager retains a standing, logged authority to pull back any report before auto-publish and convene a walkthrough. This step remains actor-distinct from thresholding (T3) per the actor-separation requirement.",
+      "inputs": [
+        "Draft variance report"
+      ],
+      "name": "Review, challenge and distribution",
+      "outputs": [
+        "Reviewed variance report",
+        "Distributed variance report (dashboard and/or document)",
+        "Reviewer interaction log",
+        "Pull-back/walkthrough trigger record"
+      ],
+      "step_id": "T6"
+    }
+  ],
+  "transcript": [
+    {
+      "chars": 7510,
+      "excerpt": "# MAXIMALIST PERSPECTIVE — FPA-VAR-01 Variance Analysis\n\n## 1. PROPOSED DISPOSITIONS\n\n**VAR-01 (Extract actuals from the closed period) → merged into T1 (\"Autonomous ingestion, computation and flagging engine\")**\nThere is no reason a human analyst should be pulling locked-period actuals by hand in 2026. This is a deterministic query against a locked ledger. An agentic pipeline executes this as the first sub-routine of a single orchestrated job. Disposition: merged.\n\n**VAR-02 (Load approved budget and latest forecast) → merged into T1**\nSame argument: loading approved, version-controlled compar",
+      "phase": "perspectives",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 10587,
+      "excerpt": "# PRAGMATIST PERSPECTIVE — FPA-VAR-01 Variance Analysis\n\n## 1. PROPOSED DISPOSITIONS\n\n**VAR-01 (Extract actuals from the closed period) → restructured into T1 (\"Automated extraction with exception monitoring\")**\nI don't dispute that extraction from a locked period is mechanical and belongs in a scheduled job. But \"merged into one autonomous engine\" assumes the feed is clean every month. It isn't. Late subledger postings, reopened periods, dimension remapping, and ERP outages are routine in real close calendars. I retain this as a visible, monitored step: the job runs automatically, but an anal",
+      "phase": "perspectives",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 13751,
+      "excerpt": "# FINANCE DOMAIN PERSPECTIVE — FPA-VAR-01 Variance Analysis\n\n## 1. PROPOSED DISPOSITIONS\n\n**VAR-01 (Extract actuals from the closed period) → restructured into T1 (\"Automated extraction with reconciliation gate\")**\nBoth prior perspectives treat this as a trivial lookup. It mostly is — but the moment of friction every FP&A analyst knows is not \"can the system pull the data,\" it's \"does the pulled data tie to the trial balance the controller signed off.\" Closed-period actuals routinely arrive with late-posted journals, held entities awaiting intercompany netting, or a dimension hierarchy that ch",
+      "phase": "perspectives",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 14099,
+      "excerpt": "# EMERGING-ECONOMY PERSPECTIVE — FPA-VAR-01 Variance Analysis\n\n## 1. PROPOSED DISPOSITIONS\n\n**VAR-01 (Extract actuals from the closed period) → restructured into T1 (\"Scripted extraction with manual fallback and local reconciliation\")**\nI do not object to automating extraction in principle — a scheduled query against a locked ledger is sound wherever the ERP and reporting layer are properly integrated. But I have sat in finance shops where the \"locked period\" lives in one system, the reporting cube in another, and the link between them is a monthly file transfer that a junior analyst babysits ",
+      "phase": "perspectives",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 12988,
+      "excerpt": "# HITL DESIGNER PERSPECTIVE — FPA-VAR-01 Variance Analysis\n\n## 1. PROPOSED DISPOSITIONS\n\n**VAR-01 (Extract actuals from the closed period) → restructured into T1 (\"Automated extraction with exception console\")**\nI have no quarrel with running extraction as a scheduled job. My question is narrower than the prior perspectives': when extraction fails or produces a tie-out break, who sees what, and what do they do about it? I require that T1 produce a visible exception console — not a log file a human might check, but an active surface that routes a failed reconciliation to a named analyst with th",
+      "phase": "perspectives",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 15613,
+      "excerpt": "# AGENTIC ARCHITECT PERSPECTIVE — FPA-VAR-01 Variance Analysis\n\n## 1. PROPOSED DISPOSITIONS\n\n**VAR-01 (Extract actuals from the closed period) → restructured into T1 (\"Extraction agent with reconciliation tool and exception escalation\")**\nI agree extraction should run as an agent, but I want to be precise about what \"agent\" means here, because the prior perspectives use the word loosely. This is not a generic \"autonomous engine\" — it is a scoped, tool-using process with exactly one trigger (period-lock event fired by the close system), one tool call (query against the locked ledger, read-only,",
+      "phase": "perspectives",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 12538,
+      "excerpt": "# ACCOUNTING STANDARDS PERSPECTIVE — FPA-VAR-01 Variance Analysis\n\n## 1. PROPOSED DISPOSITIONS\n\n**VAR-01 (Extract actuals from the closed period) → restructured into T1**\nI have no standards objection to automating the extraction mechanism. KB-03 (reporting-period discipline) requires that cutoff enforcement — the lock on the period — survive in some form; it does not require that a human hand execute the query. What matters to me is that the locked-period boundary itself remains inviolable and that the dataset extracted is demonstrably the one behind the closed trial balance, not a reopened o",
+      "phase": "perspectives",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 9752,
+      "excerpt": "1. CONCEDE\n\nI concede to pragmatist, finance_domain, emerging_economy, hitl_designer, and agentic_architect jointly on exception-only budget-holder attestation. I held that commentary could be drafted by an agent and ratified only where a confidence score flagged doubt. The finance_domain perspective supplied the argument that actually defeats this, and the others converged on it independently: a confidence score measures statistical plausibility against historical driver patterns, not substantive correctness against operational facts the model never saw (a lost customer backfilled with lower-",
+      "phase": "reconsiderations",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 9190,
+      "excerpt": "# ROUND 2 — PRAGMATIST RESPONSE\n\n## 1. CONCEDE\n\n**To agentic_architect**: I concede the mechanism, not just the destination. My round-1 position named T1/T2/T3 as \"restructured, with exception monitoring\" but left vague how a human actually gets routed a problem. The agentic_architect's specification — a tool call that either returns \"pass\" or \"fail, halt, escalate with the specific break\" — is exactly what I meant but failed to specify precisely enough for a controller to sign off on. \"An analyst owns the exception queue\" is not a design until someone says what populates the queue and what th",
+      "phase": "reconsiderations",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 8742,
+      "excerpt": "1. CONCEDE\n\nI accept the hitl_designer's sharpening of my own review-staging argument: \"exception-based\" must never become \"exception-restricted.\" I stated that review should migrate to exception-routing once validated, but I did not specify what the end state looks like for access rights. The hitl_designer is right that the migration I proposed could, if underspecified, quietly convert into a permanently narrowed view — and a manager whose cross-cycle pattern memory I invoked as the reason review matters cannot exercise that memory against a population they can no longer see. I now hold that ",
+      "phase": "reconsiderations",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 7847,
+      "excerpt": "# EMERGING-ECONOMY PERSPECTIVE — Round 2\n\n## 1. CONCEDE\n\nI accept **agentic_architect's** correction to my own T1 framing: I described a \"manual fallback with identical output shape,\" but agentic_architect's point that each tool call (extraction, reconciliation, version-lineage check) should be independently gated and escalatable is a better architecture for the constrained-infrastructure case than I initially sketched. A single undifferentiated \"manual mode\" risks becoming its own black box — if the automated path and the manual path are two entirely separate procedures, a local analyst inher",
+      "phase": "reconsiderations",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 7789,
+      "excerpt": "1. CONCEDE\n\nThe agentic_architect's position sharpens three of my own checkpoints into something I should adopt directly. I asserted that \"no step may present a human with a decision they lack the information to actually evaluate\" and that non-response must never silently convert to approval, but I did not specify the mechanism. The architect's insistence that attestation be a genuine three-state machine (confirmed / corrected / outstanding-non-responded) rather than a binary flag that defaults true is exactly the operationalization my non-negotiable needed, and I accept it as the concrete for",
+      "phase": "reconsiderations",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 8922,
+      "excerpt": "# ROUND 2 — AGENTIC ARCHITECT\n\n## 1. CONCEDE\n\n**To accounting_standards**: I accept the correction on scope discipline. My Round 1 position let KB-06/KB-07 justify architectural choices (the parameter store, the gate) somewhat loosely, treating \"versioned metadata\" as if the versioning itself were the compliance act. accounting_standards is right that a version tag nobody reads satisfies the letter of an audit-trail requirement while defeating the substantive purpose of policy consistency. I now tighten my own non-negotiable: the parameter-change gate's attestation record must be *surfaced to ",
+      "phase": "reconsiderations",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 8224,
+      "excerpt": "# ROUND 2 — ACCOUNTING STANDARDS PERSPECTIVE\n\n## 1. CONCEDE\n\nI accept the **agentic_architect's** sharpening of what a \"parameter-change gate\" must actually be as a mechanism, not merely a principle I asserted in the abstract. My round-1 position said KB-06 and KB-07 require that a policy or FX methodology change be \"surfaced, not silently absorbed,\" but I left the enforcement mechanism vague — I gestured at \"a human confirmation must occur\" without specifying how that confirmation is made structurally unavoidable. The agentic_architect's formulation — a hard precondition gate that the computa",
+      "phase": "reconsiderations",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 13025,
+      "excerpt": "{\n  \"workflow_id\": \"FPA-VAR-01\",\n  \"baseline_step_ids\": [\"VAR-01\", \"VAR-02\", \"VAR-03\", \"VAR-04\", \"VAR-05\", \"VAR-06\", \"VAR-07\", \"VAR-08\"],\n  \"steps\": [\n    {\n      \"step_id\": \"T1\",\n      \"name\": \"Automated extraction and comparative loading with reconciliation and version-lineage gates\",\n      \"description\": \"A scoped extraction/loading process pulls actuals from the locked closed period and loads the approved budget version and latest forecast as comparatives, via API or file-based channel as the local environment requires. Each run emits a reconciliation receipt (control total tie-out against",
+      "phase": "synthesis",
+      "role": "synthesis",
+      "truncated": true
+    }
+  ],
+  "workflow_id": "FPA-VAR-01"
+}

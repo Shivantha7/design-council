@@ -1,0 +1,261 @@
+{
+  "condition": "baseline",
+  "consistency_inputs": {
+    "EXR-01": "merged",
+    "EXR-02": "absorbed",
+    "EXR-03": "restructured",
+    "EXR-04": "retained",
+    "EXR-05": "merged",
+    "EXR-06": "merged",
+    "EXR-07": "merged",
+    "EXR-08": "absorbed"
+  },
+  "created_utc": "2026-10-10T20:50:00.096432Z",
+  "depth": {
+    "counts": {
+      "absorbed": 2,
+      "eliminated": 0,
+      "merged": 4,
+      "restructured": 1,
+      "retained": 1
+    },
+    "score": 0.875,
+    "total_baseline_steps": 8
+  },
+  "disposition_convention_version": "v1, restored 11 Oct 2026",
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "EXR-01",
+      "disposition": "merged",
+      "rationale": "Claim submission persists as the entry point of the target workflow and still requires receipts for claim lines above the receipt threshold (EXR-R-01, EXR-R-10), now combined with automated receipt capture.",
+      "target_step_ids": [
+        "EXR-T01"
+      ]
+    },
+    {
+      "baseline_step_id": "EXR-02",
+      "disposition": "absorbed",
+      "rationale": "Receipt capture and extraction is unconstrained by design and is automated into real-time OCR at the point of submission, removing a separate manual AP analyst handoff while preserving the function.",
+      "target_step_ids": [
+        "EXR-T01"
+      ]
+    },
+    {
+      "baseline_step_id": "EXR-03",
+      "disposition": "restructured",
+      "rationale": "The policy compliance check must survive in some form (EXR-R-07) and must still precede line manager approval (EXR-R-02). It is restructured into a rules-engine check with AP analyst review limited to flagged exceptions, retaining its gatekeeping function and sequence.",
+      "target_step_ids": [
+        "EXR-T02"
+      ]
+    },
+    {
+      "baseline_step_id": "EXR-04",
+      "disposition": "retained",
+      "rationale": "Line manager approval must survive in some form (EXR-R-08), remain performed by an actor distinct from the submitter (EXR-R-03), and precede reimbursement (EXR-R-06). It is retained unchanged as a discrete human decision step.",
+      "target_step_ids": [
+        "EXR-T03"
+      ]
+    },
+    {
+      "baseline_step_id": "EXR-05",
+      "disposition": "merged",
+      "rationale": "Finance review is unconstrained by design and is merged with posting into a single exception-based review-and-post step, scoping manual finance effort to flagged items (coding, exceptions, evidence gaps) while unflagged claims post straight-through.",
+      "target_step_ids": [
+        "EXR-T04"
+      ]
+    },
+    {
+      "baseline_step_id": "EXR-06",
+      "disposition": "merged",
+      "rationale": "Posting continues to consume the expense transaction date (EXR-R-04) and the transaction-date exchange rate (EXR-R-05) per IAS 21 (KB-07, KB-08), now automated and combined with the finance review step so that coding review and posting occur in one pass.",
+      "target_step_ids": [
+        "EXR-T04"
+      ]
+    },
+    {
+      "baseline_step_id": "EXR-07",
+      "disposition": "merged",
+      "rationale": "Reimbursement must survive in some form (EXR-R-09) and must still follow line manager approval (EXR-R-06); it is retained as the payment step, merged with notification for efficiency.",
+      "target_step_ids": [
+        "EXR-T05"
+      ]
+    },
+    {
+      "baseline_step_id": "EXR-08",
+      "disposition": "absorbed",
+      "rationale": "Employee notification is unconstrained by design and is absorbed into the payment run as an automated confirmation triggered on payment completion, removing a separate manual notification task.",
+      "target_step_ids": [
+        "EXR-T05"
+      ]
+    }
+  ],
+  "efficiency": {
+    "calls": 1,
+    "cost_usd": 0.06752,
+    "failed_attempts": 0,
+    "input_tokens": 7435,
+    "output_tokens": 5265,
+    "runtime_min": 0.768674
+  },
+  "gate": {
+    "conformance_score": 1.0,
+    "passed": 10,
+    "results": [
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step EXR-01 ['EXR-T01'] receives all required input(s) ['Receipts for claim lines above the receipt threshold']",
+        "requirement_id": "EXR-R-01",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['EXR-T02'] for baseline EXR-03 all precede target step(s) ['EXR-T03'] for baseline EXR-04",
+        "requirement_id": "EXR-R-02",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "actors separated: EXR-01 → ['Employee'], EXR-04 → ['Line manager']",
+        "requirement_id": "EXR-R-03",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step EXR-06 ['EXR-T04'] receives all required input(s) ['Expense transaction date']",
+        "requirement_id": "EXR-R-04",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step EXR-06 ['EXR-T04'] receives all required input(s) ['Transaction-date exchange rate']",
+        "requirement_id": "EXR-R-05",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['EXR-T03'] for baseline EXR-04 all precede target step(s) ['EXR-T05'] for baseline EXR-07",
+        "requirement_id": "EXR-R-06",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step EXR-03 is preserved as restructured, carried by target step(s) ['EXR-T02']",
+        "requirement_id": "EXR-R-07",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step EXR-04 is preserved as retained, carried by target step(s) ['EXR-T03']",
+        "requirement_id": "EXR-R-08",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step EXR-07 is preserved as merged, carried by target step(s) ['EXR-T05']",
+        "requirement_id": "EXR-R-09",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step EXR-01 is preserved as merged, carried by target step(s) ['EXR-T01']",
+        "requirement_id": "EXR-R-10",
+        "vacuous": false
+      }
+    ],
+    "total": 10
+  },
+  "git_commit": "fe1a87a8a5672d763c3248a4b18f227ae1b3b204",
+  "rep": 5,
+  "resolved_model": "claude-sonnet-5",
+  "run_id": "20261010-205000-baseline-P2P-EXR-01-1a6b",
+  "set": "heldout-v1",
+  "steps": [
+    {
+      "actor": "Employee",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The employee submits an out-of-pocket expense claim through a mobile/web tool that performs OCR capture and data extraction on attached receipts in real time, producing a structured claim record at the point of submission. Receipts remain mandatory for claim lines above the receipt threshold.",
+      "inputs": [
+        "Receipts for claim lines above the receipt threshold",
+        "Expense details"
+      ],
+      "name": "Claim submission with automated receipt capture",
+      "outputs": [
+        "Structured claim record"
+      ],
+      "step_id": "EXR-T01"
+    },
+    {
+      "actor": "AP analyst",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "A rules engine checks every claim line against expense policy limits, categories and per diem rates. Lines that pass are auto-cleared; lines that fail or fall outside system confidence (e.g. missing receipt, unusual category, duplicate suspicion) are routed to an AP analyst for exception review before the claim proceeds to approval.",
+      "inputs": [
+        "Structured claim record",
+        "Expense policy"
+      ],
+      "name": "Automated policy compliance check with exception review",
+      "outputs": [
+        "Policy-checked claim"
+      ],
+      "step_id": "EXR-T02"
+    },
+    {
+      "actor": "Line manager",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The claimant's line manager approves or rejects the policy-checked claim. This step remains a distinct human decision performed by an actor other than the claim submitter.",
+      "inputs": [
+        "Policy-checked claim"
+      ],
+      "name": "Line manager approval",
+      "outputs": [
+        "Approved expense claim"
+      ],
+      "step_id": "EXR-T03"
+    },
+    {
+      "actor": "Finance reviewer / GL accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Approved claims flow to an automated posting engine that codes expense accounts and cost centres and translates foreign-currency lines using the transaction-date exchange rate, posting in the period the expense was incurred. A finance reviewer examines only claims flagged for coding anomalies, policy exceptions or insufficient supporting evidence before or alongside posting; unflagged claims post straight-through.",
+      "inputs": [
+        "Approved expense claim",
+        "Expense transaction date",
+        "Transaction-date exchange rate",
+        "Chart of accounts"
+      ],
+      "name": "Finance exception review and automated posting",
+      "outputs": [
+        "Expense posted to GL"
+      ],
+      "step_id": "EXR-T04"
+    },
+    {
+      "actor": "AP analyst",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The approved claim is paid to the employee through the AP payment run, and the employee is automatically notified of payment once the run completes, eliminating a separate manual notification step.",
+      "inputs": [
+        "Approved expense claim",
+        "Employee bank details"
+      ],
+      "name": "Reimbursement via AP payment run with automated employee notification",
+      "outputs": [
+        "Reimbursement paid",
+        "Employee notification"
+      ],
+      "step_id": "EXR-T05"
+    }
+  ],
+  "transcript": [
+    {
+      "chars": 6345,
+      "excerpt": "{\n  \"workflow_id\": \"P2P-EXR-01\",\n  \"baseline_step_ids\": [\n    \"EXR-01\",\n    \"EXR-02\",\n    \"EXR-03\",\n    \"EXR-04\",\n    \"EXR-05\",\n    \"EXR-06\",\n    \"EXR-07\",\n    \"EXR-08\"\n  ],\n  \"steps\": [\n    {\n      \"step_id\": \"EXR-T01\",\n      \"name\": \"Claim submission with automated receipt capture\",\n      \"description\": \"The employee submits an out-of-pocket expense claim through a mobile/web tool that performs OCR capture and data extraction on attached receipts in real time, producing a structured claim record at the point of submission. Receipts remain mandatory for claim lines above the receipt threshold",
+      "phase": "single agent",
+      "role": "baseline_designer",
+      "truncated": true
+    }
+  ],
+  "workflow_id": "P2P-EXR-01"
+}

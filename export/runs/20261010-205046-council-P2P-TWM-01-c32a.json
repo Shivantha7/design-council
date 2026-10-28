@@ -1,0 +1,380 @@
+{
+  "condition": "council",
+  "consistency_inputs": {
+    "TWM-01": "merged",
+    "TWM-02": "merged",
+    "TWM-03": "merged",
+    "TWM-04": "restructured",
+    "TWM-05": "restructured",
+    "TWM-06": "restructured",
+    "TWM-07": "restructured"
+  },
+  "created_utc": "2026-10-10T20:50:46.016130Z",
+  "depth": {
+    "counts": {
+      "absorbed": 0,
+      "eliminated": 0,
+      "merged": 3,
+      "restructured": 4,
+      "retained": 0
+    },
+    "score": 1.0,
+    "total_baseline_steps": 7
+  },
+  "disposition_convention_version": "v1, restored 11 Oct 2026",
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "TWM-01",
+      "disposition": "merged",
+      "rationale": "Document assembly is pure retrieval with no judgment content; the council converged (maximalist, finance_domain, hitl_designer, agentic_architect, pragmatist) that it belongs inside the same automated pass as matching rather than as a standalone human-actored step. Per accounting_standards/finance_domain's non-negotiable (KB-09), the assembled document set must survive as an archived, retrievable evidentiary artifact, and per emerging_economy/agentic_architect's concession, analyst-mediated capture remains a designed-for path where automated retrieval cannot complete.",
+      "target_step_ids": [
+        "TGT-01"
+      ]
+    },
+    {
+      "baseline_step_id": "TWM-02",
+      "disposition": "merged",
+      "rationale": "Quantity matching is deterministic line comparison and is absorbed into the single automated matching pass, but TWM-R-01 and TWM-R-03 are honored because quantity variance detail survives as a separately labelled, individually inspectable output (a point accounting_standards, finance_domain, hitl_designer and the converted agentic_architect/maximalist all required) and GRN data remains a directly consumed input.",
+      "target_step_ids": [
+        "TGT-01"
+      ]
+    },
+    {
+      "baseline_step_id": "TWM-03",
+      "disposition": "merged",
+      "rationale": "Price and terms matching is the same class of mechanical comparison as quantity matching and is merged for the same reason. TWM-R-02/R-04 are satisfied: price and terms variance detail survives as a distinct output and purchase order data remains a directly consumed input, preserving the KB-09 cost-evidence basis (price net of discounts/rebates) that the council treated as non-negotiable.",
+      "target_step_ids": [
+        "TGT-01"
+      ]
+    },
+    {
+      "baseline_step_id": "TWM-04",
+      "disposition": "restructured",
+      "rationale": "Against maximalist's and agentic_architect's round-1 position, the council majority (finance_domain, hitl_designer, accounting_standards, pragmatist, and agentic_architect's own round-2 concession) held that tolerance evaluation must remain a structurally distinct step with a named, versioned policy artifact, even though its application is now automated. Folding it invisibly into the matching pass would bury the one object (which policy, whose authority, as of when) auditors and KB-06's policy-consistency principle require to be independently visible. TWM-R-05/R-06 are satisfied: the function survives and still consumes the tolerance policy, now explicitly versioned and governed.",
+      "target_step_ids": [
+        "TGT-02"
+      ]
+    },
+    {
+      "baseline_step_id": "TWM-05",
+      "disposition": "restructured",
+      "rationale": "This is the council's clearest near-consensus point: pragmatist, hitl_designer, finance_domain, emerging_economy and accounting_standards all rejected maximalist's autonomous-resolution proposal, and maximalist itself conceded in round 2. KB-05's error-correction principle and KB-09's cost-evidence principle require an accountable human to own every accept/correct/reject decision; a confidence-scored pattern match is not a decision basis. The function is restructured only to add agent-assisted packet assembly, precedent surfacing and an explicit exception-category taxonomy (finance_domain's four categories, adopted by hitl_designer and agentic_architect) — the decision and its evidence remain fully human. TWM-R-10 is satisfied as a genuine, unweakened human function.",
+      "target_step_ids": [
+        "TGT-03"
+      ]
+    },
+    {
+      "baseline_step_id": "TWM-06",
+      "disposition": "restructured",
+      "rationale": "The council converged (finance_domain, agentic_architect, hitl_designer, pragmatist, with maximalist arriving independently) that uniform supervisor review of every clean invoice is ceremonial, not control, while the baseline's own text already distinguishes tolerance releases from exception/override releases requiring explicit approval. That distinction is made structural: TGT-04 auto-releases clean/in-tolerance matches under a bounded, reversible void-before-posting window; TGT-05 preserves an explicit, evidenced AP supervisor approval, with a named backup approver, for every exception-resolved or override case. TWM-R-07 survives via both paths; TWM-R-08 holds because TGT-05 consumes TGT-03's resolved-match output before approving; TWM-R-09 holds because TGT-05's supervisor is a distinct actor and distinct system identity from both TGT-03's resolver and TGT-04's automated release engine, addressing agentic_architect's and hitl_designer's point that separation must hold at the credential level, not only the org chart.",
+      "target_step_ids": [
+        "TGT-04",
+        "TGT-05"
+      ]
+    },
+    {
+      "baseline_step_id": "TWM-07",
+      "disposition": "restructured",
+      "rationale": "Unconstrained by design, so the council had latitude; it converged on moving from a periodic batch report to continuous, append-only logging (maximalist, agentic_architect, finance_domain, accounting_standards) while holding, against a pure 'exception-alert consumer' framing, that a periodic independent human sampling review of the auto-released population must survive (hitl_designer, agentic_architect, accounting_standards) performed by a reviewer organisationally independent of whoever operates the matching, tolerance-classification and release-automation functions (pragmatist's and accounting_standards' independence concern), with any tolerance recalibration arising from exception-category telemetry routed through TGT-02's human-governed change control rather than automatic adjustment (finance_domain's loop, with agentic_architect's and finance_domain's own guardrail against metrics-driven loosening).",
+      "target_step_ids": [
+        "TGT-06"
+      ]
+    }
+  ],
+  "efficiency": {
+    "calls": 15,
+    "cost_usd": 1.42539,
+    "failed_attempts": 0,
+    "input_tokens": 280820,
+    "output_tokens": 86375,
+    "runtime_min": 16.570883
+  },
+  "gate": {
+    "conformance_score": 0.9,
+    "passed": 9,
+    "results": [
+      {
+        "passed": true,
+        "reason": "baseline step TWM-02 is preserved as merged, carried by target step(s) ['TGT-01']",
+        "requirement_id": "TWM-R-01",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step TWM-03 is preserved as merged, carried by target step(s) ['TGT-01']",
+        "requirement_id": "TWM-R-02",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step TWM-02 ['TGT-01'] receives all required input(s) ['Goods receipt note data']",
+        "requirement_id": "TWM-R-03",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step TWM-03 ['TGT-01'] receives all required input(s) ['Purchase order data']",
+        "requirement_id": "TWM-R-04",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step TWM-04 is preserved as restructured, carried by target step(s) ['TGT-02']",
+        "requirement_id": "TWM-R-05",
+        "vacuous": false
+      },
+      {
+        "passed": false,
+        "reason": "target step(s) carrying baseline step TWM-04 do not receive all required input(s) ['Tolerance policy']: TGT-02 is missing ['Tolerance policy']",
+        "requirement_id": "TWM-R-06",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step TWM-06 is preserved as restructured, carried by target step(s) ['TGT-04', 'TGT-05']",
+        "requirement_id": "TWM-R-07",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['TGT-03'] for baseline TWM-05 all precede target step(s) ['TGT-04', 'TGT-05'] for baseline TWM-06",
+        "requirement_id": "TWM-R-08",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "actors separated: TWM-05 → ['AP analyst (agent-assisted triage; decision and accountability remain human)'], TWM-06 → [\"AP supervisor (with named backup approver; distinct from TGT-03 resolver and from TGT-04's automated identity)\", 'Automated release engine (system identity: release-automated, distinct from match-execution and tolerance-classification identities)']",
+        "requirement_id": "TWM-R-09",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step TWM-05 is preserved as restructured, carried by target step(s) ['TGT-03']",
+        "requirement_id": "TWM-R-10",
+        "vacuous": false
+      }
+    ],
+    "total": 10
+  },
+  "git_commit": "fe1a87a8a5672d763c3248a4b18f227ae1b3b204",
+  "rep": 5,
+  "resolved_model": "claude-sonnet-5",
+  "run_id": "20261010-205046-council-P2P-TWM-01-c32a",
+  "set": "heldout-v1",
+  "steps": [
+    {
+      "actor": "Automated matching engine/agent (system identity: match-execution), with AP analyst oversight of assembly failures and manual-capture fallback",
+      "class_agentic_only": "AGENT",
+      "class_primary": "AGENT",
+      "description": "The invoice, purchase order and goods receipt note are retrieved (via automated ERP integration where available, or analyst-mediated capture logged identically where system-to-system retrieval is not possible) and compared line by line for quantity and price/terms variance in a single automated pass. Quantity variance detail and price and terms variance detail are produced and retained as separately labelled, individually inspectable outputs, together with an archived copy of the assembled match document set that preserves the invoice-PO-GRN evidence chain underlying cost determination. Where required inputs cannot be assembled (missing PO, unposted GRN, incomplete receipt, unresolved UOM mismatch), the case is routed to a human exception queue; the engine never defaults to a pass on missing or ambiguous data.",
+      "inputs": [
+        "Structured validated invoice record",
+        "Purchase order data",
+        "Goods receipt note data"
+      ],
+      "name": "Automated match assembly and execution",
+      "outputs": [
+        "Assembled match document set (archived evidentiary artifact)",
+        "Quantity variance detail",
+        "Price and terms variance detail",
+        "Assembly/match-failure exception queue entries"
+      ],
+      "step_id": "TGT-01"
+    },
+    {
+      "actor": "Automated tolerance-classification engine (system identity: tolerance-classification), with named AP control owner accountable for the policy",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "AGENT",
+      "description": "Quantity and price/terms variances are evaluated against a named, versioned, human-governed tolerance policy to classify the match as clean, within tolerance, or an exception requiring investigation. Kept as a distinct step and artifact from TGT-01 so that the policy in force, its version and its owner remain independently auditable rather than embedded as an undocumented parameter inside the matching engine. The classification engine consumes the policy but has no write path to it; threshold changes go through a separate, human-governed change-control process owned by a named AP control owner.",
+      "inputs": [
+        "Quantity variance detail",
+        "Price and terms variance detail",
+        "Tolerance policy (versioned, human-governed)"
+      ],
+      "name": "Tolerance classification under governed policy",
+      "outputs": [
+        "Match classification (clean, tolerance or exception)",
+        "Tolerance policy version reference"
+      ],
+      "step_id": "TGT-02"
+    },
+    {
+      "actor": "AP analyst (agent-assisted triage; decision and accountability remain human)",
+      "class_agentic_only": "HYBRID",
+      "class_primary": "HYBRID",
+      "description": "Matches classified as exceptions are investigated against source documents and vendor correspondence. A triage agent may assemble the exception packet, categorise it (e.g. receiving-timing shortfall, price discrepancy, missing/unposted GRN, duplicate or unauthorised invoice) and propose a disposition with precedent, but the accept/correct/reject decision and its written evidentiary basis remain owned by a named human AP analyst in every case, regardless of materiality or pattern familiarity. No exception is auto-resolved.",
+      "inputs": [
+        "Exception-classified match",
+        "Quantity variance detail",
+        "Price and terms variance detail",
+        "Purchase order data",
+        "Goods receipt note data",
+        "Agent-proposed disposition and precedent (where available)"
+      ],
+      "name": "Agent-assisted exception investigation and human resolution",
+      "outputs": [
+        "Resolved match (accepted, corrected or rejected)",
+        "Exception resolution evidence, including exception category"
+      ],
+      "step_id": "TGT-03"
+    },
+    {
+      "actor": "Automated release engine (system identity: release-automated, distinct from match-execution and tolerance-classification identities)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "AGENT",
+      "description": "Matches classified as clean or within tolerance, with no exception resolution outstanding, are released for posting and payment processing by an automated release engine operating under a pre-authorised, versioned release policy. Every auto-release is logged and held in a bounded, reversible void-before-posting window, and is subject to periodic independent human sampling review (TGT-06), before it reaches payment processing.",
+      "inputs": [
+        "Match classification (clean, tolerance or exception)",
+        "Tolerance policy version reference"
+      ],
+      "name": "Automated release — clean and in-tolerance matches",
+      "outputs": [
+        "Released match authorisation (system-generated)",
+        "Void-before-posting log entry"
+      ],
+      "step_id": "TGT-04"
+    },
+    {
+      "actor": "AP supervisor (with named backup approver; distinct from TGT-03 resolver and from TGT-04's automated identity)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Every exception-resolved match and any release outside standard tolerance is routed to an AP supervisor for explicit, evidenced approval before release. The approving supervisor is a distinct individual from whoever performed the exception resolution and operates under a distinct system identity from the automated release path in TGT-04. A named backup approver is designated so a single-supervisor site or shift does not create a bottleneck or a pressure to bypass the gate.",
+      "inputs": [
+        "Resolved match (accepted, corrected or rejected)",
+        "Exception resolution evidence",
+        "Tolerance policy version reference"
+      ],
+      "name": "Supervisory release approval — exceptions and overrides",
+      "outputs": [
+        "Released match authorisation (supervisor-approved)"
+      ],
+      "step_id": "TGT-05"
+    },
+    {
+      "actor": "AP accountant / control owner (independent of match-execution, tolerance-classification and release-automation operators)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Match outcomes, tolerance overrides, exception resolutions and auto-releases are logged in real time to an append-only control record. An AP accountant/control owner, organisationally independent of whoever operates the matching engine, the tolerance-classification engine and the automated release path, performs periodic sampling review of the auto-released clean/in-tolerance population and produces match-rate and override reporting on a defined cadence, achievable with lightweight tooling where premium platforms are unavailable. Exception-category data from TGT-03 feeds a periodic tolerance-policy recalibration review, but any resulting threshold change must pass through the named-owner change-control process in TGT-02, never an automatic adjustment driven by match-rate pressure.",
+      "inputs": [
+        "Released match authorisation (system-generated or supervisor-approved)",
+        "Exception resolution evidence",
+        "Tolerance policy version reference"
+      ],
+      "name": "Continuous match control monitoring, sampling review and tolerance governance",
+      "outputs": [
+        "Append-only match control record",
+        "Match-rate and override report",
+        "Tolerance recalibration recommendation (subject to governed change control)"
+      ],
+      "step_id": "TGT-06"
+    }
+  ],
+  "transcript": [
+    {
+      "chars": 8031,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nTWM-01 (Match dataset assembly) — ABSORBED into a new step, \"Autonomous match execution and tolerance classification\" (T1). There is no requirement protecting this step, and there is no accounting reason for a human to exist solely to fetch three records an ERP already holds. Document assembly is retrieval, not judgment; it survives only as a background system function inside the matching engine, invisible as a distinct control point.\n\nTWM-02 (Quantity matching) — MERGED into T1. The requirement is that quantity matching against GRN data survive \"in some form\" — it says ",
+      "phase": "round 1",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 6156,
+      "excerpt": "**1. PROPOSED DISPOSITIONS**\n\nTWM-01 (Match dataset assembly) — *restructured*, carried by a new TS-01 \"Automated match dataset assembly with exception routing.\" The ERP already holds PO, GRN and invoice data; there is no reason an analyst should be manually pulling and pairing documents in 2026. But I will not pretend assembly is risk-free: a meaningful share of invoices will fail to assemble cleanly (GRN not yet posted, PO closed, duplicate PO lines). TS-01 must auto-flag those failures to an analyst queue rather than silently stalling or defaulting to a false match. This is the realistic sh",
+      "phase": "round 1",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 9417,
+      "excerpt": "# PROPOSED DISPOSITIONS\n\n**TWM-01 (Match dataset assembly) → absorbed into TGT-01 \"Automated match execution.\"**\nDataset assembly is pure retrieval with no judgment content. In every modern matching engine I've seen in practice (ERP-native three-way match, or bolt-on tools like the HighRadius/Trintech products this workflow is benchmarked against), the system does not separately \"assemble\" a document set and then \"match\" it — assembly is the act of pulling the PO and GRN lines into the matching run. Keeping it as a standalone human-touched step is an artifact of manual-era AP, not a control re",
+      "phase": "round 1",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 6516,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nTWM-01 (Match dataset assembly) → restructured, carried by T-01 \"Match dataset assembly with hybrid retrieval.\" The function survives, but I do not accept a target design that assumes guaranteed real-time ERP-to-ERP or EDI integration for GRN and PO retrieval. In many shared-service and supplier-network configurations relevant to offshore delivery centres, GRNs originate from warehouses on legacy or disconnected systems, sometimes paper-based, with intermittent connectivity. T-01 must explicitly support a manual/semi-automated retrieval path as a first-class mode, not a ",
+      "phase": "round 1",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 7092,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nTWM-01 (Match dataset assembly): merged, carried forward into a new Target step \"Automated match assembly and execution\" (call it T-01). This is pure retrieval work with no judgment content — a human re-keying or re-checking which document set was pulled adds no accountability value. It should run system-executed, with the AP analyst role repositioned as a process owner who monitors assembly failures (missing PO, missing GRN) rather than performing assembly itself.\n\nTWM-02 (Quantity matching): merged into T-01. Line-level quantity comparison against GRN data is determini",
+      "phase": "round 1",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 9342,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nTWM-01 (Match dataset assembly) — merged into TWM-T01 \"Automated matching and tolerance classification agent.\" Retrieval of PO, GRN and invoice data is a tool call, not a decision point. There is no judgment here worth a standalone step boundary or a standalone actor; collapsing it into the matching agent removes one handoff without losing anything, provided the retrieval call and its result set are logged as a structured sub-record of the agent's run (what was fetched, from which ERP tables, at what timestamp) so the evidential trail required by KB-02 survives the merge",
+      "phase": "round 1",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 8425,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nTWM-01 (Match dataset assembly): Restructured. The function persists as an automated retrieval/staging step feeding the matching engine, but it must remain a distinct, inspectable artefact rather than disappearing into an opaque engine. KB-09 establishes that the invoice-GRN-PO evidence chain is what establishes inventory cost under IAS 2, not merely a fraud check; therefore the assembled document set is itself part of the accounting evidential record and must be retrievable intact even if automation accelerates retrieval. Target: TGT-01.\n\nTWM-02 (Quantity matching): Ret",
+      "phase": "round 1",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 6967,
+      "excerpt": "1. CONCEDE\n\nFinance_domain, hitl_designer and agentic_architect have moved me on how I described the merge in TWM-02/TWM-03/TWM-04. In Round 1 I let \"one computational pass\" read as license for a single composite output. I accept their correction: collapsing the *step boundary* does not justify collapsing the *artifact boundary*. Quantity variance detail and price/terms variance detail must remain separately labelled, inspectable fields inside whatever engine produces them, and the assembled match document set from TWM-01 must persist as a retrievable artifact even though no human assembles it",
+      "phase": "round 2",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 6698,
+      "excerpt": "1. CONCEDE\n\nEmerging_economy changes my mind on two points. First, I accept the named backup/delegate approver requirement as a formal addition to TS-05: a single-supervisor bottleneck is exactly the kind of \"works in the HQ pilot, fails in the shared-service centre\" gap I claim to be guarding against, and I was silent on it. Second, I accept that the target spec must say explicitly what happens to the TWM-02/03 analyst population rather than let \"merged into an engine\" imply headcount reduction as an unstated side-effect — a controller signing off on this needs to know what the transition pla",
+      "phase": "round 2",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 8196,
+      "excerpt": "# 1. CONCEDE\n\n**To emerging_economy:** I accept the point on manual/semi-automated retrieval as a first-class mode for TWM-01, not a degraded fallback. My own non-negotiable #1 already required the assembled document set to persist as an archived artifact, but I had implicitly assumed reliable system-to-system retrieval as the default path. That assumption is wrong for a workflow that has to run across heterogeneous ERP maturity. I'll fold this into TGT-01: where GRN or PO data cannot be retrieved programmatically, the step must support analyst-mediated capture of the same data, logged identic",
+      "phase": "round 2",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 6937,
+      "excerpt": "1. CONCEDE\n\nI accept agentic_architect's \"fail closed\" non-negotiable (point 5 in their submission) as a necessary refinement to my own data-quality concern, not a competing idea. My position already flagged that GRN/PO data quality is uneven across delivery sites; agentic_architect's formulation — that missing or incomplete inputs must route to a human queue rather than default to a pass — is the correct operational rule for exactly the conditions I described (partial receipts, uncoded units, disconnected warehouse systems). I adopt it explicitly: wherever T-01/T-02/T-03 cannot assemble a com",
+      "phase": "round 2",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 8055,
+      "excerpt": "1. CONCEDE\n\nI accept three refinements from this round that sharpen rather than weaken my position.\n\nFrom **agentic_architect**: the \"agent-assisted triage\" formulation for exception resolution is a genuine improvement on my own T-03 description. I had described decision-support loosely (\"surfacing similar past resolutions or vendor history is acceptable\"); agentic_architect's framing — an agent assembles the exception packet and proposes a disposition with a confidence score, but the accept/correct/reject decision and its written basis remain with the human analyst, both logged as distinct at",
+      "phase": "round 2",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 7689,
+      "excerpt": "1. CONCEDE\n\nI accept the correction from hitl_designer, finance_domain, pragmatist and accounting_standards on one specific point: tolerance evaluation should not be merged into the same step as quantity/price matching, as I proposed in round 1. My own non-negotiable #2 — \"the tolerance policy is data the agent consumes, never data the agent writes\" — is weakened, not strengthened, by folding tolerance application into the same agent run as the mechanical comparisons. A separate step gives the policy-consumption boundary a structural home: a distinct run record, a distinct versioned-policy ref",
+      "phase": "round 2",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 8047,
+      "excerpt": "1. CONCEDE\n\nI accept the convergence across finance_domain, pragmatist, hitl_designer and agentic_architect on collapsing the *step boundary* for TWM-01 through TWM-03 into a single automated matching pass. My round-1 position kept quantity matching and price/terms matching as separate retained steps; on reflection that was defending a step count, not an accounting principle. KB-09 requires that the invoice-GRN-PO evidence chain remain traceable and that quantity and price/terms comparisons remain separately identifiable outputs — it says nothing about these comparisons needing separate step b",
+      "phase": "round 2",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 12940,
+      "excerpt": "{\n  \"workflow_id\": \"P2P-TWM-01\",\n  \"baseline_step_ids\": [\"TWM-01\", \"TWM-02\", \"TWM-03\", \"TWM-04\", \"TWM-05\", \"TWM-06\", \"TWM-07\"],\n  \"steps\": [\n    {\n      \"step_id\": \"TGT-01\",\n      \"name\": \"Automated match assembly and execution\",\n      \"description\": \"The invoice, purchase order and goods receipt note are retrieved (via automated ERP integration where available, or analyst-mediated capture logged identically where system-to-system retrieval is not possible) and compared line by line for quantity and price/terms variance in a single automated pass. Quantity variance detail and price and terms v",
+      "phase": "synthesis",
+      "role": "synthesis",
+      "truncated": true
+    }
+  ],
+  "workflow_id": "P2P-TWM-01"
+}

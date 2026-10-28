@@ -12,6 +12,8 @@ bytes. JSON files use sorted keys. Floats are rounded to 6 decimals.
   `runs` (68 run ids), `cells[]` = {`workflow_id`, `condition`, `run_ids` in rep order, `stop_decision`
   (`complete_at_n4` | `run_5`)}.
 - `sets.dev-v1`: `label`, `workflows` (3 ids), `runs` (18 v1 run ids).
+- `sets.sequential`: exploratory, post-freeze. `label`, `exploratory`, `workflows` (the held-out
+  workflows that have sequential runs), `runs` (run ids with a TSS; failed attempts left out).
 - `workflows[]`: {`workflow_id`, `name`, `split` (heldout | dev), `profile` (transactional |
   judgment-dense | null), `function_area`, `steps`, `requirements`, `open_steps`} (the last three are counts).
 - `findings[]`: {`id` (F1 to F6), `status` (pre-registered | pre-registered counts | pre-registered coding |
@@ -25,8 +27,8 @@ The baseline encoding: `name`, `split`, `domain`, `function_area`, `profile`, `s
 outputs), `requirements[]` (requirement_id, statement, rule_type, params).
 
 ## runs/<run_id>.json
-- `run_id`, `set` (heldout-v1 | dev-v1), `workflow_id`, `condition` (council | baseline), `rep`
-  (held-out: ledger repetition; dev: order by run id), `created_utc`, `git_commit`,
+- `run_id`, `set` (heldout-v1 | dev-v1 | sequential), `workflow_id`, `condition` (council | baseline |
+  sequential), `rep` (held-out: ledger repetition; dev and sequential: order by run id within the workflow), `created_utc`, `git_commit`,
   `resolved_model`, `disposition_convention_version`.
 - `steps[]`: target-state steps with `class_primary` and `class_agentic_only` (HUMAN | HYBRID |
   AGENT, `design_council/measures/actor_class.decided_class`).
@@ -36,7 +38,8 @@ outputs), `requirements[]` (requirement_id, statement, rule_type, params).
 - `consistency_inputs`: baseline step id → disposition (pairwise agreement is computed from these).
 - `efficiency`: input/output tokens, calls (probe excluded, failed attempts included),
   `failed_attempts`, `runtime_min`, `cost_usd` ($2/M input, $10/M output).
-- `transcript[]`: {`phase` (round 1 | round 2 | synthesis | single agent), `role`, `excerpt`
+- `transcript[]`: {`phase` (round 1 | round 2 | synthesis | single agent | perspectives |
+  reconsiderations), `role`, `excerpt`
   (first 600 characters), `truncated`, `chars`}.
 
 ## results/heldout_tables.json
@@ -62,6 +65,12 @@ AGENT, HITL, handoffs, h2h, approvals). `seed`, `draws` and `bootstrap` are reco
 Section 6 coding (final). `per_workflow` (final_controls, pass, strict_75), `by_role` (primary,
 any), and `controls[]` = {control_id, merged_ids, name, workflow_id, members, primary_role, roles,
 council_present, council_n, baseline_present, outcome, strict_75, quote, quote_run_id}.
+
+## results/sequential.json
+Exploratory, post-freeze. `label`, `protocol`, and `workflows[]` = {`workflow_id`, `doc`,
+`preregistration` (path or null), `conditions` (sequential | council | baseline: n, run_ids,
+depth_mean/min/max, conformance_mean, runs_below_1, consistency, mean_cost_usd, mean_runtime_min)}.
+Council and baseline are the held-out cells for the same workflow. Not part of any held-out table.
 
 ## results/dev_grid.json
 v1 development grid per workflow x condition: n, run_ids, depth mean/min/max, conformance mean,

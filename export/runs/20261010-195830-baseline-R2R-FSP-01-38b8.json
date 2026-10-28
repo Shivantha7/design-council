@@ -1,0 +1,321 @@
+{
+  "condition": "baseline",
+  "consistency_inputs": {
+    "FSP-01": "retained",
+    "FSP-02": "retained",
+    "FSP-03": "merged",
+    "FSP-04": "merged",
+    "FSP-05": "retained",
+    "FSP-06": "retained",
+    "FSP-07": "restructured",
+    "FSP-08": "retained",
+    "FSP-09": "retained"
+  },
+  "created_utc": "2026-10-10T19:58:30.472149Z",
+  "depth": {
+    "counts": {
+      "absorbed": 0,
+      "eliminated": 0,
+      "merged": 2,
+      "restructured": 1,
+      "retained": 6
+    },
+    "score": 0.333333,
+    "total_baseline_steps": 9
+  },
+  "disposition_convention_version": "v1, restored 11 Oct 2026",
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "FSP-01",
+      "disposition": "retained",
+      "rationale": "Trial balance close confirmation is unchanged in substance and remains the gating step before adjustments and drafting, satisfying the cutoff-discipline principle (KB-03) and the survival requirement FSP-R-10.",
+      "target_step_ids": [
+        "TS-01"
+      ]
+    },
+    {
+      "baseline_step_id": "FSP-02",
+      "disposition": "retained",
+      "rationale": "Adjustment posting continues to consume the approved adjustment schedule and revenue cut-off evidence (FSP-R-02, FSP-R-06); mechanical entries may be automated but estimation entries retain an accountable human per KB-04/KB-01.",
+      "target_step_ids": [
+        "TS-02"
+      ]
+    },
+    {
+      "baseline_step_id": "FSP-03",
+      "disposition": "merged",
+      "rationale": "Consolidation and intercompany elimination are merged with FX translation into one group-accountant-owned step because both must resolve together into a single consolidated trial balance; intercompany balances and transactions remain a required input (FSP-R-03, KB-14).",
+      "target_step_ids": [
+        "TS-03"
+      ]
+    },
+    {
+      "baseline_step_id": "FSP-04",
+      "disposition": "merged",
+      "rationale": "Foreign operation translation is merged into the combined consolidation/translation step; closing and average exchange rates remain required inputs and translation differences continue to be tracked separately per KB-07/KB-08, satisfying FSP-R-04.",
+      "target_step_ids": [
+        "TS-03"
+      ]
+    },
+    {
+      "baseline_step_id": "FSP-05",
+      "disposition": "retained",
+      "rationale": "Mapping to statement line items is unchanged and still consumes the statement line-item structure as required by FSP-R-05.",
+      "target_step_ids": [
+        "TS-04"
+      ]
+    },
+    {
+      "baseline_step_id": "FSP-06",
+      "disposition": "retained",
+      "rationale": "Drafting of primary statements and key notes survives unchanged, still consuming the accounting policy change and prior-period error record (FSP-R-07, KB-05, KB-06), and remains distinct from the approval actor per FSP-R-08, satisfying the survival requirement FSP-R-11.",
+      "target_step_ids": [
+        "TS-05"
+      ]
+    },
+    {
+      "baseline_step_id": "FSP-07",
+      "disposition": "restructured",
+      "rationale": "Analytical review and tie-out is restructured into an automated, exception-based tie-out process; it remains unconstrained by design but still produces the tie-out evidence consumed by management approval.",
+      "target_step_ids": [
+        "TS-06"
+      ]
+    },
+    {
+      "baseline_step_id": "FSP-08",
+      "disposition": "retained",
+      "rationale": "Management review and approval survives as a distinct CFO-owned step, separated from drafting per FSP-R-08, satisfying the survival requirement FSP-R-09.",
+      "target_step_ids": [
+        "TS-07"
+      ]
+    },
+    {
+      "baseline_step_id": "FSP-09",
+      "disposition": "retained",
+      "rationale": "Release/submission is unchanged, following approval, and remains unconstrained by design beyond requiring the approved statements as input.",
+      "target_step_ids": [
+        "TS-08"
+      ]
+    }
+  ],
+  "efficiency": {
+    "calls": 1,
+    "cost_usd": 0.071846,
+    "failed_attempts": 0,
+    "input_tokens": 8008,
+    "output_tokens": 5583,
+    "runtime_min": 0.783632
+  },
+  "gate": {
+    "conformance_score": 1.0,
+    "passed": 11,
+    "results": [
+      {
+        "passed": true,
+        "reason": "target step(s) ['TS-01'] for baseline FSP-01 all precede target step(s) ['TS-05'] for baseline FSP-06",
+        "requirement_id": "FSP-R-01",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step FSP-02 ['TS-02'] receives all required input(s) ['Approved period-end adjustment schedule']",
+        "requirement_id": "FSP-R-02",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step FSP-03 ['TS-03'] receives all required input(s) ['Intercompany balances and transactions']",
+        "requirement_id": "FSP-R-03",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step FSP-04 ['TS-03'] receives all required input(s) ['Closing and average exchange rates']",
+        "requirement_id": "FSP-R-04",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step FSP-05 ['TS-04'] receives all required input(s) ['Statement line-item structure']",
+        "requirement_id": "FSP-R-05",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step FSP-02 ['TS-02'] receives all required input(s) ['Revenue cut-off evidence']",
+        "requirement_id": "FSP-R-06",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step FSP-06 ['TS-05'] receives all required input(s) ['Accounting policy change and prior-period error record']",
+        "requirement_id": "FSP-R-07",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "actors separated: FSP-06 → ['Financial reporting'], FSP-08 → ['CFO']",
+        "requirement_id": "FSP-R-08",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step FSP-08 is preserved as retained, carried by target step(s) ['TS-07']",
+        "requirement_id": "FSP-R-09",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step FSP-01 is preserved as retained, carried by target step(s) ['TS-01']",
+        "requirement_id": "FSP-R-10",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step FSP-06 is preserved as retained, carried by target step(s) ['TS-05']",
+        "requirement_id": "FSP-R-11",
+        "vacuous": false
+      }
+    ],
+    "total": 11
+  },
+  "git_commit": "fe1a87a8a5672d763c3248a4b18f227ae1b3b204",
+  "rep": 3,
+  "resolved_model": "claude-sonnet-5",
+  "run_id": "20261010-195830-baseline-R2R-FSP-01-38b8",
+  "set": "heldout-v1",
+  "steps": [
+    {
+      "actor": "GL accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Subledger closure and reconciliation completion are confirmed via continuous close monitoring, establishing the closed, reconciled trial balance that gates all downstream reporting.",
+      "inputs": [
+        "Subledger close status",
+        "Reconciliation status report"
+      ],
+      "name": "Confirm trial balance close",
+      "outputs": [
+        "Closed reconciled trial balance"
+      ],
+      "step_id": "TS-01"
+    },
+    {
+      "actor": "GL accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Mechanical accruals, deferrals and cut-off entries are posted via rules-based automation, while provisions and other estimation-based adjustments remain posted and signed off by an accountable GL accountant; revenue cut-off is verified against evidence.",
+      "inputs": [
+        "Approved period-end adjustment schedule",
+        "Revenue cut-off evidence",
+        "Closed reconciled trial balance"
+      ],
+      "name": "Post period-end adjustments",
+      "outputs": [
+        "Adjusted trial balance"
+      ],
+      "step_id": "TS-02"
+    },
+    {
+      "actor": "Group accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Entity trial balances, including the foreign subsidiary, are translated into presentation currency at closing and average rates with translation differences routed to OCI, then consolidated with full identification, matching and elimination of intragroup balances and transactions. Translation and consolidation are combined into a single engine-driven step because both must complete together to produce a single consolidated, currency-coherent trial balance.",
+      "inputs": [
+        "Adjusted trial balance",
+        "Intercompany balances and transactions",
+        "Foreign subsidiary trial balance",
+        "Closing and average exchange rates"
+      ],
+      "name": "Consolidate, eliminate intercompany balances, and translate foreign operations",
+      "outputs": [
+        "Consolidated and translated trial balance",
+        "Translation differences"
+      ],
+      "step_id": "TS-03"
+    },
+    {
+      "actor": "Financial reporting",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The consolidated, translated trial balance is mapped to the statement line-item structure using the standing chart-of-accounts-to-disclosure mapping, with exceptions routed for review.",
+      "inputs": [
+        "Consolidated and translated trial balance",
+        "Statement line-item structure"
+      ],
+      "name": "Map trial balance to statement line items",
+      "outputs": [
+        "Mapped statement data"
+      ],
+      "step_id": "TS-04"
+    },
+    {
+      "actor": "Financial reporting",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The primary statements and key notes (accounting policies, revenue, FX, errors) are drafted, incorporating required disclosure of policy changes and prior-period error corrections.",
+      "inputs": [
+        "Mapped statement data",
+        "Accounting policy change and prior-period error record"
+      ],
+      "name": "Draft primary statements and key notes",
+      "outputs": [
+        "Draft financial statements"
+      ],
+      "step_id": "TS-05"
+    },
+    {
+      "actor": "Financial reporting",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Draft statements are reconciled to the trial balance and supporting schedules through an automated tie-out engine with exception-based analytical review by Financial reporting, producing auditable tie-out evidence for approval.",
+      "inputs": [
+        "Draft financial statements"
+      ],
+      "name": "Automated analytical review and tie-out",
+      "outputs": [
+        "Tie-out evidence"
+      ],
+      "step_id": "TS-06"
+    },
+    {
+      "actor": "CFO",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The CFO, independent of the drafting function, reviews the draft statements together with tie-out evidence and approves the financial statements.",
+      "inputs": [
+        "Draft financial statements",
+        "Tie-out evidence"
+      ],
+      "name": "Management review and approval",
+      "outputs": [
+        "Approved financial statements"
+      ],
+      "step_id": "TS-07"
+    },
+    {
+      "actor": "CFO",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The approved financial statements are released or submitted under CFO authority.",
+      "inputs": [
+        "Approved financial statements"
+      ],
+      "name": "Release / submission",
+      "outputs": [
+        "Released financial statements"
+      ],
+      "step_id": "TS-08"
+    }
+  ],
+  "transcript": [
+    {
+      "chars": 7882,
+      "excerpt": "{\n  \"workflow_id\": \"R2R-FSP-01\",\n  \"baseline_step_ids\": [\n    \"FSP-01\",\n    \"FSP-02\",\n    \"FSP-03\",\n    \"FSP-04\",\n    \"FSP-05\",\n    \"FSP-06\",\n    \"FSP-07\",\n    \"FSP-08\",\n    \"FSP-09\"\n  ],\n  \"steps\": [\n    {\n      \"step_id\": \"TS-01\",\n      \"name\": \"Confirm trial balance close\",\n      \"description\": \"Subledger closure and reconciliation completion are confirmed via continuous close monitoring, establishing the closed, reconciled trial balance that gates all downstream reporting.\",\n      \"actor\": \"GL accountant\",\n      \"inputs\": [\n        \"Subledger close status\",\n        \"Reconciliation status r",
+      "phase": "single agent",
+      "role": "baseline_designer",
+      "truncated": true
+    }
+  ],
+  "workflow_id": "R2R-FSP-01"
+}

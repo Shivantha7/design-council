@@ -53,8 +53,28 @@ def test_run_counts(exported):
     index = load(exported, "index.json")
     assert len(index["sets"]["heldout-v1"]["runs"]) == 68
     assert len(index["sets"]["dev-v1"]["runs"]) == 18
-    assert len(list((exported / "runs").glob("*.json"))) == 86
+    assert len(index["sets"]["sequential"]["runs"]) == 10
+    assert len(list((exported / "runs").glob("*.json"))) == 96
     assert sum(len(c["run_ids"]) for c in index["sets"]["heldout-v1"]["cells"]) == 68
+
+
+def test_sequential_matches_documents(exported):
+    """The exploratory sequential condition: only the two workflows it was run on, figures as in the write-ups."""
+    index = load(exported, "index.json")
+    assert index["sets"]["sequential"]["workflows"] == ["P2P-TWM-01", "FPA-VAR-01"]
+    assert not any("sequential" in r for r in index["sets"]["heldout-v1"]["runs"] + index["sets"]["dev-v1"]["runs"])
+    for rid in index["sets"]["sequential"]["runs"]:
+        r = load(exported, f"runs/{rid}.json")
+        assert r["condition"] == "sequential" and r["set"] == "sequential"
+        assert len([t for t in r["transcript"] if t["phase"] in ("perspectives", "reconsiderations")]) == 14
+    seq = load(exported, "results/sequential.json")
+    for w in seq["workflows"]:
+        doc = (DOCS / f"SEQUENTIAL_{w['workflow_id']}.md").read_text()
+        for cond, c in w["conditions"].items():
+            assert c["n"] == 5, (w["workflow_id"], cond)
+            line = (f"| {cond} | {c['n']} | {c['depth_mean']:.3f} | {c['depth_min']:.3f} | {c['depth_max']:.3f} |")
+            assert line in doc, line
+            assert f"| {c['conformance_mean']:.3f} | {c['runs_below_1']} | {c['consistency']:.3f} |" in doc, (w["workflow_id"], cond)
 
 
 def test_heldout_tables_match_document(exported):

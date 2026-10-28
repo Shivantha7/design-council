@@ -1,0 +1,397 @@
+{
+  "condition": "council",
+  "consistency_inputs": {
+    "EXR-01": "retained",
+    "EXR-02": "restructured",
+    "EXR-03": "restructured",
+    "EXR-04": "restructured",
+    "EXR-05": "restructured",
+    "EXR-06": "restructured",
+    "EXR-07": "restructured",
+    "EXR-08": "absorbed"
+  },
+  "created_utc": "2026-10-10T20:31:33.502812Z",
+  "depth": {
+    "counts": {
+      "absorbed": 1,
+      "eliminated": 0,
+      "merged": 0,
+      "restructured": 6,
+      "retained": 1
+    },
+    "score": 0.875,
+    "total_baseline_steps": 8
+  },
+  "disposition_convention_version": "v1, restored 11 Oct 2026",
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "EXR-01",
+      "disposition": "retained",
+      "rationale": "Submission stays employee-initiated and unchanged in substance: the employee still originates the claim and still attaches receipts above the threshold (EXR-R-01, EXR-R-10). The only change is operational tolerance for asynchronous/offline submission; no decision authority moves.",
+      "target_step_ids": [
+        "T-01"
+      ]
+    },
+    {
+      "baseline_step_id": "EXR-02",
+      "disposition": "restructured",
+      "rationale": "Mechanical extraction is automated, but the council converged (hitl_designer's concession, finance_domain's concession, emerging_economy's objection) that it must remain a separately loggable function with its own confidence-threshold exception lane staffed by an AP analyst, not folded invisibly into submission or merged indistinguishably with policy-checking. This preserves traceability of which extraction confidence fed which downstream decision.",
+      "target_step_ids": [
+        "T-02"
+      ]
+    },
+    {
+      "baseline_step_id": "EXR-03",
+      "disposition": "restructured",
+      "rationale": "Deterministic rule-matching is automated and the mechanical majority passes straight through, but the step survives as a distinct, timestamped, inspectable artifact (EXR-R-07) with a human exception lane that can actually reject, hold, or adjust flagged lines, not merely view them. It is structurally sequenced to precede line manager approval (EXR-R-02), satisfied by construction since T-04 consumes T-03's output.",
+      "target_step_ids": [
+        "T-03"
+      ]
+    },
+    {
+      "baseline_step_id": "EXR-04",
+      "disposition": "restructured",
+      "rationale": "The council majority (pragmatist, finance_domain, emerging_economy, hitl_designer, accounting_standards, agentic_architect) held against maximalist's exception-only auto-approval design: a rules engine certifies policy compliance, not business legitimacy, and only a human manager can judge the latter, so every claim must still generate an explicit, logged attestation (EXR-R-08). What changes is the information content presented (structured flag summary) and channel resilience, which streamlines but does not remove the gate, and preserves actor separation from EXR-01 (EXR-R-03).",
+      "target_step_ids": [
+        "T-04"
+      ]
+    },
+    {
+      "baseline_step_id": "EXR-05",
+      "disposition": "restructured",
+      "rationale": "Finance review is explicitly unconstrained by design and is narrowed from 100% coverage to risk-triggered claims plus periodic sampling of the clean population, capturing most of the efficiency gain. It is kept as a function distinct from T-04 rather than merged into a single adjudication event, because the council majority held that business-legitimacy judgment and coding/evidence-sufficiency judgment are different competencies whose collapse would destroy post-hoc attributability (KB-02).",
+      "target_step_ids": [
+        "T-05"
+      ]
+    },
+    {
+      "baseline_step_id": "EXR-06",
+      "disposition": "restructured",
+      "rationale": "Posting is automated for mechanically resolvable lines but continues to consume the expense transaction date (EXR-R-04) and transaction-date exchange rate (EXR-R-05) as mandatory inputs, per KB-01/KB-07. Per the council's resolved conflict on FX sourcing, batch-cadence rate tables are accepted as compliant provided staleness is documented and consistently applied (KB-06); cutoff discipline (KB-03) is preserved via a mandatory GL-accountant checkpoint for period-straddling claims before close, and recognition is logged as a distinct event per KB-11.",
+      "target_step_ids": [
+        "T-06"
+      ]
+    },
+    {
+      "baseline_step_id": "EXR-07",
+      "disposition": "restructured",
+      "rationale": "Reimbursement survives (EXR-R-09) and still occurs only after a valid manager-approval event, now enforced as a hard programmatic precondition rather than a soft sequence (EXR-R-06). Automation of payment execution is accepted, but bank-detail-change verification is added as a non-bypassable control given its fraud profile, and the channel is made multi-rail (bank transfer, mobile money, cash) rather than single-rail, reflecting the resolved infrastructure conflict. Derecognition is logged as a distinct, linked event per KB-11.",
+      "target_step_ids": [
+        "T-07"
+      ]
+    },
+    {
+      "baseline_step_id": "EXR-08",
+      "disposition": "absorbed",
+      "rationale": "Notification carries no judgment or accounting-standards content and the council was unanimous that it should fire automatically as a by-product of payment confirmation rather than remain a standalone human-performed step. The one substantive addition, carried over from emerging_economy's position, is that the merged notification must use multiple channels (not email/app-only) for parity across connectivity tiers.",
+      "target_step_ids": [
+        "T-07"
+      ]
+    }
+  ],
+  "efficiency": {
+    "calls": 15,
+    "cost_usd": 1.416808,
+    "failed_attempts": 0,
+    "input_tokens": 274674,
+    "output_tokens": 86746,
+    "runtime_min": 17.047384
+  },
+  "gate": {
+    "conformance_score": 1.0,
+    "passed": 10,
+    "results": [
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step EXR-01 ['T-01'] receives all required input(s) ['Receipts for claim lines above the receipt threshold']",
+        "requirement_id": "EXR-R-01",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['T-03'] for baseline EXR-03 all precede target step(s) ['T-04'] for baseline EXR-04",
+        "requirement_id": "EXR-R-02",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "actors separated: EXR-01 → ['Employee'], EXR-04 → ['Line manager']",
+        "requirement_id": "EXR-R-03",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step EXR-06 ['T-06'] receives all required input(s) ['Expense transaction date']",
+        "requirement_id": "EXR-R-04",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step EXR-06 ['T-06'] receives all required input(s) ['Transaction-date exchange rate']",
+        "requirement_id": "EXR-R-05",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['T-04'] for baseline EXR-04 all precede target step(s) ['T-07'] for baseline EXR-07",
+        "requirement_id": "EXR-R-06",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step EXR-03 is preserved as restructured, carried by target step(s) ['T-03']",
+        "requirement_id": "EXR-R-07",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step EXR-04 is preserved as restructured, carried by target step(s) ['T-04']",
+        "requirement_id": "EXR-R-08",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step EXR-07 is preserved as restructured, carried by target step(s) ['T-07']",
+        "requirement_id": "EXR-R-09",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step EXR-01 is preserved as retained, carried by target step(s) ['T-01']",
+        "requirement_id": "EXR-R-10",
+        "vacuous": false
+      }
+    ],
+    "total": 10
+  },
+  "git_commit": "fe1a87a8a5672d763c3248a4b18f227ae1b3b204",
+  "rep": 4,
+  "resolved_model": "claude-sonnet-5",
+  "run_id": "20261010-203133-council-P2P-EXR-01-53eb",
+  "set": "heldout-v1",
+  "steps": [
+    {
+      "actor": "Employee",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The employee originates the claim, entering expense details and attaching receipt images for claim lines above the receipt threshold. Submission supports asynchronous, store-and-forward operation so claims can be queued on intermittent connectivity and synced later; no automated agent submits on the employee's behalf.",
+      "inputs": [
+        "Receipts for claim lines above the receipt threshold",
+        "Expense details"
+      ],
+      "name": "Claim submission with embedded receipt capture",
+      "outputs": [
+        "Submitted expense claim"
+      ],
+      "step_id": "T-01"
+    },
+    {
+      "actor": "AP analyst (exception queue), extraction agent",
+      "class_agentic_only": "AGENT",
+      "class_primary": "AGENT",
+      "description": "An extraction agent performs OCR/data extraction on receipt images, producing a structured claim record with a per-field confidence score. Extractions above the confidence threshold auto-populate; low-confidence lines (illegible, non-Latin script, non-standard formats) route to an AP-analyst exception queue for manual correction rather than being silently accepted. Kept as a distinct, separately loggable function from policy compliance so the specific extraction confidence that drove a downstream decision remains inspectable.",
+      "inputs": [
+        "Submitted expense claim"
+      ],
+      "name": "Automated receipt extraction with confidence-based exception queue",
+      "outputs": [
+        "Structured claim record",
+        "Extraction confidence log",
+        "Low-confidence exception queue items"
+      ],
+      "step_id": "T-02"
+    },
+    {
+      "actor": "AP analyst (exception adjudication), policy compliance agent",
+      "class_agentic_only": "AGENT",
+      "class_primary": "AGENT",
+      "description": "A deterministic rules engine checks structured claim lines against policy limits, categories and per diem rates and writes a timestamped pass/flag artifact citing the policy clause applied, kept independently auditable from the extraction step. The engine never silently clears or rejects a flagged line; flagged, ambiguous, or policy-table-stale lines route to an AP analyst with authority to request information, adjust, or reject before the claim proceeds. This gate must complete, and its artifact must exist, before the claim reaches line manager approval.",
+      "inputs": [
+        "Structured claim record",
+        "Expense policy"
+      ],
+      "name": "Automated policy compliance engine with exception adjudication",
+      "outputs": [
+        "Policy-checked claim with flag log",
+        "Adjudicated exception record"
+      ],
+      "step_id": "T-03"
+    },
+    {
+      "actor": "Line manager",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The claimant's line manager reviews every claim and gives an explicit, logged attestation before it proceeds, regardless of whether the automated policy engine cleared it. The manager sees a structured summary of what was auto-cleared versus flagged and why, enabling low-friction approval for clean claims and substantive adjudication for flagged ones, but this step is never bypassed by claim cleanliness because manager attestation certifies business legitimacy, a judgment the policy engine cannot make. Approval is reachable through a low-bandwidth/SMS-equivalent fallback for unflagged claims; any flagged claim forces the manager onto a richer channel able to render the full summary.",
+      "inputs": [
+        "Policy-checked claim with flag log"
+      ],
+      "name": "Line manager approval (universal gate, structured flag summary)",
+      "outputs": [
+        "Approved expense claim",
+        "Logged manager attestation"
+      ],
+      "step_id": "T-04"
+    },
+    {
+      "actor": "Finance reviewer",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Finance review is narrowed from a blanket check on every approved claim to a risk-triggered gate on claims with policy exceptions, above a materiality threshold, in high-risk categories, cross-currency, or carrying overrides, plus a periodic sample of the clean population to catch systematic rules-engine error. This remains structurally and actorally distinct from line manager approval: the manager certifies business legitimacy, finance certifies coding accuracy and evidentiary sufficiency, and the two attestations are never recorded as a single undifferentiated event.",
+      "inputs": [
+        "Approved expense claim",
+        "Flag and exception record from T-03"
+      ],
+      "name": "Risk-based finance review",
+      "outputs": [
+        "Finance-reviewed claim",
+        "Periodic sample review record"
+      ],
+      "step_id": "T-05"
+    },
+    {
+      "actor": "GL accountant (exceptions, cutoff review), posting agent",
+      "class_agentic_only": "AGENT",
+      "class_primary": "AGENT",
+      "description": "A posting agent applies the chart-of-accounts mapping and posts mechanically resolvable lines automatically, consuming the expense transaction date and the transaction-date exchange rate as mandatory inputs; rates may be sourced from a batch-updated table rather than a continuous real-time feed, provided the staleness bound is documented and applied consistently period over period. The agent emits a distinct, timestamped liability-recognised event per claim. Claims straddling a period boundary, unmapped cost centres, missing or disputed FX rates, or other estimation-adjacent lines escalate to the GL accountant, who remains accountable for cutoff discipline and FX anomaly review before period close; every automated posting is reversible, not merely overwritable.",
+      "inputs": [
+        "Approved expense claim",
+        "Expense transaction date",
+        "Transaction-date exchange rate",
+        "Chart of accounts"
+      ],
+      "name": "Automated posting with GL accountant exception and cutoff handling",
+      "outputs": [
+        "Expense posted to GL",
+        "Liability-recognised event",
+        "Period-cutoff exception record"
+      ],
+      "step_id": "T-06"
+    },
+    {
+      "actor": "AP analyst (bank-detail verification, failed-payment exceptions), payment agent",
+      "class_agentic_only": "AGENT",
+      "class_primary": "AGENT",
+      "description": "A payment agent assembles and executes the reimbursement, enforcing a hard, programmatic precondition that a valid manager-approval event exists for the specific claim before it enters a payment run. Any claim where the employee's payee bank details are new or recently changed is held for mandatory independent human verification before release, regardless of channel. The design supports multiple disbursement channels (bank transfer, mobile money, cash disbursement with reconciliation) behind the same approval gate rather than assuming a single rail. On successful payment the agent emits a distinct, timestamped liability-extinguished event linked to the posting's liability-recognised event, and triggers an automatic, multi-channel (not email/app-only) notification to the employee as a direct by-product of payment confirmation.",
+      "inputs": [
+        "Approved expense claim",
+        "Employee bank details",
+        "Manager approval event"
+      ],
+      "name": "Automated reimbursement payment with bank-detail verification and notification",
+      "outputs": [
+        "Reimbursement paid",
+        "Liability-extinguished event",
+        "Employee notification"
+      ],
+      "step_id": "T-07"
+    }
+  ],
+  "transcript": [
+    {
+      "chars": 5712,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nI propose collapsing today's eight-step, five-actor chain into four target steps, built around an agentic intake layer, a risk-based approval/exception-adjudication layer, straight-through posting, and instant payment-with-notification.\n\n**TS-01 \"Agentic claim intake, extraction & real-time policy validation\"** (actor: Employee, assisted by an embedded extraction/policy agent). EXR-01 (claim submission) is **merged** here — the employee still originates the claim and still supplies receipts above threshold, satisfying EXR-R-01 and EXR-R-10. EXR-02 (receipt capture/extrac",
+      "phase": "round 1",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 6474,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nEXR-01 (Claim submission with receipts) — retained, becoming the anchor of a new Target Step 1, \"Self-service claim submission with embedded receipt capture.\" The employee still files the claim and still attaches receipts for lines above the threshold; nothing about who initiates the claim or what evidence is required changes.\n\nEXR-02 (Receipt capture and data extraction) — absorbed into Target Step 1. Commodity OCR embedded in expense-capture apps (the kind already licensed by most mid-size and large finance functions) extracts line-item data at the point of photo captu",
+      "phase": "round 1",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 8450,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nEXR-01 (Claim submission with receipts) — disposition: merged, target: T-01 \"Claim submission with integrated receipt capture.\" In practice, standalone submission followed by a separate back-office capture step (EXR-02) is a sequencing artifact of paper-era AP, not a necessary boundary. Modern expense tools put OCR/data-extraction at the point of photographing the receipt, inside the employee's submission session. I am merging EXR-01 and EXR-02 into a single employee-facing step where the employee submits expense details and receipt images and the system extracts structu",
+      "phase": "round 1",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 8409,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nEXR-01 (Claim submission with receipts) — Retained. The claimant-facing submission step must survive essentially unchanged, but its implementation must assume variable connectivity and device tiers. In many offshore and field-office contexts, submission happens on shared or low-spec devices, on intermittent 2G/3G data, or by staff who photograph paper receipts with basic phone cameras rather than scan them through a corporate app. The target step should support asynchronous, store-and-forward submission (queue locally, sync when connectivity returns) rather than assuming",
+      "phase": "round 1",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 8641,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nEXR-01 (Claim submission with receipts) — retained, carried forward unchanged as the employee-facing entry point. No judgment is removed by automation elsewhere in the chain, so the evidentiary obligation on the employee must stay exactly where it is.\n\nEXR-02 (Receipt capture and data extraction) — merged into a new automated step, \"Automated receipt capture and policy rules check\" (system actor), which performs OCR/data extraction and immediately runs the deterministic parts of policy matching (limits, categories, per diem rates). This is pure mechanical work today perf",
+      "phase": "round 1",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 9501,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nEXR-01 (Claim submission) — retained, carried by target step T-01 \"Claim submission (employee-initiated, agent-assisted intake)\". The employee remains the sole actor who initiates the claim; I would add a conversational intake assistant that helps categorize lines and prompts for missing receipts, but it is a drafting aid, not a decision-maker, and it does not submit on the employee's behalf. Receipts above threshold remain a hard input gate (EXR-R-01) enforced at submission, not deferred to a later agent.\n\nEXR-02 (Receipt capture and data extraction) — restructured, car",
+      "phase": "round 1",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 7422,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nEXR-01 (Claim submission with receipts) — Retained, substantially unchanged, as the sole target step carrying initial submission. The employee must remain the actor who originates the claim and attaches receipts for lines above threshold; this cannot be reassigned to AP or Finance without breaking actor separation (EXR-R-03) and the evidentiary chain that later postings depend on.\n\nEXR-02 (Receipt capture and data extraction) — Restructured/absorbed into an automated capture-and-extraction function (OCR/system-assisted) that feeds directly into the policy engine. I do no",
+      "phase": "round 1",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 6175,
+      "excerpt": "1. CONCEDE\n\nI accept hitl_designer's and pragmatist's core objection to my TS-02 design: letting an approval agent auto-clear fully compliant claims while the line manager only ever sees exceptions crosses from \"streamlining EXR-04\" into quietly eliminating it for the overwhelming majority of claim volume. Hitl_designer's framing is the one that actually moves me — a control that is \"formally in the loop but functionally reviewing nothing\" is worse than an honestly eliminated control, because it preserves the appearance of EXR-R-08 compliance without the substance. I withdraw the \"manager touc",
+      "phase": "round 2",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 5628,
+      "excerpt": "1. CONCEDE\n\nI accept emerging_economy's point that my round-1 design quietly assumed a tier-one deployment environment. I described OCR capture, policy-engine checks and notification as \"configuration exercises using off-the-shelf tooling\" without asking whether that tooling assumes always-on connectivity, premium FX data feeds, and universal bank rails. A controller signing off on a group-wide rollout — not just a head-office pilot — has to answer for field and offshore employees too, so I now concede that Target Step 1 (submission) must support store-and-forward/offline queuing, that Target ",
+      "phase": "round 2",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 8670,
+      "excerpt": "1. CONCEDE\n\nemerging_economy has changed my mind on how EXR-02 should sit relative to submission. I had proposed merging EXR-01 and EXR-02 into a single step on the assumption that OCR/extraction happens invisibly inside the employee's live submission session, with validation errors returned immediately. That assumes a synchronous, connected, clean-image world. In practice, and not just in offshore contexts, receipts are photographed on shared devices, submitted in batches, or queued when connectivity returns, and extraction confidence varies enough that a non-trivial share of lines must be ki",
+      "phase": "round 2",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 6669,
+      "excerpt": "1. CONCEDE\n\nI accept hitl_designer's framing of the manager-approval redesign more precisely than my own round-1 language allowed. I said EXR-04 must stay \"retained, unchanged in substance\" and resisted automation there; hitl_designer's point that the manager should see a structured flag summary rather than a raw claim is a real improvement I should not have left out, because in thin-bench offshore contexts the manager is often also wearing other hats and a poorly-triaged approval queue is exactly where fatigue-driven rubber-stamping happens. I now accept that EXR-04 can change its information",
+      "phase": "round 2",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 6948,
+      "excerpt": "1. CONCEDE\n\nI accept agentic_architect's objection to my own Round-1 design on one specific point: I had folded EXR-02's extraction function into the same automated step as EXR-03's deterministic policy matching. Agentic_architect is right that collapsing these into one undifferentiated automated blob trades away exactly the observability my own charter demands. Extraction and compliance-checking are different functions with different failure modes — a low-confidence OCR read and a policy-limit breach are not the same kind of exception, and a human working an exception queue needs to know whic",
+      "phase": "round 2",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 8416,
+      "excerpt": "**1. CONCEDE**\n\nTo hitl_designer: I accept the specific point that my T-07 \"Payment Execution Agent\" under-specified its highest-risk escalation trigger. I listed \"bad bank details, duplicate detection\" as generic failure modes, but hitl_designer is right that a bank-detail change is a qualitatively different trigger from a bad format — it is a known fraud vector that must force a mandatory human verification step regardless of how clean the rest of the claim is, even for a repeat payee whose other data looks routine. I am folding this in explicitly: T-07's trigger logic must treat \"payee bank",
+      "phase": "round 2",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 7769,
+      "excerpt": "1. CONCEDE\n\nI accept emerging_economy's point on FX data-licensing economics: nothing in KB-07 requires a continuously-licensed, real-time market-data feed. The standard requires that monetary items be initially recorded at the rate applicable to the transaction date; it is silent on sourcing cadence. A daily or weekly batch rate table satisfies KB-07 provided the rate applied to a given transaction is the rate dated to (or validly approximating) that transaction's actual date, with any approximation policy applied consistently (KB-06). I was previously treating \"transaction-date exchange rate",
+      "phase": "round 2",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 11885,
+      "excerpt": "{\n  \"workflow_id\": \"P2P-EXR-01\",\n  \"baseline_step_ids\": [\"EXR-01\", \"EXR-02\", \"EXR-03\", \"EXR-04\", \"EXR-05\", \"EXR-06\", \"EXR-07\", \"EXR-08\"],\n  \"steps\": [\n    {\n      \"step_id\": \"T-01\",\n      \"name\": \"Claim submission with embedded receipt capture\",\n      \"description\": \"The employee originates the claim, entering expense details and attaching receipt images for claim lines above the receipt threshold. Submission supports asynchronous, store-and-forward operation so claims can be queued on intermittent connectivity and synced later; no automated agent submits on the employee's behalf.\",\n      \"act",
+      "phase": "synthesis",
+      "role": "synthesis",
+      "truncated": true
+    }
+  ],
+  "workflow_id": "P2P-EXR-01"
+}

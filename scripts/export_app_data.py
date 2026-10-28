@@ -44,10 +44,13 @@ from design_council.measures.actor_class import AGENTIC_ONLY, PRIMARY, decided_c
 from design_council.measures.consistency import pairwise_agreements  # noqa: E402
 from design_council.measures.depth import measure_depth  # noqa: E402
 from design_council.measures.packs import encoding_path_for, load_v1_runs  # noqa: E402
+from design_council.run_logging import sha256_file  # noqa: E402
 from design_council.schemas import Disposition, TargetStateSpec, WorkflowEncoding  # noqa: E402
 
 RUNS_ROOT = REPO_ROOT / "runs"
 HELDOUT_SET = "heldout-v1"
+SEQ_SET = "sequential"
+SEQ_LABEL = "Sequential (exploratory, post-freeze)"
 HELDOUT = ["P2P-TWM-01", "P2P-PRE-01", "P2P-EXR-01", "R2R-ACR-01", "R2R-FSP-01", "FPA-VAR-01", "FPA-ABB-01"]
 DEV = ["P2P-VIP-01", "R2R-PC-01", "FPA-RF-01"]
 TRANSACTIONAL = {"P2P-TWM-01", "P2P-PRE-01", "P2P-EXR-01", "R2R-ACR-01"}
@@ -95,6 +98,12 @@ def phase_of(role: str) -> tuple[str, str]:
     if role.startswith("round2_"):
         return "round 2", role[len("round2_"):]
     if role == "synthesis":
+        return "synthesis", "synthesis"
+    if role.startswith("seq1_"):
+        return "perspectives", role[len("seq1_"):]
+    if role.startswith("seq2_"):
+        return "reconsiderations", role[len("seq2_"):]
+    if role == "seq_synthesis":
         return "synthesis", "synthesis"
     return "single agent", role
 
@@ -264,7 +273,19 @@ def main() -> int:
         for cond, summaries in load_v1_runs(wf).items():
             for i, s in enumerate(sorted(summaries, key=lambda s: s.run_id), start=1):
                 dev_runs[s.run_id] = export_run(s.path, "dev-v1", i, encodings[wf], eff)
-    for run_id, data in {**heldout_runs, **dev_runs}.items():
+    # Sequential runs (exploratory, post-freeze): every run directory with a TSS, in run-id order.
+    # Directories without a TSS are failed attempts and are left out. rep = order within the workflow.
+    seq_runs = {}
+    for run_dir in sorted(args.runs_root.glob("*-sequential-*")):
+        if not (run_dir / "tss.json").exists():
+            continue
+        manifest = json.loads((run_dir / "run_manifest.json").read_text())
+        wf = manifest["workflow_id"]
+        if manifest["encoding_sha256"] != sha256_file(REPO_ROOT / heldout_paths[wf]):
+            raise SystemExit(f"{run_dir.name}: encoding differs from the held-out encoding of {wf}")
+        rep = 1 + sum(1 for r in seq_runs.values() if r["workflow_id"] == wf)
+        seq_runs[run_dir.name] = export_run(run_dir, SEQ_SET, rep, encodings[wf], eff)
+    for run_id, data in {**heldout_runs, **dev_runs, **seq_runs}.items():
         write(out / "runs" / f"{run_id}.json", data)
 
     # Held-out tables.
@@ -361,6 +382,34 @@ def main() -> int:
                    + [{"role": role, "primary": 0, "any": sum(1 for c in passing if role in c["roles"])}
                       for role in sorted({r for c in passing for r in c["roles"]} - {c["primary_role"] for c in passing})],
         "controls": controls,
+    })
+
+    # Sequential condition (exploratory): the workflows it was run on, against the held-out cells.
+    seq_wfs = [wf for wf in HELDOUT if any(r["workflow_id"] == wf for r in seq_runs.values())]
+
+    def summary(rs):
+        ds = [Fraction(r["depth"]["total_baseline_steps"] - r["depth"]["counts"]["retained"],
+                       r["depth"]["total_baseline_steps"]) for r in rs]
+        pairs = [sum(a[k] == b[k] for k in a) / len(a)
+                 for a, b in combinations([r["consistency_inputs"] for r in rs], 2)]
+        confs = [r["gate"]["conformance_score"] for r in rs]
+        return {"n": len(rs), "run_ids": [r["run_id"] for r in rs],
+                "depth_mean": r6(sum(ds, Fraction(0)) / len(ds)), "depth_min": r6(min(ds)), "depth_max": r6(max(ds)),
+                "conformance_mean": r6(mean(confs)), "runs_below_1": sum(1 for c in confs if c < 1),
+                "consistency": r6(mean(pairs)),
+                "mean_cost_usd": r6(mean(r["efficiency"]["cost_usd"] for r in rs)),
+                "mean_runtime_min": r6(mean(r["efficiency"]["runtime_min"] for r in rs))}
+
+    write(out / "results" / "sequential.json", {
+        "exploratory": True, "post_freeze": True, "label": SEQ_LABEL,
+        "protocol": "seven cumulative perspectives (one per role charter), seven reconsiderations, synthesis",
+        "workflows": [{"workflow_id": wf, "doc": f"docs/SEQUENTIAL_{wf}.md",
+                       "preregistration": (f"docs/SEQUENTIAL_{wf}_preregistration.md"
+                                           if (REPO_ROOT / "docs" / f"SEQUENTIAL_{wf}_preregistration.md").exists() else None),
+                       "conditions": {c: summary(sorted([r for r in runs.values() if r["workflow_id"] == wf and r["condition"] == c],
+                                                        key=lambda r: r["rep"]))
+                                      for c, runs in (("sequential", seq_runs), ("council", heldout_runs), ("baseline", heldout_runs))}}
+                      for wf in seq_wfs],
     })
 
     # Development grid (v1).
@@ -473,6 +522,7 @@ def main() -> int:
                                                             and e["workflow_id"] == wf and e["condition"] == c), None)}
                                     for wf in HELDOUT for c in CONDITIONS]},
             "dev-v1": {"label": "Development grid (v1)", "workflows": DEV, "runs": sorted(dev_runs)},
+            SEQ_SET: {"label": SEQ_LABEL, "exploratory": True, "workflows": seq_wfs, "runs": sorted(seq_runs)},
         },
         "workflows": workflow_index,
         "findings": findings,
@@ -484,7 +534,8 @@ def main() -> int:
     }
     write(out / "index.json", index)
     (out / "SCHEMA.md").write_text(SCHEMA)
-    print(f"exported {len(heldout_runs)} held-out runs, {len(dev_runs)} dev runs, {len(controls)} controls "
+    print(f"exported {len(heldout_runs)} held-out runs, {len(dev_runs)} dev runs, {len(seq_runs)} sequential runs, "
+          f"{len(controls)} controls "
           f"({len(passing)} PASS) to {out}")
     return 0
 
@@ -503,6 +554,8 @@ bytes. JSON files use sorted keys. Floats are rounded to 6 decimals.
   `runs` (68 run ids), `cells[]` = {`workflow_id`, `condition`, `run_ids` in rep order, `stop_decision`
   (`complete_at_n4` | `run_5`)}.
 - `sets.dev-v1`: `label`, `workflows` (3 ids), `runs` (18 v1 run ids).
+- `sets.sequential`: exploratory, post-freeze. `label`, `exploratory`, `workflows` (the held-out
+  workflows that have sequential runs), `runs` (run ids with a TSS; failed attempts left out).
 - `workflows[]`: {`workflow_id`, `name`, `split` (heldout | dev), `profile` (transactional |
   judgment-dense | null), `function_area`, `steps`, `requirements`, `open_steps`} (the last three are counts).
 - `findings[]`: {`id` (F1 to F6), `status` (pre-registered | pre-registered counts | pre-registered coding |
@@ -516,8 +569,8 @@ The baseline encoding: `name`, `split`, `domain`, `function_area`, `profile`, `s
 outputs), `requirements[]` (requirement_id, statement, rule_type, params).
 
 ## runs/<run_id>.json
-- `run_id`, `set` (heldout-v1 | dev-v1), `workflow_id`, `condition` (council | baseline), `rep`
-  (held-out: ledger repetition; dev: order by run id), `created_utc`, `git_commit`,
+- `run_id`, `set` (heldout-v1 | dev-v1 | sequential), `workflow_id`, `condition` (council | baseline |
+  sequential), `rep` (held-out: ledger repetition; dev and sequential: order by run id within the workflow), `created_utc`, `git_commit`,
   `resolved_model`, `disposition_convention_version`.
 - `steps[]`: target-state steps with `class_primary` and `class_agentic_only` (HUMAN | HYBRID |
   AGENT, `design_council/measures/actor_class.decided_class`).
@@ -527,7 +580,8 @@ outputs), `requirements[]` (requirement_id, statement, rule_type, params).
 - `consistency_inputs`: baseline step id → disposition (pairwise agreement is computed from these).
 - `efficiency`: input/output tokens, calls (probe excluded, failed attempts included),
   `failed_attempts`, `runtime_min`, `cost_usd` ($2/M input, $10/M output).
-- `transcript[]`: {`phase` (round 1 | round 2 | synthesis | single agent), `role`, `excerpt`
+- `transcript[]`: {`phase` (round 1 | round 2 | synthesis | single agent | perspectives |
+  reconsiderations), `role`, `excerpt`
   (first 600 characters), `truncated`, `chars`}.
 
 ## results/heldout_tables.json
@@ -553,6 +607,12 @@ AGENT, HITL, handoffs, h2h, approvals). `seed`, `draws` and `bootstrap` are reco
 Section 6 coding (final). `per_workflow` (final_controls, pass, strict_75), `by_role` (primary,
 any), and `controls[]` = {control_id, merged_ids, name, workflow_id, members, primary_role, roles,
 council_present, council_n, baseline_present, outcome, strict_75, quote, quote_run_id}.
+
+## results/sequential.json
+Exploratory, post-freeze. `label`, `protocol`, and `workflows[]` = {`workflow_id`, `doc`,
+`preregistration` (path or null), `conditions` (sequential | council | baseline: n, run_ids,
+depth_mean/min/max, conformance_mean, runs_below_1, consistency, mean_cost_usd, mean_runtime_min)}.
+Council and baseline are the held-out cells for the same workflow. Not part of any held-out table.
 
 ## results/dev_grid.json
 v1 development grid per workflow x condition: n, run_ids, depth mean/min/max, conformance mean,

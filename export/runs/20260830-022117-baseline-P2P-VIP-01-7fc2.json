@@ -1,0 +1,294 @@
+{
+  "condition": "baseline",
+  "consistency_inputs": {
+    "VIP-01": "merged",
+    "VIP-02": "merged",
+    "VIP-03": "restructured",
+    "VIP-04": "restructured",
+    "VIP-05": "retained",
+    "VIP-06": "retained",
+    "VIP-07": "retained",
+    "VIP-08": "retained"
+  },
+  "created_utc": "2026-08-30T02:21:17.945178Z",
+  "depth": {
+    "counts": {
+      "absorbed": 0,
+      "eliminated": 0,
+      "merged": 2,
+      "restructured": 2,
+      "retained": 4
+    },
+    "score": 0.5,
+    "total_baseline_steps": 8
+  },
+  "disposition_convention_version": "v1 (pre-01034ae)",
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "VIP-01",
+      "disposition": "merged",
+      "rationale": "Intake was unconstrained by design; it is folded into a single capture-and-validation step alongside VIP-02 since logging header metadata and extracting content are now performed in one automated pass, removing a redundant handoff.",
+      "target_step_ids": [
+        "TS-01"
+      ]
+    },
+    {
+      "baseline_step_id": "VIP-02",
+      "disposition": "merged",
+      "rationale": "Data extraction and validation was unconstrained by design; it is merged with intake into TS-01 because modern OCR/AI capture engines validate as they extract, eliminating a separate step boundary without losing the structured-record output.",
+      "target_step_ids": [
+        "TS-01"
+      ]
+    },
+    {
+      "baseline_step_id": "VIP-03",
+      "disposition": "restructured",
+      "rationale": "Three-way matching is preserved per VIP-R-01/VIP-R-02: TS-02 still consumes PO data and GRN data and still produces a clean/tolerance/exception result, restructured to route clean matches straight through and to make explicit the invoice-PO-GRN evidence chain that establishes purchase cost under IAS 2 (KB-09).",
+      "target_step_ids": [
+        "TS-02"
+      ]
+    },
+    {
+      "baseline_step_id": "VIP-04",
+      "disposition": "restructured",
+      "rationale": "Exception handling is retained as a distinct human-accountable step because IAS 8 error correction (KB-05) requires that detection and correction paths exist and not be suppressed by automation; it is restructured only to receive exceptions directly from the automated matcher rather than from a manual match step.",
+      "target_step_ids": [
+        "TS-03"
+      ]
+    },
+    {
+      "baseline_step_id": "VIP-05",
+      "disposition": "retained",
+      "rationale": "Approval is preserved per VIP-R-03 and continues to precede posting and payment (VIP-R-04), satisfied by TS-04 running before TS-05 and TS-06; the approver hierarchy remains structurally distinct from the posting accountant to satisfy the actor-separation requirement.",
+      "target_step_ids": [
+        "TS-04"
+      ]
+    },
+    {
+      "baseline_step_id": "VIP-06",
+      "disposition": "retained",
+      "rationale": "GL posting is preserved per VIP-R-05; invoices still cannot bypass the ledger. TS-05 is performed by an AP accountant distinct from the TS-04 approver, satisfying VIP-R-06, and explicitly carries the accrual mechanism (KB-01) and payables recognition timing (KB-11).",
+      "target_step_ids": [
+        "TS-05"
+      ]
+    },
+    {
+      "baseline_step_id": "VIP-07",
+      "disposition": "retained",
+      "rationale": "Payment execution is preserved per VIP-R-08 and continues to occur only after approval (VIP-R-04); it now also explicitly records exchange differences on FX-denominated invoices per IAS 21 (KB-08) rather than netting them invisibly.",
+      "target_step_ids": [
+        "TS-06"
+      ]
+    },
+    {
+      "baseline_step_id": "VIP-08",
+      "disposition": "retained",
+      "rationale": "AP reconciliation is preserved per VIP-R-07, retaining the same reconciliation inputs and outputs while making explicit the cutoff/period-gate discipline required by IAS 1 (KB-03) and the evidential trail required by IAS 1 fair presentation (KB-02).",
+      "target_step_ids": [
+        "TS-07"
+      ]
+    }
+  ],
+  "efficiency": {
+    "calls": 1,
+    "cost_usd": 0.07396,
+    "failed_attempts": 0,
+    "input_tokens": 7525,
+    "output_tokens": 5891,
+    "runtime_min": 0.821656
+  },
+  "gate": {
+    "conformance_score": 1.0,
+    "passed": 8,
+    "results": [
+      {
+        "passed": true,
+        "reason": "baseline step VIP-03 is preserved as restructured, carried by target step(s) ['TS-02']",
+        "requirement_id": "VIP-R-01",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step VIP-03 ['TS-02'] receives all required input(s) ['Purchase order data', 'Goods receipt note data']",
+        "requirement_id": "VIP-R-02",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step VIP-05 is preserved as retained, carried by target step(s) ['TS-04']",
+        "requirement_id": "VIP-R-03",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['TS-04'] for baseline VIP-05 all precede target step(s) ['TS-06'] for baseline VIP-07",
+        "requirement_id": "VIP-R-04",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step VIP-06 is preserved as retained, carried by target step(s) ['TS-05']",
+        "requirement_id": "VIP-R-05",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "actors separated: VIP-05 → ['Approver hierarchy'], VIP-06 → ['AP accountant']",
+        "requirement_id": "VIP-R-06",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step VIP-08 is preserved as retained, carried by target step(s) ['TS-07']",
+        "requirement_id": "VIP-R-07",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step VIP-07 is preserved as retained, carried by target step(s) ['TS-06']",
+        "requirement_id": "VIP-R-08",
+        "vacuous": false
+      }
+    ],
+    "total": 8
+  },
+  "git_commit": "24be37cf3378e40c844b3af4fc343d9d668e4409",
+  "rep": 3,
+  "resolved_model": "claude-sonnet-5",
+  "run_id": "20260830-022117-baseline-P2P-VIP-01-7fc2",
+  "set": "dev-v1",
+  "steps": [
+    {
+      "actor": "AP clerk (with AI capture/validation engine)",
+      "class_agentic_only": "HYBRID",
+      "class_primary": "HYBRID",
+      "description": "Vendor invoices arriving through any channel are captured, OCR/AI-extracted and validated into a single structured record in one continuous pass, eliminating the former handoff between intake logging and separate data extraction. The record carries vendor ID, invoice number, dates, amounts, currency, line items, tax and PO reference needed for downstream matching.",
+      "inputs": [
+        "Vendor invoice (email PDF, EDI, supplier portal or paper)"
+      ],
+      "name": "Intelligent invoice capture and validation",
+      "outputs": [
+        "Structured validated invoice record with header and line metadata"
+      ],
+      "step_id": "TS-01"
+    },
+    {
+      "actor": "AP analyst (with ERP/AI matching engine)",
+      "class_agentic_only": "HYBRID",
+      "class_primary": "HYBRID",
+      "description": "The validated invoice record is matched automatically against purchase order and goods receipt data. Clean matches proceed straight through; tolerance and exception outcomes are routed onward. This step is the evidence chain establishing purchase cost for inventory measurement, not merely a fraud control, so PO and GRN data remain mandatory consumed inputs.",
+      "inputs": [
+        "Structured validated invoice record",
+        "Purchase order data",
+        "Goods receipt note data"
+      ],
+      "name": "Automated three-way matching",
+      "outputs": [
+        "Match result (clean, tolerance or exception)",
+        "Invoice-PO-GRN cost evidence chain"
+      ],
+      "step_id": "TS-02"
+    },
+    {
+      "actor": "AP analyst",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Invoices flagged as exceptions by matching are investigated against variance detail and source documents by an accountable analyst, and resolved as approved, rejected or held. Resolution and its basis are recorded as an auditable error-correction trail rather than being suppressed or auto-closed.",
+      "inputs": [
+        "Exception-flagged invoice",
+        "Variance detail",
+        "Purchase order data",
+        "Goods receipt note data"
+      ],
+      "name": "Exception investigation and resolution",
+      "outputs": [
+        "Resolved invoice (approved, rejected or held)",
+        "Audit trail"
+      ],
+      "step_id": "TS-03"
+    },
+    {
+      "actor": "Approver hierarchy",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Matched and exception-resolved invoices are routed through the approval hierarchy per the approval matrix and authorised for posting, ahead of any GL coding or payment activity. Authorisation is performed by an approver, structurally distinct from the accountant who later posts the entry.",
+      "inputs": [
+        "Matched invoice",
+        "Proposed GL coding",
+        "Approval matrix"
+      ],
+      "name": "Approval routing and authorisation",
+      "outputs": [
+        "Fully approved invoice",
+        "Approval audit trail"
+      ],
+      "step_id": "TS-04"
+    },
+    {
+      "actor": "AP accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The approved invoice is coded to the chart of accounts, cost centres and project codes, then posted to the general ledger and AP subledger on an accrual basis by an accountant who did not perform the approval, preserving segregation of duties and the accrual and payables-recognition mechanisms.",
+      "inputs": [
+        "Fully approved invoice",
+        "Chart of accounts",
+        "Cost centres",
+        "Project codes"
+      ],
+      "name": "GL coding and posting",
+      "outputs": [
+        "GL journal entry posted (accrual-consistent)",
+        "AP subledger updated (payable recognised)"
+      ],
+      "step_id": "TS-05"
+    },
+    {
+      "actor": "Treasury/AP payments officer",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Posted invoices are scheduled against payment terms, vendor bank details and cash position; a payment file is generated, transmitted and confirmed. For foreign-currency invoices, exchange differences arising between initial recognition and settlement are captured explicitly rather than netted away.",
+      "inputs": [
+        "Approved posted invoice",
+        "Payment terms",
+        "Vendor bank details",
+        "Cash position"
+      ],
+      "name": "Payment scheduling and execution",
+      "outputs": [
+        "Payment file generated",
+        "Payment transmitted",
+        "Payment confirmation received",
+        "Exchange difference recorded (where applicable)"
+      ],
+      "step_id": "TS-06"
+    },
+    {
+      "actor": "AP accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Bank confirmations, the AP subledger and vendor statements are reconciled and the period-end AP balance is confirmed, with subledger cutoff enforced so the reported balance is fully supportable by evidence.",
+      "inputs": [
+        "Bank confirmations",
+        "AP subledger",
+        "Vendor statements"
+      ],
+      "name": "Reconciliation and period close",
+      "outputs": [
+        "Reconciled AP ledger",
+        "Period-end balance confirmed",
+        "Cutoff enforced"
+      ],
+      "step_id": "TS-07"
+    }
+  ],
+  "transcript": [
+    {
+      "chars": 8565,
+      "excerpt": "{\n  \"workflow_id\": \"P2P-VIP-01\",\n  \"baseline_step_ids\": [\n    \"VIP-01\",\n    \"VIP-02\",\n    \"VIP-03\",\n    \"VIP-04\",\n    \"VIP-05\",\n    \"VIP-06\",\n    \"VIP-07\",\n    \"VIP-08\"\n  ],\n  \"steps\": [\n    {\n      \"step_id\": \"TS-01\",\n      \"name\": \"Intelligent invoice capture and validation\",\n      \"description\": \"Vendor invoices arriving through any channel are captured, OCR/AI-extracted and validated into a single structured record in one continuous pass, eliminating the former handoff between intake logging and separate data extraction. The record carries vendor ID, invoice number, dates, amounts, currenc",
+      "phase": "single agent",
+      "role": "baseline_designer",
+      "truncated": true
+    }
+  ],
+  "workflow_id": "P2P-VIP-01"
+}

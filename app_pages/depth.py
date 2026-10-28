@@ -1,7 +1,7 @@
 import altair as alt
 import streamlit as st
 
-from app_lib.export_data import exploratory_note, frame, result
+from app_lib.export_data import CONDITION_LABELS, exploratory_note, frame, result, sequential_note
 
 t = result("heldout_tables")
 fi = t["fill_ins"]
@@ -114,3 +114,17 @@ st.dataframe(frame([{"Condition": cond, "Label": lab, "Labels": s["n"], "Verifie
              hide_index=True, height="content", column_config={"Rate": st.column_config.NumberColumn(format="%.3f")})
 st.caption("For 'retained', verified means consistent: no change in actor, inputs or position. Details in "
            "docs/DEPTH_VERIFICATION.md.")
+
+st.subheader("Sequential condition", anchor=False)
+sequential_note()
+seq = result("sequential")
+st.dataframe(frame([{"Workflow": w["workflow_id"], "Condition": CONDITION_LABELS[c], "Runs": x["n"],
+                     "Depth (mean)": x["depth_mean"], "Min": x["depth_min"], "Max": x["depth_max"],
+                     "Conformance": x["conformance_mean"], "Runs < 1": x["runs_below_1"],
+                     "Consistency": x["consistency"]}
+                    for w in seq["workflows"] for c, x in w["conditions"].items()]),
+             hide_index=True, height="content",
+             column_config={k: st.column_config.NumberColumn(format="%.3f")
+                            for k in ("Depth (mean)", "Min", "Max", "Conformance", "Consistency")})
+st.caption("Council and budget-matched single agent rows are the held-out cells for the same workflow. Depth as "
+           "recorded; consistency is mean pairwise disposition agreement within the cell.")

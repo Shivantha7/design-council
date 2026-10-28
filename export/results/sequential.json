@@ -1,0 +1,130 @@
+{
+  "exploratory": true,
+  "label": "Sequential (exploratory, post-freeze)",
+  "post_freeze": true,
+  "protocol": "seven cumulative perspectives (one per role charter), seven reconsiderations, synthesis",
+  "workflows": [
+    {
+      "conditions": {
+        "baseline": {
+          "conformance_mean": 1.0,
+          "consistency": 0.828571,
+          "depth_max": 0.857143,
+          "depth_mean": 0.771429,
+          "depth_min": 0.714286,
+          "mean_cost_usd": 0.0662,
+          "mean_runtime_min": 0.742115,
+          "n": 5,
+          "run_ids": [
+            "20261010-184915-baseline-P2P-TWM-01-f555",
+            "20261010-193948-baseline-P2P-TWM-01-446f",
+            "20261010-195830-baseline-P2P-TWM-01-77c7",
+            "20261010-203046-baseline-P2P-TWM-01-76b4",
+            "20261010-205000-baseline-P2P-TWM-01-47aa"
+          ],
+          "runs_below_1": 0
+        },
+        "council": {
+          "conformance_mean": 0.92,
+          "consistency": 0.828571,
+          "depth_max": 1.0,
+          "depth_mean": 0.971429,
+          "depth_min": 0.857143,
+          "mean_cost_usd": 1.411109,
+          "mean_runtime_min": 16.582779,
+          "n": 5,
+          "run_ids": [
+            "20261010-185003-council-P2P-TWM-01-6c3b",
+            "20261010-194038-council-P2P-TWM-01-0842",
+            "20261010-201338-council-P2P-TWM-01-df77",
+            "20261010-203143-council-P2P-TWM-01-5ef7",
+            "20261010-205046-council-P2P-TWM-01-c32a"
+          ],
+          "runs_below_1": 4
+        },
+        "sequential": {
+          "conformance_mean": 0.88,
+          "consistency": 0.785714,
+          "depth_max": 1.0,
+          "depth_mean": 0.971429,
+          "depth_min": 0.857143,
+          "mean_cost_usd": 1.423606,
+          "mean_runtime_min": 12.93077,
+          "n": 5,
+          "run_ids": [
+            "20261025-012256-sequential-P2P-TWM-01-5711",
+            "20261026-050630-sequential-P2P-TWM-01-6cdb",
+            "20261026-052036-sequential-P2P-TWM-01-cadb",
+            "20261026-053258-sequential-P2P-TWM-01-e656",
+            "20261026-054403-sequential-P2P-TWM-01-8710"
+          ],
+          "runs_below_1": 5
+        }
+      },
+      "doc": "docs/SEQUENTIAL_P2P-TWM-01.md",
+      "preregistration": null,
+      "workflow_id": "P2P-TWM-01"
+    },
+    {
+      "conditions": {
+        "baseline": {
+          "conformance_mean": 1.0,
+          "consistency": 0.75,
+          "depth_max": 0.75,
+          "depth_mean": 0.525,
+          "depth_min": 0.25,
+          "mean_cost_usd": 0.063708,
+          "mean_runtime_min": 0.673901,
+          "n": 5,
+          "run_ids": [
+            "20261010-184915-baseline-FPA-VAR-01-ed96",
+            "20261010-193948-baseline-FPA-VAR-01-9ef2",
+            "20261010-195830-baseline-FPA-VAR-01-c54a",
+            "20261010-203046-baseline-FPA-VAR-01-5154",
+            "20261010-205000-baseline-FPA-VAR-01-7c5b"
+          ],
+          "runs_below_1": 0
+        },
+        "council": {
+          "conformance_mean": 1.0,
+          "consistency": 0.8,
+          "depth_max": 1.0,
+          "depth_mean": 0.875,
+          "depth_min": 0.75,
+          "mean_cost_usd": 1.32449,
+          "mean_runtime_min": 15.214311,
+          "n": 5,
+          "run_ids": [
+            "20261010-184959-council-FPA-VAR-01-7759",
+            "20261010-194032-council-FPA-VAR-01-6fd0",
+            "20261010-201339-council-FPA-VAR-01-a8a0",
+            "20261010-203132-council-FPA-VAR-01-4f3e",
+            "20261010-205043-council-FPA-VAR-01-8d63"
+          ],
+          "runs_below_1": 0
+        },
+        "sequential": {
+          "conformance_mean": 0.9,
+          "consistency": 0.575,
+          "depth_max": 1.0,
+          "depth_mean": 0.875,
+          "depth_min": 0.75,
+          "mean_cost_usd": 1.554214,
+          "mean_runtime_min": 15.014101,
+          "n": 5,
+          "run_ids": [
+            "20261027-080433-sequential-FPA-VAR-01-272d",
+            "20261027-082215-sequential-FPA-VAR-01-dad8",
+            "20261027-083540-sequential-FPA-VAR-01-0e87",
+            "20261027-085058-sequential-FPA-VAR-01-f7d2",
+            "20261027-090712-sequential-FPA-VAR-01-a7de"
+          ],
+          "runs_below_1": 2
+        }
+      },
+      "doc": "docs/SEQUENTIAL_FPA-VAR-01.md",
+      "preregistration": "docs/SEQUENTIAL_FPA-VAR-01_preregistration.md",
+      "workflow_id": "FPA-VAR-01"
+    }
+  ]
+}

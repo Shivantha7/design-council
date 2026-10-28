@@ -1,0 +1,326 @@
+{
+  "condition": "baseline",
+  "consistency_inputs": {
+    "PC-01": "restructured",
+    "PC-02": "restructured",
+    "PC-03": "restructured",
+    "PC-04": "restructured",
+    "PC-05": "restructured",
+    "PC-06": "restructured",
+    "PC-07": "retained",
+    "PC-08": "retained"
+  },
+  "created_utc": "2026-08-29T11:26:22.841310Z",
+  "depth": {
+    "counts": {
+      "absorbed": 0,
+      "eliminated": 0,
+      "merged": 0,
+      "restructured": 6,
+      "retained": 2
+    },
+    "score": 0.75,
+    "total_baseline_steps": 8
+  },
+  "disposition_convention_version": "v1 (pre-01034ae)",
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "PC-01",
+      "disposition": "restructured",
+      "rationale": "Manual checklist distribution and cutoff confirmation are restructured into continuous, system-enforced cutoff monitoring and automated task distribution, preserving the period-cutoff discipline required by IAS 1 (KB-03).",
+      "target_step_ids": [
+        "TS-01"
+      ]
+    },
+    {
+      "baseline_step_id": "PC-02",
+      "disposition": "restructured",
+      "rationale": "The mixed mechanical/judgmental nature of journal preparation is split: template-driven accruals and prepayment releases are automated with exception review (TS-02), while estimation entries requiring documented judgment (provisions, ECL, NRV write-downs) remain a distinct human-performed step (TS-03), preserving the accrual mechanism (KB-01), estimate documentation (KB-04, KB-10) and error-correction path (KB-05).",
+      "target_step_ids": [
+        "TS-02",
+        "TS-03"
+      ]
+    },
+    {
+      "baseline_step_id": "PC-03",
+      "disposition": "restructured",
+      "rationale": "Allocation processing is restructured into a system-driven automated allocation run with exception-based human validation of allocation bases, retaining the same functional outcome with reduced manual effort.",
+      "target_step_ids": [
+        "TS-04"
+      ]
+    },
+    {
+      "baseline_step_id": "PC-04",
+      "disposition": "restructured",
+      "rationale": "Intercompany processing survives as required (R2R-R-02): high-volume matching is automated while inter-entity mismatch resolution, settlement and elimination-entry preparation remain human-performed, preserving the completeness of intragroup identification and elimination required by IFRS 10 (KB-14).",
+      "target_step_ids": [
+        "TS-05"
+      ]
+    },
+    {
+      "baseline_step_id": "PC-05",
+      "disposition": "restructured",
+      "rationale": "GL reconciliation survives as required (R2R-R-01), restructured into a risk-based model where automated matching handles low-risk volume and human certification concentrates on high-risk and exception items, preserving the evidential trail required by IAS 1 (KB-02) and error-correction (KB-05).",
+      "target_step_ids": [
+        "TS-06"
+      ]
+    },
+    {
+      "baseline_step_id": "PC-06",
+      "disposition": "restructured",
+      "rationale": "Consolidation is restructured around an automated consolidation engine but retains mandatory FX retranslation (KB-07), exchange-difference tracking (KB-08) and policy-consistent computation (KB-06) as non-negotiable accounting computations.",
+      "target_step_ids": [
+        "TS-07"
+      ]
+    },
+    {
+      "baseline_step_id": "PC-07",
+      "disposition": "retained",
+      "rationale": "Management review survives as required (R2R-R-07), retained substantially unchanged and performed by the controller, distinct from journal-preparing actors (R2R-R-05), preserving faithful representation (KB-02).",
+      "target_step_ids": [
+        "TS-08"
+      ]
+    },
+    {
+      "baseline_step_id": "PC-08",
+      "disposition": "retained",
+      "rationale": "The reporting package function survives as required (R2R-R-06), retained with automated compilation, and remains ordered after both reconciliation (TS-06) and management review (TS-08) per R2R-R-03 and R2R-R-04.",
+      "target_step_ids": [
+        "TS-09"
+      ]
+    }
+  ],
+  "efficiency": {
+    "calls": 1,
+    "cost_usd": 0.085832,
+    "failed_attempts": 0,
+    "input_tokens": 7681,
+    "output_tokens": 7047,
+    "runtime_min": 0.94692
+  },
+  "gate": {
+    "conformance_score": 1.0,
+    "passed": 7,
+    "results": [
+      {
+        "passed": true,
+        "reason": "baseline step PC-05 is preserved as restructured, carried by target step(s) ['TS-06']",
+        "requirement_id": "R2R-R-01",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step PC-04 is preserved as restructured, carried by target step(s) ['TS-05']",
+        "requirement_id": "R2R-R-02",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['TS-06'] for baseline PC-05 all precede target step(s) ['TS-09'] for baseline PC-08",
+        "requirement_id": "R2R-R-03",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['TS-08'] for baseline PC-07 all precede target step(s) ['TS-09'] for baseline PC-08",
+        "requirement_id": "R2R-R-04",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "actors separated: PC-02 → ['GL accountant', 'Senior GL accountant'], PC-07 → ['Controller']",
+        "requirement_id": "R2R-R-05",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step PC-08 is preserved as retained, carried by target step(s) ['TS-09']",
+        "requirement_id": "R2R-R-06",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step PC-07 is preserved as retained, carried by target step(s) ['TS-08']",
+        "requirement_id": "R2R-R-07",
+        "vacuous": false
+      }
+    ],
+    "total": 7
+  },
+  "git_commit": "37dafefdb44082cc644c350eaa6c6042f75e2da2",
+  "rep": 1,
+  "resolved_model": "claude-sonnet-5",
+  "run_id": "20260829-112622-baseline-R2R-PC-01-08d1",
+  "set": "dev-v1",
+  "steps": [
+    {
+      "actor": "Close manager",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Maintain a continuous close calendar with automated subledger cutoff monitoring (AP, AR, fixed assets, payroll); system-enforced posting locks triggered at defined cutoff times; automated distribution of task assignments and deadlines via a workflow platform; real-time dashboard of data readiness replaces manual checklist distribution while preserving period-cutoff discipline.",
+      "inputs": [
+        "Close calendar",
+        "Subledger status feeds (AP, AR, fixed assets, payroll)",
+        "Workflow automation platform"
+      ],
+      "name": "Continuous close orchestration and cutoff control",
+      "outputs": [
+        "Posting lock enforced automatically",
+        "Task assignments distributed via dashboard",
+        "Data readiness monitored in real time"
+      ],
+      "step_id": "TS-01"
+    },
+    {
+      "actor": "GL accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "System auto-generates recurring accrual and prepayment-release journals from templates and amortisation schedules, and applies rule-based reclassification/error-correction entries; GL accountant reviews only system-flagged exceptions and approves auto-posted mechanical entries by exception, preserving the accrual mechanism and error-correction path.",
+      "inputs": [
+        "Accrual templates and schedules",
+        "Amortisation schedules",
+        "Automated journal engine rules"
+      ],
+      "name": "Automated recurring journal generation",
+      "outputs": [
+        "Mechanical journals auto-posted",
+        "Exceptions flagged for review"
+      ],
+      "step_id": "TS-02"
+    },
+    {
+      "actor": "Senior GL accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Prepare provisions and estimates requiring judgment and a documented basis (bad debt/expected credit loss, inventory net realisable value write-downs, litigation), with supporting evidence retained and reviewed against prior-period basis for policy consistency; post estimation journals with full audit trail.",
+      "inputs": [
+        "Provision support documentation",
+        "Expected credit loss models",
+        "NRV analysis",
+        "Prior-period estimate basis"
+      ],
+      "name": "Estimation and judgmental provisioning",
+      "outputs": [
+        "Estimation journals posted with documented basis and evidence"
+      ],
+      "step_id": "TS-03"
+    },
+    {
+      "actor": "GL accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Run system-driven cost and overhead allocations per the allocation model (shared-service recharges, corporate overhead distribution, intercompany management fees); automated validation of allocation bases against cost-centre data with exception-based human review of variances before posting.",
+      "inputs": [
+        "Allocation model",
+        "Allocation bases",
+        "Cost centre data"
+      ],
+      "name": "Automated cost and overhead allocations",
+      "outputs": [
+        "Allocation journals posted",
+        "Allocation base exceptions resolved"
+      ],
+      "step_id": "TS-04"
+    },
+    {
+      "actor": "Intercompany accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "High-volume, rule-based automated matching of intercompany balances (AR/AP mirror accounts, loans, recharges) across entities; system flags mismatches for investigation; intercompany accountant coordinates with counterparty entities to resolve exceptions, processes settlements/netting, and prepares elimination entries ensuring intragroup positions are fully identifiable and eliminable.",
+      "inputs": [
+        "Intercompany balances by entity",
+        "Counterparty confirmations",
+        "Automated matching engine"
+      ],
+      "name": "Automated intercompany matching and exception resolution",
+      "outputs": [
+        "Intercompany balances matched and settled",
+        "Elimination entries prepared",
+        "Unresolved mismatches escalated"
+      ],
+      "step_id": "TS-05"
+    },
+    {
+      "actor": "GL accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Automated system matching reconciles GL to subledgers, bank statements and supporting schedules for low-risk, high-volume accounts; risk-rated accounts determine reconciliation frequency and reviewer requirements; GL accountant certifies reconciliations with supporting evidence, concentrating effort on exception-based and high-risk items; unreconciled items are flagged and aged for resolution.",
+      "inputs": [
+        "GL balances",
+        "Subledger balances",
+        "Bank statements",
+        "Supporting schedules",
+        "Reconciliation policy",
+        "Automated matching tool"
+      ],
+      "name": "Risk-based GL and balance-sheet reconciliation",
+      "outputs": [
+        "Reconciliation certifications with evidence",
+        "Unreconciled items flagged and aged"
+      ],
+      "step_id": "TS-06"
+    },
+    {
+      "actor": "Financial accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Prepare the trial balance; run an automated consolidation engine across entities including currency retranslation at closing rates, elimination of intercompany balances and unrealised profit using the elimination entries from intercompany processing, and minority-interest processing; validate consolidated balances against entity submissions and track exchange differences explicitly.",
+      "inputs": [
+        "Entity trial balances",
+        "FX rates",
+        "Elimination entries",
+        "Consolidation engine"
+      ],
+      "name": "Trial balance, consolidation, FX translation and eliminations",
+      "outputs": [
+        "Consolidated balances validated",
+        "Exchange differences tracked"
+      ],
+      "step_id": "TS-07"
+    },
+    {
+      "actor": "Controller",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Review draft consolidated results against expectations and prior period using analytics-driven variance flagging; investigate anomalies; determine, document and post management adjustments; sign off account-level results for reporting. Performed by the controller, independent of the accountants who prepared the underlying journals, preserving segregation of duties.",
+      "inputs": [
+        "Draft consolidated results",
+        "Prior period comparatives",
+        "Expectations",
+        "Variance analytics"
+      ],
+      "name": "Management review and adjustments",
+      "outputs": [
+        "Management adjustments posted",
+        "Account-level sign-off"
+      ],
+      "step_id": "TS-08"
+    },
+    {
+      "actor": "Group reporting accountant",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Compile the period-end reporting package (financial statements, management commentary, variance schedules, KPI summaries) using automated report generation from signed-off consolidated results; distribute to management and group per the reporting timetable.",
+      "inputs": [
+        "Signed-off consolidated results",
+        "Reporting timetable",
+        "Report automation tool"
+      ],
+      "name": "Financial reporting package",
+      "outputs": [
+        "Reporting package distributed"
+      ],
+      "step_id": "TS-09"
+    }
+  ],
+  "transcript": [
+    {
+      "chars": 9874,
+      "excerpt": "{\n  \"workflow_id\": \"R2R-PC-01\",\n  \"baseline_step_ids\": [\"PC-01\", \"PC-02\", \"PC-03\", \"PC-04\", \"PC-05\", \"PC-06\", \"PC-07\", \"PC-08\"],\n  \"steps\": [\n    {\n      \"step_id\": \"TS-01\",\n      \"name\": \"Continuous close orchestration and cutoff control\",\n      \"description\": \"Maintain a continuous close calendar with automated subledger cutoff monitoring (AP, AR, fixed assets, payroll); system-enforced posting locks triggered at defined cutoff times; automated distribution of task assignments and deadlines via a workflow platform; real-time dashboard of data readiness replaces manual checklist distribution ",
+      "phase": "single agent",
+      "role": "baseline_designer",
+      "truncated": true
+    }
+  ],
+  "workflow_id": "R2R-PC-01"
+}

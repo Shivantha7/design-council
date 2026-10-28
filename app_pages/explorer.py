@@ -1,6 +1,6 @@
 import streamlit as st
 
-from app_lib.export_data import CONDITION_LABELS, frame, index, label, role, run, workflow
+from app_lib.export_data import CONDITION_LABELS, frame, index, label, role, run, sequential_note, workflow
 
 idx = index()
 st.caption("Pick a workflow, condition and run to see its input (the encoding), its process (deliberation by "
@@ -10,10 +10,16 @@ with st.container(horizontal=True):
     set_name = st.segmented_control("Set", ["heldout-v1", "dev-v1"], default="heldout-v1", required=True,
                                     format_func=lambda s: idx["sets"][s]["label"], key="explorer_set")
     wf = st.selectbox("Workflow", idx["sets"][set_name]["workflows"], format_func=label)
-    cond = st.segmented_control("Condition", ["council", "baseline"], default="council", required=True,
+    # The exploratory sequential condition exists only for the held-out workflows it was run on.
+    seq = idx["sets"]["sequential"]
+    conditions = ["council", "baseline"] + (["sequential"] if set_name == "heldout-v1" and wf in seq["workflows"] else [])
+    cond = st.segmented_control("Condition", conditions, default="council", required=True,
                                 format_func=CONDITION_LABELS.get)
 
-runs = sorted((run(r) for r in idx["sets"][set_name]["runs"]), key=lambda r: r["rep"])
+if cond == "sequential":
+    sequential_note()
+run_ids = seq["runs"] if cond == "sequential" else idx["sets"][set_name]["runs"]
+runs = sorted((run(r) for r in run_ids), key=lambda r: r["rep"])
 choices = [r for r in runs if r["workflow_id"] == wf and r["condition"] == cond]
 r = st.selectbox("Run", choices, format_func=lambda r: f"rep {r['rep']} · {r['run_id']}")
 
@@ -37,7 +43,7 @@ with tab_in:
 
 with tab_proc:
     st.caption("The first 600 characters of each contribution. The full text is in the run's call log.")
-    phases = ["round 1", "round 2", "synthesis", "single agent"]
+    phases = ["round 1", "round 2", "perspectives", "reconsiderations", "synthesis", "single agent"]
     for phase in phases:
         items = [t for t in r["transcript"] if t["phase"] == phase]
         if not items:

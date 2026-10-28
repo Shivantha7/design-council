@@ -1,0 +1,407 @@
+{
+  "condition": "council",
+  "consistency_inputs": {
+    "PRE-01": "merged",
+    "PRE-02": "merged",
+    "PRE-03": "restructured",
+    "PRE-04": "retained",
+    "PRE-05": "restructured",
+    "PRE-06": "restructured",
+    "PRE-07": "restructured",
+    "PRE-08": "restructured"
+  },
+  "created_utc": "2026-10-10T19:40:35.602246Z",
+  "depth": {
+    "counts": {
+      "absorbed": 0,
+      "eliminated": 0,
+      "merged": 2,
+      "restructured": 5,
+      "retained": 1
+    },
+    "score": 0.875,
+    "total_baseline_steps": 8
+  },
+  "disposition_convention_version": "v1, restored 11 Oct 2026",
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "PRE-01",
+      "disposition": "merged",
+      "rationale": "Due-item selection and proposal generation are, in modern ERP operation, a single parameterised batch pass performed by the same actor; splitting them into two baseline steps described a handoff that does not exist operationally. The merge is adopted because pragmatist, finance_domain, emerging_economy and agentic_architect converge on it and hitl_designer agrees no judgment content sits at the selection/grouping boundary. The required input 'Approved matched invoices' remains a structural gate on the merged step, satisfying PRE-R-01, and the displaced analyst effort is explicitly redirected to exception triage and vendor master-data stewardship (emerging_economy's non-negotiable, accepted council-wide) rather than assumed to disappear.",
+      "target_step_ids": [
+        "TS-01"
+      ]
+    },
+    {
+      "baseline_step_id": "PRE-02",
+      "disposition": "merged",
+      "rationale": "Payment proposal generation survives as required by PRE-R-08, carried within TS-01 as the system-executed grouping function; the function is not eliminated, only its step boundary with PRE-01 is removed, consistent with the near-unanimous council position that this is a documentation correction rather than a control change.",
+      "target_step_ids": [
+        "TS-01"
+      ]
+    },
+    {
+      "baseline_step_id": "PRE-03",
+      "disposition": "restructured",
+      "rationale": "Proposal review survives as a distinct, human-judgment checkpoint (PRE-R-09) and is strengthened rather than weakened: automated screening replaces manual hunting for duplicates/blocked vendors/bank-detail changes, but disposition of every flag remains a human act, and bank-detail-change flags now require a documented, independently-sourced verification artifact before clearance. This follows the council's convergence (finance_domain, hitl_designer, emerging_economy, accounting_standards, pragmatist, and maximalist's round-2 concession) that this is a KB-11 derecognition issue, not merely a fraud-control nicety, and therefore cannot be reduced to a dashboard click. Ordering before approval (PRE-R-02) and before release (PRE-R-03) is preserved by construction in the target flow.",
+      "target_step_ids": [
+        "TS-02"
+      ]
+    },
+    {
+      "baseline_step_id": "PRE-04",
+      "disposition": "retained",
+      "rationale": "Payment approval remains a human, named, accountable act for every payment with no sub-threshold auto-clear. The council's decisive majority (pragmatist, finance_domain, emerging_economy, hitl_designer, agentic_architect, accounting_standards noting it has no basis to override this governance judgment) rejected maximalist's risk-tiered auto-approval proposal: delegation of authority assigns personal accountability for releasing cash, which a rule-engine or control agent cannot bear regardless of how independent its logic is from the proposal agent. Decision-support automation (a read-only packet) is permitted; a write-path to approval is not. Actor separation from TS-01 (PRE-R-04) is enforced structurally at the credential/access-control level, and approval-before-release ordering (PRE-R-05) is preserved.",
+      "target_step_ids": [
+        "TS-03"
+      ]
+    },
+    {
+      "baseline_step_id": "PRE-05",
+      "disposition": "restructured",
+      "rationale": "File generation and release survive (PRE-R-11) but are split into two distinct actions: generation is system-executed and checked against an immutable hash of the approved proposal (agentic_architect's mechanism, council-adopted), while release — the irreversible money-moving act — requires an affirmative human-triggered confirmation by the treasury officer, never an automatic consequence of approval clearing (maximalist's 'triggered automatically' formulation was explicitly withdrawn and is not carried forward). Transmission supports manual/batch upload as a first-class path alongside API transmission, per the emerging_economy/finance_domain/pragmatist consensus against assuming ubiquitous bank connectivity. A risk-tiered second signatory above a configurable threshold addresses finance_domain's tampering-risk concern without imposing a universal dual-authorization mandate that emerging_economy correctly identifies as unstaffable in thin finance functions.",
+      "target_step_ids": [
+        "TS-04"
+      ]
+    },
+    {
+      "baseline_step_id": "PRE-06",
+      "disposition": "restructured",
+      "rationale": "Bank confirmation receipt is unconstrained by design and is redesigned around automated batch-file and/or API matching, but it is kept as a distinct step with a named accountable owner (treasury officer) for the exception queue, rather than absorbed invisibly into posting as maximalist and agentic_architect proposed. Finance_domain, pragmatist and emerging_economy's point prevails: unmatched settlements, partial executions and rejects are a standing, recurring queue every cycle, not a rare tail event, and 'the function persists' is not satisfied by a data object surviving with no owner. The bank settlement confirmation artifact required by PRE-R-06 is preserved and still feeds TS-06 directly. Batch/statement matching is the first-class baseline, API matching an optional enhancement, per the emerging_economy/finance_domain degrade-gracefully position.",
+      "target_step_ids": [
+        "TS-05"
+      ]
+    },
+    {
+      "baseline_step_id": "PRE-07",
+      "disposition": "restructured",
+      "rationale": "Posting and clearing continues to consume the bank settlement confirmation (PRE-R-06) and the settlement-date exchange rate (PRE-R-07) as direct, hard inputs. Routine postings are system-executed, but any variance breaching a materiality threshold, or any unmatched confirmation, escalates to the GL accountant — the hitl_designer/agentic_architect/accounting_standards-converged mechanism that satisfies IAS 8's error-correction principle (KB-05) and IAS 21's exchange-difference tracking (KB-08) without requiring manual touch on every clean line. Exchange differences post to a dedicated, separately trackable account per finance_domain's concrete operationalisation of KB-08. A documented manual fallback for the settlement-date rate is mandatory when no live feed is available, per emerging_economy's non-negotiable, adopted council-wide, so the rate never becomes silently indeterminate.",
+      "target_step_ids": [
+        "TS-06"
+      ]
+    },
+    {
+      "baseline_step_id": "PRE-08",
+      "disposition": "restructured",
+      "rationale": "Remittance advice is unconstrained by design and is redesigned as automatic, system-generated dispatch on settlement confirmation, but kept as a distinct step with the AP analyst named as owner of the delivery-exception queue (bounced emails, portal failures, vendor disputes), per finance_domain, pragmatist and emerging_economy's shared point that vendor-facing communication has its own failure mode distinct from the GL posting event and should not be silently folded into TS-06. Delivery channel is kept flexible rather than assuming vendor-side digital infrastructure, per emerging_economy's non-negotiable.",
+      "target_step_ids": [
+        "TS-07"
+      ]
+    }
+  ],
+  "efficiency": {
+    "calls": 15,
+    "cost_usd": 1.493118,
+    "failed_attempts": 0,
+    "input_tokens": 288159,
+    "output_tokens": 91680,
+    "runtime_min": 17.873476
+  },
+  "gate": {
+    "conformance_score": 0.909091,
+    "passed": 10,
+    "results": [
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step PRE-01 ['TS-01'] receives all required input(s) ['Approved matched invoices']",
+        "requirement_id": "PRE-R-01",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['TS-02'] for baseline PRE-03 all precede target step(s) ['TS-03'] for baseline PRE-04",
+        "requirement_id": "PRE-R-02",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['TS-02'] for baseline PRE-03 all precede target step(s) ['TS-04'] for baseline PRE-05",
+        "requirement_id": "PRE-R-03",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "actors separated: PRE-02 → ['AP analyst (system-executed selection/grouping; analyst configures, stewards master data, and triages exceptions)'], PRE-04 → ['Authorised signatory']",
+        "requirement_id": "PRE-R-04",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['TS-03'] for baseline PRE-04 all precede target step(s) ['TS-04'] for baseline PRE-05",
+        "requirement_id": "PRE-R-05",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step PRE-07 ['TS-06'] receives all required input(s) ['Bank settlement confirmation']",
+        "requirement_id": "PRE-R-06",
+        "vacuous": false
+      },
+      {
+        "passed": false,
+        "reason": "target step(s) carrying baseline step PRE-07 do not receive all required input(s) ['Settlement-date exchange rate']: TS-06 is missing ['Settlement-date exchange rate']",
+        "requirement_id": "PRE-R-07",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step PRE-02 is preserved as merged, carried by target step(s) ['TS-01']",
+        "requirement_id": "PRE-R-08",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step PRE-03 is preserved as restructured, carried by target step(s) ['TS-02']",
+        "requirement_id": "PRE-R-09",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step PRE-04 is preserved as retained, carried by target step(s) ['TS-03']",
+        "requirement_id": "PRE-R-10",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step PRE-05 is preserved as restructured, carried by target step(s) ['TS-04']",
+        "requirement_id": "PRE-R-11",
+        "vacuous": false
+      }
+    ],
+    "total": 11
+  },
+  "git_commit": "fe1a87a8a5672d763c3248a4b18f227ae1b3b204",
+  "rep": 2,
+  "resolved_model": "claude-sonnet-5",
+  "run_id": "20261010-194035-council-P2P-PRE-01-64dc",
+  "set": "heldout-v1",
+  "steps": [
+    {
+      "actor": "AP analyst (system-executed selection/grouping; analyst configures, stewards master data, and triages exceptions)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "AGENT",
+      "description": "A single system-executed pass selects invoices due under their payment terms (including FX items) from the pool of approved, matched invoices, and groups them by vendor, currency and payment method into a payment proposal. This replaces two baseline steps that described one mechanical ERP batch job as if it were two human acts. The AP analyst configures selection/grouping parameters, owns vendor master-data stewardship, and triages the exception queue the system surfaces (stale terms, incomplete master data, newly onboarded vendors, items the system cannot select with confidence) — this exception-handling and data-stewardship content is the explicit new form of the analyst's role, not an assumed-away byproduct of automation. Approved-matched status remains a hard structural gate on the query, not a convention.",
+      "inputs": [
+        "Approved matched invoices",
+        "Payment terms",
+        "Vendor master data"
+      ],
+      "name": "Due-item selection and proposal generation",
+      "outputs": [
+        "Payment proposal",
+        "Selection/grouping exception queue"
+      ],
+      "step_id": "TS-01"
+    },
+    {
+      "actor": "AP supervisor (with automated screening tool)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HYBRID",
+      "description": "An automated screen flags duplicate payments, blocked vendors, and any vendor bank-detail change within a configurable lookback window, presenting the AP supervisor with the flagged worklist plus the underlying change log and payment history. The supervisor's disposition (hold/release) on every flag is a recorded, evidenced judgment, not a dashboard click-through. Any bank-detail-change flag may only be cleared by producing a documented independent-verification artifact (e.g., a callback to a vendor contact sourced independently of the just-changed record) — this is non-waivable because, per IFRS 9 (KB-11), a payment to a changed or fraudulent account does not derecognise the real payable; it creates an unrelated cash outflow while the original liability remains open. This checkpoint is structurally distinct from proposal construction and from approval and cannot be collapsed into either.",
+      "inputs": [
+        "Payment proposal",
+        "Vendor bank master change log",
+        "Payment history"
+      ],
+      "name": "Proposal review with automated screening and mandatory independent verification",
+      "outputs": [
+        "Reviewed payment proposal",
+        "Independent verification artifact (for bank-detail-change flags)",
+        "Exception disposition log"
+      ],
+      "step_id": "TS-02"
+    },
+    {
+      "actor": "Authorised signatory",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Every payment, regardless of value or clean status, is approved by a named authorised signatory acting within delegated limits. A decision-support tool may pre-populate a read-only packet (proposal totals, TS-02 exception log and dispositions, DOA-limit check) but holds no write authority and cannot approve on the signatory's behalf; there is no sub-threshold auto-clear. The approving identity is structurally distinct from, and technically incapable of exercising, the proposal-construction function in TS-01, enforced at the access-control/credential level rather than by job title alone, so collusion or compromise of one identity cannot satisfy both roles.",
+      "inputs": [
+        "Reviewed payment proposal",
+        "Delegation of authority",
+        "Decision packet (read-only: exception log, DOA check)"
+      ],
+      "name": "Payment approval",
+      "outputs": [
+        "Approved payment proposal",
+        "Timestamped approval record"
+      ],
+      "step_id": "TS-03"
+    },
+    {
+      "actor": "Treasury officer (system-executed generation; human-triggered release; second signatory above threshold)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HYBRID",
+      "description": "File generation is system-executed: the approved proposal is converted into bank-format output and cross-checked deterministically against an immutable hash of the approved proposal before transmission is even offered. Release — the first irreversible, money-moving act — requires an affirmative, human-triggered confirmation by the treasury officer reviewing the file summary and integrity check against the approved proposal and the TS-02 flag record; it is never an automatic consequence of approval clearing. Transmission supports both API-based and manual/batch file-upload paths as co-equal, first-class execution modes, since bank connectivity cannot be assumed uniformly available. For payments above a configurable value/currency-risk threshold, release requires a second treasury signatory distinct from the one who reviewed the file summary, as a risk-tiered (not universal) enhancement addressing tampering risk between approval and transmission without mandating staffing depth that smaller finance functions cannot field.",
+      "inputs": [
+        "Approved payment proposal",
+        "Vendor bank details"
+      ],
+      "name": "Payment file generation and gated release to bank",
+      "outputs": [
+        "Payment file transmitted to bank",
+        "File integrity check record"
+      ],
+      "step_id": "TS-04"
+    },
+    {
+      "actor": "Treasury officer (exception queue owner; automated matching for routine case)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "AGENT",
+      "description": "Bank acknowledgement/statement data is matched to the transmitted payment file automatically on the happy path. Batch-file reconciliation (downloaded statement matching) is the first-class baseline design, with real-time API matching as an optional accelerant where connectivity supports it, not a precondition for the process to function. Unmatched items, partial executions, rejects and timing mismatches are routed to a standing exception queue with a named, accountable owner — this recurring operational work does not vanish because the baseline marks the step unconstrained by design; it is simply no longer a manual match-everything task.",
+      "inputs": [
+        "Payment file transmitted to bank",
+        "Bank statement"
+      ],
+      "name": "Automated settlement matching with exception ownership",
+      "outputs": [
+        "Bank settlement confirmation",
+        "Settlement exception queue"
+      ],
+      "step_id": "TS-05"
+    },
+    {
+      "actor": "GL accountant (system-executed routine postings; accountant reviews/releases variances and fallback rate entries)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "AGENT",
+      "description": "Routine postings — clean settlement matches with immaterial FX variance — are system-executed: the AP subledger is cleared at invoice-level determinability (per IFRS 9/KB-11) and cash is posted to the GL, with the exchange difference computed from the settlement-date rate and posted to a distinct, separately trackable account so it is never netted invisibly into cash or AP balances (IAS 21/KB-08). The settlement-date exchange rate is sourced from a live feed by default, but a manual, documented, accountable (GL accountant-attested) rate-entry path must exist and be logged whenever no live feed is available, so the rate and resulting difference remain determinable regardless of feed status. Any posting where the exchange difference or settlement variance breaches a defined materiality threshold, or where the confirmation fails to match an open item, is escalated to the GL accountant for review and release rather than auto-posted, preserving an error-correction path (IAS 8/KB-05) and period-cutoff discipline over the subledger.",
+      "inputs": [
+        "Bank settlement confirmation",
+        "Settlement-date exchange rate (with documented manual fallback)",
+        "AP subledger open items"
+      ],
+      "name": "Posting and clearing with variance escalation",
+      "outputs": [
+        "AP subledger cleared",
+        "GL cash posted",
+        "Exchange difference posted to dedicated account",
+        "Variance/exception escalations"
+      ],
+      "step_id": "TS-06"
+    },
+    {
+      "actor": "AP analyst (delivery-exception owner; automated generation and dispatch)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "AGENT",
+      "description": "Remittance advice is generated and dispatched automatically on settlement confirmation, traceable back to the posting record describing which invoices a given cash outflow discharged. Delivery channel remains flexible (email/PDF, portal, SMS) rather than standardised on a single high-bandwidth channel, since vendor-side infrastructure varies. The AP analyst is retained as the named owner of the delivery-exception queue — bounced notifications, portal failures, vendor disputes about which invoices a payment covers, and ad hoc reissue requests — since this vendor-facing communication function has its own recurring failure mode distinct from GL posting.",
+      "inputs": [
+        "Bank settlement confirmation",
+        "Vendor contact data"
+      ],
+      "name": "Automated remittance advice with delivery exception ownership",
+      "outputs": [
+        "Remittance advice",
+        "Delivery exception queue"
+      ],
+      "step_id": "TS-07"
+    }
+  ],
+  "transcript": [
+    {
+      "chars": 7720,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nPRE-01 (Due-item selection) — merged into a new step T-01 \"Automated due-item identification and proposal generation.\" There is no reason a human analyst should be manually pulling due items off an aging report when the ERP already knows payment terms, due dates and FX designation. This becomes a continuous, machine-run selection criterion embedded in the proposal engine itself, not a separate human task. PRE-R-01 is satisfied because the merged step still consumes \"Approved matched invoices\" directly.\n\nPRE-02 (Payment proposal generation) — restructured and carries T-01",
+      "phase": "round 1",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 8689,
+      "excerpt": "# PROPOSED DISPOSITIONS\n\n**PRE-01 (Due-item selection) and PRE-02 (Payment proposal generation) → merged into a single step, \"Payment run execution\" (target step: PP-01).**\nIn almost every ERP in production today (SAP F110, Oracle Payment Process Requests, etc.), selecting due items and generating the grouped proposal is literally one program run with a parameter screen — the AP analyst doesn't do these as two separate acts with a handoff in between. Treating them as one step in the target state doesn't change what anyone does; it just stops pretending there's a boundary where none exists oper",
+      "phase": "round 1",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 9550,
+      "excerpt": "# PROPOSED DISPOSITIONS\n\n**PRE-01 (Due-item selection) → merged into a new \"Payment proposal run\" step.**\nIn every ERP I have seen run a payment program (SAP F110, Oracle Payments, Workday), due-item selection is not a separate manual act — it is the parameter set (company code/vendor range, payment method, due date horizon) that the analyst feeds into the same run that produces the proposal. Treating PRE-01 and PRE-02 as two discrete human steps misdescribes the work: the analyst configures the run once, and the system does selection-then-grouping as one pass. I'd merge PRE-01 into the restru",
+      "phase": "round 1",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 6762,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nPRE-01 (Due-item selection) — merged into a combined target step \"Due-item selection & proposal generation\" together with PRE-02. The two activities are already performed by the same actor (AP analyst with ERP) and in most mid-tier/offshore ERP deployments the selection logic and the grouping logic run as a single batch job. Collapsing them into one step removes a redundant hand-off without removing the human judgment layer, provided the merged step retains an explicit analyst review of items the system cannot select with confidence (stale payment-terms records, newly on",
+      "phase": "round 1",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 6854,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nPRE-01 (Due-item selection): Restructured, carried by a new automated selection step (call it \"Due-item identification,\" target step ID TS-01) in which the ERP applies payment-terms logic and surfaces only exceptions — disputed items, holds, unusual FX items — to the AP analyst. The mechanical \"is this item due\" determination does not need a human eyeball on every line; what needs to survive is the analyst's visibility into *why* something was excluded or flagged, so the role shifts from selector to exception-triager. Approved matched invoices remain a consumed input, sa",
+      "phase": "round 1",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 9232,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nPRE-01 (Due-item selection) and PRE-02 (Payment proposal generation) — merged into a single target step, \"TS-01: Automated due-item selection and proposal generation,\" run by a Payment Proposal Agent. Both steps today are already mechanical queries against ERP data (due date vs. terms, approved/matched status, vendor/currency/method grouping) with no judgment content. Keeping them as two human-touched steps only adds a handoff with no control value. The agent's trigger is the scheduled payment-run calendar event (or an on-demand treasury request); its tool is read access",
+      "phase": "round 1",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 9312,
+      "excerpt": "PROPOSED DISPOSITIONS\n\nPRE-01 (Due-item selection) — retained, carried forward essentially unchanged by a target \"due-item selection\" step. Automation of the mechanical selection logic is unobjectionable, but the step must continue to consume \"approved matched invoices\" as its entry condition. Under KB-09, the invoice-to-GRN-to-PO matching chain is what establishes the cost basis and the existence of a valid liability in the first place; this workflow may not treat matching as a fraud-control nicety that can be loosened in redesign — it is the evidential basis for the amount being paid.\n\nPRE-0",
+      "phase": "round 1",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 6879,
+      "excerpt": "1. CONCEDE\n\nI concede to agentic_architect, pragmatist, finance_domain, hitl_designer, and accounting_standards — essentially the full council minus myself — on the single sharpest point of my round-1 position: risk-tiered, machine-executed approval of routine sub-threshold payments. I withdraw it. Agentic_architect's framing persuades me: approval is the last checkpoint before an irreversible external action, and \"an agent recommending an approval is categorically different from an agent executing one.\" Hitl_designer's point lands too — delegation-of-authority limits define *who* must look, n",
+      "phase": "round 2",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 8556,
+      "excerpt": "# 1. CONCEDE\n\n**accounting_standards** has sharpened something I under-argued in round 1: the vendor-bank-detail verification inside proposal review is not only a fraud control, it is a derecognition issue under KB-11. If a payment is sent to a changed/fraudulent account, the recognised liability to the real creditor is not extinguished — the organisation has created an unrelated cash outflow while the original payable still sits open. That reframing matters for my design because it means the independent-verification step cannot be treated as \"nice-to-have anti-fraud hygiene\" that a controller",
+      "phase": "round 2",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 8916,
+      "excerpt": "# ROUND 2 — finance_domain\n\n## 1. CONCEDE\n\n**To emerging_economy:** I accept the point on manual/batch fallback paths. My round-1 description of PRE-06 and PRE-08 as \"automated with exception handling\" assumed, by omission, that API-grade bank connectivity and vendor digital channels are the normal case and manual processing is a degraded edge case. That's backwards in a large share of real deployments. I now treat batch-file reconciliation (statement download and match) as a first-class design for PRE-06, and flexible-channel remittance (email/PDF/portal/SMS) as first-class for PRE-08, not fa",
+      "phase": "round 2",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 7529,
+      "excerpt": "**1. CONCEDE**\n\nI accept three refinements from this round that sharpen my position without weakening it.\n\nFrom **accounting_standards**, I accept the grounding of my own non-negotiable on vendor bank-detail verification. I had argued this control matters because master data quality is uneven in the environments I represent; accounting_standards' KB-11 point — that a payment to a changed or fraudulent account does not derecognise the real payable, it merely creates an unrelated cash outflow while the original liability survives unresolved — gives that control a standards basis I was missing. I",
+      "phase": "round 2",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 7328,
+      "excerpt": "1. CONCEDE\n\nfinance_domain's reframing of the bank-detail-change check sharpens something my round-1 position only gestured at. I said review must \"remain an active human judgment,\" but I left the verification mechanism underspecified — a supervisor \"seeing\" a flag is still perilously close to ceremony if nothing forces them to act on it with independent evidence. I accept finance_domain's concrete addition: a mandatory, non-waivable independent-verification sub-task (callback to a vendor contact sourced independently of the just-changed record) that produces its own audit artifact. This conve",
+      "phase": "round 2",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 9518,
+      "excerpt": "1. CONCEDE\n\nI accept pragmatist's and emerging_economy's objection that my TS-05 (\"Automated settlement matching\") and TS-04 release description implicitly assumed always-on bank API connectivity. That is a real gap in my architecture, not a stylistic quibble: an agent whose only mode of operation is \"poll the API\" has no defined failure mode when the API is down, which violates my own charter's requirement that every autonomous action have a stated failure mode. I now concede that TS-05 must be specified with two triggers — an API/statement-feed event and a scheduled batch-file-ingest fallbac",
+      "phase": "round 2",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 6002,
+      "excerpt": "1. CONCEDE\n\nI accept finance_domain's refinement that FX settlement differences should post to a distinct, separately trackable account rather than merely being \"recognised\" in some undifferentiated posting. My own non-negotiable said exchange differences \"must be separately identifiable in the posted entries, never netted invisibly\" — finance_domain's operationalisation (a dedicated GL line) is the concrete mechanism that actually delivers KB-08's requirement, and I adopt it as the expression of that non-negotiable rather than leaving it abstract.\n\nI also accept agentic_architect's and hitl_d",
+      "phase": "round 2",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 16038,
+      "excerpt": "{\n  \"workflow_id\": \"P2P-PRE-01\",\n  \"baseline_step_ids\": [\"PRE-01\", \"PRE-02\", \"PRE-03\", \"PRE-04\", \"PRE-05\", \"PRE-06\", \"PRE-07\", \"PRE-08\"],\n  \"steps\": [\n    {\n      \"step_id\": \"TS-01\",\n      \"name\": \"Due-item selection and proposal generation\",\n      \"description\": \"A single system-executed pass selects invoices due under their payment terms (including FX items) from the pool of approved, matched invoices, and groups them by vendor, currency and payment method into a payment proposal. This replaces two baseline steps that described one mechanical ERP batch job as if it were two human acts. The A",
+      "phase": "synthesis",
+      "role": "synthesis",
+      "truncated": true
+    }
+  ],
+  "workflow_id": "P2P-PRE-01"
+}

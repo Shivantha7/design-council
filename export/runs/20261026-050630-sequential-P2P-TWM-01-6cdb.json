@@ -1,0 +1,353 @@
+{
+  "condition": "sequential",
+  "consistency_inputs": {
+    "TWM-01": "absorbed",
+    "TWM-02": "merged",
+    "TWM-03": "merged",
+    "TWM-04": "merged",
+    "TWM-05": "restructured",
+    "TWM-06": "restructured",
+    "TWM-07": "restructured"
+  },
+  "created_utc": "2026-10-26T05:06:30.315097Z",
+  "depth": {
+    "counts": {
+      "absorbed": 1,
+      "eliminated": 0,
+      "merged": 3,
+      "restructured": 3,
+      "retained": 0
+    },
+    "score": 1.0,
+    "total_baseline_steps": 7
+  },
+  "disposition_convention_version": "v1, restored 11 Oct 2026",
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "TWM-01",
+      "disposition": "absorbed",
+      "rationale": "Document assembly becomes deterministic orchestration (not an agent) inside the matching core, resolving PO revisions and partial receipts, with an explicit incomplete-vs-variant distinction the council converged on as both an operational and a KB-09/KB-02 evidentiary requirement. A named assisted-retrieval fallback preserves the function where automated connectivity or licensing cannot reach an entity, per the emerging-economy and buildability concession all members accepted in round 2.",
+      "target_step_ids": [
+        "T1"
+      ]
+    },
+    {
+      "baseline_step_id": "TWM-02",
+      "disposition": "merged",
+      "rationale": "Quantity-vs-GRN comparison is deterministic arithmetic with no judgment content to protect, so the council unanimously accepted removing it as a standalone human-attributed step. It survives as a distinct, separately typed, separately traceable sub-computation within T1, retaining goods receipt note data as a required input per TWM-R-01/TWM-R-03 and KB-05's requirement that an error be correctable to its specific source.",
+      "target_step_ids": [
+        "T1"
+      ]
+    },
+    {
+      "baseline_step_id": "TWM-03",
+      "disposition": "merged",
+      "rationale": "Price/terms-vs-PO comparison is likewise deterministic and non-judgmental, and is merged into T1 as a separately typed sub-computation, retaining purchase order data as a required input per TWM-R-02/TWM-R-04, so that root-cause diagnosis and correction (price vs quantity) remain possible without re-running the match.",
+      "target_step_ids": [
+        "T1"
+      ]
+    },
+    {
+      "baseline_step_id": "TWM-04",
+      "disposition": "merged",
+      "rationale": "Tolerance classification is mechanical rules evaluation and is merged into T1, but the council required two survivals beyond the mechanics: the tolerance policy itself (TWM-R-05/R-06) continues to be consumed and evaluated, and (per KB-06 and the HITL designer's hold) a named human policy owner remains accountable for calibrating and periodically re-approving the versioned table, which is captured per match so policy drift across periods is visible rather than silent.",
+      "target_step_ids": [
+        "T1"
+      ]
+    },
+    {
+      "baseline_step_id": "TWM-05",
+      "disposition": "restructured",
+      "rationale": "The council rejected the maximalist's default-agentic-resolution model by a clear majority (pragmatist, finance_domain, emerging_economy, hitl_designer, agentic_architect, accounting_standards), grounded in KB-04/KB-05: a genuine discrepancy is a candidate accounting error, and its correction must terminate in an accountable human write, not an agent disposition reviewed on a confidence basis. Timing gaps are split out as a distinct deterministic requeue sub-function (finance_domain's correction, adopted by the whole council), since an absence is not a variance and cannot be expressed as a tolerance band. What survives requeue remains human-decisioned, optionally assisted by a read-only, write-free, evidence-citing agent with a shown reliability record (agentic_architect's and hitl_designer's architecture), satisfying TWM-R-10 and TWM-R-05's spirit without permitting liability laundering.",
+      "target_step_ids": [
+        "T2"
+      ]
+    },
+    {
+      "baseline_step_id": "TWM-06",
+      "disposition": "restructured",
+      "rationale": "Full council consensus: routine, clean/tolerance-passed matches release through a deterministic, reversible, fully logged gate with no human in the loop, since that approval was already ceremonial in the baseline. Non-routine releases (exception-resolved items and overrides) retain a human approver of record, now routed by delegation-of-authority rather than a flat role per finance_domain, with execution-cadence honesty (real-time vs batch) per emerging_economy, and with full evidentiary access rather than a bare verdict per hitl_designer and accounting_standards. This satisfies TWM-R-07 and, combined with T2's distinct actor, TWM-R-08 (ordering) and TWM-R-09 (segregation of resolver and approver).",
+      "target_step_ids": [
+        "T3"
+      ]
+    },
+    {
+      "baseline_step_id": "TWM-07",
+      "disposition": "restructured",
+      "rationale": "The council rejected the maximalist's telemetry-replaces-reporting design by near-unanimous vote, grounded in KB-03: a continuous stream has no period boundary and cannot substitute for a signed, period-tied artifact. Continuous append-only logging is retained as a genuine, cheap improvement, but the AP accountant continues to prepare and sign a periodic report, now required (per finance_domain, emerging_economy, hitl_designer and accounting_standards) to include GR/IR clearing account aging and reconciliation as a named output tied to KB-01/KB-11 accrual discipline, and override detail at vendor/category/approver granularity rather than aggregate-only statistics.",
+      "target_step_ids": [
+        "T4"
+      ]
+    }
+  ],
+  "efficiency": {
+    "calls": 15,
+    "cost_usd": 1.464664,
+    "failed_attempts": 0,
+    "input_tokens": 394167,
+    "output_tokens": 67633,
+    "runtime_min": 14.099503
+  },
+  "gate": {
+    "conformance_score": 0.9,
+    "passed": 9,
+    "results": [
+      {
+        "passed": true,
+        "reason": "baseline step TWM-02 is preserved as merged, carried by target step(s) ['T1']",
+        "requirement_id": "TWM-R-01",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step TWM-03 is preserved as merged, carried by target step(s) ['T1']",
+        "requirement_id": "TWM-R-02",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step TWM-02 ['T1'] receives all required input(s) ['Goods receipt note data']",
+        "requirement_id": "TWM-R-03",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step TWM-03 ['T1'] receives all required input(s) ['Purchase order data']",
+        "requirement_id": "TWM-R-04",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step TWM-04 is preserved as merged, carried by target step(s) ['T1']",
+        "requirement_id": "TWM-R-05",
+        "vacuous": false
+      },
+      {
+        "passed": false,
+        "reason": "target step(s) carrying baseline step TWM-04 do not receive all required input(s) ['Tolerance policy']: T1 is missing ['Tolerance policy']",
+        "requirement_id": "TWM-R-06",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step TWM-06 is preserved as restructured, carried by target step(s) ['T3']",
+        "requirement_id": "TWM-R-07",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['T2'] for baseline TWM-05 all precede target step(s) ['T3'] for baseline TWM-06",
+        "requirement_id": "TWM-R-08",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "actors separated: TWM-05 → ['AP analyst (sole disposition-writer), supported by a deterministic requeue scheduler and an optional read-only, write-free evidence-assembly agent'], TWM-06 → ['Deterministic release gate (system-executed) for routine matches; AP supervisor, or delegated procurement/budget-owner approver per delegation-of-authority routing, for non-routine releases']",
+        "requirement_id": "TWM-R-09",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step TWM-05 is preserved as restructured, carried by target step(s) ['T2']",
+        "requirement_id": "TWM-R-10",
+        "vacuous": false
+      }
+    ],
+    "total": 10
+  },
+  "git_commit": "15938359843b3305e6b8dbe3173de1465d0d73aa",
+  "rep": 2,
+  "resolved_model": "claude-sonnet-5",
+  "run_id": "20261026-050630-sequential-P2P-TWM-01-6cdb",
+  "set": "sequential",
+  "steps": [
+    {
+      "actor": "Deterministic matching and rules engine (system-executed), with AP analyst exception-queue monitoring and a named tolerance-policy owner; assisted/manual retrieval fallback for unsupported entities",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "AGENT",
+      "description": "Deterministic orchestration (no inference, no model) retrieves PO, GRN and invoice data, resolving PO revisions and partial-receipt tranches, and runs a data-quality pre-check (UoM consistency, duplicate vendor flags) before computing typed, separable quantity and price/terms variances and evaluating them against a versioned, externally-owned tolerance policy table. Output is a three-state assembly status per line (complete-and-matched, complete-and-variant, incomplete) so that a missing document is never silently folded into a variance verdict; incomplete sets route to requeue (T2), not to the exception queue directly. Tolerance policy sophistication (flat or tiered) may match what the organisation can actually govern, but every match record captures the exact policy version applied, and the policy table itself has a named human owner accountable for its periodic calibration and re-approval. Where automated retrieval cannot reach a plant, vendor master, or entity due to licensing, integration or connectivity gaps, assembly routes to a named, logged assisted-retrieval fallback queue rather than degrading silently. This function gates payment release, not recognition: the liability is already recognised on receipt regardless of match outcome.",
+      "inputs": [
+        "Structured validated invoice record",
+        "Purchase order data",
+        "Goods receipt note data",
+        "Versioned tolerance policy (policy-owner approved)"
+      ],
+      "name": "Automated match execution and tolerance evaluation",
+      "outputs": [
+        "Assembled match document set with completeness status (complete-matched, complete-variant, incomplete)",
+        "Quantity variance detail (GRN-sourced, separately typed)",
+        "Price and terms variance detail (PO-sourced, separately typed)",
+        "Match classification (clean, tolerance or exception) with tolerance policy version recorded",
+        "Incomplete-document-set flag (routed to requeue)"
+      ],
+      "step_id": "T1"
+    },
+    {
+      "actor": "AP analyst (sole disposition-writer), supported by a deterministic requeue scheduler and an optional read-only, write-free evidence-assembly agent",
+      "class_agentic_only": "HYBRID",
+      "class_primary": "HYBRID",
+      "description": "Incomplete-document-set flags and timing-pattern variant signatures (missing GRN against a known open PO, pending credit memo matched by vendor/amount/reference) first pass through a deterministic, bounded requeue: a scheduled retry against structured ERP state for a defined cycle count or hold period, which is deferral, not resolution, and requires no judgment. What survives requeue is a genuine discrepancy. The AP analyst investigates this residual population against source documents and vendor correspondence and remains the sole party with write authority over the disposition (accepted, corrected, or rejected). Where locally validated, an optional read-only agent may retrieve vendor-master data and historical resolution precedent and draft a suggested disposition with shown reasoning, cited source evidence and its own measured agreement rate against this organisation's historical dispositions; the agent has no ledger-write access and must return an explicit 'insufficient evidence, escalate' output rather than a low-confidence suggestion dressed as routine. The analyst's interface requires engagement with the underlying evidence, not a one-click accept of a bare verdict. The resolution and its full evidentiary basis are retained as a distinct, retrievable artifact.",
+      "inputs": [
+        "Match classification (clean, tolerance or exception)",
+        "Incomplete-document-set flag",
+        "Quantity variance detail",
+        "Price and terms variance detail",
+        "Purchase order data",
+        "Goods receipt note data",
+        "Vendor correspondence and historical resolution precedent (where locally validated)"
+      ],
+      "name": "Requeue and human-decisioned exception resolution",
+      "outputs": [
+        "Requeue history (timing-gap deferrals and escalations)",
+        "Resolved match (accepted, corrected or rejected)",
+        "Exception resolution evidence (decision rationale, cited source documents, agent suggestion and reliability record if used)"
+      ],
+      "step_id": "T2"
+    },
+    {
+      "actor": "Deterministic release gate (system-executed) for routine matches; AP supervisor, or delegated procurement/budget-owner approver per delegation-of-authority routing, for non-routine releases",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HYBRID",
+      "description": "Clean and tolerance-passed matches release through a deterministic, fully logged gate, with no human in the loop, and with a tested reversal path allowing claw-back before the payment run; execution cadence (real-time or next batch window) is stated honestly against the organisation's actual payment-run infrastructure rather than implied as uniformly instant. Exception-resolved items and tolerance overrides route to a human approver of record, with release authority assigned by delegation-of-authority tables so that overrides exceeding an AP supervisor's limits escalate to procurement or the budget owner rather than being approved outside real authority; a documented maximum turnaround governs cross-border or cross-timezone delegation, with a named escalation action on timeout. Whichever human approves a non-routine release must see the full resolution evidence and the resolver's stated reasoning, not merely the resolver's verdict, so the segregation between resolution and release is a real independent check, not a label.",
+      "inputs": [
+        "Match classification (clean, tolerance or exception)",
+        "Resolved match (accepted, corrected or rejected)",
+        "Exception resolution evidence",
+        "Tolerance policy",
+        "Delegation-of-authority routing table"
+      ],
+      "name": "Tiered release authorisation",
+      "outputs": [
+        "Released match authorisation",
+        "Release reversal record (where claw-back occurs)"
+      ],
+      "step_id": "T3"
+    },
+    {
+      "actor": "AP accountant (periodic report preparer and signer), with system-generated continuous event logging",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Every event from T1 through T3 — match outcome, requeue cycle, resolution evidence, release action, override, and tolerance policy version applied — writes to an append-only control log as it occurs. This continuous log supplements, but does not substitute for, a periodic, period-tied report that the AP accountant prepares and signs, because cutoff discipline requires a defined-period artifact rather than an on-demand query against a stream. The periodic report surfaces override rates and patterns by vendor, category and approver at a level the preparer can actually interrogate, not aggregate-only statistics, and includes GR/IR clearing account aging and reconciliation as a named output tied to the accrual position behind unmatched or unresolved items.",
+      "inputs": [
+        "Released match authorisation",
+        "Exception resolution evidence",
+        "Requeue history",
+        "Continuous control event log"
+      ],
+      "name": "Continuous control logging and periodic signed control reporting",
+      "outputs": [
+        "Match control record (append-only event log)",
+        "Periodic signed match-rate, override-pattern and GR/IR aging reconciliation report"
+      ],
+      "step_id": "T4"
+    }
+  ],
+  "transcript": [
+    {
+      "chars": 6364,
+      "excerpt": "1. PROPOSED DISPOSITIONS\n\nTWM-01 (Match dataset assembly): Eliminate as a discrete human/analyst-touched step and absorb into a single autonomous matching event. There is no reason a document-retrieval step should exist as separate workflow real estate: the moment a validated invoice lands, an agent should pull PO and GRN data and assemble the set in the same breath as it runs the match. Target carrier: a new consolidated step, \"Autonomous match execution\" (call it T1).\n\nTWM-02 (Quantity matching): Merge into T1. Line-level quantity-vs-GRN comparison is deterministic arithmetic; there is no de",
+      "phase": "perspectives",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 9310,
+      "excerpt": "1. PROPOSED DISPOSITIONS\n\nTWM-01 (Match dataset assembly): Absorb into a single automated \"match execution\" step. This is the easiest call in the whole redesign because it is not actually ambitious — mainstream ERP matching engines (SAP MM, Oracle, Coupa, and the HighRadius/Trintech tooling cited in the source material) have retrieved PO and GRN data automatically for well over a decade. Proposing this as a discrete human-attributed step in 2026 understates what organisations already run in production. No objection to the maximalist here; this is proven, not visionary.\n\nTWM-02 (Quantity matchi",
+      "phase": "perspectives",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 12190,
+      "excerpt": "1. PROPOSED DISPOSITIONS\n\nTWM-01 (Match dataset assembly): Absorb into an automated match-execution step, but correct a misreading in both prior perspectives: this is not a clean database join in the general case. Real PO data includes amended/revisioned POs, blanket POs with multiple release schedules, and service POs that carry no GRN at all because services aren't goods-receipted the same way (two-way match applies there, not three). Real GRN data includes partial receipts — a single PO line routinely has three or four GRNs posted against it over several weeks as a shipment arrives in tranc",
+      "phase": "perspectives",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 11925,
+      "excerpt": "# Emerging-Economy Perspective\n\n## 1. PROPOSED DISPOSITIONS\n\n**TWM-01 (Match dataset assembly):** Absorb into an automated assembly/matching function, but only where the ERP licence tier actually supports automated PO/GRN retrieval across all plants and vendor categories. A large share of offshore-delivery AP shops run on ERP instances where automated matching modules are a separately licensed add-on, not included in the base SAP MM or Oracle Financials deployment the client bought years ago, and where multiple legacy or regional ERPs sit behind a shared service centre with no clean integratio",
+      "phase": "perspectives",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 10441,
+      "excerpt": "# HITL Designer Perspective\n\n## 1. PROPOSED DISPOSITIONS\n\n**TWM-01 (Match dataset assembly):** Absorb into automated assembly within the matching core, but I insist on a design detail none of the prior perspectives named precisely: the human must still be able to *see* the assembled set on demand, not just its downstream classification. If an analyst or supervisor is later asked to adjudicate an exception or approve a release, they need the actual PO, GRN and invoice documents in front of them, not a system's summary verdict about them. Target carrier: automated assembly inside the matching co",
+      "phase": "perspectives",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 12661,
+      "excerpt": "# Agentic Architect Perspective\n\n## 1. PROPOSED DISPOSITIONS\n\n**TWM-01 (Match dataset assembly):** Absorb into a deterministic retrieval-and-assembly function inside the matching core — but I want to be precise about what kind of \"agent\" this is, because it is not one. This is a scripted orchestration: fixed-logic retrieval calls against ERP tables (PO, GRN, invoice), with deterministic join logic for PO revisions and partial-receipt tranches. It needs no model, no inference, no \"reasoning\" — it needs correct joins and a defined null-handling path (the finance-domain perspective's incomplete-d",
+      "phase": "perspectives",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 13270,
+      "excerpt": "# Accounting Standards Perspective\n\n## 1. PROPOSED DISPOSITIONS\n\n**TWM-01 (Match dataset assembly):** I concur with the consensus disposition — absorb into an automated assembly function within a matching core — but I anchor my acceptance specifically to KB-09. The principle there is not incidental: the invoice-to-GRN-to-PO evidence chain is what establishes cost for inventory measurement purposes, and that chain's integrity does not depend on who or what assembles it, only on whether it remains complete, traceable and retrievable. The finance-domain perspective's incomplete-document-set flag ",
+      "phase": "perspectives",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 8313,
+      "excerpt": "1. CONCEDE\n\nI accept finance_domain's correction that the exception population is not homogeneous and that my round-1 \"agentic exception resolution with escalation\" collapsed two different animals — timing gaps and genuine discrepancies — into one function. Requeuing an absent document is not resolution and should not be staged as if it were; building a single \"resolution agent\" that handles both would risk exactly the category error finance_domain names, adjudicating an absence as if it were a variance. I now adopt the two-stage architecture agentic_architect specified precisely: a determinis",
+      "phase": "reconsiderations",
+      "role": "maximalist",
+      "truncated": true
+    },
+    {
+      "chars": 8501,
+      "excerpt": "1. CONCEDE\n\nI concede to finance_domain on the timing-gap/requeue distinction, and I concede it fully, not partially. In my Round 1 position I tried to absorb all \"routine\" clearances into a tightened tolerance policy, on the theory that anything safe to auto-clear should be expressed as a policy parameter rather than a second resolver. Finance_domain is right that this doesn't work for absence: a tolerance band is a rule about *disagreement magnitude*, and a missing GRN that will post in 48 hours is not a disagreement at all — there is nothing for a tolerance threshold to measure yet. Forcing",
+      "phase": "reconsiderations",
+      "role": "pragmatist",
+      "truncated": true
+    },
+    {
+      "chars": 8309,
+      "excerpt": "1. CONCEDE\n\nI accept agentic_architect's correction to my own TWM-05 language. In round 1 I used \"agent\" loosely for both the requeue mechanism and the resolution-suggestion function, and the architect is right that this is sloppy in a way that matters: the requeue is a scheduled, deterministic retry against known structured signatures (open PO with no GRN, vendor/amount/reference match against an in-transit credit memo) and has no inference content at all. Calling it \"agentic\" invites exactly the scope creep the architect warns about — someone eventually bolts a model onto what should stay a ",
+      "phase": "reconsiderations",
+      "role": "finance_domain",
+      "truncated": true
+    },
+    {
+      "chars": 8074,
+      "excerpt": "## 1. CONCEDE\n\n**agentic_architect** has sharpened my fallback design in a way I now adopt directly: the distinction between deterministic orchestration (retrieval joins, rules-based comparison, tolerance lookup) and a genuine inferential agent is not pedantry, it is exactly what makes a redesign deployable in constrained environments. A scripted, deterministic matching core with defined null-handling is *cheaper, more auditable, and lower-infrastructure-dependent* than anything framed as \"AI-powered matching\" — which means the architecture distinction actually serves the emerging-economy case",
+      "phase": "reconsiderations",
+      "role": "emerging_economy",
+      "truncated": true
+    },
+    {
+      "chars": 8541,
+      "excerpt": "1. CONCEDE\n\nThe agentic_architect's distinction between deterministic rules logic and genuine agentic components gives my round-1 position real mechanical teeth that it lacked. I argued that a human must see \"reasoning and evidence, not a verdict,\" but I did not specify what architecture makes that enforceable rather than aspirational. The agentic_architect's rule — that any model-based component gets read/retrieve/draft tools only, never ledger-write access, and that the human analyst is the sole disposition-writer — is exactly the mechanism that makes my non-negotiable real instead of a poli",
+      "phase": "reconsiderations",
+      "role": "hitl_designer",
+      "truncated": true
+    },
+    {
+      "chars": 9650,
+      "excerpt": "# Round 2 — agentic_architect\n\n## 1. CONCEDE\n\n**To finance_domain:** I accept the incomplete-document-set flag as distinct from a variance flag, and I accept that this distinction belongs in the assembly/matching core's output schema, not as an operational nicety but as an architectural requirement. My round-1 position specified \"a defined null-handling path\" but was vague about what that path produces. I now specify: assembly must emit one of three disjoint states per invoice line — complete-and-matched, complete-and-variant, incomplete — not a binary match/exception flag with incompleteness ",
+      "phase": "reconsiderations",
+      "role": "agentic_architect",
+      "truncated": true
+    },
+    {
+      "chars": 7588,
+      "excerpt": "1. CONCEDE\n\nThe agentic_architect's distinction between deterministic rules components and genuine inferential agents, and specifically the non-negotiable that \"no agent gets write access to a ledger-affecting disposition,\" gives me a buildable mechanism for a requirement I had stated only abstractly. In round 1 I required that exception resolution \"retain an accountable human decision-maker,\" but I did not specify what architecturally prevents that requirement from decaying into the HITL designer's \"liability laundering\" pattern — a human clicking approve on an unexamined verdict. The read-on",
+      "phase": "reconsiderations",
+      "role": "accounting_standards",
+      "truncated": true
+    },
+    {
+      "chars": 12735,
+      "excerpt": "{\n  \"workflow_id\": \"P2P-TWM-01\",\n  \"baseline_step_ids\": [\"TWM-01\", \"TWM-02\", \"TWM-03\", \"TWM-04\", \"TWM-05\", \"TWM-06\", \"TWM-07\"],\n  \"steps\": [\n    {\n      \"step_id\": \"T1\",\n      \"name\": \"Automated match execution and tolerance evaluation\",\n      \"description\": \"Deterministic orchestration (no inference, no model) retrieves PO, GRN and invoice data, resolving PO revisions and partial-receipt tranches, and runs a data-quality pre-check (UoM consistency, duplicate vendor flags) before computing typed, separable quantity and price/terms variances and evaluating them against a versioned, externally-o",
+      "phase": "synthesis",
+      "role": "synthesis",
+      "truncated": true
+    }
+  ],
+  "workflow_id": "P2P-TWM-01"
+}

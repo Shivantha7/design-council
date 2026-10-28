@@ -22,7 +22,8 @@ ROLE_LABELS = {
     "synthesis": "Synthesis",
     "baseline_designer": "Budget-matched single agent",
 }
-CONDITION_LABELS = {"council": "Council (multi-agent)", "baseline": "Budget-matched single agent"}
+CONDITION_LABELS = {"council": "Council (multi-agent)", "baseline": "Budget-matched single agent",
+                    "sequential": "Sequential (exploratory, post-freeze)"}
 DISPOSITIONS = ["eliminated", "absorbed", "merged", "restructured", "retained"]
 
 
@@ -62,6 +63,20 @@ def role(name: str) -> str:
 def pct(x: float) -> str:
     """PI as a percentage, as reported in the dissertation."""
     return f"{round(100 * x)}%"
+
+
+def doc_link(path: str) -> str:
+    """A Markdown link to a committed document, on the repository if its URL is recorded."""
+    url = index().get("repo_url")
+    return f"[{path}]({url}/blob/main/{path})" if url else f"`{path}`"
+
+
+def sequential_note() -> None:
+    seq = result("sequential")
+    links = ", ".join(doc_link(w["doc"]) for w in seq["workflows"])
+    st.info(f"**{seq['label']}.** One agent given a budget comparable to the council's: {seq['protocol']}. "
+            f"Run on {len(seq['workflows'])} held-out workflows only, after "
+            f"the freeze; not part of any pre-registered result. Write-ups: {links}.", icon=":material/science:")
 
 
 def exploratory_note(what: str) -> None:

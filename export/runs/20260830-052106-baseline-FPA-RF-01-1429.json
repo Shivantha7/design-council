@@ -1,0 +1,287 @@
+{
+  "condition": "baseline",
+  "consistency_inputs": {
+    "RF-01": "restructured",
+    "RF-02": "restructured",
+    "RF-03": "restructured",
+    "RF-04": "restructured",
+    "RF-05": "restructured",
+    "RF-06": "restructured",
+    "RF-07": "retained",
+    "RF-08": "restructured"
+  },
+  "created_utc": "2026-08-30T05:21:06.223139Z",
+  "depth": {
+    "counts": {
+      "absorbed": 0,
+      "eliminated": 0,
+      "merged": 0,
+      "restructured": 7,
+      "retained": 1
+    },
+    "score": 0.875,
+    "total_baseline_steps": 8
+  },
+  "disposition_convention_version": "v1 (pre-01034ae)",
+  "disposition_mapping": [
+    {
+      "baseline_step_id": "RF-01",
+      "disposition": "restructured",
+      "rationale": "Cycle initiation and assumptions refresh persist but are now largely system-driven: the assumptions pack is auto-populated from data feeds with manager review replacing manual compilation, and the timetable/templates are auto-distributed rather than manually issued.",
+      "target_step_ids": [
+        "TS-01"
+      ]
+    },
+    {
+      "baseline_step_id": "RF-02",
+      "disposition": "restructured",
+      "rationale": "Actuals collection and preparation persist but move from manual extraction/mapping to an automated ETL pipeline with embedded cutoff/subledger-lock enforcement (KB-03) and a revenue-recognition-timing consistency check (KB-13); FP&A analyst effort shifts to exception review.",
+      "target_step_ids": [
+        "TS-02"
+      ]
+    },
+    {
+      "baseline_step_id": "RF-03",
+      "disposition": "restructured",
+      "rationale": "Driver assumption updates persist, but the mechanical portion (FX, run-rates, headcount feeds) is fully automated with exchange differences tracked explicitly per KB-08, while judgment-based drivers are repackaged as structured input requests handed to business owners rather than compiled separately by FP&A.",
+      "target_step_ids": [
+        "TS-03"
+      ]
+    },
+    {
+      "baseline_step_id": "RF-04",
+      "disposition": "restructured",
+      "rationale": "BU forecast submission persists but is restructured onto a collaborative platform with real-time completeness/consistency validation at point of entry, reducing the volume of anomalies that previously had to be caught downstream in consolidation.",
+      "target_step_ids": [
+        "TS-04"
+      ]
+    },
+    {
+      "baseline_step_id": "RF-05",
+      "disposition": "restructured",
+      "rationale": "Consolidation and validation persist, now performed continuously by the system as submissions arrive, with policy continuity across periods preserved per KB-06 and intercompany identification/elimination maintained per KB-14; the step still consumes closed-period actuals (validated baseline) as required, satisfying FPA-R-02.",
+      "target_step_ids": [
+        "TS-05"
+      ]
+    },
+    {
+      "baseline_step_id": "RF-06",
+      "disposition": "restructured",
+      "rationale": "Variance analysis survives as required by FPA-R-01: bridge analyses and risk/opportunity schedules are now auto-drafted from the consolidated forecast, with the FP&A analyst retained to add judgment-based narrative and finalise the schedules for management.",
+      "target_step_ids": [
+        "TS-06"
+      ]
+    },
+    {
+      "baseline_step_id": "RF-07",
+      "disposition": "retained",
+      "rationale": "Management review and approval is retained substantially unchanged as required by FPA-R-03: it remains the human judgment gate where the CFO/FP&A director challenges assumptions and approves the forecast baseline before publication, preserving the ordering required by FPA-R-04.",
+      "target_step_ids": [
+        "TS-07"
+      ]
+    },
+    {
+      "baseline_step_id": "RF-08",
+      "disposition": "restructured",
+      "rationale": "Forecast publication survives as required by FPA-R-05, now automated so that system updates, stakeholder distribution and version archiving with the assumptions log occur immediately upon approval, occurring strictly after RF-07/TS-07 approval as required.",
+      "target_step_ids": [
+        "TS-08"
+      ]
+    }
+  ],
+  "efficiency": {
+    "calls": 1,
+    "cost_usd": 0.089324,
+    "failed_attempts": 0,
+    "input_tokens": 7307,
+    "output_tokens": 7471,
+    "runtime_min": 1.064919
+  },
+  "gate": {
+    "conformance_score": 1.0,
+    "passed": 5,
+    "results": [
+      {
+        "passed": true,
+        "reason": "baseline step RF-06 is preserved as restructured, carried by target step(s) ['TS-06']",
+        "requirement_id": "FPA-R-01",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "every target step carrying baseline step RF-05 ['TS-05'] receives all required input(s) ['closed-period actuals (validated baseline)']",
+        "requirement_id": "FPA-R-02",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step RF-07 is preserved as retained, carried by target step(s) ['TS-07']",
+        "requirement_id": "FPA-R-03",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "target step(s) ['TS-07'] for baseline RF-07 all precede target step(s) ['TS-08'] for baseline RF-08",
+        "requirement_id": "FPA-R-04",
+        "vacuous": false
+      },
+      {
+        "passed": true,
+        "reason": "baseline step RF-08 is preserved as restructured, carried by target step(s) ['TS-08']",
+        "requirement_id": "FPA-R-05",
+        "vacuous": false
+      }
+    ],
+    "total": 5
+  },
+  "git_commit": "24be37cf3378e40c844b3af4fc343d9d668e4409",
+  "rep": 2,
+  "resolved_model": "claude-sonnet-5",
+  "run_id": "20260830-052106-baseline-FPA-RF-01-1429",
+  "set": "dev-v1",
+  "steps": [
+    {
+      "actor": "FP&A manager (system-assisted)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "System-triggered cycle initiation aligned to the rolling cadence; the assumptions pack (macro indicators, corporate targets, known business events) is auto-populated from external data feeds and reviewed by the FP&A manager for material changes; timetable and templates are auto-distributed via the planning platform.",
+      "inputs": [
+        "Rolling forecast calendar",
+        "Macro indicator feeds",
+        "Corporate targets"
+      ],
+      "name": "Automated forecast cycle initiation and assumptions refresh",
+      "outputs": [
+        "Assumptions pack issued (system-generated, manager-reviewed)",
+        "Timetable and templates auto-distributed"
+      ],
+      "step_id": "TS-01"
+    },
+    {
+      "actor": "FP&A analyst (exception-based)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Automated extraction of closed-period actuals from the GL and management reporting systems runs at period lock; the pipeline enforces subledger-lock and cutoff discipline, maps actuals to forecast structure, and checks consistency with revenue-recognition timing in published results before loading as baseline. Exceptions are routed to the FP&A analyst for review rather than manual line-by-line reconciliation.",
+      "inputs": [
+        "GL actuals",
+        "Management reporting extracts",
+        "Subledger lock status"
+      ],
+      "name": "Automated actuals ingestion and validated baseline",
+      "outputs": [
+        "closed-period actuals (validated baseline) loaded to forecast model"
+      ],
+      "step_id": "TS-02"
+    },
+    {
+      "actor": "FP&A analyst / system",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Mechanically determined drivers (FX spot/closing rates, actual run-rates, headcount feeds) are auto-refreshed from source systems, with exchange differences tracked explicitly rather than netted invisibly. Judgment-based assumptions (volume/demand, pricing) are packaged into structured input requests and routed to business owners for the submission step.",
+      "inputs": [
+        "Operational volume data",
+        "Pricing data",
+        "FX rate feeds",
+        "Headcount plans"
+      ],
+      "name": "Automated driver refresh and judgment-input routing",
+      "outputs": [
+        "Updated driver assumptions (mechanical, system-refreshed)",
+        "Judgment-input requests issued to BUs"
+      ],
+      "step_id": "TS-03"
+    },
+    {
+      "actor": "BU finance leads",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Business units prepare and submit forecast updates through a collaborative planning platform against the refreshed drivers; the platform performs real-time completeness and consistency checks (headcount-to-cost coherence, intercompany flags) at point of entry, and commentary on changes since the prior forecast is captured inline, reducing downstream rework.",
+      "inputs": [
+        "Updated driver assumptions (mechanical, system-refreshed)",
+        "Judgment-input requests issued to BUs",
+        "Templates",
+        "Prior forecast"
+      ],
+      "name": "BU forecast submission with real-time validation",
+      "outputs": [
+        "BU forecast submissions with commentary (pre-validated)"
+      ],
+      "step_id": "TS-04"
+    },
+    {
+      "actor": "FP&A analyst",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "The group forecast model consolidates validated BU submissions continuously as they arrive; the system validates completeness, intercompany identification and elimination, and continuity against the loaded actuals baseline, while preserving computation-policy continuity across periods. The FP&A analyst resolves remaining anomalies rather than performing first-pass checks manually.",
+      "inputs": [
+        "BU forecast submissions with commentary (pre-validated)",
+        "closed-period actuals (validated baseline)",
+        "Group forecast model"
+      ],
+      "name": "Automated consolidation with continuous validation",
+      "outputs": [
+        "Consolidated group forecast, validated"
+      ],
+      "step_id": "TS-05"
+    },
+    {
+      "actor": "FP&A analyst",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Draft bridge analyses and risk/opportunity schedules are auto-generated from the consolidated forecast against budget and prior forecast; the FP&A analyst reviews the machine-drawn bridges, adds driver-level and business-unit narrative explanation, and finalises risk/opportunity schedules for management.",
+      "inputs": [
+        "Consolidated group forecast, validated",
+        "Budget",
+        "Prior forecast"
+      ],
+      "name": "Variance analysis and bridge generation",
+      "outputs": [
+        "Bridge analyses",
+        "Risk/opportunity schedules"
+      ],
+      "step_id": "TS-06"
+    },
+    {
+      "actor": "CFO / FP&A director",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Present the consolidated forecast, variance analysis and bridge schedules to management; conduct challenge sessions on key assumptions; incorporate directed revisions; obtain formal approval of the forecast as the current planning baseline.",
+      "inputs": [
+        "Consolidated group forecast, validated",
+        "Bridge analyses",
+        "Risk/opportunity schedules"
+      ],
+      "name": "Management review and approval",
+      "outputs": [
+        "Approved forecast baseline"
+      ],
+      "step_id": "TS-07"
+    },
+    {
+      "actor": "FP&A manager (system-assisted)",
+      "class_agentic_only": "HUMAN",
+      "class_primary": "HUMAN",
+      "description": "Upon approval, the planning system automatically updates reporting baselines, publishes the forecast pack and commentary to stakeholders through the distribution platform, and archives the version together with the full assumptions log for audit trail purposes.",
+      "inputs": [
+        "Approved forecast baseline"
+      ],
+      "name": "Automated publication and reporting",
+      "outputs": [
+        "Forecast published",
+        "Systems updated",
+        "Version archived with assumptions log"
+      ],
+      "step_id": "TS-08"
+    }
+  ],
+  "transcript": [
+    {
+      "chars": 9013,
+      "excerpt": "{\n  \"workflow_id\": \"FPA-RF-01\",\n  \"baseline_step_ids\": [\"RF-01\", \"RF-02\", \"RF-03\", \"RF-04\", \"RF-05\", \"RF-06\", \"RF-07\", \"RF-08\"],\n  \"steps\": [\n    {\n      \"step_id\": \"TS-01\",\n      \"name\": \"Automated forecast cycle initiation and assumptions refresh\",\n      \"description\": \"System-triggered cycle initiation aligned to the rolling cadence; the assumptions pack (macro indicators, corporate targets, known business events) is auto-populated from external data feeds and reviewed by the FP&A manager for material changes; timetable and templates are auto-distributed via the planning platform.\",\n      \"",
+      "phase": "single agent",
+      "role": "baseline_designer",
+      "truncated": true
+    }
+  ],
+  "workflow_id": "FPA-RF-01"
+}
