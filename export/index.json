@@ -1,5 +1,5 @@
 {
-  "export_commit": "dfee684726198392ab94940ac0b5f6bba36adb49",
+  "export_commit": "15938359843b3305e6b8dbe3173de1465d0d73aa",
   "findings": [
     {
       "id": "F1",
@@ -23,12 +23,12 @@
       "id": "F4",
       "status": "pre-registered counts",
       "text": "Council vs budget-matched single agent: restructured 170 vs 95, absorbed 5 vs 17, merged 55 vs 81. Run-to-run consistency 0.789 vs 0.702.",
-      "title": "Single agents compress; multi-agent systems re-architect"
+      "title": "Disposition counts and run-to-run consistency by condition"
     },
     {
       "id": "F5",
       "status": "exploratory",
-      "text": "About 37% of human effort is removed on transactional workflows and about 2% on judgment-dense ones, where human checkpoints rise instead (human-in-the-loop checkpoints across the three judgment-dense workflows: 4 in the originals, 9.0 in the council designs, mean per run). Pooled: 20%.",
+      "text": "Human effort removed ranges from about 2% on judgment-dense workflows to about 37% on transactional ones (AI agents only: 18% transactional, 4% pooled). On judgment-dense workflows human checkpoints rise instead (human-in-the-loop checkpoints across the three judgment-dense workflows: 4 in the originals, 9.0 in the council designs, mean per run). Pooled: 20%.",
       "title": "Two kinds of value"
     },
     {
@@ -70,6 +70,7 @@
     }
   ],
   "prereg_tag": "prereg-heldout-2026-10-11",
+  "repo_url": "https://github.com/shivantha7/design-council",
   "research_question": "Does structured multi-agent deliberation, implemented as a role-differentiated Design Council, produce finance workflow redesigns superior to those of a budget-matched strong single agent, when superiority is measured against each workflow's own encoded requirements?",
   "sets": {
     "dev-v1": {

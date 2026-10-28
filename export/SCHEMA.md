@@ -6,6 +6,7 @@ bytes. JSON files use sorted keys. Floats are rounded to 6 decimals.
 
 ## index.json
 - `export_commit`: git commit the export was made from. `prereg_tag`: freeze tag of the held-out set.
+  `repo_url`: public repository URL (null until published).
 - `research_question`: verbatim from the dissertation.
 - `sets.heldout-v1`: `label`, `commit` (pinned run commit), `requested_model`, `workflows` (7 ids),
   `runs` (68 run ids), `cells[]` = {`workflow_id`, `condition`, `run_ids` in rep order, `stop_decision`
@@ -65,3 +66,19 @@ council_present, council_n, baseline_present, outcome, strict_75, quote, quote_r
 ## results/dev_grid.json
 v1 development grid per workflow x condition: n, run_ids, depth mean/min/max, conformance mean,
 disposition counts, consistency, mean output tokens.
+
+## Carried over from separate analysis scripts (exploratory, no model calls)
+Not computed by this script. Each is written by its own script into `export/results/` and
+copied here byte for byte, so these files keep that script's formatting (not sorted keys,
+floats unrounded).
+- `results/bootstrap_h2.json` (`scripts/bootstrap_h2.py`, `docs/BOOTSTRAP_H2.md`): H2 rule under
+  resampling of runs within cells. `B`, `seed`, `sesoi`, `need`, and for `reported` (depth as
+  recorded) and `verified` (verified depth): `point_gaps`, `point_pass`, `bootstrap_pass_rate`,
+  `per_workflow_pass_prob`, `gap_95ci`, `count_distribution`, `loo_pass_rate`, `loo_fail_cases`.
+- `results/depth_verification.json` (`scripts/verify_dispositions.py`, `docs/DEPTH_VERIFICATION.md`):
+  disposition labels checked against the TSS. `by_condition` and `overall` label checks, and
+  `cells` ("<workflow>|<condition>": n, depth_reported_mean, depth_verified_mean).
+- `results/controls_symmetric_length.json` (`scripts/controls_symmetric_length.py`,
+  `docs/CONTROLS_SYMMETRIC_LENGTH.md`): the section 6 rule applied in both directions
+  (`symmetric` per workflow) and control counts per TSS length (`length_by_condition`,
+  `length_by_workflow`, `runs`).

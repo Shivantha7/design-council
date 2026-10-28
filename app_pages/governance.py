@@ -1,7 +1,7 @@
 import altair as alt
 import streamlit as st
 
-from app_lib.export_data import frame, label, result, role
+from app_lib.export_data import exploratory_note, frame, label, result, role
 
 g = result("governance_controls")
 controls = g["controls"]
@@ -30,6 +30,40 @@ with right:
         tooltip=["role", "primary", "any"]), width="stretch")
     st.caption("Primary = first attributed role of the lowest-numbered member candidate. 'Any' counts every role "
                "that proposed the control.")
+
+st.subheader("Symmetric count and length", anchor=False)
+exploratory_note("The section 6 rule applied in both directions, and control counts set against TSS length.")
+sl = result("controls_symmetric_length")
+sym = sl["symmetric"]
+st.dataframe(frame([{"Workflow": wf, "Coded": s["final"], "Council-attributed": s["council_pass"],
+                     "Baseline-attributed": s["baseline_pass"], "Baseline only (any run)": s["baseline_any_no_council"],
+                     "Council only (any run)": s["council_any_no_baseline"], "Both": s["both"]}
+                    for wf, s in sym.items()]), hide_index=True)
+st.caption("Baseline-attributed applies the same rule with the conditions swapped: present in at least 60% of "
+           "baseline runs and in no council run. Candidates came from both conditions' TSSs, but the codebook was "
+           "seeded from council deliberation, so a baseline-only mechanism could be under-represented.")
+
+lc = sl["length_by_condition"]
+with st.container(horizontal=True):
+    for c in ("council", "baseline"):
+        st.metric(f"Controls per 1,000 TSS words ({c})", f"{lc[c]['per_1000_words']:.1f}", border=True,
+                  help=f"Mean per run: {lc[c]['controls']:.1f} controls in {lc[c]['words']:.0f} words, "
+                       f"{lc[c]['per_step']:.2f} per step")
+lw = sl["length_by_workflow"]
+st.dataframe(frame([{"Workflow": wf, "Council words": lw[wf]["council"]["words"],
+                     "Baseline words": lw[wf]["baseline"]["words"],
+                     "Council controls": lw[wf]["council"]["controls"],
+                     "Baseline controls": lw[wf]["baseline"]["controls"],
+                     "Council per 1,000 words": lw[wf]["council"]["per_1000_words"],
+                     "Baseline per 1,000 words": lw[wf]["baseline"]["per_1000_words"]} for wf in sym]),
+             hide_index=True,
+             column_config={**{k: st.column_config.NumberColumn(format="%.0f") for k in ("Council words", "Baseline words")},
+                            **{k: st.column_config.NumberColumn(format="%.1f") for k in ("Council controls", "Baseline controls")},
+                            **{k: st.column_config.NumberColumn(format="%.2f") for k in
+                               ("Council per 1,000 words", "Baseline per 1,000 words")}})
+st.caption("Means per successful run, TSS text only. Council TSSs are about twice as long and carry about twice as "
+           "many distinct controls, so per 1,000 words the two conditions are close. Details in "
+           "docs/CONTROLS_SYMMETRIC_LENGTH.md.")
 
 st.subheader("Drill down", anchor=False)
 with st.container(horizontal=True):

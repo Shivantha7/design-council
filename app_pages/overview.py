@@ -35,3 +35,11 @@ with st.container(border=True):
     for item in idx["limits"]:
         # Escape "$" so amounts are not read as LaTeX.
         st.markdown(f"- **{item['id']}.** " + item["text"].replace("$", "\\$"))
+
+st.subheader("Provenance", anchor=False)
+with st.container(border=True):
+    st.markdown(f"- **Freeze tag.** `{idx['prereg_tag']}`\n"
+                f"- **Export commit.** `{idx['export_commit']}`\n"
+                "- **Data.** Replays logged runs, no live model calls. Every figure is read from `export/`, "
+                "written by `scripts/export_app_data.py` from the run logs and committed coding data.\n"
+                f"- **Repository.** {idx.get('repo_url') or 'not recorded'}")

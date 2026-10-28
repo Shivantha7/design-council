@@ -1,7 +1,7 @@
 import altair as alt
 import streamlit as st
 
-from app_lib.export_data import frame, result
+from app_lib.export_data import exploratory_note, frame, result
 
 t = result("heldout_tables")
 fi = t["fill_ins"]
@@ -50,5 +50,67 @@ st.caption(f"{fi['h3_stabilised_cells']} of 14 cells stabilised against a thresh
 st.dataframe(frame([{"Cell": f"{r['workflow_id']} {r['condition']}", "After 3": r["after_3"],
                      "After 4": r["after_4"], "After 5": float("nan") if r["after_5"] is None else r["after_5"], "Stabilised": r["stabilised"],
                      "Consistency": r["consistency"]} for r in t["x5_stabilisation"]]),
-             hide_index=True, column_config={k: st.column_config.NumberColumn(format="%.3f")
-                                             for k in ("After 3", "After 4", "After 5", "Consistency")})
+             hide_index=True, height="content",
+             column_config={k: st.column_config.NumberColumn(format="%.3f")
+                            for k in ("After 3", "After 4", "After 5", "Consistency")})
+
+st.subheader("H2 under resampling", anchor=False)
+exploratory_note("Bootstrap of the H2 decision rule: runs resampled with replacement within each cell, and the "
+                 "rule (gap ≥ 0.2 on at least 4 of 7 workflows) re-applied to every replicate.")
+b = result("bootstrap_h2")
+st.caption(f"{b['B']:,} replicates, seed {b['seed']}. 'Recorded' uses depth as logged; 'verified' counts only "
+           "non-retained labels that the TSS itself bears out (next section). Leave-one-run-out deletes each of "
+           "the 68 runs in turn.")
+boot_rec, boot_ver, loo_rec, loo_ver = st.columns(4)
+for col, key in ((boot_rec, "reported"), (boot_ver, "verified")):
+    col.metric(f"Bootstrap, {'recorded' if key == 'reported' else 'verified'}",
+               f"{b[key]['bootstrap_pass_rate']:.1%}", border=True,
+               help=f"Point estimate: {b[key]['point_pass']} of 7 workflows meet the SESOI")
+for col, key in ((loo_rec, "reported"), (loo_ver, "verified")):
+    col.metric(f"Leave one out, {'recorded' if key == 'reported' else 'verified'}",
+               f"{b[key]['loo_pass_rate']:.1%}", border=True,
+               help=f"{len(b[key]['loo_fail_cases'])} of 68 single-run deletions make H2 fail")
+
+dist = frame([{"depth": "recorded" if key == "reported" else "verified", "workflows meeting SESOI": int(k),
+               "share of replicates": v}
+              for key in ("reported", "verified") for k, v in b[key]["count_distribution"].items()])
+bars = alt.Chart(dist).mark_bar().encode(
+    x=alt.X("workflows meeting SESOI:O", title="Workflows meeting the SESOI in a replicate",
+               axis=alt.Axis(labelAngle=0)),
+    xOffset="depth:N", y=alt.Y("share of replicates:Q", axis=alt.Axis(format="%"), title="Share of replicates"),
+    color=alt.Color("depth:N", scale=alt.Scale(domain=["recorded", "verified"]), title="Depth"),
+    tooltip=["depth", "workflows meeting SESOI", alt.Tooltip("share of replicates:Q", format=".1%")])
+st.altair_chart(bars, width="stretch")
+st.caption(f"H2 passes in a replicate when at least {b['need']} workflows meet the SESOI.")
+
+st.dataframe(frame([{"Workflow": wf,
+                     **{f"{'Recorded' if key == 'reported' else 'Verified'} {col}": val
+                        for key in ("reported", "verified")
+                        for col, val in (("gap", b[key]["point_gaps"][wf]),
+                                         ("95% interval", "[{:.3f}, {:.3f}]".format(*b[key]["gap_95ci"][wf])),
+                                         ("P(gap ≥ 0.2)", b[key]["per_workflow_pass_prob"][wf]))}}
+                    for wf in order]),
+             hide_index=True, column_config={k: st.column_config.NumberColumn(format="%.3f") for k in
+                                             ("Recorded gap", "Verified gap")}
+             | {k: st.column_config.NumberColumn(format="%.2f") for k in
+                ("Recorded P(gap ≥ 0.2)", "Verified P(gap ≥ 0.2)")})
+
+st.subheader("Recorded and verified depth", anchor=False)
+exploratory_note("Each non-retained disposition label was checked deterministically against the TSS (actor, "
+                 "inputs or position changed). Verified depth counts only the labels that check out.")
+v = result("depth_verification")
+st.caption(f"{v['runs_ok']} successful runs, {v['labels_total']} baseline-step labels; the {v['runs_failed_excluded']} "
+           "failed attempts are excluded from every depth figure.")
+st.dataframe(frame([{"Workflow": k.split("|")[0], "Condition": k.split("|")[1], "Runs": c["n"],
+                     "Depth (recorded)": c["depth_reported_mean"], "Depth (verified)": c["depth_verified_mean"],
+                     "Difference": round(c["depth_verified_mean"] - c["depth_reported_mean"], 3)}
+                    for k, c in sorted(v["cells"].items(), key=lambda kv: order.index(kv[0].split("|")[0]))]),
+             hide_index=True, height="content",
+             column_config={k: st.column_config.NumberColumn(format="%.3f") for k in
+                            ("Depth (recorded)", "Depth (verified)", "Difference")})
+st.dataframe(frame([{"Condition": cond, "Label": lab, "Labels": s["n"], "Verified": s.get("verified"),
+                     "Rate": s.get("rate")}
+                    for cond in ("council", "baseline") for lab, s in v["by_condition"][cond].items()]),
+             hide_index=True, height="content", column_config={"Rate": st.column_config.NumberColumn(format="%.3f")})
+st.caption("For 'retained', verified means consistent: no change in actor, inputs or position. Details in "
+           "docs/DEPTH_VERIFICATION.md.")
