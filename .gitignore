@@ -1,5 +1,5 @@
 .venv/
-runs/
+/runs/
 __pycache__/
 .env
 .pytest_cache/
